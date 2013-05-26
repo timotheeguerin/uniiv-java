@@ -1,0 +1,153 @@
+/**
+ * 
+ */
+package ca.bendo.session;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+
+import ca.bendo.db.entity.user.User;
+
+/**
+ * @author Timothée Guérin
+ * @version Bendo
+ * 
+ *          <b>UserSession</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
+ */
+
+public class UserSession
+{
+
+	/**
+	 * Logger.
+	 */
+	@SuppressWarnings("unused")
+	private Logger log = Logger.getLogger(UserSession.class);
+
+	/**
+	 * 
+	 */
+	private HttpServletRequest request;
+
+	/**
+	 * 
+	 */
+	private User user;
+
+	/**
+	 * 
+	 */
+	public UserSession()
+	{
+
+	}
+
+	/**
+	 * 
+	 * @param req
+	 *            Request
+	 */
+	public final void loadSession(final HttpServletRequest req)
+	{
+		setRequest(req);
+		HttpSession session = getRequest().getSession();
+		// Load the user from the session
+		user = (User) session.getAttribute("user");
+
+	}
+
+	/**
+	 * Log the user in.
+	 * 
+	 * @param tmpUser
+	 *            User
+	 */
+	public final void login(final User tmpUser)
+	{
+		user = tmpUser;
+		HttpSession session = getRequest().getSession();
+		session.setAttribute("user_session", true);
+		session.setAttribute("user", user);
+	}
+
+	/**
+	 * Log the user out.
+	 */
+	public final void logout()
+	{
+		HttpSession session = getRequest().getSession();
+		session.removeAttribute("user_session");
+		session.removeAttribute("user_status");
+		session.removeAttribute("user");
+		user = null;
+	}
+
+	/**
+	 * @return the request
+	 */
+	public final HttpServletRequest getRequest()
+	{
+		return request;
+	}
+
+	/**
+	 * @param request
+	 *            the request to set
+	 */
+	public final void setRequest(final HttpServletRequest request)
+	{
+		this.request = request;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public final User getUser()
+	{
+		return user;
+	}
+
+	/**
+	 * @return boolean if the user is a login member.
+	 */
+	public final boolean isLogin()
+	{
+		return user != null;
+	}
+
+	/**
+	 * @param permission
+	 *            permission
+	 * @return if the user has the given permission
+	 */
+	public boolean hasPermission(final String permission)
+	{
+		return user != null && user.hasPermission(permission);
+	}
+
+	/**
+	 * @param request
+	 *            request
+	 * @return userSession loaded from request
+	 */
+	public static UserSession getSession(final HttpServletRequest request)
+	{
+		return (UserSession) request.getAttribute("userSession");
+	}
+
+	/**
+	 * @param user
+	 *            the user to set
+	 */
+	public final void setUser(final User user)
+	{
+		this.user = user;
+	}
+
+}

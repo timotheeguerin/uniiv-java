@@ -1,0 +1,92 @@
+/**
+ * 
+ */
+package ca.bendo.controllers;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import ca.bendo.db.dao.program.UniversityProgramDAO;
+import ca.bendo.search.FilterSystemLoader;
+import ca.bendo.search.handler.SearchQueryHandler;
+import ca.bendo.translation.translation.Translator;
+
+/**
+ * @author Timothée Guérin
+ * @version Bendo
+ * 
+ *          <b>SearchController</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
+ */
+@Controller
+@RequestMapping("/search")
+public class SearchController extends BendoController
+{
+	/**
+	 * 
+	 */
+	@Autowired
+	private UniversityProgramDAO programDAO;
+
+	/**
+	 * 
+	 */
+	@Autowired
+	private SearchQueryHandler handler;
+	/**
+	 * 
+	 */
+	@Autowired
+	private FilterSystemLoader filterSystemLoader;
+
+	/**
+	 * Method handling filter search page page.
+	 * 
+	 * @param request
+	 *            Request
+	 * @param response
+	 *            Response
+	 * @return JSP page
+	 */
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public final String filterSearch(final HttpServletRequest request, final HttpServletResponse response)
+	{
+		filterSystemLoader.loadFilters(request);
+		System.out.println("HomeController: Passing through...");
+
+		Translator trans = (Translator) request.getAttribute("translator");
+
+		return "views/search/searchFilter";
+	}
+
+	/**
+	 * Method handling filter search page page.
+	 * 
+	 * @param request
+	 *            Request
+	 * @param response
+	 *            Response
+	 * @return JSP page
+	 */
+	@RequestMapping(value = "/handle", method = RequestMethod.GET)
+	public final String filterSearchHandle(final HttpServletRequest request, final HttpServletResponse response)
+	{
+		System.out.println("HomeController: Passing through...");
+
+		Translator translator = (Translator) request.getAttribute("translator");
+
+		handler.handle(request);
+
+		// Parse programs
+		return "views/universityResult";
+	}
+
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:security="http://www.springframework.org/schema/security" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/mvc
+ 		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 		http://www.springframework.org/schema/security
+ 		http://www.springframework.org/schema/security/spring-security-3.0.4.xsd
+ 		http://www.springframework.org/schema/tx 
+  		http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- <context:component-scan base-package="ca.bendo.controllers" /> -->
+	<!-- <context:component-scan base-package="ca.bendo.translation.language" /> -->
+	<!-- <context:component-scan base-package="ca.bendo.dao" /> -->
+
+	<context:annotation-config />
+	
+	<context:component-scan base-package="ca.bendo">
+	</context:component-scan>
+
+	<!-- Configure tiles -->
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.tiles2.TilesView</value>
+		</property>
+	</bean>
+
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/config/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<props>
+				<prop key="resource.loader">class</prop>
+				<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</prop>
+			</props>
+		</property>
+	</bean>
+	
+</beans>

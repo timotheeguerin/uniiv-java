@@ -1,0 +1,1407 @@
+h1 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.prof_listing {
+	margin: auto;
+	width: auto;
+}
+
+.prof_main_list,.course_main_list {
+	margin: auto;
+	width: auto;
+}
+
+li.head_row_prof {
+	background-color: #DFDFDF;
+	display: inline-block;
+	height: 50px;
+	width: auto;
+}
+
+.prof_top_element,.prof_element {
+	display: inline-block;
+	text-align: center;
+	width: 120px;
+}
+
+.prof_element {
+	background-color: #FFFFFF;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+
+.prof_name {
+	width: auto;
+}
+
+/******************************
+
+			Prof Page 
+
+********************************/
+.ProfessorPageContainer {
+	padding: 20px 20px 20px 20px;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+.InfoProfNameSchool {
+	display: inline-block;
+	margin: 0 40px 0 0;
+	width: auto;
+}
+
+.UniAddedDisplayedThree {
+	display: inline-block;
+}
+
+.ProfPageDownContainer {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	padding: 20px;
+	text-align: center;
+	margin-top: 20px;
+	width: auto;
+	margin-left: 40px;
+}
+
+.addUniImg {
+	height: 25px;
+	width: 25px;
+}
+
+.GetRatingTypeHomeProf {
+	height: 35px;
+	line-height: 35px;
+	font-size: 20px;
+	margin: 0 5px 0 5px;
+	vertical-align: middle;
+	width: 120px;
+	text-align: center;
+	display: inline-block;
+}
+
+.GetRatingProfDisplay {
+	color: #204AA1;
+	height: 35px;
+	line-height: 35px;
+	font-size: 20px;
+	margin: 0 5px 0 5px;
+	vertical-align: middle;
+	width: 120px;
+	text-align: center;
+	display: inline-block;
+}
+
+.GetRatingTypeDisplay {
+	height: 35px;
+	line-height: 35px;
+	font-size: 20px;
+	margin: 0 5px 0 5px;
+	vertical-align: middle;
+	width: 90px;
+	text-align: center;
+	display: inline-block;
+}
+
+.ProfBasicContent>div {
+	display: inline-block;
+	float: left;
+}
+
+.ProfRatingTypeContent {
+	display: inline-block;
+	margin: 0;
+	width: auto;
+}
+
+.ProfImageContent {
+	display: inline-block;
+	margin: 20px 0 0 0;
+}
+
+.ProfBasicContent {
+	display: inline-block;
+	height: 180px;
+	margin-left: 40px;
+}
+
+.ProfRatingUniqueBoxAll {
+	display: inline-block;
+	width: 100%;
+}
+
+.ProfHeadingUniqueRating {
+	margin-bottom: 10px;
+}
+
+.ProfHeadingUniqueRating h1 {
+	border-bottom: solid 1px #E5E5E5;
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+.OverallComputedRating {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	display: inline-block;
+	margin-left: 30px;
+	height: 140px;
+	padding: 20px;
+	text-align: center;
+	width: 100px;
+}
+
+.OverallComputedRatingHeading {
+	border-bottom: solid 1px #E5E5E5;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	height: 32px;
+}
+
+.GetComputedOverallRating {
+	font-weight: bold;
+	font-size: 50px;
+	color: #204AA1;
+	text-align: center;
+}
+
+.UsefulLinksProfUnicourse {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+/******************************
+
+  		NEWPROFESSOR
+
+********************************/
+.FormProfContent,.FormCourseContent {
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	height: auto;
+	margin: auto;
+	padding: 20px;
+	width: 550px;
+}
+
+.selectProgramProf,.selectProgramCourse {
+	display: inline-block;
+}
+
+.FormProfMargin,.FormCourseMargin {
+	margin: 15px 15px 15px 15px;
+}
+
+.AddNewProf,.AddNewCourse {
+	margin-bottom: 40px;
+}
+
+.InputProfElement,.InputCourseElement {
+	margin: 0 0 10px 5px;
+	width: auto;
+}
+
+.signup_terms {
+	margin-bottom: 10px;
+}
+
+.SelectProfProgram,.SelectCourseProgram {
+	display: inline-block;
+	float: right;
+}
+
+.IconAddProf,.IconAddCourse {
+	display: inline-block;
+	height: 40px;
+	margin-right: 10px;
+	width: 40px;
+}
+
+.AddProfHeading,.AddCourseHeading {
+	display: inline-block;
+}
+
+.SubmitProfInput {
+	display: inline-block;
+	line-height: 25px;
+	vertical-align: middle;
+}
+
+.SubmitCourseInput {
+	display: inline-block;
+	position: relative;
+	margin: 10px 0 0 20px;
+}
+
+.NameProgramBox {
+	margin-bottom: 40px;
+	width: 300px;
+}
+
+.InputBoxProf,.InputBoxCourse,.autocomplete.professorautocomplete,.AddSemesterProfCourse
+	{
+	background: #FFFFFF;
+	border: solid 2px #204AA1;
+	font-size: 14px;
+	font-family: "Helvetica Neue", Arial, Verdana;
+	font-style: normal;
+	float: right;
+	height: 25px;
+	max-height: 70px;
+	maxlength: 100;
+	width: 500px;
+	max-width: 500px;
+	padding: 4px 5px 4px 5px;
+	outline: 0;
+	width: 140px;
+}
+
+.AddSemesterProfCourse {
+	display: inline-block;
+}
+
+.SelectToolDepartment {
+	width: 140px;
+}
+
+.FormCourseProfSemester {
+	margin-top: 40px;
+	width: 400px;
+}
+
+.FormCourseProfSemester select {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.FormNewProfUniSubmit,.FormNewProfCourseSubmit {
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	font-size: 14px;
+	font-family: "Helvetica Neue", Arial;
+	font-style: normal;
+	padding: 9px;
+	outline: 0;
+	height: auto;
+	margin: auto;
+	padding: 20px;
+	width: 500px;
+}
+
+.FormNewProfCourseSubmit form {
+	width: 100%;
+}
+
+.SubmitNewUniversityProfessorAdded {
+	margin-left: 400px;
+	margin-top: 40px;
+}
+
+.NewProfInput,.NewCourseInput {
+	margin-left: 400px;
+}
+
+.NewProfInput,.NewCourseInput,.SubmitNewUniversityProfessorAdded,.SubmitMainSearchTool
+	{
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
+		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#3259ab', endColorstr='#4a68a8',
+		GradientType=0 ); /* IE6-9 */
+	-moz-border-bottom-color: #062463;
+	border-bottom-color: #062463;
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+	border-bottom-width: 1px;
+	-moz-border-bottom-width: 1px;
+	border-left-color: #062463;
+	-moz-border-left-color: #062463;
+	border-left-style: solid;
+	-moz-border-left-style: solid;
+	border-left-width: 1px;
+	-moz-border-left-width: 1px;
+	border-right-color: #062463;
+	-moz-border-right-color: #062463;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #062463;
+	-moz-border-top-color: #062463;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Helvetica Neue", Arial, Verdana;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: thin;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	word-spacing: 2px;
+	width: 80px;
+}
+
+.NewProfInput:hover,.NewCourseInput:hover,.SubmitNewUniversityProfessorAdded:hover,.SubmitMainSearchTool:hover
+	{
+	background: #4a68a8; /* Old browsers */
+	background: -moz-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a68a8),
+		color-stop(100%, #3259ab) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #4a68a8 0%, #3259ab 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#4a68a8', endColorstr='#3259ab',
+		GradientType=0 ); /* IE6-9 */
+}
+
+.NewProfInput:active,.NewCourseInput:active,.SubmitNewUniversityProfessorAdded:active,.SubmitMainSearchTool:active
+	{
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
+		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#3259ab', endColorstr='#4a68a8',
+		GradientType=0 ); /* IE6-9 */
+}
+
+.InputCommentNew {
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	font-size: 14px;
+	font-family: "Helvetica Neue", Arial;
+	font-style: normal;
+	height: 70px;
+	max-height: 70px;
+	maxlength: 500;
+	width: 500px;
+	max-width: 500px;
+	padding: 9px;
+	outline: 0;
+}
+
+#NewCommentCounter {
+	display: inline-block;
+	line-height: 25px;
+	vertical-align: middle;
+	width: 50px;
+}
+
+.ProfRatingContent,.UniRatingContent,.CourseRatingContent {
+	padding: 15px 0px 15px 15px;
+}
+
+.HeadingProfRating,.HeadingUniRating,.HeadingCourseRating {
+	margin-bottom: 30px;
+}
+
+.prof_rating_input,.course_rating_input {
+	display: inline-block;
+	padding: 20px 0 20px 20px;
+	height: auto;
+	width: 330px;
+}
+
+.InputRatingProf {
+	width: 100%;
+}
+
+.prof_review_prof_card,.course_review_course_card {
+	display: inline-block;
+	float: right;
+	margin: 15px 15px 0 0;
+}
+
+.InputRatingUni,.InputRatingCourse {
+	width: auto;
+}
+
+.ContentTypeProfRating,.ContentTypeUniRating,.ContentTypeCourseRating {
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
+.getTypeRatingProf,.getTypeRatingCourse {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+	width: 100px;
+}
+
+.uni_rating_input {
+	width: auto;
+}
+
+.getTypeRatingUni {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+	width: 200px;
+}
+
+.starRatingDisplay {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.starRatingDisplay {
+	width: 200px;
+}
+
+.centralProfReview {
+	width: 100%;
+}
+
+.centralUniReview {
+	width: 500px;
+}
+
+.cardBox {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	display: inline-block;
+	height: 140px;
+	padding: 20px;
+	position: relative;
+	width: 500px;
+}
+
+.CardTitleBox {
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	border-bottom: solid 1px #E5E5E5;
+}
+
+.CardTitleBox div.cardIcon,.CardTitleBox div.cardTitle {
+	display: inline-block;
+	height: 38px;
+}
+
+.CardTitleBox div.cardIcon img {
+	display: inline-block;
+	line-height: 38px;
+	width: 38px;
+	height: 38px;
+	vertical-align: middle;
+}
+
+.CardTitleBox div.cardTitle {
+	margin-left: 15px;
+}
+
+.CardTitleBox div.cardTitle h1 {
+	display: inline-block;
+	line-height: 38px;
+	vertical-align: middle;
+	color: #204AA1;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.cardInfoUniversity {
+	
+}
+
+.cardInfoUniversity>div {
+	display: inline-block;
+	height: 30px;
+}
+
+.cardInfoUniversity img {
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.cardInfoUniversity h2 {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.TeachingUniveristy,.ProfCourseNumberListLink {
+	display: inline-block;
+}
+
+.ProfUniNameLinkCourseList ul li,.CardInfo ul li {
+	margin-top: 5px;
+}
+
+.ProfCourseNumberListLink {
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.profInfoRating {
+	margin-left: 40px;
+}
+
+.IconProfInfoUniCourse,.IconCourseInfoUniCourse {
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 30px;
+}
+
+.NewProfRatingReview {
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
+		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#3259ab', endColorstr='#4a68a8',
+		GradientType=0 ); /* IE6-9 */
+	-moz-border-bottom-color: #062463;
+	border-bottom-color: #062463;
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+	border-bottom-width: 1px;
+	-moz-border-bottom-width: 1px;
+	border-left-color: #062463;
+	-moz-border-left-color: #062463;
+	border-left-style: solid;
+	-moz-border-left-style: solid;
+	border-left-width: 1px;
+	-moz-border-left-width: 1px;
+	border-right-color: #062463;
+	-moz-border-right-color: #062463;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #062463;
+	-moz-border-top-color: #062463;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Helvetica Neue", Arial, Verdana, Sans-ms;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: thin;
+	float: right;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	word-spacing: 2px;
+	width: auto;
+}
+
+.autoCompleteSuggestionImg {
+	height: 18px;
+	line-height: 18px;
+	width: 18px;
+	background-size: 100% !important;
+	margin-right: 10px;
+}
+
+.autoCompleteSuggestionImg.university {
+	background: url("../images/icon/universityfacade.png");
+}
+
+.autoCompleteSuggestionImg.course {
+	background: url("../images/icon/courses.png");
+}
+
+.autoCompleteSuggestionImg.professor {
+	background: url("../images/icon/professor_quality.png");
+}
+
+.NewProfRatingReview:hover {
+	background: #4a68a8; /* Old browsers */
+	background: -moz-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a68a8),
+		color-stop(100%, #3259ab) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #4a68a8 0%, #3259ab 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#4a68a8', endColorstr='#3259ab',
+		GradientType=0 ); /* IE6-9 */
+}
+
+.NewProfRatingReview:active {
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
+		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(      
+		                       startColorstr='#3259ab', endColorstr='#4a68a8',
+		GradientType=0 ); /* IE6-9 */
+}
+/*****************************************
+
+			ContentReviewComment
+
+******************************************/
+.ContentRatingComment {
+	margin: 20px;
+	width: 500px;
+}
+
+.CommentRatingBoxAll {
+	display: block;
+	margin: 10px 10px 10px 10px;
+	width: 500px;
+}
+
+.ContainerBottomNewCommentBox {
+	float: right;
+	margin-top: 10px;
+	width: auto;
+}
+
+.RatingCommentTypesReview {
+	display: inline-block;
+	float: right;
+}
+
+.ReviewHeadingProfCourseSection {
+	margin-bottom: 20px;
+}
+
+.ReviewHeadingProfCourseSection * {
+	display: inline-block;
+}
+
+.ReviewHeadingProfCourseSection div {
+	float: right;
+	margin-right: 30px;
+}
+
+.add_review,.add_prof,.add_course {
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient(top, #3259AB 0%, #4a68a8 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
+		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(    
+		                                        startColorstr='#3259ab',
+		endColorstr='#4a68a8', GradientType=0 );
+	/* IE6-9 */
+	-moz-border-bottom-color: #204AA1;
+	border-bottom-color: #204AA1;
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+	border-bottom-width: 1px;
+	-moz-border-bottom-width: 1px;
+	border-left-color: #204AA1;
+	-moz-border-left-color: #204AA1;
+	border-left-style: solid;
+	-moz-border-left-style: solid;
+	border-left-width: 1px;
+	-moz-border-left-width: 1px;
+	border-right-color: #204AA1;
+	-moz-border-right-color: #204AA1;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #204AA1;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: "Helvetica Neue", Arial;
+	font-size: 18px;
+	font-weight: thin;
+	text-decoration: none;
+	line-height: 40px;
+	height: 40px;
+	padding-left: 5px;
+	padding-right: 5px;
+	word-spacing: 2px;
+	text-align: center;
+	vertical-align: middle;
+	width: 140px;
+	display: block;
+}
+
+.LabelSelectCommentRating {
+	margin-bottom: 10px;
+}
+
+.HeadingProfAssignedList {
+	display: inline-block;
+}
+
+span.DisplayedTextUniListProf {
+	font-size: 1.3em;
+}
+
+.HeadingProfAssignedList h1 {
+	display: inline;
+}
+
+.HeadingProfAssignedList span {
+	color: #204AA1;
+}
+/******************************
+
+		UniversityProfessorList.jsp
+
+********************************/
+.HeadRowTopProf,.HeadRowTopCourse {
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.HeadingProfUniList,.HeadingCourseUniList {
+	margin: 0 0 40px 0;
+}
+
+li.row_prof,.row_prof ul {
+	background-color: #FFF;
+	border-bottom: #969696 dotted 1px;
+	width: 864px;
+}
+
+.LinkProfUniList {
+	width: 100%;
+}
+
+.LinkProfUniList:hover {
+	cursor: pointer;
+}
+
+.row_prof ul li.prof_element_course_name div.prof_ratings div.prof_name:hover
+	{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.prof_element_course_name {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	width: 150px;
+}
+
+/******************************
+
+		newProfessorUniversity.jsp
+
+********************************/
+.NewProfUniversityContent div,.NewProfCourseContent div {
+	margin-bottom: 30px;
+}
+
+.DisplayedProfNameSelectUni,.DisplayedCourseNameSelectProf {
+	color: #204AA1;
+}
+
+/******************************
+
+		autocomplete ! 
+
+********************************/
+.UniProfSearchAutoComplete {
+	width: auto;
+}
+
+#query.autocomplete.universityautocomplete {
+	background: #FFFFFF;
+	display: inline-block;
+	padding: 9px;
+	margin-top: 20px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	font: normal 13px "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
+	font-size: 20px;
+	maxlength: 150;
+	height: 40px;
+	width: 400px;
+}
+
+.autocomplete-suggestions {
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	font: normal 15px "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
+	outline: 0;
+	height: auto;
+	max-height: 200px;
+	width: 400px;
+}
+
+.autocomplete-suggestion {
+	padding: 5px;
+}
+
+.autocomplete-suggestion.autocomplete-selected:hover,.autocomplete-suggestion:hover
+	{
+	cursor: pointer;
+}
+
+.autocomplete-suggestion strong,.autocomplete-suggestion strong:hover,.autocomplete-suggestion.autocomplete-selected strong
+	{
+	color: #204AA1;
+	font-weight: bold;
+}
+
+.autocomplete-suggestion div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.NoReviewDisplay {
+	background-color: #204AA1;
+	-moz-border-bottom-color: #204AA1;
+	border-bottom-color: #204AA1;
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-style: solid;
+	-moz-border-bottom-style: solid;
+	border-bottom-width: 1px;
+	-moz-border-bottom-width: 1px;
+	border-left-color: #204AA1;
+	-moz-border-left-color: #204AA1;
+	border-left-style: solid;
+	-moz-border-left-style: solid;
+	border-left-width: 1px;
+	-moz-border-left-width: 1px;
+	border-right-color: #204AA1;
+	-moz-border-right-color: #204AA1;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #204AA1;
+	-moz-border-top-color: #204AA1;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #FFFFFF;
+	font-size: 40px;
+	line-height: 80px;
+	height: 80px;
+	margin: auto;
+	width: 200px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/******************************
+
+		RECAPTCHA ! 
+
+********************************/
+.recaptcha {
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.recaptcha_box {
+	margin: auto;
+	margin-top: 20px;
+	width: 320px;
+}
+
+.recaptcha label {
+	font-weight: bold;
+}
+
+/******************************
+
+	Wait_email_confirmation.jsp 
+
+********************************/
+.WaitingEmailConfirmContainer {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	position: relative;
+	margin: auto;
+	margin-top: 15%;
+	padding: 20px;
+	width: 700px;
+}
+
+.WaitingEmailConfirmContainer h1 {
+	margin-bottom: 20px;
+}
+
+.ThankSignupMessage {
+	margin-bottom: 20px;
+}
+
+/******************************
+
+	SearchUniversity.jsp
+
+********************************/
+.SubmitSearchUniProfCourse {
+	background: #FFFFFF;
+	display: inline-block;
+	border: solid 1px #DBDBDB;
+	font-size: 15px;
+	font-family: "Helvetica Neue", Arial, Verdana, Sans-ms;
+	font-style: thin;
+	height: 30px;
+	vertical-align: middle;
+	width: 400px;
+	padding: 2px 9px 2px 9px;
+	outline: 0;
+	vertical-align: middle;
+}
+
+/***********************************
+
+			Home Search
+			
+*************************************/
+.HomeSearchDisplayDynamic {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	margin-top: 10%;
+	position: relative;
+	font-size: 18px;
+	font-family: "Helvetica Neue", Arial, Verdana, Sans-ms;
+	font-style: normal;
+	margin: auto;
+	margin-bottom: 20px;
+	height: auto;
+	width: 600px;
+	padding: 15px;
+	outline: 0;
+}
+
+.UniqueElementSearchHome {
+	margin-left: 15px;
+}
+
+.HomeSearchDisplayDynamic li {
+	margin-bottom: 15px;
+}
+
+.ImageUniversitySearchResult,.ImageProfessorSearchResult,.ImageCourseSearchResult
+	{
+	border-bottom: 1px dotted #4F4F4F;
+	color: #204AA1;
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+.ImageUniversitySearchResult img,.ImageProfessorSearchResult img,.ImageCourseSearchResult img
+	{
+	height: 30px;
+	margin-right: 10px;
+	width: 30px;
+}
+
+.FormHomeSearch {
+	display: inline-block;
+	position: relative;
+	height: 35px;
+	margin-left: 100px;
+	line-height: 35px;
+	vertical-align: middle;
+	width: 400px;
+	line-height: 35px;
+}
+
+.FormHomeSearch form {
+	height: 35px;
+	line-height: 35px;
+	vertical-align: middle;
+	width: 400px;
+}
+
+.NoResult {
+	border: 3px solid #204AA1;
+	-moz-border: 3px solid #204AA1;
+	background-color: #FFF;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	margin: auto;
+	margin-top: 20px;
+	width: 600px;
+	padding: 15px;
+	outline: 0;
+}
+
+.NoResult span {
+	font-size: 20px;
+	color: #204AA1;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.NoResultDisplay {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.Error404Img {
+	height: 539px;
+	margin: 10px 0 5px 0;
+	width: 950px;
+}
+
+.Error404Text span {
+	color: #204AA1;
+	font-weight: bold;
+}
+
+.social_plug {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+
+.footer_top {
+	position: absolute;
+	left: 20px;
+}
+
+/********************************
+
+	Home buttons container 
+	
+**********************************/
+.MainContainerButtons {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.ButtonIndividualContainer {
+	background-color: #FFF;
+	border: 10px solid #FFF;
+	display: inline-block;
+	-moz-border-bottom-left-radius: 150px;
+	-moz-border-bottom-right-radius: 150px;
+	-moz-border-top-left-radius: 150px;
+	-moz-border-top-right-radius: 150px;
+	border-bottom-left-radius: 150px;
+	border-bottom-right-radius: 150px;
+	border-top-left-radius: 150px;
+	border-top-right-radius: 150px;
+	display: inline-block;
+	height: 200px;
+	margin: 20px 50px 10px 50px;
+	width: 200px;
+}
+
+.ButtonImgClickable img {
+	height: 100px;
+	width: 100px;
+}
+
+.ButtonImgClickable {
+	text-align: center;
+	padding-top: 30px;
+	margin: auto;
+	width: 130px;
+}
+
+.ButtonImgClickable img: hover {
+	cursor:pointer;
+	opacity: 0.7;
+	filter: alpha(opacity =   70);
+}
+
+.ButtonImgClickable h1 {
+	margin-top: 10px;
+}
+
+.ButtonIndividualContainer a {
+	width: 100%;
+	display: block;
+}
+
+/***********************************
+
+	Discover, Discuss and Post pages
+
+************************************/
+.DiscoverPageImg,.DiscussPageImg,.PostPageImg {
+	height: 30px;
+	width: 30px;
+}
+
+.DiscoverContainer,.DiscussContainer,.PostContainer {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10%;
+	position: relative;
+	width: 700px;
+}
+
+.DiscoverTopHead div,.DiscussTopHead div,.PostTopHead div {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.DiscoverTopHead,.DiscussTopHead,.PostTopHead {
+	border-bottom: solid 1px #E5E5E5;
+	padding-bottom: 5px;
+}
+
+.DiscoverLinks,.DiscussLinks,.PostLinks {
+	margin-top: 10px;
+}
+
+.DiscoverItemInd h2 a,.DiscussItemInd h2 a,.PostItemInd h2 a {
+	color: #204AA1;
+	font-weight: 400;
+}
+
+.DiscoverItemInd,.DiscussItemInd,.PostItemInd {
+	margin-bottom: 20px;
+}
+
+/***********************************
+
+	Under Construction !!!
+
+************************************/
+.UnderConstruction {
+	background-color: #FFF;
+	border: solid 1px #E5E5E5;
+	padding: 20px;
+	margin: auto;
+	margin-top: 10%;
+	position: relative;
+	width: 800px;
+}
+
+/***********************************
+
+	Under Construction !!!
+
+************************************/
+.AboutContainer h1 {
+	color: 204AA1;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.AboutUniivStory {
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	font-family: "Helvetica Neue", Arial, Verdana;
+	font-style: normal;
+	outline: 0;
+	height: auto;
+	margin: auto;
+	margin-top: 30px;
+	padding: 30px;
+	width: 700px;
+}
+
+.AboutUniivStory div,.AboutThibaudStory div,.AboutValentineStory div,.AboutTimotheeStory div,.AboutTobyStory div
+	{
+	margin-top: 15px;
+	line-height: 20px;
+	text-align: justify;
+}
+
+.AboutUniivStory h2,.AboutThibaudStory h2,.AboutValentineStory h2,.AboutTimotheeStory h2,.AboutTobyStory h2,.AboutPromotionStory h2
+	{
+	border-bottom: solid 1px #E5E5E5;
+	display: inline-block;
+	padding-bottom: 10px;
+	margin-right: 20px;
+	color: #204AA1;
+	padding-bottom: 10px;
+}
+
+.LeftContainterStory span a, .promo_list li span a {
+	color: #EA1861;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.LeftContainterStory span {
+	float: right;
+}
+
+.LeftContainterStory span a:hover, .promo_list li span a:hover {
+	color: #4F4F4F;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	-webkit-transition: all 1s ease-in-out;
+}
+
+.AboutThibaudStory h2 a,.AboutValentineStory h2 a,.AboutTimotheeStory h2 a,.AboutTobyStory h2 a
+	{
+	color: #204AA1;
+}
+
+.AboutThibaudStory,.AboutTimotheeStory,.AboutValentineStory,.AboutTobyStory,.AboutPromotionStory
+	{
+	background: #FFFFFF;
+	border: solid 1px #E5E5E5;
+	display: block;
+	font-family: "Helvetica Neue", Arial, Verdana;
+	font-weight: thin;
+	outline: 0;
+	height: auto;
+	margin: auto;
+	margin-top: 20px;
+	padding: 30px;
+	width: 700px;
+}
+
+.AboutPromotionStory div {
+	margin-top: 15px;
+}
+
+.AboutPromotionStory ul li {
+	list-style: circle;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+.AboutTop,.AboutMid {
+	margin: auto;
+	margin-top: 20px;
+	width: 700px;
+}
+
+.LeftContainterStory {
+	display: inline-block;
+	margin-bottom: 15px;
+	width: 500px;
+}
+
+.LeftContainterStoryPromo {
+	display: inline-block;
+	margin-bottom: 20px;
+	width: 400px;
+}
+
+.ImgUniqueStory,.ImgUniqueStoryPromo {
+	display: inline-block;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.ImgUniqueStory img {
+	height: 150px;
+	width: 150px;
+}
+
+.ImgUniqueStoryPromo img {
+	height: 144px;
+	width: 230px;
+}
+
+.promo_list li span {
+	float: right;
+}

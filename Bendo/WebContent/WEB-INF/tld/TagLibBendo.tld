@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xsi:schemaLocation="http://java.sun.com/xml/ns/javaee web-jsptaglibrary_2_5.xsd" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5">
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>BendoTags</shortname>
+	<!-- <info>Tags for bendo website</info> -->
+	<uri></uri>
+
+	<!-- TAGS -->
+	<tag>
+		<name>dropdown_button</name>
+		<tagclass>ca.bendo.taglib.DropdownButtonTag</tagclass>
+		<!-- <info>Dropdown button</info> -->
+		<attribute>
+			<name>custclass</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>dropdown</name>
+			<type>java.lang.Boolean</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>link</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>qsbar</name>
+		<tagclass>ca.bendo.taglib.tag.QuickSearchBarTag</tagclass>
+		<!-- <info>Quick search bar</info> -->
+	</tag>
+
+	<tag>
+		<name>translator</name>
+		<tagclass>ca.bendo.taglib.tag.TranslatorTag</tagclass>
+		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- <info>Translation key</info> -->
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+
+	<tag>
+		<name>tlink</name>
+		<tagclass>ca.bendo.taglib.tag.TLinkTag</tagclass>
+		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- <info>Translation key</info> -->
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>url</name>
+		<tagclass>ca.bendo.taglib.tag.UrlTag</tagclass>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>alertmsg</name>
+		<tagclass>ca.bendo.taglib.tag.AlertMessageTag</tagclass>
+	</tag>
+
+	<tag>
+		<name>dropdown</name>
+		<tagclass>ca.bendo.taglib.tag.dropdown.DropdownTag</tagclass>
+	</tag>
+
+	<tag>
+		<name>dropdownButton</name>
+		<tagclass>ca.bendo.taglib.tag.dropdown.DropdownButtonTag</tagclass>
+	</tag>
+
+	<tag>
+		<name>dropdownContent</name>
+		<tagclass>ca.bendo.taglib.tag.dropdown.DropdownContentTag</tagclass>
+	</tag>
+
+	<tag>
+		<name>dropdownElement</name>
+		<tagclass>ca.bendo.taglib.tag.dropdown.DropdownElementTag</tagclass>
+	</tag>
+
+
+	<!-- Input Element -->
+	<tag>
+		<name>input</name>
+		<tagclass>ca.bendo.taglib.tag.form.input.InputElementTag</tagclass>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>password</name>
+		<tagclass>ca.bendo.taglib.tag.form.input.password.PasswordTag</tagclass>
+		<attribute>
+			<name>required</name>
+			<type>java.lang.Boolean</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>placeholder</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>captcha</name>
+		<tagclass>ca.bendo.taglib.tag.form.input.Captcha</tagclass>
+	</tag>
+
+	<tag>
+		<name>select</name>
+		<tagclass>ca.bendo.taglib.tag.form.input.SelectTag</tagclass>
+		<attribute>
+			<name>options</name>
+			<type>java.lang.Map</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>card</name>
+		<tagclass>ca.bendo.taglib.tag.card.CardTag</tagclass>
+		<attribute>
+			<name>type</name>
+			<type>ca.bendo.taglib.tag.card.CardType</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.Long</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+
+
+	<tag>
+		<name>starRating</name>
+		<tagclass>ca.bendo.taglib.tag.StarRatingTag</tagclass>
+		<attribute>
+			<name>name</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>textarea</name>
+		<tagclass>ca.bendo.taglib.tag.form.input.TextAreaTag</tagclass>
+		<attribute>
+			<name>name</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>clazz</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>content</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>maxlength</name>
+			<type>java.lang.Integer</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>counterId</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>searchbar</name>
+		<tagclass>ca.bendo.taglib.tag.form.SearchBarTag</tagclass>
+		<attribute>
+			<name>placeholder</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>
+

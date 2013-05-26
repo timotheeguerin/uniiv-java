@@ -1,0 +1,1 @@
+<c:import url="views/search/filter.jsp"></c:import>

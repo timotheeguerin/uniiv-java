@@ -1,0 +1,284 @@
+div.signup_terms {
+	font-size: 9pt;
+}
+
+div.signup_terms a {
+	color: #333;
+	text-decoration: underline;
+}
+
+form.input_style_1 .form_line {
+	margin: 10px 10px 10px 10px;
+}
+
+form.input_style_1 .two_input {
+	display: inline-block;
+	width: 190px;
+}
+
+form.input_style_1 input {
+	-webkit-box-shadow: rgb(255, 255, 255) 0px 1px 1px 0px;
+	border-color: #999 #ccc #ccc #999;
+	background-color: rgb(249, 250, 251);
+	border-width: 1px;
+	padding: 4px 6px;
+	/* 	width: 100%; */
+	font-size: 11.5px;
+	heigh: 20px;
+	color: #555555;
+	-webkit-border-radius: 4px;
+	border-color: #999 #ccc #ccc #999;
+	width: 100%;
+}
+
+form
+
+
+.input_style_1
+
+ 
+
+input
+
+
+:invalid
+
+
+:not
+
+ 
+
+(
+[
+type
+=
+submit
+]
+
+ 
+
+)
+{
+border-color
+
+
+:
+
+ 
+
+red
+
+
+;
+}
+form
+
+
+.input_style_1
+
+ 
+
+input
+
+
+:valid
+
+
+:not
+
+ 
+
+(
+[
+type
+=
+submit
+]
+
+ 
+
+)
+{
+border-color
+
+
+:
+
+ 
+
+green
+
+
+;
+}
+div.btn_sign_up_form,.btn_login_form {
+	width: 150px;
+	margin: auto;
+}
+
+div.btn_sign_up_form input,.btn_login_form input {
+	display: inline-block;
+	position: relative;
+	top: 0px;
+	right: 10px;
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background: #f081ad; /* Old browsers */
+	background: -moz-linear-gradient(top, #f081ad 0%, #e91760 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f081ad), color-stop(100%, #e91760) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f081ad 0%, #e91760 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f081ad 0%, #e91760 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f081ad 0%, #e91760 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(                        startColorstr='#f081ad', endColorstr='#e91760', GradientType=0 ); /* IE6-9 */
+	border-bottom-color: #B61149;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-left-color: #B61149;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: #B61149;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: #B61149;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Helvetica Neue", Arial;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: thin;
+	height: 40px;
+	line-height: 18px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+	text-align: center;
+	text-decoration: none;
+	word-spacing: 2px;
+}
+
+.btn_sign_up_form input:hover,.btn_login_form input:hover {
+	background-color: rgba(0, 0, 0, 0);
+	background: #e91760; /* Old browsers */
+	background: -moz-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e91760), color-stop(100%, #f081ad) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(                        startColorstr='#e91760', endColorstr='#f081ad', GradientType=0 ); /* IE6-9 */
+}
+
+.btn_sign_up_form input:active,.btn_login_form input:active {
+	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
+	background-color: rgba(0, 0, 0, 0);
+	background: #e91760; /* Old browsers */
+	background: -moz-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e91760), color-stop(100%, #f081ad) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #e91760 0%, #f081ad 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(                        startColorstr='#e91760', endColorstr='#f081ad', GradientType=0 ); /* IE6-9 */
+}
+
+/**************************************
+
+			LOGIN FORM
+
+****************************************/
+.login_form input_style_1 {
+	-webkit-box-shadow: rgb(255, 255, 255) 0px 1px 1px 0px;
+	border-color: #999 #ccc #ccc #999;
+	background-color: rgb(249, 250, 251);
+	border-width: 1px;
+	padding: 4px 6px;
+	/* 	width: 100%; */
+	font-size: 11.5px;
+	heigh: 20px;
+	color: #555555;
+	-webkit-border-radius: 4px;
+	border-color: #999 #ccc #ccc #999;
+	width: 100%;
+}
+
+#login {
+	width: 404px;
+	padding-bottom: 2px;
+	background: #FFFFFF;
+	border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.7);
+}
+
+.SubmitNewUniversityProfessorAdded {
+	
+}
+
+.styledRadio {
+	display: inline-block;
+	background-size: 100% 100%;
+	margin: 0 5px 0 5px;
+}
+
+.styledRadio.checked {
+	border: 1px solid black;
+}
+
+/************************************************************************
+*					AUTOCOMPLETE
+*************************************************************************/
+.autocomplete-suggestions {
+	border: 1px solid #999;
+	background: #FFF;
+	overflow: auto;
+}
+
+.autocomplete-suggestion {
+	padding: 2px 5px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.autocomplete-selected {
+	background: #F0F0F0;
+}
+
+.autocomplete-suggestions strong {
+	font-weight: normal;
+	color: #3399FF;
+}

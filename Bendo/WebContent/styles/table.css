@@ -1,0 +1,67 @@
+ul.table {
+	display: inline-block;
+}
+
+li.headrow {
+	background-color: #DFDFDF;
+	height: 50px;
+	width: auto;
+}
+
+li.headrow>ul>li {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	padding: 0 5px 0 5px
+}
+
+li.row {
+	background-color: #FFF;
+	border-bottom: #DBDBDB solid 1px;
+	width: auto;
+	height: 50px;
+}
+
+li.row>ul>li {
+	background-color: #FFFFFF;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	width: 120px;
+	display: inline-block;
+	text-align: center;
+	overflow: hidden;
+	padding: 0 5px 0 5px
+}
+
+li.row>ul:hover {
+	cursor: pointer;
+	background-color: #F1F1F1;
+}
+
+li.row>ul:hover>li {
+	background-color: #F1F1F1
+}
+
+li.headrow>ul>li.xsmall,li.row>ul>li.xsmall {
+	width: 30px;
+}
+
+li.headrow>ul>li.small,li.row>ul>li.small {
+	width: 70px;
+}
+
+li.headrow>ul>li.normal,li.row>ul>li.normal {
+	width: 120px;
+}
+
+li.headrow>ul>li.large,li.row>ul>li.large {
+	width: 200px;
+}
+
+li.headrow>ul>li.xlarge,li.row>ul>li.xlarge {
+	width: 300px;
+}

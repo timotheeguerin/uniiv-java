@@ -1,0 +1,1 @@
+<h1><b:translator value="more_is_coming"/></h1>

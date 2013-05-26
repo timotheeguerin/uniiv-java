@@ -1,0 +1,255 @@
+/**
+ * 
+ */
+package ca.bendo.db.dao;
+
+import java.util.List;
+
+import javax.persistence.Table;
+
+import org.hibernate.Filter;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ca.bendo.db.entity.location.Country;
+
+/**
+ * @author Timothée Guérin
+ * @version Bendo
+ * 
+ *          <b>HibernateDAO</b>
+ *          <p>
+ *          </p>
+ * 
+ * @param <T>
+ *            type of the mapping entity
+ */
+public class HibernateDAO<T>
+{
+	/**
+	 * 
+	 */
+	private Class<T> type;
+
+	/**
+	 * 
+	 */
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	/**
+	 * 
+	 */
+	private long languageId;
+
+	/**
+	 * 
+	 * @param language
+	 *            languageId
+	 */
+	public void enableTranslation(final long language)
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", language);
+	}
+
+	/**
+	 * @return list all the entity
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> list()
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+		return getSession().createCriteria(type).list();
+	}
+
+	/**
+	 * @param number
+	 *            maximum number to retreive
+	 * @return list all the entity
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> listN(final int number)
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+		return getSession().createCriteria(type).setMaxResults(number).list();
+	}
+
+	/**
+	 * @param first
+	 *            first number
+	 * @param number
+	 *            maximum number to retrieve
+	 * @return list all the entity
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> listNFrom(final int first, final int number)
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+		return getSession().createCriteria(type).setFirstResult(first).setMaxResults(number).list();
+	}
+
+	/**
+	 * @param id
+	 *            of the entity to get.
+	 * @return entity
+	 */
+
+	@SuppressWarnings("unchecked")
+	public final T getById(final Long id)
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+
+		Object result = getSession().createCriteria(type).add(Restrictions.idEq(id)).uniqueResult();
+
+		if (type.isInstance(result))
+		{
+			return (T) result;
+		} else
+		{
+			return null;
+		}
+	}
+
+	/**
+	 * @param id
+	 *            of the country to remove.
+	 * @return if delete was succesfull
+	 */
+
+	public final boolean delete(final long id)
+	{
+		Object result = getSession().get(type, id);
+
+		if (result == null)
+		{
+			return false;
+		} else
+		{
+			getSession().delete(result);
+			return true;
+		}
+	}
+
+	/**
+	 * 
+	 * @param entity
+	 *            New Entity.
+	 */
+
+	public final void saveOrUpdate(final T entity)
+	{
+		getSession().saveOrUpdate(entity);
+
+	}
+
+	/**
+	 * 
+	 * @param entity
+	 *            New Entity.
+	 */
+
+	public final void persist(final T entity)
+	{
+		getSession().persist(entity);
+
+	}
+
+	/**
+	 * 
+	 * @param entity
+	 *            New Entity.
+	 */
+
+	public final void update(final T entity)
+	{
+		getSession().update(entity);
+	}
+
+	/**
+	 * @param entity
+	 *            entity to add
+	 */
+	public void add(final T entity)
+	{
+		getSession().save(entity);
+	}
+
+	/**
+	 * @return the sessionFactory
+	 */
+	public SessionFactory getSessionFactory()
+	{
+		return sessionFactory;
+	}
+
+	/**
+	 * @param sessionFactory
+	 *            the sessionFactory to set
+	 */
+	public void setSessionFactory(final SessionFactory sessionFactory)
+	{
+		this.sessionFactory = sessionFactory;
+	}
+
+	/**
+	 * 
+	 * @param clazz
+	 *            Table class
+	 * @return id column nam
+	 */
+	protected String getId(final Class<?> clazz)
+	{
+		Table table = Country.class.getAnnotation(Table.class);
+		return "id_" + table.name();
+	}
+
+	/**
+	 * 
+	 * @return the database connection session
+	 */
+	protected Session getSession()
+	{
+		return getSessionFactory().getCurrentSession();
+	}
+
+	/**
+	 * @return the languageId
+	 */
+	public long getLanguageId()
+	{
+		return languageId;
+	}
+
+	/**
+	 * @param languageId
+	 *            the languageId to set
+	 */
+	public void setLanguageId(final long languageId)
+	{
+		this.languageId = languageId;
+	}
+
+	/**
+	 * @return the type
+	 */
+	protected Class<T> getType()
+	{
+		return type;
+	}
+
+	/**
+	 * @param type
+	 *            the type to set
+	 */
+	protected void setType(final Class<T> type)
+	{
+		this.type = type;
+	}
+}

@@ -1,0 +1,413 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ca.bendo</groupId>
+	<artifactId>ca.bendo</artifactId>
+	<packaging>war</packaging>
+
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Uniiv</name>
+	<url>http://uniiv.com</url>
+
+
+	<build>
+		<finalName>Bendo</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<!-- <testSourceDirectory>tests</testSourceDirectory> -->
+		<!-- <testResources> -->
+		<!-- <testResource> -->
+		<!-- <directory>tests</directory> -->
+		<!-- <excludes> -->
+		<!-- <exclude>**/*.java</exclude> -->
+		<!-- </excludes> -->
+		<!-- </testResource> -->
+		<!-- </testResources> -->
+
+		<!-- To use the plugin goals in your POM or parent POM -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<webXml>WebContent\WEB-INF\web.xml</webXml>
+					<webappDirectory>WebContent</webappDirectory>
+					<webResources>
+						<resource>
+							<directory>${project.build.directory}/${project.build.finalName}/ressources</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>compressyui</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/${project.build.finalName}/js/</outputDirectory>
+							<sourceDirectory>WebContent/scripts</sourceDirectory>
+							<!-- <linebreakpos>-1</linebreakpos> -->
+							<force>true</force>
+							<excludes>
+								<exclude>script.min.js</exclude>
+								<exclude>external.min.js</exclude>
+							</excludes>
+							<!-- <warSourceDirectory>${basedir}/WebContent</warSourceDirectory> -->
+							<!-- <webappDirectory>${project.build.directory}/${project.build.finalName}/webapp</webappDirectory> -->
+
+							<aggregations>
+								<aggregation>
+
+									<output>${project.build.directory}/${project.build.finalName}/ressources/scripts/script.min.js</output>
+									<inputDir>${project.build.directory}/${project.build.finalName}/js/</inputDir>
+
+									<includes>
+										<include>form-min.js</include>
+										<include>general-min.js</include>
+										<include>filter-min.js</include>
+										<include>dropdown-min.js</include>
+										<script>loading-min.js</script>
+									</includes>
+								</aggregation>
+								<aggregation>
+									<output>${project.build.directory}/${project.build.finalName}/ressources/scripts/external.min.js</output>
+									<inputDir>${project.build.directory}/${project.build.finalName}/js/</inputDir>
+
+									<includes>
+										<include>jquery-min.js</include>
+										<include>jquery-ui-1.8.23.custom.min-min.js</include>
+										<include>jquery.autocomplete-min.js</include>
+										<include>jquery.simplemodal-1.4.4-min.js</include>
+										<include>jquery.fittext-min.js</include>
+										<include>jquery.radiobutton-min.js</include>
+										<include>jquery.fittext-min.js</include>
+									</includes>
+								</aggregation>
+
+
+							</aggregations>
+						</configuration>
+					</execution>
+					<execution>
+						<id>compressyui.css</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/${project.build.finalName}/css/</outputDirectory>
+							<sourceDirectory>WebContent/styles</sourceDirectory>
+							<excludes>
+								<exclude>style.min.css</exclude>
+							</excludes>
+							<!-- <linebreakpos>-1</linebreakpos> -->
+							<force>true</force>
+							<!-- <warSourceDirectory>${basedir}/WebContent</warSourceDirectory> -->
+							<!-- <webappDirectory>${project.build.directory}/${project.build.finalName}/webapp</webappDirectory> -->
+
+							<aggregations>
+								<aggregation>
+									<output>${project.build.directory}/${project.build.finalName}/ressources/styles/style.min.css</output>
+									<inputDir>${project.build.directory}/${project.build.finalName}/css/</inputDir>
+									<includes>
+										<include>*.css</include>
+									</includes>
+								</aggregation>
+							</aggregations>
+						</configuration>
+					</execution>
+
+				</executions>
+
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.14.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Shared version number properties -->
+	<properties>
+		<org.springframework.version>3.2.1.RELEASE</org.springframework.version>
+		<tiles.version>2.2.2</tiles.version>
+		<jackson.version>2.2.1</jackson.version>
+		<velocity.version>1.7</velocity.version>
+		<slf4j.version>1.5.8</slf4j.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Core utilities used by other modules. Define this if you use Spring Utility APIs (org.springframework.core.*/org.springframework.util.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Expression Language (depends on spring-core) Define this if you use Spring Expression APIs (org.springframework.expression.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Bean Factory and JavaBeans utilities (depends on spring-core) Define this if you use Spring Bean APIs (org.springframework.beans.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Aspect Oriented Programming (AOP) Framework (depends on spring-core, spring-beans) Define this if you use Spring AOP 
+			APIs (org.springframework.aop.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Application Context (depends on spring-core, spring-expression, spring-aop, spring-beans) This is the central artifact 
+			for Spring's Dependency Injection Container and is generally always defined -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Various Application Context utilities, including EhCache, JavaMail, Quartz, and Freemarker integration Define this 
+			if you need any of these integrations -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Transaction Management Abstraction (depends on spring-core, spring-beans, spring-aop, spring-context) Define this 
+			if you use Spring Transactions or DAO Exception Hierarchy (org.springframework.transaction.*/org.springframework.dao.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, spring-tx) Define this if you use 
+			Spring's JdbcTemplate API (org.springframework.jdbc.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA and iBatis. (depends on spring-core, spring-beans, 
+			spring-context, spring-tx) Define this if you need ORM (org.springframework.orm.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Object-to-XML Mapping (OXM) abstraction and integration with JAXB, JiBX, Castor, XStream, and XML Beans. (depends 
+			on spring-core, spring-beans, spring-context) Define this if you need OXM (org.springframework.oxm.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Web application development utilities applicable to both Servlet and Portlet Environments (depends on spring-core, 
+			spring-beans, spring-context) Define this if you use Spring MVC, or wish to use Struts, JSF, or another web framework with 
+			Spring (org.springframework.web.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Spring MVC for Servlet Environments (depends on spring-core, spring-beans, spring-context, spring-web) Define this 
+			if you use Spring MVC with a Servlet Container such as Apache Tomcat (org.springframework.web.servlet.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Spring MVC for Portlet Environments (depends on spring-core, spring-beans, spring-context, spring-web) Define this 
+			if you use Spring MVC with a Portlet Container (org.springframework.web.portlet.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- Support for testing Spring applications with tools such as JUnit and TestNG This artifact is generally always defined 
+			with a 'test' scope for the integration testing framework and unit testing stubs -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+		<dependency>
+
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>${tiles.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.1.9.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>20030825.184428</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>20030825.183949</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.24</version>
+		</dependency>
+		<dependency>
+			<groupId>net.tanesha.recaptcha4j</groupId>
+			<artifactId>recaptcha4j</artifactId>
+			<version>0.0.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.rjeschke</groupId>
+			<artifactId>txtmark</artifactId>
+			<version>0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${velocity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	</dependencies>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<name>oss.sonatype.org</name>
+			<id>oss.sonatype.org</id>
+			<url>http://oss.sonatype.org/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<profiles>
+		<profile>
+			<id>windows_profile</id>
+			<activation>
+				<os>
+					<family>Windows</family>
+				</os>
+			</activation>
+			<properties>
+				<toolsjar>${java.home}/../lib/tools.jar</toolsjar>
+			</properties>
+		</profile>
+		<profile>
+			<id>osx_profile</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<properties>
+				<toolsjar>${java.home}/../Classes/classes.jar</toolsjar>
+			</properties>
+		</profile>
+	</profiles>
+	<organization>
+		<name>Uniiv</name>
+		<url>http://uniiv.com</url>
+	</organization>
+</project>
