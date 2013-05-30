@@ -41,7 +41,7 @@ public class LogoutController
 	public final String login(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		UserSession userSession = UserSession.getSession(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (!userSession.isLogin())
 		{
 			return "redirect:" + Translator.getTranslator(request).getLink("home", languageId);

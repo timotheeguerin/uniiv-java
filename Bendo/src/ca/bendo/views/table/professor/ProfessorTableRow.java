@@ -29,7 +29,7 @@ public class ProfessorTableRow extends TableRow
 	 */
 	public ProfessorTableRow()
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**

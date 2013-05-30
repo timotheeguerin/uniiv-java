@@ -63,7 +63,7 @@ public class Captcha extends TagSupport
 			out.println(result);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

@@ -8,7 +8,6 @@ import javax.servlet.ServletContextListener;
 
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import ca.bendo.config.BendoConfig;
@@ -56,7 +55,7 @@ public class BendoContextListener implements ServletContextListener
 	public final void contextInitialized(final ServletContextEvent event)
 	{
 
-		WebApplicationContext springContext = WebApplicationContextUtils.getWebApplicationContext(event
+		WebApplicationContextUtils.getWebApplicationContext(event
 				.getServletContext());
 
 		log.info("BendoConfig loading ...");

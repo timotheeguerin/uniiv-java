@@ -136,8 +136,8 @@ public class CourseHandler
 	 */
 	public boolean setupNewCoursePage(final long universityId, final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		programDAO.enableTranslation(languageId);
 		universityDAO.setLanguageId(languageId);
 		University university = universityDAO.getById(universityId);
@@ -196,7 +196,7 @@ public class CourseHandler
 	public boolean setupUniversityCourseListPage(final long universityId, final HttpServletRequest request)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		University university = universityDAO.getById(universityId);
 		if (university == null)
 		{

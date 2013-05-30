@@ -59,7 +59,7 @@ public class ForgetPasswordController
 	@RequestMapping(value = "/resetpassword/sendemail", method = RequestMethod.POST)
 	public final String handleSendEmail(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		long languageId = Language.load(request);
+		long languageId = Language.loadId(request);
 		Translator translator = Translator.getTranslator(request);
 		if (forgetPasswordHandler.handleSendEmail(request))
 		{
@@ -110,7 +110,7 @@ public class ForgetPasswordController
 	@RequestMapping(value = "/resetpassword", method = RequestMethod.POST)
 	public final String handleChooseNewPassword(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		long languageId = Language.load(request);
+		long languageId = Language.loadId(request);
 		Translator translator = Translator.getTranslator(request);
 		if (forgetPasswordHandler.handleNewPassword(request))
 		{

@@ -28,6 +28,10 @@ public class StarRatingTag extends TagSupport
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = -3346165934056625736L;
+	/**
+	 * 
+	 */
 	private static final int RATING_NUMBER = 5;
 	/**
 	 * 
@@ -45,7 +49,7 @@ public class StarRatingTag extends TagSupport
 
 		JspWriter out = pageContext.getOut();
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
-		Long lanuageId = Language.load((HttpServletRequest) pageContext.getRequest());
+		Long lanuageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		StringBuilder result = new StringBuilder();
 		result.append("<div class='star_rating_content'>");
 
@@ -64,7 +68,6 @@ public class StarRatingTag extends TagSupport
 			out.print(result);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

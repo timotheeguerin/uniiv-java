@@ -30,7 +30,7 @@ public class HashedPassword
 	 */
 	public HashedPassword()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class HashedPassword
 	@Override
 	public int hashCode()
 	{
-		// TODO Auto-generated method stub
+		
 		return super.hashCode();
 	}
 }

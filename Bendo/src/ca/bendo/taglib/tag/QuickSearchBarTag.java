@@ -38,8 +38,10 @@ public class QuickSearchBarTag extends TagSupport
 
 			// out.println("<div>");
 			out.println("<form id='search_form' action='#' method='post'>");
-			out.println("<input type='search-section' id='h_search_section' class='search_section' name='search_input' id='search_input' title='Search'/>");
-			out.println("<input type='submit' id='h_submit_icon' class='submit_icon'name='search_icon' id='search_input' title='Search icon' value=''/>");
+			out.println("<input type='search-section' id='h_search_section' "
+					+ "class='search_section' name='search_input' id='search_input' title='Search'/>");
+			out.println("<input type='submit' id='h_submit_icon' "
+					+ "class='submit_icon'name='search_icon' id='search_input' title='Search icon' value=''/>");
 			out.println("</form>");
 
 		} catch (IOException e)

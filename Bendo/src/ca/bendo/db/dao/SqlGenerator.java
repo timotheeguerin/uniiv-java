@@ -22,7 +22,7 @@ public final class SqlGenerator
 	 */
 	private SqlGenerator()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**

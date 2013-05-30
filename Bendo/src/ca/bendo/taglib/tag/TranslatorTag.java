@@ -7,11 +7,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.DynamicAttributes;
 import javax.servlet.jsp.tagext.TagSupport;
 
+import ca.bendo.db.entity.lang.Language;
 import ca.bendo.translation.translation.Translator;
 
 /**
@@ -51,7 +53,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	{
 		JspWriter out = pageContext.getOut();
 		Translator trans = (Translator) pageContext.getRequest().getAttribute("translator");
-		Long languageId = (Long) pageContext.getRequest().getAttribute("languageId");
+		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		String result = "";
 		if (tagAttributes.size() > 0)
 		{
@@ -71,7 +73,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 			out.print(result);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

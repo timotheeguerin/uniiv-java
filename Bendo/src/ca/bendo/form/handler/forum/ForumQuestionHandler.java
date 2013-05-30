@@ -3,6 +3,7 @@
  */
 package ca.bendo.form.handler.forum;
 
+import java.security.acl.Group;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.context.request.RequestScope;
 
 import ca.bendo.db.dao.forum.ForumContentDAO;
 import ca.bendo.db.dao.forum.ForumGroupDAO;
@@ -21,7 +21,7 @@ import ca.bendo.db.entity.forum.ForumGroup;
 import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.db.entity.forum.ForumTag;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.form.entity.forum.ForumQuestionEntity;
+import ca.bendo.form.entity.forum.ForumQuestionForm;
 import ca.bendo.session.UserSession;
 
 /**
@@ -57,14 +57,47 @@ public class ForumQuestionHandler
 	private ForumContentDAO contentDAO;
 
 	/**
+	 * @param request
+	 *            Request
+	 * @param questionForm
+	 *            Question form
+	 */
+	public void handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
+	{
+
+	}
+
+	/**
+	 * @param request
+	 *            Request
+	 * @param questionForm
+	 *            Question form
+	 * @param groupId
+	 *            GroupId
+	 */
+	public void handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
+			final long groupId)
+	{
+		ForumGroup group = groupDAO.getById(groupId);
+		if (group == null)
+		{
+			handleNewQuestion(request, questionForm);
+		}
+		handleNewQuestion(request, questionForm, group.getGeneratedTags());
+	}
+
+	/**
 	 * 
 	 * @param request
-	 *            Request Group id
+	 *            Request
+	 * @param questionForm
+	 *            Question form
 	 * @param presetTags
 	 *            Tags list containg the hidden tags
 	 * @return boolean if the question was successful asked
 	 */
-	public boolean handleNewQuestion(final HttpServletRequest request, final List<ForumTag> presetTags)
+	public boolean handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
+			final List<ForumTag> presetTags)
 	{
 		UserSession session = UserSession.getSession(request);
 		User user = session.getUser();
@@ -72,17 +105,8 @@ public class ForumQuestionHandler
 		{
 			return false;
 		}
-
-		ForumQuestionEntity entity = new ForumQuestionEntity();
-		entity.setup(request);
-		if (!entity.isValid())
-		{
-			entity.setupErrorsDisplay(request);
-			entity.setupForDisplay(request);
-			request.setAttribute("newForumQuestionEntity", entity);
-		}
-
-		return createQuestion(entity.getTitle(), entity.getContent(), presetTags, user);
+		
+		return createQuestion(questionForm.getTitle(), questionForm.getContent(), presetTags, user);
 	}
 
 	/**
@@ -136,4 +160,5 @@ public class ForumQuestionHandler
 		request.setAttribute("group", group);
 		return true;
 	}
+
 }

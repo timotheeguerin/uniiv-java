@@ -1,3 +1,5 @@
+<!-- TODO -->
+
 <c:set var="entity" value="${requestScope.inputEmailEntity}" scope="page" />
 <c:import url="views/error.jsp" />
 <form action='<b:url value="/resetpassword/sendemail"/>' method="POST">

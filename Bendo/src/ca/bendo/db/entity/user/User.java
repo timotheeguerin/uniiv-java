@@ -4,6 +4,7 @@
 package ca.bendo.db.entity.user;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -91,9 +92,15 @@ public class User
 	/**
 	 * 
 	 */
+	@Column(name = "time_created")
+	private Date timeCreated;
+
+	/**
+	 * 
+	 */
 	public User()
 	{
-		// TODO Auto-generated constructor stub
+		//
 	}
 
 	/**
@@ -273,5 +280,22 @@ public class User
 	{
 		this.permissions = permissions;
 	}
+
+	/**
+	 * @return the timeCreated
+	 */
+	public Date getTimeCreated()
+	{
+		return timeCreated;
+	}
+
+	/**
+	 * @param timeCreated the timeCreated to set
+	 */
+	public void setTimeCreated(final Date timeCreated)
+	{
+		this.timeCreated = timeCreated;
+	}
+	
 
 }

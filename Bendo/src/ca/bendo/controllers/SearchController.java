@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ca.bendo.db.dao.program.UniversityProgramDAO;
 import ca.bendo.search.FilterSystemLoader;
 import ca.bendo.search.handler.SearchQueryHandler;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -62,7 +61,7 @@ public class SearchController extends BendoController
 		filterSystemLoader.loadFilters(request);
 		System.out.println("HomeController: Passing through...");
 
-		Translator trans = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 
 		return "views/search/searchFilter";
 	}
@@ -81,7 +80,7 @@ public class SearchController extends BendoController
 	{
 		System.out.println("HomeController: Passing through...");
 
-		Translator translator = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 
 		handler.handle(request);
 

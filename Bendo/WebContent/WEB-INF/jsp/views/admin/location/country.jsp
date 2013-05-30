@@ -10,7 +10,7 @@
 			value="${requestScope.country.getCountry()}" />
 		<b:input name="submit_updcountry_check" type="hidden" title=""
 			value="" />
-		<b:sumbit value="Submit" />
+		
 	</form>
 </c:if>
 <form class="input_type1 signup_form" action="" method="POST">
@@ -18,7 +18,7 @@
 	<b:input name="country" title="Country: " type="text" value="" />
 	<b:input name="submit_signup_check" type="hidden" title="" value="" />
 	<b:input name="submit_newcountry_check" type="hidden" title="" value="" />
-	<b:sumbit value="Submit" />
+
 </form>
 
 <table class="adminvalues">

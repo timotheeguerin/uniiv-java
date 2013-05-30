@@ -57,7 +57,7 @@ public class SignupController extends BendoController
 	{
 		// init(request);
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (getUserSession().isLogin())
 		{
 			return "redirect:" + translator.getLink("home", languageId);
@@ -80,7 +80,7 @@ public class SignupController extends BendoController
 	{
 		Translator translator = Translator.getTranslator(request);
 
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		// If the user is login redirect to home page
 		if (getUserSession().isLogin())
 		{
@@ -148,14 +148,14 @@ public class SignupController extends BendoController
 	public final String signupConfirmation(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		UserSession userSession = (UserSession) request.getAttribute("userSession");
 		if (!userSession.hasPermission("wait_email_confirmation"))
 		{
 			return "redirect:" + translator.getLink("home", languageId);
 		}
 
-		Translator trans = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 
 		return "views/wait_email_confirmation";
 	}

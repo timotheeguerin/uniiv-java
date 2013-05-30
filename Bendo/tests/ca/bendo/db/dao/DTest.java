@@ -34,6 +34,9 @@ import ca.bendo.db.entity.program.UniversityProgram;
 public class DTest
 {
 
+	/**
+	 * 
+	 */
 	@Autowired
 	private UniversityProgramDAO dao;
 
@@ -64,7 +67,7 @@ public class DTest
 	 * @param dao
 	 *            the dao to set
 	 */
-	public void setDao(UniversityProgramDAO dao)
+	public void setDao(final UniversityProgramDAO dao)
 	{
 		this.dao = dao;
 	}

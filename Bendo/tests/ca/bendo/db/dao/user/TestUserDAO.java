@@ -45,7 +45,7 @@ public class TestUserDAO
 	@Test
 	public void testListUser() throws SQLException
 	{
-		User users = userDAO.getById(53L);
+		User users = userDAO.getById(1L);
 		assertTrue(users != null);
 
 		System.out.println(users.getEmail() + " " + users.getPassword());

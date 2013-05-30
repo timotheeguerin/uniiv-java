@@ -128,7 +128,7 @@ public class NewUserEntity extends Entity
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(String lastName)
+	public final void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}

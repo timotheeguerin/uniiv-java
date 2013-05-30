@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.search.FilterSystemLoader;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * Handles requests for the application home page.
@@ -46,7 +45,7 @@ public class HomeController
 	{
 		System.out.println("HomeController: Passing through...");
 
-		Translator trans = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 
 		Properties p = new Properties();
 		p.setProperty("test1", "test1value");

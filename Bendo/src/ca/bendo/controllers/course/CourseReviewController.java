@@ -79,7 +79,7 @@ public class CourseReviewController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 
@@ -115,7 +115,7 @@ public class CourseReviewController
 	{
 		UserWarning.needValidUser(request);
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (!reviewHandler.setupNewReviewPage(universityId, courseId, request))
 		{
 			return "redirect:" + translator.getLink("new_course", languageId) + "?err_no_course_with_id=" + courseId;

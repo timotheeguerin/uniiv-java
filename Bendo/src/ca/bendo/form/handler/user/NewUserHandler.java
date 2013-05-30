@@ -83,7 +83,7 @@ public class NewUserHandler
 	 */
 	public boolean handle(final HttpServletRequest request)
 	{
-		long languageId = Language.load(request);
+		long languageId = Language.loadId(request);
 		/**
 		 * List of all errors in the signup form.
 		 */
@@ -131,7 +131,7 @@ public class NewUserHandler
 	 */
 	private void sendConfirmationEmail(final HttpServletRequest request, final UserConfirmation confirmation)
 	{
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		/* next, get the Template */
 		Template t = Velocity.getTemplate("email/signup_confirmation.vm");
 

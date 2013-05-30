@@ -126,7 +126,7 @@ public class ProfessorUniversityController
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (professorUniversityHandler.handle(String.valueOf(professorId), request))
 		{
 			String url = "/professor/" + professorId;
@@ -154,7 +154,7 @@ public class ProfessorUniversityController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (!professorUniversityHandler.setupNewProfessorUniversityPage(professorId, request))
 		{
 			return "redirect:" + translator.getLink("new_professor", languageId);

@@ -42,7 +42,7 @@ public class UrlTag extends TagSupport
 
 		Translator translator = Translator.getTranslator((HttpServletRequest) pageContext.getRequest());
 
-		Long languageId = Language.load((HttpServletRequest) pageContext.getRequest());
+		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		String result = "";
 		if (translator != null)
 
@@ -54,7 +54,7 @@ public class UrlTag extends TagSupport
 			out.print(result);
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

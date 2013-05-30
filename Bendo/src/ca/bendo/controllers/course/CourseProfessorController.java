@@ -144,7 +144,7 @@ public class CourseProfessorController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 

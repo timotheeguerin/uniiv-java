@@ -63,15 +63,12 @@ public class Entity
 
 				} catch (IllegalArgumentException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalAccessException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SecurityException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
@@ -109,18 +106,16 @@ public class Entity
 
 				} catch (IllegalArgumentException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalAccessException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (NoSuchFieldException e)
 				{
 					e.printStackTrace();
 				} catch (SecurityException e)
 				{
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 
@@ -249,7 +244,6 @@ public class Entity
 			if (annotation != null)
 			{
 				String name = annotation.name();
-				EntityType type = annotation.type();
 
 				String value = request.getParameter(name);
 
@@ -260,15 +254,13 @@ public class Entity
 
 				} catch (IllegalArgumentException e)
 				{
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				} catch (IllegalAccessException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (SecurityException e)
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 

@@ -17,7 +17,6 @@ import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.json.AutoCompleteJson;
 import ca.bendo.page.handler.UniversityTDS;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -53,8 +52,8 @@ public class UniversityController
 	public final String universityPage(@PathVariable(value = "uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		universityHandler.setLanguageId(languageId);
 		University university = universityHandler.setupUniversityPage(universityId, request);
 		if (university == null)

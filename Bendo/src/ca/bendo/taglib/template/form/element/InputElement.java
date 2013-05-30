@@ -252,7 +252,7 @@ public class InputElement extends FormElement
 	 * @param placeholder
 	 *            the placeholder to set
 	 */
-	public final void setPlaceholder(String placeholder)
+	public final void setPlaceholder(final String placeholder)
 	{
 		this.placeholder = placeholder;
 	}

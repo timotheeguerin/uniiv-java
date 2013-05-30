@@ -90,7 +90,7 @@ public class ProfessorUniversityHandler
 	public boolean setupProfessorInUniversityPage(final long universityId, final HttpServletRequest request)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		University university = universityDAO.getById(universityId);
 		if (university == null)
 		{
@@ -113,7 +113,7 @@ public class ProfessorUniversityHandler
 		for (ProfessorUniversity professor : professors)
 		{
 			String link = translator.translateUrl("/professor/" + professor.getProfessor().getId(), languageId);
-			ProfessorListElement element = new ProfessorListElement();
+			new ProfessorListElement();
 			ProfessorRatingAverage ratings = professorRatingDAO.getProfessorRatingsMean(professor.getProfessor()
 					.getId());
 			ProfessorTableRow row = (ProfessorTableRow) table.createRow(ProfessorTableRow.class, link);

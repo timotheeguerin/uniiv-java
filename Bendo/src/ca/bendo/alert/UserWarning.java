@@ -26,7 +26,7 @@ public final class UserWarning
 	 */
 	private UserWarning()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**

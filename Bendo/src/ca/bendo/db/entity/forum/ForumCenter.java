@@ -64,7 +64,7 @@ public class ForumCenter
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -81,7 +81,7 @@ public class ForumCenter
 	 * @param name
 	 *            the name to set
 	 */
-	public void setName(String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -98,7 +98,7 @@ public class ForumCenter
 	 * @param groups
 	 *            the groups to set
 	 */
-	public void setGroups(List<ForumGroup> groups)
+	public void setGroups(final List<ForumGroup> groups)
 	{
 		this.groups = groups;
 	}

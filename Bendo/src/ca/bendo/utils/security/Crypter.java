@@ -79,7 +79,7 @@ public final class Crypter
 				digest.update(random.getBytes("UTF-8"));
 			} catch (UnsupportedEncodingException e)
 			{
-				// TODO Auto-generated catch block
+				//
 				e.printStackTrace();
 			}
 
@@ -89,7 +89,7 @@ public final class Crypter
 			return hashKey(salt, key);
 		} catch (NoSuchAlgorithmException e)
 		{
-			// TODO Auto-generated catch block
+			//
 			e.printStackTrace();
 		}
 
@@ -117,7 +117,7 @@ public final class Crypter
 				digest.update(saltandkey.getBytes("UTF-8"));
 			} catch (UnsupportedEncodingException e)
 			{
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 
@@ -126,7 +126,7 @@ public final class Crypter
 			return salt + encodeToHex(hashedByteArray);
 		} catch (NoSuchAlgorithmException e)
 		{
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 

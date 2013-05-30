@@ -37,7 +37,7 @@ public class AlertMessageBox extends TagTemplate
 	public AlertMessageBox(final Translator translator, final PageContext pageContext)
 	{
 		super(translator, pageContext);
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/*

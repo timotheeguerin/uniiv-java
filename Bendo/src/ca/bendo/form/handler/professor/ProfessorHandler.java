@@ -30,7 +30,6 @@ import ca.bendo.form.FieldValidator;
 import ca.bendo.form.entity.professor.NewProfessorEntity;
 import ca.bendo.json.AutoCompleteJson;
 import ca.bendo.json.Suggestion;
-import ca.bendo.translation.translation.Translator;
 import ca.bendo.views.Link;
 
 /**
@@ -131,8 +130,8 @@ public class ProfessorHandler
 	 */
 	public void setupNewProfessorPage(final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		programDAO.setLanguageId(languageId);
 		List<UniversityProgram> programs = programDAO.listPrograms();
 		request.setAttribute("programs", programs);
@@ -149,8 +148,8 @@ public class ProfessorHandler
 	public boolean setupProfessorPage(final long professorId, final HttpServletRequest request)
 	{
 
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		professorDAO.setLanguageId(languageId);
 		Professor professor = professorDAO.getById(professorId);
 
@@ -193,7 +192,7 @@ public class ProfessorHandler
 	 */
 	private void setupProfessorLinks(final long professorId, final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 		List<Link> links = new ArrayList<Link>();
 
 		String url = "";

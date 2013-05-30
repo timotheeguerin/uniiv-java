@@ -67,15 +67,13 @@ public class FileData
 
 		} catch (ParserConfigurationException e)
 		{
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (SAXException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 
 		}
@@ -86,7 +84,8 @@ public class FileData
 	 * 
 	 * @param connection
 	 *            Connection to the database
-	 * @throws SQLException Exception if sql problem
+	 * @throws SQLException
+	 *             Exception if sql problem
 	 */
 	public void insert(final Connection connection) throws SQLException
 	{

@@ -136,7 +136,7 @@ public class CourseProfessorHandler
 			final HttpServletRequest request)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		University university = universityDAO.getById(universityId);
 		if (university == null)
 		{
@@ -185,7 +185,7 @@ public class CourseProfessorHandler
 	public boolean setupProfessorCoursePage(final long professorId, final HttpServletRequest request)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 
 		Professor professor = professorDAO.getById(professorId);
 		if (professor == null)

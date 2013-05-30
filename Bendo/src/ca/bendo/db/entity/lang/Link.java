@@ -77,7 +77,7 @@ public class Link
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(String key)
+	public final void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -94,7 +94,7 @@ public class Link
 	 * @param link
 	 *            the link to set
 	 */
-	public final void setLink(String link)
+	public final void setLink(final String link)
 	{
 		this.link = link;
 	}
@@ -111,7 +111,7 @@ public class Link
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(Language language)
+	public final void setLanguage(final Language language)
 	{
 		this.language = language;
 	}

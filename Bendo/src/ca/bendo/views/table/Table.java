@@ -49,11 +49,10 @@ public class Table
 			return row;
 		} catch (InstantiationException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e)
 		{
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

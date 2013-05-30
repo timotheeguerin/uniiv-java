@@ -120,7 +120,7 @@ public final class FieldValidator
 	{
 		try
 		{
-			int temp = Integer.parseInt(name);
+			Integer.parseInt(name);
 			return true;
 		} catch (NumberFormatException e)
 		{

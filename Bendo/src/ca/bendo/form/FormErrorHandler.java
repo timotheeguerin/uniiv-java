@@ -32,7 +32,7 @@ public final class FormErrorHandler
 	 */
 	private FormErrorHandler()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**
@@ -138,7 +138,7 @@ public final class FormErrorHandler
 	/**
 	 * @return the errors
 	 */
-	public final Map<String, List<String>> getErrors()
+	public Map<String, List<String>> getErrors()
 	{
 		return errors;
 	}
@@ -147,7 +147,7 @@ public final class FormErrorHandler
 	 * @param errors
 	 *            the errors to set
 	 */
-	public final void setErrors(final Map<String, List<String>> errors)
+	public void setErrors(final Map<String, List<String>> errors)
 	{
 		this.errors = errors;
 	}

@@ -8,8 +8,6 @@ import java.util.Map.Entry;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.tiles.util.URLUtil;
-
 /**
  * @author Timothée Guérin
  * @version Bendo

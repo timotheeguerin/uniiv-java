@@ -116,15 +116,15 @@ public final class BendoConfig
 
 		} catch (ParserConfigurationException e)
 		{
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (SAXException e)
 		{
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 
 		}
@@ -420,8 +420,7 @@ public final class BendoConfig
 	 */
 	public static String getBaseUrl(final HttpServletRequest request)
 	{
-		return String.format("%s://%s:%d", request.getScheme(), request.getServerName(),
-				request.getServerPort());
+		return String.format("%s://%s:%d", request.getScheme(), request.getServerName(), request.getServerPort());
 
 	}
 

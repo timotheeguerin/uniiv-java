@@ -71,7 +71,7 @@ public class ProfessorReviewController
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 
@@ -104,7 +104,7 @@ public class ProfessorReviewController
 	{
 		UserWarning.needValidUser(request);
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (!reviewHandler.setupNewReviewPage(professorId, request))
 		{
 			return "redirect:" + translator.getLink("new_professor", languageId);

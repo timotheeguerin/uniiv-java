@@ -41,8 +41,11 @@ public class State
 	@Column(name = "state")
 	private String state;
 
-	@Formula("(SELECT t.translation FROM lang_translation t " +
-			"WHERE (t.key = state) AND t.id_lang_language = :languageId.param)")
+	/**
+	 * 
+	 */
+	@Formula("(SELECT t.translation FROM lang_translation t "
+			+ "WHERE (t.key = state) AND t.id_lang_language = :languageId.param)")
 	private String translation;
 
 	/**

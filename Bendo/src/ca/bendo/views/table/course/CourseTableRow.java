@@ -29,7 +29,7 @@ public class CourseTableRow extends TableRow
 	 */
 	public CourseTableRow()
 	{
-		// TODO Auto-generated constructor stub
+		//
 	}
 
 	/**

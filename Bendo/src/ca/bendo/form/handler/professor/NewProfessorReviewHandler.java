@@ -31,7 +31,6 @@ import ca.bendo.form.FieldValidator;
 import ca.bendo.form.FormErrorHandler;
 import ca.bendo.form.comment.CommentHandler;
 import ca.bendo.form.entity.professor.NewProfessorReviewEntity;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -202,8 +201,8 @@ public class NewProfessorReviewHandler
 	 */
 	public boolean setupNewReviewPage(final long professorId, final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		professorDAO.setLanguageId(languageId);
 		reviewDAO.setLanguageId(languageId);
 		ratingTypeDAO.setLanguageId(languageId);

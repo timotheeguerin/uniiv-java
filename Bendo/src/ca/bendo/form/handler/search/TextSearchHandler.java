@@ -127,7 +127,7 @@ public class TextSearchHandler
 	{
 		String query = request.getParameter("query");
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		List<University> universities;
 		List<Professor> professors;
 		List<Course> courses;
@@ -186,7 +186,7 @@ public class TextSearchHandler
 	{
 		String universityName = request.getParameter("query");
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		List<University> universities;
 		if (universityName == null)
 		{

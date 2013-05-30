@@ -10,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,11 +38,7 @@ public class SessionFilter extends IFilter
 	@Autowired
 	private UserSessionHandler sessionHandler;
 
-	/**
-	 * Logger.
-	 */
-	private Logger log = Logger.getLogger(SessionFilter.class);
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -54,13 +49,12 @@ public class SessionFilter extends IFilter
 	 */
 	public SessionFilter()
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void destroy()
 	{
-		// TODO Auto-generated method stub
 
 	}
 
@@ -89,8 +83,7 @@ public class SessionFilter extends IFilter
 	@Override
 	public void init(final FilterConfig arg0) throws ServletException
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }

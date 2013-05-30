@@ -3,17 +3,27 @@
  */
 package ca.bendo.controllers.forum;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Set;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
+import javax.validation.Valid;
+import javax.validation.Validator;
+
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-import ca.bendo.form.entity.forum.ForumReplyEntity;
+import ca.bendo.form.entity.forum.ForumReplyForm;
 import ca.bendo.form.handler.forum.ForumReplyHandler;
 
 /**
@@ -29,6 +39,19 @@ import ca.bendo.form.handler.forum.ForumReplyHandler;
 @Controller
 public class ForumReplyController
 {
+
+
+
+
+	/**
+	 * 
+	 */
+	@Test
+	public void manufacturerIsNull()
+	{
+
+	}
+
 	/**
 	 * 
 	 */
@@ -49,16 +72,23 @@ public class ForumReplyController
 	 */
 	@RequestMapping(value = "/forum/question/{questionId}/reply/new", method = RequestMethod.POST)
 	public String handleReply(final HttpServletRequest request,
-			@ModelAttribute("replyEntity") final ForumReplyEntity replyEntity,
-			@PathVariable(value = "questionId") final long questionId, final BindingResult result)
+			@ModelAttribute("replyEntity") @Valid final ForumReplyForm replyEntity, final BindingResult result,
+			@PathVariable(value = "questionId") final long questionId)
 	{
+
+		System.out.println("E: " + replyEntity.getContent());
+		System.out.println("QUESTION REPLY");
+
+//		Set<ConstraintViolation<ForumReplyEntity>> constraintViolations = validator.validate(replyEntity);
+//
+//		System.out.println(constraintViolations.iterator().next().getMessage());
 
 		// If the form has error
 		if (result.hasErrors())
 		{
 			return replyPage(request, questionId);
 		}
-
+		System.out.println("HANDLE REPLY");
 		// handler.handleNewReply(request, replyEntity, questionId);
 		return "redirect:/forum/question/{questionId}";
 	}
@@ -74,7 +104,7 @@ public class ForumReplyController
 	@RequestMapping(value = "/forum/question/{questionId}/reply/new", method = RequestMethod.GET)
 	public String replyPage(final HttpServletRequest request, @PathVariable(value = "questionId") final long questionId)
 	{
-		return setupView(request, new ForumReplyEntity(), questionId);
+		return setupView(request, new ForumReplyForm(), questionId);
 	}
 
 	/**
@@ -87,7 +117,7 @@ public class ForumReplyController
 	 *            model
 	 * @return return
 	 */
-	public String setupView(final HttpServletRequest request, final ForumReplyEntity replyEntity, final long questionId)
+	public String setupView(final HttpServletRequest request, final ForumReplyForm replyEntity, final long questionId)
 	{
 		request.setAttribute("replyEntity", replyEntity);
 		return "views/forum/newReply";

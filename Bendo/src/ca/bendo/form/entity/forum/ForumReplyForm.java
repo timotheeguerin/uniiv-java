@@ -3,7 +3,7 @@
  */
 package ca.bendo.form.entity.forum;
 
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Min;
 
 /**
  * @author Timothée Guérin
@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.Length;
  * 
  * 
  */
-public class ForumReplyEntity
+public class ForumReplyForm
 {
 
 	/**
@@ -26,7 +26,7 @@ public class ForumReplyEntity
 	/**
 	 * 
 	 */
-	@Length(min = MIN_CONTENT_SIZE)
+	@Min(value = MIN_CONTENT_SIZE, message = "form.error.min")
 	private String content;
 
 	/**

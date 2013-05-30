@@ -99,7 +99,7 @@ public class ForumContent
 	 * @param html
 	 *            the html to set
 	 */
-	public void setHtml(String html)
+	public void setHtml(final String html)
 	{
 		this.html = html;
 	}

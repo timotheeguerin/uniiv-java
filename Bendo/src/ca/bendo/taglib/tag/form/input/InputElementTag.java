@@ -5,7 +5,6 @@ package ca.bendo.taglib.tag.form.input;
 
 import java.io.IOException;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
@@ -146,7 +145,7 @@ public class InputElementTag extends TagSupport
 
 			Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
 
-			HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+			pageContext.getRequest();
 
 			InputElement e = new InputElement(translator, pageContext);
 			e.setCustclass("");

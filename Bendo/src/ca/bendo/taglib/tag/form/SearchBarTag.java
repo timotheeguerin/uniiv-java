@@ -30,6 +30,11 @@ public class SearchBarTag extends TagSupport
 	/**
 	 * 
 	 */
+	private static final long serialVersionUID = -2228885444032739124L;
+
+	/**
+	 * 
+	 */
 	private String placeholder;
 
 	/**
@@ -51,9 +56,9 @@ public class SearchBarTag extends TagSupport
 			// Get the writer object for output.
 			JspWriter out = pageContext.getOut();
 
-			Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
+			pageContext.getRequest().getAttribute("translator");
 
-			HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+			pageContext.getRequest();
 			String action = "action='" + getFormUrl() + "'";
 			StringBuilder result = new StringBuilder();
 			result.append("<form method='GET' " + action + ">");
@@ -77,7 +82,7 @@ public class SearchBarTag extends TagSupport
 	{
 
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
-		Long lanuageId = Language.load((HttpServletRequest) pageContext.getRequest());
+		Long lanuageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		StringBuilder result = new StringBuilder();
 
 		String placeholderStr = "placeholder='" + translator.translate(placeholder, lanuageId) + "'";
@@ -100,7 +105,7 @@ public class SearchBarTag extends TagSupport
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
 		StringBuilder result = new StringBuilder();
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		String value = "value='" + translator.translate("search", languageId) + "'";
 		result.append("<input name='submitbtn' class='btn_get_started_text' type='submit' ");
 		result.append(value).append(" ");
@@ -117,7 +122,7 @@ public class SearchBarTag extends TagSupport
 	{
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		String value = "";
 		if (type == null)
 		{
@@ -168,7 +173,7 @@ public class SearchBarTag extends TagSupport
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(String type)
+	public final void setType(final String type)
 	{
 		this.type = type;
 	}

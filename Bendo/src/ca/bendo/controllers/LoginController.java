@@ -55,7 +55,7 @@ public class LoginController extends BendoController
 	public final String login(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (getUserSession().isLogin())
 		{
 			return "redirect:" + translator.getLink("home", languageId);
@@ -78,7 +78,7 @@ public class LoginController extends BendoController
 	public final String loginPost(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (getUserSession().isLogin())
 		{
 
@@ -107,7 +107,7 @@ public class LoginController extends BendoController
 	 */
 	public final String loginPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		Translator trans = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 		
 		return "views/login";
 	}

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.head.HeadManager;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author vava04
@@ -40,7 +39,7 @@ public class TestController
 	{
 		((HeadManager) request.getAttribute("head")).getTitle().setTitle("Signup");
 
-		Translator trans = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 
 		String page = request.getParameter("page");
 

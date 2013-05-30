@@ -108,7 +108,7 @@ public class ForgetPasswordHandler
 	 */
 	public void sendEmail(final HttpServletRequest request, final UserResetPassword userResetPassword)
 	{
-		long languageId = Language.load(request);
+		long languageId = Language.loadId(request);
 		Translator translator = Translator.getTranslator(request);
 		/* next, get the Template */
 		Template t = Velocity.getTemplate("email/reset_password.vm");

@@ -6,13 +6,7 @@
 	xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta name=Title content="">
-<meta name=Keywords content="">
-<meta http-equiv=Content-Type content="text/html; charset=macintosh">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 14">
-<meta name=Originator content="Microsoft Word 14">
-<link rel=File-List href="Welcome_files/filelist.xml">
+
 <!--[if gte mso 9]><xml>
  <o:DocumentProperties>
   <o:Author>Thibaud Marechal</o:Author>
@@ -34,7 +28,6 @@
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-<link rel=themeData href="Welcome_files/themedata.xml">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:SpellingState>Clean</w:SpellingState>

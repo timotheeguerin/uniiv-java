@@ -45,7 +45,6 @@ public class TestUniFeesDAO
 	@Test
 	public void testListUniversityFees()
 	{
-
 		List<UniversityFees> l = uniFeesDAO.listUniversityFees();
 		assertTrue(l != null);
 		System.out.println("------------------------------------------");

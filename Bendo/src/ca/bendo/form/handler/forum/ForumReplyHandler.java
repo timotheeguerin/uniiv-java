@@ -17,7 +17,7 @@ import ca.bendo.db.entity.forum.ForumContent;
 import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.db.entity.forum.ForumReply;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.form.entity.forum.ForumReplyEntity;
+import ca.bendo.form.entity.forum.ForumReplyForm;
 import ca.bendo.session.UserSession;
 
 /**
@@ -56,7 +56,7 @@ public class ForumReplyHandler
 	 *            ReplyEntity
 	 * @return boolean if reply was handle successfully
 	 */
-	public boolean handleNewReply(final HttpServletRequest request, final ForumReplyEntity replyEntity,
+	public boolean handleNewReply(final HttpServletRequest request, final ForumReplyForm replyEntity,
 			final long questionId)
 	{
 		UserSession session = UserSession.getSession(request);
@@ -84,7 +84,7 @@ public class ForumReplyHandler
 	 * @param user
 	 *            User
 	 */
-	public void createReply(final ForumReplyEntity replyEntity, final ForumQuestion question, final User user)
+	public void createReply(final ForumReplyForm replyEntity, final ForumQuestion question, final User user)
 	{
 		ForumReply reply = new ForumReply();
 		reply.setUser(user);

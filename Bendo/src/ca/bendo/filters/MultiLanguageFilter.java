@@ -65,7 +65,6 @@ public class MultiLanguageFilter extends IFilter
 	@Override
 	public void init(final FilterConfig fc) throws ServletException
 	{
-		// TODO Auto-generated method stub
 
 	}
 
@@ -97,7 +96,7 @@ public class MultiLanguageFilter extends IFilter
 			String uri = urlTrans.getUri();
 			// Load the translations and send the translator to the controller
 			request.setAttribute("translator", this.trans);
-			request.setAttribute("languageId", lang.getId());
+			lang.save(request);
 			RequestTranslator requestTranslator = new RequestTranslator();
 			requestTranslator.setTranslator(this.trans);
 			requestTranslator.setLanguage(lang);

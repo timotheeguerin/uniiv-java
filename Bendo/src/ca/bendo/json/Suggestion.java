@@ -35,7 +35,7 @@ public class Suggestion
 	 */
 	public Suggestion()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**

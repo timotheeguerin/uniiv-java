@@ -33,7 +33,7 @@ public abstract class ParameterParser
 	{
 		try
 		{
-			int i = Integer.parseInt(str);
+			Integer.parseInt(str);
 		} catch (NumberFormatException nfe)
 		{
 			return false;

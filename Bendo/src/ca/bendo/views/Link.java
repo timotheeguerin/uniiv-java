@@ -35,7 +35,7 @@ public class Link
 	 */
 	public Link()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class Link
 	public Link(final HttpServletRequest request, final String text, final String link)
 	{
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		this.text = translator.translate(text, languageId);
 		this.link = translator.translateUrl(link, languageId);
 	}

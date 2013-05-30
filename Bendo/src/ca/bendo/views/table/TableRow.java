@@ -39,7 +39,7 @@ public class TableRow
 	 */
 	public TableRow()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class TableRow
 	 * @param table
 	 *            the table to set
 	 */
-	public final void setTable(Table table)
+	public final void setTable(final Table table)
 	{
 		this.table = table;
 	}

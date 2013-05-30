@@ -10,6 +10,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
+import ca.bendo.db.entity.lang.Language;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.taglib.template.form.element.InputElement;
 import ca.bendo.translation.translation.Translator;
@@ -61,9 +62,9 @@ public class PasswordTag extends TagSupport
 			JspWriter out = pageContext.getOut();
 
 			Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
-			Long languageId = (Long) pageContext.getRequest().getAttribute("languageId");
+			Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 
-			HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+			pageContext.getRequest();
 
 			InputElement password = new InputElement(translator, pageContext);
 			password.setName(name);
@@ -137,7 +138,7 @@ public class PasswordTag extends TagSupport
 	 * @param placeholder
 	 *            the placeholder to set
 	 */
-	public final void setPlaceholder(String placeholder)
+	public final void setPlaceholder(final String placeholder)
 	{
 		this.placeholder = placeholder;
 	}
@@ -146,7 +147,7 @@ public class PasswordTag extends TagSupport
 	 * @param required
 	 *            the required to set
 	 */
-	public void setRequired(boolean required)
+	public void setRequired(final boolean required)
 	{
 		this.required = required;
 	}

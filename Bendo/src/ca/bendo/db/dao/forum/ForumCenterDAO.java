@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.db.dao.HibernateDAO;
 import ca.bendo.db.entity.forum.ForumCenter;
 import ca.bendo.db.entity.forum.UniversityForumCenter;
-import ca.bendo.db.entity.university.University;
 
 /**
  * @author Timothée Guérin

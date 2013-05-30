@@ -19,7 +19,6 @@ import ca.bendo.db.entity.university.University;
 import ca.bendo.search.handler.parser.LocationParser;
 import ca.bendo.search.handler.parser.ProgramParser;
 import ca.bendo.search.handler.parser.SoftRatingParser;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -54,8 +53,8 @@ public class SearchQueryHandler
 	 */
 	public void handle(final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		UniversityQuery query = new UniversityQuery();
 
 		// Parse location

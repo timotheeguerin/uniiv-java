@@ -13,15 +13,6 @@
 	<build>
 		<finalName>Bendo</finalName>
 		<sourceDirectory>src</sourceDirectory>
-		<!-- <testSourceDirectory>tests</testSourceDirectory> -->
-		<!-- <testResources> -->
-		<!-- <testResource> -->
-		<!-- <directory>tests</directory> -->
-		<!-- <excludes> -->
-		<!-- <exclude>**/*.java</exclude> -->
-		<!-- </excludes> -->
-		<!-- </testResource> -->
-		<!-- </testResources> -->
 
 		<!-- To use the plugin goals in your POM or parent POM -->
 		<plugins>

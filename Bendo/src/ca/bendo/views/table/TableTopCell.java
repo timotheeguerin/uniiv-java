@@ -137,7 +137,7 @@ public class TableTopCell extends TableCell
 	 * @param size
 	 *            the size to set
 	 */
-	public final void setSize(CellSize size)
+	public final void setSize(final CellSize size)
 	{
 		this.size = size;
 	}

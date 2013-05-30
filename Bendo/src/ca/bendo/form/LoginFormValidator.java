@@ -38,7 +38,7 @@ public class LoginFormValidator extends FormValidator
 	 */
 	public LoginFormValidator()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/*

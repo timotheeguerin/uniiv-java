@@ -76,7 +76,7 @@ public class AdditionalColumn
 	 * @param file
 	 *            the file to set
 	 */
-	public final void setFile(String file)
+	public final void setFile(final String file)
 	{
 		this.file = file;
 	}

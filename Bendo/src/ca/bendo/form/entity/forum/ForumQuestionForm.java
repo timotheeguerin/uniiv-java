@@ -3,9 +3,11 @@
  */
 package ca.bendo.form.entity.forum;
 
-import ca.bendo.annotation.Input;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+
 import ca.bendo.form.entity.Entity;
-import ca.bendo.form.entity.EntityType;
 
 /**
  * @author Timothée Guérin
@@ -17,33 +19,35 @@ import ca.bendo.form.entity.EntityType;
  * 
  * 
  */
-public class ForumQuestionEntity extends Entity
+public class ForumQuestionForm
 {
 	/**
 	 * 
 	 */
-	private static final long MIN_TITLE_SIZE = 10;
+	private static final int MIN_TITLE_SIZE = 10;
 
 	/**
 	 * 
 	 */
-	private static final long MAX_TITLE_SIZE = 255;
+	private static final int MAX_TITLE_SIZE = 255;
 
 	/**
 	 * 
 	 */
-	private static final long MIN_CONTENT_SIZE = 30;
+	private static final int MIN_CONTENT_SIZE = 30;
 
 	/**
 	 * 
 	 */
-	@Input(name = "title", type = EntityType.TEXT, min = MIN_TITLE_SIZE, max = MAX_TITLE_SIZE)
+	@NotNull
+	@Length(min = MIN_TITLE_SIZE, max = MAX_TITLE_SIZE)
 	private String title;
 
 	/**
 	 * 
 	 */
-	@Input(name = "content", type = EntityType.TEXT, min = MIN_CONTENT_SIZE)
+	@NotNull
+	@Length(min = MIN_CONTENT_SIZE)
 	private String content;
 
 	/**
@@ -75,7 +79,7 @@ public class ForumQuestionEntity extends Entity
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(String content)
+	public void setContent(final String content)
 	{
 		this.content = content;
 	}

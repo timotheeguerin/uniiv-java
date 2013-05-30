@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
 import ca.bendo.alert.message.AlertMessageManager;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -35,7 +34,7 @@ public class AlertMessageFilter extends IFilter
 	 */
 	public AlertMessageFilter()
 	{
-		// TODO Auto-generated constructor stub
+		// 
 	}
 
 	/*
@@ -46,7 +45,6 @@ public class AlertMessageFilter extends IFilter
 	@Override
 	public void init(final FilterConfig fc) throws ServletException
 	{
-		// TODO Auto-generated method stub
 
 	}
 
@@ -64,7 +62,7 @@ public class AlertMessageFilter extends IFilter
 		{
 			return url;
 		}
-		Translator translator = (Translator) request.getAttribute("translator");
+		request.getAttribute("translator");
 		String alertMsg = request.getParameter("alertmsg");
 
 		if (alertMsg == null)
@@ -90,7 +88,7 @@ public class AlertMessageFilter extends IFilter
 	@Override
 	public void destroy()
 	{
-		// TODO Auto-generated method stub
+		// 
 
 	}
 

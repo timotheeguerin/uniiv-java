@@ -37,7 +37,7 @@ public class NewProfessorUniversityEntity extends Entity
 	 * @param universityId
 	 *            the universityId to set
 	 */
-	public final void setUniversityId(String universityId)
+	public final void setUniversityId(final String universityId)
 	{
 		this.universityId = universityId;
 	}

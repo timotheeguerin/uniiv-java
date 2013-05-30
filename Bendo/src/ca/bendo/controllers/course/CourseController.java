@@ -59,7 +59,7 @@ public class CourseController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		/**
 		 * 
 		 */
@@ -108,7 +108,7 @@ public class CourseController
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 
@@ -143,7 +143,7 @@ public class CourseController
 	{
 		UserWarning.needValidUser(request);
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (courseHandler.setupNewCoursePage(universityId, request))
 		{
 			return "views/university/course/newCourse";
@@ -182,7 +182,7 @@ public class CourseController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 

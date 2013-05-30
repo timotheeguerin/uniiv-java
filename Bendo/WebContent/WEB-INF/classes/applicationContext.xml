@@ -79,8 +79,27 @@
 		</property>
 	</bean>
 
+	<bean id="localeResolver" class="ca.bendo.filters.FilterLocaleResolver" />
+
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Invokes Spring MVC @Controller methods -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="webBindingInitializer">
+			<!-- Configures Spring MVC DataBinder instances -->
+			<bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+				<property name="validator" ref="validator" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Creates the JSR-303 Validator -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="messageInterpolator">
+			<bean class="ca.bendo.form.TranslateMessageInterpolator" />
+		</property>
 	</bean>
 
 	<context:component-scan base-package="ca.bendo" />

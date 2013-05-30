@@ -29,7 +29,6 @@ import ca.bendo.db.entity.university.UniversityReviewRating;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.form.comment.CommentHandler;
 import ca.bendo.form.entity.university.NewUniversityReviewEntity;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -191,8 +190,8 @@ public class UniversityReviewHandler
 	public boolean setupNewReviewPage(final long universityId, final HttpServletRequest request)
 	{
 
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Long languageId = Language.loadId(request);
 		universityDAO.setLanguageId(languageId);
 		// reviewDAO.setLanguageId(languageId);
 		// ratingTypeDAO.setLanguageId(languageId);

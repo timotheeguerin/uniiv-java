@@ -32,7 +32,6 @@ import ca.bendo.form.FieldValidator;
 import ca.bendo.form.FormErrorHandler;
 import ca.bendo.form.comment.CommentHandler;
 import ca.bendo.form.entity.course.NewCourseReviewEntity;
-import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -214,8 +213,8 @@ public class CourseReviewHandler
 	 */
 	public boolean setupNewReviewPage(final long universityId, final long courseId, final HttpServletRequest request)
 	{
-		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		request.getAttribute("translator");
+		Language.loadId(request);
 		courseDAO.enableTranslation(universityId);
 
 		Course course = courseDAO.getById(courseId);

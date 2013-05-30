@@ -59,7 +59,7 @@ public class DatabaseSyncer
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e)
 		{
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 
@@ -242,7 +242,7 @@ public class DatabaseSyncer
 			statement.executeUpdate(createStatement);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -267,7 +267,7 @@ public class DatabaseSyncer
 			statement.executeUpdate(dropSQL);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
+			// 
 			e.printStackTrace();
 		}
 
@@ -357,7 +357,6 @@ public class DatabaseSyncer
 			ResultSet primary = dbm.getPrimaryKeys(null, null, tableName);
 
 			boolean first = true;
-			boolean found = false;
 			while (primary.next())
 			{
 				if (first && autoIncrement.equalsIgnoreCase(primary.getString("COLUMN_NAME")))
@@ -365,7 +364,6 @@ public class DatabaseSyncer
 					first = false;
 					result.append(',');
 					result.append("PRIMARY KEY(");
-					found = true;
 					result.append(escape(primary.getString("COLUMN_NAME")));
 					primary.first();
 				} else if (!first && !autoIncrement.equalsIgnoreCase(primary.getString("COLUMN_NAME")))
@@ -488,7 +486,7 @@ public class DatabaseSyncer
 			}
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
+			//
 			e.printStackTrace();
 		}
 		return columns;
@@ -597,7 +595,7 @@ public class DatabaseSyncer
 				statement.executeUpdate("DROP TABLE IF EXISTS " + escape(tableName));
 			} catch (SQLException e)
 			{
-				// TODO Auto-generated catch block
+			
 				e.printStackTrace();
 			}
 		}

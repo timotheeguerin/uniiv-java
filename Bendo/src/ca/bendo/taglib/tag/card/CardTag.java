@@ -56,11 +56,10 @@ public class CardTag extends TagSupport
 			pageContext.include(getFile());
 		} catch (ServletException e)
 		{
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (IOException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

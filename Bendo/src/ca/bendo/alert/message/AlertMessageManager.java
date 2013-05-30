@@ -33,7 +33,7 @@ public final class AlertMessageManager
 	 */
 	private AlertMessageManager()
 	{
-		// TODO Auto-generated constructor stub
+		//
 	}
 
 	/**
@@ -81,7 +81,7 @@ public final class AlertMessageManager
 	public void addAlertMessage(final String key, final HttpServletRequest request)
 	{
 		Translator translator = Translator.getTranslator(request);
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		AlertMessageType type = null;
 		if (key.startsWith("alert_err"))
 		{

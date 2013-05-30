@@ -35,7 +35,7 @@ public class DropdownButtonTag extends BodyTagSupport
 	 */
 	public DropdownButtonTag()
 	{
-		// TODO Auto-generated constructor stub
+		//
 	}
 
 	/*

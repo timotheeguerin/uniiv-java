@@ -56,7 +56,7 @@ public class ProfessorController
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 
 		if (professorHandler.setupProfessorPage(professorId, request))
 		{
@@ -97,7 +97,7 @@ public class ProfessorController
 	public final String submitNewProfessor(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 

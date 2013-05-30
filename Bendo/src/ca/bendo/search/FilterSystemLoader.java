@@ -110,7 +110,7 @@ public class FilterSystemLoader
 	 */
 	private void loadCountries(final HttpServletRequest request)
 	{
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		FilterCategory countryCategory = new FilterCategory();
 
 		SelectListFilterContent countryCategoryContent = new SelectListFilterContent();
@@ -160,7 +160,7 @@ public class FilterSystemLoader
 	 */
 	private void loadFees(final HttpServletRequest request)
 	{
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		FilterCategory feesCategory = new FilterCategory();
 		FeesCategoryContent feesContent = new FeesCategoryContent();
 		feesContent.setCurrencies(feesDAO.listCurrencies());
@@ -179,7 +179,7 @@ public class FilterSystemLoader
 	 */
 	private void loadPrograms(final HttpServletRequest request)
 	{
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		FilterCategory programCategory = new FilterCategory();
 		SelectListFilterContent programCategoryContent = new SelectListFilterContent();
 		programCategory.setContent(programCategoryContent);
@@ -224,7 +224,7 @@ public class FilterSystemLoader
 	 */
 	private void loadSoftRatings(final HttpServletRequest request)
 	{
-		Long languageId = Language.load(request);
+		Long languageId = Language.loadId(request);
 		FilterCategory softRatingFilterCategory = new FilterCategory();
 		SoftRatingCategoryContent content = new SoftRatingCategoryContent();
 		softRatingDAO.setLanguageId(languageId);

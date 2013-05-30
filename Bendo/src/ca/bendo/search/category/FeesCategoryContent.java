@@ -43,7 +43,7 @@ public class FeesCategoryContent extends FilterCategoryContent
 	/**
 	 * @param currencies the currencies to set
 	 */
-	public void setCurrencies(List<Currency> currencies)
+	public void setCurrencies(final List<Currency> currencies)
 	{
 		this.currencies = currencies;
 	}
