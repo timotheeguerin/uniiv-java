@@ -52,7 +52,7 @@ public class ProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}", method = RequestMethod.GET)
-	public final String professorUniversity(@PathVariable("profId") final long professorId,
+	public String professorUniversity(@PathVariable("profId") final long professorId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
@@ -78,7 +78,7 @@ public class ProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/new", method = RequestMethod.GET)
-	public final String newProfessor(final HttpServletRequest request, final HttpServletResponse response)
+	public String newProfessor(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		request.setAttribute("form_error", false);
 		return newProfessorJsp(request, response);
@@ -94,7 +94,7 @@ public class ProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/new", method = RequestMethod.POST)
-	public final String submitNewProfessor(final HttpServletRequest request, final HttpServletResponse response)
+	public String submitNewProfessor(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
@@ -142,7 +142,7 @@ public class ProfessorController
 	 */
 	@RequestMapping(value = "/professor/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public final AutoCompleteJson professorNewUniversityListAjax(final HttpServletRequest request,
+	public AutoCompleteJson professorNewUniversityListAjax(final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 

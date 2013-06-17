@@ -68,7 +68,7 @@ public class UniversityFees
 	 * 
 	 * @return the range of the fees
 	 */
-	public final Range<Integer> getRange()
+	public Range<Integer> getRange()
 	{
 		Range<Integer> range = new Range<Integer>();
 
@@ -83,7 +83,7 @@ public class UniversityFees
 	 * 
 	 * @return the range of the fees
 	 */
-	public final Range<Integer> getTuitionFeesRange()
+	public Range<Integer> getTuitionFeesRange()
 	{
 
 		Range<Integer> range = new Range<Integer>();
@@ -128,7 +128,7 @@ public class UniversityFees
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -137,7 +137,7 @@ public class UniversityFees
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -145,7 +145,7 @@ public class UniversityFees
 	/**
 	 * @return the currency
 	 */
-	public final Currency getCurrency()
+	public Currency getCurrency()
 	{
 		return currency;
 	}
@@ -154,7 +154,7 @@ public class UniversityFees
 	 * @param currency
 	 *            the currency to set
 	 */
-	public final void setCurrency(final Currency currency)
+	public void setCurrency(final Currency currency)
 	{
 		this.currency = currency;
 	}
@@ -162,7 +162,7 @@ public class UniversityFees
 	/**
 	 * @return the tuitionFees
 	 */
-	public final List<UniversityTuitionFees> getTuitionFees()
+	public List<UniversityTuitionFees> getTuitionFees()
 	{
 		return tuitionFees;
 	}
@@ -171,7 +171,7 @@ public class UniversityFees
 	 * @param tuitionFees
 	 *            the tuitionFees to set
 	 */
-	public final void setTuitionFees(final List<UniversityTuitionFees> tuitionFees)
+	public void setTuitionFees(final List<UniversityTuitionFees> tuitionFees)
 	{
 		this.tuitionFees = tuitionFees;
 	}
@@ -179,7 +179,7 @@ public class UniversityFees
 	/**
 	 * @return the otherFees
 	 */
-	public final UniversityOtherFees getOtherFees()
+	public UniversityOtherFees getOtherFees()
 	{
 		return otherFees;
 	}
@@ -188,7 +188,7 @@ public class UniversityFees
 	 * @param otherFees
 	 *            the otherFees to set
 	 */
-	public final void setOtherFees(final UniversityOtherFees otherFees)
+	public void setOtherFees(final UniversityOtherFees otherFees)
 	{
 		this.otherFees = otherFees;
 	}

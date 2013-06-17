@@ -39,7 +39,7 @@ public class StateDAO extends HibernateDAO<State>
 	 * @return a list of countries
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<State> listStates()
+	public List<State> listStates()
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());

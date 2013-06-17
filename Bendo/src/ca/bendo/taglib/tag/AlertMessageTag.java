@@ -30,7 +30,7 @@ public class AlertMessageTag extends TagSupport
 	private static final long serialVersionUID = 7120245906928121299L;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try

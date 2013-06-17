@@ -43,7 +43,7 @@ public class Email
 	/**
 	 * @return the Email
 	 */
-	public final String getEmail()
+	public String getEmail()
 	{
 		return email;
 	}
@@ -52,7 +52,7 @@ public class Email
 	 * @param email
 	 *            the Email to set
 	 */
-	public final void setEmail(final String email)
+	public void setEmail(final String email)
 	{
 		this.email = email;
 	}
@@ -63,7 +63,7 @@ public class Email
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return email;
 	}

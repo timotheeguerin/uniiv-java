@@ -100,7 +100,7 @@ public class University
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -109,7 +109,7 @@ public class University
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -117,7 +117,7 @@ public class University
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -126,7 +126,7 @@ public class University
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -134,7 +134,7 @@ public class University
 	/**
 	 * @return the website
 	 */
-	public final String getWebsite()
+	public String getWebsite()
 	{
 		return website;
 	}
@@ -143,7 +143,7 @@ public class University
 	 * @param website
 	 *            the website to set
 	 */
-	public final void setWebsite(final String website)
+	public void setWebsite(final String website)
 	{
 		this.website = website;
 	}
@@ -151,7 +151,7 @@ public class University
 	/**
 	 * @return the location
 	 */
-	public final Location getLocation()
+	public Location getLocation()
 	{
 		return location;
 	}
@@ -160,7 +160,7 @@ public class University
 	 * @param location
 	 *            the location to set
 	 */
-	public final void setLocation(final Location location)
+	public void setLocation(final Location location)
 	{
 		this.location = location;
 	}
@@ -168,7 +168,7 @@ public class University
 	/**
 	 * @return the fees
 	 */
-	public final UniversityFees getFees()
+	public UniversityFees getFees()
 	{
 		return fees;
 	}
@@ -177,7 +177,7 @@ public class University
 	 * @param fees
 	 *            the fees to set
 	 */
-	public final void setFees(final UniversityFees fees)
+	public void setFees(final UniversityFees fees)
 	{
 		this.fees = fees;
 	}
@@ -185,7 +185,7 @@ public class University
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -194,7 +194,7 @@ public class University
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -202,7 +202,7 @@ public class University
 	/**
 	 * @return the programs
 	 */
-	public final SortedSet<UniversityPrograms> getPrograms()
+	public SortedSet<UniversityPrograms> getPrograms()
 	{
 		return programs;
 	}
@@ -211,7 +211,7 @@ public class University
 	 * @param programs
 	 *            the programs to set
 	 */
-	public final void setPrograms(final SortedSet<UniversityPrograms> programs)
+	public void setPrograms(final SortedSet<UniversityPrograms> programs)
 	{
 		this.programs = programs;
 	}
@@ -219,7 +219,7 @@ public class University
 	/**
 	 * @return the softRatings
 	 */
-	public final List<UniversityGrade> getSoftRatings()
+	public List<UniversityGrade> getSoftRatings()
 	{
 		return softRatings;
 	}
@@ -228,7 +228,7 @@ public class University
 	 * @param softRatings
 	 *            the softRatings to set
 	 */
-	public final void setSoftRatings(final List<UniversityGrade> softRatings)
+	public void setSoftRatings(final List<UniversityGrade> softRatings)
 	{
 		this.softRatings = softRatings;
 	}

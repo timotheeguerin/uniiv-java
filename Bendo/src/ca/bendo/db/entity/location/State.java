@@ -58,7 +58,7 @@ public class State
 	/**
 	 * @return the idLocState
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -67,7 +67,7 @@ public class State
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -75,7 +75,7 @@ public class State
 	/**
 	 * @return the state
 	 */
-	public final String getState()
+	public String getState()
 	{
 		return state;
 	}
@@ -84,7 +84,7 @@ public class State
 	 * @param state
 	 *            the state to set
 	 */
-	public final void setState(final String state)
+	public void setState(final String state)
 	{
 		this.state = state;
 	}
@@ -109,7 +109,7 @@ public class State
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -124,7 +124,7 @@ public class State
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

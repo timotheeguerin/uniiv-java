@@ -24,7 +24,9 @@
 }
 
 .wmd-preview {
-	background-color: LightGray;
+	margin: 10px 0 10px 0;
+	padding: 3px;
+	border: 2px dotted #ccc;
 }
 
 .wmd-output {

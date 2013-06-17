@@ -59,7 +59,7 @@ public class Country
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -68,7 +68,7 @@ public class Country
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -76,7 +76,7 @@ public class Country
 	/**
 	 * @return the country
 	 */
-	public final String getCountry()
+	public String getCountry()
 	{
 		return country;
 	}
@@ -85,7 +85,7 @@ public class Country
 	 * @param country
 	 *            the country to set
 	 */
-	public final void setCountry(final String country)
+	public void setCountry(final String country)
 	{
 		this.country = country;
 	}
@@ -130,7 +130,7 @@ public class Country
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -145,7 +145,7 @@ public class Country
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

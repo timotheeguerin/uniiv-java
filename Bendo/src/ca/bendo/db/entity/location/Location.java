@@ -57,7 +57,7 @@ public class Location
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -66,7 +66,7 @@ public class Location
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -74,7 +74,7 @@ public class Location
 	/**
 	 * @return the city
 	 */
-	public final String getCity()
+	public String getCity()
 	{
 		return city;
 	}
@@ -83,7 +83,7 @@ public class Location
 	 * @param city
 	 *            the city to set
 	 */
-	public final void setCity(final String city)
+	public void setCity(final String city)
 	{
 		this.city = city;
 	}
@@ -91,7 +91,7 @@ public class Location
 	/**
 	 * @return the state
 	 */
-	public final State getState()
+	public State getState()
 	{
 		return state;
 	}
@@ -100,7 +100,7 @@ public class Location
 	 * @param state
 	 *            the state to set
 	 */
-	public final void setState(final State state)
+	public void setState(final State state)
 	{
 		this.state = state;
 	}
@@ -108,7 +108,7 @@ public class Location
 	/**
 	 * @return the country
 	 */
-	public final Country getCountry()
+	public Country getCountry()
 	{
 		return country;
 	}
@@ -117,7 +117,7 @@ public class Location
 	 * @param country
 	 *            the country to set
 	 */
-	public final void setCountry(final Country country)
+	public void setCountry(final Country country)
 	{
 		this.country = country;
 	}

@@ -49,7 +49,7 @@ public class LoginFormValidator extends FormValidator
 	 * )
 	 */
 	@Override
-	public final boolean validate(final HttpServletRequest request)
+	public boolean validate(final HttpServletRequest request)
 	{
 
 		setRequest(request);

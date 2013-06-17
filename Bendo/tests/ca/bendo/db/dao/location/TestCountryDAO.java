@@ -57,7 +57,7 @@ public class TestCountryDAO
 	 * @see CountryDAO#listCountries()
 	 */
 	@Test
-	public final void testListCountries()
+	public void testListCountries()
 	{
 		countryDAO.setLanguageId(1);
 		List<Country> l = countryDAO.listCountries();
@@ -76,7 +76,7 @@ public class TestCountryDAO
 	 * 
 	 */
 	@Test
-	public final void testGetStatesInCountry()
+	public void testGetStatesInCountry()
 	{
 		countryDAO.setLanguageId(1);
 		// Canada
@@ -102,7 +102,7 @@ public class TestCountryDAO
 	/**
 	 * @return the countryDAO
 	 */
-	public final CountryDAO getCountryDAO()
+	public CountryDAO getCountryDAO()
 	{
 		return countryDAO;
 	}
@@ -111,7 +111,7 @@ public class TestCountryDAO
 	 * @param countryDAO
 	 *            the countryDAO to set
 	 */
-	public final void setCountryDAO(final CountryDAO countryDAO)
+	public void setCountryDAO(final CountryDAO countryDAO)
 	{
 		this.countryDAO = countryDAO;
 	}

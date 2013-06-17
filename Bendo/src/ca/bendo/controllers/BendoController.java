@@ -41,7 +41,7 @@ public class BendoController
 	 *            Request
 	 */
 	@ModelAttribute
-	public final void init(final HttpServletRequest request)
+	public void init(final HttpServletRequest request)
 	{
 		this.translator = (Translator) request.getAttribute("translator");
 		this.userSession = (UserSession) request.getAttribute("userSession");
@@ -52,7 +52,7 @@ public class BendoController
 	 * 
 	 * @return Usersession
 	 */
-	public final UserSession getUserSession()
+	public UserSession getUserSession()
 	{
 		return userSession;
 	}
@@ -63,7 +63,7 @@ public class BendoController
 	 * @param userSession
 	 *            UserSession
 	 */
-	public final void setUserSession(final UserSession userSession)
+	public void setUserSession(final UserSession userSession)
 	{
 		this.userSession = userSession;
 	}
@@ -73,7 +73,7 @@ public class BendoController
 	 * 
 	 * @return Translator object
 	 */
-	public final Translator getTranslator()
+	public Translator getTranslator()
 	{
 		return translator;
 	}
@@ -84,7 +84,7 @@ public class BendoController
 	 * @param translator
 	 *            Translator oject
 	 */
-	public final void setTranslator(final Translator translator)
+	public void setTranslator(final Translator translator)
 	{
 		this.translator = translator;
 	}

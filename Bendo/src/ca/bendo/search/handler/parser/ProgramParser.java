@@ -86,7 +86,7 @@ public class ProgramParser extends ParameterParser
 	/**
 	 * @return the faculties
 	 */
-	public final List<UniversityFaculty> getFaculties()
+	public List<UniversityFaculty> getFaculties()
 	{
 		return faculties;
 	}

@@ -59,7 +59,7 @@ public class Translation
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -68,7 +68,7 @@ public class Translation
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -76,7 +76,7 @@ public class Translation
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -85,7 +85,7 @@ public class Translation
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -93,7 +93,7 @@ public class Translation
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		return translation;
 	}
@@ -102,7 +102,7 @@ public class Translation
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}
@@ -110,7 +110,7 @@ public class Translation
 	/**
 	 * @return the language
 	 */
-	public final Language getLanguage()
+	public Language getLanguage()
 	{
 		return language;
 	}
@@ -119,7 +119,7 @@ public class Translation
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		this.language = language;
 	}
@@ -128,7 +128,7 @@ public class Translation
 	 * @return the translation
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return this.translation;
 	}

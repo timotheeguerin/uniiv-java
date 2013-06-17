@@ -41,7 +41,7 @@ public class HeadManager
 	 * 
 	 * @return the title
 	 */
-	public final Title getTitle()
+	public Title getTitle()
 	{
 		return title;
 	}
@@ -51,7 +51,7 @@ public class HeadManager
 	 * @param title
 	 *            the title to set
 	 */
-	public final void setTitle(final Title title)
+	public void setTitle(final Title title)
 	{
 		this.title = title;
 	}
@@ -59,7 +59,7 @@ public class HeadManager
 	/**
 	 * @return the ressources
 	 */
-	public final RessourcesManager getRessources()
+	public RessourcesManager getRessources()
 	{
 		return ressources;
 	}
@@ -68,7 +68,7 @@ public class HeadManager
 	 * @param ressources
 	 *            the ressources to set
 	 */
-	public final void setRessources(final RessourcesManager ressources)
+	public void setRessources(final RessourcesManager ressources)
 	{
 		this.ressources = ressources;
 	}

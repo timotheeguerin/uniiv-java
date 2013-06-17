@@ -28,7 +28,7 @@ public class NewProfessorUniversityEntity extends Entity
 	/**
 	 * @return the universityId
 	 */
-	public final String getUniversityId()
+	public String getUniversityId()
 	{
 		return universityId;
 	}
@@ -37,7 +37,7 @@ public class NewProfessorUniversityEntity extends Entity
 	 * @param universityId
 	 *            the universityId to set
 	 */
-	public final void setUniversityId(final String universityId)
+	public void setUniversityId(final String universityId)
 	{
 		this.universityId = universityId;
 	}

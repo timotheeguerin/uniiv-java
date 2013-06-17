@@ -40,7 +40,7 @@ public class NewCourseProfessorEntity extends Entity
 	/**
 	 * @return the professorId
 	 */
-	public final String getProfessorId()
+	public String getProfessorId()
 	{
 		return professorId;
 	}
@@ -49,7 +49,7 @@ public class NewCourseProfessorEntity extends Entity
 	 * @param professorId
 	 *            the professorId to set
 	 */
-	public final void setProfessorId(final String professorId)
+	public void setProfessorId(final String professorId)
 	{
 		this.professorId = professorId;
 	}
@@ -57,7 +57,7 @@ public class NewCourseProfessorEntity extends Entity
 	/**
 	 * @return the semesterId
 	 */
-	public final String getSemesterId()
+	public String getSemesterId()
 	{
 		return semesterId;
 	}
@@ -66,7 +66,7 @@ public class NewCourseProfessorEntity extends Entity
 	 * @param semesterId
 	 *            the semesterId to set
 	 */
-	public final void setSemesterId(final String semesterId)
+	public void setSemesterId(final String semesterId)
 	{
 		this.semesterId = semesterId;
 	}
@@ -74,7 +74,7 @@ public class NewCourseProfessorEntity extends Entity
 	/**
 	 * @return the year
 	 */
-	public final String getYear()
+	public String getYear()
 	{
 		return year;
 	}
@@ -83,7 +83,7 @@ public class NewCourseProfessorEntity extends Entity
 	 * @param year
 	 *            the year to set
 	 */
-	public final void setYear(final String year)
+	public void setYear(final String year)
 	{
 		this.year = year;
 	}

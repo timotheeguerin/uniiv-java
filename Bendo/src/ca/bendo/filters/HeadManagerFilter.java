@@ -40,7 +40,7 @@ public class HeadManagerFilter implements Filter
 	}
 
 	@Override
-	public final void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain fc)
+	public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain fc)
 			throws IOException, ServletException
 	{
 		HeadManager head = new HeadManager();

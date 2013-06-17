@@ -62,7 +62,7 @@ public class Table
 	/**
 	 * @return the header
 	 */
-	public final TableHeaderRow getHeader()
+	public TableHeaderRow getHeader()
 	{
 		return header;
 	}
@@ -71,7 +71,7 @@ public class Table
 	 * @param header
 	 *            the header to set
 	 */
-	public final void setHeader(final TableHeaderRow header)
+	public void setHeader(final TableHeaderRow header)
 	{
 		this.header = header;
 	}
@@ -79,7 +79,7 @@ public class Table
 	/**
 	 * @return the rows
 	 */
-	public final List<TableRow> getRows()
+	public List<TableRow> getRows()
 	{
 		return rows;
 	}
@@ -88,7 +88,7 @@ public class Table
 	 * @param rows
 	 *            the rows to set
 	 */
-	public final void setRows(final List<TableRow> rows)
+	public void setRows(final List<TableRow> rows)
 	{
 		this.rows = rows;
 	}

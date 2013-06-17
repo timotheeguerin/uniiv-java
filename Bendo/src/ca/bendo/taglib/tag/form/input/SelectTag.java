@@ -45,7 +45,7 @@ public class SelectTag extends TagSupport
 	private Map<Object, String> options;
 	
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try

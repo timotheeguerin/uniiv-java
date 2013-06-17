@@ -44,7 +44,7 @@ public class ParentDAO
 	 *            datSource to set
 	 */
 	@Autowired
-	public final void setDataSource(final DataSource dataSource)
+	public void setDataSource(final DataSource dataSource)
 	{
 
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -55,7 +55,7 @@ public class ParentDAO
 	 * 
 	 * @return the jdbctemplate
 	 */
-	public final JdbcTemplate getJdbcTemplate()
+	public JdbcTemplate getJdbcTemplate()
 	{
 		return this.jdbcTemplate;
 	}
@@ -67,7 +67,7 @@ public class ParentDAO
 	 * @param id
 	 *            of the element to remove
 	 */
-	public final void deleteFromWithId(final String tableName, final int id)
+	public void deleteFromWithId(final String tableName, final int id)
 	{
 
 		String sql = SqlGenerator.deleteFrom(tableName);
@@ -86,7 +86,7 @@ public class ParentDAO
 	 *            Template
 	 * @return List of object of the class
 	 */
-	public final <T> List<T> selectAllFrom(final String tableName, final Class<T> clazz)
+	public <T> List<T> selectAllFrom(final String tableName, final Class<T> clazz)
 	{
 		String sql = SqlGenerator.selectAllFrom(tableName);
 		List<T> list = getJdbcTemplate().query(sql, new BeanPropertyRowMapper<T>(clazz));
@@ -104,7 +104,7 @@ public class ParentDAO
 	 *            Template
 	 * @return Object of the class
 	 */
-	public final <T> T selectFromWithId(final String tableName, final int id, final Class<T> clazz)
+	public <T> T selectFromWithId(final String tableName, final int id, final Class<T> clazz)
 	{
 		String sql = SqlGenerator.selectFrom(tableName);
 		Object[] parameters = new Object[] { id };

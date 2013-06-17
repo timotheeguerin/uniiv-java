@@ -256,7 +256,7 @@ public class DatabaseSyncer
 	 * @param tableName
 	 *            Name of the database to drop.
 	 */
-	public final void dropTable(final Connection connection, final String tableName)
+	public void dropTable(final Connection connection, final String tableName)
 	{
 
 		try
@@ -282,7 +282,7 @@ public class DatabaseSyncer
 	 *            Table to create.
 	 * @return The SQL Satement.
 	 */
-	public final String generateCreateStatement(final Connection connection, final String tableName)
+	public String generateCreateStatement(final Connection connection, final String tableName)
 	{
 		StringBuffer result = new StringBuffer();
 		String autoIncrement = "";
@@ -583,7 +583,7 @@ public class DatabaseSyncer
 	 * @param connection
 	 *            Connection to the database
 	 */
-	public final void dropAllTables(final Connection connection)
+	public void dropAllTables(final Connection connection)
 	{
 		Collection<String> tablesNames = getTablesNames(connection);
 		for (String tableName : tablesNames)
@@ -604,7 +604,7 @@ public class DatabaseSyncer
 	/**
 	 * @return the target
 	 */
-	public final Connection getTarget()
+	public Connection getTarget()
 	{
 		return target;
 	}
@@ -613,7 +613,7 @@ public class DatabaseSyncer
 	 * @param target
 	 *            the target to set
 	 */
-	public final void setTarget(final Connection target)
+	public void setTarget(final Connection target)
 	{
 		this.target = target;
 	}
@@ -621,7 +621,7 @@ public class DatabaseSyncer
 	/**
 	 * @return the source
 	 */
-	public final Connection getSource()
+	public Connection getSource()
 	{
 		return source;
 	}
@@ -630,7 +630,7 @@ public class DatabaseSyncer
 	 * @param source
 	 *            the source to set
 	 */
-	public final void setSource(final Connection source)
+	public void setSource(final Connection source)
 	{
 		this.source = source;
 	}

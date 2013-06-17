@@ -47,7 +47,7 @@ public class UserPermission
 	 *            to check
 	 * @return boolean
 	 */
-	public final boolean hasPermission(final String p)
+	public boolean hasPermission(final String p)
 	{
 
 		String[] realNodes = permission.split("\\.");
@@ -78,7 +78,7 @@ public class UserPermission
 	 *            to check
 	 * @return boolean
 	 */
-	public final boolean hasPermission(final int permissionId)
+	public boolean hasPermission(final int permissionId)
 	{
 
 		return getId() == permissionId;
@@ -87,7 +87,7 @@ public class UserPermission
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -96,7 +96,7 @@ public class UserPermission
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -104,7 +104,7 @@ public class UserPermission
 	/**
 	 * @return the permission
 	 */
-	public final String getPermission()
+	public String getPermission()
 	{
 		return permission;
 	}
@@ -113,7 +113,7 @@ public class UserPermission
 	 * @param permission
 	 *            the permission to set
 	 */
-	public final void setPermission(final String permission)
+	public void setPermission(final String permission)
 	{
 		this.permission = permission;
 	}

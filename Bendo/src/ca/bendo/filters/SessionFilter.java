@@ -65,7 +65,7 @@ public class SessionFilter extends IFilter
 	 * javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
 	@Override
-	public final String doFilter(final HttpServletRequest request, final ServletResponse response,
+	public String doFilter(final HttpServletRequest request, final ServletResponse response,
 			final String currentUrl) throws IOException, ServletException
 	{
 		UserSession userSession = new UserSession();

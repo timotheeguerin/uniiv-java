@@ -43,7 +43,7 @@ public class LanguageTransaction
 	/**
 	 * @return the languageDAO
 	 */
-	public final LanguageDAO getLanguageDAO()
+	public LanguageDAO getLanguageDAO()
 	{
 		return languageDAO;
 	}
@@ -51,7 +51,7 @@ public class LanguageTransaction
 	/**
 	 * @param languageDAO the languageDAO to set
 	 */
-	public final void setLanguageDAO(final LanguageDAO languageDAO)
+	public void setLanguageDAO(final LanguageDAO languageDAO)
 	{
 		this.languageDAO = languageDAO;
 	}

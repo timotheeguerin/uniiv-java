@@ -28,7 +28,7 @@ public class TextSearchEntity extends Entity
 	/**
 	 * @return the query
 	 */
-	public final String getQuery()
+	public String getQuery()
 	{
 		return query;
 	}
@@ -36,7 +36,7 @@ public class TextSearchEntity extends Entity
 	/**
 	 * @param query the query to set
 	 */
-	public final void setQuery(final String query)
+	public void setQuery(final String query)
 	{
 		this.query = query;
 	}

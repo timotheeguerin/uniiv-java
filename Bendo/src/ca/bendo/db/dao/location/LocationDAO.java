@@ -38,7 +38,7 @@ public class LocationDAO extends HibernateDAO<Location>
 	 * @return a list of locations
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<Location> listLocations()
+	public List<Location> listLocations()
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());

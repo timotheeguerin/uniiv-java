@@ -56,7 +56,7 @@ public class Report
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -65,7 +65,7 @@ public class Report
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -73,7 +73,7 @@ public class Report
 	/**
 	 * @return the type
 	 */
-	public final ReportType getType()
+	public ReportType getType()
 	{
 		return type;
 	}
@@ -82,7 +82,7 @@ public class Report
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final ReportType type)
+	public void setType(final ReportType type)
 	{
 		this.type = type;
 	}
@@ -90,7 +90,7 @@ public class Report
 	/**
 	 * @return the comment
 	 */
-	public final ReportComment getComment()
+	public ReportComment getComment()
 	{
 		return comment;
 	}
@@ -99,7 +99,7 @@ public class Report
 	 * @param comment
 	 *            the comment to set
 	 */
-	public final void setComment(final ReportComment comment)
+	public void setComment(final ReportComment comment)
 	{
 		this.comment = comment;
 	}
@@ -107,7 +107,7 @@ public class Report
 	/**
 	 * @return the element
 	 */
-	public final long getElement()
+	public long getElement()
 	{
 		return element;
 	}
@@ -116,7 +116,7 @@ public class Report
 	 * @param element
 	 *            the element to set
 	 */
-	public final void setElement(final long element)
+	public void setElement(final long element)
 	{
 		this.element = element;
 	}

@@ -59,7 +59,7 @@ public class UniversityOtherFees
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -68,7 +68,7 @@ public class UniversityOtherFees
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -76,7 +76,7 @@ public class UniversityOtherFees
 	/**
 	 * @return the minimum
 	 */
-	public final int getMinimum()
+	public int getMinimum()
 	{
 		return minimum;
 	}
@@ -85,7 +85,7 @@ public class UniversityOtherFees
 	 * @param minimum
 	 *            the minimum to set
 	 */
-	public final void setMinimum(final int minimum)
+	public void setMinimum(final int minimum)
 	{
 		this.minimum = minimum;
 	}
@@ -93,7 +93,7 @@ public class UniversityOtherFees
 	/**
 	 * @return the maximum
 	 */
-	public final int getMaximum()
+	public int getMaximum()
 	{
 		return maximum;
 	}
@@ -102,7 +102,7 @@ public class UniversityOtherFees
 	 * @param maximum
 	 *            the maximum to set
 	 */
-	public final void setMaximum(final int maximum)
+	public void setMaximum(final int maximum)
 	{
 		this.maximum = maximum;
 	}

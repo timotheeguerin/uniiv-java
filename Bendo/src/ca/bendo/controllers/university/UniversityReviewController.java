@@ -49,7 +49,7 @@ public class UniversityReviewController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/review/new", method = RequestMethod.GET)
-	public final String universityReview(@PathVariable("uniId") final long universityId,
+	public String universityReview(@PathVariable("uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return newUniversityReviewPage(universityId, request, response);
@@ -68,7 +68,7 @@ public class UniversityReviewController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/review/new", method = RequestMethod.POST)
-	public final String handleNewUniversityReview(@PathVariable("uniId") final long universityId,
+	public String handleNewUniversityReview(@PathVariable("uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
@@ -101,7 +101,7 @@ public class UniversityReviewController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String newUniversityReviewPage(final long universityId, final HttpServletRequest request,
+	public String newUniversityReviewPage(final long universityId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		UserWarning.needValidUser(request);

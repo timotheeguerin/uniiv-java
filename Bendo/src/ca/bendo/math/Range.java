@@ -60,7 +60,7 @@ public class Range<T>
 	/**
 	 * @return the minimum
 	 */
-	public final T getMinimum()
+	public T getMinimum()
 	{
 		return minimum;
 	}
@@ -69,7 +69,7 @@ public class Range<T>
 	 * @param minimum
 	 *            the minimum to set
 	 */
-	public final void setMinimum(final T minimum)
+	public void setMinimum(final T minimum)
 	{
 		this.minimum = minimum;
 	}
@@ -77,7 +77,7 @@ public class Range<T>
 	/**
 	 * @return the maximum
 	 */
-	public final T getMaximum()
+	public T getMaximum()
 	{
 		return maximum;
 	}
@@ -86,7 +86,7 @@ public class Range<T>
 	 * @param maximum
 	 *            the maximum to set
 	 */
-	public final void setMaximum(final T maximum)
+	public void setMaximum(final T maximum)
 	{
 		this.maximum = maximum;
 	}

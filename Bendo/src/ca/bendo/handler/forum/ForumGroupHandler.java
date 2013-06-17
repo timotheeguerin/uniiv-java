@@ -4,6 +4,7 @@
 package ca.bendo.handler.forum;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -112,6 +113,41 @@ public class ForumGroupHandler
 		List<ForumQuestion> questions = questionDAO.listQuestionsInGroup(groupId, startAt, amount, order);
 		request.setAttribute("questions", questions);
 		request.setAttribute("group", group);
+		return true;
+	}
+
+	/**
+	 * @param request
+	 *            Request
+	 * @param groupId
+	 *            GroupId
+	 * @return if the page was able to be setup succesfully
+	 */
+	public boolean setupGroupPage(final HttpServletRequest request, final long groupId)
+	{
+		ForumGroup group = groupDAO.getById(groupId);
+		if (group == null)
+		{
+			return false;
+		}
+
+		request.setAttribute("group", group);
+		return true;
+	}
+
+	/**
+	 * Load the first subgroups.
+	 * 
+	 * @param request
+	 *            Request
+	 * @param groupId
+	 *            GroupId
+	 * @return boolean if page setup correctely
+	 */
+	public boolean setupQuickDisplaySubgroupList(final HttpServletRequest request, final long groupId)
+	{
+		List<ForumGroup> subGroups = groupDAO.getQuickDisplaySubGroups(groupId);
+		request.setAttribute("groups", subGroups);
 		return true;
 	}
 }

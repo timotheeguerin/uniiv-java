@@ -43,7 +43,7 @@ public class TestLanguageDAO
 	 * @see LanguageDAO#listLanguages()
 	 */
 	@Test
-	public final void testGetCountries()
+	public void testGetCountries()
 	{
 
 		List<Language> l = languageDAO.listLanguages();

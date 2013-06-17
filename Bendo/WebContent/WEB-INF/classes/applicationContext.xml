@@ -101,6 +101,10 @@
 			<bean class="ca.bendo.form.TranslateMessageInterpolator" />
 		</property>
 	</bean>
+	
+	<mvc:interceptors>
+	 <bean class="ca.bendo.user.security.LoginInterceptor" />
+	</mvc:interceptors>
 
 	<context:component-scan base-package="ca.bendo" />
 

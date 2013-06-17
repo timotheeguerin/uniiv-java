@@ -40,7 +40,7 @@ public class UserState
 	/**
 	 * @return the id
 	 */
-	public final int getId()
+	public int getId()
 	{
 		return id;
 	}
@@ -49,7 +49,7 @@ public class UserState
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final int id)
+	public void setId(final int id)
 	{
 		this.id = id;
 	}
@@ -57,7 +57,7 @@ public class UserState
 	/**
 	 * @return the state
 	 */
-	public final String getState()
+	public String getState()
 	{
 		return state;
 	}
@@ -66,7 +66,7 @@ public class UserState
 	 * @param state
 	 *            the state to set
 	 */
-	public final void setState(final String state)
+	public void setState(final String state)
 	{
 		this.state = state;
 	}

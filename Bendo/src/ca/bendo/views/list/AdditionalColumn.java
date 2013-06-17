@@ -33,7 +33,7 @@ public class AdditionalColumn
 	/**
 	 * @return the type
 	 */
-	public final AdditionalColumnType getType()
+	public AdditionalColumnType getType()
 	{
 		return type;
 	}
@@ -42,7 +42,7 @@ public class AdditionalColumn
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final AdditionalColumnType type)
+	public void setType(final AdditionalColumnType type)
 	{
 		this.type = type;
 	}
@@ -50,7 +50,7 @@ public class AdditionalColumn
 	/**
 	 * @return the value
 	 */
-	public final Object getValue()
+	public Object getValue()
 	{
 		return value;
 	}
@@ -59,7 +59,7 @@ public class AdditionalColumn
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final Object value)
+	public void setValue(final Object value)
 	{
 		this.value = value;
 	}
@@ -67,7 +67,7 @@ public class AdditionalColumn
 	/**
 	 * @return the file
 	 */
-	public final String getFile()
+	public String getFile()
 	{
 		return file;
 	}
@@ -76,7 +76,7 @@ public class AdditionalColumn
 	 * @param file
 	 *            the file to set
 	 */
-	public final void setFile(final String file)
+	public void setFile(final String file)
 	{
 		this.file = file;
 	}

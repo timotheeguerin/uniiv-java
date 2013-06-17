@@ -49,7 +49,7 @@ public class RequestTranslator
 	 *            key to translate
 	 * @return key translated in the requestTransaltor language
 	 */
-	public final String translate(final String key)
+	public String translate(final String key)
 	{
 		return translator.translate(key, language.getId());
 	}
@@ -57,7 +57,7 @@ public class RequestTranslator
 	/**
 	 * @return the translator
 	 */
-	public final Translator getTranslator()
+	public Translator getTranslator()
 	{
 		return translator;
 	}
@@ -66,7 +66,7 @@ public class RequestTranslator
 	 * @param translator
 	 *            the translator to set
 	 */
-	public final void setTranslator(final Translator translator)
+	public void setTranslator(final Translator translator)
 	{
 		this.translator = translator;
 	}
@@ -74,7 +74,7 @@ public class RequestTranslator
 	/**
 	 * @return the language
 	 */
-	public final Language getLanguage()
+	public Language getLanguage()
 	{
 		return language;
 	}
@@ -83,7 +83,7 @@ public class RequestTranslator
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		this.language = language;
 	}

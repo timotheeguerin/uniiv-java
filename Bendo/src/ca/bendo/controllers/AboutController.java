@@ -34,7 +34,7 @@ public class AboutController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/about";
 	}

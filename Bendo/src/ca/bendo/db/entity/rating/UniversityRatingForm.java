@@ -49,7 +49,7 @@ public class UniversityRatingForm
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -58,7 +58,7 @@ public class UniversityRatingForm
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -66,7 +66,7 @@ public class UniversityRatingForm
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -75,7 +75,7 @@ public class UniversityRatingForm
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -83,7 +83,7 @@ public class UniversityRatingForm
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -98,7 +98,7 @@ public class UniversityRatingForm
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

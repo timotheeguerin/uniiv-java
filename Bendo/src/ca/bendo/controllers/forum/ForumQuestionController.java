@@ -74,12 +74,6 @@ public class ForumQuestionController
 			questionHandler.handleNewQuestion(request, questionForm);
 			return "redirect:";
 		}
-		// if (questionHandler.handleNewQuestion(request, groupId))
-		// {
-		// return "redirect:";
-		// } else
-		// {
-		// }
 	}
 
 	/**

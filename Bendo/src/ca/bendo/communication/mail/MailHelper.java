@@ -91,7 +91,7 @@ public class MailHelper
 	 * @param message
 	 *            the message to send
 	 */
-	public final void send(final String recipients, final String subject, final String message)
+	public void send(final String recipients, final String subject, final String message)
 	{
 		if (recipients == null || subject == null || message == null)
 		{
@@ -148,7 +148,7 @@ public class MailHelper
 	 * @param filename
 	 *            the name of the file to be joined
 	 */
-	public final void send(final String recipients, final String subject, final String message, final String filename)
+	public void send(final String recipients, final String subject, final String message, final String filename)
 	{
 		if (recipients == null || subject == null || message == null)
 		{
@@ -221,7 +221,7 @@ public class MailHelper
 	 * @param filesnames
 	 *            names of the file to be joined
 	 */
-	public final void send(final String recipients, final String subject, final String message,
+	public void send(final String recipients, final String subject, final String message,
 			final List<String> filesnames)
 	{
 		if (recipients == null || subject == null || message == null)
@@ -289,7 +289,7 @@ public class MailHelper
 	 * @return the senderEmail
 	 * 
 	 */
-	public final String getSenderEmail()
+	public String getSenderEmail()
 	{
 		return senderEmail;
 	}
@@ -299,7 +299,7 @@ public class MailHelper
 	 *            the senderEmail to set
 	 * 
 	 */
-	public final void setSenderEmail(final String senderEmail)
+	public void setSenderEmail(final String senderEmail)
 	{
 		this.senderEmail = senderEmail;
 	}

@@ -42,7 +42,7 @@ public class LinkDAO extends HibernateDAO<Link>
 	 * @return a list of countries
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<Link> listLinks()
+	public List<Link> listLinks()
 	{
 		return (List<Link>) getSession().createCriteria(Link.class).list();
 	}
@@ -72,7 +72,7 @@ public class LinkDAO extends HibernateDAO<Link>
 	 *            Link key
 	 * @return a map of the link for the key in all language
 	 */
-	public final Map<String, Link> getLinksWithKey(final String key)
+	public Map<String, Link> getLinksWithKey(final String key)
 	{
 
 		@SuppressWarnings("unchecked")

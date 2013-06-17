@@ -125,7 +125,7 @@ public class UrlTranslator
 	 * 
 	 * @return the language
 	 */
-	public final Language getLang()
+	public Language getLang()
 	{
 		return language;
 	}
@@ -134,7 +134,7 @@ public class UrlTranslator
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		log.info("Setting language to " + language.getName());
 		this.language = language;
@@ -143,7 +143,7 @@ public class UrlTranslator
 	/**
 	 * @return the uri
 	 */
-	public final String getUri()
+	public String getUri()
 	{
 		return uri;
 	}
@@ -152,7 +152,7 @@ public class UrlTranslator
 	 * @param uri
 	 *            the uri to set
 	 */
-	public final void setUri(final String uri)
+	public void setUri(final String uri)
 	{
 		this.uri = uri;
 	}
@@ -160,7 +160,7 @@ public class UrlTranslator
 	/**
 	 * @return the languageManager
 	 */
-	public final SupportedLanguageManager getLanguageManager()
+	public SupportedLanguageManager getLanguageManager()
 	{
 		return languageManager;
 	}
@@ -169,7 +169,7 @@ public class UrlTranslator
 	 * @param languageManager
 	 *            the languageManager to set
 	 */
-	public final void setLanguageManager(final SupportedLanguageManager languageManager)
+	public void setLanguageManager(final SupportedLanguageManager languageManager)
 	{
 		this.languageManager = languageManager;
 	}

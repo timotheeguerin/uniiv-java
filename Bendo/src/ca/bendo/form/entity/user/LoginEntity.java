@@ -34,7 +34,7 @@ public class LoginEntity extends Entity
 	/**
 	 * @return the email
 	 */
-	public final String getEmail()
+	public String getEmail()
 	{
 		return email;
 	}
@@ -43,7 +43,7 @@ public class LoginEntity extends Entity
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final String email)
+	public void setEmail(final String email)
 	{
 		this.email = email;
 	}
@@ -51,7 +51,7 @@ public class LoginEntity extends Entity
 	/**
 	 * @return the password
 	 */
-	public final String getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -60,7 +60,7 @@ public class LoginEntity extends Entity
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final String password)
+	public void setPassword(final String password)
 	{
 		this.password = password;
 	}

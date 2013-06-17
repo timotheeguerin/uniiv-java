@@ -35,7 +35,7 @@ public class TestController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		((HeadManager) request.getAttribute("head")).getTitle().setTitle("Signup");
 

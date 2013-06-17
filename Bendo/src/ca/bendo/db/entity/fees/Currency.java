@@ -56,7 +56,7 @@ public class Currency
 	/**
 	 * @return the symbol
 	 */
-	public final String getSymbol()
+	public String getSymbol()
 	{
 		return symbol;
 	}
@@ -65,7 +65,7 @@ public class Currency
 	 * @param symbol
 	 *            the symbol to set
 	 */
-	public final void setSymbol(final String symbol)
+	public void setSymbol(final String symbol)
 	{
 		this.symbol = symbol;
 	}
@@ -73,7 +73,7 @@ public class Currency
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -82,7 +82,7 @@ public class Currency
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -107,7 +107,7 @@ public class Currency
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -122,7 +122,7 @@ public class Currency
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

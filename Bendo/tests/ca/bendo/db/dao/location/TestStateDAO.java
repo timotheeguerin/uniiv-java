@@ -45,7 +45,7 @@ public class TestStateDAO
 	 * @see StateDAO#testListStates
 	 */
 	@Test
-	public final void testListStates()
+	public void testListStates()
 	{
 		stateDao.setLanguageId(1);
 		List<State> l = stateDao.listStates();
@@ -64,7 +64,7 @@ public class TestStateDAO
 	 * @see UserLoginTypeDAO#GetUserLoginTypes
 	 */
 	@Test
-	public final void testGetState()
+	public void testGetState()
 	{
 
 		List<State> l = stateDao.listStates();
@@ -105,7 +105,7 @@ public class TestStateDAO
 	 * 
 	 */
 	@Test
-	public final void testGetStatesInCountry()
+	public void testGetStatesInCountry()
 	{
 
 		// Canada
@@ -158,7 +158,7 @@ public class TestStateDAO
 	/**
 	 * @return the stateDao
 	 */
-	public final StateDAO getStateDao()
+	public StateDAO getStateDao()
 	{
 		return stateDao;
 	}
@@ -167,7 +167,7 @@ public class TestStateDAO
 	 * @param stateDao
 	 *            the stateDao to set
 	 */
-	public final void setStateDao(final StateDAO stateDao)
+	public void setStateDao(final StateDAO stateDao)
 	{
 		this.stateDao = stateDao;
 	}

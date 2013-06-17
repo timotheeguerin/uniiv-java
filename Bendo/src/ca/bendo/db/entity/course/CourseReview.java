@@ -74,7 +74,7 @@ public class CourseReview
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -83,7 +83,7 @@ public class CourseReview
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -91,7 +91,7 @@ public class CourseReview
 	/**
 	 * @return the comment
 	 */
-	public final Comment getComment()
+	public Comment getComment()
 	{
 		return comment;
 	}
@@ -100,7 +100,7 @@ public class CourseReview
 	 * @param comment
 	 *            the comment to set
 	 */
-	public final void setComment(final Comment comment)
+	public void setComment(final Comment comment)
 	{
 		this.comment = comment;
 	}
@@ -108,7 +108,7 @@ public class CourseReview
 	/**
 	 * @return the course
 	 */
-	public final Course getCourse()
+	public Course getCourse()
 	{
 		return course;
 	}
@@ -117,7 +117,7 @@ public class CourseReview
 	 * @param course
 	 *            the course to set
 	 */
-	public final void setCourse(final Course course)
+	public void setCourse(final Course course)
 	{
 		this.course = course;
 	}
@@ -125,7 +125,7 @@ public class CourseReview
 	/**
 	 * @return the ratings
 	 */
-	public final List<CourseRating> getRatings()
+	public List<CourseRating> getRatings()
 	{
 		return ratings;
 	}
@@ -134,7 +134,7 @@ public class CourseReview
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final List<CourseRating> ratings)
+	public void setRatings(final List<CourseRating> ratings)
 	{
 		this.ratings = ratings;
 	}
@@ -142,7 +142,7 @@ public class CourseReview
 	/**
 	 * @return the date
 	 */
-	public final Date getDate()
+	public Date getDate()
 	{
 		return date;
 	}
@@ -151,7 +151,7 @@ public class CourseReview
 	 * @param date
 	 *            the date to set
 	 */
-	public final void setDate(final Date date)
+	public void setDate(final Date date)
 	{
 		this.date = date;
 	}

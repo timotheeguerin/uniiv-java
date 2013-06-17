@@ -33,7 +33,7 @@ public class TermsAndConditionController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/conditions", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/termsconditions";
 	}

@@ -34,7 +34,7 @@ public class DiscussPlaceController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/discuss/places", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/underconstruction";
 	}

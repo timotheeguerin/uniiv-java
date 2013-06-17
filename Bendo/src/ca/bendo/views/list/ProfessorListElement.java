@@ -43,7 +43,7 @@ public class ProfessorListElement
 	/**
 	 * @return the professor
 	 */
-	public final Professor getProfessor()
+	public Professor getProfessor()
 	{
 		return professor;
 	}
@@ -52,7 +52,7 @@ public class ProfessorListElement
 	 * @param professor
 	 *            the professor to set
 	 */
-	public final void setProfessor(final Professor professor)
+	public void setProfessor(final Professor professor)
 	{
 		this.professor = professor;
 	}
@@ -60,7 +60,7 @@ public class ProfessorListElement
 	/**
 	 * @return the values
 	 */
-	public final List<String> getValues()
+	public List<String> getValues()
 	{
 		return values;
 	}
@@ -69,7 +69,7 @@ public class ProfessorListElement
 	 * @param values
 	 *            the values to set
 	 */
-	public final void setValues(final List<String> values)
+	public void setValues(final List<String> values)
 	{
 		this.values = values;
 	}
@@ -94,7 +94,7 @@ public class ProfessorListElement
 	/**
 	 * @return the ratings
 	 */
-	public final ProfessorRatingAverage getRatings()
+	public ProfessorRatingAverage getRatings()
 	{
 		return ratings;
 	}
@@ -103,7 +103,7 @@ public class ProfessorListElement
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final ProfessorRatingAverage ratings)
+	public void setRatings(final ProfessorRatingAverage ratings)
 	{
 		this.ratings = ratings;
 	}

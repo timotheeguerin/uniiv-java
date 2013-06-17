@@ -65,7 +65,7 @@ public class Course
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -74,7 +74,7 @@ public class Course
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -82,7 +82,7 @@ public class Course
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -91,7 +91,7 @@ public class Course
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -99,7 +99,7 @@ public class Course
 	/**
 	 * @return the code
 	 */
-	public final String getCode()
+	public String getCode()
 	{
 		return code;
 	}
@@ -108,7 +108,7 @@ public class Course
 	 * @param code
 	 *            the code to set
 	 */
-	public final void setCode(final String code)
+	public void setCode(final String code)
 	{
 		this.code = code;
 	}
@@ -116,7 +116,7 @@ public class Course
 	/**
 	 * @return the university
 	 */
-	public final University getUniversity()
+	public University getUniversity()
 	{
 		return university;
 	}
@@ -125,7 +125,7 @@ public class Course
 	 * @param university
 	 *            the university to set
 	 */
-	public final void setUniversity(final University university)
+	public void setUniversity(final University university)
 	{
 		this.university = university;
 	}
@@ -133,7 +133,7 @@ public class Course
 	/**
 	 * @return the program
 	 */
-	public final UniversityProgram getProgram()
+	public UniversityProgram getProgram()
 	{
 		return program;
 	}
@@ -142,7 +142,7 @@ public class Course
 	 * @param program
 	 *            the program to set
 	 */
-	public final void setProgram(final UniversityProgram program)
+	public void setProgram(final UniversityProgram program)
 	{
 		this.program = program;
 	}

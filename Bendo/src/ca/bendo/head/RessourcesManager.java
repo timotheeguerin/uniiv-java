@@ -56,7 +56,7 @@ public class RessourcesManager
 	 * @param str
 	 *            Stylesheet url
 	 */
-	public final void prependStyleSheet(final String str)
+	public void prependStyleSheet(final String str)
 	{
 		this.styles.addFirst(str);
 	}
@@ -67,7 +67,7 @@ public class RessourcesManager
 	 * @param str
 	 *            Stylesheet url
 	 */
-	public final void appendStyleSheet(final String str)
+	public void appendStyleSheet(final String str)
 	{
 		this.styles.addLast(str);
 	}
@@ -78,7 +78,7 @@ public class RessourcesManager
 	 * @param str
 	 *            Script url
 	 */
-	public final void prependScript(final String str)
+	public void prependScript(final String str)
 	{
 		this.scripts.addFirst(str);
 	}
@@ -89,7 +89,7 @@ public class RessourcesManager
 	 * @param str
 	 *            Script url
 	 */
-	public final void appendScript(final String str)
+	public void appendScript(final String str)
 	{
 		this.scripts.addLast(str);
 	}
@@ -98,7 +98,7 @@ public class RessourcesManager
 	 * 
 	 * @return the styles list
 	 */
-	public final List<String> getStyles()
+	public List<String> getStyles()
 	{
 		return this.styles;
 	}
@@ -107,7 +107,7 @@ public class RessourcesManager
 	 * 
 	 * @return the script list
 	 */
-	public final List<String> getScripts()
+	public List<String> getScripts()
 	{
 		return this.scripts;
 	}

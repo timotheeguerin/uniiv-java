@@ -47,7 +47,7 @@ public class ProfessorUniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/professors/", method = RequestMethod.GET)
-	public final String professorInUniversity(@PathVariable("uniId") final int universityId,
+	public String professorInUniversity(@PathVariable("uniId") final int universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		if (professorUniversityHandler.setupProfessorInUniversityPage(universityId, request))
@@ -72,7 +72,7 @@ public class ProfessorUniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/universities/", method = RequestMethod.GET)
-	public final String professorUniversity(@PathVariable("profId") final int professorId,
+	public String professorUniversity(@PathVariable("profId") final int professorId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		// Translator translator = (Translator)
@@ -104,7 +104,7 @@ public class ProfessorUniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/university/add", method = RequestMethod.GET)
-	public final String newProfessorUniversity(@PathVariable("profId") final long professorId,
+	public String newProfessorUniversity(@PathVariable("profId") final long professorId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return newProfessorUniversityPage(professorId, request, response);
@@ -122,7 +122,7 @@ public class ProfessorUniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/university/add", method = RequestMethod.POST)
-	public final String handleNewProfessorUniversity(@PathVariable("profId") final long professorId,
+	public String handleNewProfessorUniversity(@PathVariable("profId") final long professorId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
@@ -150,7 +150,7 @@ public class ProfessorUniversityController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String newProfessorUniversityPage(final long professorId, final HttpServletRequest request,
+	public String newProfessorUniversityPage(final long professorId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");

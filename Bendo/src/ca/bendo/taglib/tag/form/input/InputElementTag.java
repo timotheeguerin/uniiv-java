@@ -38,7 +38,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -46,7 +46,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @param name the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -54,7 +54,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @return the type
 	 */
-	public final String getType()
+	public String getType()
 	{
 		return type;
 	}
@@ -62,7 +62,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @param type the type to set
 	 */
-	public final void setType(final String type)
+	public void setType(final String type)
 	{
 		this.type = type;
 	}
@@ -70,7 +70,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @return the value
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -78,7 +78,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @param value the value to set
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}
@@ -86,7 +86,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @return the title
 	 */
-	public final String getTitle()
+	public String getTitle()
 	{
 		return title;
 	}
@@ -94,7 +94,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @param title the title to set
 	 */
-	public final void setTitle(final String title)
+	public void setTitle(final String title)
 	{
 		this.title = title;
 	}
@@ -102,7 +102,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @return the needValidation
 	 */
-	public final boolean isNeedValidation()
+	public boolean isNeedValidation()
 	{
 		return needValidation;
 	}
@@ -110,7 +110,7 @@ public class InputElementTag extends TagSupport
 	/**
 	 * @param needValidation the needValidation to set
 	 */
-	public final void setNeedValidation(final boolean needValidation)
+	public void setNeedValidation(final boolean needValidation)
 	{
 		this.needValidation = needValidation;
 	}
@@ -135,7 +135,7 @@ public class InputElementTag extends TagSupport
 	private boolean needValidation = false;
 	
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try

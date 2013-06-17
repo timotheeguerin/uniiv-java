@@ -58,7 +58,7 @@ public class ProfessorRating
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -67,7 +67,7 @@ public class ProfessorRating
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -75,7 +75,7 @@ public class ProfessorRating
 	/**
 	 * @return the type
 	 */
-	public final ProfessorRatingType getType()
+	public ProfessorRatingType getType()
 	{
 		return type;
 	}
@@ -84,7 +84,7 @@ public class ProfessorRating
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final ProfessorRatingType type)
+	public void setType(final ProfessorRatingType type)
 	{
 		this.type = type;
 	}
@@ -92,7 +92,7 @@ public class ProfessorRating
 	/**
 	 * @return the review
 	 */
-	public final ProfessorReview getReview()
+	public ProfessorReview getReview()
 	{
 		return review;
 	}
@@ -101,7 +101,7 @@ public class ProfessorRating
 	 * @param review
 	 *            the review to set
 	 */
-	public final void setReview(final ProfessorReview review)
+	public void setReview(final ProfessorReview review)
 	{
 		this.review = review;
 	}
@@ -109,7 +109,7 @@ public class ProfessorRating
 	/**
 	 * @return the value
 	 */
-	public final double getValue()
+	public double getValue()
 	{
 		return value;
 	}
@@ -118,7 +118,7 @@ public class ProfessorRating
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final double value)
+	public void setValue(final double value)
 	{
 		this.value = value;
 	}

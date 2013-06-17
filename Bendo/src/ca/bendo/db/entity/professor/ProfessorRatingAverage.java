@@ -83,7 +83,7 @@ public class ProfessorRatingAverage
 	/**
 	 * @return the ratings
 	 */
-	public final List<ProfessorRating> getRatings()
+	public List<ProfessorRating> getRatings()
 	{
 		return ratings;
 	}
@@ -92,7 +92,7 @@ public class ProfessorRatingAverage
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final List<ProfessorRating> ratings)
+	public void setRatings(final List<ProfessorRating> ratings)
 	{
 		this.ratings = ratings;
 	}

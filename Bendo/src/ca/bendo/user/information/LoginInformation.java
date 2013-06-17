@@ -34,7 +34,7 @@ public class LoginInformation
 	/**
 	 * @return the email
 	 */
-	public final Email getEmail()
+	public Email getEmail()
 	{
 		return email;
 	}
@@ -43,7 +43,7 @@ public class LoginInformation
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final Email email)
+	public void setEmail(final Email email)
 	{
 		this.email = email;
 	}
@@ -51,7 +51,7 @@ public class LoginInformation
 	/**
 	 * @return the password
 	 */
-	public final Password getPassword()
+	public Password getPassword()
 	{
 		return password;
 	}
@@ -60,7 +60,7 @@ public class LoginInformation
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final Password password)
+	public void setPassword(final Password password)
 	{
 		this.password = password;
 	}

@@ -54,7 +54,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "university/{uniId}/course/{courseId}", method = RequestMethod.GET)
-	public final String professorUniversity(@PathVariable("uniId") final long universityId,
+	public String professorUniversity(@PathVariable("uniId") final long universityId,
 			@PathVariable("courseId") final long courseId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
@@ -85,7 +85,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "university/{uniId}/course/new", method = RequestMethod.GET)
-	public final String newCourse(@PathVariable("uniId") final long universityId, final HttpServletRequest request,
+	public String newCourse(@PathVariable("uniId") final long universityId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		request.setAttribute("form_error", false);
@@ -104,7 +104,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "university/{uniId}/course/new", method = RequestMethod.POST)
-	public final String submitNewProfessor(@PathVariable("uniId") final long universityId,
+	public String submitNewProfessor(@PathVariable("uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
@@ -163,7 +163,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/course/new", method = RequestMethod.GET)
-	public final String newCourseSelectUniversity(final HttpServletRequest request, final HttpServletResponse response)
+	public String newCourseSelectUniversity(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return newCourseSelectUniversityPage(request, response);
 	}
@@ -178,7 +178,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/course/new", method = RequestMethod.POST)
-	public final String handleNewCourseSelectUniversity(final HttpServletRequest request,
+	public String handleNewCourseSelectUniversity(final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");

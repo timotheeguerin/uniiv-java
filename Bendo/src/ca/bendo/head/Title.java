@@ -40,7 +40,7 @@ public class Title
 	/**
 	 * @return the title
 	 */
-	public final String getTitle()
+	public String getTitle()
 	{
 		return title;
 	}
@@ -49,7 +49,7 @@ public class Title
 	 * @param title
 	 *            the title to set
 	 */
-	public final void setTitle(final String title)
+	public void setTitle(final String title)
 	{
 		this.title = title;
 	}
@@ -57,7 +57,7 @@ public class Title
 	/**
 	 * @return the titleSuffix
 	 */
-	public final String getTitleSuffix()
+	public String getTitleSuffix()
 	{
 		return titleSuffix;
 	}
@@ -66,7 +66,7 @@ public class Title
 	 * @param titleSuffix
 	 *            the titleSuffix to set
 	 */
-	public final void setTitleSuffix(final String titleSuffix)
+	public void setTitleSuffix(final String titleSuffix)
 	{
 		this.titleSuffix = titleSuffix;
 	}
@@ -74,7 +74,7 @@ public class Title
 	/**
 	 * @return the titlePrefix
 	 */
-	public final String getTitlePrefix()
+	public String getTitlePrefix()
 	{
 		return titlePrefix;
 	}
@@ -83,7 +83,7 @@ public class Title
 	 * @param titlePrefix
 	 *            the titlePrefix to set
 	 */
-	public final void setTitlePrefix(final String titlePrefix)
+	public void setTitlePrefix(final String titlePrefix)
 	{
 		this.titlePrefix = titlePrefix;
 	}
@@ -91,7 +91,7 @@ public class Title
 	/**
 	 * @return the separator
 	 */
-	public final String getSeparator()
+	public String getSeparator()
 	{
 		return separator;
 	}
@@ -100,7 +100,7 @@ public class Title
 	 * @param separator
 	 *            the separator to set
 	 */
-	public final void setSeparator(final String separator)
+	public void setSeparator(final String separator)
 	{
 		this.separator = separator;
 	}
@@ -110,7 +110,7 @@ public class Title
 	 * 
 	 * @return the rendered title
 	 */
-	public final String render()
+	public String render()
 	{
 		String result = "";
 		if (this.titlePrefix != null)
@@ -141,7 +141,7 @@ public class Title
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return render();
 	}

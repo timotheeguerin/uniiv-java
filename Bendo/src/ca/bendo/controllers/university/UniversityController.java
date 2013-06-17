@@ -49,7 +49,7 @@ public class UniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}", method = RequestMethod.GET)
-	public final String universityPage(@PathVariable(value = "uniId") final long universityId,
+	public String universityPage(@PathVariable(value = "uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		request.getAttribute("translator");
@@ -74,7 +74,7 @@ public class UniversityController
 	 */
 	@RequestMapping(value = "/university/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public final AutoCompleteJson professorNewUniversityListAjax(final HttpServletRequest request,
+	public AutoCompleteJson professorNewUniversityListAjax(final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 

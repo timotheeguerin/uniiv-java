@@ -52,7 +52,7 @@ public class DropdownButton extends TagTemplate
 	}
 
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		StringBuilder result = new StringBuilder();
 
@@ -72,7 +72,7 @@ public class DropdownButton extends TagTemplate
 	/**
 	 * @return the dropdown
 	 */
-	public final Boolean getDropdown()
+	public Boolean getDropdown()
 	{
 		return dropdown;
 	}
@@ -82,7 +82,7 @@ public class DropdownButton extends TagTemplate
 	 *            the dropdown to set
 	 * 
 	 */
-	public final void setDropdown(final Boolean dropdown)
+	public void setDropdown(final Boolean dropdown)
 	{
 		this.dropdown = dropdown;
 	}
@@ -91,7 +91,7 @@ public class DropdownButton extends TagTemplate
 	 * @return the link
 	 * 
 	 */
-	public final String getLink()
+	public String getLink()
 	{
 		return link;
 	}
@@ -101,7 +101,7 @@ public class DropdownButton extends TagTemplate
 	 *            the link to set
 	 * 
 	 */
-	public final void setLink(final String link)
+	public void setLink(final String link)
 	{
 		this.link = link;
 	}
@@ -110,7 +110,7 @@ public class DropdownButton extends TagTemplate
 	 * @return the value
 	 * 
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -120,7 +120,7 @@ public class DropdownButton extends TagTemplate
 	 *            the value to set
 	 * 
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}
@@ -129,7 +129,7 @@ public class DropdownButton extends TagTemplate
 	 * @return the dropdownContent
 	 * 
 	 */
-	public final StringBuilder getDropdownContent()
+	public StringBuilder getDropdownContent()
 	{
 		return dropdownContent;
 	}
@@ -139,7 +139,7 @@ public class DropdownButton extends TagTemplate
 	 *            the dropdownContent to set
 	 * 
 	 */
-	public final void setDropdownContent(final StringBuilder dropdownContent)
+	public void setDropdownContent(final StringBuilder dropdownContent)
 	{
 		this.dropdownContent = dropdownContent;
 	}

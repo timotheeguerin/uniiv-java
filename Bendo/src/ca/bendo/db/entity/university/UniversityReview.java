@@ -133,7 +133,7 @@ public class UniversityReview
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -142,7 +142,7 @@ public class UniversityReview
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -150,7 +150,7 @@ public class UniversityReview
 	/**
 	 * @return the university
 	 */
-	public final University getUniversity()
+	public University getUniversity()
 	{
 		return university;
 	}
@@ -159,7 +159,7 @@ public class UniversityReview
 	 * @param university
 	 *            the university to set
 	 */
-	public final void setUniversity(final University university)
+	public void setUniversity(final University university)
 	{
 		this.university = university;
 	}
@@ -167,7 +167,7 @@ public class UniversityReview
 	/**
 	 * @return the comment
 	 */
-	public final Comment getComment()
+	public Comment getComment()
 	{
 		return comment;
 	}
@@ -176,7 +176,7 @@ public class UniversityReview
 	 * @param comment
 	 *            the comment to set
 	 */
-	public final void setComment(final Comment comment)
+	public void setComment(final Comment comment)
 	{
 		this.comment = comment;
 	}
@@ -184,7 +184,7 @@ public class UniversityReview
 	/**
 	 * @return the ratings
 	 */
-	public final List<UniversityReviewRating> getRatings()
+	public List<UniversityReviewRating> getRatings()
 	{
 		return ratings;
 	}
@@ -193,7 +193,7 @@ public class UniversityReview
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final List<UniversityReviewRating> ratings)
+	public void setRatings(final List<UniversityReviewRating> ratings)
 	{
 		this.ratings = ratings;
 	}
@@ -201,7 +201,7 @@ public class UniversityReview
 	/**
 	 * @return the date
 	 */
-	public final Date getDate()
+	public Date getDate()
 	{
 		return date;
 	}
@@ -210,7 +210,7 @@ public class UniversityReview
 	 * @param date
 	 *            the date to set
 	 */
-	public final void setDate(final Date date)
+	public void setDate(final Date date)
 	{
 		this.date = date;
 	}

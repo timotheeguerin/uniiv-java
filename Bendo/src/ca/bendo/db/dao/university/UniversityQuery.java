@@ -223,7 +223,7 @@ public class UniversityQuery
 	/**
 	 * @return the countries
 	 */
-	public final List<Country> getCountries()
+	public List<Country> getCountries()
 	{
 		return countries;
 	}
@@ -232,7 +232,7 @@ public class UniversityQuery
 	 * @param countries
 	 *            the countries to set
 	 */
-	public final void setCountries(final List<Country> countries)
+	public void setCountries(final List<Country> countries)
 	{
 		this.countries = countries;
 	}
@@ -240,7 +240,7 @@ public class UniversityQuery
 	/**
 	 * @return the faculties
 	 */
-	public final List<UniversityFaculty> getFaculties()
+	public List<UniversityFaculty> getFaculties()
 	{
 		return faculties;
 	}
@@ -249,7 +249,7 @@ public class UniversityQuery
 	 * @param faculties
 	 *            the faculties to set
 	 */
-	public final void setFaculties(final List<UniversityFaculty> faculties)
+	public void setFaculties(final List<UniversityFaculty> faculties)
 	{
 		this.faculties = faculties;
 	}
@@ -257,7 +257,7 @@ public class UniversityQuery
 	/**
 	 * @return the softRatings
 	 */
-	public final Map<Long, Long> getSoftRatings()
+	public Map<Long, Long> getSoftRatings()
 	{
 		return softRatings;
 	}
@@ -266,7 +266,7 @@ public class UniversityQuery
 	 * @param softRatings
 	 *            the softRatings to set
 	 */
-	public final void setSoftRatings(final Map<Long, Long> softRatings)
+	public void setSoftRatings(final Map<Long, Long> softRatings)
 	{
 		this.softRatings = softRatings;
 	}

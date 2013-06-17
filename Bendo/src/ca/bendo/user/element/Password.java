@@ -54,7 +54,7 @@ public class Password
 	/**
 	 * @return the hashed password
 	 */
-	public final HashedPassword hashPassword()
+	public HashedPassword hashPassword()
 	{
 		return new HashedPassword(password);
 	}
@@ -64,7 +64,7 @@ public class Password
 	 *            hashedPassword salt
 	 * @return the hashed password depending on the given salt
 	 */
-	public final HashedPassword hashPassword(final String salt)
+	public HashedPassword hashPassword(final String salt)
 	{
 		return new HashedPassword(password, salt);
 	}
@@ -76,7 +76,7 @@ public class Password
 	 *            Password to compare
 	 * @return If the two password match
 	 */
-	public final boolean match(final HashedPassword hashPassword)
+	public boolean match(final HashedPassword hashPassword)
 	{
 		String salt = hashPassword.getHashedPassword();
 		HashedPassword hashPassword2 = hashPassword(salt);
@@ -86,7 +86,7 @@ public class Password
 	/**
 	 * @return the password
 	 */
-	public final String getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -95,7 +95,7 @@ public class Password
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final String password)
+	public void setPassword(final String password)
 	{
 		this.password = password;
 	}
@@ -106,7 +106,7 @@ public class Password
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return password;
 	}

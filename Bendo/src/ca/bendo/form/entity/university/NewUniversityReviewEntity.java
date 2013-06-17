@@ -33,7 +33,7 @@ public class NewUniversityReviewEntity extends Entity
 	/**
 	 * @return the languageId
 	 */
-	public final String getLanguageId()
+	public String getLanguageId()
 	{
 		return languageId;
 	}
@@ -42,7 +42,7 @@ public class NewUniversityReviewEntity extends Entity
 	 * @param languageId
 	 *            the languageId to set
 	 */
-	public final void setLanguageId(final String languageId)
+	public void setLanguageId(final String languageId)
 	{
 		this.languageId = languageId;
 	}
@@ -50,7 +50,7 @@ public class NewUniversityReviewEntity extends Entity
 	/**
 	 * @return the comment
 	 */
-	public final String getComment()
+	public String getComment()
 	{
 		return comment;
 	}
@@ -59,7 +59,7 @@ public class NewUniversityReviewEntity extends Entity
 	 * @param comment
 	 *            the comment to set
 	 */
-	public final void setComment(final String comment)
+	public void setComment(final String comment)
 	{
 		this.comment = comment;
 	}

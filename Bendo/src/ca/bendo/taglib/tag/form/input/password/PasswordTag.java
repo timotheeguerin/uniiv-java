@@ -53,7 +53,7 @@ public class PasswordTag extends TagSupport
 	private boolean required = false;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try
@@ -87,7 +87,7 @@ public class PasswordTag extends TagSupport
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -96,7 +96,7 @@ public class PasswordTag extends TagSupport
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -104,7 +104,7 @@ public class PasswordTag extends TagSupport
 	/**
 	 * @return the value
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -113,7 +113,7 @@ public class PasswordTag extends TagSupport
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}
@@ -129,7 +129,7 @@ public class PasswordTag extends TagSupport
 	/**
 	 * @return the placeholder
 	 */
-	public final String getPlaceholder()
+	public String getPlaceholder()
 	{
 		return placeholder;
 	}
@@ -138,7 +138,7 @@ public class PasswordTag extends TagSupport
 	 * @param placeholder
 	 *            the placeholder to set
 	 */
-	public final void setPlaceholder(final String placeholder)
+	public void setPlaceholder(final String placeholder)
 	{
 		this.placeholder = placeholder;
 	}

@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.Filter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -101,7 +102,7 @@ public class HibernateDAO<T>
 	 */
 
 	@SuppressWarnings("unchecked")
-	public final T getById(final Long id)
+	public T getById(final Long id)
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
@@ -123,7 +124,7 @@ public class HibernateDAO<T>
 	 * @return if delete was succesfull
 	 */
 
-	public final boolean delete(final long id)
+	public boolean delete(final long id)
 	{
 		Object result = getSession().get(type, id);
 
@@ -143,7 +144,7 @@ public class HibernateDAO<T>
 	 *            New Entity.
 	 */
 
-	public final void saveOrUpdate(final T entity)
+	public void saveOrUpdate(final T entity)
 	{
 		getSession().saveOrUpdate(entity);
 
@@ -155,7 +156,7 @@ public class HibernateDAO<T>
 	 *            New Entity.
 	 */
 
-	public final void persist(final T entity)
+	public void persist(final T entity)
 	{
 		getSession().persist(entity);
 
@@ -167,7 +168,7 @@ public class HibernateDAO<T>
 	 *            New Entity.
 	 */
 
-	public final void update(final T entity)
+	public void update(final T entity)
 	{
 		getSession().update(entity);
 	}
@@ -179,6 +180,15 @@ public class HibernateDAO<T>
 	public void add(final T entity)
 	{
 		getSession().save(entity);
+	}
+
+	/**
+	 * 
+	 * @return the number of entity
+	 */
+	public long count()
+	{
+		return (long) getSession().createCriteria(type).setProjection(Projections.rowCount()).uniqueResult();
 	}
 
 	/**

@@ -52,7 +52,7 @@ public class ProfessorUniversity
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -61,7 +61,7 @@ public class ProfessorUniversity
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -69,7 +69,7 @@ public class ProfessorUniversity
 	/**
 	 * @return the university
 	 */
-	public final University getUniversity()
+	public University getUniversity()
 	{
 		return university;
 	}
@@ -78,7 +78,7 @@ public class ProfessorUniversity
 	 * @param university
 	 *            the university to set
 	 */
-	public final void setUniversity(final University university)
+	public void setUniversity(final University university)
 	{
 		this.university = university;
 	}
@@ -86,7 +86,7 @@ public class ProfessorUniversity
 	/**
 	 * @return the professor
 	 */
-	public final Professor getProfessor()
+	public Professor getProfessor()
 	{
 		return professor;
 	}
@@ -95,7 +95,7 @@ public class ProfessorUniversity
 	 * @param professor
 	 *            the professor to set
 	 */
-	public final void setProfessor(final Professor professor)
+	public void setProfessor(final Professor professor)
 	{
 		this.professor = professor;
 	}

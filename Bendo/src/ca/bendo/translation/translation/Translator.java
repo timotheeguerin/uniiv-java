@@ -82,7 +82,7 @@ public class Translator
 	 *            Attributes to put in the translation
 	 * @return Translated element
 	 */
-	public final String translate(final String key, final long languageId, final Map<String, Object> tagAttributes)
+	public String translate(final String key, final long languageId, final Map<String, Object> tagAttributes)
 	{
 		VelocityContext context = new VelocityContext(tagAttributes);
 		StringWriter out = new StringWriter();
@@ -99,7 +99,7 @@ public class Translator
 	 *            Language id
 	 * @return url translated
 	 */
-	public final String translate(final String key, final long languageId)
+	public String translate(final String key, final long languageId)
 	{
 		Translation translation = translationsDAO.getTranslation(key, languageId);
 		if (translation == null)
@@ -119,7 +119,7 @@ public class Translator
 	 *            Language id
 	 * @return url translated
 	 */
-	public final String translateUrl(final String url, final long languageId)
+	public String translateUrl(final String url, final long languageId)
 	{
 		return urlTranslationManager.translateUrl(url, languageId);
 	}
@@ -130,7 +130,7 @@ public class Translator
 	 * @return the language
 	 * 
 	 */
-	public final Language getLanguage(final int langId)
+	public Language getLanguage(final int langId)
 	{
 		return supportedLangs.getLanguage(langId);
 	}
@@ -138,7 +138,7 @@ public class Translator
 	/**
 	 * @return the number of language
 	 */
-	public final int getLanguageNumber()
+	public int getLanguageNumber()
 	{
 		return getSupportedLangs().getNumber();
 	}
@@ -147,7 +147,7 @@ public class Translator
 	 * @return the supportedLangs
 	 * 
 	 */
-	public final SupportedLanguageManager getSupportedLangs()
+	public SupportedLanguageManager getSupportedLangs()
 	{
 		return supportedLangs;
 	}
@@ -157,7 +157,7 @@ public class Translator
 	 *            the supportedLangs to set
 	 * 
 	 */
-	public final void setSupportedLangs(final SupportedLanguageManager supportedLangs)
+	public void setSupportedLangs(final SupportedLanguageManager supportedLangs)
 	{
 		this.supportedLangs = supportedLangs;
 	}
@@ -165,7 +165,7 @@ public class Translator
 	/**
 	 * @return list of all languages
 	 */
-	public final List<Language> getLanguages()
+	public List<Language> getLanguages()
 	{
 		return getSupportedLangs().getLanguages();
 	}
@@ -179,7 +179,7 @@ public class Translator
 	 *            Language
 	 * @return the link with the given key in the given language
 	 */
-	public final String getLink(final String key, final long languageId)
+	public String getLink(final String key, final long languageId)
 	{
 		Link link = linkDAO.getLink(key, languageId);
 		if (link == null)

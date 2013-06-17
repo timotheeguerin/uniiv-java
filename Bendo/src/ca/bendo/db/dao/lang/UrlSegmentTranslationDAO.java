@@ -41,7 +41,7 @@ public class UrlSegmentTranslationDAO extends HibernateDAO<UrlSegmentTransaltion
 	 *            Id of the language for the translation
 	 * @return a map of the translation in the language specified
 	 */
-	public final Map<String, String> getTranslations(final long languageId)
+	public Map<String, String> getTranslations(final long languageId)
 	{
 		@SuppressWarnings("unchecked")
 		List<UrlSegmentTransaltion> translations = getSession().createCriteria(UrlSegmentTransaltion.class)

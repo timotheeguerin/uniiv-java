@@ -42,7 +42,7 @@ public class AlertMessagesContainer extends TagTemplate
 	 * @see ca.bendo.taglib.template.TagTemplate#render()
 	 */
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		HttpServletRequest request = (HttpServletRequest) getPageContext().getRequest();
 		StringBuilder result = new StringBuilder();

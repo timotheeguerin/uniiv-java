@@ -54,7 +54,7 @@ public class TextAreaTag extends TagSupport
 	private String counterId;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try
@@ -88,7 +88,7 @@ public class TextAreaTag extends TagSupport
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -97,7 +97,7 @@ public class TextAreaTag extends TagSupport
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -105,7 +105,7 @@ public class TextAreaTag extends TagSupport
 	/**
 	 * @return the clazz
 	 */
-	public final String getClazz()
+	public String getClazz()
 	{
 		return clazz;
 	}
@@ -114,7 +114,7 @@ public class TextAreaTag extends TagSupport
 	 * @param clazz
 	 *            the clazz to set
 	 */
-	public final void setClazz(final String clazz)
+	public void setClazz(final String clazz)
 	{
 		this.clazz = clazz;
 	}
@@ -122,7 +122,7 @@ public class TextAreaTag extends TagSupport
 	/**
 	 * @return the content
 	 */
-	public final String getContent()
+	public String getContent()
 	{
 		return content;
 	}
@@ -131,7 +131,7 @@ public class TextAreaTag extends TagSupport
 	 * @param content
 	 *            the content to set
 	 */
-	public final void setContent(final String content)
+	public void setContent(final String content)
 	{
 		this.content = content;
 	}
@@ -139,7 +139,7 @@ public class TextAreaTag extends TagSupport
 	/**
 	 * @return the maxlength
 	 */
-	public final int getMaxlength()
+	public int getMaxlength()
 	{
 		return maxlength;
 	}
@@ -148,7 +148,7 @@ public class TextAreaTag extends TagSupport
 	 * @param maxlength
 	 *            the maxlength to set
 	 */
-	public final void setMaxlength(final int maxlength)
+	public void setMaxlength(final int maxlength)
 	{
 		this.maxlength = maxlength;
 	}
@@ -156,7 +156,7 @@ public class TextAreaTag extends TagSupport
 	/**
 	 * @return the counterId
 	 */
-	public final String getCounterId()
+	public String getCounterId()
 	{
 		return counterId;
 	}
@@ -165,7 +165,7 @@ public class TextAreaTag extends TagSupport
 	 * @param counterId
 	 *            the counterId to set
 	 */
-	public final void setCounterId(final String counterId)
+	public void setCounterId(final String counterId)
 	{
 		this.counterId = counterId;
 	}

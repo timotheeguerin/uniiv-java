@@ -45,7 +45,7 @@ public class CardTag extends TagSupport
 	private CardType type;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 		CardHandler handler = getHandler();
 
@@ -106,7 +106,7 @@ public class CardTag extends TagSupport
 	/**
 	 * @return the value
 	 */
-	public final long getValue()
+	public long getValue()
 	{
 		return value;
 	}
@@ -115,7 +115,7 @@ public class CardTag extends TagSupport
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final long value)
+	public void setValue(final long value)
 	{
 		this.value = value;
 	}
@@ -123,7 +123,7 @@ public class CardTag extends TagSupport
 	/**
 	 * @return the type
 	 */
-	public final CardType getType()
+	public CardType getType()
 	{
 		return type;
 	}
@@ -132,7 +132,7 @@ public class CardTag extends TagSupport
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final CardType type)
+	public void setType(final CardType type)
 	{
 		this.type = type;
 	}

@@ -51,7 +51,7 @@ public class Comment
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -60,7 +60,7 @@ public class Comment
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -68,7 +68,7 @@ public class Comment
 	/**
 	 * @return the content
 	 */
-	public final String getContent()
+	public String getContent()
 	{
 		return content;
 	}
@@ -77,7 +77,7 @@ public class Comment
 	 * @param content
 	 *            the content to set
 	 */
-	public final void setContent(final String content)
+	public void setContent(final String content)
 	{
 		this.content = content;
 	}
@@ -85,7 +85,7 @@ public class Comment
 	/**
 	 * @return the language
 	 */
-	public final Language getLanguage()
+	public Language getLanguage()
 	{
 		return language;
 	}
@@ -94,7 +94,7 @@ public class Comment
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		this.language = language;
 	}

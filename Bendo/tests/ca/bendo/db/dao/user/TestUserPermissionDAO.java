@@ -43,7 +43,7 @@ public class TestUserPermissionDAO
 	 * @see AllAchievementLevelDAO
 	 */
 	@Test
-	public final void testGetStates()
+	public void testGetStates()
 	{
 
 		List<UserPermission> l = permissionDAO.list();

@@ -171,7 +171,7 @@ public class FilterElement
 	/**
 	 * @return the image
 	 */
-	public final String getImage()
+	public String getImage()
 	{
 		return image;
 	}
@@ -180,7 +180,7 @@ public class FilterElement
 	 * @param image
 	 *            the image to set
 	 */
-	public final void setImage(final String image)
+	public void setImage(final String image)
 	{
 		this.image = image;
 	}

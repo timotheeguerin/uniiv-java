@@ -41,7 +41,7 @@ public class UserPermissionManager
 	 *            to check
 	 * @return boolean
 	 */
-	public final boolean hasPermission(final String permission)
+	public boolean hasPermission(final String permission)
 	{
 		for (UserPermission p : getPermissions())
 		{
@@ -60,7 +60,7 @@ public class UserPermissionManager
 	 *            to check
 	 * @return boolean
 	 */
-	public final boolean hasPermission(final int permission)
+	public boolean hasPermission(final int permission)
 	{
 		for (UserPermission p : getPermissions())
 		{
@@ -78,7 +78,7 @@ public class UserPermissionManager
 	 *            permissions to set.
 	 * @return
 	 */
-	public final void setPermissions(final List<UserPermission> permissions)
+	public void setPermissions(final List<UserPermission> permissions)
 	{
 		this.permissions = permissions;
 	}
@@ -86,7 +86,7 @@ public class UserPermissionManager
 	/**
 	 * @return the permissions
 	 */
-	public final List<UserPermission> getPermissions()
+	public List<UserPermission> getPermissions()
 	{
 		return permissions;
 	}

@@ -58,7 +58,7 @@ public class UniversityGrade
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -67,7 +67,7 @@ public class UniversityGrade
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -75,7 +75,7 @@ public class UniversityGrade
 	/**
 	 * @return the softRating
 	 */
-	public final UniversityRating getSoftRating()
+	public UniversityRating getSoftRating()
 	{
 		return softRating;
 	}
@@ -84,7 +84,7 @@ public class UniversityGrade
 	 * @param softRating
 	 *            the softRating to set
 	 */
-	public final void setSoftRating(final UniversityRating softRating)
+	public void setSoftRating(final UniversityRating softRating)
 	{
 		this.softRating = softRating;
 	}
@@ -92,7 +92,7 @@ public class UniversityGrade
 	/**
 	 * @return the university
 	 */
-	public final University getUniversity()
+	public University getUniversity()
 	{
 		return university;
 	}
@@ -101,7 +101,7 @@ public class UniversityGrade
 	 * @param university
 	 *            the university to set
 	 */
-	public final void setUniversity(final University university)
+	public void setUniversity(final University university)
 	{
 		this.university = university;
 	}
@@ -109,7 +109,7 @@ public class UniversityGrade
 	/**
 	 * @return the value
 	 */
-	public final double getValue()
+	public double getValue()
 	{
 		return value;
 	}
@@ -118,7 +118,7 @@ public class UniversityGrade
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final double value)
+	public void setValue(final double value)
 	{
 		this.value = value;
 	}

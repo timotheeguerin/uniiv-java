@@ -76,7 +76,7 @@ public class StarRatingTag extends TagSupport
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -85,7 +85,7 @@ public class StarRatingTag extends TagSupport
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}

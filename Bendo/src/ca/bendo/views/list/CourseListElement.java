@@ -44,7 +44,7 @@ public class CourseListElement
 	/**
 	 * @return the course
 	 */
-	public final Course getCourse()
+	public Course getCourse()
 	{
 		return course;
 	}
@@ -53,7 +53,7 @@ public class CourseListElement
 	 * @param course
 	 *            the course to set
 	 */
-	public final void setCourse(final Course course)
+	public void setCourse(final Course course)
 	{
 		this.course = course;
 	}
@@ -61,7 +61,7 @@ public class CourseListElement
 	/**
 	 * @return the columns
 	 */
-	public final Map<String, AdditionalColumn> getColumns()
+	public Map<String, AdditionalColumn> getColumns()
 	{
 		return columns;
 	}
@@ -70,7 +70,7 @@ public class CourseListElement
 	 * @param addColumns
 	 *            the columns to set
 	 */
-	public final void setColumns(final Map<String, AdditionalColumn> addColumns)
+	public void setColumns(final Map<String, AdditionalColumn> addColumns)
 	{
 		this.columns = addColumns;
 	}
@@ -95,7 +95,7 @@ public class CourseListElement
 	/**
 	 * @return the ratings
 	 */
-	public final CourseRatingAverage getRatings()
+	public CourseRatingAverage getRatings()
 	{
 		return ratings;
 	}
@@ -104,7 +104,7 @@ public class CourseListElement
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final CourseRatingAverage ratings)
+	public void setRatings(final CourseRatingAverage ratings)
 	{
 		this.ratings = ratings;
 	}

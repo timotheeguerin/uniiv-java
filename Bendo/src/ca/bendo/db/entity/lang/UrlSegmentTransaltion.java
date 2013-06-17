@@ -47,7 +47,7 @@ public class UrlSegmentTransaltion
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -56,7 +56,7 @@ public class UrlSegmentTransaltion
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -64,7 +64,7 @@ public class UrlSegmentTransaltion
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -73,7 +73,7 @@ public class UrlSegmentTransaltion
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -81,7 +81,7 @@ public class UrlSegmentTransaltion
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		return translation;
 	}
@@ -90,7 +90,7 @@ public class UrlSegmentTransaltion
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}
@@ -98,7 +98,7 @@ public class UrlSegmentTransaltion
 	/**
 	 * @return the language
 	 */
-	public final Language getLanguage()
+	public Language getLanguage()
 	{
 		return language;
 	}
@@ -107,7 +107,7 @@ public class UrlSegmentTransaltion
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		this.language = language;
 	}

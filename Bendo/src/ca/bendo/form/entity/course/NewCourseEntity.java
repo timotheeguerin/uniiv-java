@@ -46,7 +46,7 @@ public class NewCourseEntity extends Entity
 	/**
 	 * @return the courseName
 	 */
-	public final String getCourseName()
+	public String getCourseName()
 	{
 		return courseName;
 	}
@@ -55,7 +55,7 @@ public class NewCourseEntity extends Entity
 	 * @param courseName
 	 *            the courseName to set
 	 */
-	public final void setCourseName(final String courseName)
+	public void setCourseName(final String courseName)
 	{
 		this.courseName = courseName;
 	}
@@ -63,7 +63,7 @@ public class NewCourseEntity extends Entity
 	/**
 	 * @return the courseCode
 	 */
-	public final String getCourseCode()
+	public String getCourseCode()
 	{
 		return courseCode;
 	}
@@ -72,7 +72,7 @@ public class NewCourseEntity extends Entity
 	 * @param courseCode
 	 *            the courseCode to set
 	 */
-	public final void setCourseCode(final String courseCode)
+	public void setCourseCode(final String courseCode)
 	{
 		this.courseCode = courseCode;
 	}
@@ -80,7 +80,7 @@ public class NewCourseEntity extends Entity
 	/**
 	 * @return the programId
 	 */
-	public final String getProgramId()
+	public String getProgramId()
 	{
 		return programId;
 	}
@@ -89,7 +89,7 @@ public class NewCourseEntity extends Entity
 	 * @param programId
 	 *            the programId to set
 	 */
-	public final void setProgramId(final String programId)
+	public void setProgramId(final String programId)
 	{
 		this.programId = programId;
 	}
@@ -97,7 +97,7 @@ public class NewCourseEntity extends Entity
 	/**
 	 * @return the captcha
 	 */
-	public final String getCaptcha()
+	public String getCaptcha()
 	{
 		return captcha;
 	}
@@ -106,7 +106,7 @@ public class NewCourseEntity extends Entity
 	 * @param captcha
 	 *            the captcha to set
 	 */
-	public final void setCaptcha(final String captcha)
+	public void setCaptcha(final String captcha)
 	{
 		this.captcha = captcha;
 	}

@@ -80,7 +80,7 @@ public class TestUniFeesDAO
 	/**
 	 * @return the uniFeesDAO
 	 */
-	public final UniFeesDAO getUniFeesDAO()
+	public UniFeesDAO getUniFeesDAO()
 	{
 		return uniFeesDAO;
 	}
@@ -89,7 +89,7 @@ public class TestUniFeesDAO
 	 * @param uniFeesDAO
 	 *            the uniFeesDAO to set
 	 */
-	public final void setUniFeesDAO(final UniFeesDAO uniFeesDAO)
+	public void setUniFeesDAO(final UniFeesDAO uniFeesDAO)
 	{
 		this.uniFeesDAO = uniFeesDAO;
 	}

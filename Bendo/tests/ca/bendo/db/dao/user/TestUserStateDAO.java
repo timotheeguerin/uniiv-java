@@ -43,7 +43,7 @@ public class TestUserStateDAO
 	 * @see AllAchievementLevelDAO
 	 */
 	@Test
-	public final void testListStates()
+	public void testListStates()
 	{
 
 		List<UserState> l = userStateDAO.list();

@@ -53,7 +53,7 @@ public class CourseProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/course/{courseId}/professors", method = RequestMethod.GET)
-	public final String courseTeachedByProfessor(@PathVariable("uniId") final long universityId,
+	public String courseTeachedByProfessor(@PathVariable("uniId") final long universityId,
 			@PathVariable("courseId") final long courseId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
@@ -84,7 +84,7 @@ public class CourseProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/courses/", method = RequestMethod.GET)
-	public final String professorUniversity(@PathVariable("profId") final int professorId,
+	public String professorUniversity(@PathVariable("profId") final int professorId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		// Translator translator = (Translator)
@@ -117,7 +117,7 @@ public class CourseProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/course/{courseId}/professor/new", method = RequestMethod.GET)
-	public final String professorReview(@PathVariable("uniId") final long universityId,
+	public String professorReview(@PathVariable("uniId") final long universityId,
 			@PathVariable("courseId") final long courseId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
@@ -139,7 +139,7 @@ public class CourseProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university/{uniId}/course/{courseId}/professor/new", method = RequestMethod.POST)
-	public final String handleNewProfessorReview(@PathVariable("uniId") final long universityId,
+	public String handleNewProfessorReview(@PathVariable("uniId") final long universityId,
 			@PathVariable("courseId") final long courseId, final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
@@ -176,7 +176,7 @@ public class CourseProfessorController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String newCourseProfessorPage(final long universityId, final long courseId,
+	public String newCourseProfessorPage(final long universityId, final long courseId,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		UserWarning.needValidUser(request);

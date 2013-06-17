@@ -39,7 +39,7 @@ public class UniTuitionFeesDAO extends HibernateDAO<UniversityTuitionFees>
 	 * @return a list of currencies
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<UniversityTuitionFees> listTuitionFees()
+	public List<UniversityTuitionFees> listTuitionFees()
 	{
 		return (List<UniversityTuitionFees>) getSession().createCriteria(UniversityTuitionFees.class).list();
 	}

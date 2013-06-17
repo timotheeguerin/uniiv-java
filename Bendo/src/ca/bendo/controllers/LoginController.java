@@ -52,7 +52,7 @@ public class LoginController extends BendoController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public final String login(final HttpServletRequest request, final HttpServletResponse response)
+	public String login(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
@@ -75,7 +75,7 @@ public class LoginController extends BendoController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public final String loginPost(final HttpServletRequest request, final HttpServletResponse response)
+	public String loginPost(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
@@ -105,7 +105,7 @@ public class LoginController extends BendoController
 	 *            Reponse
 	 * @return Jsp page
 	 */
-	public final String loginPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String loginPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		request.getAttribute("translator");
 		

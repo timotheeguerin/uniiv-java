@@ -70,7 +70,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -79,7 +79,7 @@ public class UniversityRatingMethodElement
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -87,7 +87,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -96,7 +96,7 @@ public class UniversityRatingMethodElement
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -104,7 +104,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the type
 	 */
-	public final UniversityRatingMethod getType()
+	public UniversityRatingMethod getType()
 	{
 		return type;
 	}
@@ -113,7 +113,7 @@ public class UniversityRatingMethodElement
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final UniversityRatingMethod type)
+	public void setType(final UniversityRatingMethod type)
 	{
 		this.type = type;
 	}
@@ -121,7 +121,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the weight
 	 */
-	public final int getWeight()
+	public int getWeight()
 	{
 		return weight;
 	}
@@ -130,7 +130,7 @@ public class UniversityRatingMethodElement
 	 * @param weight
 	 *            the weight to set
 	 */
-	public final void setWeight(final int weight)
+	public void setWeight(final int weight)
 	{
 		this.weight = weight;
 	}
@@ -138,7 +138,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the image
 	 */
-	public final String getImage()
+	public String getImage()
 	{
 		return image;
 	}
@@ -147,7 +147,7 @@ public class UniversityRatingMethodElement
 	 * @param image
 	 *            the image to set
 	 */
-	public final void setImage(final String image)
+	public void setImage(final String image)
 	{
 		this.image = image;
 	}
@@ -155,7 +155,7 @@ public class UniversityRatingMethodElement
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -170,7 +170,7 @@ public class UniversityRatingMethodElement
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

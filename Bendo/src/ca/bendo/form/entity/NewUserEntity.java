@@ -51,7 +51,7 @@ public class NewUserEntity extends Entity
 	/**
 	 * @return the email
 	 */
-	public final String getEmail()
+	public String getEmail()
 	{
 		return email;
 	}
@@ -60,7 +60,7 @@ public class NewUserEntity extends Entity
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final String email)
+	public void setEmail(final String email)
 	{
 		this.email = email;
 	}
@@ -68,7 +68,7 @@ public class NewUserEntity extends Entity
 	/**
 	 * @return the password
 	 */
-	public final String getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -77,7 +77,7 @@ public class NewUserEntity extends Entity
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final String password)
+	public void setPassword(final String password)
 	{
 		this.password = password;
 	}
@@ -85,7 +85,7 @@ public class NewUserEntity extends Entity
 	/**
 	 * @return the passwordCheck
 	 */
-	public final String getPasswordCheck()
+	public String getPasswordCheck()
 	{
 		return passwordCheck;
 	}
@@ -94,7 +94,7 @@ public class NewUserEntity extends Entity
 	 * @param passwordCheck
 	 *            the passwordCheck to set
 	 */
-	public final void setPasswordCheck(final String passwordCheck)
+	public void setPasswordCheck(final String passwordCheck)
 	{
 		this.passwordCheck = passwordCheck;
 	}
@@ -102,7 +102,7 @@ public class NewUserEntity extends Entity
 	/**
 	 * @return the firstName
 	 */
-	public final String getFirstName()
+	public String getFirstName()
 	{
 		return firstName;
 	}
@@ -111,7 +111,7 @@ public class NewUserEntity extends Entity
 	 * @param firstName
 	 *            the firstName to set
 	 */
-	public final void setFirstName(final String firstName)
+	public void setFirstName(final String firstName)
 	{
 		this.firstName = firstName;
 	}
@@ -119,7 +119,7 @@ public class NewUserEntity extends Entity
 	/**
 	 * @return the lastName
 	 */
-	public final String getLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
@@ -128,7 +128,7 @@ public class NewUserEntity extends Entity
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(final String lastName)
+	public void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}

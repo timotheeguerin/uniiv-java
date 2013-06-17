@@ -53,7 +53,7 @@ public class SignupController extends BendoController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public final String signup(final HttpServletRequest request, final HttpServletResponse response)
+	public String signup(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		// init(request);
 		Translator translator = Translator.getTranslator(request);
@@ -76,7 +76,7 @@ public class SignupController extends BendoController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public final String signupPost(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupPost(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
 
@@ -105,7 +105,7 @@ public class SignupController extends BendoController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String signupPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
 
 		System.out.println("HomeController: Passing through... signup");
@@ -124,7 +124,7 @@ public class SignupController extends BendoController
 	 */
 	@RequestMapping(value = "/emailavailable", method = RequestMethod.GET)
 	@ResponseBody
-	public final String checkEmailAvailable(@RequestParam("email") final String email)
+	public String checkEmailAvailable(@RequestParam("email") final String email)
 	{
 		if (newUserHandler.isEmailAvailable(email))
 		{
@@ -145,7 +145,7 @@ public class SignupController extends BendoController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/confirmation", method = RequestMethod.GET)
-	public final String signupConfirmation(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupConfirmation(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);

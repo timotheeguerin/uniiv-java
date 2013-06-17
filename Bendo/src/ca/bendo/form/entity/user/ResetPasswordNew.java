@@ -46,7 +46,7 @@ public class ResetPasswordNew extends Entity
 	/**
 	 * @return the id
 	 */
-	public final String getId()
+	public String getId()
 	{
 		return id;
 	}
@@ -55,7 +55,7 @@ public class ResetPasswordNew extends Entity
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final String id)
+	public void setId(final String id)
 	{
 		this.id = id;
 	}
@@ -63,7 +63,7 @@ public class ResetPasswordNew extends Entity
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -72,7 +72,7 @@ public class ResetPasswordNew extends Entity
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -80,7 +80,7 @@ public class ResetPasswordNew extends Entity
 	/**
 	 * @return the password
 	 */
-	public final String getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -89,7 +89,7 @@ public class ResetPasswordNew extends Entity
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final String password)
+	public void setPassword(final String password)
 	{
 		this.password = password;
 	}
@@ -97,7 +97,7 @@ public class ResetPasswordNew extends Entity
 	/**
 	 * @return the passwordCheck
 	 */
-	public final String getPasswordCheck()
+	public String getPasswordCheck()
 	{
 		return passwordCheck;
 	}
@@ -106,7 +106,7 @@ public class ResetPasswordNew extends Entity
 	 * @param passwordCheck
 	 *            the passwordCheck to set
 	 */
-	public final void setPasswordCheck(final String passwordCheck)
+	public void setPasswordCheck(final String passwordCheck)
 	{
 		this.passwordCheck = passwordCheck;
 	}

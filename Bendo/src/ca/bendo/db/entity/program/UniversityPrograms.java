@@ -54,7 +54,7 @@ public class UniversityPrograms
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -63,7 +63,7 @@ public class UniversityPrograms
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -71,7 +71,7 @@ public class UniversityPrograms
 	/**
 	 * @return the university
 	 */
-	public final University getUniversity()
+	public University getUniversity()
 	{
 		return university;
 	}
@@ -80,7 +80,7 @@ public class UniversityPrograms
 	 * @param university
 	 *            the university to set
 	 */
-	public final void setUniversity(final University university)
+	public void setUniversity(final University university)
 	{
 		this.university = university;
 	}
@@ -88,7 +88,7 @@ public class UniversityPrograms
 	/**
 	 * @return the program
 	 */
-	public final UniversityProgram getProgram()
+	public UniversityProgram getProgram()
 	{
 		return program;
 	}
@@ -97,7 +97,7 @@ public class UniversityPrograms
 	 * @param program
 	 *            the program to set
 	 */
-	public final void setProgram(final UniversityProgram program)
+	public void setProgram(final UniversityProgram program)
 	{
 		this.program = program;
 	}

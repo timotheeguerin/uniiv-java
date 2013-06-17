@@ -44,7 +44,7 @@ public class TextSearchController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public final String searchAll(final HttpServletRequest request, final HttpServletResponse response)
+	public String searchAll(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		searchHandler.searchAll(request);
 		return "views/university/search/searchAll";
@@ -59,7 +59,7 @@ public class TextSearchController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/university", method = RequestMethod.GET)
-	public final String searchUniversity(final HttpServletRequest request, final HttpServletResponse response)
+	public String searchUniversity(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		searchHandler.searchUniversity(request);
 		return "views/university/search/searchUniversity";
@@ -76,7 +76,7 @@ public class TextSearchController
 	 */
 	@RequestMapping(value = "/university/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public final AutoCompleteJson universityListAjax(final HttpServletRequest request,
+	public AutoCompleteJson universityListAjax(final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		return searchHandler.setupUniversityAjaxList(request);
@@ -93,7 +93,7 @@ public class TextSearchController
 	 */
 	@RequestMapping(value = "/all/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public final AutoCompleteJson allListAjax(final HttpServletRequest request,
+	public AutoCompleteJson allListAjax(final HttpServletRequest request,
 			final HttpServletResponse response)
 	{
 		return searchHandler.setupAjaxList(request);
@@ -108,7 +108,7 @@ public class TextSearchController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor", method = RequestMethod.GET)
-	public final String searchProfessor(final HttpServletRequest request, final HttpServletResponse response)
+	public String searchProfessor(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		searchHandler.searchProfessor(request);
 		return "views/university/search/searchProfessor";
@@ -123,7 +123,7 @@ public class TextSearchController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/course", method = RequestMethod.GET)
-	public final String searchCourse(final HttpServletRequest request, final HttpServletResponse response)
+	public String searchCourse(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		searchHandler.searchCourse(request);
 		return "views/university/search/searchCourse";

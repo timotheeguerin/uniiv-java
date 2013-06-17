@@ -147,7 +147,7 @@ public class SearchBarTag extends TagSupport
 	/**
 	 * @return the placeholder
 	 */
-	public final String getPlaceholder()
+	public String getPlaceholder()
 	{
 		return placeholder;
 	}
@@ -156,7 +156,7 @@ public class SearchBarTag extends TagSupport
 	 * @param placeholder
 	 *            the placeholder to set
 	 */
-	public final void setPlaceholder(final String placeholder)
+	public void setPlaceholder(final String placeholder)
 	{
 		this.placeholder = placeholder;
 	}
@@ -164,7 +164,7 @@ public class SearchBarTag extends TagSupport
 	/**
 	 * @return the type
 	 */
-	public final String getType()
+	public String getType()
 	{
 		return type;
 	}
@@ -173,7 +173,7 @@ public class SearchBarTag extends TagSupport
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final String type)
+	public void setType(final String type)
 	{
 		this.type = type;
 	}

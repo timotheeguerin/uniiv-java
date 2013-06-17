@@ -61,7 +61,7 @@ public abstract class TagTemplate
 	 *            Url to translate
 	 * @return the real url
 	 */
-	public final String url(final String url)
+	public String url(final String url)
 	{
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 		if (url.startsWith("/"))
@@ -77,7 +77,7 @@ public abstract class TagTemplate
 	 * @return the custclass
 	 * 
 	 */
-	public final String getCustclass()
+	public String getCustclass()
 	{
 		return custclass;
 	}
@@ -87,7 +87,7 @@ public abstract class TagTemplate
 	 *            the custclass to set
 	 * 
 	 */
-	public final void setCustclass(final String custclass)
+	public void setCustclass(final String custclass)
 	{
 		this.custclass = custclass;
 	}
@@ -96,7 +96,7 @@ public abstract class TagTemplate
 	 * @return the translator
 	 * 
 	 */
-	public final Translator getTranslator()
+	public Translator getTranslator()
 	{
 		return translator;
 	}
@@ -106,7 +106,7 @@ public abstract class TagTemplate
 	 *            the translator to set
 	 * 
 	 */
-	public final void setTranslator(final Translator translator)
+	public void setTranslator(final Translator translator)
 	{
 		this.translator = translator;
 	}
@@ -115,7 +115,7 @@ public abstract class TagTemplate
 	 * @return the pageContext
 	 * 
 	 */
-	public final PageContext getPageContext()
+	public PageContext getPageContext()
 	{
 		return pageContext;
 	}
@@ -125,7 +125,7 @@ public abstract class TagTemplate
 	 *            the pageContext to set
 	 * 
 	 */
-	public final void setPageContext(final PageContext pageContext)
+	public void setPageContext(final PageContext pageContext)
 	{
 		this.pageContext = pageContext;
 	}

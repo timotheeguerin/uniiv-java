@@ -92,7 +92,7 @@ public class User
 	/**
 	 * 
 	 */
-	@Column(name = "time_created")
+	@Column(name = "date_created")
 	private Date timeCreated;
 
 	/**
@@ -165,7 +165,7 @@ public class User
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -174,7 +174,7 @@ public class User
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -182,7 +182,7 @@ public class User
 	/**
 	 * @return the email
 	 */
-	public final String getEmail()
+	public String getEmail()
 	{
 		return email;
 	}
@@ -191,7 +191,7 @@ public class User
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final String email)
+	public void setEmail(final String email)
 	{
 		this.email = email;
 	}
@@ -199,7 +199,7 @@ public class User
 	/**
 	 * @return the password
 	 */
-	public final HashedPassword getPassword()
+	public HashedPassword getPassword()
 	{
 		return password;
 	}
@@ -208,7 +208,7 @@ public class User
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final HashedPassword password)
+	public void setPassword(final HashedPassword password)
 	{
 		this.password = password;
 	}
@@ -216,7 +216,7 @@ public class User
 	/**
 	 * @return the firstName
 	 */
-	public final String getFirstName()
+	public String getFirstName()
 	{
 		return firstName;
 	}
@@ -225,7 +225,7 @@ public class User
 	 * @param firstName
 	 *            the firstName to set
 	 */
-	public final void setFirstName(final String firstName)
+	public void setFirstName(final String firstName)
 	{
 		this.firstName = firstName;
 	}
@@ -233,7 +233,7 @@ public class User
 	/**
 	 * @return the lastName
 	 */
-	public final String getLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
@@ -242,7 +242,7 @@ public class User
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(final String lastName)
+	public void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}
@@ -250,7 +250,7 @@ public class User
 	/**
 	 * @return the state
 	 */
-	public final UserState getState()
+	public UserState getState()
 	{
 		return state;
 	}
@@ -259,7 +259,7 @@ public class User
 	 * @param state
 	 *            the state to set
 	 */
-	public final void setState(final UserState state)
+	public void setState(final UserState state)
 	{
 		this.state = state;
 	}
@@ -267,7 +267,7 @@ public class User
 	/**
 	 * @return the permissions
 	 */
-	public final List<UserPermission> getPermissions()
+	public List<UserPermission> getPermissions()
 	{
 		return permissions;
 	}
@@ -276,7 +276,7 @@ public class User
 	 * @param permissions
 	 *            the permissions to set
 	 */
-	public final void setPermissions(final List<UserPermission> permissions)
+	public void setPermissions(final List<UserPermission> permissions)
 	{
 		this.permissions = permissions;
 	}
@@ -290,12 +290,12 @@ public class User
 	}
 
 	/**
-	 * @param timeCreated the timeCreated to set
+	 * @param timeCreated
+	 *            the timeCreated to set
 	 */
 	public void setTimeCreated(final Date timeCreated)
 	{
 		this.timeCreated = timeCreated;
 	}
-	
 
 }

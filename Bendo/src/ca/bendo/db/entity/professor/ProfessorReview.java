@@ -133,7 +133,7 @@ public class ProfessorReview
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -142,7 +142,7 @@ public class ProfessorReview
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -150,7 +150,7 @@ public class ProfessorReview
 	/**
 	 * @return the comment
 	 */
-	public final Comment getComment()
+	public Comment getComment()
 	{
 		return comment;
 	}
@@ -159,7 +159,7 @@ public class ProfessorReview
 	 * @param comment
 	 *            the comment to set
 	 */
-	public final void setComment(final Comment comment)
+	public void setComment(final Comment comment)
 	{
 		this.comment = comment;
 	}
@@ -167,7 +167,7 @@ public class ProfessorReview
 	/**
 	 * @return the professor
 	 */
-	public final Professor getProfessor()
+	public Professor getProfessor()
 	{
 		return professor;
 	}
@@ -176,7 +176,7 @@ public class ProfessorReview
 	 * @param professor
 	 *            the professor to set
 	 */
-	public final void setProfessor(final Professor professor)
+	public void setProfessor(final Professor professor)
 	{
 		this.professor = professor;
 	}
@@ -184,7 +184,7 @@ public class ProfessorReview
 	/**
 	 * @return the ratings
 	 */
-	public final List<ProfessorRating> getRatings()
+	public List<ProfessorRating> getRatings()
 	{
 		return ratings;
 	}
@@ -193,7 +193,7 @@ public class ProfessorReview
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public final void setRatings(final List<ProfessorRating> ratings)
+	public void setRatings(final List<ProfessorRating> ratings)
 	{
 		this.ratings = ratings;
 	}
@@ -201,7 +201,7 @@ public class ProfessorReview
 	/**
 	 * @return the date
 	 */
-	public final Date getDate()
+	public Date getDate()
 	{
 		return date;
 	}
@@ -210,7 +210,7 @@ public class ProfessorReview
 	 * @param date
 	 *            the date to set
 	 */
-	public final void setDate(final Date date)
+	public void setDate(final Date date)
 	{
 		this.date = date;
 	}

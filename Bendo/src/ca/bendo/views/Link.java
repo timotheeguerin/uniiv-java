@@ -57,7 +57,7 @@ public class Link
 	/**
 	 * @return the link
 	 */
-	public final String getLink()
+	public String getLink()
 	{
 		return link;
 	}
@@ -66,7 +66,7 @@ public class Link
 	 * @param link
 	 *            the link to set
 	 */
-	public final void setLink(final String link)
+	public void setLink(final String link)
 	{
 		this.link = link;
 	}
@@ -74,7 +74,7 @@ public class Link
 	/**
 	 * @return the text
 	 */
-	public final String getText()
+	public String getText()
 	{
 		return text;
 	}
@@ -83,7 +83,7 @@ public class Link
 	 * @param text
 	 *            the text to set
 	 */
-	public final void setText(final String text)
+	public void setText(final String text)
 	{
 		this.text = text;
 	}

@@ -78,7 +78,7 @@ public class InputElement extends FormElement
 	}
 
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		StringBuilder result = new StringBuilder();
 
@@ -115,7 +115,7 @@ public class InputElement extends FormElement
 	 * @return the name
 	 * 
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -125,7 +125,7 @@ public class InputElement extends FormElement
 	 *            the name to set
 	 * 
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -134,7 +134,7 @@ public class InputElement extends FormElement
 	 * @return the type
 	 * 
 	 */
-	public final String getType()
+	public String getType()
 	{
 		return type;
 	}
@@ -144,7 +144,7 @@ public class InputElement extends FormElement
 	 *            the type to set
 	 * 
 	 */
-	public final void setType(final String type)
+	public void setType(final String type)
 	{
 		this.type = type;
 	}
@@ -153,7 +153,7 @@ public class InputElement extends FormElement
 	 * @return the value
 	 * 
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -163,7 +163,7 @@ public class InputElement extends FormElement
 	 *            the value to set
 	 * 
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}
@@ -172,7 +172,7 @@ public class InputElement extends FormElement
 	 * @return the title
 	 * 
 	 */
-	public final String getTitle()
+	public String getTitle()
 	{
 		return title;
 	}
@@ -182,7 +182,7 @@ public class InputElement extends FormElement
 	 *            the title to set
 	 * 
 	 */
-	public final void setTitle(final String title)
+	public void setTitle(final String title)
 	{
 		this.title = title;
 	}
@@ -191,7 +191,7 @@ public class InputElement extends FormElement
 	 * @return the needValidation
 	 * 
 	 */
-	public final boolean isNeedValidation()
+	public boolean isNeedValidation()
 	{
 		return needValidation;
 	}
@@ -201,7 +201,7 @@ public class InputElement extends FormElement
 	 *            the needValidation to set
 	 * 
 	 */
-	public final void setNeedValidation(final boolean needValidation)
+	public void setNeedValidation(final boolean needValidation)
 	{
 		this.needValidation = needValidation;
 	}
@@ -226,7 +226,7 @@ public class InputElement extends FormElement
 	/**
 	 * @return the required
 	 */
-	public final boolean isRequired()
+	public boolean isRequired()
 	{
 		return required;
 	}
@@ -235,7 +235,7 @@ public class InputElement extends FormElement
 	 * @param required
 	 *            the required to set
 	 */
-	public final void setRequired(final boolean required)
+	public void setRequired(final boolean required)
 	{
 		this.required = required;
 	}
@@ -243,7 +243,7 @@ public class InputElement extends FormElement
 	/**
 	 * @return the placeholder
 	 */
-	public final String getPlaceholder()
+	public String getPlaceholder()
 	{
 		return placeholder;
 	}
@@ -252,7 +252,7 @@ public class InputElement extends FormElement
 	 * @param placeholder
 	 *            the placeholder to set
 	 */
-	public final void setPlaceholder(final String placeholder)
+	public void setPlaceholder(final String placeholder)
 	{
 		this.placeholder = placeholder;
 	}

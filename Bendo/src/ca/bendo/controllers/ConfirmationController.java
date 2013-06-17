@@ -51,7 +51,7 @@ public class ConfirmationController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public final String signupConfirmation(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupConfirmation(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
 		Long languageId = Language.loadId(request);

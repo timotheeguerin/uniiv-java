@@ -31,7 +31,7 @@ public class AutoCompleteJson
 	/**
 	 * @return the query
 	 */
-	public final String getQuery()
+	public String getQuery()
 	{
 		return query;
 	}
@@ -40,7 +40,7 @@ public class AutoCompleteJson
 	 * @param query
 	 *            the query to set
 	 */
-	public final void setQuery(final String query)
+	public void setQuery(final String query)
 	{
 		this.query = query;
 	}
@@ -48,7 +48,7 @@ public class AutoCompleteJson
 	/**
 	 * @return the suggestions
 	 */
-	public final List<Suggestion> getSuggestions()
+	public List<Suggestion> getSuggestions()
 	{
 		return suggestions;
 	}
@@ -57,7 +57,7 @@ public class AutoCompleteJson
 	 * @param suggestions
 	 *            the suggestions to set
 	 */
-	public final void setSuggestions(final List<Suggestion> suggestions)
+	public void setSuggestions(final List<Suggestion> suggestions)
 	{
 		this.suggestions = suggestions;
 	}

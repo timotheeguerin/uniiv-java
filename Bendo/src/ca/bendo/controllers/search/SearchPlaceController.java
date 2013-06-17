@@ -34,7 +34,7 @@ public class SearchPlaceController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/search/places", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/underconstruction";
 	}

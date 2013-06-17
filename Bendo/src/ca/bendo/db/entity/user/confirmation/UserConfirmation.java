@@ -60,14 +60,13 @@ public class UserConfirmation
 	/**
 	 * 
 	 */
-	//@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = " date")
+	@Column(name = "date")
 	private Date date;
 
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -76,7 +75,7 @@ public class UserConfirmation
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -84,7 +83,7 @@ public class UserConfirmation
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -93,7 +92,7 @@ public class UserConfirmation
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -101,7 +100,7 @@ public class UserConfirmation
 	/**
 	 * @return the user
 	 */
-	public final User getUser()
+	public User getUser()
 	{
 		return user;
 	}
@@ -110,7 +109,7 @@ public class UserConfirmation
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final User user)
+	public void setUser(final User user)
 	{
 		this.user = user;
 	}
@@ -118,7 +117,7 @@ public class UserConfirmation
 	/**
 	 * @return the type
 	 */
-	public final UserConfirmationType getType()
+	public UserConfirmationType getType()
 	{
 		return type;
 	}
@@ -127,7 +126,7 @@ public class UserConfirmation
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final UserConfirmationType type)
+	public void setType(final UserConfirmationType type)
 	{
 		this.type = type;
 	}
@@ -135,7 +134,7 @@ public class UserConfirmation
 	/**
 	 * @return the date
 	 */
-	public final Date getDate()
+	public Date getDate()
 	{
 		return date;
 	}
@@ -143,7 +142,7 @@ public class UserConfirmation
 	/**
 	 * @param date the date to set
 	 */
-	public final void setDate(final Date date)
+	public void setDate(final Date date)
 	{
 		this.date = date;
 	}

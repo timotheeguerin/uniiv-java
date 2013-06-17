@@ -34,7 +34,7 @@ public class DiscussController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/discuss", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/discuss";
 	}

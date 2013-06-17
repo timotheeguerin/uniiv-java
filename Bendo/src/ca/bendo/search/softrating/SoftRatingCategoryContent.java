@@ -87,7 +87,7 @@ public class SoftRatingCategoryContent extends FilterCategoryContent
 	/**
 	 * @return the stdRatings
 	 */
-	public final List<UniversityRating> getStdRatings()
+	public List<UniversityRating> getStdRatings()
 	{
 		return stdRatings;
 	}
@@ -95,7 +95,7 @@ public class SoftRatingCategoryContent extends FilterCategoryContent
 	/**
 	 * @param stdRatings the stdRatings to set
 	 */
-	public final void setStdRatings(final List<UniversityRating> stdRatings)
+	public void setStdRatings(final List<UniversityRating> stdRatings)
 	{
 		this.stdRatings = stdRatings;
 	}
@@ -103,7 +103,7 @@ public class SoftRatingCategoryContent extends FilterCategoryContent
 	/**
 	 * @return the officialRatings
 	 */
-	public final List<UniversityRating> getOfficialRatings()
+	public List<UniversityRating> getOfficialRatings()
 	{
 		return officialRatings;
 	}
@@ -111,7 +111,7 @@ public class SoftRatingCategoryContent extends FilterCategoryContent
 	/**
 	 * @param officialRatings the officialRatings to set
 	 */
-	public final void setOfficialRatings(final List<UniversityRating> officialRatings)
+	public void setOfficialRatings(final List<UniversityRating> officialRatings)
 	{
 		this.officialRatings = officialRatings;
 	}

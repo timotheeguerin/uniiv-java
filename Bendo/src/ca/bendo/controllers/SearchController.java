@@ -56,7 +56,7 @@ public class SearchController extends BendoController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public final String filterSearch(final HttpServletRequest request, final HttpServletResponse response)
+	public String filterSearch(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		filterSystemLoader.loadFilters(request);
 		System.out.println("HomeController: Passing through...");
@@ -76,7 +76,7 @@ public class SearchController extends BendoController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/handle", method = RequestMethod.GET)
-	public final String filterSearchHandle(final HttpServletRequest request, final HttpServletResponse response)
+	public String filterSearchHandle(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		System.out.println("HomeController: Passing through...");
 

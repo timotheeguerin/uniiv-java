@@ -51,7 +51,7 @@ public class Link
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -60,7 +60,7 @@ public class Link
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -68,7 +68,7 @@ public class Link
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -77,7 +77,7 @@ public class Link
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -85,7 +85,7 @@ public class Link
 	/**
 	 * @return the link
 	 */
-	public final String getLink()
+	public String getLink()
 	{
 		return link;
 	}
@@ -94,7 +94,7 @@ public class Link
 	 * @param link
 	 *            the link to set
 	 */
-	public final void setLink(final String link)
+	public void setLink(final String link)
 	{
 		this.link = link;
 	}
@@ -102,7 +102,7 @@ public class Link
 	/**
 	 * @return the language
 	 */
-	public final Language getLanguage()
+	public Language getLanguage()
 	{
 		return language;
 	}
@@ -111,7 +111,7 @@ public class Link
 	 * @param language
 	 *            the language to set
 	 */
-	public final void setLanguage(final Language language)
+	public void setLanguage(final Language language)
 	{
 		this.language = language;
 	}
@@ -120,7 +120,7 @@ public class Link
 	 * @return The link
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return getLink();
 	}

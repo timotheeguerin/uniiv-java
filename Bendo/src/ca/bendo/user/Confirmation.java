@@ -36,7 +36,7 @@ public class Confirmation
 	 * 
 	 * @return the id
 	 */
-	public final int getId()
+	public int getId()
 	{
 		return id;
 	}
@@ -45,7 +45,7 @@ public class Confirmation
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final int id)
+	public void setId(final int id)
 	{
 		this.id = id;
 	}
@@ -53,7 +53,7 @@ public class Confirmation
 	/**
 	 * @return the userId
 	 */
-	public final int getUserId()
+	public int getUserId()
 	{
 		return userId;
 	}
@@ -62,7 +62,7 @@ public class Confirmation
 	 * @param userId
 	 *            the userId to set
 	 */
-	public final void setUserId(final int userId)
+	public void setUserId(final int userId)
 	{
 		this.userId = userId;
 	}
@@ -70,7 +70,7 @@ public class Confirmation
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -79,7 +79,7 @@ public class Confirmation
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}

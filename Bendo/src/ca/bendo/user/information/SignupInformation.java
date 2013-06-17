@@ -42,7 +42,7 @@ public class SignupInformation
 	/**
 	 * @return the email
 	 */
-	public final Email getEmail()
+	public Email getEmail()
 	{
 		return email;
 	}
@@ -51,7 +51,7 @@ public class SignupInformation
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final Email email)
+	public void setEmail(final Email email)
 	{
 		this.email = email;
 	}
@@ -59,7 +59,7 @@ public class SignupInformation
 	/**
 	 * @return the password
 	 */
-	public final Password getPassword()
+	public Password getPassword()
 	{
 		return password;
 	}
@@ -68,7 +68,7 @@ public class SignupInformation
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final Password password)
+	public void setPassword(final Password password)
 	{
 		this.password = password;
 	}
@@ -76,7 +76,7 @@ public class SignupInformation
 	/**
 	 * @return the firstName
 	 */
-	public final String getFirstName()
+	public String getFirstName()
 	{
 		return firstName;
 	}
@@ -85,7 +85,7 @@ public class SignupInformation
 	 * @param firstName
 	 *            the firstName to set
 	 */
-	public final void setFirstName(final String firstName)
+	public void setFirstName(final String firstName)
 	{
 		this.firstName = firstName;
 	}
@@ -93,7 +93,7 @@ public class SignupInformation
 	/**
 	 * @return the lastName
 	 */
-	public final String getLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
@@ -102,7 +102,7 @@ public class SignupInformation
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(final String lastName)
+	public void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}

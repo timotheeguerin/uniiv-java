@@ -40,12 +40,79 @@ public class ForumGroupController
 	 * @return jsp page
 	 */
 	@RequestMapping(value = "/forum/group/{groupId}/", method = RequestMethod.GET)
+	public String groupHomePage(final HttpServletRequest request, @PathVariable(value = "groupId") final long groupId)
+	{
+		if (forumGroupHandler.setupGroupPage(request, groupId))
+		{
+			return "views/forum/grouphome";
+
+		} else
+		{
+			return "views/errors/error404";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @param groupId
+	 *            groupId
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/forum/group/{groupId}/questions", method = RequestMethod.GET)
 	public String listQuestionInGroup(final HttpServletRequest request,
 			@PathVariable(value = "groupId") final long groupId)
 	{
 		if (forumGroupHandler.listQuestionInGroup(request, groupId))
 		{
 			return "views/forum/questionlist";
+
+		} else
+		{
+			return "views/errors/error404";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @param groupId
+	 *            groupId
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/forum/group/{groupId}/subgroups", method = RequestMethod.GET)
+	public String displaySubGroupPage(final HttpServletRequest request,
+			@PathVariable(value = "groupId") final long groupId)
+	{
+		if (forumGroupHandler.listQuestionInGroup(request, groupId))
+		{
+			return "views/forum/questionlist";
+
+		} else
+		{
+			return "views/errors/error404";
+		}
+	}
+
+	/**
+	 * Display only the first subgroups of the given group. Link to the the
+	 * whole list should be in the jsp.
+	 * 
+	 * @param request
+	 *            Request
+	 * @param groupId
+	 *            groupId
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/forum/group/{groupId}/subgroups/fast", method = RequestMethod.GET)
+	public String fastDisplaySubGroups(final HttpServletRequest request,
+			@PathVariable(value = "groupId") final long groupId)
+	{
+		if (forumGroupHandler.setupQuickDisplaySubgroupList(request, groupId))
+		{
+			return "views/forum/quickDisplayGroupList";
 
 		} else
 		{

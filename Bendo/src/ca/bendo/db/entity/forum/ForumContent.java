@@ -56,7 +56,7 @@ public class ForumContent
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -65,7 +65,7 @@ public class ForumContent
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -73,7 +73,7 @@ public class ForumContent
 	/**
 	 * @return the content
 	 */
-	public final String getContent()
+	public String getContent()
 	{
 		return content;
 	}
@@ -82,7 +82,7 @@ public class ForumContent
 	 * @param content
 	 *            the content to set
 	 */
-	public final void setContent(final String content)
+	public void setContent(final String content)
 	{
 		this.content = content;
 	}

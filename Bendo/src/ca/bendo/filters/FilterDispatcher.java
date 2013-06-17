@@ -72,7 +72,7 @@ public class FilterDispatcher implements Filter
 	 * javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
 	@Override
-	public final void doFilter(final ServletRequest request, final ServletResponse response,
+	public void doFilter(final ServletRequest request, final ServletResponse response,
 			final FilterChain filterChain) throws IOException, ServletException
 	{
 		HttpServletRequest hsRequest = (HttpServletRequest) request;

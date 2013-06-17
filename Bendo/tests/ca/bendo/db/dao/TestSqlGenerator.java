@@ -24,7 +24,7 @@ public class TestSqlGenerator
 	 * @see SqlGenerator#updateFrom
 	 */
 	@Test
-	public final void testUpdateFrom()
+	public void testUpdateFrom()
 	{
 	
 	}

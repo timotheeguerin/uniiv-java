@@ -34,7 +34,7 @@ public class LoginInformationDb
 	/**
 	 * @return the email
 	 */
-	public final Email getEmail()
+	public Email getEmail()
 	{
 		return email;
 	}
@@ -43,7 +43,7 @@ public class LoginInformationDb
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final Email email)
+	public void setEmail(final Email email)
 	{
 		this.email = email;
 	}
@@ -51,7 +51,7 @@ public class LoginInformationDb
 	/**
 	 * @return the hashedPassword
 	 */
-	public final HashedPassword getHashedPassword()
+	public HashedPassword getHashedPassword()
 	{
 		return hashedPassword;
 	}
@@ -60,7 +60,7 @@ public class LoginInformationDb
 	 * @param hashedPassword
 	 *            the hashedPassword to set
 	 */
-	public final void setHashedPassword(final HashedPassword hashedPassword)
+	public void setHashedPassword(final HashedPassword hashedPassword)
 	{
 		this.hashedPassword = hashedPassword;
 	}

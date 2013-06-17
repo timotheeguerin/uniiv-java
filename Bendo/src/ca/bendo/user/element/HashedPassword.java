@@ -95,7 +95,7 @@ public class HashedPassword
 	/**
 	 * @return the password
 	 */
-	public final String getHashedPassword()
+	public String getHashedPassword()
 	{
 		return hashedPassword;
 	}
@@ -104,7 +104,7 @@ public class HashedPassword
 	 * @param hashedPassword
 	 *            the hashed password to set
 	 */
-	public final void setHashedPassword(final String hashedPassword)
+	public void setHashedPassword(final String hashedPassword)
 	{
 		this.hashedPassword = hashedPassword;
 	}
@@ -115,7 +115,7 @@ public class HashedPassword
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public final String toString()
+	public String toString()
 	{
 		return hashedPassword;
 	}
@@ -123,7 +123,7 @@ public class HashedPassword
 	/**
 	 * @return the salt of the hashed password
 	 */
-	public final String getSalt()
+	public String getSalt()
 	{
 		if (hashedPassword != null)
 		{

@@ -22,7 +22,7 @@ public class Visitor extends UserT
 	 * @see ca.bendo.user.User#hasPermisson(int)
 	 */
 	@Override
-	public final boolean hasPermisson(final int id)
+	public boolean hasPermisson(final int id)
 	{
 		return false;
 	}
@@ -33,7 +33,7 @@ public class Visitor extends UserT
 	 * @see ca.bendo.user.User#hasPermisson(java.lang.String)
 	 */
 	@Override
-	public final boolean hasPermisson(final String str)
+	public boolean hasPermisson(final String str)
 	{
 		return false;
 	}

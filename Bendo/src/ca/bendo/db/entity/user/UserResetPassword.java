@@ -57,7 +57,7 @@ public class UserResetPassword
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -66,7 +66,7 @@ public class UserResetPassword
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -74,7 +74,7 @@ public class UserResetPassword
 	/**
 	 * @return the user
 	 */
-	public final User getUser()
+	public User getUser()
 	{
 		return user;
 	}
@@ -83,7 +83,7 @@ public class UserResetPassword
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final User user)
+	public void setUser(final User user)
 	{
 		this.user = user;
 	}
@@ -91,7 +91,7 @@ public class UserResetPassword
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -100,7 +100,7 @@ public class UserResetPassword
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -108,7 +108,7 @@ public class UserResetPassword
 	/**
 	 * @return the dateExpired
 	 */
-	public final Date getDateExpired()
+	public Date getDateExpired()
 	{
 		return dateExpired;
 	}
@@ -117,7 +117,7 @@ public class UserResetPassword
 	 * @param dateExpired
 	 *            the dateExpired to set
 	 */
-	public final void setDateExpired(final Date dateExpired)
+	public void setDateExpired(final Date dateExpired)
 	{
 		this.dateExpired = dateExpired;
 	}

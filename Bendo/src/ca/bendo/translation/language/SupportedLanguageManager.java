@@ -58,7 +58,7 @@ public class SupportedLanguageManager
 	 * @return the languages
 	 * @see Language
 	 */
-	public final List<Language> getLanguages()
+	public List<Language> getLanguages()
 	{
 		return languages;
 	}
@@ -68,7 +68,7 @@ public class SupportedLanguageManager
 	 *            the languages to set
 	 * @see Language
 	 */
-	public final void setLanguages(final List<Language> languages)
+	public void setLanguages(final List<Language> languages)
 	{
 		this.languages = languages;
 	}
@@ -78,7 +78,7 @@ public class SupportedLanguageManager
 	 *            add a Language to the supported List
 	 * @see Language
 	 */
-	public final void addLanguage(final Language lang)
+	public void addLanguage(final Language lang)
 	{
 
 		if (!this.isSupported(lang.getKey()))
@@ -92,7 +92,7 @@ public class SupportedLanguageManager
 	 *            Language key
 	 * @return Language object
 	 */
-	public final Language getLanguage(final String key)
+	public Language getLanguage(final String key)
 	{
 		log.debug("LANGUAGES: " + languages.size());
 
@@ -112,7 +112,7 @@ public class SupportedLanguageManager
 	 *            Language id
 	 * @return Language object
 	 */
-	public final Language getLanguage(final int id)
+	public Language getLanguage(final int id)
 	{
 		for (Language lang : languages)
 		{
@@ -129,7 +129,7 @@ public class SupportedLanguageManager
 	 *            Language key
 	 * @return Boolean
 	 */
-	public final boolean isSupported(final String key)
+	public boolean isSupported(final String key)
 	{
 		return (getLanguage(key) != null);
 	}
@@ -137,7 +137,7 @@ public class SupportedLanguageManager
 	/**
 	 * @return the languageTransaction
 	 */
-	public final LanguageTransaction getLanguageTransaction()
+	public LanguageTransaction getLanguageTransaction()
 	{
 		return languageTransaction;
 	}
@@ -146,7 +146,7 @@ public class SupportedLanguageManager
 	 * @param languageTransaction
 	 *            the languageTransaction to set
 	 */
-	public final void setLanguageTransaction(final LanguageTransaction languageTransaction)
+	public void setLanguageTransaction(final LanguageTransaction languageTransaction)
 	{
 		this.languageTransaction = languageTransaction;
 	}
@@ -154,7 +154,7 @@ public class SupportedLanguageManager
 	/**
 	 * @return the number of supported language
 	 */
-	public final int getNumber()
+	public int getNumber()
 	{
 		return getLanguages().size();
 	}

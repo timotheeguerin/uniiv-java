@@ -53,7 +53,7 @@ public class UserSession
 	 * @param req
 	 *            Request
 	 */
-	public final void loadSession(final HttpServletRequest req)
+	public void loadSession(final HttpServletRequest req)
 	{
 		setRequest(req);
 		HttpSession session = getRequest().getSession();
@@ -68,7 +68,7 @@ public class UserSession
 	 * @param tmpUser
 	 *            User
 	 */
-	public final void login(final User tmpUser)
+	public void login(final User tmpUser)
 	{
 		user = tmpUser;
 		HttpSession session = getRequest().getSession();
@@ -79,7 +79,7 @@ public class UserSession
 	/**
 	 * Log the user out.
 	 */
-	public final void logout()
+	public void logout()
 	{
 		HttpSession session = getRequest().getSession();
 		session.removeAttribute("user_session");
@@ -91,7 +91,7 @@ public class UserSession
 	/**
 	 * @return the request
 	 */
-	public final HttpServletRequest getRequest()
+	public HttpServletRequest getRequest()
 	{
 		return request;
 	}
@@ -100,7 +100,7 @@ public class UserSession
 	 * @param request
 	 *            the request to set
 	 */
-	public final void setRequest(final HttpServletRequest request)
+	public void setRequest(final HttpServletRequest request)
 	{
 		this.request = request;
 	}
@@ -108,7 +108,7 @@ public class UserSession
 	/**
 	 * @return the user
 	 */
-	public final User getUser()
+	public User getUser()
 	{
 		return user;
 	}
@@ -116,7 +116,7 @@ public class UserSession
 	/**
 	 * @return boolean if the user is a login member.
 	 */
-	public final boolean isLogin()
+	public boolean isLogin()
 	{
 		return user != null;
 	}
@@ -145,7 +145,7 @@ public class UserSession
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final User user)
+	public void setUser(final User user)
 	{
 		this.user = user;
 	}

@@ -52,7 +52,7 @@ public class BendoContextListener implements ServletContextListener
 	 * .ServletContextEvent)
 	 */
 	@Override
-	public final void contextInitialized(final ServletContextEvent event)
+	public void contextInitialized(final ServletContextEvent event)
 	{
 
 		WebApplicationContextUtils.getWebApplicationContext(event

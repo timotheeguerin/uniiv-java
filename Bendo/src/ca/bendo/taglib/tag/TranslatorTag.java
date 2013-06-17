@@ -49,7 +49,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	private Map<String, Object> tagAttributes = new HashMap<String, Object>();
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 		JspWriter out = pageContext.getOut();
 		Translator trans = (Translator) pageContext.getRequest().getAttribute("translator");
@@ -87,7 +87,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	 * .String, java.lang.String, java.lang.Object)
 	 */
 	@Override
-	public final void setDynamicAttribute(final String uri, final String key, final Object obj) throws JspException
+	public void setDynamicAttribute(final String uri, final String key, final Object obj) throws JspException
 	{
 		tagAttributes.put(key, obj);
 	}
@@ -95,7 +95,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	/**
 	 * @return the value
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -104,7 +104,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}

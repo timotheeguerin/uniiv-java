@@ -10,12 +10,6 @@
 		<b:textarea name="content" clazz="" content="${entity.content}" />
 	</div>
 	<div>
-		<textarea id="markItUp" class="wmd-input"></textarea>
+		<textarea class="wmd wmd-input"></textarea>
 	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#markItUp").wmd();
-		});
-	</script>
 </form>

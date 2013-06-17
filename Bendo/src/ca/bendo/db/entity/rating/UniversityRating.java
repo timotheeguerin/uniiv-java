@@ -64,7 +64,7 @@ public class UniversityRating
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -73,7 +73,7 @@ public class UniversityRating
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -81,7 +81,7 @@ public class UniversityRating
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -90,7 +90,7 @@ public class UniversityRating
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -98,7 +98,7 @@ public class UniversityRating
 	/**
 	 * @return the type
 	 */
-	public final UniversityRatingMethod getType()
+	public UniversityRatingMethod getType()
 	{
 		return type;
 	}
@@ -107,7 +107,7 @@ public class UniversityRating
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final UniversityRatingMethod type)
+	public void setType(final UniversityRatingMethod type)
 	{
 		this.type = type;
 	}
@@ -115,7 +115,7 @@ public class UniversityRating
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -130,7 +130,7 @@ public class UniversityRating
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}
@@ -139,7 +139,7 @@ public class UniversityRating
 	/**
 	 * @return the form
 	 */
-	public final UniversityRatingForm getForm()
+	public UniversityRatingForm getForm()
 	{
 		return form;
 	}
@@ -147,7 +147,7 @@ public class UniversityRating
 	/**
 	 * @param form the form to set
 	 */
-	public final void setForm(final UniversityRatingForm form)
+	public void setForm(final UniversityRatingForm form)
 	{
 		this.form = form;
 	}

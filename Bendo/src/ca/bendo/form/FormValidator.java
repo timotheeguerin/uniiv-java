@@ -44,7 +44,7 @@ public abstract class FormValidator
 	/**
 	 * @return the request
 	 */
-	public final HttpServletRequest getRequest()
+	public HttpServletRequest getRequest()
 	{
 		return request;
 	}
@@ -53,7 +53,7 @@ public abstract class FormValidator
 	 * @param request
 	 *            the request to set
 	 */
-	public final void setRequest(final HttpServletRequest request)
+	public void setRequest(final HttpServletRequest request)
 	{
 		this.request = request;
 	}

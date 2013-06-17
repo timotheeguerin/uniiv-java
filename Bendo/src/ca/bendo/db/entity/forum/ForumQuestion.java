@@ -85,7 +85,7 @@ public class ForumQuestion
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -94,7 +94,7 @@ public class ForumQuestion
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -102,7 +102,7 @@ public class ForumQuestion
 	/**
 	 * @return the user
 	 */
-	public final User getUser()
+	public User getUser()
 	{
 		return user;
 	}
@@ -111,7 +111,7 @@ public class ForumQuestion
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final User user)
+	public void setUser(final User user)
 	{
 		this.user = user;
 	}
@@ -136,7 +136,7 @@ public class ForumQuestion
 	/**
 	 * @return the title
 	 */
-	public final String getTitle()
+	public String getTitle()
 	{
 		return title;
 	}
@@ -145,7 +145,7 @@ public class ForumQuestion
 	 * @param title
 	 *            the title to set
 	 */
-	public final void setTitle(final String title)
+	public void setTitle(final String title)
 	{
 		this.title = title;
 	}
@@ -153,7 +153,7 @@ public class ForumQuestion
 	/**
 	 * @return the content
 	 */
-	public final ForumContent getContent()
+	public ForumContent getContent()
 	{
 		return content;
 	}
@@ -162,7 +162,7 @@ public class ForumQuestion
 	 * @param content
 	 *            the content to set
 	 */
-	public final void setContent(final ForumContent content)
+	public void setContent(final ForumContent content)
 	{
 		this.content = content;
 	}

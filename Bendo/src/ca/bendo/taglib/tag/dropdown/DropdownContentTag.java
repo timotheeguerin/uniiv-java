@@ -44,7 +44,7 @@ public class DropdownContentTag extends BodyTagSupport
 	 * @see javax.servlet.jsp.tagext.BodyTagSupport#doAfterBody()
 	 */
 	@Override
-	public final int doEndTag() throws JspException
+	public int doEndTag() throws JspException
 	{
 		try
 		{

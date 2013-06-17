@@ -28,7 +28,7 @@ public class TestUserPermission
 	 * @see UserPermission#HasPermission
 	 */
 	@Test
-	public final void testHasPermission()
+	public void testHasPermission()
 	{
 
 		UserPermission perm = new UserPermission();
@@ -53,7 +53,7 @@ public class TestUserPermission
 	 * @see UserPermission#HasPermission
 	 */
 	@Test
-	public final void testDontHavePermission()
+	public void testDontHavePermission()
 	{
 
 		UserPermission perm = new UserPermission();

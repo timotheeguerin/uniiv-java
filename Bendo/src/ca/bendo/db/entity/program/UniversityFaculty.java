@@ -104,7 +104,7 @@ public class UniversityFaculty
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -120,7 +120,7 @@ public class UniversityFaculty
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}
@@ -128,7 +128,7 @@ public class UniversityFaculty
 	/**
 	 * @return the programs
 	 */
-	public final List<UniversityProgram> getPrograms()
+	public List<UniversityProgram> getPrograms()
 	{
 		return programs;
 	}
@@ -137,7 +137,7 @@ public class UniversityFaculty
 	 * @param programs
 	 *            the programs to set
 	 */
-	public final void setPrograms(final List<UniversityProgram> programs)
+	public void setPrograms(final List<UniversityProgram> programs)
 	{
 		this.programs = programs;
 	}

@@ -41,7 +41,7 @@ public class HomeController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		System.out.println("HomeController: Passing through...");
 
@@ -65,7 +65,7 @@ public class HomeController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/test", method = RequestMethod.POST)
-	public final String homePST(final HttpServletRequest request, final HttpServletResponse response)
+	public String homePST(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		System.out.println("HomeController: Passing through...");
 

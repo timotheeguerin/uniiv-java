@@ -57,7 +57,7 @@ public class Professor
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -66,7 +66,7 @@ public class Professor
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -74,7 +74,7 @@ public class Professor
 	/**
 	 * @return the firstName
 	 */
-	public final String getFirstName()
+	public String getFirstName()
 	{
 		return firstName;
 	}
@@ -83,7 +83,7 @@ public class Professor
 	 * @param firstName
 	 *            the firstName to set
 	 */
-	public final void setFirstName(final String firstName)
+	public void setFirstName(final String firstName)
 	{
 		this.firstName = firstName;
 	}
@@ -91,7 +91,7 @@ public class Professor
 	/**
 	 * @return the lastName
 	 */
-	public final String getLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
@@ -100,7 +100,7 @@ public class Professor
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(final String lastName)
+	public void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}
@@ -108,7 +108,7 @@ public class Professor
 	/**
 	 * @return the program
 	 */
-	public final UniversityProgram getProgram()
+	public UniversityProgram getProgram()
 	{
 		return program;
 	}
@@ -117,7 +117,7 @@ public class Professor
 	 * @param program
 	 *            the program to set
 	 */
-	public final void setProgram(final UniversityProgram program)
+	public void setProgram(final UniversityProgram program)
 	{
 		this.program = program;
 	}

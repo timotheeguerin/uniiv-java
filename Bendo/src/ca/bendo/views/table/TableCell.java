@@ -40,7 +40,7 @@ public class TableCell
 	/**
 	 * @return the value
 	 */
-	public final Object getValue()
+	public Object getValue()
 	{
 		return value;
 	}
@@ -49,7 +49,7 @@ public class TableCell
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final Object value)
+	public void setValue(final Object value)
 	{
 		this.value = value;
 	}

@@ -30,7 +30,7 @@ public class TableHeaderRow
 	 * @param top
 	 *            Top cell to add
 	 */
-	public final void add(final TableTopCell top)
+	public void add(final TableTopCell top)
 	{
 		cells.add(top);
 	}
@@ -41,7 +41,7 @@ public class TableHeaderRow
 	 *            Top cell value
 	 * @return top cell with the given value
 	 */
-	public final TableTopCell get(final String value)
+	public TableTopCell get(final String value)
 	{
 		for (TableTopCell cell : cells)
 		{
@@ -56,7 +56,7 @@ public class TableHeaderRow
 	/**
 	 * @return the cells
 	 */
-	public final List<TableTopCell> getCells()
+	public List<TableTopCell> getCells()
 	{
 		return cells;
 	}
@@ -65,7 +65,7 @@ public class TableHeaderRow
 	 * @param cells
 	 *            the cells to set
 	 */
-	public final void setCells(final List<TableTopCell> cells)
+	public void setCells(final List<TableTopCell> cells)
 	{
 		this.cells = cells;
 	}

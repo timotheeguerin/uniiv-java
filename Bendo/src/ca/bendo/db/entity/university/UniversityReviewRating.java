@@ -58,7 +58,7 @@ public class UniversityReviewRating
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -67,7 +67,7 @@ public class UniversityReviewRating
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -75,7 +75,7 @@ public class UniversityReviewRating
 	/**
 	 * @return the type
 	 */
-	public final UniversityRating getType()
+	public UniversityRating getType()
 	{
 		return type;
 	}
@@ -84,7 +84,7 @@ public class UniversityReviewRating
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final UniversityRating type)
+	public void setType(final UniversityRating type)
 	{
 		this.type = type;
 	}
@@ -92,7 +92,7 @@ public class UniversityReviewRating
 	/**
 	 * @return the review
 	 */
-	public final UniversityReview getReview()
+	public UniversityReview getReview()
 	{
 		return review;
 	}
@@ -101,7 +101,7 @@ public class UniversityReviewRating
 	 * @param review
 	 *            the review to set
 	 */
-	public final void setReview(final UniversityReview review)
+	public void setReview(final UniversityReview review)
 	{
 		this.review = review;
 	}
@@ -109,7 +109,7 @@ public class UniversityReviewRating
 	/**
 	 * @return the value
 	 */
-	public final int getValue()
+	public int getValue()
 	{
 		return value;
 	}
@@ -118,7 +118,7 @@ public class UniversityReviewRating
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final int value)
+	public void setValue(final int value)
 	{
 		this.value = value;
 	}

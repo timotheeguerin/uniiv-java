@@ -28,7 +28,7 @@ public class InputEmailEntity extends Entity
 	/**
 	 * @return the email
 	 */
-	public final String getEmail()
+	public String getEmail()
 	{
 		return email;
 	}
@@ -37,7 +37,7 @@ public class InputEmailEntity extends Entity
 	 * @param email
 	 *            the email to set
 	 */
-	public final void setEmail(final String email)
+	public void setEmail(final String email)
 	{
 		this.email = email;
 	}

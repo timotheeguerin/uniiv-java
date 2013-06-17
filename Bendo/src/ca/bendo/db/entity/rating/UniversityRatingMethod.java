@@ -95,7 +95,7 @@ public class UniversityRatingMethod
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -104,7 +104,7 @@ public class UniversityRatingMethod
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -112,7 +112,7 @@ public class UniversityRatingMethod
 	/**
 	 * @return the name
 	 */
-	public final String getName()
+	public String getName()
 	{
 		return name;
 	}
@@ -121,7 +121,7 @@ public class UniversityRatingMethod
 	 * @param name
 	 *            the name to set
 	 */
-	public final void setName(final String name)
+	public void setName(final String name)
 	{
 		this.name = name;
 	}
@@ -129,7 +129,7 @@ public class UniversityRatingMethod
 	/**
 	 * @return the elements
 	 */
-	public final List<UniversityRatingMethodElement> getElements()
+	public List<UniversityRatingMethodElement> getElements()
 	{
 		return elements;
 	}
@@ -138,7 +138,7 @@ public class UniversityRatingMethod
 	 * @param elements
 	 *            the elements to set
 	 */
-	public final void setElements(final List<UniversityRatingMethodElement> elements)
+	public void setElements(final List<UniversityRatingMethodElement> elements)
 	{
 		this.elements = elements;
 	}
@@ -146,7 +146,7 @@ public class UniversityRatingMethod
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -161,7 +161,7 @@ public class UniversityRatingMethod
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

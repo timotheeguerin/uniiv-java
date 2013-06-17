@@ -68,7 +68,7 @@ public class CourseProfessor
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -77,7 +77,7 @@ public class CourseProfessor
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -85,7 +85,7 @@ public class CourseProfessor
 	/**
 	 * @return the professor
 	 */
-	public final Professor getProfessor()
+	public Professor getProfessor()
 	{
 		return professor;
 	}
@@ -94,7 +94,7 @@ public class CourseProfessor
 	 * @param professor
 	 *            the professor to set
 	 */
-	public final void setProfessor(final Professor professor)
+	public void setProfessor(final Professor professor)
 	{
 		this.professor = professor;
 	}
@@ -102,7 +102,7 @@ public class CourseProfessor
 	/**
 	 * @return the course
 	 */
-	public final Course getCourse()
+	public Course getCourse()
 	{
 		return course;
 	}
@@ -111,7 +111,7 @@ public class CourseProfessor
 	 * @param course
 	 *            the course to set
 	 */
-	public final void setCourse(final Course course)
+	public void setCourse(final Course course)
 	{
 		this.course = course;
 	}
@@ -119,7 +119,7 @@ public class CourseProfessor
 	/**
 	 * @return the periods
 	 */
-	public final List<CourseProfessorPeriod> getPeriods()
+	public List<CourseProfessorPeriod> getPeriods()
 	{
 		return periods;
 	}
@@ -128,7 +128,7 @@ public class CourseProfessor
 	 * @param periods
 	 *            the periods to set
 	 */
-	public final void setPeriods(final List<CourseProfessorPeriod> periods)
+	public void setPeriods(final List<CourseProfessorPeriod> periods)
 	{
 		this.periods = periods;
 	}

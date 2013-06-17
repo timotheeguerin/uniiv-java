@@ -28,7 +28,7 @@ public class QuickSearchBarTag extends TagSupport
 	private static final long serialVersionUID = 4204319554798069995L;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 
 		try

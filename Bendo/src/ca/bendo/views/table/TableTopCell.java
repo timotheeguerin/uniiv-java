@@ -94,7 +94,7 @@ public class TableTopCell extends TableCell
 	/**
 	 * @return the type
 	 */
-	public final CellType getType()
+	public CellType getType()
 	{
 		return type;
 	}
@@ -103,7 +103,7 @@ public class TableTopCell extends TableCell
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final CellType type)
+	public void setType(final CellType type)
 	{
 		this.type = type;
 	}
@@ -111,7 +111,7 @@ public class TableTopCell extends TableCell
 	/**
 	 * @return the file
 	 */
-	public final String getFile()
+	public String getFile()
 	{
 		return file;
 	}
@@ -120,7 +120,7 @@ public class TableTopCell extends TableCell
 	 * @param file
 	 *            the file to set
 	 */
-	public final void setFile(final String file)
+	public void setFile(final String file)
 	{
 		this.file = file;
 	}
@@ -128,7 +128,7 @@ public class TableTopCell extends TableCell
 	/**
 	 * @return the size
 	 */
-	public final CellSize getSize()
+	public CellSize getSize()
 	{
 		return size;
 	}
@@ -137,7 +137,7 @@ public class TableTopCell extends TableCell
 	 * @param size
 	 *            the size to set
 	 */
-	public final void setSize(final CellSize size)
+	public void setSize(final CellSize size)
 	{
 		this.size = size;
 	}

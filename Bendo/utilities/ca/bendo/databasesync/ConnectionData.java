@@ -38,7 +38,7 @@ public class ConnectionData
 	 * @throws SQLException
 	 *             SQLException generate by the DriverManager.getConnection
 	 */
-	public final Connection getConnection() throws SQLException
+	public Connection getConnection() throws SQLException
 	{
 		return DriverManager.getConnection(getUrl(), getUser(), getPassword());
 	}
@@ -46,7 +46,7 @@ public class ConnectionData
 	/**
 	 * @return the url
 	 */
-	public final String getUrl()
+	public String getUrl()
 	{
 		return url;
 	}
@@ -55,7 +55,7 @@ public class ConnectionData
 	 * @param url
 	 *            the url to set
 	 */
-	public final void setUrl(final String url)
+	public void setUrl(final String url)
 	{
 		this.url = url;
 	}
@@ -63,7 +63,7 @@ public class ConnectionData
 	/**
 	 * @return the user
 	 */
-	public final String getUser()
+	public String getUser()
 	{
 		return user;
 	}
@@ -72,7 +72,7 @@ public class ConnectionData
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final String user)
+	public void setUser(final String user)
 	{
 		this.user = user;
 	}
@@ -80,7 +80,7 @@ public class ConnectionData
 	/**
 	 * @return the password
 	 */
-	public final String getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -89,7 +89,7 @@ public class ConnectionData
 	 * @param password
 	 *            the password to set
 	 */
-	public final void setPassword(final String password)
+	public void setPassword(final String password)
 	{
 		this.password = password;
 	}

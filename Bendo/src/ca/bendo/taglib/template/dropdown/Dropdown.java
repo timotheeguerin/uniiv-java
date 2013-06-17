@@ -33,7 +33,7 @@ public class Dropdown extends TagBodyTemplate
 	}
 
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		StringBuilder result = new StringBuilder();
 		result.append("<div class='dropdown " + getCustclass() + "'>");

@@ -38,7 +38,7 @@ public class LanguageDAO extends HibernateDAO<Language>
 	 *         lang_languages
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<Language> listLanguages()
+	public List<Language> listLanguages()
 	{
 		return (List<Language>) getSession().createCriteria(Language.class).list();
 	}

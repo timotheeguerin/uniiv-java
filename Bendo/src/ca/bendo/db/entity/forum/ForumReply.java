@@ -67,7 +67,7 @@ public class ForumReply
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -76,7 +76,7 @@ public class ForumReply
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -84,7 +84,7 @@ public class ForumReply
 	/**
 	 * @return the user
 	 */
-	public final User getUser()
+	public User getUser()
 	{
 		return user;
 	}
@@ -93,7 +93,7 @@ public class ForumReply
 	 * @param user
 	 *            the user to set
 	 */
-	public final void setUser(final User user)
+	public void setUser(final User user)
 	{
 		this.user = user;
 	}
@@ -101,7 +101,7 @@ public class ForumReply
 	/**
 	 * @return the timeCreated
 	 */
-	public final Date getTimeCreated()
+	public Date getTimeCreated()
 	{
 		return timeCreated;
 	}
@@ -110,7 +110,7 @@ public class ForumReply
 	 * @param timeCreated
 	 *            the timeCreated to set
 	 */
-	public final void setTimeCreated(final Date timeCreated)
+	public void setTimeCreated(final Date timeCreated)
 	{
 		this.timeCreated = timeCreated;
 	}
@@ -118,7 +118,7 @@ public class ForumReply
 	/**
 	 * @return the content
 	 */
-	public final ForumContent getContent()
+	public ForumContent getContent()
 	{
 		return content;
 	}
@@ -127,7 +127,7 @@ public class ForumReply
 	 * @param content
 	 *            the content to set
 	 */
-	public final void setContent(final ForumContent content)
+	public void setContent(final ForumContent content)
 	{
 		this.content = content;
 	}

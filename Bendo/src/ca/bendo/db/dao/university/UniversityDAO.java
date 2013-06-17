@@ -42,7 +42,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return a list of all universities
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<University> listUniversities()
+	public  List<University> listUniversities()
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
@@ -55,7 +55,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return list of university satifying the request
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<University> search(final UniversityQuery query)
+	public  List<University> search(final UniversityQuery query)
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());

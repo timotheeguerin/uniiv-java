@@ -51,7 +51,7 @@ public class AlertMessage
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -60,7 +60,7 @@ public class AlertMessage
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}
@@ -68,7 +68,7 @@ public class AlertMessage
 	/**
 	 * @return the msg
 	 */
-	public final String getMsg()
+	public String getMsg()
 	{
 		return msg;
 	}
@@ -77,7 +77,7 @@ public class AlertMessage
 	 * @param msg
 	 *            the msg to set
 	 */
-	public final void setMsg(final String msg)
+	public void setMsg(final String msg)
 	{
 		this.msg = msg;
 	}
@@ -85,7 +85,7 @@ public class AlertMessage
 	/**
 	 * @return the type
 	 */
-	public final AlertMessageType getType()
+	public AlertMessageType getType()
 	{
 		return type;
 	}
@@ -94,7 +94,7 @@ public class AlertMessage
 	 * @param type
 	 *            the type to set
 	 */
-	public final void setType(final AlertMessageType type)
+	public void setType(final AlertMessageType type)
 	{
 		this.type = type;
 	}

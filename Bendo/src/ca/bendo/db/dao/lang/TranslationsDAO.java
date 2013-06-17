@@ -47,7 +47,7 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	 * @return a list of countries
 	 */
 	@SuppressWarnings("unchecked")
-	public final List<Translation> listTranslations()
+	public  List<Translation> listTranslations()
 	{
 		return (List<Translation>) getSession().createCriteria(Translation.class).list();
 	}
@@ -79,7 +79,7 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	 *            Translation key
 	 * @return a map of the translation for the key in all language
 	 */
-	public final Map<Long, Translation> getTranslationsWithKey(final String key)
+	public  Map<Long, Translation> getTranslationsWithKey(final String key)
 	{
 
 		@SuppressWarnings("unchecked")

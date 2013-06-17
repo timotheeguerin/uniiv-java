@@ -33,7 +33,7 @@ public class Entity
 	 * @param request
 	 *            Request
 	 */
-	public final void setup(final HttpServletRequest request)
+	public void setup(final HttpServletRequest request)
 	{
 		Field[] fields = getClass().getDeclaredFields();
 		for (Field field : fields)

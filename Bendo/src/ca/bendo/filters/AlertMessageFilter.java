@@ -55,7 +55,7 @@ public class AlertMessageFilter extends IFilter
 	 * javax.servlet.ServletResponse, java.lang.String)
 	 */
 	@Override
-	public final String doFilter(final HttpServletRequest request, final ServletResponse response, final String url)
+	public String doFilter(final HttpServletRequest request, final ServletResponse response, final String url)
 			throws IOException, ServletException
 	{
 		if (excludeFromFilter(url))

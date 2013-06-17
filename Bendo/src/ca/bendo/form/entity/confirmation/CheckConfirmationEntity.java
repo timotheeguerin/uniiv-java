@@ -34,7 +34,7 @@ public class CheckConfirmationEntity extends Entity
 	/**
 	 * @return the confirmationId
 	 */
-	public final String getConfirmationId()
+	public String getConfirmationId()
 	{
 		return confirmationId;
 	}
@@ -43,7 +43,7 @@ public class CheckConfirmationEntity extends Entity
 	 * @param confirmationId
 	 *            the confirmationId to set
 	 */
-	public final void setConfirmationId(final String confirmationId)
+	public void setConfirmationId(final String confirmationId)
 	{
 		this.confirmationId = confirmationId;
 	}
@@ -51,7 +51,7 @@ public class CheckConfirmationEntity extends Entity
 	/**
 	 * @return the key
 	 */
-	public final String getKey()
+	public String getKey()
 	{
 		return key;
 	}
@@ -60,7 +60,7 @@ public class CheckConfirmationEntity extends Entity
 	 * @param key
 	 *            the key to set
 	 */
-	public final void setKey(final String key)
+	public void setKey(final String key)
 	{
 		this.key = key;
 	}

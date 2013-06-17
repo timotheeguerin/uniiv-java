@@ -33,7 +33,7 @@ public class PostController
 	 * @return JSP page
 	 */
 	@RequestMapping(value = "/post", method = RequestMethod.GET)
-	public final String home(final HttpServletRequest request, final HttpServletResponse response)
+	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/post";
 	}

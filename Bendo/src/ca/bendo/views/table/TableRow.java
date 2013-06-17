@@ -60,7 +60,7 @@ public class TableRow
 	 *            Top cell
 	 * @return the cell with the given top cell
 	 */
-	public final TableCell getCell(final TableTopCell top)
+	public TableCell getCell(final TableTopCell top)
 	{
 		return cells.get(top);
 	}
@@ -71,7 +71,7 @@ public class TableRow
 	 *            cell
 	 * @return the header cell for the given cell
 	 */
-	public final TableTopCell getHeader(final TableCell cell)
+	public TableTopCell getHeader(final TableCell cell)
 	{
 		for (Entry<TableTopCell, TableCell> entry : cells.entrySet())
 		{
@@ -86,7 +86,7 @@ public class TableRow
 	/**
 	 * @return the cells
 	 */
-	public final Map<TableTopCell, TableCell> getCells()
+	public Map<TableTopCell, TableCell> getCells()
 	{
 		return cells;
 	}
@@ -95,7 +95,7 @@ public class TableRow
 	 * @param cells
 	 *            the cells to set
 	 */
-	public final void setCells(final Map<TableTopCell, TableCell> cells)
+	public void setCells(final Map<TableTopCell, TableCell> cells)
 	{
 		this.cells = cells;
 	}
@@ -103,7 +103,7 @@ public class TableRow
 	/**
 	 * @return the link
 	 */
-	public final String getLink()
+	public String getLink()
 	{
 		return link;
 	}
@@ -112,7 +112,7 @@ public class TableRow
 	 * @param link
 	 *            the link to set
 	 */
-	public final void setLink(final String link)
+	public void setLink(final String link)
 	{
 		this.link = link;
 	}
@@ -131,7 +131,7 @@ public class TableRow
 	/**
 	 * @return the table
 	 */
-	public final Table getTable()
+	public Table getTable()
 	{
 		return table;
 	}
@@ -140,7 +140,7 @@ public class TableRow
 	 * @param table
 	 *            the table to set
 	 */
-	public final void setTable(final Table table)
+	public void setTable(final Table table)
 	{
 		this.table = table;
 	}

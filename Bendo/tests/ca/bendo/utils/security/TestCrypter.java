@@ -37,7 +37,7 @@ public class TestCrypter
 	 * Test the generateHashKey function.
 	 */
 	@Test
-	public final void testGenerateHashKey()
+	public void testGenerateHashKey()
 	{
 		System.out.println("Catalina: " + System.getenv("CATALINA_HOME"));
 		Crypter.generateHashKey("superpasswrd");
@@ -47,7 +47,7 @@ public class TestCrypter
 	 * Test the hashKey function.
 	 */
 	@Test
-	public final void testHashKey()
+	public void testHashKey()
 	{
 		String password = RandomStringUtils.randomAscii(PASSWORD_LENTGH);
 		String hashKey = Crypter.generateHashKey(password);

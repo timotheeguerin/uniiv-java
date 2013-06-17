@@ -52,7 +52,7 @@ public class Form extends TagTemplate
 	}
 
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		StringBuilder result = new StringBuilder();
 		result.append("<form class='" + getCustclass() + "' action='" + getAction() + "' method='" + getMethod()
@@ -70,7 +70,7 @@ public class Form extends TagTemplate
 	 * @param e
 	 *            Form element to prepend
 	 */
-	public final void prependElement(final FormElement e)
+	public void prependElement(final FormElement e)
 	{
 		this.elements.addFirst(e);
 	}
@@ -80,7 +80,7 @@ public class Form extends TagTemplate
 	 * @param e
 	 *            Form element to append
 	 */
-	public final void appendElement(final FormElement e)
+	public void appendElement(final FormElement e)
 	{
 		this.elements.addLast(e);
 	}
@@ -88,7 +88,7 @@ public class Form extends TagTemplate
 	/**
 	 * @return the elements
 	 */
-	public final LinkedList<FormElement> getElements()
+	public LinkedList<FormElement> getElements()
 	{
 		return elements;
 	}
@@ -97,7 +97,7 @@ public class Form extends TagTemplate
 	 * @param elements
 	 *            the elements to set
 	 */
-	public final void setElements(final LinkedList<FormElement> elements)
+	public void setElements(final LinkedList<FormElement> elements)
 	{
 		this.elements = elements;
 	}
@@ -106,7 +106,7 @@ public class Form extends TagTemplate
 	 * @return the method
 	 * 
 	 */
-	public final String getMethod()
+	public String getMethod()
 	{
 		return method;
 	}
@@ -116,7 +116,7 @@ public class Form extends TagTemplate
 	 *            the method to set
 	 * 
 	 */
-	public final void setMethod(final String method)
+	public void setMethod(final String method)
 	{
 		this.method = method;
 	}
@@ -125,7 +125,7 @@ public class Form extends TagTemplate
 	 * @return the action
 	 * 
 	 */
-	public final String getAction()
+	public String getAction()
 	{
 		return action;
 	}
@@ -135,7 +135,7 @@ public class Form extends TagTemplate
 	 *            the action to set
 	 * 
 	 */
-	public final void setAction(final String action)
+	public void setAction(final String action)
 	{
 		this.action = action;
 	}

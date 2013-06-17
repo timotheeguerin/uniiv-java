@@ -103,7 +103,7 @@ public class UniversityProgram implements Comparable<UniversityProgram>
 	/**
 	 * @return the translation
 	 */
-	public final String getTranslation()
+	public String getTranslation()
 	{
 		if (translation != null)
 		{
@@ -119,7 +119,7 @@ public class UniversityProgram implements Comparable<UniversityProgram>
 	 * @param translation
 	 *            the translation to set
 	 */
-	public final void setTranslation(final String translation)
+	public void setTranslation(final String translation)
 	{
 		this.translation = translation;
 	}

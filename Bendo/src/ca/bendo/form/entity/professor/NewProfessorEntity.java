@@ -46,7 +46,7 @@ public class NewProfessorEntity extends Entity
 	/**
 	 * @return the firstName
 	 */
-	public final String getFirstName()
+	public String getFirstName()
 	{
 		return firstName;
 	}
@@ -55,7 +55,7 @@ public class NewProfessorEntity extends Entity
 	 * @param firstName
 	 *            the firstName to set
 	 */
-	public final void setFirstName(final String firstName)
+	public void setFirstName(final String firstName)
 	{
 		this.firstName = firstName;
 	}
@@ -63,7 +63,7 @@ public class NewProfessorEntity extends Entity
 	/**
 	 * @return the lastName
 	 */
-	public final String getLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
@@ -72,7 +72,7 @@ public class NewProfessorEntity extends Entity
 	 * @param lastName
 	 *            the lastName to set
 	 */
-	public final void setLastName(final String lastName)
+	public void setLastName(final String lastName)
 	{
 		this.lastName = lastName;
 	}
@@ -80,7 +80,7 @@ public class NewProfessorEntity extends Entity
 	/**
 	 * @return the programId
 	 */
-	public final String getProgramId()
+	public String getProgramId()
 	{
 		return programId;
 	}
@@ -89,7 +89,7 @@ public class NewProfessorEntity extends Entity
 	 * @param programId
 	 *            the programId to set
 	 */
-	public final void setProgramId(final String programId)
+	public void setProgramId(final String programId)
 	{
 		this.programId = programId;
 	}
@@ -97,7 +97,7 @@ public class NewProfessorEntity extends Entity
 	/**
 	 * @return the captcha
 	 */
-	public final String getCaptcha()
+	public String getCaptcha()
 	{
 		return captcha;
 	}
@@ -106,7 +106,7 @@ public class NewProfessorEntity extends Entity
 	 * @param captcha
 	 *            the captcha to set
 	 */
-	public final void setCaptcha(final String captcha)
+	public void setCaptcha(final String captcha)
 	{
 		this.captcha = captcha;
 	}

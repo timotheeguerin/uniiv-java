@@ -38,7 +38,7 @@ public class LogoutController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public final String login(final HttpServletRequest request, final HttpServletResponse response)
+	public String login(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		UserSession userSession = UserSession.getSession(request);
 		Long languageId = Language.loadId(request);

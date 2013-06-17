@@ -43,7 +43,7 @@ public class ForgetPasswordController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/resetpassword/sendemail", method = RequestMethod.GET)
-	public final String sendEmail(final HttpServletRequest request, final HttpServletResponse response)
+	public String sendEmail(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return sendMailPage(request, response);
 	}
@@ -57,7 +57,7 @@ public class ForgetPasswordController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/resetpassword/sendemail", method = RequestMethod.POST)
-	public final String handleSendEmail(final HttpServletRequest request, final HttpServletResponse response)
+	public String handleSendEmail(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		long languageId = Language.loadId(request);
 		Translator translator = Translator.getTranslator(request);
@@ -80,7 +80,7 @@ public class ForgetPasswordController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String sendMailPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String sendMailPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return "views/user/resetpassword_sendmail";
 	}
@@ -94,7 +94,7 @@ public class ForgetPasswordController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/resetpassword", method = RequestMethod.GET)
-	public final String chooseNewPassword(final HttpServletRequest request, final HttpServletResponse response)
+	public String chooseNewPassword(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return chooseNewPasswordPage(request, response);
 	}
@@ -108,7 +108,7 @@ public class ForgetPasswordController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/resetpassword", method = RequestMethod.POST)
-	public final String handleChooseNewPassword(final HttpServletRequest request, final HttpServletResponse response)
+	public String handleChooseNewPassword(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		long languageId = Language.loadId(request);
 		Translator translator = Translator.getTranslator(request);
@@ -131,7 +131,7 @@ public class ForgetPasswordController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public final String chooseNewPasswordPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String chooseNewPasswordPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		String id = request.getParameter("id");
 		String key = request.getParameter("key");

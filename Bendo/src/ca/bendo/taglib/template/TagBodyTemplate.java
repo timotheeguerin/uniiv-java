@@ -39,7 +39,7 @@ public abstract class TagBodyTemplate extends TagTemplate
 	/**
 	 * @return the body
 	 */
-	public final String getBody()
+	public String getBody()
 	{
 		return body;
 	}
@@ -48,7 +48,7 @@ public abstract class TagBodyTemplate extends TagTemplate
 	 * @param body
 	 *            the body to set
 	 */
-	public final void setBody(final String body)
+	public void setBody(final String body)
 	{
 		this.body = body;
 	}

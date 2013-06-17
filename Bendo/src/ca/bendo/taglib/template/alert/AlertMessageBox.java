@@ -46,7 +46,7 @@ public class AlertMessageBox extends TagTemplate
 	 * @see ca.bendo.taglib.template.TagTemplate#render()
 	 */
 	@Override
-	public final StringBuilder render()
+	public StringBuilder render()
 	{
 		String key = alertMsg.getKey();
 		String msg = alertMsg.getMsg();
@@ -68,7 +68,7 @@ public class AlertMessageBox extends TagTemplate
 	/**
 	 * @return the alertMsg
 	 */
-	public final AlertMessage getAlertMsg()
+	public AlertMessage getAlertMsg()
 	{
 		return alertMsg;
 	}
@@ -77,7 +77,7 @@ public class AlertMessageBox extends TagTemplate
 	 * @param alertMsg
 	 *            the alertMsg to set
 	 */
-	public final void setAlertMsg(final AlertMessage alertMsg)
+	public void setAlertMsg(final AlertMessage alertMsg)
 	{
 		this.alertMsg = alertMsg;
 	}

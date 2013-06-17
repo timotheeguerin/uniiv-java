@@ -36,7 +36,7 @@ public class TLinkTag extends TagSupport
 	private String value;
 
 	@Override
-	public final int doStartTag() throws JspException
+	public int doStartTag() throws JspException
 	{
 		JspWriter out = pageContext.getOut();
 
@@ -58,7 +58,7 @@ public class TLinkTag extends TagSupport
 	/**
 	 * @return the value
 	 */
-	public final String getValue()
+	public String getValue()
 	{
 		return value;
 	}
@@ -67,7 +67,7 @@ public class TLinkTag extends TagSupport
 	 * @param value
 	 *            the value to set
 	 */
-	public final void setValue(final String value)
+	public void setValue(final String value)
 	{
 		this.value = value;
 	}
@@ -79,7 +79,7 @@ public class TLinkTag extends TagSupport
 	 *            Url to translate
 	 * @return the real url
 	 */
-	public final String url(final String url)
+	public String url(final String url)
 	{
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 		if (url.startsWith("/"))

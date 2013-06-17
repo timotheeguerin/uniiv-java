@@ -56,7 +56,7 @@ public class CourseProfessorPeriod
 	/**
 	 * @return the id
 	 */
-	public final long getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -65,7 +65,7 @@ public class CourseProfessorPeriod
 	 * @param id
 	 *            the id to set
 	 */
-	public final void setId(final long id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}
@@ -73,7 +73,7 @@ public class CourseProfessorPeriod
 	/**
 	 * @return the semester
 	 */
-	public final Semester getSemester()
+	public Semester getSemester()
 	{
 		return semester;
 	}
@@ -82,7 +82,7 @@ public class CourseProfessorPeriod
 	 * @param semester
 	 *            the semester to set
 	 */
-	public final void setSemester(final Semester semester)
+	public void setSemester(final Semester semester)
 	{
 		this.semester = semester;
 	}
@@ -90,7 +90,7 @@ public class CourseProfessorPeriod
 	/**
 	 * @return the year
 	 */
-	public final int getYear()
+	public int getYear()
 	{
 		return year;
 	}
@@ -99,7 +99,7 @@ public class CourseProfessorPeriod
 	 * @param year
 	 *            the year to set
 	 */
-	public final void setYear(final int year)
+	public void setYear(final int year)
 	{
 		this.year = year;
 	}
@@ -107,7 +107,7 @@ public class CourseProfessorPeriod
 	/**
 	 * @return the courseProfessor
 	 */
-	public final CourseProfessor getCourseProfessor()
+	public CourseProfessor getCourseProfessor()
 	{
 		return courseProfessor;
 	}
@@ -116,7 +116,7 @@ public class CourseProfessorPeriod
 	 * @param courseProfessor
 	 *            the courseProfessor to set
 	 */
-	public final void setCourseProfessor(final CourseProfessor courseProfessor)
+	public void setCourseProfessor(final CourseProfessor courseProfessor)
 	{
 		this.courseProfessor = courseProfessor;
 	}
