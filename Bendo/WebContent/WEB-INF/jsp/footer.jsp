@@ -1,58 +1,5 @@
-<!-- Twitter Social Plugin -->
-<script>
-	!function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
-				.test(d.location) ? 'http' : 'https';
-		if (!d.getElementById(id)) {
-			js = d.createElement(s);
-			js.id = id;
-			js.src = p + '://platform.twitter.com/widgets.js';
-			fjs.parentNode.insertBefore(js, fjs);
-		}
-	}(document, 'script', 'twitter-wjs');
-</script>
-<!-- Facebook Social Plugin -->
-<script>
-	(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id))
-			return;
-		js = d.createElement(s);
-		js.id = id;
-		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- Google+ Social Plugin -->
-<script type="text/javascript">
-	(function() {
-		var po = document.createElement('script');
-		po.type = 'text/javascript';
-		po.async = true;
-		po.src = 'https://apis.google.com/js/plusone.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(po, s);
-	})();
-</script>
-<!-- Stumbleupon Social Plugin  -->
-<script type="text/javascript">
-	(function() {
-		var li = document.createElement('script');
-		li.type = 'text/javascript';
-		li.async = true;
-		li.src = ('https:' == document.location.protocol ? 'https:' : 'http:')
-				+ '//platform.stumbleupon.com/1/widgets.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(li, s);
-	})();
-</script>
 <div class="footer_container">
 	<div class="footer_top">
-		<!-- 		<div id="nav_logo_footer"> -->
-		<%-- 			<a href='<b:tlink value="home"/>' title="<b:translator value=""/>"><img src="<c:url value="/images/logo/logoheader.png"/>" --%>
-		<%-- 				alt="<b:translator value="home_logo" />" class="header_logo" --%>
-		<!-- 			/></a> -->
-		<!-- 		</div> -->
 		<div class="footer_links">
 			<ul id="footer_links_primary">
 				<li><a href='<b:url value="/about"/>'
@@ -92,21 +39,5 @@
 							value="login" /></a></li>
 			</ul>
 		</div>
-	</div>
-	<div class="social_plug">
-		<a href="https://twitter.com/Uniiv" class="twitter-follow-button"
-			data-show-count="true">Follow @Uniiv</a>
-		<script>
-			!function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
-						.test(d.location) ? 'http' : 'https';
-				if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = p + '://platform.twitter.com/widgets.js';
-					fjs.parentNode.insertBefore(js, fjs);
-				}
-			}(document, 'script', 'twitter-wjs');
-		</script>
 	</div>
 </div>
