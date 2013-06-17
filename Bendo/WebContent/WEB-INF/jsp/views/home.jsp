@@ -1,5 +1,8 @@
-<div id="fb-root"></div>
 <label id="Compte"></label>
+<!-- <div class="front-bg"> -->
+<%-- <img class="front-image" alt="background_image" src="<c:url  --%>
+<%-- 			value="/images/background/clouds_background.jpg"/>"></img> --%>
+<!-- </div> -->
 <div class="wrapper">
 	<div class="logo_container">
 		<a href='<b:tlink value="home"/>' title="<b:translator value=""/>"><img src="<c:url 
