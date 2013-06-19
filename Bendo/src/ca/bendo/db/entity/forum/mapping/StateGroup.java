@@ -16,45 +16,45 @@ import ca.bendo.db.entity.forum.ForumGroup;
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>UniversityGroupDAO</b>
+ *          <b>StateGroup</b>
  *          <p>
  *          </p>
  * 
  * 
  */
 @Entity
-@Table(name = "forum_university_group")
-public class UniversityGroup
+@Table(name = "forum_state_group")
+public class StateGroup
 {
 	/**
 	 * 
 	 */
 	@Id
-	@Column(name = "id_uni_university")
-	private long universityId;
+	@Column(name = "id_loc_state")
+	private long stateId;
 
 	/**
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_forum_group")
+	@JoinColumn(name = "group")
 	private ForumGroup group;
 
 	/**
-	 * @return the universityId
+	 * @return the stateId
 	 */
-	public long getUniversityId()
+	public long getStateId()
 	{
-		return universityId;
+		return stateId;
 	}
 
 	/**
-	 * @param universityId
-	 *            the universityId to set
+	 * @param stateId
+	 *            the stateId to set
 	 */
-	public void setUniversityId(final long universityId)
+	public void setStateId(final long stateId)
 	{
-		this.universityId = universityId;
+		this.stateId = stateId;
 	}
 
 	/**
@@ -73,4 +73,5 @@ public class UniversityGroup
 	{
 		this.group = group;
 	}
+
 }

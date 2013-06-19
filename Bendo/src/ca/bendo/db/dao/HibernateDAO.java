@@ -14,6 +14,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import ca.bendo.db.entity.forum.ForumGroupType;
 import ca.bendo.db.entity.location.Country;
 
 /**
@@ -189,6 +190,40 @@ public class HibernateDAO<T>
 	public long count()
 	{
 		return (long) getSession().createCriteria(type).setProjection(Projections.rowCount()).uniqueResult();
+	}
+
+	/**
+	 * @param column
+	 *            Name of the column to filter using the query
+	 * @param query
+	 *            Query
+	 * @param firstResult
+	 *            First result
+	 * @param maxResults
+	 *            Max result
+	 * @return list of forum result
+	 */
+	@SuppressWarnings("unchecked")
+	public List<ForumGroupType> search(final String column, final String query, final int firstResult,
+			final int maxResults)
+	{
+		String value = "%" + query + "%";
+		return getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike(column, value))
+				.setFirstResult(firstResult).setMaxResults(maxResults).list();
+	}
+
+	/**
+	 * @param column
+	 *            Name of the column to filter using the query
+	 * @param query
+	 *            to filter the result with the given column name
+	 * @return the number of entity
+	 */
+	public long searchCount(final String column, final String query)
+	{
+		String value = "%" + query + "%";
+		return (long) getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike(column, value))
+				.setProjection(Projections.rowCount()).uniqueResult();
 	}
 
 	/**

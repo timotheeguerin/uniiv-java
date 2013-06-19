@@ -56,7 +56,7 @@ public class ForumGroup
 	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "forum_group_tag", joinColumns = { @JoinColumn(name = "id_forum_group") },
 			inverseJoinColumns = { @JoinColumn(name = "id_forum_tag") })
-	private List<ForumTag> tags;
+	private List<Tag> tags;
 
 	/**
 	 * @return the id
@@ -112,7 +112,7 @@ public class ForumGroup
 	/**
 	 * @return the tags
 	 */
-	public List<ForumTag> getTags()
+	public List<Tag> getTags()
 	{
 		return tags;
 	}
@@ -121,7 +121,7 @@ public class ForumGroup
 	 * @param tags
 	 *            the tags to set
 	 */
-	public void setTags(final List<ForumTag> tags)
+	public void setTags(final List<Tag> tags)
 	{
 		this.tags = tags;
 	}
@@ -131,9 +131,9 @@ public class ForumGroup
 	 * @return list of all the tags of the group as well as the tags of the
 	 *         parents
 	 */
-	public List<ForumTag> getGeneratedTags()
+	public List<Tag> getGeneratedTags()
 	{
-		List<ForumTag> result = getTags();
+		List<Tag> result = getTags();
 
 		if (parent != null)
 		{

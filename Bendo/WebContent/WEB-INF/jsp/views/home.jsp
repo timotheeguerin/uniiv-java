@@ -1,19 +1,8 @@
-<div id="fb-root"></div>
 <label id="Compte"></label>
-<div class="home_top_ad">
-	<script type="text/javascript">
-	<!--
-		google_ad_client = "ca-pub-3986388758891321";
-		/* Main page */
-		google_ad_slot = "8846303491";
-		google_ad_width = 728;
-		google_ad_height = 90;
-	//-->
-	</script>
-	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-		
-	</script>
-</div>
+<!-- <div class="front-bg"> -->
+<%-- <img class="front-image" alt="background_image" src="<c:url  --%>
+<%-- 			value="/images/background/clouds_background.jpg"/>"></img> --%>
+<!-- </div> -->
 <div class="wrapper">
 	<div class="logo_container">
 		<a href='<b:tlink value="home"/>' title="<b:translator value=""/>"><img src="<c:url 

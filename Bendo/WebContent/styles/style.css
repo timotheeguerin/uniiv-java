@@ -17,7 +17,8 @@
 }
 
 html,body {
-	background-color: #EDF1F5;
+/* 	background-color: #EDF1F5; */
+	background-image:url("../images/background/bg.jpg");
 	margin: 0;
 	width: 100%;
 	height: 100%;
@@ -42,6 +43,14 @@ div#content {
 	width: 980px;
 	padding-bottom: 100px;
 	overflow-y: auto;
+}
+.front-image {
+	position:absolute;
+	border:0;
+	top:0;
+	left:0;
+	right:0;
+	width:100%
 }
 
 footer {
@@ -140,7 +149,7 @@ header.nav {
 	text-decoration: none;
 }
 
-div#nav_links_left {
+#nav_links_left {
 	display: inline-block;
 	height: 35px;
 	position: relative;
@@ -167,15 +176,14 @@ div#nav_links_left {
 	vertical-align: middle;
 }
 
-div#nav_links_left a {
+#nav_links_left a {
 	color: #444444;
 	text-decoration: none;
 	width: 100%;
 }
 
-div#nav_links_left a:hover {
-	color: #204AA1;
-	white-space: nowrap;
+#nav_links_left a:hover {
+	text-shadow: 0 0 15px #FFF;
 }
 
 .menu_top_right_btn {
@@ -1945,12 +1953,12 @@ li.error {
 
 #helphomemainbutton1,#helphomemainbutton2,#helphomemainbutton3 {
 	height: auto;
-	width: 200px;
+	width: 300px;
 }
 
 .arrow_box * {
 	color: #f1f1f1;
-	font-size: x-small;
+	font-size: small;
 }
 
 .arrow_box {

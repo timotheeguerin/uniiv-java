@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Twitter \Social Plugin -->
 <!-- <script>
 	!function(d, s, id) {
@@ -46,13 +47,10 @@
 		s.parentNode.insertBefore(li, s);
 	})();
 </script> -->
+=======
+>>>>>>> 7d28683f9240f095e485f89b5d7618568904c105
 <div class="footer_container">
 	<div class="footer_top">
-		<!-- 		<div id="nav_logo_footer"> -->
-		<%-- 			<a href='<b:tlink value="home"/>' title="<b:translator value=""/>"><img src="<c:url value="/images/logo/logoheader.png"/>" --%>
-		<%-- 				alt="<b:translator value="home_logo" />" class="header_logo" --%>
-		<!-- 			/></a> -->
-		<!-- 		</div> -->
 		<div class="footer_links">
 			<ul id="footer_links_primary">
 				<li><a href='<b:url value="/about"/>'
@@ -93,6 +91,7 @@
 			</ul>
 		</div>
 	</div>
+<<<<<<< HEAD
 	
 	<!-- <div class="social_plug">
 		<a href="https://twitter.com/Uniiv" class="twitter-follow-button"
@@ -110,4 +109,6 @@
 			}(document, 'script', 'twitter-wjs');
 		</script>
 	</div> -->
+=======
+>>>>>>> 7d28683f9240f095e485f89b5d7618568904c105
 </div>
