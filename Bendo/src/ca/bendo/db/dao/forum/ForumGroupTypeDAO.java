@@ -62,9 +62,7 @@ public class ForumGroupTypeDAO extends HibernateDAO<ForumGroupType>
 	@SuppressWarnings("unchecked")
 	public List<ForumGroupType> search(final String query, final int firstResult, final int maxResults)
 	{
-		String value = "%" + query + "%";
-		return getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike("name", value))
-				.setFirstResult(firstResult).setMaxResults(maxResults).list();
+		return search("name", query, firstResult, maxResults);
 	}
 
 	/**
@@ -74,8 +72,6 @@ public class ForumGroupTypeDAO extends HibernateDAO<ForumGroupType>
 	 */
 	public long searchCount(final String query)
 	{
-		String value = "%" + query + "%";
-		return (long) getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike("name", value))
-				.setProjection(Projections.rowCount()).uniqueResult();
+		return searchCount("name", query);
 	}
 }

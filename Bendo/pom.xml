@@ -54,15 +54,12 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}/js/</outputDirectory>
 							<sourceDirectory>WebContent/scripts</sourceDirectory>
-							<!-- <linebreakpos>-1</linebreakpos> -->
 							<force>true</force>
 							<excludes>
 								<exclude>script.min.js</exclude>
 								<exclude>external.min.js</exclude>
 							</excludes>
-							<!-- <warSourceDirectory>${basedir}/WebContent</warSourceDirectory> -->
-							<!-- <webappDirectory>${project.build.directory}/${project.build.finalName}/webapp</webappDirectory> -->
-
+						
 							<aggregations>
 								<aggregation>
 
