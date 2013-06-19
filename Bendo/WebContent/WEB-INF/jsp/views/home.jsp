@@ -23,7 +23,7 @@
 	</div>
 	<div class="MainContainerButtons">
 
-		<div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/discover"/>';">
+		<%-- <div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/discover"/>';">
 			<div class="ButtonImgClickable">
 				<div class="tooltip" data-tooltip-id="#helphomemainbutton1">
 					<img src="<c:url 
@@ -38,8 +38,8 @@
 
 			</div>
 
-		</div>
-		<div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/discuss"/>';">
+		</div> --%>
+		<%-- <div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/discuss"/>';">
 			<div class="ButtonImgClickable">
 				<div class="tooltip" data-tooltip-id="#helphomemainbutton2">
 					<img src="<c:url 
@@ -54,8 +54,8 @@
 
 			</div>
 
-		</div>
-		<div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/post"/>';">
+		</div> --%>
+		<%-- <div class="ButtonIndividualContainer" onclick="window.location='<b:url value="/post"/>';">
 			<div class="ButtonImgClickable">
 				<div class="tooltip" data-tooltip-id="#helphomemainbutton3">
 					<img src="<c:url 
@@ -70,6 +70,6 @@
 
 			</div>
 
-		</div>
+		</div> --%>
 	</div>
 </div>

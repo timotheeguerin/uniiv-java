@@ -3,15 +3,18 @@ package ca.bendo.db.dao.lang;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
+import ca.bendo.db.entity.forum.ForumGroupType;
 import ca.bendo.db.entity.lang.Translation;
 
 /**
@@ -62,7 +65,8 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 
 		@SuppressWarnings("unchecked")
 		List<Translation> translations = getSession().createCriteria(Translation.class)
-				.add(Restrictions.eq("language.id", languageId)).list();
+				.add(Restrictions.eq("language.id", languageId))
+				.list();
 
 		Map<String, Translation> translationsMap = new HashMap<String, Translation>();
 		for (Translation translation : translations)
@@ -84,7 +88,8 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 
 		@SuppressWarnings("unchecked")
 		List<Translation> translations = getSession().createCriteria(Translation.class)
-				.add(Restrictions.eq("key", key)).list();
+				.add(Restrictions.eq("key", key))
+				.list();
 
 		Map<Long, Translation> translationsMap = new HashMap<Long, Translation>();
 
@@ -100,14 +105,14 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	 * 
 	 * @param key
 	 *            Key of the translation
-	 * @param l
-	 *            Language id of the translation.
+	 * @param languageId
+	 *            Id of Language of the translation.
 	 * @return Transaltion object.
 	 */
-	public Translation getTranslation(final String key, final Long l)
+	public Translation getTranslation(final String key, final Long languageId)
 	{
 		Criterion keyRestriction = Restrictions.eq("key", key);
-		Criterion langugageRestriction = Restrictions.eq("language.id", l);
+		Criterion langugageRestriction = Restrictions.eq("language.id", languageId);
 
 		Translation translation = (Translation) getSession().createCriteria(Translation.class)
 				.add(Restrictions.and(keyRestriction, langugageRestriction)).uniqueResult();
@@ -124,7 +129,40 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	{
 
 		return (List<String>) getSession().createCriteria(Translation.class)
-				.setProjection(Projections.distinct(Projections.property("key"))).list();
+				.setProjection(Projections.distinct(Projections.property("key")))
+				.list();
 
+	}
+	
+	/**
+	 * @param query
+	 *            Query
+	 * @param firstResult
+	 *            First result
+	 * @param maxResults
+	 *            Max result
+	 * @return list of forum result
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Translation> search(final String query, final int firstResult, final int maxResults)
+	{
+		String value = "%" + query + "%";
+		return getSession().createCriteria(Translation.class)
+				.setProjection(Projections.distinct(Projections.distinct(Projections.property("key"))))
+				.add(Restrictions.ilike("key", value))
+				.setFirstResult(firstResult).setMaxResults(maxResults)
+				.list();
+	}
+	
+	/**
+	 * @param query
+	 *            to restrict
+	 * @return the number of entity
+	 */
+	public long searchCount(final String query)
+	{
+		String value = "%" + query + "%";
+		return (long) getSession().createCriteria(Translation.class).add(Restrictions.ilike("key", value))
+				.setProjection(Projections.rowCount()).uniqueResult();
 	}
 }

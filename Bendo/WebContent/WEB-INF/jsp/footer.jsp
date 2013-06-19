@@ -1,5 +1,5 @@
-<!-- Twitter Social Plugin -->
-<script>
+<!-- Twitter \Social Plugin -->
+<!-- <script>
 	!function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
 				.test(d.location) ? 'http' : 'https';
@@ -10,9 +10,9 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}
 	}(document, 'script', 'twitter-wjs');
-</script>
+</script> -->
 <!-- Facebook Social Plugin -->
-<script>
+<!-- <script>
 	(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id))
@@ -22,9 +22,9 @@
 		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-</script>
+</script> -->
 <!-- Google+ Social Plugin -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	(function() {
 		var po = document.createElement('script');
 		po.type = 'text/javascript';
@@ -33,9 +33,9 @@
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(po, s);
 	})();
-</script>
+</script> -->
 <!-- Stumbleupon Social Plugin  -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	(function() {
 		var li = document.createElement('script');
 		li.type = 'text/javascript';
@@ -45,7 +45,7 @@
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(li, s);
 	})();
-</script>
+</script> -->
 <div class="footer_container">
 	<div class="footer_top">
 		<!-- 		<div id="nav_logo_footer"> -->
@@ -93,7 +93,8 @@
 			</ul>
 		</div>
 	</div>
-	<div class="social_plug">
+	
+	<!-- <div class="social_plug">
 		<a href="https://twitter.com/Uniiv" class="twitter-follow-button"
 			data-show-count="true">Follow @Uniiv</a>
 		<script>
@@ -108,5 +109,5 @@
 				}
 			}(document, 'script', 'twitter-wjs');
 		</script>
-	</div>
+	</div> -->
 </div>
