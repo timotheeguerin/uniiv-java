@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- Twitter \Social Plugin -->
 <!-- <script>
 	!function(d, s, id) {
@@ -47,8 +46,6 @@
 		s.parentNode.insertBefore(li, s);
 	})();
 </script> -->
-=======
->>>>>>> 7d28683f9240f095e485f89b5d7618568904c105
 <div class="footer_container">
 	<div class="footer_top">
 		<div class="footer_links">
@@ -91,24 +88,3 @@
 			</ul>
 		</div>
 	</div>
-<<<<<<< HEAD
-	
-	<!-- <div class="social_plug">
-		<a href="https://twitter.com/Uniiv" class="twitter-follow-button"
-			data-show-count="true">Follow @Uniiv</a>
-		<script>
-			!function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
-						.test(d.location) ? 'http' : 'https';
-				if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = p + '://platform.twitter.com/widgets.js';
-					fjs.parentNode.insertBefore(js, fjs);
-				}
-			}(document, 'script', 'twitter-wjs');
-		</script>
-	</div> -->
-=======
->>>>>>> 7d28683f9240f095e485f89b5d7618568904c105
-</div>
