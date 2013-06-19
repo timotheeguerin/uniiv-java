@@ -4,7 +4,6 @@
 package ca.bendo.db.dao.forum;
 
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -61,5 +60,16 @@ public class ForumGroupDAO extends HibernateDAO<ForumGroup>
 	{
 		return getSession().createCriteria(ForumGroup.class).add(Restrictions.eq("parent.id", groupId))
 				.setMaxResults(QUICK_DISPLAY_GROUP_NUM).list();
+	}
+
+	/**
+	 * @param name
+	 *            group name
+	 * @return forum group with the given name
+	 */
+	public ForumGroup getByName(final String name)
+	{
+		return (ForumGroup) getSession().createCriteria(ForumGroup.class).add(Restrictions.eq("name", name))
+				.uniqueResult();
 	}
 }

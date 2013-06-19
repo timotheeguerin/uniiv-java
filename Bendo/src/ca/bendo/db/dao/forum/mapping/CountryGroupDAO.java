@@ -1,19 +1,19 @@
 /**
  * 
  */
-package ca.bendo.db.dao.location;
+package ca.bendo.db.dao.forum.mapping;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.location.City;
+import ca.bendo.db.entity.forum.mapping.CountryGroup;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>CityDAO</b>
+ *          <b>CityGroupDAO</b>
  *          <p>
  *          </p>
  * 
@@ -21,13 +21,13 @@ import ca.bendo.db.entity.location.City;
  */
 @Repository
 @Transactional
-public class CityDAO extends HibernateDAO<City>
+public class CountryGroupDAO extends HibernateDAO<CountryGroup>
 {
 	/**
 	 * 
 	 */
-	public CityDAO()
+	public CountryGroupDAO()
 	{
-		setType(City.class);
+		setType(CountryGroup.class);
 	}
 }

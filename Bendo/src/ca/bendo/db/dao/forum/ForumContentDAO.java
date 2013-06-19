@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.forum.ForumContent;
+import ca.bendo.db.entity.forum.FormattedContent;
 
 /**
  * @author Timothée Guérin
@@ -21,13 +21,13 @@ import ca.bendo.db.entity.forum.ForumContent;
  */
 @Repository
 @Transactional
-public class ForumContentDAO extends HibernateDAO<ForumContent>
+public class ForumContentDAO extends HibernateDAO<FormattedContent>
 {
 	/**
 	 * 
 	 */
 	public ForumContentDAO()
 	{
-		setType(ForumContent.class);
+		setType(FormattedContent.class);
 	}
 }

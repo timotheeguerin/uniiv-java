@@ -22,15 +22,15 @@ import org.hibernate.annotations.Formula;
  * 
  */
 @Entity
-@Table(name = "forum_tag")
-public class ForumTag
+@Table(name = "tag")
+public class Tag
 {
 	/**
 	 * 
 	 */
 	@Id
 	@GeneratedValue
-	@Column(name = "id_forum_tag")
+	@Column(name = "id_tag")
 	private long id;
 
 	/**
@@ -38,13 +38,6 @@ public class ForumTag
 	 */
 	@Column(name = "name")
 	private String name;
-
-	/**
-	 * 
-	 */
-	@Formula("(SELECT t.translation FROM lang_translation t "
-			+ "WHERE (t.key = state) AND t.id_lang_language = :languageId.param)")
-	private String translation;
 
 	/**
 	 * @return the id
@@ -80,29 +73,6 @@ public class ForumTag
 		this.name = name;
 	}
 
-	/**
-	 * @return the translation
-	 */
-	public String getTranslation()
-	{
-		if (translation != null)
-		{
-			return translation;
-		} else
-		{
-			return name;
-		}
-	}
-
-	/**
-	 * @param translation
-	 *            the translation to set
-	 */
-	public void setTranslation(final String translation)
-	{
-		this.translation = translation;
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -111,7 +81,7 @@ public class ForumTag
 	@Override
 	public String toString()
 	{
-		return getTranslation();
+		return getName();
 	}
 
 }
