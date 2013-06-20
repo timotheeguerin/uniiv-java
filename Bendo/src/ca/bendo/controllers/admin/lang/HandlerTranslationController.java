@@ -3,11 +3,7 @@
  */
 package ca.bendo.controllers.admin.lang;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +48,6 @@ public class HandlerTranslationController
 	{
 		TableForm form = new TableForm();
 		form.load(request);
-		
 		
 		//List<Translation> translations = translationDAO.search(form.getQuery(), form.getFirstResult(), form.getResultPerPage());
 		List<Translation> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
