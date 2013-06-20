@@ -53,7 +53,9 @@ public class HandlerTranslationController
 		TableForm form = new TableForm();
 		form.load(request);
 		
-		List<Translation> translations = translationDAO.search(form.getQuery(), form.getFirstResult(), form.getResultPerPage());
+		
+		//List<Translation> translations = translationDAO.search(form.getQuery(), form.getFirstResult(), form.getResultPerPage());
+		List<Translation> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
 		request.setAttribute("translations", translations);
 		int pageNum = (int) translationDAO.searchCount(form.getQuery()) / form.getResultPerPage() + 1;
 		
