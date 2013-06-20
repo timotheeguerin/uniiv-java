@@ -87,6 +87,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
+	//TODO validate title
 	//@Secured("wiki.create")
 	@RequestMapping(value = "/wiki/add", method = RequestMethod.POST)
 	public String addPost(final HttpServletRequest request, @Valid final ForumQuestionForm frq, final BindingResult result)
@@ -130,6 +131,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
+	//TODO validate title
 	//@Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/edit/{id}", method = RequestMethod.POST)
 	public String editPost(@PathVariable(value = "id") final long id, final HttpServletRequest request, @Valid final ForumQuestionForm frq, final BindingResult result)
