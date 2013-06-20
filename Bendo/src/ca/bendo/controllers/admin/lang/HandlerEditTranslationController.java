@@ -3,10 +3,6 @@
  */
 package ca.bendo.controllers.admin.lang;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +16,6 @@ import ca.bendo.db.dao.lang.TranslationsDAO;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.lang.Translation;
 import ca.bendo.form.entity.TableForm;
-import ca.bendo.views.table.FilterForm;
 
 /**
  * @author TLWR
@@ -53,6 +48,7 @@ public class HandlerEditTranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	//@Secured("admin")
 	@RequestMapping(value = "/admin/translation/editTranslation", method = RequestMethod.GET)
 	public String displayGroupTypeList(final HttpServletRequest request)
 	{

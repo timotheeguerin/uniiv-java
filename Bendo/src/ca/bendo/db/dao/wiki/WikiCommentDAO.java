@@ -19,9 +19,7 @@ import ca.bendo.db.entity.wiki.WikiComment;
 
  */
 public class WikiCommentDAO extends HibernateDAO<WikiComment>
-{
-	public class WikiCommentParentNotFoundException extends Exception{}
-	
+{	
 	public WikiCommentDAO()
 	{
 		setType(WikiComment.class);

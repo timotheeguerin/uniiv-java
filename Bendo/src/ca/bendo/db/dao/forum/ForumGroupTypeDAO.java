@@ -4,9 +4,6 @@
 package ca.bendo.db.dao.forum;
 
 import java.util.List;
-
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
