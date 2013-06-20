@@ -102,7 +102,7 @@ public class WikiController
 		wikiDAO.add(wiki);
 		//request.setAttribute("title",  wiki.getTitle());
 		//request.setAttribute("content", frq.getContent().toString());
-		return "redirect:./show/" + wiki.getId();
+		return "redirect:../show/" + wiki.getId();
 	}
 	
 	/**
