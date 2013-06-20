@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.github.rjeschke.txtmark.Processor;
+import ca.bendo.utils.MarkdownUtils;
 
 /**
  * @author Timothée Guérin
@@ -22,15 +22,15 @@ import com.github.rjeschke.txtmark.Processor;
  * 
  */
 @Entity
-@Table(name = "forum_message")
-public class ForumContent
+@Table(name = "formatted_content")
+public class FormattedContent
 {
 	/**
 	 * 
 	 */
 	@Id
 	@GeneratedValue
-	@Column(name = "id_forum_message")
+	@Column(name = "id_formatted_content")
 	private long id;
 
 	/**
@@ -50,7 +50,7 @@ public class ForumContent
 	 */
 	public void processContent()
 	{
-		html = Processor.process(content);
+		html = MarkdownUtils.process(content);
 	}
 
 	/**
@@ -85,6 +85,7 @@ public class ForumContent
 	public void setContent(final String content)
 	{
 		this.content = content;
+		processContent();
 	}
 
 	/**
@@ -102,6 +103,17 @@ public class ForumContent
 	public void setHtml(final String html)
 	{
 		this.html = html;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return getHtml();
 	}
 
 }

@@ -9,12 +9,14 @@
 		<style>/styles/rating.css</style>
 		<style>/styles/table.css</style>
 		<style>/styles/wmd.css</style>
+		<style>/styles/jquery.tag.css</style>
 	</styles>
 
 	<scripts>
 		<script>/scripts/jquery.js</script>
 		<script>/scripts/jquery-ui-1.8.23.custom.min.js</script>
 		<script>/scripts/jquery.autocomplete.js</script>
+		<script>/scripts/jquery.tag.min.js</script>
 		<script>/scripts/jquery.wmd.js</script>
 		<script>/scripts/jquery.simplemodal-1.4.4.js</script>
 		<script>/scripts/jquery.fittext.js</script>
@@ -25,7 +27,7 @@
 		<script>/scripts/form.js</script>
 		<script>/scripts/filter.js</script>
 		<script>/scripts/jquery.radiobutton.js</script>
-		
+		<script>/scripts/jquery.textarearesizer.js</script>
 	</scripts>
 
 	<emails>

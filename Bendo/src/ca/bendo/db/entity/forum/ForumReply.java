@@ -54,8 +54,8 @@ public class ForumReply
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_forum_content")
-	private ForumContent content;
+	@JoinColumn(name = "id_formatted_content")
+	private FormattedContent content;
 
 	/**
 	 * 
@@ -118,7 +118,7 @@ public class ForumReply
 	/**
 	 * @return the content
 	 */
-	public ForumContent getContent()
+	public FormattedContent getContent()
 	{
 		return content;
 	}
@@ -127,7 +127,7 @@ public class ForumReply
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(final ForumContent content)
+	public void setContent(final FormattedContent content)
 	{
 		this.content = content;
 	}

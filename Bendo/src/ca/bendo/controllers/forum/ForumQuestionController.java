@@ -39,6 +39,27 @@ public class ForumQuestionController
 	/**
 	 * 
 	 * @param request
+	 *            HttpRequest
+	 * @param questionId
+	 *            Id of the question to display
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "forum/question/{questionId}", method = RequestMethod.GET)
+	public String displayQuestion(final HttpServletRequest request,
+			@PathVariable(value = "questionId") final long questionId)
+	{
+		if (questionHandler.setupDisplayQuestion(request, questionId))
+		{
+			return "views/forum/displayQuestion";
+		} else
+		{
+			return "views/errors/erro404";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
 	 *            Request
 	 * @param groupId
 	 *            groupId
@@ -93,8 +114,56 @@ public class ForumQuestionController
 
 		if (questionHandler.setupNewQuestionPage(request, groupId))
 		{
-			request.setAttribute("forumQuestionForm", questionForm);
-			return "views/forum/newQuestion";
+			request.setAttribute("newQuestionForm", questionForm);
+			return "views/forum/questionInput";
+		} else
+		{
+			return "views/errors/error404";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            HttpRequest
+	 * @param questionId
+	 *            Id of the question to display
+	 * @param questionForm
+	 *            question Form
+	 * @param result
+	 *            contain error of the form
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "forum/question/{questionId}/edit", method = RequestMethod.POST)
+	public String handleEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
+			final BindingResult result, @PathVariable(value = "questionId") final long questionId)
+	{
+		if (result.hasErrors())
+		{
+			questionHandler.setupEditQuestion(request, questionForm);
+			return "views/forum/questionInput";
+		} else
+		{
+			questionHandler.handleEditQuestion(request, questionId, questionForm);
+			return "redirect:";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            HttpRequest
+	 * @param questionId
+	 *            Id of the question to display
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "forum/question/{questionId}/edit", method = RequestMethod.GET)
+	public String editQuestion(final HttpServletRequest request,
+			@PathVariable(value = "questionId") final long questionId)
+	{
+		if (questionHandler.loadEditQuestion(request, questionId))
+		{
+			return "views/forum/questionInput";
 		} else
 		{
 			return "views/errors/error404";

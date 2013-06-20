@@ -28,7 +28,7 @@ import javax.swing.UIManager;
  * 
  * 
  */
-public class DatabaseSyncer 
+public class DatabaseSyncer
 {
 
 	/**
@@ -59,22 +59,16 @@ public class DatabaseSyncer
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e)
 		{
-			// 
+			//
 			e.printStackTrace();
 		}
 
 		// autre: bendodev.no-ip.org
 		// local: 192.168.2.27
 		ConnectionData sourceData = new ConnectionData();
-		int reply = JOptionPane.showConfirmDialog(null, "Tim palace?");
-		String sourceUrl = "";
-		if (reply == JOptionPane.YES_OPTION)
-		{
-			sourceUrl = "jdbc:mysql://192.168.2.27:3306/bendo_dev";
-		} else
-		{
-			sourceUrl = "jdbc:mysql://bendodev.no-ip.org:3306/bendo_dev";
-		}
+		//int reply = JOptionPane.showConfirmDialog(null, "Tim palace?");
+		String sourceUrl = "jdbc:mysql://bendodev.no-ip.org:3306/bendo_dev";
+
 		sourceData.setUrl(sourceUrl);
 		sourceData.setUser("root");
 		sourceData.setPassword("madremia350");
@@ -242,7 +236,7 @@ public class DatabaseSyncer
 			statement.executeUpdate(createStatement);
 		} catch (SQLException e)
 		{
-			
+
 			e.printStackTrace();
 		}
 
@@ -267,7 +261,7 @@ public class DatabaseSyncer
 			statement.executeUpdate(dropSQL);
 		} catch (SQLException e)
 		{
-			// 
+			//
 			e.printStackTrace();
 		}
 
@@ -595,7 +589,7 @@ public class DatabaseSyncer
 				statement.executeUpdate("DROP TABLE IF EXISTS " + escape(tableName));
 			} catch (SQLException e)
 			{
-			
+
 				e.printStackTrace();
 			}
 		}

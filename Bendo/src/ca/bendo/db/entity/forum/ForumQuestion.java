@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -18,6 +19,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.apache.commons.lang.StringUtils;
 
 import ca.bendo.db.entity.user.User;
 
@@ -53,15 +56,21 @@ public class ForumQuestion
 	/**
 	 * 
 	 */
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinTable(name = "forum_question_tag", joinColumns = { @JoinColumn(name = "id_forum_question") },
-			inverseJoinColumns = { @JoinColumn(name = "id_forum_tag") })
-	private List<ForumTag> tags;
+			inverseJoinColumns = { @JoinColumn(name = "id_tag") })
+	private List<Tag> tags = new ArrayList<Tag>();
 	/**
 	 * 
 	 */
 	@Column(name = "date_created")
 	private Date dateCreated;
+
+	/**
+	 * 
+	 */
+	@Column(name = "last_edited")
+	private Date lastEdited;
 
 	/**
 	 * 
@@ -73,8 +82,8 @@ public class ForumQuestion
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_forum_message")
-	private ForumContent content;
+	@JoinColumn(name = "id_formatted_content")
+	private FormattedContent content;
 
 	/**
 	 * 
@@ -131,6 +140,7 @@ public class ForumQuestion
 	public void setDateCreated(final Date dateCreated)
 	{
 		this.dateCreated = dateCreated;
+		this.lastEdited = dateCreated;
 	}
 
 	/**
@@ -153,7 +163,7 @@ public class ForumQuestion
 	/**
 	 * @return the content
 	 */
-	public ForumContent getContent()
+	public FormattedContent getContent()
 	{
 		return content;
 	}
@@ -162,7 +172,7 @@ public class ForumQuestion
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(final ForumContent content)
+	public void setContent(final FormattedContent content)
 	{
 		this.content = content;
 	}
@@ -187,7 +197,7 @@ public class ForumQuestion
 	/**
 	 * @return the tags
 	 */
-	public List<ForumTag> getTags()
+	public List<Tag> getTags()
 	{
 		return tags;
 	}
@@ -196,7 +206,7 @@ public class ForumQuestion
 	 * @param tags
 	 *            the tags to set
 	 */
-	public void setTags(final List<ForumTag> tags)
+	public void setTags(final List<Tag> tags)
 	{
 		this.tags = tags;
 	}
@@ -206,9 +216,26 @@ public class ForumQuestion
 	 * @param tag
 	 *            tag to add to the list of tags
 	 */
-	public void addTag(final ForumTag tag)
+	public void addTag(final Tag tag)
 	{
 		this.tags.add(tag);
+	}
+
+	/**
+	 * @return the lastEdited
+	 */
+	public Date getLastEdited()
+	{
+		return lastEdited;
+	}
+
+	/**
+	 * @param lastEdited
+	 *            the lastEdited to set
+	 */
+	public void setLastEdited(final Date lastEdited)
+	{
+		this.lastEdited = lastEdited;
 	}
 
 	/**
@@ -216,8 +243,17 @@ public class ForumQuestion
 	 * @param tagList
 	 *            List of tags to add
 	 */
-	public void addAllTags(final List<ForumTag> tagList)
+	public void addAllTags(final List<Tag> tagList)
 	{
 		this.tags.addAll(tagList);
+	}
+
+	/**
+	 * @return string of all the tags used for display in the format
+	 *         tag1,tag2,tag3
+	 */
+	public String getTagsString()
+	{
+		return StringUtils.join(tags, ',');
 	}
 }

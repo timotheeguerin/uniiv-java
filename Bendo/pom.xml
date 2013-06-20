@@ -54,14 +54,11 @@
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}/js/</outputDirectory>
 							<sourceDirectory>WebContent/scripts</sourceDirectory>
-							<!-- <linebreakpos>-1</linebreakpos> -->
 							<force>true</force>
 							<excludes>
 								<exclude>script.min.js</exclude>
 								<exclude>external.min.js</exclude>
 							</excludes>
-							<!-- <warSourceDirectory>${basedir}/WebContent</warSourceDirectory> -->
-							<!-- <webappDirectory>${project.build.directory}/${project.build.finalName}/webapp</webappDirectory> -->
 
 							<aggregations>
 								<aggregation>
@@ -141,7 +138,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -183,6 +180,7 @@
 		<jackson.version>2.2.1</jackson.version>
 		<velocity.version>1.7</velocity.version>
 		<slf4j.version>1.5.8</slf4j.version>
+		<jsoup.version>1.7.2</jsoup.version>
 	</properties>
 
 	<dependencies>
@@ -397,6 +395,12 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<!-- jsoup HTML parser library @ http://jsoup.org/ -->
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
 		</dependency>
 	</dependencies>
 

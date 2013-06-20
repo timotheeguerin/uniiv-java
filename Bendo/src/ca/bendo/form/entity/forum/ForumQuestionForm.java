@@ -4,9 +4,11 @@
 package ca.bendo.form.entity.forum;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
+import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.form.entity.Entity;
 
 /**
@@ -51,6 +53,33 @@ public class ForumQuestionForm
 	private String content;
 
 	/**
+	 * 
+	 */
+	@NotNull
+	private String tags;
+
+	/**
+	 * Initialise the the form with the databse object.
+	 * 
+	 * @param question
+	 *            Question object
+	 */
+	public ForumQuestionForm(final ForumQuestion question)
+	{
+		this.title = question.getTitle();
+		this.content = question.getContent().getContent();
+		this.tags = question.getTagsString();
+	}
+
+	/**
+	 * 
+	 */
+	public ForumQuestionForm()
+	{
+
+	}
+
+	/**
 	 * @return the title
 	 */
 	public String getTitle()
@@ -84,4 +113,20 @@ public class ForumQuestionForm
 		this.content = content;
 	}
 
+	/**
+	 * @return the tags
+	 */
+	public String getTags()
+	{
+		return tags;
+	}
+
+	/**
+	 * @param tags
+	 *            the tags to set
+	 */
+	public void setTags(final String tags)
+	{
+		this.tags = tags;
+	}
 }

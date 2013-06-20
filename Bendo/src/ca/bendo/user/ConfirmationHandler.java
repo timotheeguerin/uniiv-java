@@ -96,35 +96,30 @@ public class ConfirmationHandler
 
 	/**
 	 * 
+	 * @param entity
+	 *            Entity
 	 * @param request
 	 *            Request
 	 * @return boolean if the request was successful
 	 */
-	public boolean handleConfirmation(final HttpServletRequest request)
+	public boolean handleConfirmation(final CheckConfirmationEntity entity, final HttpServletRequest request)
 	{
-		CheckConfirmationEntity entity = new CheckConfirmationEntity();
-		entity.setup(request);
-		if (entity.isValid())
+
+		UserConfirmation confirmation = confirm(entity.getConfirmationId(), entity.getKey());
+
+		if (confirmation != null)
 		{
-			long confirmationId = Long.parseLong(entity.getConfirmationId());
+			User user = confirmation.getUser();
+			user.removePermission(permissionDAO.getByName("wait_email_confirmation"));
+			user.addPermission(permissionDAO.getByName("user"));
+			UserState valid = userStateDAO.getByState("valid");
+			user.setState(valid);
 
-			UserConfirmation confirmation = confirm(confirmationId, entity.getKey());
-
-			if (confirmation != null)
-			{
-				User user = confirmation.getUser();
-				user.removePermission(permissionDAO.getByName("wait_email_confirmation"));
-				user.addPermission(permissionDAO.getByName("user"));
-				UserState valid = userStateDAO.getByState("valid");
-				user.setState(valid);
-
-				confirmationDAO.delete(confirmationId);
-				return true;
-			}
-			return false;
-
+			confirmationDAO.delete(entity.getConfirmationId());
+			return true;
 		}
 		return false;
+
 	}
 
 	/**

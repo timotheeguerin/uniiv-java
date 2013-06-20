@@ -23,7 +23,7 @@ import ca.bendo.db.entity.forum.ForumGroup;
  * 
  */
 @Entity
-@Table(name = "university_group")
+@Table(name = "forum_university_group")
 public class UniversityGroup
 {
 	/**

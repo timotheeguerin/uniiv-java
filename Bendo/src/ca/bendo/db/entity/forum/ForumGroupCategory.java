@@ -57,7 +57,7 @@ public class ForumGroupCategory
 	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "forum_group_category_tag", joinColumns = { @JoinColumn(name = "id_forum_group_category") },
 			inverseJoinColumns = { @JoinColumn(name = "id_forum_tag") })
-	private Set<ForumTag> tags;
+	private Set<Tag> tags;
 
 	/**
 	 * @return the id
@@ -113,7 +113,7 @@ public class ForumGroupCategory
 	/**
 	 * @return the tags
 	 */
-	public Set<ForumTag> getTags()
+	public Set<Tag> getTags()
 	{
 		return tags;
 	}
@@ -122,7 +122,7 @@ public class ForumGroupCategory
 	 * @param tags
 	 *            the tags to set
 	 */
-	public void setTags(final Set<ForumTag> tags)
+	public void setTags(final Set<Tag> tags)
 	{
 		this.tags = tags;
 	}

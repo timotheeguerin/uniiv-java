@@ -3,6 +3,9 @@
  */
 package ca.bendo.form.entity.confirmation;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 import ca.bendo.annotation.Input;
 import ca.bendo.form.entity.Entity;
 import ca.bendo.form.entity.EntityType;
@@ -17,24 +20,23 @@ import ca.bendo.form.entity.EntityType;
  * 
  * 
  */
-public class CheckConfirmationEntity extends Entity
+public class CheckConfirmationEntity
 {
 	/**
 	 * 
 	 */
-	@Input(name = "confirmationId", type = EntityType.NUMERIC)
-	private String confirmationId;
+	@Min(value = 0)
+	private long confirmationId;
 
 	/**
 	 * 
 	 */
-	@Input(name = "key", type = EntityType.OTHER)
 	private String key;
 
 	/**
 	 * @return the confirmationId
 	 */
-	public String getConfirmationId()
+	public long getConfirmationId()
 	{
 		return confirmationId;
 	}
@@ -43,7 +45,7 @@ public class CheckConfirmationEntity extends Entity
 	 * @param confirmationId
 	 *            the confirmationId to set
 	 */
-	public void setConfirmationId(final String confirmationId)
+	public void setConfirmationId(final long confirmationId)
 	{
 		this.confirmationId = confirmationId;
 	}
