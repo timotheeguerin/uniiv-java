@@ -54,7 +54,7 @@ public class ForumReply
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_forum_content")
+	@JoinColumn(name = "id_formatted_content")
 	private FormattedContent content;
 
 	/**

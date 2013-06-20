@@ -28,7 +28,7 @@ import ca.bendo.translation.translation.Translator;
  */
 @Controller
 @RequestMapping("/signup")
-public class SignupController extends BendoController
+public class SignupController
 {
 
 	/**
@@ -58,7 +58,8 @@ public class SignupController extends BendoController
 		// init(request);
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
-		if (getUserSession().isLogin())
+		UserSession session = UserSession.getSession(request);
+		if (session.isLogin())
 		{
 			return "redirect:" + translator.getLink("home", languageId);
 		}
@@ -82,7 +83,8 @@ public class SignupController extends BendoController
 
 		Long languageId = Language.loadId(request);
 		// If the user is login redirect to home page
-		if (getUserSession().isLogin())
+		UserSession session = UserSession.getSession(request);
+		if (session.isLogin())
 		{
 			return "redirect:" + translator.getLink("home", languageId);
 		}

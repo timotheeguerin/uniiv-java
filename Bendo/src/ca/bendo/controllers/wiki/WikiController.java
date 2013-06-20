@@ -15,14 +15,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import ca.bendo.db.dao.forum.FormattedContentDAO;
 import ca.bendo.db.dao.wiki.WikiDAO;
 import ca.bendo.db.entity.forum.FormattedContent;
-import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.db.entity.wiki.Wiki;
 import ca.bendo.form.entity.forum.ForumQuestionForm;
-import ca.bendo.user.security.annotation.Secured;
 
 /**
  * @author toby

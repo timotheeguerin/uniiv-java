@@ -5,8 +5,6 @@ package ca.bendo.utils;
 
 import org.junit.Test;
 
-import com.github.rjeschke.txtmark.Processor;
-
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -25,8 +23,12 @@ public class MarkdownTest
 	@Test
 	public void testMarkdownCode()
 	{
-		String input = "\tfor(int i = 0; i<10; i++) System.out.println(\"test\");";
-		String result = Processor.process(input);
-		System.out.println(result);
+		String input = "[TOC]\n #Heading 1\n ##SubHeading1 \n ##SubHeading2 \n "
+				+ "#Heading 2\n #Heading 3\nioejoisjefoisejfojs \n ##SubHeading2";
+		String html = MarkdownUtils.process(input);
+
+		System.out.println("=====================================");
+		System.out.println(html);
 	}
+
 }

@@ -75,7 +75,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 	public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler,
 			final ModelAndView modelAndView) throws Exception
 	{
-		System.out.println("Post handle");
+		System.out.println("Post handle: " + request.getRequestURL());
 		super.postHandle(request, response, handler, modelAndView);
 	}
 }

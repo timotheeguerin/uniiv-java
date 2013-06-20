@@ -51,6 +51,8 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	@Override
 	public int doStartTag() throws JspException
 	{
+		System.out.println("PAGE: " + ((HttpServletRequest) pageContext.getRequest()).getRequestURI());
+		System.out.println("TRANSLATE: " + value);
 		JspWriter out = pageContext.getOut();
 		Translator trans = (Translator) pageContext.getRequest().getAttribute("translator");
 		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
@@ -73,7 +75,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 			out.print(result);
 		} catch (IOException e)
 		{
-		
+
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

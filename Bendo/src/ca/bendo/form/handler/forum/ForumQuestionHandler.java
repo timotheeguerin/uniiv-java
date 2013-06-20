@@ -23,8 +23,10 @@ import ca.bendo.db.entity.forum.ForumGroup;
 import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.db.entity.forum.Tag;
 import ca.bendo.db.entity.user.User;
+import ca.bendo.exception.NotAllowedException;
 import ca.bendo.form.entity.forum.ForumQuestionForm;
 import ca.bendo.session.UserSession;
+import ca.bendo.user.UserUtils;
 
 /**
  * @author Timothée Guérin
@@ -127,8 +129,7 @@ public class ForumQuestionHandler
 	 *            User who created the question
 	 * @return boolean if question created suceesfully
 	 */
-	public boolean createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags,
-			final User user)
+	public boolean createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags, final User user)
 	{
 
 		ForumQuestion question = new ForumQuestion();
@@ -206,6 +207,12 @@ public class ForumQuestionHandler
 		if (question == null)
 		{
 			return false;
+		}	
+		UserSession session = UserSession.getSession(request);
+		User user = session.getUser();
+		if (user == null || !UserUtils.canUserEditQuestion(user, question))
+		{
+			throw new NotAllowedException();
 		}
 		ForumQuestionForm questionForm = new ForumQuestionForm(question);
 		setupEditQuestion(request, questionForm);
@@ -220,6 +227,7 @@ public class ForumQuestionHandler
 	 */
 	public void setupEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{
+		
 		request.setAttribute("questionForm", questionForm);
 	}
 
@@ -243,9 +251,9 @@ public class ForumQuestionHandler
 
 		UserSession session = UserSession.getSession(request);
 		User user = session.getUser();
-		if (user == null)
+		if (user == null || !UserUtils.canUserEditQuestion(user, question))
 		{
-			return false;
+			throw new NotAllowedException();
 		}
 
 		// TODO check if user is authorised to edit
@@ -254,7 +262,6 @@ public class ForumQuestionHandler
 		question.getContent().setContent(questionForm.getContent());
 		List<Tag> tags = tagDAO.getTags(questionForm.getTags());
 		question.setTags(tags);
-		System.out.println("SAVEORUPDATE QUESTION");
 		questionDAO.saveOrUpdate(question);
 
 		return true;

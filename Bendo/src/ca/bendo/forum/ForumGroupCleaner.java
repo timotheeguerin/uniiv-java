@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.forum.ForumGroupDAO;
-import ca.bendo.db.dao.forum.ForumTagDAO;
+import ca.bendo.db.dao.forum.TagDAO;
 import ca.bendo.db.dao.forum.mapping.CityGroupDAO;
 import ca.bendo.db.dao.forum.mapping.CountryGroupDAO;
 import ca.bendo.db.dao.forum.mapping.UniversityGroupDAO;
@@ -50,7 +50,7 @@ public class ForumGroupCleaner
 	 * 
 	 */
 	@Autowired
-	private ForumTagDAO tagDAO;
+	private TagDAO tagDAO;
 
 	/**
 	 * 

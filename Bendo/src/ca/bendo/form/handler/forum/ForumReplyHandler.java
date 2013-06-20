@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bendo.db.dao.forum.ForumContentDAO;
+import ca.bendo.db.dao.forum.FormattedContentDAO;
 import ca.bendo.db.dao.forum.ForumQuestionDAO;
 import ca.bendo.db.entity.forum.FormattedContent;
 import ca.bendo.db.entity.forum.ForumQuestion;
@@ -38,7 +38,7 @@ public class ForumReplyHandler
 	 * 
 	 */
 	@Autowired
-	private ForumContentDAO contentDAO;
+	private FormattedContentDAO contentDAO;
 
 	/**
 	 * 

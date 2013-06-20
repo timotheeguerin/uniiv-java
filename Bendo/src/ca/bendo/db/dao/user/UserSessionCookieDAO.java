@@ -1,19 +1,19 @@
 /**
  * 
  */
-package ca.bendo.db.dao.forum;
+package ca.bendo.db.dao.user;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.forum.FormattedContent;
+import ca.bendo.db.entity.user.UserSessionCookie;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>ForumContentDAO</b>
+ *          <b>UserSessionCookieDAO</b>
  *          <p>
  *          </p>
  * 
@@ -21,13 +21,13 @@ import ca.bendo.db.entity.forum.FormattedContent;
  */
 @Repository
 @Transactional
-public class ForumContentDAO extends HibernateDAO<FormattedContent>
+public class UserSessionCookieDAO extends HibernateDAO<UserSessionCookie>
 {
 	/**
 	 * 
 	 */
-	public ForumContentDAO()
+	public UserSessionCookieDAO()
 	{
-		setType(FormattedContent.class);
+		setType(UserSessionCookie.class);
 	}
 }
