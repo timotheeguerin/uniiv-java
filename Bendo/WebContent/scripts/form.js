@@ -119,6 +119,7 @@ $(document).ready(function() {
 	});
 
 	$("textarea.wmd").wmd();
+	$('textarea.wmd:not(.processed)').TextAreaResizer();
 
 	/***************************************************************************
 	 * Radio button
