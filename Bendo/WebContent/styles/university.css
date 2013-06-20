@@ -947,43 +947,6 @@ li.row_prof,.row_prof ul {
 	vertical-align: middle;
 }
 
-.NoReviewDisplay {
-	background-color: #204AA1;
-	-moz-border-bottom-color: #204AA1;
-	border-bottom-color: #204AA1;
-	-moz-border-bottom-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	-moz-border-bottom-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	-moz-border-bottom-style: solid;
-	border-bottom-width: 1px;
-	-moz-border-bottom-width: 1px;
-	border-left-color: #204AA1;
-	-moz-border-left-color: #204AA1;
-	border-left-style: solid;
-	-moz-border-left-style: solid;
-	border-left-width: 1px;
-	-moz-border-left-width: 1px;
-	border-right-color: #204AA1;
-	-moz-border-right-color: #204AA1;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #204AA1;
-	-moz-border-top-color: #204AA1;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	color: #FFFFFF;
-	font-size: 40px;
-	line-height: 80px;
-	height: 80px;
-	margin: auto;
-	width: 200px;
-	vertical-align: middle;
-	text-align: center;
-}
 
 /******************************
 
@@ -1111,25 +1074,6 @@ li.row_prof,.row_prof ul {
 	width: 400px;
 }
 
-.NoResult {
-	border: 3px solid #204AA1;
-	-moz-border: 3px solid #204AA1;
-	background-color: #FFF;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	-moz-border-bottom-left-radius: 5px;
-	-moz-border-bottom-right-radius: 5px;
-	-moz-border-top-left-radius: 5px;
-	-moz-border-top-right-radius: 5px;
-	margin: auto;
-	margin-top: 20px;
-	width: 600px;
-	padding: 15px;
-	outline: 0;
-}
-
 .NoResult span {
 	font-size: 20px;
 	color: #204AA1;
@@ -1227,13 +1171,12 @@ li.row_prof,.row_prof ul {
 	width: 30px;
 }
 
-.DiscoverContainer,.DiscussContainer,.PostContainer {
+.DiscoverContainer, .DiscussCont	ainer, .PostContainer, .NoResult, .NoReviewDisplay {
 	background-color: #FFF;
 	border: solid 1px #E5E5E5;
 	padding: 20px;
 	margin: auto;
 	margin-top: 10%;
-	position: relative;
 	width: 700px;
 }
 

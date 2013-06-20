@@ -1,21 +1,20 @@
-<div class="container_header" id="container_header">
-	<div id="nav_logo_left">
-		<a href='<b:url value="/"/>'
-			title="<b:translator value=""/>"><img
+<div class="headerNav" id="headerNav">
+	<div id="navLogo">
+		<a href='<b:url value="/"/>' title="<b:translator value=""/>"><img
 			src="<c:url value="/images/logo/logoheader.png"/>"
-			alt="<b:translator value="home_logo" />" class="header_logo" /></a>
+			alt="<b:translator value="home_logo" />" class="navLogo" /></a>
 	</div>
-	<div id="nav_links_left">
+	<div id="navLfLinks">
 		<a href="<b:url value="/discover"/>"
 			title="<b:translator value="discover_things" />"><b:translator
 				value="discover" /></a>
 	</div>
-	<div id="nav_links_left">
+	<div id="navLfLinks">
 		<a href="<b:url value="/discuss"/>"
 			title="<b:translator value="interaction_students" />"><b:translator
 				value="talk" /></a>
 	</div>
-	<div id="nav_links_left">
+	<div id="navLfLinks">
 		<a href="<b:url value="/post"/>"
 			title="<b:translator value="post_comment_review" />"><b:translator
 				value="post" /></a>
@@ -24,11 +23,11 @@
 		<b:searchbar placeholder="search_for_universities_places_other"
 			type="all" />
 	</div>
-	<div class="menu_top_right_btn">
+	<div class="navRightBtns">
 		<c:choose>
 			<c:when test="${requestScope.userSession.isLogin()}">
 				<a href='<c:url value="/logout"/>' class="btn_log_in"> <span
-					class="btn_log_in_text"><b:translator value="logout" /></span>
+					class="LoginBtnText"><b:translator value="logout" /></span>
 				</a>
 			</c:when>
 			<c:otherwise>
