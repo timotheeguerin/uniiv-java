@@ -27,7 +27,7 @@
 		<script>/scripts/form.js</script>
 		<script>/scripts/filter.js</script>
 		<script>/scripts/jquery.radiobutton.js</script>
-
+		<script>/scripts/jquery.textarearesizer.js</script>
 	</scripts>
 
 	<emails>

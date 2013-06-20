@@ -3,7 +3,6 @@
  */
 package ca.bendo.form.handler.forum;
 
-import java.security.acl.Group;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -255,8 +254,6 @@ public class ForumQuestionHandler
 		{
 			throw new NotAllowedException();
 		}
-
-		// TODO check if user is authorised to edit
 
 		question.setTitle(questionForm.getTitle());
 		question.getContent().setContent(questionForm.getContent());

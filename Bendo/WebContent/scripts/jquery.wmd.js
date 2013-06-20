@@ -1865,7 +1865,7 @@
 
 				// Add the true markup.
 				var markup = nStars <= 1 ? "*" : "**"; // shouldn't the test be
-														// = ?
+				// = ?
 				chunk.before = chunk.before + markup;
 				chunk.after = markup + chunk.after;
 			}
@@ -2286,7 +2286,7 @@
 			}
 
 			var headerLevel = 0; // The existing header level of the selected
-									// text.
+			// text.
 
 			// Remove any existing hash heading markdown and save the header
 			// level.
@@ -2543,7 +2543,7 @@ Showdown.converter = function() {
 				m2, m3, m4) {
 			m1 = m1.toLowerCase();
 			g_urls[m1] = _EncodeAmpsAndAngles(m2); // Link IDs are
-													// case-insensitive
+			// case-insensitive
 			if (m3) {
 				// Oops, found blank lines, so it's not a title.
 				// Put back the parenthetical statement we stole.
@@ -2752,11 +2752,10 @@ Showdown.converter = function() {
 
 		/*
 		 * text = text.replace(/ ( // wrap whole match in $1 \[ ( (?: \[[^\]]*\] //
-		 * allow brackets nested one level | [^\[] // or anything else )* ) \]
-		 *  [ ]? // one optional space (?:\n[ ]*)? // one optional newline
-		 * followed by spaces
-		 *  \[ (.*?) // id = $3 \] )()()()() // pad remaining backreferences
-		 * /g,_DoAnchors_callback);
+		 * allow brackets nested one level | [^\[] // or anything else )* ) \] [ ]? //
+		 * one optional space (?:\n[ ]*)? // one optional newline followed by
+		 * spaces \[ (.*?) // id = $3 \] )()()()() // pad remaining
+		 * backreferences /g,_DoAnchors_callback);
 		 */
 		text = text.replace(/(\[((?:\[[^\]]*\]|[^\[\]])*)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g, writeAnchorTag);
 
@@ -2846,11 +2845,9 @@ Showdown.converter = function() {
 
 		/*
 		 * text = text.replace(/ ( // wrap whole match in $1 !\[ (.*?) // alt
-		 * text = $2 \]
-		 *  [ ]? // one optional space (?:\n[ ]*)? // one optional newline
-		 * followed by spaces
-		 *  \[ (.*?) // id = $3 \] )()()()() // pad rest of backreferences
-		 * /g,writeImageTag);
+		 * text = $2 \] [ ]? // one optional space (?:\n[ ]*)? // one optional
+		 * newline followed by spaces \[ (.*?) // id = $3 \] )()()()() // pad
+		 * rest of backreferences /g,writeImageTag);
 		 */
 		text = text.replace(/(!\[(.*?)\][ ]?(?:\n[ ]*)?\[(.*?)\])()()()()/g, writeImageTag);
 
@@ -3113,7 +3110,7 @@ Showdown.converter = function() {
 			codeblock = _Detab(codeblock);
 			codeblock = codeblock.replace(/^\n+/g, ""); // trim leading newlines
 			codeblock = codeblock.replace(/\n+$/g, ""); // trim trailing
-														// whitespace
+			// whitespace
 
 			codeblock = "<pre><code>" + codeblock + "\n</code></pre>";
 
@@ -3231,7 +3228,7 @@ Showdown.converter = function() {
 			// "----------bug".replace(/^-/g,"") == "bug"
 
 			bq = bq.replace(/^[ \t]*>[ \t]?/gm, "~0"); // trim one level of
-														// quoting
+			// quoting
 
 			// attacklab: clean up hack
 			bq = bq.replace(/~0/g, "");
@@ -3283,7 +3280,7 @@ Showdown.converter = function() {
 			} else if (str.search(/\S/) >= 0) {
 				str = _RunSpanGamut(str);
 				str = str.replace(/\n/g, "<br />"); // Markdown extension.
-													// Extracted from GFM
+				// Extracted from GFM
 				str = str.replace(/^([ \t]*)/g, "<p>");
 				str += "</p>";
 				grafsOut.push(str);
@@ -3300,7 +3297,7 @@ Showdown.converter = function() {
 			while (grafsOut[i].search(/~K(\d+)K/) >= 0) {
 				var blockText = g_html_blocks[RegExp.$1];
 				blockText = blockText.replace(/\$/g, "$$$$"); // Escape any
-																// dollar signs
+				// dollar signs
 				grafsOut[i] = grafsOut[i].replace(/~K\d+K/, blockText);
 			}
 		}
@@ -3422,7 +3419,7 @@ Showdown.converter = function() {
 
 		addr = "<a href=\"" + addr + "\">" + addr + "</a>";
 		addr = addr.replace(/">.+:/g, "\">"); // strip the mailto: from the
-												// visible part
+		// visible part
 
 		return addr;
 	}
@@ -3447,7 +3444,7 @@ Showdown.converter = function() {
 		// "----------bug".replace(/^-/g,"") == "bug"
 
 		text = text.replace(/^(\t|[ ]{1,4})/gm, "~0"); // attacklab:
-														// g_tab_width
+		// g_tab_width
 
 		// attacklab: clean up hack
 		text = text.replace(/~0/g, "")
@@ -3470,7 +3467,7 @@ Showdown.converter = function() {
 		text = text.replace(/~B(.+?)~A/g, function(wholeMatch, m1, m2) {
 			var leadingText = m1;
 			var numSpaces = 4 - leadingText.length % 4; // attacklab:
-														// g_tab_width
+			// g_tab_width
 
 			// there *must* be a better way to do this:
 			for ( var i = 0; i < numSpaces; i++)
