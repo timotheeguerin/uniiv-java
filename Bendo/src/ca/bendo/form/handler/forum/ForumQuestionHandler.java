@@ -13,10 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bendo.db.dao.forum.ForumContentDAO;
+import ca.bendo.db.dao.forum.FormattedContentDAO;
 import ca.bendo.db.dao.forum.ForumGroupDAO;
 import ca.bendo.db.dao.forum.ForumQuestionDAO;
-import ca.bendo.db.dao.forum.ForumTagDAO;
+import ca.bendo.db.dao.forum.TagDAO;
 import ca.bendo.db.entity.forum.FormattedContent;
 import ca.bendo.db.entity.forum.ForumGroup;
 import ca.bendo.db.entity.forum.ForumQuestion;
@@ -57,13 +57,13 @@ public class ForumQuestionHandler
 	 * 
 	 */
 	@Autowired
-	private ForumContentDAO contentDAO;
+	private FormattedContentDAO contentDAO;
 
 	/**
 	 * 
 	 */
 	@Autowired
-	private ForumTagDAO tagDAO;
+	private TagDAO tagDAO;
 
 	/**
 	 * @param request
@@ -206,7 +206,7 @@ public class ForumQuestionHandler
 		if (question == null)
 		{
 			return false;
-		}	
+		}
 		UserSession session = UserSession.getSession(request);
 		User user = session.getUser();
 		if (user == null || !UserUtils.canUserEditQuestion(user, question))
@@ -226,7 +226,7 @@ public class ForumQuestionHandler
 	 */
 	public void setupEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{
-		
+
 		request.setAttribute("questionForm", questionForm);
 	}
 
