@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.github.rjeschke.txtmark.Processor;
+import ca.bendo.utils.MarkdownUtils;
 
 /**
  * @author Timothée Guérin
@@ -50,7 +50,7 @@ public class FormattedContent
 	 */
 	public void processContent()
 	{
-		html = Processor.process(content);
+		html = MarkdownUtils.process(content);
 	}
 
 	/**

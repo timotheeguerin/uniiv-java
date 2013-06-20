@@ -9,11 +9,13 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.alert.UserWarning;
+import ca.bendo.controllers.GlobalController;
 import ca.bendo.form.entity.forum.ForumQuestionForm;
 import ca.bendo.form.handler.forum.ForumQuestionHandler;
 
@@ -28,7 +30,7 @@ import ca.bendo.form.handler.forum.ForumQuestionHandler;
  * 
  */
 @Controller
-public class ForumQuestionController
+public class ForumQuestionController extends GlobalController
 {
 	/**
 	 * 
@@ -53,7 +55,7 @@ public class ForumQuestionController
 			return "views/forum/displayQuestion";
 		} else
 		{
-			return "views/errors/erro404";
+			return "views/errors/error404";
 		}
 	}
 
@@ -114,7 +116,7 @@ public class ForumQuestionController
 
 		if (questionHandler.setupNewQuestionPage(request, groupId))
 		{
-			request.setAttribute("newQuestionForm", questionForm);
+			request.setAttribute("questionForm", questionForm);
 			return "views/forum/questionInput";
 		} else
 		{

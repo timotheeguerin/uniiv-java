@@ -21,11 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.apache.commons.lang.StringUtils;
-import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.entity.user.User;
-import ca.bendo.form.entity.forum.ForumQuestionForm;
-import freemarker.template.utility.StringUtil;
 
 /**
  * @author Timothée Guérin
@@ -61,13 +58,19 @@ public class ForumQuestion
 	 */
 	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinTable(name = "forum_question_tag", joinColumns = { @JoinColumn(name = "id_forum_question") },
-			inverseJoinColumns = { @JoinColumn(name = "id_forum_tag") })
+			inverseJoinColumns = { @JoinColumn(name = "id_tag") })
 	private List<Tag> tags = new ArrayList<Tag>();
 	/**
 	 * 
 	 */
 	@Column(name = "date_created")
 	private Date dateCreated;
+
+	/**
+	 * 
+	 */
+	@Column(name = "last_edited")
+	private Date lastEdited;
 
 	/**
 	 * 
@@ -79,7 +82,7 @@ public class ForumQuestion
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_forum_message")
+	@JoinColumn(name = "id_formatted_content")
 	private FormattedContent content;
 
 	/**
@@ -137,6 +140,7 @@ public class ForumQuestion
 	public void setDateCreated(final Date dateCreated)
 	{
 		this.dateCreated = dateCreated;
+		this.lastEdited = dateCreated;
 	}
 
 	/**
@@ -215,6 +219,23 @@ public class ForumQuestion
 	public void addTag(final Tag tag)
 	{
 		this.tags.add(tag);
+	}
+
+	/**
+	 * @return the lastEdited
+	 */
+	public Date getLastEdited()
+	{
+		return lastEdited;
+	}
+
+	/**
+	 * @param lastEdited
+	 *            the lastEdited to set
+	 */
+	public void setLastEdited(final Date lastEdited)
+	{
+		this.lastEdited = lastEdited;
 	}
 
 	/**

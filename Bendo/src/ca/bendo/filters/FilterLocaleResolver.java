@@ -35,7 +35,6 @@ public class FilterLocaleResolver implements LocaleResolver
 	{
 
 		Locale locale = (Locale) Language.getLocale(request);
-		System.out.println("Resolve locale: " + Language.load(request).getKey() + " " + locale);
 		if (locale != null)
 		{
 			return locale;

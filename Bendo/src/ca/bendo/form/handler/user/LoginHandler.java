@@ -3,16 +3,23 @@
  */
 package ca.bendo.form.handler.user;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.user.UserDAO;
+import ca.bendo.db.dao.user.UserSessionCookieDAO;
 import ca.bendo.db.entity.user.User;
+import ca.bendo.db.entity.user.UserSessionCookie;
 import ca.bendo.form.entity.user.LoginEntity;
 import ca.bendo.session.UserSession;
+import ca.bendo.user.element.HashedPassword;
+import ca.bendo.utils.security.Crypter;
 
 /**
  * @author Timothée Guérin
@@ -36,11 +43,19 @@ public class LoginHandler
 
 	/**
 	 * 
+	 */
+	@Autowired
+	private UserSessionCookieDAO sessionCookieDAO;
+
+	/**
+	 * 
+	 * @param response
+	 *            to set cookies
 	 * @param request
 	 *            Request
 	 * @return if the user successfuly login
 	 */
-	public boolean handle(final HttpServletRequest request)
+	public boolean handle(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		LoginEntity loginEntity = new LoginEntity();
 		loginEntity.setup(request);
@@ -61,8 +76,26 @@ public class LoginHandler
 			System.out.println("Password no match");
 			return false;
 		}
-
+		remeberUser(response, user);
 		UserSession.getSession(request).login(user);
 		return true;
+	}
+
+	/**
+	 * @param response
+	 *            Response object to set cookies
+	 * @param user
+	 *            user to remember
+	 */
+	public void remeberUser(final HttpServletResponse response, final User user)
+	{
+		UserSessionCookie sessionCookie = new UserSessionCookie();
+		sessionCookie.setUserId(user.getId());
+		String key = RandomStringUtils.randomAlphanumeric(Crypter.RANDOM_KEY_LENGHT);
+		sessionCookie.setKey(new HashedPassword(key));
+
+		sessionCookieDAO.saveOrUpdate(sessionCookie);
+		response.addCookie(new Cookie("user.id", String.valueOf(user.getId())));
+		response.addCookie(new Cookie("user.key", key));
 	}
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.form.handler.user.LoginHandler;
+import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;
 
 /**
@@ -28,7 +29,7 @@ import ca.bendo.translation.translation.Translator;
  */
 @Controller
 @RequestMapping("/login")
-public class LoginController extends BendoController
+public class LoginController extends GlobalController
 {
 
 	/**
@@ -56,7 +57,8 @@ public class LoginController extends BendoController
 	{
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
-		if (getUserSession().isLogin())
+		UserSession session = UserSession.getSession(request);
+		if (session.isLogin())
 		{
 			return "redirect:" + translator.getLink("home", languageId);
 		}
@@ -79,13 +81,14 @@ public class LoginController extends BendoController
 	{
 		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
-		if (getUserSession().isLogin())
+		UserSession session = UserSession.getSession(request);
+		if (session.isLogin())
 		{
 
 			return "redirect:" + translator.getLink("home", languageId);
 		}
 
-		if (loginHandler.handle(request))
+		if (loginHandler.handle(request, response))
 		{
 			String referer = request.getHeader("Referer");
 			String url = referer;
@@ -108,7 +111,7 @@ public class LoginController extends BendoController
 	public String loginPage(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		request.getAttribute("translator");
-		
+
 		return "views/login";
 	}
 

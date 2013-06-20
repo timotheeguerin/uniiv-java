@@ -27,7 +27,7 @@ import ca.bendo.search.handler.SearchQueryHandler;
  */
 @Controller
 @RequestMapping("/search")
-public class SearchController extends BendoController
+public class SearchController
 {
 	/**
 	 * 

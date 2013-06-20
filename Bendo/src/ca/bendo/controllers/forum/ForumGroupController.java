@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ca.bendo.exception.NotAllowedException;
 import ca.bendo.handler.forum.ForumGroupHandler;
+import ca.bendo.user.security.annotation.Secured;
 
 /**
  * @author Timothée Guérin
