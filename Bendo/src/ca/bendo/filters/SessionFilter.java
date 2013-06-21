@@ -24,7 +24,7 @@ import ca.bendo.session.UserSession;
 import ca.bendo.user.UserSessionHandler;
 
 /**
- * @author Timothée Guérin
+ * @author Timothï¿½e Guï¿½rin
  * @version Bendo
  * 
  *          <b>SessionFilter</b>
@@ -105,6 +105,10 @@ public class SessionFilter extends IFilter
 	public void loginUserFromCookie(final HttpServletRequest request)
 	{
 		Cookie[] cookies = request.getCookies();
+		if(cookies == null)
+		{
+			return;
+		}
 		String userIdStr = getCookieValue(cookies, "user.id");
 		String keyStr = getCookieValue(cookies, "user.key");
 
