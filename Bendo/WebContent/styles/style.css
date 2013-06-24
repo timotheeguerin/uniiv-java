@@ -407,7 +407,7 @@ h1 span {
 {
 	display: inline-block;
 	position: absolute;
-	left: 0px;
+	left: 40px;
 }
 
 .nav_right_side
@@ -432,11 +432,15 @@ h1 span {
 
 .nav_logo
 {
-	position: relative;
-	color: #204AA1;
+	position: absolute;
+	/* color: #204AA1;
 	font-family: Verdana;
 	font-size: 16;
-	font-weight: 600;
+	font-weight: 600; */
+	height: 30px;
+	width: 30px;
+	top: 5px;
+	left: 5px;
 }
 
 .nav_links

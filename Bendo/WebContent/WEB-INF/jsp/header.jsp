@@ -1,13 +1,10 @@
 <span class="nav_frame">
+	<a href="<b:url value="/"/>" title="<b:translator value="home_logo" />">
+		<!-- <span class="nav_logo">uniiv</span> -->
+		<img src="<c:url value="/images/logo/logoheader.png"/>" alt="<b:translator value="home_logo" />" class="nav_logo" />
+	</a>
+
 	<span class="nav_left_side">
-		<span class="nav_spacer"></span>
-		
-		<a href="<b:url value="/"/>" title="<b:translator value="home_logo" />">
-			<span class="nav_logo">uniiv</span>
-		</a>
-			
-		<span class="nav_spacer"></span>
-	
 		<a href="<b:url value="/discover"/>" title="<b:translator value="discover_things" />">
 			<span class="nav_links"><b:translator value="discover" /></span>
 		</a>
