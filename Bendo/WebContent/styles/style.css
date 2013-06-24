@@ -1622,7 +1622,7 @@ hr.official-standard-ratings-separation {
 		top: 6px;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		height: 150px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1645,8 +1645,8 @@ hr.official-standard-ratings-separation {
 	.university_profile_top_text_box
 	{
 		position: relative;
-		left:305px; /* must be the same width as picture + 5 */
-		text-align: middle;
+		left:310px; /* must be the same width as picture + 10 */
+		top: 17%;
 	}
 	.university_profile_top_text_name
 	{
@@ -1688,7 +1688,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1731,7 +1731,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1774,7 +1774,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1811,7 +1811,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
