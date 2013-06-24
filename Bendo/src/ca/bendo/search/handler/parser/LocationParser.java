@@ -6,8 +6,7 @@ package ca.bendo.search.handler.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.bendo.db.entity.location.Country;
-import ca.bendo.db.entity.location.State;
+import ca.bendo.form.FieldValidator;
 
 /**
  * @author Timothée Guérin
@@ -25,7 +24,12 @@ public class LocationParser extends ParameterParser
 	/**
 	 * 
 	 */
-	private List<Country> countries = new ArrayList<Country>();
+	private List<Long> countries = new ArrayList<Long>();
+
+	/**
+	 * 
+	 */
+	private List<Long> states = new ArrayList<Long>();
 
 	/*
 	 * (non-Javadoc)
@@ -40,39 +44,32 @@ public class LocationParser extends ParameterParser
 		{
 			for (String s : parameter.split(","))
 			{
-				Country country = new Country();
-				String countryStr = "";
 				s.trim();
 
 				// If any state are specified
 				if (s.contains("(") && s.endsWith(")"))
 				{
-
-					countryStr = s.substring(0, s.indexOf("("));
-
 					String statesStr = s.substring(s.indexOf("(") + 1, s.length() - 1);
 
 					for (String stateStr : statesStr.split(";"))
 					{
-						if (isNumeric(stateStr))
+						if (FieldValidator.isInt(stateStr))
 						{
-							State state = new State();
-							state.setId(Integer.parseInt(stateStr));
-							country.addState(state);
+							states.add(Long.parseLong(stateStr));
 						}
 					}
 
 				} else
 				{
+					
 					// If there is only the country
-					countryStr = s;
+					if (FieldValidator.isInt(s))
+					{
+						
+						countries.add(Long.parseLong(s));
+					}
 				}
 
-				if (isNumeric(countryStr))
-				{
-					country.setId(Integer.parseInt(countryStr));
-					countries.add(country);
-				}
 			}
 		}
 
@@ -81,7 +78,7 @@ public class LocationParser extends ParameterParser
 	/**
 	 * @return the countries
 	 */
-	public List<Country> getCountries()
+	public List<Long> getCountries()
 	{
 		return countries;
 	}
@@ -90,9 +87,25 @@ public class LocationParser extends ParameterParser
 	 * @param countries
 	 *            the countries to set
 	 */
-	public void setCountries(final List<Country> countries)
+	public void setCountries(final List<Long> countries)
 	{
 		this.countries = countries;
 	}
 
+	/**
+	 * @return the states
+	 */
+	public List<Long> getStates()
+	{
+		return states;
+	}
+
+	/**
+	 * @param states
+	 *            the states to set
+	 */
+	public void setStates(final List<Long> states)
+	{
+		this.states = states;
+	}
 }

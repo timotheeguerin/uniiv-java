@@ -442,6 +442,10 @@ h1 span {
 	background-color: #ffffff;
 	padding-top: 10px;
 	z-index: 999;
+	background-color: #f3f3f3;
+	background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);
+	background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3);
+	background-image: linear-gradient(#f9f9f9, #f3f3f3)
 }
 
 .nav_logo

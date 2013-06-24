@@ -3,14 +3,12 @@
  */
 package ca.bendo.db.entity.program;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Formula;
@@ -19,35 +17,36 @@ import org.hibernate.annotations.Formula;
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>UniversityFaculty</b>
+ *          <b>UniProgram</b>
  *          <p>
  *          </p>
  * 
  * 
  */
+
 @Entity
-@Table(name = "uni_faculty")
-public class UniversityFaculty
+@Table(name = "uni_program")
+public class Program implements Comparable<Program>
 {
 	/**
 	 * 
 	 */
 	@Id
 	@GeneratedValue
-	@Column(name = "id_uni_faculty")
+	@Column(name = "id_uni_program", unique = true, nullable = false)
 	private long id;
 
 	/**
 	 * 
 	 */
-	@Column(name = "name")
-	private String name;
-
+	@ManyToOne
+	@JoinColumn(name = "id_uni_faculty")
+	private UniversityFaculty faculty;
 	/**
 	 * 
 	 */
-	@OneToMany(mappedBy = "faculty")
-	private List<Program> programs = new ArrayList<Program>();
+	@Column(name = "name")
+	private String name;
 
 	/**
 	 * 
@@ -125,38 +124,22 @@ public class UniversityFaculty
 		this.translation = translation;
 	}
 
-	/**
-	 * @return the programs
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Comparable#compareTo(java.lang.Object)
 	 */
-	public List<Program> getPrograms()
+	@Override
+	public int compareTo(final Program o)
 	{
-		return programs;
-	}
+		if (getTranslation() == null)
+		{
+			return -1;
+		} else if (o.getTranslation() == null)
+		{
+			return 1;
+		}
 
-	/**
-	 * @param programs
-	 *            the programs to set
-	 */
-	public void setPrograms(final List<Program> programs)
-	{
-		this.programs = programs;
+		return getTranslation().compareTo(o.getTranslation());
 	}
-
-	/**
-	 * @param program
-	 *            add the given program to the list of programs
-	 */
-	public void addProgram(final Program program)
-	{
-		programs.add(program);
-	}
-
-	/**
-	 * @return if there are programs
-	 */
-	public boolean hasPrograms()
-	{
-		return !programs.isEmpty();
-	}
-
 }

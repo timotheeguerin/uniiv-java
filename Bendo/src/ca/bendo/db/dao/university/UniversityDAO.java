@@ -62,7 +62,6 @@ public class UniversityDAO extends HibernateDAO<University>
 
 		Criteria criteria = getSession().createCriteria(University.class);
 		query.getRestrictions(criteria);
-		System.out.println(criteria);
 		return (List<University>) criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		// return (List<Integer>)
 		// criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();

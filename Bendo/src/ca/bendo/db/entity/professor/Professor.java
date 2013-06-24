@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.entity.program.Program;
 
 /**
  * @author Timothée Guérin
@@ -52,7 +52,7 @@ public class Professor
 	 */
 	@ManyToOne
 	@JoinColumn(name = "id_uni_program")
-	private UniversityProgram program;
+	private Program program;
 
 	/**
 	 * @return the id
@@ -108,7 +108,7 @@ public class Professor
 	/**
 	 * @return the program
 	 */
-	public UniversityProgram getProgram()
+	public Program getProgram()
 	{
 		return program;
 	}
@@ -117,7 +117,7 @@ public class Professor
 	 * @param program
 	 *            the program to set
 	 */
-	public void setProgram(final UniversityProgram program)
+	public void setProgram(final Program program)
 	{
 		this.program = program;
 	}

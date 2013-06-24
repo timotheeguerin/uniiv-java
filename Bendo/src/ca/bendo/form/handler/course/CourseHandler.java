@@ -15,13 +15,15 @@ import ca.bendo.db.dao.course.CourseDAO;
 import ca.bendo.db.dao.course.CourseRatingDAO;
 import ca.bendo.db.dao.course.CourseRatingTypeDAO;
 import ca.bendo.db.dao.course.CourseReviewDAO;
-import ca.bendo.db.dao.program.UniversityProgramDAO;
+import ca.bendo.db.dao.program.ProgramDAO;
 import ca.bendo.db.dao.university.UniversityDAO;
+import ca.bendo.db.dao.university.UniversityProgramDAO;
 import ca.bendo.db.entity.course.Course;
 import ca.bendo.db.entity.course.CourseRatingAverage;
 import ca.bendo.db.entity.course.CourseRatingType;
 import ca.bendo.db.entity.course.CourseReview;
 import ca.bendo.db.entity.lang.Language;
+import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.program.UniversityProgram;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.form.FieldValidator;
@@ -65,7 +67,12 @@ public class CourseHandler
 	 * 
 	 */
 	@Autowired
-	private UniversityProgramDAO programDAO;
+	private ProgramDAO programDAO;
+
+	/**
+	 * 
+	 */
+	private UniversityProgramDAO universityProgramDAO;
 
 	/**
 	 * 
@@ -112,7 +119,7 @@ public class CourseHandler
 			return null;
 		}
 
-		UniversityProgram program = programDAO.getById(Long.parseLong(entity.getProgramId()));
+		Program program = programDAO.getById(Long.parseLong(entity.getProgramId()));
 		if (program == null)
 		{
 			return null;
@@ -146,7 +153,7 @@ public class CourseHandler
 			return false;
 		}
 
-		request.setAttribute("programs", university.getPrograms());
+		request.setAttribute("programs", universityProgramDAO.listUniversityPrograms(university.getId()));
 		return true;
 	}
 

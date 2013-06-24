@@ -65,6 +65,12 @@ public class UniversityRatingsCalculator
 	 * 
 	 */
 	@Autowired
+	private UniversityGradeDAO gradeDAO;
+
+	/**
+	 * 
+	 */
+	@Autowired
 	private ProfessorUniversityDAO professorUniversityDAO;
 
 	/**
@@ -114,7 +120,7 @@ public class UniversityRatingsCalculator
 	 */
 	public void updateRatings(final University university)
 	{
-		List<UniversityGrade> grades = university.getSoftRatings();
+		List<UniversityGrade> grades = gradeDAO.listUniversityGrades(university.getId());
 		setupGrades(university);
 		for (UniversityGrade grade : grades)
 		{
@@ -187,7 +193,7 @@ public class UniversityRatingsCalculator
 	 * */
 	public void setupGrades(final University university)
 	{
-		List<UniversityGrade> grades = university.getSoftRatings();
+		List<UniversityGrade> grades = gradeDAO.listUniversityGrades(university.getId());
 		List<UniversityRating> ratings = ratingsDAO.list();
 		if (ratings.size() != grades.size())
 		{

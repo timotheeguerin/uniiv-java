@@ -18,10 +18,8 @@ import org.hibernate.criterion.Subqueries;
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.Type;
 
-import ca.bendo.db.entity.location.Country;
-import ca.bendo.db.entity.location.State;
+import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.program.UniversityFaculty;
-import ca.bendo.db.entity.program.UniversityProgram;
 import ca.bendo.db.entity.university.University;
 
 /**
@@ -44,7 +42,12 @@ public class UniversityQuery
 	/**
 	 * 
 	 */
-	private List<Country> countries = new ArrayList<Country>();
+	private List<Long> countries = new ArrayList<Long>();
+
+	/**
+	 * 
+	 */
+	private List<Long> states = new ArrayList<Long>();
 
 	/**
 	 * 
@@ -63,8 +66,8 @@ public class UniversityQuery
 	public void getRestrictions(final Criteria criteria)
 	{
 		setupLocation(criteria);
-		setupProgramCriterion(criteria);
-		//setupSoftRatingCriterion(criteria);
+		// setupProgramCriterion(criteria);
+		// setupSoftRatingCriterion(criteria);
 	}
 
 	/**
@@ -76,45 +79,20 @@ public class UniversityQuery
 	{
 		Criterion locations = null;
 		criteria.createAlias("location.country", "country");
-
-		for (Country country : countries)
+		Criterion countryCriterion = Restrictions.or();
+		Criterion stateCriterion = Restrictions.or();
+		
+		if (countries.size() > 0)
 		{
-			Criterion countryRestriction = Restrictions.eq("country.id", country.getId());
-
-			if (country.hasStates())
-			{
-				Criterion statesRestriction = null;
-				for (State state : country.getStates())
-				{
-					criteria.createAlias("location.state", "state");
-					Criterion stateRestriction = Restrictions.eq("state.id", state.getId());
-					if (statesRestriction == null)
-					{
-						statesRestriction = stateRestriction;
-					} else
-					{
-						statesRestriction = Restrictions.or(statesRestriction, stateRestriction);
-					}
-				}
-
-				countryRestriction = Restrictions.and(countryRestriction, statesRestriction);
-
-			}
-			if (locations == null)
-			{
-				locations = countryRestriction;
-			} else
-			{
-				locations = Restrictions.or(locations, countryRestriction);
-			}
-
+			countryCriterion = Restrictions.in("country.id", countries);
 		}
-		if (locations == null)
+		if (states.size() > 0)
 		{
-			locations = Restrictions.or();
+			criteria.createAlias("location.state", "state");
+			stateCriterion = Restrictions.in("state.id", states);
 		}
 
-		criteria.add(locations);
+		criteria.add(Restrictions.or(countryCriterion, stateCriterion));
 		return locations;
 	}
 
@@ -137,7 +115,7 @@ public class UniversityQuery
 			if (faculty.hasPrograms())
 			{
 				Criterion programsRestriction = null;
-				for (UniversityProgram program : faculty.getPrograms())
+				for (Program program : faculty.getPrograms())
 				{
 					Criterion programRestriction = Restrictions.eq("program.id", program.getId());
 					if (programsRestriction == null)
@@ -223,7 +201,7 @@ public class UniversityQuery
 	/**
 	 * @return the countries
 	 */
-	public List<Country> getCountries()
+	public List<Long> getCountries()
 	{
 		return countries;
 	}
@@ -232,9 +210,26 @@ public class UniversityQuery
 	 * @param countries
 	 *            the countries to set
 	 */
-	public void setCountries(final List<Country> countries)
+	public void setCountries(final List<Long> countries)
 	{
 		this.countries = countries;
+	}
+
+	/**
+	 * @return the states
+	 */
+	public List<Long> getStates()
+	{
+		return states;
+	}
+
+	/**
+	 * @param states
+	 *            the states to set
+	 */
+	public void setStates(final List<Long> states)
+	{
+		this.states = states;
 	}
 
 	/**
