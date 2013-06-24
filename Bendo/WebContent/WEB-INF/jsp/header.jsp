@@ -31,14 +31,18 @@
 				</a>
 			</c:when>
 			<c:otherwise>
-				<a href="#signup_modal" rel="leanModal" class="btn_sign_up"
-					data-tab="#modal_signup_tab_content"> <span
-					class="btn_sign_up_text"><b:translator value="signup" /></span>
-				</a>
 				<c:import url="views/signup.jsp"></c:import>
-				<a href="#signup_modal" rel="leanModal"
-					data-tab="#modal_login_tab_content" class="btn_log_in"> <span
-					class="btn_log_in_text"><b:translator value="login" /></span>
+			
+				<a href="#signup_modal" rel="leanModal" data-tab="#modal_login_tab_content" class="btn_log_in">
+					<%-- <span class="btn_log_in_text"><b:translator value="login" /></span> --%>
+					<span class="login_text"><b:translator value="login" /></span>
+				</a>
+				
+				<span class="navSpacer"></span>
+				
+				<a href="#signup_modal" rel="leanModal" class="btn_sign_up" data-tab="#modal_signup_tab_content">
+					<%-- <span class="btn_sign_up_text"><b:translator value="signup" /></span> --%>
+					<span class="signup_text"><b:translator value="signup" /></span>
 				</a>
 			</c:otherwise>
 		</c:choose>

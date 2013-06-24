@@ -388,6 +388,25 @@ h1 span {
 	word-spacing: 2px;
 }
 
+.login_text
+{
+	position: relative;
+	font-family: Verdana;
+	font-size: 16;
+}
+
+.navSpacer {
+	display: inline-block;
+	width: 5px;
+}
+
+.signup_text
+{
+	position: relative;
+	font-family: Verdana;
+	font-size: 16;
+}
+
 .btn_log_in_text:hover {
 	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
 	background-color: #000000;
@@ -1588,7 +1607,234 @@ hr.official-standard-ratings-separation {
 	margin-top: 170px;
 	color: #FFFFFF;
 }
+/**************************************
 
+  			NEW UNI PAGE
+  			pls go
+
+***************************************/
+/* ########################################## */
+	/* TOP BOX SECTION */
+	/* ########################################## */
+	.university_profile_top_box
+	{
+		position: relative;
+		top: 6px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		height: 150px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		vertical-align: middle;
+	}
+	.university_profile_image_box
+	{
+		position: absolute;
+		left: 0px;
+		height: 150px;
+	}
+	.university_profile_image
+	{
+		width: 300px;
+		height: 150px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	.university_profile_top_text_box
+	{
+		position: relative;
+		left:305px; /* must be the same width as picture + 5 */
+		text-align: middle;
+		vertical-align: middle;
+	}
+	.university_profile_top_text_name
+	{
+		font-family: Verdana;
+		font-size: 35px;
+	}
+	.university_profile_top_text_location
+	{
+		font-family: Verdana;
+		font-size: 20px;
+	}
+	.university_profile_top_text_est
+	{
+		font-family: Verdana;
+		font-size: 15px;
+	}
+	/* ########################################## */
+	/* BOX SECTION */
+	/* ########################################## */
+	.university_profile_box_spacer
+	{
+		height: 15px;
+	}
+	.university_profile_box_spacer_top
+	{
+		height: 21px;
+	}
+	.university_profile_box_title
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 32px;
+	}
+	/* ########################################## */
+	/* RANK SECTION */
+	/* ########################################## */
+	.university_profile_rank_box
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		text-align: center;
+	}
+	.university_profile_rank_element
+	{
+		display: inline-block;
+		position: relative;
+		top: 15px;
+		width: 100px;
+	}
+	.university_profile_rank_element_icon
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 75px;
+		height: 75px;
+	}
+	.university_profile_rank_element_rank
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 20px;
+	}
+	.university_profile_rank_element_date
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 12px;
+	}
+	/* ########################################## */
+	/* STUDENT STATISTICS SECTION */
+	/* ########################################## */
+		.university_profile_student_stats_box
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		text-align: center;
+	}
+	.university_profile_student_stats_element
+	{
+		display: inline-block;
+		position: relative;
+		top: 15px;
+		width: 100px;
+	}
+	.university_profile_student_stats_element_icon
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 75px;
+		height: 75px;
+	}
+	.university_profile_student_stats_element_stat
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 20px;
+	}
+	.university_profile_student_stats_element_name
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 12px;
+	}
+	/* ########################################## */
+	/* REPUTATION SECTION */
+	/* ########################################## */
+	.university_profile_reputation_box
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		text-align: center;
+	}
+	.university_profile_reputation_element
+	{
+		display: inline-block;
+		position: relative;
+		top: 15px;
+		width: 100px;
+	}
+	.university_profile_reputation_element_icon
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 75px;
+		height: 75px;
+	}
+	.university_profile_reputation_element_name
+	{
+		text-align: center;
+		font-family: Verdana;
+		font-size: 12px;
+	}
+	/* ########################################## */
+	/* CONTACT SECTION */
+	/* ########################################## */
+	.university_profile_contact_box
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		text-align: left;
+	}
+	.university_profile_contact_element
+	{
+		display: inline-block;
+		position: relative;
+		top: 15px;
+		width: 45%;
+		padding-left: 10px;
+	}
+	.university_profile_reputation_element_text
+	{
+		text-align: left;
+		font-family: Verdana;
+		font-size: 12px;
+	}
 /**************************************
 
   			Uni list resuts 

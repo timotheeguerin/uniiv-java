@@ -1,10 +1,105 @@
+<div class="university_profile_top_box">
+	<div class="university_profile_image_box">
+		<img class="university_profile_image" src="<c:url value="/images/university/${university.key}/main.jpg"/>" />
+	</div>
+	<div class="university_profile_top_text_box">
+		<div class="university_profile_top_text_name"><c:out value="${university.name}" /></div>
+		<div class="university_profile_top_text_location"><c:out value="${university.location}"/></div>
+		<div class="university_profile_top_text_est">Established: [][][][]</div>
+	</div>
+</div>
 
-<div class="uni_large_container">
+<div class="university_profile_box_spacer_top"></div>
+
+<div class="university_profile_rank_box">
+	<div class="university_profile_box_title">Rankings</div>
+	<span class="university_profile_rank_element">
+		<div class="university_profile_rank_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_rank_element_rank">XXX</div>
+		<div class="university_profile_rank_element_date">YYYY</div>
+	</span>
+	<span class="university_profile_rank_element">
+		<div class="university_profile_rank_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_rank_element_rank">XXX</div>
+		<div class="university_profile_rank_element_date">YYYY</div>
+	</span>
+	<span class="university_profile_rank_element">
+		<div class="university_profile_rank_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_rank_element_rank">XXX</div>
+		<div class="university_profile_rank_element_date">YYYY</div>
+	</span>
+</div>
+
+<div class="university_profile_box_spacer"></div>
+
+<div class="university_profile_student_stats_box">
+	<div class="university_profile_box_title">Student Statistics</div>
+	<span class="university_profile_student_stats_element">
+		<div class="university_profile_student_stats_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_student_stats_element_stat">XXXXX</div>
+		<div class="university_profile_student_stats_element_name">Element Name</div>
+	</span>
+	<span class="university_profile_student_stats_element">
+		<div class="university_profile_student_stats_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_student_stats_element_stat">XXXXX</div>
+		<div class="university_profile_student_stats_element_name">Element Name</div>
+	</span>
+	<span class="university_profile_student_stats_element">
+		<div class="university_profile_student_stats_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_student_stats_element_stat">XXXXX</div>
+		<div class="university_profile_student_stats_element_name">Element Name</div>
+	</span>
+</div>
+
+<div class="university_profile_box_spacer"></div>
+
+<div class="university_profile_reputation_box">
+	<div class="university_profile_box_title">Reputation</div>
+	<span class="university_profile_reputation_element">
+		<div class="university_profile_reputation_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_reputation_element_name">Element</div>
+	</span>
+	<span class="university_profile_reputation_element">
+		<div class="university_profile_reputation_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_reputation_element_name">Element</div>
+	</span>
+	<span class="university_profile_reputation_element">
+		<div class="university_profile_reputation_element_icon"><img src="http://i41.tinypic.com/33ldloz.png"/></div>
+		<div class="university_profile_reputation_element_name">Element</div>
+	</span>
+</div>
+
+<div class="university_profile_box_spacer"></div>
+
+<div class="university_profile_contact_box">
+	<div class="university_profile_box_title">Contact Information</div>
+	<span class="university_profile_contact_element">
+		ELEMENT
+	</span>
+	<span class="university_profile_contact_element">
+		ELEMENT
+	</span>
+	<span class="university_profile_contact_element">
+		ELEMENT
+	</span>
+	<span class="university_profile_contact_element">
+		ELEMENT
+	</span>
+</div>
+
+
+
+	
+	
+	
+	
+<%-- <div class="uni_large_container">
 	<div class="uni_left_container">
 		<div class="uni_photos">
 			<img
 				src="<c:url value="/images/university/${university.key}/main.jpg"/>"
-				class="uni_main_img" alt="University Main Profile Picture"></img> <a
+				class="uni_main_img" alt="University Main Profile Picture"></img>
+				<a
 				href="#" class="btn_uni_photos"><span
 				class="btn_uni_photos_text"><b:translator value="photos"></b:translator></span></a>
 		</div>
@@ -98,10 +193,35 @@
 							<li><img
 								src="<c:url value="/images/icon/${rating.softRating.name}.png"/>"
 								title="${rating.softRating}" /> <span class="uni_rating_score">${rating.value}</span>
-
 							</li>
 						</c:if>
 					</c:forEach>
+				</ul>
+			</div>
+		</div>
+		<div class="uni_ratings_container">
+			<div class="uni_ratings_icons">
+				<h2>
+					<span class="uni_heading_ratings"><b:translator
+							value="ratings"></b:translator></span>
+				</h2>
+				<br>
+				<ul>
+					<table width="100%">
+						<th width="33%" >QS2011</th>
+						<th width="33%" >QS2012</th>
+						<th width="33%" >QS2013</th>
+						<tr>
+							<td><center><img src="http://i41.tinypic.com/33ldloz.png"/></center></td>
+							<td><center><img src="http://i41.tinypic.com/33ldloz.png"/></center></td>
+							<td><center><img src="http://i41.tinypic.com/33ldloz.png"/></center></td>
+						</tr>
+						<tr>
+							<td><center><h1>1</h1></center></td>
+							<td><center><h1>1</h1></center></td>
+							<td><center><h1>1</h1></center></td>
+						</tr>
+					</table>
 				</ul>
 			</div>
 		</div>
@@ -115,4 +235,4 @@
 		</div>
 	</div>
 </div>
-<!-- </div> -->
+<!-- </div> --> --%>
