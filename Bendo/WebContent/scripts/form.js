@@ -85,12 +85,9 @@ $(document).ready(function() {
 	});
 
 	$('input.tag-input').each(function() {
-		var placeholder = $(this).attr("data-placeholder");
-
 		$(this).tagsInput({
 			'height' : '35px',
 			'width' : '600px',
-			'defaultText' : placeholder
 		});
 	});
 

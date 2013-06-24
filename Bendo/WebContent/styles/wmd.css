@@ -16,10 +16,8 @@ div.grippie {
 }
 
 .wmd-button-bar {
-	width: 100%;
-	/*
-	background-color: Silver; 
-	*/
+	background-color: #EEEEEE;
+	border: solid 1px #DDDDDD;
 }
 
 .wmd-input {
@@ -62,13 +60,12 @@ div.grippie {
 }
 
 .wmd-button {
-	width: 30px;
-	height: 40px;
+	width: 20px;
+	height: 20px;
 	margin-left: 5px;
 	margin-right: 5px;
 	position: absolute;
 	background-image: url(../images/wmd/wmd-buttons.png);
-	background-size:20px 20px;
 	background-color: #e6e6e6;
 	border: 1px solid #ccc;
 	border-bottom-color: #bbb;
@@ -79,7 +76,6 @@ div.grippie {
 	background-position: 0px 0px;
 	display: inline-block;
 	list-style: none;
-
 }
 
 .wmd-button>a {
