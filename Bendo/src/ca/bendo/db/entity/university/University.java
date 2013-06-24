@@ -161,4 +161,20 @@ public class University
 		this.softRatings = softRatings;
 	}
 
+	/**
+	 * @return the key
+	 */
+	public String getKey()
+	{
+		return key;
+	}
+
+	/**
+	 * @param key the key to set
+	 */
+	public void setKey(final String key)
+	{
+		this.key = key;
+	}
+
 }

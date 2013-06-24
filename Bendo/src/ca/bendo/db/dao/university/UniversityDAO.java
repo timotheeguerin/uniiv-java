@@ -42,7 +42,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return a list of all universities
 	 */
 	@SuppressWarnings("unchecked")
-	public  List<University> listUniversities()
+	public List<University> listUniversities()
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
@@ -55,7 +55,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return list of university satifying the request
 	 */
 	@SuppressWarnings("unchecked")
-	public  List<University> search(final UniversityQuery query)
+	public List<University> search(final UniversityQuery query)
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
@@ -80,7 +80,7 @@ public class UniversityDAO extends HibernateDAO<University>
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
-				.addOrder(Order.asc("name")).list();
+				.addOrder(Order.asc("name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 	}
 
@@ -99,7 +99,8 @@ public class UniversityDAO extends HibernateDAO<University>
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
-				.addOrder(Order.asc("name")).setMaxResults(maxResults).list();
+				.addOrder(Order.asc("name")).setMaxResults(maxResults)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 	}
 
@@ -121,7 +122,8 @@ public class UniversityDAO extends HibernateDAO<University>
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
-				.addOrder(Order.asc("name")).setFirstResult(firstResult).setMaxResults(maxResults).list();
+				.addOrder(Order.asc("name")).setFirstResult(firstResult).setMaxResults(maxResults)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 	}
 }
