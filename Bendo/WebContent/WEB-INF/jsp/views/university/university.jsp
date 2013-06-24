@@ -4,8 +4,10 @@
 	</div>
 	<div class="university_profile_top_text_box">
 		<div class="university_profile_top_text_name"><c:out value="${university.name}" /></div>
-		<div class="university_profile_top_text_location"><c:out value="${university.location}"/></div>
-		<div class="university_profile_top_text_est">Established: [][][][]</div>
+		<div class="university_profile_top_lower_text">
+			<div class="university_profile_top_text_location"><c:out value="${university.location}"/></div>
+			<div class="university_profile_top_text_est">Established: [][][][]</div>
+		</div>
 	</div>
 </div>
 

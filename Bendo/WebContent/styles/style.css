@@ -1622,7 +1622,7 @@ hr.official-standard-ratings-separation {
 		top: 6px;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		height: 150px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1634,6 +1634,7 @@ hr.official-standard-ratings-separation {
 		position: absolute;
 		left: 0px;
 		height: 150px;
+		width: 300px;
 	}
 	.university_profile_image
 	{
@@ -1645,23 +1646,32 @@ hr.official-standard-ratings-separation {
 	.university_profile_top_text_box
 	{
 		position: relative;
-		left:305px; /* must be the same width as picture + 5 */
-		text-align: middle;
+		left:310px; /* must be the same width as picture + 10 */
+		height: 100%;
 	}
 	.university_profile_top_text_name
 	{
 		font-family: Verdana;
 		font-size: 35px;
+		position: relative;
+		top: 0px;
 	}
 	.university_profile_top_text_location
 	{
 		font-family: Verdana;
 		font-size: 20px;
 	}
+	.university_profile_top_lower_text
+	{
+		text-align: left;
+		position: absolute;
+		left: 0px;
+		bottom: 5px;
+	}
 	.university_profile_top_text_est
 	{
 		font-family: Verdana;
-		font-size: 15px;
+		font-size: 14px;
 	}
 	/* ########################################## */
 	/* BOX SECTION */
@@ -1688,7 +1698,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1731,7 +1741,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1774,7 +1784,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
@@ -1811,7 +1821,7 @@ hr.official-standard-ratings-separation {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		width: 90%;
+		width: 100%;
 		padding-bottom: 20px;
 		border-radius: 5px;
 		border: 1px solid;
