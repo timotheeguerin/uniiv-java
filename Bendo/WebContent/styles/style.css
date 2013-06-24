@@ -396,6 +396,13 @@ h1 span {
 	font-size: 14;
 }
 
+.nav_logout_text
+{
+	position: relative;
+	font-family: Verdana;
+	font-size: 14;
+}
+
 .nav_signup_text
 {
 	position: relative;
@@ -408,6 +415,13 @@ h1 span {
 	display: inline-block;
 	position: absolute;
 	left: 40px;
+}
+
+.nav_middle
+{
+	display: inline-block;
+	position: relative;
+	top: -5px;
 }
 
 .nav_right_side
