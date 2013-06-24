@@ -8,7 +8,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
 	font-weight: 200;
 	color: #4F4D4D;
 	list-style: none;
@@ -37,7 +36,7 @@ html,body {
 	margin: auto;
 	padding-top: 60px;
 	width: 980px;
-	padding-bottom: 100px;
+	padding-bottom: 40px;
 	overflow-y: auto;
 }
 
@@ -104,17 +103,15 @@ h1 span {
 ---------------------------------*/
 .navLogo {
 	display: inline-block;
-	height: 50px;
-	width: 50px;
+	height: 25px;
+	width: 25px;
 }
 
 .headerNav {
 	background-color: #E8E8E8;
 	border-bottom: 1px solid #DBDBDB;
-	height: 50px;
+	height: 25px;
 	position: fixed;
-	line-height: 50px;
-	vertical-align: middle;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -130,20 +127,19 @@ h1 span {
 
 #navLfLinks {
 	display: inline-block;
-	height: 35px;
+	height: 25px;
 	position: relative;
 	margin-left: 20px;
-	line-height: 35px;
 	vertical-align: middle;
 	position: relative;
 }
 
 #navLogo {
 	display: inline-block;
-	height: 50px;
-	line-height: 50px;
+	line-height: 20px;
 	margin-left: 15px;
-	vertical-align: middle;
+	position: relative;
+	top: 4px;
 }
 
 #navLfLinks a {
@@ -159,10 +155,10 @@ h1 span {
 .navRightBtns {
 	display: inline-block;
 	position: relative;
-	margin-top: 2px;
-	height: 32px;
-	line-height: 32px;
-	padding-top: 7px;
+	margin-top: 0px;
+	height: 20px;
+	line-height: 20px;
+	padding-top: 0px;
 	padding-right: 10px;
 	vertical-align: middle;
 	float: right;
@@ -388,23 +384,70 @@ h1 span {
 	word-spacing: 2px;
 }
 
-.login_text
-{
-	position: relative;
-	font-family: Verdana;
-	font-size: 16;
-}
-
-.navSpacer {
+.nav_spacer {
 	display: inline-block;
 	width: 5px;
 }
 
-.signup_text
+.nav_login_text
 {
 	position: relative;
 	font-family: Verdana;
+	font-size: 14;
+}
+
+.nav_signup_text
+{
+	position: relative;
+	font-family: Verdana;
+	font-size: 14;
+}
+
+.nav_left_side
+{
+	display: inline-block;
+	position: absolute;
+	left: 40px;
+}
+
+.nav_right_side
+{
+	display: inline-block;
+	position: absolute;
+	right: 5px;
+}
+
+.nav_frame
+{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	height: 30px;
+	border-bottom: 1px solid;
+	border-color: #dbdbdb;
+	background-color: #ffffff;
+	padding-top: 10px;
+	z-index: 999;
+}
+
+.nav_logo
+{
+	position: absolute;
+	/* color: #204AA1;
+	font-family: Verdana;
 	font-size: 16;
+	font-weight: 600; */
+	height: 25px;
+	width: 25px;
+	top: 7px;
+	left: 7px;
+}
+
+.nav_links
+{
+	position: relative;
+	font-family: Verdana;
+	font-size: 14;
 }
 
 .btn_log_in_text:hover {
@@ -1836,9 +1879,6 @@ hr.official-standard-ratings-separation {
 		top: 15px;
 		width: 45%;
 		padding-left: 10px;
-	}
-	.university_profile_reputation_element_text
-	{
 		text-align: left;
 		font-family: Verdana;
 		font-size: 12px;
