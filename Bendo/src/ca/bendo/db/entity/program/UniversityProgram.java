@@ -3,6 +3,8 @@
  */
 package ca.bendo.db.entity.program;
 
+import java.util.Comparator;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,60 +13,43 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Formula;
+import ca.bendo.db.entity.university.University;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>UniProgram</b>
+ *          <b>UniversityPrograms</b>
  *          <p>
  *          </p>
  * 
  * 
  */
-
 @Entity
-@Table(name = "uni_program")
-public class UniversityProgram implements Comparable<UniversityProgram>
+@Table(name = "uni_university_program")
+public class UniversityProgram
 {
 	/**
 	 * 
 	 */
 	@Id
 	@GeneratedValue
-	@Column(name = "id_uni_program", unique = true, nullable = false)
+	@Column(name = "id_uni_university_program")
 	private long id;
 
 	/**
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_uni_faculty")
-	private UniversityFaculty faculty;
-	/**
-	 * 
-	 */
-	@Column(name = "name")
-	private String name;
+	@JoinColumn(name = "id_uni_university")
+	private University university;
 
 	/**
 	 * 
 	 */
-	@Formula("(SELECT t.translation FROM lang_translation t "
-			+ "WHERE (t.key = name) AND t.id_lang_language = :languageId.param)")
-	private String translation;
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return getTranslation();
-	}
+	@ManyToOne
+	@JoinColumn(name = "id_uni_program")
+	private Program program;
 
 	/**
 	 * @return the id
@@ -84,62 +69,72 @@ public class UniversityProgram implements Comparable<UniversityProgram>
 	}
 
 	/**
-	 * @return the name
+	 * @return the university
 	 */
-	public String getName()
+	public University getUniversity()
 	{
-		return name;
+		return university;
 	}
 
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param university
+	 *            the university to set
 	 */
-	public void setName(final String name)
+	public void setUniversity(final University university)
 	{
-		this.name = name;
+		this.university = university;
 	}
 
 	/**
-	 * @return the translation
+	 * @return the program
 	 */
-	public String getTranslation()
+	public Program getProgram()
 	{
-		if (translation != null)
-		{
-			return translation;
-		} else
-		{
-			return name;
-		}
-
+		return program;
 	}
 
 	/**
-	 * @param translation
-	 *            the translation to set
+	 * @param program
+	 *            the program to set
 	 */
-	public void setTranslation(final String translation)
+	public void setProgram(final Program program)
 	{
-		this.translation = translation;
+		this.program = program;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 * 
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	 * @author Timothée Guérin
+	 * @version Bendo
+	 * 
+	 *          <b>UniversityProgramsComparator</b>
+	 *          <p>
+	 *          </p>
+	 * 
+	 * 
 	 */
-	@Override
-	public int compareTo(final UniversityProgram o)
+	public static class UniversityProgramsComparator implements Comparator<UniversityProgram>
 	{
-		if (getTranslation() == null)
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+		 */
+		@Override
+		public int compare(final UniversityProgram o1, final UniversityProgram o2)
 		{
-			return -1;
-		} else if (o.getTranslation() == null)
-		{
-			return 1;
+			if (o1.getProgram().getTranslation() == null)
+			{
+				return -1;
+			} else if (o2.getProgram().getTranslation() == null)
+			{
+				return 1;
+			}
+
+			return o1.getProgram().getTranslation().compareTo(o2.getProgram().getTranslation());
 		}
 
-		return getTranslation().compareTo(o.getTranslation());
 	}
+
 }

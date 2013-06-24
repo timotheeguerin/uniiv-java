@@ -14,7 +14,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bendo.db.entity.rating.UniversityGrade;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.search.handler.parser.LocationParser;
 import ca.bendo.search.handler.parser.ProgramParser;
@@ -60,15 +59,6 @@ public class TestUniversityDAO
 			assertTrue(university.getLocation() != null);
 			System.out.printf("%-4s %-40s %-50s %s\n", university.getId(), university.getName(),
 					university.getWebsite(), university.getLocation());
-			assertTrue(university.getFees() != null);
-
-			assertTrue(university.getPrograms() != null);
-			assertTrue(university.getSoftRatings() != null);
-			for (UniversityGrade rating : university.getSoftRatings())
-			{
-				System.out.printf("\t%-17s %s\n", rating.getSoftRating().getName(), rating.getValue());
-			}
-			System.out.println();
 		}
 
 	}
@@ -102,9 +92,8 @@ public class TestUniversityDAO
 		for (University university : universities)
 		{
 			System.out.printf("%-4s %-40s %s\n", university.getId(), university.getName(), university.getWebsite());
-			assertTrue(university.getFees() != null);
 			assertTrue(university.getLocation() != null);
-			assertTrue(university.getPrograms() != null);
+
 		}
 
 	}
@@ -124,9 +113,7 @@ public class TestUniversityDAO
 		for (University university : universities)
 		{
 			System.out.printf("%-4s %-40s %s\n", university.getId(), university.getName(), university.getWebsite());
-			assertTrue(university.getFees() != null);
 			assertTrue(university.getLocation() != null);
-			assertTrue(university.getPrograms() != null);
 		}
 	}
 }

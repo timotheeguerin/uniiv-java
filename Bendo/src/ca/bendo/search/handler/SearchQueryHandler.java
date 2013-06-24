@@ -62,7 +62,7 @@ public class SearchQueryHandler
 		LocationParser locationParser = new LocationParser();
 		locationParser.parse(countriesParam);
 		query.setCountries(locationParser.getCountries());
-
+		query.setStates(locationParser.getStates());
 		// Parse programs
 		String programParam = request.getParameter("program");
 		ProgramParser programParser = new ProgramParser();

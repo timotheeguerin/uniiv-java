@@ -14,8 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bendo.db.dao.program.UniversityProgramDAO;
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.dao.program.ProgramDAO;
+import ca.bendo.db.entity.program.Program;
 
 /**
  * @author Timothée Guérin
@@ -38,7 +38,7 @@ public class DTest
 	 * 
 	 */
 	@Autowired
-	private UniversityProgramDAO dao;
+	private ProgramDAO dao;
 
 	/**
 	 * 
@@ -47,9 +47,9 @@ public class DTest
 	public void test()
 	{
 		System.out.println("test");
-		List<UniversityProgram> pl = dao.listPrograms();
+		List<Program> pl = dao.listPrograms();
 		System.out.println("test");
-		for (UniversityProgram p : pl)
+		for (Program p : pl)
 		{
 			System.out.println("P: " + p.getName());
 		}
@@ -58,7 +58,7 @@ public class DTest
 	/**
 	 * @return the dao
 	 */
-	public UniversityProgramDAO getDao()
+	public ProgramDAO getDao()
 	{
 		return dao;
 	}
@@ -67,7 +67,7 @@ public class DTest
 	 * @param dao
 	 *            the dao to set
 	 */
-	public void setDao(final UniversityProgramDAO dao)
+	public void setDao(final ProgramDAO dao)
 	{
 		this.dao = dao;
 	}

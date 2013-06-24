@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ca.bendo.db.dao.program.UniversityProgramDAO;
+import ca.bendo.db.dao.program.ProgramDAO;
 import ca.bendo.search.FilterSystemLoader;
 import ca.bendo.search.handler.SearchQueryHandler;
 
@@ -33,7 +33,7 @@ public class SearchController
 	 * 
 	 */
 	@Autowired
-	private UniversityProgramDAO programDAO;
+	private ProgramDAO programDAO;
 
 	/**
 	 * 

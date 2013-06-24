@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.entity.program.Program;
 
 /**
  * @author Timothée Guérin
@@ -25,14 +25,14 @@ import ca.bendo.db.entity.program.UniversityProgram;
  */
 @Transactional
 @Repository
-public class UniversityProgramDAO extends HibernateDAO<UniversityProgram>
+public class ProgramDAO extends HibernateDAO<Program>
 {
 	/**
 	 * 
 	 */
-	public UniversityProgramDAO()
+	public ProgramDAO()
 	{
-		setType(UniversityProgram.class);
+		setType(Program.class);
 	}
 
 	/**
@@ -40,11 +40,11 @@ public class UniversityProgramDAO extends HibernateDAO<UniversityProgram>
 	 * @return the list of all programs
 	 */
 	@SuppressWarnings("unchecked")
-	public List<UniversityProgram> listPrograms()
+	public List<Program> listPrograms()
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
-		return (List<UniversityProgram>) getSession().createCriteria(UniversityProgram.class)
+		return (List<Program>) getSession().createCriteria(Program.class)
 				.addOrder(Order.asc("translation")).list();
 	}
 

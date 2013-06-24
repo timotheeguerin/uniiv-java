@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ca.bendo.db.entity.program.UniversityFaculty;
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.entity.program.Program;
 
 /**
  * @author Timothée Guérin
@@ -62,7 +62,7 @@ public class ProgramParser extends ParameterParser
 					{
 						if (isNumeric(programStr))
 						{
-							UniversityProgram program = new UniversityProgram();
+							Program program = new Program();
 							program.setId(Integer.parseInt(programStr));
 							faculty.addProgram(program);
 						}

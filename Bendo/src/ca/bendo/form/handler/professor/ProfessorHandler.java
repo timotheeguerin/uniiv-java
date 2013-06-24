@@ -17,14 +17,14 @@ import ca.bendo.db.dao.professor.ProfessorRatingDAO;
 import ca.bendo.db.dao.professor.ProfessorRatingTypeDAO;
 import ca.bendo.db.dao.professor.ProfessorReviewDAO;
 import ca.bendo.db.dao.professor.ProfessorUniversityDAO;
-import ca.bendo.db.dao.program.UniversityProgramDAO;
+import ca.bendo.db.dao.program.ProgramDAO;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.professor.Professor;
 import ca.bendo.db.entity.professor.ProfessorRatingAverage;
 import ca.bendo.db.entity.professor.ProfessorRatingType;
 import ca.bendo.db.entity.professor.ProfessorReview;
 import ca.bendo.db.entity.professor.ProfessorUniversity;
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.form.entity.professor.NewProfessorEntity;
@@ -86,7 +86,7 @@ public class ProfessorHandler
 	 * 
 	 */
 	@Autowired
-	private UniversityProgramDAO programDAO;
+	private ProgramDAO programDAO;
 
 	/**
 	 * 
@@ -117,7 +117,7 @@ public class ProfessorHandler
 		professor.setLastName(entity.getLastName());
 
 		long programId = Long.parseLong(entity.getProgramId());
-		UniversityProgram program = programDAO.getById(programId);
+		Program program = programDAO.getById(programId);
 		professor.setProgram(program);
 		professorDAO.add(professor);
 		System.out.println(professor.getId() + ": " + professor.getFirstName() + " " + professor.getLastName());
@@ -133,7 +133,7 @@ public class ProfessorHandler
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
 		programDAO.setLanguageId(languageId);
-		List<UniversityProgram> programs = programDAO.listPrograms();
+		List<Program> programs = programDAO.listPrograms();
 		request.setAttribute("programs", programs);
 
 	}

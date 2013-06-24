@@ -21,7 +21,7 @@ import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.location.Country;
 import ca.bendo.db.entity.location.State;
 import ca.bendo.db.entity.program.UniversityFaculty;
-import ca.bendo.db.entity.program.UniversityProgram;
+import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.rating.UniversityRating;
 import ca.bendo.search.category.FeesCategoryContent;
 import ca.bendo.search.category.FilterCategory;
@@ -196,7 +196,7 @@ public class FilterSystemLoader
 			facultyElement.setId(faculty.getId());
 
 			// Load the state of the country and cycle through
-			for (UniversityProgram program : faculty.getPrograms())
+			for (Program program : faculty.getPrograms())
 			{
 				// Add a sub element to be the state.
 				FilterElement programElement = new FilterElement();
@@ -230,7 +230,7 @@ public class FilterSystemLoader
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
-		List<UniversityRating> ratings = softRatingDAO.listSoftRatings();
+		List<UniversityRating> ratings = softRatingDAO.list();
 		List<UniversityRating> stdRatings = new ArrayList<UniversityRating>();
 		List<UniversityRating> officialRatings = new ArrayList<UniversityRating>();
 

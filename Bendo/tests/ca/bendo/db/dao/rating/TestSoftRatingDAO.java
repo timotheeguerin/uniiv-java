@@ -48,7 +48,7 @@ public class TestSoftRatingDAO
 	public void testListSoftRating()
 	{
 		softRatingDAO.setLanguageId(1);
-		List<UniversityRating> ratings = softRatingDAO.listSoftRatings();
+		List<UniversityRating> ratings = softRatingDAO.list();
 		assertTrue(ratings != null && ratings.size() > 0);
 
 		for (UniversityRating rating : ratings)
@@ -68,7 +68,7 @@ public class TestSoftRatingDAO
 	{
 
 		softRatingDAO.setLanguageId(1);
-		List<UniversityRating> ratings = softRatingDAO.listSoftRatings();
+		List<UniversityRating> ratings = softRatingDAO.list();
 		assertTrue(ratings != null && ratings.size() > 0);
 
 		List<Integer> ids = new ArrayList<Integer>();
