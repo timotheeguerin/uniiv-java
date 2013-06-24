@@ -1634,6 +1634,7 @@ hr.official-standard-ratings-separation {
 		position: absolute;
 		left: 0px;
 		height: 150px;
+		width: 300px;
 	}
 	.university_profile_image
 	{
@@ -1646,22 +1647,31 @@ hr.official-standard-ratings-separation {
 	{
 		position: relative;
 		left:310px; /* must be the same width as picture + 10 */
-		top: 17%;
+		height: 100%;
 	}
 	.university_profile_top_text_name
 	{
 		font-family: Verdana;
 		font-size: 35px;
+		position: relative;
+		top: 0px;
 	}
 	.university_profile_top_text_location
 	{
 		font-family: Verdana;
 		font-size: 20px;
 	}
+	.university_profile_top_lower_text
+	{
+		text-align: left;
+		position: absolute;
+		left: 0px;
+		bottom: 5px;
+	}
 	.university_profile_top_text_est
 	{
 		font-family: Verdana;
-		font-size: 15px;
+		font-size: 14px;
 	}
 	/* ########################################## */
 	/* BOX SECTION */
