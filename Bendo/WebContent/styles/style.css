@@ -13,6 +13,7 @@
 	list-style: none;
 	text-decoration: none;
 	overflow: visible;
+	font-family: Helvetica;
 }
 
 html,body {
@@ -173,7 +174,6 @@ h1 span {
 .btn_get_started_text {
 	background: url("../images/icon/searchtool.png") no-repeat;
 	background-size: 100%;
-	border-left: 1px solid #E8E8E8;
 	color: transparent;
 	position: absolute;
 	right: 5px;
@@ -182,7 +182,7 @@ h1 span {
 	display: inline-block;
 	height: 20px;
 	width: 20px;
-	border: none;
+	border: 0px;
 }
 
 /*-------------------------------
@@ -190,44 +190,43 @@ h1 span {
 	   PAGE FOOTER 
 
 ---------------------------------*/
-.footerContain {
+.footer_frame {
 	border-top: 1px solid #DBDBDB;
-	background-color: #f2f2f2;
 	text-align: center;
 	height: auto;
 	left: 0;
-	padding:5px;
 	min-width: 980px;
 	width: 100%;
+	background-color: #ffffff;
+	background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
+	background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
+	background-image: linear-gradient(#ffffff, #f9f9f9)
 }
 
-.footerTop {
-	width:400px;
-}
-
-.footerContain a:link,.footerContain a:visited {
+.footer_frame a:link,.footer_content a:visited {
 	text-decoration: none;
 	color: #4F4D4D;
 	font-size: 12px;
 	font-weight: normal;
-	font-family: "helvetica Neue", Arial
+	font-family: Helvetica;
 }
 
-.footerContain a:hover {
+.footer_frame a:hover {
 	text-decoration: underline;
 }
 
-.footerPrimary {
-	display: inline-block;
-	height: 80px;
-	vertical-align: middle;
+.footer_content
+{
+	font-weight: lighter;
 }
 
-#footerPrimary li {
+.footer_spacer {
 	display: inline-block;
-	font-weight: bold;
-	margin-left: 10px;
+	width: 5px;
 }
+
+
+
 
 /*--------------------------------
 
@@ -439,13 +438,12 @@ h1 span {
 	height: 30px;
 	border-bottom: 1px solid;
 	border-color: #dbdbdb;
-	background-color: #ffffff;
 	padding-top: 10px;
 	z-index: 999;
-	background-color: #f3f3f3;
-	background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);
-	background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3);
-	background-image: linear-gradient(#f9f9f9, #f3f3f3)
+	background-color: #ffffff;
+	background-image: -moz-linear-gradient(#f9f9f9, #ffffff);
+	background-image: -webkit-linear-gradient(#f9f9f9, #ffffff);
+	background-image: linear-gradient(#f9f9f9, #ffffff)
 }
 
 .nav_logo
