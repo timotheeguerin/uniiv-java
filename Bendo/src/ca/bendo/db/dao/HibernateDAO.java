@@ -14,7 +14,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bendo.db.entity.forum.ForumGroupType;
@@ -77,7 +76,7 @@ public class HibernateDAO<T>
 	 * @return list all the entity with the given ids
 	 */
 	@SuppressWarnings("unchecked")
-	public List<T> listWithIds(final Collection<Long> ids)
+	public List<T> listByIds(final Collection<Long> ids)
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
