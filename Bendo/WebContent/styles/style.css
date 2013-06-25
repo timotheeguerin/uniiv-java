@@ -30,7 +30,7 @@ html,body {
 
 #container {
 	min-height: 100%;
-	position:relative;
+	position: relative;
 }
 
 #content {
@@ -40,8 +40,7 @@ html,body {
 	overflow-y: auto;
 }
 
-#content.content_margin
-{
+#content.content_margin {
 	width: 980px;
 }
 
@@ -154,7 +153,7 @@ h1 span {
 }
 
 #navLfLinks a:hover {
-	color:#204AA1;
+	color: #204AA1;
 }
 
 .navRightBtns {
@@ -200,8 +199,7 @@ h1 span {
 	text-decoration: underline;
 }
 
-.footer_content
-{
+.footer_content {
 	font-weight: lighter;
 }
 
@@ -237,7 +235,7 @@ h1 span {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#f081ad',
 		endColorstr='#e91760', GradientType=0 );
 	/* IE6-9 */
@@ -370,50 +368,43 @@ h1 span {
 	width: 5px;
 }
 
-.nav_login_text
-{
+.nav_login_text {
 	position: relative;
 	font-size: 14;
 	font-weight: lighter;
 }
 
-.nav_logout_text
-{
+.nav_logout_text {
 	position: relative;
 	font-size: 14;
 	font-weight: lighter;
 }
 
-.nav_signup_text
-{
+.nav_signup_text {
 	position: relative;
 	font-size: 14;
 	font-weight: lighter;
 }
 
-.nav_left_side
-{
+.nav_left_side {
 	display: inline-block;
 	position: absolute;
 	left: 40px;
 }
 
-.nav_middle
-{
+.nav_middle {
 	display: inline-block;
 	position: relative;
 	top: -5px;
 }
 
-.nav_right_side
-{
+.nav_right_side {
 	display: inline-block;
 	position: absolute;
 	right: 5px;
 }
 
-.nav_frame
-{
+.nav_frame {
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -428,8 +419,7 @@ h1 span {
 	background-image: linear-gradient(#f9f9f9, #ffffff)
 }
 
-.nav_logo
-{
+.nav_logo {
 	position: absolute;
 	/* color: #204AA1;
 	font-family: Verdana;
@@ -441,8 +431,7 @@ h1 span {
 	left: 7px;
 }
 
-.nav_links
-{
+.nav_links {
 	position: relative;
 	font-size: 14;
 	font-weight: lighter;
@@ -704,40 +693,18 @@ div.btn_sign_up_form input {
 	position: relative;
 	top: 0px;
 	right: 10px;
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background: #f081ad; /* Old browsers */
-	background: -moz-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f081ad),
-		color-stop(100%, #e91760) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
-		                                        startColorstr='#f081ad',
-		endColorstr='#e91760', GradientType=0 );
-	/* IE6-9 */
-	border-bottom-color: #B61149;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-left-color: #B61149;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #B61149;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #B61149;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
+	background: #2b4f80; /* Old browsers */ background :
+	-moz-linear-gradient( top, #2b4f80 0%, #3b6fb4 100%); /* FF3.6+ */
+	background : -webkit-gradient( linear, left top, left bottom,
+	color-stop( 0%, #2b4f80), color-stop( 100%, #3b6fb4));
+	/* Chrome,Safari4+ */ background : -webkit-linear-gradient( top,
+	#2b4f80 0%, #3b6fb4 100%); /* Chrome10+,Safari5.1+ */ background :
+	-o-linear-gradient( top, #2b4f80 0%, #3b6fb4 100%); /* Opera 11.10+ */
+	background : -ms-linear-gradient( top, #2b4f80 0%, #3b6fb4 100%);
+	/* IE10+ */ background : linear-gradient( to bottom, #2b4f80 0%,
+	#3b6fb4 100%); /* W3C */ filter : progid :
+	DXImageTransform.Microsoft.gradient (   startColorstr = '#2b4f80',
+	endColorstr = '#3b6fb4', GradientType = 0); /* IE6-9 */
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
@@ -772,7 +739,7 @@ div.btn_sign_up_form input {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#e91760',
 		endColorstr='#f081ad', GradientType=0 );
 	/* IE6-9 */
@@ -794,7 +761,7 @@ div.btn_sign_up_form input {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#e91760',
 		endColorstr='#f081ad', GradientType=0 );
 	/* IE6-9 */
@@ -992,7 +959,7 @@ h2.step {
 	{
 	cursor: pointer;
 	opacity: 0.7;
-	filter: alpha(opacity =       70);
+	filter: alpha(opacity =         70);
 }
 
 .SoftRatingOption:active,.clearOption:active {
@@ -1049,7 +1016,7 @@ ul.userRatings .SoftRatingOption.optionSelected {
 	{
 	display: inline-block;
 	opacity: 1;
-	filter: alpha(opacity =                             100);
+	filter: alpha(opacity =                               100);
 }
 
 .SoftRatingOptions {
@@ -1135,7 +1102,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#3259ab',
 		endColorstr='#4a68a8', GradientType=0 );
 	/* IE6-9 */
@@ -1195,7 +1162,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #4a68a8 0%, #3259ab 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#4a68a8',
 		endColorstr='#3259ab', GradientType=0 );
 	/* IE6-9 */
@@ -1215,7 +1182,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
+	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#3259ab',
 		endColorstr='#4a68a8', GradientType=0 );
 	/* IE6-9 */
@@ -1226,260 +1193,253 @@ hr.official-standard-ratings-separation {
   			pls go
 
 ***************************************/
-	/* ########################################## */
-	/* TOP BOX SECTION */
-	/* ########################################## */
-	.university_profile_top_box
-	{
-		position: relative;
-		top: 6px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		height: 150px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-	}
-	.university_profile_image_box
-	{
-		position: absolute;
-		left: 0px;
-		height: 150px;
-		width: 300px;
-	}
-	.university_profile_image
-	{
-		width: 300px;
-		height: 150px;
-		border-top-left-radius: 5px;
-		border-bottom-left-radius: 5px;
-	}
-	.university_profile_top_text_box
-	{
-		position: relative;
-		left:310px; /* must be the same width as picture + 10 */
-		height: 100%;
-	}
-	.university_profile_top_text_name
-	{
-		font-size: 35px;
-		font-weight: lighter;
-		position: relative;
-		top: 0px;
-	}
-	.university_profile_top_text_location
-	{
-		font-size: 20px;
-		font-weight: lighter;
-	}
-	.university_profile_top_lower_text
-	{
-		text-align: left;
-		position: absolute;
-		left: 0px;
-		bottom: 5px;
-	}
-	.university_profile_top_text_est
-	{
-		font-size: 14px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* BOX SECTION */
-	/* ########################################## */
-	.university_profile_box_spacer
-	{
-		height: 15px;
-	}
-	.university_profile_box_spacer_top
-	{
-		height: 21px;
-	}
-	.university_profile_box_title
-	{
-		text-align: center;
-		font-size: 32px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* RANK SECTION */
-	/* ########################################## */
-	.university_profile_rank_box
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		padding-bottom: 20px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-		text-align: center;
-	}
-	.university_profile_rank_element
-	{
-		display: inline-block;
-		position: relative;
-		top: 15px;
-		width: 100px;
-	}
-	.university_profile_rank_element_icon
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 75px;
-		height: 75px;
-	}
-	.university_profile_rank_element_rank
-	{
-		text-align: center;
-		font-size: 20px;
-		font-weight: lighter;
-	}
-	.university_profile_rank_element_date
-	{
-		text-align: center;
-		font-size: 12px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* STUDENT STATISTICS SECTION */
-	/* ########################################## */
-		.university_profile_student_stats_box
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		padding-bottom: 20px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-		text-align: center;
-	}
-	.university_profile_student_stats_element
-	{
-		display: inline-block;
-		position: relative;
-		top: 15px;
-		width: 100px;
-	}
-	.university_profile_student_stats_element_icon
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 75px;
-		height: 75px;
-	}
-	.university_profile_student_stats_element_stat
-	{
-		text-align: center;
-		font-size: 20px;
-		font-weight: lighter;
-	}
-	.university_profile_student_stats_element_name
-	{
-		text-align: center;
-		font-size: 12px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* REPUTATION SECTION */
-	/* ########################################## */
-	.university_profile_reputation_box
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		padding-bottom: 20px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-		text-align: center;
-	}
-	.university_profile_reputation_element
-	{
-		display: inline-block;
-		position: relative;
-		top: 15px;
-		width: 100px;
-	}
-	.university_profile_reputation_element_icon
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 75px;
-		height: 75px;
-	}
-	.university_profile_reputation_element_name
-	{
-		text-align: center;
-		font-size: 12px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* RELEVANT WIKI SECTION */
-	/* ########################################## */
-	.university_profile_relevant_wiki_box
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		padding-bottom: 20px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-		text-align: left;
-	}
-	.university_profile_relevant_wiki_element
-	{
-		display: inline-block;
-		position: relative;
-		top: 15px;
-		width: 45%;
-		padding-left: 10px;
-		text-align: left;
-		font-size: 12px;
-		font-weight: lighter;
-	}
-	/* ########################################## */
-	/* CONTACT SECTION */
-	/* ########################################## */
-	.university_profile_contact_box
-	{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		padding-bottom: 20px;
-		border-radius: 5px;
-		border: 1px solid;
-		border-color: #E5E5E5;
-		background-color: #ffffff;
-		text-align: left;
-	}
-	.university_profile_contact_element
-	{
-		display: inline-block;
-		position: relative;
-		top: 15px;
-		width: 45%;
-		padding-left: 10px;
-		text-align: left;
-		font-size: 12px;
-		font-weight: lighter;
-	}
+/* ########################################## */
+/* TOP BOX SECTION */
+/* ########################################## */
+.university_profile_top_box {
+	position: relative;
+	top: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 150px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+}
+
+.university_profile_image_box {
+	position: absolute;
+	left: 0px;
+	height: 150px;
+	width: 300px;
+}
+
+.university_profile_image {
+	width: 300px;
+	height: 150px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.university_profile_top_text_box {
+	position: relative;
+	left: 310px; /* must be the same width as picture + 10 */
+	height: 100%;
+}
+
+.university_profile_top_text_name {
+	font-size: 35px;
+	font-weight: lighter;
+	position: relative;
+	top: 0px;
+}
+
+.university_profile_top_text_location {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.university_profile_top_lower_text {
+	text-align: left;
+	position: absolute;
+	left: 0px;
+	bottom: 5px;
+}
+
+.university_profile_top_text_est {
+	font-size: 14px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* BOX SECTION */
+/* ########################################## */
+.university_profile_box_spacer {
+	height: 15px;
+}
+
+.university_profile_box_spacer_top {
+	height: 21px;
+}
+
+.university_profile_box_title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* RANK SECTION */
+/* ########################################## */
+.university_profile_rank_box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.university_profile_rank_element {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	width: 100px;
+}
+
+.university_profile_rank_element_icon {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75px;
+	height: 75px;
+}
+
+.university_profile_rank_element_rank {
+	text-align: center;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.university_profile_rank_element_date {
+	text-align: center;
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* STUDENT STATISTICS SECTION */
+/* ########################################## */
+.university_profile_student_stats_box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.university_profile_student_stats_element {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	width: 100px;
+}
+
+.university_profile_student_stats_element_icon {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75px;
+	height: 75px;
+}
+
+.university_profile_student_stats_element_stat {
+	text-align: center;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.university_profile_student_stats_element_name {
+	text-align: center;
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* REPUTATION SECTION */
+/* ########################################## */
+.university_profile_reputation_box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+	text-align: center;
+}
+
+.university_profile_reputation_element {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	width: 100px;
+}
+
+.university_profile_reputation_element_icon {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75px;
+	height: 75px;
+}
+
+.university_profile_reputation_element_name {
+	text-align: center;
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* RELEVANT WIKI SECTION */
+/* ########################################## */
+.university_profile_relevant_wiki_box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+	text-align: left;
+}
+
+.university_profile_relevant_wiki_element {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	width: 45%;
+	padding-left: 10px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ########################################## */
+/* CONTACT SECTION */
+/* ########################################## */
+.university_profile_contact_box {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #E5E5E5;
+	background-color: #ffffff;
+	text-align: left;
+}
+
+.university_profile_contact_element {
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	width: 45%;
+	padding-left: 10px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: lighter;
+}
 /**************************************
 
   			Uni list resuts 
@@ -1845,40 +1805,33 @@ li.error {
 /***************************************************************************************
 *				Quickfind
 ****************************************************************************************/
-
-.quickfind_bar
-{
+.quickfind_bar {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
-	
 	height: 25px;
 	width: 300px;
 	top: 2px;
-	
 	border: solid 1px #DBDBDB;
 	border-radius: 3px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-left: 9px;
 	padding-right: 9px;
-	
 	font-size: 15px;
 	font-family: Helvetica;
 	font-style: thin;
 	background-color: #FFFFFF;
-	
 	outline: none;
 }
 
 .quickfind_bar:focus {
 	outline: none;
-    box-shadow: 0 0 3px #9ecaed;
-    border-color: #204AA1;
+	box-shadow: 0 0 3px #9ecaed;
+	border-color: #204AA1;
 }
 
-.quickfind_tool
-{
+.quickfind_tool {
 	background: url("../images/icon/searchtool.png") no-repeat;
 	background-size: 100%;
 	color: transparent;
@@ -1912,8 +1865,8 @@ li.error {
 }
 
 .autocomplete-suggestions {
-	border: 1px solid rgba(0,0,0,0.25);
-	box-shadow: 0px 1px 5px rgba(0,0,0,0.25);
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
 	border-radius: 3px;
 	font-family: Helvetica;
 	font-size: 15px;
@@ -1926,32 +1879,28 @@ li.error {
 	box-sizing: border-box;
 }
 
-.autocomplete-suggestion
-{
+.autocomplete-suggestion {
 	padding: 5px;
 }
 
 .autocomplete-suggestion.autocomplete-selected:hover,.autocomplete-suggestion:hover
-{
+	{
 	cursor: pointer;
-	
 	background-color: #E5E5E5;
 }
 
 .autocomplete-suggestion strong,.autocomplete-suggestion strong:hover,.autocomplete-suggestion.autocomplete-selected strong
-{
+	{
 	color: #204AA1;
 	font-weight: bold;
 }
 
-.autocomplete-suggestion div
-{
+.autocomplete-suggestion div {
 	display: inline-block;
 	vertical-align: middle;
 }
 
-.autoCompleteSuggestionImg
-{
+.autoCompleteSuggestionImg {
 	height: 18px;
 	line-height: 18px;
 	width: 18px;
@@ -1959,38 +1908,34 @@ li.error {
 	margin-right: 10px;
 }
 
-.autoCompleteSuggestionImg.university
-{
+.autoCompleteSuggestionImg.university {
 	background: url("../images/icon/universityfacade.png");
 }
 
-.autoCompleteSuggestionImg.course
-{
+.autoCompleteSuggestionImg.course {
 	background: url("../images/icon/courses.png");
 }
 
-.autoCompleteSuggestionImg.professor
-{
+.autoCompleteSuggestionImg.professor {
 	background: url("../images/icon/professor_quality.png");
 }
 /***************************************************************************************
 *				Homepage
 ****************************************************************************************/
-.home_image_bg
-{
+.home_image_bg {
 	position: relative;
 	top: -20px;
 	width: 100%;
 	margin-bottom: -40px;
 }
-.home_splitter
-{
+
+.home_splitter {
 	position: relative;
 	top: -40px;
 	width: 100%;
 }
-.home_black_fill
-{
+
+.home_black_fill {
 	background-color: #000000;
 	position: absolute;
 	top: 0px;
