@@ -34,12 +34,13 @@ import ca.bendo.form.entity.forum.ForumQuestionForm;
 @Transactional
 public class WikiController
 {
-	
+
 	@Autowired
 	private WikiDAO wikiDAO;
 
 	@Autowired
 	private FormattedContentDAO contentDAO;
+
 	/**
 	 * 
 	 * @param request
@@ -52,7 +53,7 @@ public class WikiController
 		request.setAttribute("wikis", wikiDAO.listSort());
 		return "views/wiki/list";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -65,14 +66,14 @@ public class WikiController
 		request.setAttribute("wiki", wikiDAO.getById(id));
 		return "views/wiki/show";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
-	//@Secured("wiki.create")
+	// @Secured("wiki.create")
 	@RequestMapping(value = "/wiki/add", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
@@ -80,17 +81,18 @@ public class WikiController
 		request.setAttribute("replyEntity", replyEntity);
 		return "views/wiki/add";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
-	//TODO validate title
-	//@Secured("wiki.create")
+	// TODO validate title
+	// @Secured("wiki.create")
 	@RequestMapping(value = "/wiki/add", method = RequestMethod.POST)
-	public String addPost(final HttpServletRequest request, @Valid final ForumQuestionForm frq, final BindingResult result)
+	public String addPost(final HttpServletRequest request, @Valid final ForumQuestionForm frq,
+			final BindingResult result)
 	{
 		FormattedContent content = new FormattedContent();
 		content.setContent(frq.getContent());
@@ -101,18 +103,18 @@ public class WikiController
 		wiki.setContent(content);
 		contentDAO.add(content);
 		wikiDAO.add(wiki);
-		//request.setAttribute("title",  wiki.getTitle());
-		//request.setAttribute("content", frq.getContent().toString());
+		// request.setAttribute("title", wiki.getTitle());
+		// request.setAttribute("content", frq.getContent().toString());
 		return "redirect:../show/" + wiki.getId();
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
-	//@Secured("wiki.edit")
+	// @Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/edit/{id}", method = RequestMethod.GET)
 	public String edit(@PathVariable(value = "id") long id, final HttpServletRequest request)
 	{
@@ -124,17 +126,18 @@ public class WikiController
 		request.setAttribute("title", title);
 		return "views/wiki/edit";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
-	//TODO validate title
-	//@Secured("wiki.edit")
+	// TODO validate title
+	// @Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/edit/{id}", method = RequestMethod.POST)
-	public String editPost(@PathVariable(value = "id") final long id, final HttpServletRequest request, @Valid final ForumQuestionForm frq, final BindingResult result)
+	public String editPost(@PathVariable(value = "id") final long id, final HttpServletRequest request,
+			@Valid final ForumQuestionForm frq, final BindingResult result)
 	{
 		Wiki wiki = wikiDAO.getById(id);
 		FormattedContent content = wiki.getContent();
@@ -147,14 +150,14 @@ public class WikiController
 		wikiDAO.saveOrUpdate(wiki);
 		return "redirect:../show/" + wiki.getId();
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
-	//@Secured("wiki.delete")
+	// @Secured("wiki.delete")
 	@RequestMapping(value = "/wiki/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable(value = "id") long id, final HttpServletRequest request)
 	{

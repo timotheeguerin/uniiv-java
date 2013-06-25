@@ -106,7 +106,8 @@ public class TestUniversityDAO
 
 		System.out.println("Time : " + time);
 	}
-
+	
+	
 	/**
 	 * Test the search method.
 	 * 
