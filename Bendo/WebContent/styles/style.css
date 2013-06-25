@@ -210,9 +210,6 @@ h1 span {
 	width: 5px;
 }
 
-
-
-
 /*--------------------------------
 
 	buttons SIGN UP LOGIN 
@@ -2376,4 +2373,22 @@ li.error {
 .autoCompleteSuggestionImg.professor
 {
 	background: url("../images/icon/professor_quality.png");
+}
+/***************************************************************************************
+*				Homepage
+****************************************************************************************/
+.home_image_bg
+{
+	position: relative;
+	top: -20px;
+	width: 100%;
+	margin-bottom: -40px;
+}
+.home_black_fill
+{
+	background-color: #000000;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
 }
