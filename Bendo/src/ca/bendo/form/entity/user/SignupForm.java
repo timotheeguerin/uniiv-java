@@ -9,8 +9,6 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.form.FieldValidator;
@@ -26,8 +24,8 @@ import ca.bendo.form.constaints.FieldMatch;
  * 
  * 
  */
-//@Service
-//@Transactional
+// @Service
+// @Transactional
 @FieldMatch(first = "password", second = "passwordCheck")
 public class SignupForm
 {
@@ -72,8 +70,9 @@ public class SignupForm
 	 * @return boolean if the two password are equals
 	 */
 	@AssertTrue(message = "error.email.unique")
-	public boolean checkEmailAvailable()
+	private boolean checkEmailAvailable()
 	{
+		System.out.println("CHECK EMAIL");
 		return userDAO.isEmailAvailable(email);
 	}
 
