@@ -72,7 +72,7 @@ public class UniversityQuery
 	{
 		setupLocation(criteria);
 		setupPrograms(criteria);
-		// setupSoftRatingCriterion(criteria);
+		setupSoftRating(criteria);
 	}
 
 	/**
@@ -83,13 +83,12 @@ public class UniversityQuery
 	{
 		criteria.createAlias("location", "locationAlias");
 		criteria.createAlias("locationAlias.country", "country", JoinType.LEFT_OUTER_JOIN);
-	
+
 		Disjunction disjonction = Restrictions.disjunction();
 
 		if (countries.size() > 0)
 		{
 			disjonction.add(Restrictions.in("country.id", countries));
-
 		}
 		if (states.size() > 0)
 		{
@@ -109,26 +108,25 @@ public class UniversityQuery
 	{
 		criteria.createAlias("programs", "program");
 		criteria.createAlias("program.faculty", "faculty");
-		Criterion programCriterion = Restrictions.or();
-		Criterion facultyCriterion = Restrictions.or();
+		Disjunction disjonction = Restrictions.disjunction();
 
 		if (faculties.size() > 0)
 		{
-			facultyCriterion = Restrictions.in("faculty.id", faculties);
+			disjonction.add(Restrictions.in("faculty.id", faculties));
 		}
 		if (programs.size() > 0)
 		{
-			programCriterion = Restrictions.in("program.id", programs);
+			disjonction.add(Restrictions.in("program.id", programs));
 		}
 
-		criteria.add(Restrictions.or(programCriterion, facultyCriterion));
+		criteria.add(disjonction);
 	}
 
 	/**
 	 * @param criteria
 	 *            Query criteria
 	 */
-	public void setupSoftRatingCriterion(final Criteria criteria)
+	public void setupSoftRating(final Criteria criteria)
 	{
 		Criterion ratingsCriterion = null;
 
