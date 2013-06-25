@@ -23,7 +23,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
-import ca.bendo.form.entity.NewUserEntity;
+import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.user.element.HashedPassword;
 
 /**
@@ -105,17 +105,17 @@ public class User
 
 	/**
 	 * 
-	 * @param newUser
+	 * @param signupForm
 	 *            New user to initialise from
 	 * @param state
 	 *            User state when adding
 	 */
-	public User(final NewUserEntity newUser, final UserState state)
+	public User(final SignupForm signupForm, final UserState state)
 	{
-		this.email = newUser.getEmail();
-		this.password = new HashedPassword(newUser.getPassword());
-		this.firstName = newUser.getFirstName();
-		this.lastName = newUser.getLastName();
+		this.email = signupForm.getEmail();
+		this.password = new HashedPassword(signupForm.getPassword());
+		this.firstName = signupForm.getFirstName();
+		this.lastName = signupForm.getLastName();
 		this.state = state;
 	}
 

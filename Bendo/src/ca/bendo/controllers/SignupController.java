@@ -2,16 +2,19 @@ package ca.bendo.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ca.bendo.db.entity.lang.Language;
+import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.form.handler.user.NewUserHandler;
 import ca.bendo.head.HeadManager;
 import ca.bendo.session.UserSession;
@@ -48,12 +51,11 @@ public class SignupController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Response
+	 * 
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String signup(final HttpServletRequest request, final HttpServletResponse response)
+	public String signup(final HttpServletRequest request)
 	{
 		// init(request);
 		Translator translator = Translator.getTranslator(request);
@@ -64,7 +66,7 @@ public class SignupController
 			return "redirect:" + translator.getLink("home", languageId);
 		}
 		request.setAttribute("containserr", false);
-		return signupPage(request, response);
+		return signupPage(request, new SignupForm());
 	}
 
 	/**
@@ -72,12 +74,15 @@ public class SignupController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Response
+	 * @param signupForm
+	 *            Signup form to be validated
+	 * @param result
+	 *            form errors
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String signupPost(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupPost(final HttpServletRequest request, @Valid final SignupForm signupForm,
+			final BindingResult result)
 	{
 		Translator translator = Translator.getTranslator(request);
 
@@ -89,30 +94,32 @@ public class SignupController
 			return "redirect:" + translator.getLink("home", languageId);
 		}
 
-		if (newUserHandler.handle(request))
+		if (result.hasErrors())
 		{
-			String url = "/confirmation";
-			String param = "?alertmsg=alert_info_signupcomplete";
-			return "redirect:" + translator.translateUrl(url + param, languageId);
+			return signupPage(request, signupForm);
 		}
+		newUserHandler.handle(request, signupForm);
 
-		return signupPage(request, response);
+		String url = "/confirmation";
+		String param = "?alertmsg=alert_info_signupcomplete";
+		return "redirect:" + translator.translateUrl(url + param, languageId);
+
 	}
 
 	/**
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Response
+	 * @param signupForm
+	 *            Signup form
 	 * @return Jsp page
 	 */
-	public String signupPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String signupPage(final HttpServletRequest request, final SignupForm signupForm)
 	{
 
 		System.out.println("HomeController: Passing through... signup");
 		((HeadManager) request.getAttribute("head")).getTitle().setTitle("Signup");
-
+		request.setAttribute("signupForm", signupForm);
 		request.setAttribute("displaySignupOnLoad", true);
 		return "views/signup";
 	}
