@@ -373,22 +373,22 @@ h1 span {
 .nav_login_text
 {
 	position: relative;
-	font-family: Verdana;
 	font-size: 14;
+	font-weight: lighter;
 }
 
 .nav_logout_text
 {
 	position: relative;
-	font-family: Verdana;
 	font-size: 14;
+	font-weight: lighter;
 }
 
 .nav_signup_text
 {
 	position: relative;
-	font-family: Verdana;
 	font-size: 14;
+	font-weight: lighter;
 }
 
 .nav_left_side
@@ -444,8 +444,8 @@ h1 span {
 .nav_links
 {
 	position: relative;
-	font-family: Verdana;
 	font-size: 14;
+	font-weight: lighter;
 }
 
 .btn_log_in_text:hover {
@@ -1220,434 +1220,6 @@ hr.official-standard-ratings-separation {
 		endColorstr='#4a68a8', GradientType=0 );
 	/* IE6-9 */
 }
-
-/*********************************************
-
-			University Page
-
-**********************************************/
-.uni_large_container {
-	position: relative;
-	margin-top: 30px;
-	width: 100%;
-	margin-top: 30px;
-}
-
-/* LEFT CONTAINER */
-.uni_left_container {
-	float: left;
-	position: relative;
-	width: 250px;
-}
-
-.uni_photos {
-	position: relative;
-	width: 100%;
-}
-
-.uni_main_img {
-	border: 7px solid #ffffff;
-	-moz-border-bottom-left-radius: 8px;
-	-moz-border-bottom-right-radius: 8px;
-	-moz-border-top-right-radius: 8px;
-	-moz-border-top_left-radius: 8px;
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	position: relative;
-	margin: auto;
-	height: 250px;
-	width: 100%;
-}
-
-.btn_uni_photos {
-	background-color: #FFFFFF;
-	display: block;
-	position: relative;
-	margin-left: 0;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.btn_uni_photos_text {
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background: #3259ab; /* Old browsers */
-	background: -moz-linear-gradient(top, #3259AB 0%, #4a68a8 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
-		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
-		                                        startColorstr='#3259ab',
-		endColorstr='#4a68a8', GradientType=0 );
-	/* IE6-9 */
-	-moz-border-bottom-color: #204AA1;
-	border-bottom-color: #204AA1;
-	-moz-border-bottom-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	-moz-border-bottom-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	-moz-border-bottom-style: solid;
-	border-bottom-width: 1px;
-	-moz-border-bottom-width: 1px;
-	border-left-color: #204AA1;
-	-moz-border-left-color: #204AA1;
-	border-left-style: solid;
-	-moz-border-left-style: solid;
-	border-left-width: 1px;
-	-moz-border-left-width: 1px;
-	border-right-color: #204AA1;
-	-moz-border-right-color: #204AA1;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #204AA1;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Helvetica Neue", Arial;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: thin;
-	height: 30px;
-	padding-bottom: 5px;
-	padding-top: 12px;
-	text-align: center;
-	text-decoration: none;
-	width: 100%;
-	word-spacing: 2px;
-}
-
-.btn_uni_photos_text:hover {
-	background: #4a68a8; /* Old browsers */
-	background: -moz-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4a68a8),
-		color-stop(100%, #3259ab) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #4a68a8 0%, #3259ab 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
-		                                        startColorstr='#4a68a8',
-		endColorstr='#3259ab', GradientType=0 );
-	/* IE6-9 */
-}
-
-.btn_uni_photos_text:active {
-	background: #3259ab; /* Old browsers */
-	background: -moz-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3259ab),
-		color-stop(100%, #4a68a8) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #3259ab 0%, #4a68a8 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
-		                                        startColorstr='#3259ab',
-		endColorstr='#4a68a8', GradientType=0 );
-	/* IE6-9 */
-}
-
-.uni_statistics {
-	background: #FFFFFF;
-	display: inline-block;
-	border: solid 1px #E5E5E5;
-	outline: 0;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box; /* Firefox */
-	-webkit-box-sizing: border-box; /* Safari old */
-	padding: 20px;
-	height: auto;
-	list-style: none;
-	position: relative;
-	width: 100%;
-}
-
-.uni_statistics h2 {
-	font-weight: bold;
-}
-
-.uni_statistics li {
-	margin-bottom: 20px;
-}
-
-.stat_display {
-	display: inline-block;
-	font-weight: thin;
-	font-size: 0.8em;
-	vertical-align: middle; /*********************QUE FAAA**************/
-}
-
-.uni_stat_icon {
-	margin-right: 20px;
-	display: inline-block;
-	height: 50px;
-	line-height: 50px;
-	vertical-align: middle;
-	width: 50px;
-}
-
-.other_stat_text {
-	display: inline-block;
-	width: 150px;
-}
-
-.uni_stat_icon_result {
-	display: inline-block;
-	height: 50px;
-	width: 50px;
-}
-
-/* CENTRAL CONTAINER */
-.uni_central_container {
-	display: inline-block;
-	padding: 0 0 20px 20px;
-	position: relative;
-	width: 500px;
-}
-
-.uni_heading_container {
-	margin: 30px 0 20px 0px;
-	width: 100%;
-}
-
-.uni_heading_container h1 {
-	text-align: center;
-}
-
-.university_heading {
-	color: #3B5CA1;
-	font-family: Arial, "Helvetica Neue";
-	font-size: 35px;
-	font-weight: bold;
-	width: 100%;
-}
-
-.uni_description {
-	display: inline-block;
-	margin-top: 20px;
-	position: relative;
-	height: 150px;
-	text-align: justify;
-	width: auto;
-}
-
-.uni_description div {
-	display: inline-block;
-	margin-left: 10px;
-}
-
-.uni_description h2 {
-	font-weight: bold;
-}
-
-.uni_heading_ratings {
-	font-weight: bold;
-	position: relative;
-}
-
-.uni_ratings_container {
-	background: #FFFFFF;
-	display: inline-block;
-	border: solid 1px #E5E5E5;
-	outline: 0;
-	display: inline-block;
-	padding: 10px 20px 20px 20px;
-	height: auto;
-	margin-top: 23px;
-	position: relative;
-	width: 450px;
-}
-
-.uni_ratings_icons {
-	margin: 10px;
-	width: 420px;
-}
-
-.uni_ratings_icons ul li {
-	display: inline-block;
-	margin: 5px 8px 5px 8px;
-}
-
-.uni_rating_score {
-	display: block;
-	position: relative;
-	margin-top: 20px;
-	text-align: center;
-}
-
-.uni_ratings_icons img {
-	height: 50px;
-	width: 50px;
-}
-
-/***************************
-
-   UNI CENTRAL CONTAINER 
-
-****************************/
-.comment_content p {
-	text-align: justify;
-}
-
-.uni_reviews {
-	margin: 10px 10px 10px 10px;
-	overflow: visible;
-}
-
-.uni_reviews_display h2 {
-	font-weight: bold;
-}
-
-.review_top {
-	display: inline-block;
-	margin-bottom: 10px;
-	width: 100%;
-}
-
-.review_top a:link {
-	font-color: #204AA1;
-	font-size: 0.9em;
-}
-
-.review_top a:hover {
-	text-decoration: underline;
-}
-
-.review_score {
-	display: inline-block;
-	width: 50px;
-}
-
-.rating_review_score {
-	float: left;
-	width: 70px;
-}
-
-.review_info {
-	margin-bottom: 10px;
-}
-
-.date_posted {
-	font-size: 0.9em;
-}
-
-.uni_reviews_display {
-	padding: 10px 10px 10px 10px;
-}
-
-.review_content {
-	background-color: #FFF;
-	height: auto;
-	padding: 15px;
-	margin-bottom: 15px;
-	width: 500px;
-	overflow: visible;
-}
-
-.icon_review {
-	height: 50px;
-	margin: 10px 10px 0 0;
-	width: 50px;
-}
-
-/***************************
-
-   UNI RIGHT CONTAINER 
-
-****************************/
-.uni_right_container {
-	border-bottom-color: #204AA1;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-bottom-style: solid;
-	border-bottom-width: 4px;
-	border-left-color: #204AA1;
-	border-left-style: solid;
-	border-left-width: 4px;
-	border-right-color: #204AA1;
-	border-right-style: solid;
-	border-right-width: 4px;
-	border-top-color: #204AA1;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-top-style: solid;
-	border-top-width: 4px;
-	float: right;
-	height: 190px;
-	position: relative;
-	width: 190px;
-}
-
-.featured_uni {
-	margin: 15px 10px 5px 10px;
-}
-
-.featured_uni li {
-	line-height: 23px;
-}
-
-.featured_uni a:hover {
-	text-decoration: underline;
-}
-
-.banner_ads {
-	background-color: #204AA1;
-	border-bottom-color: #204AA1;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-bottom-style: solid;
-	border-bottom-width: 4px;
-	border-left-color: #204AA1;
-	border-left-style: solid;
-	border-left-width: 4px;
-	border-right-color: #204AA1;
-	border-right-style: solid;
-	border-right-width: 4px;
-	border-top-color: #204AA1;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	border-top-style: solid;
-	border-top-width: 4px;
-	float: right;
-	height: 400px;
-	margin-top: 50px;
-	position: relative;
-	text-align: center;
-	width: 190px;
-}
-
-.text_banner_ads {
-	margin: auto;
-	width: 150px;
-}
-
-.text_banner_ads h3 {
-	margin-top: 170px;
-	color: #FFFFFF;
-}
 /**************************************
 
   			NEW UNI PAGE
@@ -1692,15 +1264,15 @@ hr.official-standard-ratings-separation {
 	}
 	.university_profile_top_text_name
 	{
-		font-family: Verdana;
 		font-size: 35px;
+		font-weight: lighter;
 		position: relative;
 		top: 0px;
 	}
 	.university_profile_top_text_location
 	{
-		font-family: Verdana;
 		font-size: 20px;
+		font-weight: lighter;
 	}
 	.university_profile_top_lower_text
 	{
@@ -1711,8 +1283,8 @@ hr.official-standard-ratings-separation {
 	}
 	.university_profile_top_text_est
 	{
-		font-family: Verdana;
 		font-size: 14px;
+		font-weight: lighter;
 	}
 	/* ########################################## */
 	/* BOX SECTION */
@@ -1728,8 +1300,8 @@ hr.official-standard-ratings-separation {
 	.university_profile_box_title
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 32px;
+		font-weight: lighter;
 	}
 	/* ########################################## */
 	/* RANK SECTION */
@@ -1765,14 +1337,14 @@ hr.official-standard-ratings-separation {
 	.university_profile_rank_element_rank
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 20px;
+		font-weight: lighter;
 	}
 	.university_profile_rank_element_date
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 12px;
+		font-weight: lighter;
 	}
 	/* ########################################## */
 	/* STUDENT STATISTICS SECTION */
@@ -1808,14 +1380,14 @@ hr.official-standard-ratings-separation {
 	.university_profile_student_stats_element_stat
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 20px;
+		font-weight: lighter;
 	}
 	.university_profile_student_stats_element_name
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 12px;
+		font-weight: lighter;
 	}
 	/* ########################################## */
 	/* REPUTATION SECTION */
@@ -1851,8 +1423,35 @@ hr.official-standard-ratings-separation {
 	.university_profile_reputation_element_name
 	{
 		text-align: center;
-		font-family: Verdana;
 		font-size: 12px;
+		font-weight: lighter;
+	}
+	/* ########################################## */
+	/* RELEVANT WIKI SECTION */
+	/* ########################################## */
+	.university_profile_relevant_wiki_box
+	{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid;
+		border-color: #E5E5E5;
+		background-color: #ffffff;
+		text-align: left;
+	}
+	.university_profile_relevant_wiki_element
+	{
+		display: inline-block;
+		position: relative;
+		top: 15px;
+		width: 45%;
+		padding-left: 10px;
+		text-align: left;
+		font-size: 12px;
+		font-weight: lighter;
 	}
 	/* ########################################## */
 	/* CONTACT SECTION */
@@ -1878,8 +1477,8 @@ hr.official-standard-ratings-separation {
 		width: 45%;
 		padding-left: 10px;
 		text-align: left;
-		font-family: Verdana;
 		font-size: 12px;
+		font-weight: lighter;
 	}
 /**************************************
 
