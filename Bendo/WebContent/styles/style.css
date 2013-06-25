@@ -1983,6 +1983,12 @@ li.error {
 	width: 100%;
 	margin-bottom: -40px;
 }
+.home_splitter
+{
+	position: relative;
+	top: -40px;
+	width: 100%;
+}
 .home_black_fill
 {
 	background-color: #000000;
