@@ -98,7 +98,7 @@ public class SignupController
 		{
 			return signupPage(request, signupForm);
 		}
-		newUserHandler.handle(request, signupForm);
+		//newUserHandler.handle(request, signupForm);
 
 		String url = "/confirmation";
 		String param = "?alertmsg=alert_info_signupcomplete";
