@@ -3,15 +3,18 @@
  */
 package ca.bendo.db.dao;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Table;
 
+import org.hibernate.Criteria;
 import org.hibernate.Filter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bendo.db.entity.forum.ForumGroupType;
@@ -65,7 +68,21 @@ public class HibernateDAO<T>
 	{
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
-		return getSession().createCriteria(type).list();
+		return getSession().createCriteria(type).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+	}
+
+	/**
+	 * @param ids
+	 *            List of all the ids of the university to return
+	 * @return list all the entity with the given ids
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> listWithIds(final Collection<Long> ids)
+	{
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+		return getSession().createCriteria(type).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
+				.add(Restrictions.in("id", ids)).list();
 	}
 
 	/**
