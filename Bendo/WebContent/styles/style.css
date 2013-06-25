@@ -36,9 +36,13 @@ html,body {
 #content {
 	margin: auto;
 	padding-top: 60px;
-	width: 980px;
 	padding-bottom: 40px;
 	overflow-y: auto;
+}
+
+#content.content_margin
+{
+	width: 980px;
 }
 
 .front-image {

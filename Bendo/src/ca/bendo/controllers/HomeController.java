@@ -46,6 +46,7 @@ public class HomeController
 		System.out.println("HomeController: Passing through...");
 
 		request.getAttribute("translator");
+		request.setAttribute("contentMargin", false);
 
 		Properties p = new Properties();
 		p.setProperty("test1", "test1value");
