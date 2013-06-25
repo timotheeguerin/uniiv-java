@@ -65,9 +65,11 @@ public class UniversityDAO extends HibernateDAO<University>
 		query.setupQuery(criteria);
 		List<Long> ids = (List<Long>) criteria.setProjection(Projections.property("id"))
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
 		return listByIds(ids);
 	}
+
+	
+
 
 	/**
 	 * @param universityName
