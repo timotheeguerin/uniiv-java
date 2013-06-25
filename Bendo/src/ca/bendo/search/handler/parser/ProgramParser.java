@@ -8,6 +8,7 @@ import java.util.List;
 
 import ca.bendo.db.entity.program.UniversityFaculty;
 import ca.bendo.db.entity.program.Program;
+import ca.bendo.form.FieldValidator;
 
 /**
  * @author Timothée Guérin
@@ -31,7 +32,12 @@ public class ProgramParser extends ParameterParser
 	/**
 	 * 
 	 */
-	private List<UniversityFaculty> faculties = new ArrayList<UniversityFaculty>();
+	private List<Long> faculties = new ArrayList<Long>();
+
+	/**
+	 * 
+	 */
+	private List<Long> programs = new ArrayList<Long>();
 
 	/*
 	 * (non-Javadoc)
@@ -46,39 +52,32 @@ public class ProgramParser extends ParameterParser
 		{
 			for (String s : parameter.split(","))
 			{
-				UniversityFaculty faculty = new UniversityFaculty();
-				String facultyStr = "";
 				s.trim();
 
-				// If any program are specified
+				// If any state are specified
 				if (s.contains("(") && s.endsWith(")"))
 				{
-
-					facultyStr = s.substring(0, s.indexOf("("));
-
 					String programsStr = s.substring(s.indexOf("(") + 1, s.length() - 1);
 
 					for (String programStr : programsStr.split(";"))
 					{
-						if (isNumeric(programStr))
+						if (FieldValidator.isInt(programStr))
 						{
-							Program program = new Program();
-							program.setId(Integer.parseInt(programStr));
-							faculty.addProgram(program);
+							programs.add(Long.parseLong(programStr));
 						}
 					}
 
 				} else
 				{
-					// If there is only the faculty
-					facultyStr = s;
+
+					// If there is only the country
+					if (FieldValidator.isInt(s))
+					{
+
+						faculties.add(Long.parseLong(s));
+					}
 				}
 
-				if (isNumeric(facultyStr))
-				{
-					faculty.setId(Integer.parseInt(facultyStr));
-					faculties.add(faculty);
-				}
 			}
 		}
 	}
@@ -86,9 +85,35 @@ public class ProgramParser extends ParameterParser
 	/**
 	 * @return the faculties
 	 */
-	public List<UniversityFaculty> getFaculties()
+	public List<Long> getFaculties()
 	{
 		return faculties;
 	}
-	
+
+	/**
+	 * @param faculties
+	 *            the faculties to set
+	 */
+	public void setFaculties(final List<Long> faculties)
+	{
+		this.faculties = faculties;
+	}
+
+	/**
+	 * @return the programs
+	 */
+	public List<Long> getPrograms()
+	{
+		return programs;
+	}
+
+	/**
+	 * @param programs
+	 *            the programs to set
+	 */
+	public void setPrograms(final List<Long> programs)
+	{
+		this.programs = programs;
+	}
+
 }

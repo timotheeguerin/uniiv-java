@@ -15,6 +15,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.Subqueries;
+import org.hibernate.sql.JoinType;
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.Type;
 
@@ -52,7 +53,12 @@ public class UniversityQuery
 	/**
 	 * 
 	 */
-	private List<UniversityFaculty> faculties = new ArrayList<UniversityFaculty>();
+	private List<Long> faculties = new ArrayList<Long>();
+
+	/**
+	 * 
+	 */
+	private List<Long> programs = new ArrayList<Long>();
 
 	/**
 	 * 
@@ -66,7 +72,7 @@ public class UniversityQuery
 	public void getRestrictions(final Criteria criteria)
 	{
 		setupLocation(criteria);
-		// setupProgramCriterion(criteria);
+		getProgramRestrictions(criteria);
 		// setupSoftRatingCriterion(criteria);
 	}
 
@@ -78,17 +84,18 @@ public class UniversityQuery
 	public Criterion setupLocation(final Criteria criteria)
 	{
 		Criterion locations = null;
-		criteria.createAlias("location.country", "country");
+		criteria.createAlias("location", "locationAlias");
+		criteria.createAlias("locationAlias.country", "country", JoinType.LEFT_OUTER_JOIN);
 		Criterion countryCriterion = Restrictions.or();
 		Criterion stateCriterion = Restrictions.or();
-		
+
 		if (countries.size() > 0)
 		{
 			countryCriterion = Restrictions.in("country.id", countries);
 		}
 		if (states.size() > 0)
 		{
-			criteria.createAlias("location.state", "state");
+			criteria.createAlias("locationAlias.state", "state", JoinType.LEFT_OUTER_JOIN);
 			stateCriterion = Restrictions.in("state.id", states);
 		}
 
@@ -99,52 +106,27 @@ public class UniversityQuery
 	/**
 	 * @param criteria
 	 *            Query criteria
-	 * @return The generated program criterion
+	 * @return The generated location criterion
 	 */
-	public Criterion setupProgramCriterion(final Criteria criteria)
+	public Criterion getProgramRestrictions(final Criteria criteria)
 	{
-		Criterion programsCriterion = null;
-		criteria.createAlias("programs", "programMap");
-		criteria.createAlias("programs.program", "program");
+		Criterion locations = null;
+		criteria.createAlias("programs", "program");
 		criteria.createAlias("program.faculty", "faculty");
+		Criterion programCriterion = Restrictions.or();
+		Criterion facultyCriterion = Restrictions.or();
 
-		for (UniversityFaculty faculty : faculties)
+		if (faculties.size() > 0)
 		{
-			Criterion facultyRestriction = Restrictions.eq("faculty.id", faculty.getId());
-
-			if (faculty.hasPrograms())
-			{
-				Criterion programsRestriction = null;
-				for (Program program : faculty.getPrograms())
-				{
-					Criterion programRestriction = Restrictions.eq("program.id", program.getId());
-					if (programsRestriction == null)
-					{
-						programsRestriction = programRestriction;
-					} else
-					{
-						programsRestriction = Restrictions.or(programsRestriction, programRestriction);
-					}
-				}
-
-				facultyRestriction = Restrictions.and(facultyRestriction, programsRestriction);
-
-			}
-			if (programsCriterion == null)
-			{
-				programsCriterion = facultyRestriction;
-			} else
-			{
-				programsCriterion = Restrictions.or(programsCriterion, facultyRestriction);
-			}
-
+			facultyCriterion = Restrictions.in("faculty.id", faculties);
 		}
-		if (programsCriterion == null)
+		if (programs.size() > 0)
 		{
-			programsCriterion = Restrictions.or();
+			programCriterion = Restrictions.in("program.id", programs);
 		}
-		criteria.add(programsCriterion);
-		return programsCriterion;
+
+		criteria.add(Restrictions.or(programCriterion, facultyCriterion));
+		return locations;
 	}
 
 	/**
@@ -235,7 +217,7 @@ public class UniversityQuery
 	/**
 	 * @return the faculties
 	 */
-	public List<UniversityFaculty> getFaculties()
+	public List<Long> getFaculties()
 	{
 		return faculties;
 	}
@@ -244,9 +226,26 @@ public class UniversityQuery
 	 * @param faculties
 	 *            the faculties to set
 	 */
-	public void setFaculties(final List<UniversityFaculty> faculties)
+	public void setFaculties(final List<Long> faculties)
 	{
 		this.faculties = faculties;
+	}
+
+	/**
+	 * @return the programs
+	 */
+	public List<Long> getPrograms()
+	{
+		return programs;
+	}
+
+	/**
+	 * @param programs
+	 *            the programs to set
+	 */
+	public void setPrograms(List<Long> programs)
+	{
+		this.programs = programs;
 	}
 
 	/**

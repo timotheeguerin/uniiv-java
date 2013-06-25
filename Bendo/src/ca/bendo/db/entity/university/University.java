@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,6 +22,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import ca.bendo.db.entity.location.Location;
+import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.rating.UniversityGrade;
 
 /**
@@ -69,6 +72,13 @@ public class University
 	@JoinColumn(name = "id_uni_location")
 	private Location location;
 
+	/**
+	 * 
+	 */
+	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
+	@JoinTable(name = "uni_university_program", joinColumns = { @JoinColumn(name = "id_uni_university") },
+			inverseJoinColumns = { @JoinColumn(name = "id_uni_program") })
+	private List<Program> programs;
 	/**
 	 * 
 	 */
@@ -170,7 +180,8 @@ public class University
 	}
 
 	/**
-	 * @param key the key to set
+	 * @param key
+	 *            the key to set
 	 */
 	public void setKey(final String key)
 	{
