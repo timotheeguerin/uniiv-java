@@ -1979,15 +1979,25 @@ li.error {
 .home_image_bg
 {
 	position: relative;
+	display: block;
 	top: -20px;
 	width: 100%;
-	margin-bottom: -40px;
 }
 .home_splitter
 {
-	position: relative;
-	top: -40px;
-	width: 100%;
+	display: block;
+    position: relative;
+	top: -50px;
+	margin-top: -1em;
+	height: 100;
+}
+.home_splitter_pixel
+{
+	margin-left: -1454;
+}
+.home_splitter_perc
+{
+	margin-left: 22.5%;
 }
 .home_black_fill
 {
