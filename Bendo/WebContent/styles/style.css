@@ -2003,8 +2003,9 @@ li.error {
 }
 .home_splitter_container
 {
-	position: relative;
+	position: absolute;
 	height: 100px;
 	width: 100%;
-	top: -70px;
+	margin-top: -70px;
+	margin-bottom: 20px;
 }
