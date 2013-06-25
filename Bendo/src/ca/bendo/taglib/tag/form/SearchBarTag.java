@@ -87,7 +87,7 @@ public class SearchBarTag extends TagSupport
 
 		String placeholderStr = "placeholder='" + translator.translate(placeholder, lanuageId) + "'";
 		String ajaxUrl = "data-ajax-href='" + getFormUrl() + "/ajaxlist' ";
-		result.append("<input name='query' type='text' class='SubmitSearchUniProfCourse searchAutcomplete'");
+		result.append("<input name='query' type='text' class='quickfind_bar searchAutcomplete'");
 		result.append(placeholderStr).append(" ");
 		result.append(ajaxUrl);
 		result.append("/>");
@@ -107,7 +107,7 @@ public class SearchBarTag extends TagSupport
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
 		Long languageId = Language.loadId(request);
 		String value = "value='" + translator.translate("search", languageId) + "'";
-		result.append("<input name='submitbtn' class='btn_get_started_text' type='submit' ");
+		result.append("<input name='submitbtn' class='quickfind_tool' type='submit' ");
 		result.append(value).append(" ");
 		result.append("/>");
 

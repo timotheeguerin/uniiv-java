@@ -660,26 +660,6 @@ li.head_row_prof {
 	width: auto;
 }
 
-.autoCompleteSuggestionImg {
-	height: 18px;
-	line-height: 18px;
-	width: 18px;
-	background-size: 100% !important;
-	margin-right: 10px;
-}
-
-.autoCompleteSuggestionImg.university {
-	background: url("../images/icon/universityfacade.png");
-}
-
-.autoCompleteSuggestionImg.course {
-	background: url("../images/icon/courses.png");
-}
-
-.autoCompleteSuggestionImg.professor {
-	background: url("../images/icon/professor_quality.png");
-}
-
 .NewProfRatingReview:hover {
 	background: #4a68a8; /* Old browsers */
 	background: -moz-linear-gradient(top, #4a68a8 0%, #3259ab 100%);
@@ -896,60 +876,6 @@ li.row_prof,.row_prof ul {
 
 /******************************
 
-		autocomplete ! 
-
-********************************/
-.UniProfSearchAutoComplete {
-	width: auto;
-}
-
-#query.autocomplete.universityautocomplete {
-	background: #FFFFFF;
-	display: inline-block;
-	padding: 9px;
-	margin-top: 20px;
-	border: solid 1px #E5E5E5;
-	outline: 0;
-	font: normal 13px "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
-	font-size: 20px;
-	maxlength: 150;
-	height: 40px;
-	width: 400px;
-}
-
-.autocomplete-suggestions {
-	background: #FFFFFF;
-	border: solid 1px #E5E5E5;
-	font: normal 15px "Helvetica Neue", Arial, Verdana, Tahoma, sans-serif;
-	outline: 0;
-	height: auto;
-	max-height: 200px;
-	width: 400px;
-}
-
-.autocomplete-suggestion {
-	padding: 5px;
-}
-
-.autocomplete-suggestion.autocomplete-selected:hover,.autocomplete-suggestion:hover
-	{
-	cursor: pointer;
-}
-
-.autocomplete-suggestion strong,.autocomplete-suggestion strong:hover,.autocomplete-suggestion.autocomplete-selected strong
-	{
-	color: #204AA1;
-	font-weight: bold;
-}
-
-.autocomplete-suggestion div {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-
-/******************************
-
 		RECAPTCHA ! 
 
 ********************************/
@@ -989,26 +915,6 @@ li.row_prof,.row_prof ul {
 
 .ThankSignupMessage {
 	margin-bottom: 20px;
-}
-
-/******************************
-
-	SearchUniversity.jsp
-
-********************************/
-.SubmitSearchUniProfCourse {
-	background: #FFFFFF;
-	display: inline-block;
-	border: solid 1px #DBDBDB;
-	font-size: 15px;
-	font-family: "Helvetica Neue", Arial, Verdana, Sans-ms;
-	font-style: thin;
-	height: 30px;
-	vertical-align: middle;
-	width: 400px;
-	padding: 2px 9px 2px 9px;
-	outline: 0;
-	vertical-align: middle;
 }
 
 /***********************************
