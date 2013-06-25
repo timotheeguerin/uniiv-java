@@ -39,34 +39,35 @@
 					<div>
 						<c:import url="views/error.jsp" />
 					</div>
-					<form class="signup_container input_style_1" action="<b:tlink value="signup"/>" method="POST">
+					<f:form commandName="signupForm" cssClass="signup_container input_style_1" method="POST">
+						<jsp:attribute name="action">
+							<b:tlink value="signup" />
+						</jsp:attribute>
+						<jsp:body>
 						<div class="form_line">
 							<div class="two_input">
-								<input id="signup_first_name_input" value="<c:out value="${newUser.firstName}"/>" name="first_name" type="text"
-									placeholder='<b:translator value="first_name" />' required="required"
-								/>
+								<f:input id="signup_first_name_input" path="firstName" name="first_name" type="text" placeholder='<b:translator value="first_name" />'
+										required="required"
+									/>
 
 							</div>
 							<div class="two_input">
-								<input id="signup_last_name_input" value="<c:out value="${newUser.lastName}"/>" name="last_name" type="text"
-									placeholder='<b:translator value="last_name"/>' required="required"
-								/>
+								<f:input id="signup_last_name_input" path="lastName" name="last_name" type="text" placeholder='<b:translator value="last_name"/>' required="required" />
 
 							</div>
 						</div>
 						<div class="form_line">
-							<input id="signup_email_input" value="<c:out value="${newUser.email}"/>" name="email" type="text" placeholder='<b:translator value="email"/>'
-								required="required" title='<b:translator value="email_format"/>'
-							>
-
+							<f:input id="signup_email_input" path="email" name="email" type="text" placeholder='<b:translator value="email"/>' required="required"
+									title='<b:translator value="email_format"/>'
+								/>
 						</div>
 						<div class="form_line">
 							<div class="two_input">
-								<b:password required="true" name="password" value="" placeholder="password" />
+								<f:password path="password" />
 							</div>
 
 							<div class="two_input">
-								<b:password required="true" name="password_check" value="" placeholder="password_check" />
+								<f:password path="passwordCheck" />
 							</div>
 						</div>
 						<div class="form_line">
@@ -82,7 +83,8 @@
 								<input name="submitbtn" type="submit" value="<b:translator value="signup"/>" />
 							</div>
 						</div>
-					</form>
+						</jsp:body>
+					</f:form>
 				</div>
 			</div>
 

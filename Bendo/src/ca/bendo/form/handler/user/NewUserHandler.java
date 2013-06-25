@@ -26,6 +26,7 @@ import ca.bendo.db.entity.user.UserState;
 import ca.bendo.db.entity.user.confirmation.UserConfirmation;
 import ca.bendo.form.FormErrorHandler;
 import ca.bendo.form.entity.NewUserEntity;
+import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;
 import ca.bendo.user.ConfirmationHandler;
@@ -79,36 +80,16 @@ public class NewUserHandler
 	 * 
 	 * @param request
 	 *            request
+	 * 
+	 * @param signupForm
+	 *            Signup Form
 	 * @return boolean
 	 */
-	public boolean handle(final HttpServletRequest request)
+	public boolean handle(final HttpServletRequest request, final SignupForm signupForm)
 	{
-		long languageId = Language.loadId(request);
-		/**
-		 * List of all errors in the signup form.
-		 */
-		NewUserEntity newUserEntity = new NewUserEntity();
-
-		newUserEntity.setup(request);
-
-		if (!userDAO.isEmailAvailable(newUserEntity.getEmail()))
-		{
-			FormErrorHandler.getFormErrorHandler(request).addError(NewUserEntity.class,
-					translator.translate("err_email_unique", languageId));
-			newUserEntity.setEmail(null);
-			return false;
-		}
-		if (!newUserEntity.isValid())
-		{
-			System.out.println("Invalid user signup");
-			newUserEntity.setupErrorsDisplay(request);
-			newUserEntity.setupForDisplay(request);
-			request.setAttribute("newUserEntity", newUserEntity);
-			return false;
-		}
 
 		UserState state = userStateDAO.getByState("wait_email_confirmation");
-		User user = new User(newUserEntity, state);
+		User user = new User(signupForm, state);
 
 		UserPermission waitEmailPermission = permissionDAO.getByName("wait_email_confirmation");
 		user.addPermission(waitEmailPermission);
