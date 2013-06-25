@@ -1,7 +1,7 @@
 <span class="nav_frame">
 	<a href="<b:url value="/"/>" title="<b:translator value="home_logo" />">
 		<!-- <span class="nav_logo">uniiv</span> -->
-		<img src="<c:url value="/images/logo/logosimple.png"/>" alt="<b:translator value="home_logo" />" class="nav_logo" />
+		<img src="<c:url value="/images/logo/smallhat.png"/>" alt="<b:translator value="home_logo" />" class="nav_logo" />
 	</a>
 
 	<span class="nav_left_side">
