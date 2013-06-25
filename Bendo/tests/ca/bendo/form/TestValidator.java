@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.form.entity.forum.ForumReplyForm;
+import ca.bendo.form.entity.user.SignupForm;
 
 /**
  * @author Timothée Guérin
@@ -58,10 +59,13 @@ public class TestValidator
 	@Test
 	public void manufacturerIsNull()
 	{
-		ForumReplyForm reply = new ForumReplyForm();
-		reply.setContent("oisjfoiejo");
-
-		Set<ConstraintViolation<ForumReplyForm>> constraintViolations = validator.validate(reply);
+		SignupForm form = new SignupForm();
+		form.setFirstName("First");
+		form.setLastName("Last");
+		form.setEmail("timothee.guerin@outlook.com");
+		form.setPassword("password1");
+		form.setPasswordCheck("password1");
+		Set<ConstraintViolation<SignupForm>> constraintViolations = validator.validate(form);
 
 		System.out.println(constraintViolations.iterator().next().getMessage());
 
