@@ -98,7 +98,7 @@ public class UniversityTDS
 	{
 		universityDAO.setLanguageId(languageId);
 
-		return universityDAO.search(query);
+		return universityDAO.filter(query);
 	}
 
 	/**

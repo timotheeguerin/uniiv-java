@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Disjunction;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.Subqueries;
@@ -19,8 +20,6 @@ import org.hibernate.sql.JoinType;
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.Type;
 
-import ca.bendo.db.entity.program.Program;
-import ca.bendo.db.entity.program.UniversityFaculty;
 import ca.bendo.db.entity.university.University;
 
 /**
@@ -69,48 +68,45 @@ public class UniversityQuery
 	 * @param criteria
 	 *            Query criteria
 	 */
-	public void getRestrictions(final Criteria criteria)
+	public void setupQuery(final Criteria criteria)
 	{
 		setupLocation(criteria);
-		getProgramRestrictions(criteria);
+		setupPrograms(criteria);
 		// setupSoftRatingCriterion(criteria);
 	}
 
 	/**
 	 * @param criteria
 	 *            Query criteria
-	 * @return The generated location criterion
 	 */
-	public Criterion setupLocation(final Criteria criteria)
+	public void setupLocation(final Criteria criteria)
 	{
-		Criterion locations = null;
 		criteria.createAlias("location", "locationAlias");
 		criteria.createAlias("locationAlias.country", "country", JoinType.LEFT_OUTER_JOIN);
-		Criterion countryCriterion = Restrictions.or();
-		Criterion stateCriterion = Restrictions.or();
+	
+		Disjunction disjonction = Restrictions.disjunction();
 
 		if (countries.size() > 0)
 		{
-			countryCriterion = Restrictions.in("country.id", countries);
+			disjonction.add(Restrictions.in("country.id", countries));
+
 		}
 		if (states.size() > 0)
 		{
 			criteria.createAlias("locationAlias.state", "state", JoinType.LEFT_OUTER_JOIN);
-			stateCriterion = Restrictions.in("state.id", states);
+			disjonction.add(Restrictions.in("state.id", states));
 		}
 
-		criteria.add(Restrictions.or(countryCriterion, stateCriterion));
-		return locations;
+		criteria.add(disjonction);
+
 	}
 
 	/**
 	 * @param criteria
 	 *            Query criteria
-	 * @return The generated location criterion
 	 */
-	public Criterion getProgramRestrictions(final Criteria criteria)
+	public void setupPrograms(final Criteria criteria)
 	{
-		Criterion locations = null;
 		criteria.createAlias("programs", "program");
 		criteria.createAlias("program.faculty", "faculty");
 		Criterion programCriterion = Restrictions.or();
@@ -126,15 +122,13 @@ public class UniversityQuery
 		}
 
 		criteria.add(Restrictions.or(programCriterion, facultyCriterion));
-		return locations;
 	}
 
 	/**
 	 * @param criteria
 	 *            Query criteria
-	 * @return The generated softRating criterion
 	 */
-	public Criterion setupSoftRatingCriterion(final Criteria criteria)
+	public void setupSoftRatingCriterion(final Criteria criteria)
 	{
 		Criterion ratingsCriterion = null;
 
@@ -177,7 +171,6 @@ public class UniversityQuery
 
 		criteria.add(Restrictions.or(Subqueries.lt(ACCEPTABLE_MEAN, innerQuery), Subqueries.eq(0, innerQuery)));
 
-		return ratingsCriterion;
 	}
 
 	/**
@@ -243,7 +236,7 @@ public class UniversityQuery
 	 * @param programs
 	 *            the programs to set
 	 */
-	public void setPrograms(List<Long> programs)
+	public void setPrograms(final List<Long> programs)
 	{
 		this.programs = programs;
 	}

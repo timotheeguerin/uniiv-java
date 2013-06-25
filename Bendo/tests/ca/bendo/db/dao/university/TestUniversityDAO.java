@@ -67,13 +67,13 @@ public class TestUniversityDAO
 	/**
 	 * Test the search method.
 	 * 
-	 * @see UniversityDAO#search(List)
+	 * @see UniversityDAO#filter(List)
 	 */
 	@Test
 	public void testSearch()
 	{
 		LocationParser parser = new LocationParser();
-		parser.parse("9,55");
+		parser.parse("54");
 
 		ProgramParser progParser = new ProgramParser();
 		progParser.parse("1,2");
@@ -88,38 +88,23 @@ public class TestUniversityDAO
 		query.setSoftRatings(ratingParser.getSoftRatings());
 
 		long start = System.currentTimeMillis();
-		
-		List<Long> ids = universityDAO.restrictWithLocation(query);
-		ids = universityDAO.restrictWithPrograms(ids, query);
-		List<University> universities = universityDAO.listWithIds(ids);
-		
 
-		
+		List<University> universities = universityDAO.filter(query);
+
 		long end = System.currentTimeMillis();
-		long time1 = end - start;
-
-		start = System.currentTimeMillis();
-		
-		List<Long> ids2 = universityDAO.search2(query);
-		List<University> universities2 = universityDAO.listWithIds(ids2);
-		
-		end = System.currentTimeMillis();
-		long time2 = end - start;
+		long time = end - start;
 
 		System.out.println("------------------------------------------------------");
 		System.out.println("Search ");
-		for (Long university : ids)
+		for (University university : universities)
 		{
-			// System.out.printf("%-4s %-40s %s\n", university.getId(),
-			// university.getName(), university.getWebsite());
+			System.out.printf("%-4s %-40s %s\n", university.getId(), university.getName(), university.getWebsite());
 			System.out.printf("%-4s\n", university);
-			// assertTrue(university.getLocation() != null);
+			assertTrue(university.getLocation() != null);
 
 		}
 
-		System.out.println("Time 1: " + time1);
-		System.out.println("Time 2: " + time2);
-		System.out.println("CMP: " + universities.size() + " - " + universities2.size());
+		System.out.println("Time : " + time);
 	}
 
 	/**

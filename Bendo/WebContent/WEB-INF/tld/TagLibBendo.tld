@@ -34,12 +34,6 @@
 	</tag>
 
 	<tag>
-		<name>qsbar</name>
-		<tagclass>ca.bendo.taglib.tag.QuickSearchBarTag</tagclass>
-		<!-- <info>Quick search bar</info> -->
-	</tag>
-
-	<tag>
 		<name>translator</name>
 		<tagclass>ca.bendo.taglib.tag.TranslatorTag</tagclass>
 		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->
