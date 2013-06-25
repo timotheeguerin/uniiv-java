@@ -51,20 +51,6 @@
 				</a>
 			</c:otherwise>
 		</c:choose>
+		<span class="nav_spacer"></span>
 	</span>
 </span>
-
-
-<%-- <span id="navLogo">
-	<a href='<b:url value="/"/>' title="<b:translator value=""/>">
-		<img src="<c:url value="/images/logo/logoheader.png"/>" alt="<b:translator value="home_logo" />" class="navLogo" />
-	</a>
-</span>
-	
-<span class="nav_spacer"></span>
-
-<div class="FormHomeSearch">
-	<b:searchbar placeholder="search_for_universities_places_other" type="all" />
-</div>
-
- --%>
