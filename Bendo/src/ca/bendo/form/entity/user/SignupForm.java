@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.form.constaints.FieldMatch;
+import ca.bendo.form.constaints.Unique;
 
 /**
  * @author Timothée Guérin
@@ -26,8 +27,8 @@ import ca.bendo.form.constaints.FieldMatch;
  * 
  * 
  */
-//@Service
-//@Transactional
+ @Service
+ @Transactional
 @FieldMatch(first = "password", second = "passwordCheck")
 public class SignupForm
 {
@@ -53,6 +54,7 @@ public class SignupForm
 	 * 
 	 */
 	@Email
+	@Unique
 	private String email;
 
 	/**
@@ -71,10 +73,11 @@ public class SignupForm
 	 * 
 	 * @return boolean if the two password are equals
 	 */
-	@AssertTrue(message = "error.email.unique")
-	public boolean checkEmailAvailable()
+	@AssertTrue
+	private boolean isValid()
 	{
-		return userDAO.isEmailAvailable(email);
+		//return userDAO.isEmailAvailable(email);
+		return true;
 	}
 
 	/**
