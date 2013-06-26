@@ -62,7 +62,6 @@ public class LoginController extends GlobalController
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String login(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
 		UserSession session = UserSession.getSession(request);
 		if (session.isLogin())
