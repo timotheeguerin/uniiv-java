@@ -25,7 +25,6 @@
 			<div class="login_element_container">
 				<b:translator var="enterPassword" value="enter_password" />
 				<f:password class="login_form_element" path="password" placeholder="${enterPassword}" />
-				
 			</div>
 			
 			
