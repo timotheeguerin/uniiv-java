@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -92,6 +93,7 @@ public class LoginController extends GlobalController
 	{
 		Long languageId = Language.loadId(request);
 		UserSession session = UserSession.getSession(request);
+
 		if (session.isLogin())
 		{
 
@@ -109,6 +111,7 @@ public class LoginController extends GlobalController
 			return "redirect:" + url + params;
 		} else
 		{
+			result.addError(new ObjectError("login", translator.translate("error.login", languageId)));
 			return loginPage(request, loginForm);
 		}
 	}
