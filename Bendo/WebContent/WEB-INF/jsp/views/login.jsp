@@ -1,7 +1,5 @@
 <div class="login_frame">
-	<div class="login_head_message">
-		Log In
-	</div>
+	<div class="login_head_message">Log In</div>
 	<f:form commandName="loginForm" method="POST">
 		<jsp:attribute name="action">
 			<b:tlink value="login" />
@@ -20,7 +18,7 @@
 			<div class="login_spacer"></div>
 			
 			<div class="login_element_container">
-				<f:input class="login_form_element"  placeholder="Please enter your password." path="password" />
+				<f:password class="login_form_element" placeholder="Please enter your password." path="password" />
 			</div>
 			
 			<div class="login_spacer_big"></div>
