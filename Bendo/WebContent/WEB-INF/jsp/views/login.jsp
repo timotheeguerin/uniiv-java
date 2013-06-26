@@ -18,7 +18,10 @@
 			<div class="login_spacer"></div>
 			
 			<div class="login_element_container">
-				<f:password class="login_form_element" placeholder="Please enter your password." path="password" />
+				<f:password class="login_form_element" path="password" />
+					<jsp:attribute name="placeholder">
+						<b:translator value="enter_password" />
+					</jsp:attribute>
 			</div>
 			<div class="login_error_text">	
 				<f:errors path="password" />
