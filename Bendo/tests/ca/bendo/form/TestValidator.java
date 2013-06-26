@@ -64,10 +64,10 @@ public class TestValidator
 		form.setLastName("Last");
 		form.setEmail("timothee.guerin@outlook.com");
 		form.setPassword("password1");
-		form.setPasswordCheck("password1");
+		form.setPasswordCheck("password2");
 		Set<ConstraintViolation<SignupForm>> constraintViolations = validator.validate(form);
-
-		System.out.println(constraintViolations.iterator().next().getMessage());
+		ConstraintViolation<SignupForm> error = constraintViolations.iterator().next();
+		System.out.println(error.getPropertyPath() + " - " + error.getMessage());
 
 	}
 

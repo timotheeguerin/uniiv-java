@@ -30,7 +30,7 @@ import ca.bendo.form.constaints.type.UniqueType;
  */
 @Service
 @Transactional
-@FieldMatch(first = "password", second = "passwordCheck")
+@FieldMatch(first = "password", second = "passwordCheck", message = "password.same")
 public class SignupForm
 {
 	/**
@@ -55,7 +55,7 @@ public class SignupForm
 	 * 
 	 */
 	@Email
-	@Unique(type = UniqueType.USER_EMAIL)
+	// @Unique(type = UniqueType.USER_EMAIL)
 	private String email;
 
 	/**
