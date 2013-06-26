@@ -2,30 +2,37 @@
 	<div class="login_head_message">Log In</div>
 	<f:form commandName="loginForm" method="POST">
 		<jsp:attribute name="action">
-			<b:tlink value="login" />
+			<b:url value="/login" />
 		</jsp:attribute>
+
+		
 		<jsp:body>
-			
-			
 			<div class="login_spacer"></div>
 			
-			<div class="login_element_container">
-				<f:input class="login_form_element" placeholder="Please enter your email." path="email" />
-			</div>
 			<div class="login_error_text">	
 				<f:errors path="email" />
 			</div>
+			<div class="login_element_container">
+				<f:input class="login_form_element" path="email" >
+					<jsp:attribute name="placeholder">
+						<b:translator value="enter_email" />
+					</jsp:attribute>
+				</f:input>
+			</div>
+			
 			<div class="login_spacer"></div>
 			
-			<div class="login_element_container">
-				<f:password class="login_form_element" path="password" />
-					<jsp:attribute name="placeholder">
-						<b:translator value="enter_password" />
-					</jsp:attribute>
-			</div>
 			<div class="login_error_text">	
 				<f:errors path="password" />
 			</div>
+			<div class="login_element_container">
+				<f:password class="login_form_element" path="password" >
+					<jsp:attribute name="placeholder">
+						<b:translator value="enter_password" />
+					</jsp:attribute>
+				</f:password>
+			</div>
+			
 			
 			<div class="login_spacer_big"></div>
 			

@@ -18,7 +18,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element">Forename</div>
-				<f:input class="signup_form_element" path="firstName" name="first_name" type="text" required="required" />
+				<f:input class="signup_form_element" path="firstName" placeholder="Please enter your forename." name="first_name" type="text" required="required" />
 			</div>
 	
 			<div class="signup_spacer"></div>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element">Surname</div>
-				<f:input class="signup_form_element" path="lastName" name="last_name" type="text" required="required" />
+				<f:input class="signup_form_element" path="lastName" placeholder="Please enter your surname." name="last_name" type="text" required="required" />
 			</div>
 		
 			<div class="signup_spacer"></div>

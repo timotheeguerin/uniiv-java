@@ -46,7 +46,7 @@
 				<c:otherwise>
 					<c:import url="/signup"></c:import>
 				
-					<a href="#signup_modal" rel="leanModal" data-tab="#modal_login_tab_content" class="btn_log_in">
+					<a href='<b:url value="/login/"/>'>
 						<span class="nav_login_text"><b:translator value="login" /></span>
 					</a>
 					
