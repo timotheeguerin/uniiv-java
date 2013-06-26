@@ -61,13 +61,13 @@ public class SignupForm
 	/**
 	 * 
 	 */
-	@Pattern(regexp = FieldValidator.PASSWORD_REGEX)
+	@Pattern(regexp = FieldValidator.PASSWORD_REGEX, message = "error.password.regex")
 	private String password;
 
 	/**
 	 * 
 	 */
-	@Pattern(regexp = FieldValidator.PASSWORD_REGEX)
+	@Pattern(regexp = FieldValidator.PASSWORD_REGEX, message = "error.password.regex")
 	private String passwordCheck;
 
 	/**
