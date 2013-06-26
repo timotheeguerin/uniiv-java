@@ -7,7 +7,7 @@
 -------------------------------*/
 * {
 	margin: 0;
-	padding: 0;
+	padding: 0; 
 	font-weight: 200;
 	color: #4F4D4D;
 	list-style: none;
@@ -449,9 +449,11 @@ h1 span {
 
 .nav_logo_frame
 {
+	position: relative;
 	display: inline-block;
 	vertical-align: middle;
 	width: 25px;
+	top: -1px;
 }
 
 .nav_links
@@ -1878,7 +1880,7 @@ li.error {
 	
 	font-size: 15px;
 	font-family: Helvetica;
-	font-style: thin;
+	font-weight: lighter;
 	background-color: #FFFFFF;
 	
 	outline: none;
@@ -2026,6 +2028,7 @@ li.error {
 ****************************************************************************************/
 .signup_frame
 {
+	color: #4F4D4D;
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -2057,6 +2060,7 @@ li.error {
 
 .signup_form_element
 {
+	color: #4F4D4D;
 	position: absolute;
 	display: inline-block;
 	width: 65%;
@@ -2085,6 +2089,7 @@ li.error {
 
 .signup_error_text
 {
+	color: #4F4D4D;
 	position: relative;
 	display: inline-block;
 	width: 99%;
@@ -2121,12 +2126,26 @@ li.error {
 
 .signup_tac_link
 {
-	font-style: italic;
-	font-variant: small-caps;
-	font-weight: lighter;
+	color: #204AA1;
+}
+
+.signup_tac_link a
+{
+	color: #204AA1;
+	text-transform: lowercase;
 }
 
 .signup_tac_link:hover
+{
+	text-decoration: underline;
+}
+
+.signup_login_link a
+{
+	color: #204AA1;
+}
+
+.signup_login_link:hover
 {
 	text-decoration: underline;
 }
