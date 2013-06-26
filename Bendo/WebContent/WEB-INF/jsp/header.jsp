@@ -7,7 +7,10 @@
 				</a>
 			</div>
 	
-		<span class="nav_left_side">		
+		<span class="nav_left_side">
+		
+			<span class="nav_spacer"></span>
+				
 			<a href="<b:url value="/discover"/>" title="<b:translator value="discover_things" />">
 				<span class="nav_links"><b:translator value="discover" /></span>
 			</a>
@@ -49,7 +52,7 @@
 					
 					<span class="nav_spacer"></span>
 					
-					<a href="#signup_modal" rel="leanModal" class="btn_sign_up" data-tab="#modal_signup_tab_content">
+					<a href='<b:url value="/signup"/>'>
 						<span class="nav_signup_text"><b:translator value="signup" /></span>
 					</a>
 				</c:otherwise>
