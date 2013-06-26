@@ -24,8 +24,6 @@ import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserPermission;
 import ca.bendo.db.entity.user.UserState;
 import ca.bendo.db.entity.user.confirmation.UserConfirmation;
-import ca.bendo.form.FormErrorHandler;
-import ca.bendo.form.entity.NewUserEntity;
 import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;

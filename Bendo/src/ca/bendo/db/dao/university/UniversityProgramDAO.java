@@ -6,7 +6,6 @@ package ca.bendo.db.dao.university;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.transform.ResultTransformer;
 import org.hibernate.transform.Transformers;
 
 import ca.bendo.db.dao.HibernateDAO;

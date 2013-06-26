@@ -6,7 +6,6 @@ package ca.bendo.form.constaints.validator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import org.omg.PortableInterceptor.USER_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bendo.db.dao.user.UserDAO;

@@ -3,6 +3,8 @@
  */
 package ca.bendo.head;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -35,6 +37,17 @@ public class HeadManager
 		title = new Title();
 		title.setTitlePrefix("Uniiv");
 		title.setSeparator(" - ");
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Http request
+	 * @return headmanager loaded from the request
+	 */
+	public static HeadManager load(final HttpServletRequest request)
+	{
+		return (HeadManager) request.getAttribute("head");
 	}
 
 	/**
