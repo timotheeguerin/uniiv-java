@@ -8,6 +8,9 @@
 		</jsp:attribute>
 		<jsp:body>
 			<div class="signup_error_text">		
+				<f:errors path="passwordCheck" />
+			</div>
+			<div class="signup_error_text">		
 				<f:errors path="firstName" />
 			</div>
 			<div class="signup_element_container">
