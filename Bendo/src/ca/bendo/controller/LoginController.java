@@ -111,7 +111,7 @@ public class LoginController extends GlobalController
 			return "redirect:" + url + params;
 		} else
 		{
-			result.addError(new ObjectError("login", translator.translate("error.login", languageId)));
+			result.addError(new ObjectError("password", translator.translate("error.login", languageId)));
 			return loginPage(request, loginForm);
 		}
 	}
