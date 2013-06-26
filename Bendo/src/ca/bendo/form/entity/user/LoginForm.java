@@ -21,13 +21,14 @@ public class LoginForm
 	/**
 	 * 
 	 */
-	@Email
+	@NotEmpty(message = "error.empty")
+	@Email(message = "error.email")
 	private String email;
 
 	/**
 	 * 
 	 */
-	@NotEmpty
+	@NotEmpty(message = "error.empty")
 	private String password;
 
 	/**

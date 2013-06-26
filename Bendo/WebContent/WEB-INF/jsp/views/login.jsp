@@ -5,20 +5,23 @@
 			<b:tlink value="login" />
 		</jsp:attribute>
 		<jsp:body>
-			<div class="login_error_text">	
-				<f:errors path="password" />
-			</div>
+			
 			
 			<div class="login_spacer"></div>
 			
 			<div class="login_element_container">
 				<f:input class="login_form_element" placeholder="Please enter your email." path="email" />
 			</div>
-	
+			<div class="login_error_text">	
+				<f:errors path="email" />
+			</div>
 			<div class="login_spacer"></div>
 			
 			<div class="login_element_container">
 				<f:password class="login_form_element" placeholder="Please enter your password." path="password" />
+			</div>
+			<div class="login_error_text">	
+				<f:errors path="password" />
 			</div>
 			
 			<div class="login_spacer_big"></div>
