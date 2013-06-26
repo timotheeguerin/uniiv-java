@@ -2,6 +2,9 @@
 <c:set var="error" value="false" scope="page" />
 
 <div class="signup_frame">
+	<div class="signup_head_message">
+		Sign Up
+	</div>
 	<f:form commandName="signupForm" method="POST">
 		<jsp:attribute name="action">
 			<b:tlink value="signup" />
@@ -33,7 +36,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element">Email</div>
-				<f:input class="signup_form_element" path="email" name="email" type="text" required="required" />
+				<f:input class="signup_form_element" placeholder="Please enter your email." path="email" name="email" type="text" required="required" />
 			</div>
 			
 			<div class="signup_spacer"></div>
@@ -42,7 +45,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element">Password</div>
-				<f:password class="signup_form_element" path="password" />
+				<f:password class="signup_form_element" placeholder="Please enter a password at least 8 characters long." path="password" />
 			</div>
 			
 			<div class="signup_spacer"></div>
@@ -50,8 +53,8 @@
 				<f:errors path="passwordCheck" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">Password Check</div>
-				<f:password class="signup_form_element" path="passwordCheck" />
+				<div class="signup_text_element">Password</div>
+				<f:password class="signup_form_element" placeholder="Please re-enter your password." path="passwordCheck" />
 			</div>
 			
 			
