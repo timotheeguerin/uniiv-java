@@ -5,7 +5,7 @@
 			<b:url value="/login" />
 		</jsp:attribute>
 
-		
+
 		<jsp:body>
 			<div class="login_spacer"></div>
 			
@@ -13,11 +13,8 @@
 				<f:errors path="email" />
 			</div>
 			<div class="login_element_container">
-				<f:input class="login_form_element" path="email" >
-					<jsp:attribute name="placeholder">
-						<b:translator value="enter_email" />
-					</jsp:attribute>
-				</f:input>
+				<b:translator var="enterEmail" value="enter_email" />	
+				<f:input class="login_form_element" path="email" placeholder="${enterEmail}" />
 			</div>
 			
 			<div class="login_spacer"></div>
@@ -26,11 +23,9 @@
 				<f:errors path="password" />
 			</div>
 			<div class="login_element_container">
-				<f:password class="login_form_element" path="password" >
-					<jsp:attribute name="placeholder">
-						<b:translator value="enter_password" />
-					</jsp:attribute>
-				</f:password>
+				<b:translator var="enterPassword" value="enter_password" />
+				<f:password class="login_form_element" path="password" placeholder="${enterPassword}" />
+				
 			</div>
 			
 			

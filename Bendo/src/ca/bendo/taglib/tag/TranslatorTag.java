@@ -28,7 +28,10 @@ import ca.bendo.translation.translation.Translator;
  */
 public class TranslatorTag extends TagSupport implements DynamicAttributes
 {
-
+	/**
+	 * 
+	 */
+	private String var;
 	/**
 	 * Value to translate.
 	 */
@@ -51,8 +54,6 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	@Override
 	public int doStartTag() throws JspException
 	{
-		System.out.println("PAGE: " + ((HttpServletRequest) pageContext.getRequest()).getRequestURI());
-		System.out.println("TRANSLATE: " + value);
 		JspWriter out = pageContext.getOut();
 		Translator trans = (Translator) pageContext.getRequest().getAttribute("translator");
 		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
@@ -72,6 +73,10 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 		}
 		try
 		{
+			if (var != null)
+			{
+				pageContext.setAttribute(var, result);
+			}
 			out.print(result);
 		} catch (IOException e)
 		{
@@ -111,4 +116,20 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 		this.value = value;
 	}
 
+	/**
+	 * @return the var
+	 */
+	public String getVar()
+	{
+		return var;
+	}
+
+	/**
+	 * @param var the var to set
+	 */
+	public void setVar(final String var)
+	{
+		this.var = var;
+	}
+	
 }

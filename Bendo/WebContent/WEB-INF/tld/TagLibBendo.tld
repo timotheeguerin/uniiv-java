@@ -2,7 +2,7 @@
 
 <taglib version="2.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
-	
+
 	<tlibversion>1.0</tlibversion>
 	<jspversion>1.1</jspversion>
 	<shortname>BendoTags</shortname>
@@ -39,6 +39,12 @@
 		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->
 		<attribute>
 			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- <info>Translation key</info> -->
+		</attribute>
+		<attribute>
+			<name>var</name>
 			<type>java.lang.String</type>
 			<rtexprvalue>true</rtexprvalue>
 			<!-- <info>Translation key</info> -->
