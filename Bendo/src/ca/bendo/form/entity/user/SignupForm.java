@@ -16,6 +16,7 @@ import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.form.constaints.FieldMatch;
 import ca.bendo.form.constaints.Unique;
+import ca.bendo.form.constaints.type.UniqueType;
 
 /**
  * @author Timothée Guérin
@@ -27,8 +28,8 @@ import ca.bendo.form.constaints.Unique;
  * 
  * 
  */
- @Service
- @Transactional
+@Service
+@Transactional
 @FieldMatch(first = "password", second = "passwordCheck")
 public class SignupForm
 {
@@ -54,7 +55,7 @@ public class SignupForm
 	 * 
 	 */
 	@Email
-	@Unique
+	@Unique(type = UniqueType.USER_EMAIL)
 	private String email;
 
 	/**
@@ -76,7 +77,7 @@ public class SignupForm
 	@AssertTrue
 	private boolean isValid()
 	{
-		//return userDAO.isEmailAvailable(email);
+		// return userDAO.isEmailAvailable(email);
 		return true;
 	}
 
