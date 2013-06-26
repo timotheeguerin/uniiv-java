@@ -18,7 +18,6 @@ import ca.bendo.db.dao.location.CityDAO;
 import ca.bendo.db.dao.location.CountryDAO;
 import ca.bendo.db.dao.university.UniversityDAO;
 import ca.bendo.db.entity.forum.ForumGroup;
-import ca.bendo.db.entity.forum.Tag;
 import ca.bendo.db.entity.forum.mapping.CityGroup;
 import ca.bendo.db.entity.forum.mapping.CountryGroup;
 import ca.bendo.db.entity.forum.mapping.UniversityGroup;

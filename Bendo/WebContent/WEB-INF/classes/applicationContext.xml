@@ -103,7 +103,8 @@
 	</bean>
 	
 	<mvc:interceptors>
-	 <bean class="ca.bendo.user.security.LoginInterceptor" />
+	 <bean class="ca.bendo.controller.interceptor.LoginInterceptor" />
+	 <bean class="ca.bendo.controller.interceptor.TitleInterceptor" />
 	</mvc:interceptors>
 
 	<context:component-scan base-package="ca.bendo" />

@@ -13,6 +13,7 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+import ca.bendo.form.constaints.type.UniqueType;
 import ca.bendo.form.constaints.validator.UniqueValidator;
 
 /**
@@ -21,6 +22,8 @@ import ca.bendo.form.constaints.validator.UniqueValidator;
  * 
  *          <b>Unique</b>
  *          <p>
+ * 
+ *          Validation annotation that check if the field is used
  *          </p>
  * 
  * 
@@ -36,6 +39,12 @@ public @interface Unique
 	 * 
 	 */
 	String message() default "Alias name is already in use.";
+
+	/**
+	 * 
+	 * @return
+	 */
+	UniqueType type();
 
 	/**
 	 * 

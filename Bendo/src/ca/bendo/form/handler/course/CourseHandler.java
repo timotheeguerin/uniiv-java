@@ -24,7 +24,6 @@ import ca.bendo.db.entity.course.CourseRatingType;
 import ca.bendo.db.entity.course.CourseReview;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.program.Program;
-import ca.bendo.db.entity.program.UniversityProgram;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.form.FieldValidator;
 import ca.bendo.form.entity.course.NewCourseEntity;

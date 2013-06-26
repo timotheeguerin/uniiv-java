@@ -4,7 +4,6 @@
 package ca.bendo.handler.forum;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 

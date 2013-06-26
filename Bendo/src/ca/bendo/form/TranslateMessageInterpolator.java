@@ -7,7 +7,6 @@ import java.util.Locale;
 
 import javax.validation.MessageInterpolator;
 
-import org.hibernate.cfg.annotations.reflection.XMLContext.Default;
 import org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -6,8 +6,6 @@ package ca.bendo.search.handler.parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.bendo.db.entity.program.UniversityFaculty;
-import ca.bendo.db.entity.program.Program;
 import ca.bendo.form.FieldValidator;
 
 /**

@@ -4,11 +4,6 @@
 package ca.bendo.form.entity.confirmation;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
-
-import ca.bendo.annotation.Input;
-import ca.bendo.form.entity.Entity;
-import ca.bendo.form.entity.EntityType;
 
 /**
  * @author Timothée Guérin

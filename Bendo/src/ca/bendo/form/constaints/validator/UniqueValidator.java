@@ -29,15 +29,28 @@ public class UniqueValidator implements ConstraintValidator<Unique, Object>
 	@Autowired
 	private UserDAO userDAO;
 
+	/**
+	 * 
+	 */
+	private Unique annotation;
+
 	@Override
 	public void initialize(final Unique constraintAnnotation)
 	{
-
+		this.annotation = constraintAnnotation;
 	}
 
 	@Override
 	public boolean isValid(final Object value, final ConstraintValidatorContext context)
 	{
-		return userDAO.isEmailAvailable((String) value);
+		switch (annotation.type())
+		{
+		case USER_EMAIL:
+
+			return userDAO.isEmailAvailable((String) value);
+		default:
+			return false;
+		}
+
 	}
 }
