@@ -5,14 +5,17 @@ package ca.bendo.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.db.entity.lang.Language;
+import ca.bendo.form.entity.user.LoginForm;
 import ca.bendo.form.handler.user.LoginHandler;
 import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;
@@ -31,7 +34,11 @@ import ca.bendo.translation.translation.Translator;
 @RequestMapping("/login")
 public class LoginController extends GlobalController
 {
-
+	/**
+	 * 
+	 */
+	@Autowired
+	private Translator translator;
 	/**
 	 * Logger.
 	 */
@@ -64,7 +71,7 @@ public class LoginController extends GlobalController
 		}
 
 		request.setAttribute("containserr", false);
-		return loginPage(request, response);
+		return loginPage(request, new LoginForm());
 	}
 
 	/**
@@ -72,14 +79,18 @@ public class LoginController extends GlobalController
 	 * 
 	 * @param request
 	 *            Request
+	 * @param loginForm
+	 *            LoginForm
+	 * @param result
+	 *            contains form errors
 	 * @param response
 	 *            Response
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String loginPost(final HttpServletRequest request, final HttpServletResponse response)
+	public String loginPost(final HttpServletRequest request, @Valid final LoginForm loginForm,
+			final BindingResult result, final HttpServletResponse response)
 	{
-		Translator translator = Translator.getTranslator(request);
 		Long languageId = Language.loadId(request);
 		UserSession session = UserSession.getSession(request);
 		if (session.isLogin())
@@ -87,8 +98,11 @@ public class LoginController extends GlobalController
 
 			return "redirect:" + translator.getLink("home", languageId);
 		}
-
-		if (loginHandler.handle(request, response))
+		if (result.hasErrors())
+		{
+			return loginPage(request, loginForm);
+		}
+		if (loginHandler.handle(request, loginForm, response))
 		{
 			String referer = request.getHeader("Referer");
 			String url = referer;
@@ -96,7 +110,7 @@ public class LoginController extends GlobalController
 			return "redirect:" + url + params;
 		} else
 		{
-			return loginPage(request, response);
+			return loginPage(request, loginForm);
 		}
 	}
 
@@ -104,14 +118,13 @@ public class LoginController extends GlobalController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Reponse
+	 * @param loginForm
+	 *            LoginForm
 	 * @return Jsp page
 	 */
-	public String loginPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String loginPage(final HttpServletRequest request, final LoginForm loginForm)
 	{
-		request.getAttribute("translator");
-
+		request.setAttribute("loginForm", loginForm);
 		return "views/login";
 	}
 

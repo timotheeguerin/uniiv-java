@@ -48,12 +48,12 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 
 			String msg = context.getDefaultConstraintMessageTemplate();
 			context.disableDefaultConstraintViolation();
-			context.buildConstraintViolationWithTemplate(msg).addPropertyNode(secondFieldName).addConstraintViolation();
+			context.buildConstraintViolationWithTemplate(msg).addPropertyNode(secondFieldName)
+					.addConstraintViolation();
 
 			return firstObj == null && secondObj == null || firstObj != null && firstObj.equals(secondObj);
 		} catch (final Exception ignore)
 		{
-
 		}
 		return true;
 	}

@@ -16,7 +16,7 @@ import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.dao.user.UserSessionCookieDAO;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserSessionCookie;
-import ca.bendo.form.entity.user.LoginEntity;
+import ca.bendo.form.entity.user.LoginForm;
 import ca.bendo.session.UserSession;
 import ca.bendo.user.element.HashedPassword;
 import ca.bendo.utils.security.Crypter;
@@ -53,27 +53,21 @@ public class LoginHandler
 	 *            to set cookies
 	 * @param request
 	 *            Request
+	 * @param loginForm
+	 *            Login form
 	 * @return if the user successfuly login
 	 */
-	public boolean handle(final HttpServletRequest request, final HttpServletResponse response)
+	public boolean handle(final HttpServletRequest request, final LoginForm loginForm,
+			final HttpServletResponse response)
 	{
-		LoginEntity loginEntity = new LoginEntity();
-		loginEntity.setup(request);
-		if (!loginEntity.isValid())
-		{
-			System.out.println("Invalid login");
-			return false;
-		}
 
-		User user = userDAO.getByEmail(loginEntity.getEmail());
+		User user = userDAO.getByEmail(loginForm.getEmail());
 		if (user == null)
 		{
-			System.out.println("No good email");
 			return false;
 		}
-		if (!user.getPassword().match(loginEntity.getPassword()))
+		if (!user.getPassword().match(loginForm.getPassword()))
 		{
-			System.out.println("Password no match");
 			return false;
 		}
 		remeberUser(response, user);
