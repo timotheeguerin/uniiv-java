@@ -7,7 +7,7 @@
 -------------------------------*/
 * {
 	margin: 0;
-	padding: 0;
+	padding: 0; 
 	font-weight: 200;
 	color: #4F4D4D;
 	list-style: none;
@@ -395,8 +395,7 @@ h1 span {
 .nav_left_side
 {
 	display: inline-block;
-	position: absolute;
-	left: 40px;
+	position: relative;
 }
 
 .nav_middle
@@ -409,19 +408,20 @@ h1 span {
 .nav_right_side
 {
 	display: inline-block;
-	position: absolute;
-	right: 5px;
+	position: relative;
+	text-align: right;
+	float: right;
 }
 
 .nav_frame
 {
 	position: fixed;
+	display: block;
 	width: 100%;
 	top: 0;
-	height: 30px;
+	height: 35px;
 	border-bottom: 1px solid;
 	border-color: #dbdbdb;
-	padding-top: 10px;
 	z-index: 999;
 	background-color: #ffffff;
 	background-image: -moz-linear-gradient(#f9f9f9, #ffffff);
@@ -429,17 +429,31 @@ h1 span {
 	background-image: linear-gradient(#f9f9f9, #ffffff)
 }
 
+.nav_in_margin_frame
+{
+	width: 980px;
+	height: 35px;
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 6px;
+}
+
 .nav_logo
 {
-	position: absolute;
-	/* color: #204AA1;
-	font-family: Verdana;
-	font-size: 16;
-	font-weight: 600; */
+	position: relative;
+	display: inline-block;
 	height: 25px;
 	width: 25px;
-	top: 7px;
-	left: 7px;
+}
+
+.nav_logo_frame
+{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 25px;
+	top: -1px;
 }
 
 .nav_links
@@ -1855,7 +1869,7 @@ li.error {
 	
 	height: 25px;
 	width: 300px;
-	top: 2px;
+	top: 4px;
 	
 	border: solid 1px #DBDBDB;
 	border-radius: 3px;
@@ -1866,7 +1880,7 @@ li.error {
 	
 	font-size: 15px;
 	font-family: Helvetica;
-	font-style: thin;
+	font-weight: lighter;
 	background-color: #FFFFFF;
 	
 	outline: none;
@@ -1885,7 +1899,7 @@ li.error {
 	color: transparent;
 	position: absolute;
 	right: 5px;
-	top: 5px;
+	top: 7px;
 	cursor: pointer;
 	display: inline-block;
 	height: 18px;
@@ -1981,7 +1995,7 @@ li.error {
 {
 	position: relative;
 	display: block;
-	top: -20px;
+	top: -25px;
 	width: 100%;
 }
 .home_splitter_circle
@@ -2014,6 +2028,7 @@ li.error {
 ****************************************************************************************/
 .signup_frame
 {
+	color: #4F4D4D;
 	position: relative;
 	display: block;
 	margin-left: auto;
@@ -2021,7 +2036,10 @@ li.error {
 	width: 600px;
 	border: 1px solid #E5E5E5;
 	border-radius: 5px;
-	padding: 20px;
+	padding-top:0px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
 	background-color: #FFFFFF;
 }
 
@@ -2037,10 +2055,12 @@ li.error {
 {
 	margin-top: 7px;
 	width: 20%;
+	font-weight: lighter;
 }
 
 .signup_form_element
 {
+	color: #4F4D4D;
 	position: absolute;
 	display: inline-block;
 	width: 65%;
@@ -2069,11 +2089,13 @@ li.error {
 
 .signup_error_text
 {
+	color: #4F4D4D;
 	position: relative;
 	display: inline-block;
 	width: 99%;
 	height: 20px;
 	text-align: right;
+	font-weight: lighter;
 }
 
 .signup_spacer
@@ -2104,11 +2126,26 @@ li.error {
 
 .signup_tac_link
 {
-	font-style: italic;
-	font-variant: small-caps;
+	color: #204AA1;
+}
+
+.signup_tac_link a
+{
+	color: #204AA1;
+	text-transform: lowercase;
 }
 
 .signup_tac_link:hover
+{
+	text-decoration: underline;
+}
+
+.signup_login_link a
+{
+	color: #204AA1;
+}
+
+.signup_login_link:hover
 {
 	text-decoration: underline;
 }

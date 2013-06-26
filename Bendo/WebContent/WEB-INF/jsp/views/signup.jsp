@@ -8,6 +8,9 @@
 		</jsp:attribute>
 		<jsp:body>
 			<div class="signup_error_text">		
+				<f:errors path="passwordCheck" />
+			</div>
+			<div class="signup_error_text">		
 				<f:errors path="firstName" />
 			</div>
 			<div class="signup_element_container">
@@ -56,7 +59,16 @@
 			
 			<div class="signup_tac">
 				<b:translator value="signup_registration" />
-				<span class="signup_tac_link"><a href="#termsconditions_switch" rel="switch"><b:translator value="terms_of_use" /></a></span>
+				<span class="signup_tac_link"><a href="#termsconditions_switch" rel="switch"><b:translator value="terms_of_use" />.</a></span>
+			</div>
+			
+			<div class="signup_spacer"></div>
+			
+			<div class="signup_tac">
+				If you already have an account, why not 
+				<span class="signup_login_link">
+					<a href="#termsconditions_switch" rel="switch">log in?</a>
+				</span>
 			</div>
 			
 			<div class="signup_spacer_big"></div>
