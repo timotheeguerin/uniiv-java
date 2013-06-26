@@ -6,8 +6,7 @@
 		<jsp:attribute name="action">
 			<b:tlink value="signup" />
 		</jsp:attribute>
-		<jsp:body>		
-			<div class="signup_spacer"></div>
+		<jsp:body>
 			<div class="signup_error_text">		
 				<f:errors path="firstName" />
 			</div>
