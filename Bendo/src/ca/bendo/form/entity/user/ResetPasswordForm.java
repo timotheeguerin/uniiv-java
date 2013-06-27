@@ -3,9 +3,12 @@
  */
 package ca.bendo.form.entity.user;
 
-import ca.bendo.annotation.Input;
-import ca.bendo.form.entity.Entity;
-import ca.bendo.form.entity.EntityType;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+import ca.bendo.form.FieldValidator;
+import ca.bendo.form.constaints.FieldMatch;
 
 /**
  * @author Timothée Guérin
@@ -17,36 +20,37 @@ import ca.bendo.form.entity.EntityType;
  * 
  * 
  */
-public class ResetPasswordNew extends Entity
+@FieldMatch(first = "password", second = "passwordCheck")
+public class ResetPasswordForm
 {
 	/**
 	 * 
 	 */
-	@Input(name = "id", type = EntityType.NUMERIC)
-	private String id;
+	@NotEmpty
+	private long id;
 
 	/**
 	 * 
 	 */
-	@Input(name = "key", type = EntityType.ALPHANUMERIC)
+	@NotEmpty
 	private String key;
 
 	/**
 	 * 
 	 */
-	@Input(name = "password", type = EntityType.PASSWORD)
+	@Pattern(regexp = FieldValidator.PASSWORD_REGEX)
 	private String password;
 
 	/**
 	 * 
 	 */
-	@Input(name = "password", type = EntityType.PASSWORD, linkto = "password")
+	@Pattern(regexp = FieldValidator.PASSWORD_REGEX)
 	private String passwordCheck;
 
 	/**
 	 * @return the id
 	 */
-	public String getId()
+	public long getId()
 	{
 		return id;
 	}
@@ -55,7 +59,7 @@ public class ResetPasswordNew extends Entity
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(final String id)
+	public void setId(final long id)
 	{
 		this.id = id;
 	}

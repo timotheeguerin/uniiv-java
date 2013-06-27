@@ -38,27 +38,48 @@ import ca.bendo.db.entity.forum.Tag;
 @Table(name = "wiki")
 public class Wiki
 {
+	/**
+	 * 
+	 */
 	@Id
 	@GeneratedValue
 	@Column(name = "id_wiki")
 	private long id;
 
+	/**
+	 * 
+	 */
 	@Column(name = "id_user")
 	private long user;
 	
+	/**
+	 * 
+	 */
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_formatted_content")
 	private FormattedContent content;
 	
+	/**
+	 * 
+	 */
 	@Column(name = "date_created")
 	private Date dateCreated;
 	
+	/**
+	 * 
+	 */
 	@Column(name = "last_edited")
 	private Date dateEdited;
 	
+	/**
+	 * 
+	 */
 	@Column(name = "title")
 	private String title;
 	
+	/**
+	 * 
+	 */
 	@OneToMany
 	@JoinTable(name = "wiki_comment",
 		joinColumns = { @JoinColumn(name = "id_wiki")},

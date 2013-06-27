@@ -1,15 +1,14 @@
 
-<form action="" method="POST">
-	<div class="resetPassword">
-		<input value="<c:out value="${requestScope.id}"/>" name="id"
-			type="hidden" /> <input value="<c:out value="${requestScope.key}"/>"
-			name="key" type="hidden" />
+<f:form commandName="resetPasswordForm" method="POST">
 
-		<b:password name="password" required="true" placeholder="password" />
-		<b:password name="password_check" required="true"
-			placeholder="password_check" />
-	</div>
-	<div class="SubmitEmailInput">
-		<input name="submitbtn" type="submit" class="submit_email" />
-	</div>
-</form>
+	<f:hidden path="id" />
+	<f:errors path="key"/>
+	<f:hidden path="key" />
+
+	<f:password path="password" required="true" />
+	<f:password path="passwordCheck" required="true" />
+
+
+	<input name="submitbtn" type="submit" />
+
+</f:form>

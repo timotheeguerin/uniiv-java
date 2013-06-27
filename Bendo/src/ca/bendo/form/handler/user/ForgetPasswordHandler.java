@@ -26,7 +26,7 @@ import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserResetPassword;
 import ca.bendo.form.FormErrorHandler;
 import ca.bendo.form.entity.user.InputEmailEntity;
-import ca.bendo.form.entity.user.ResetPasswordNew;
+import ca.bendo.form.entity.user.ResetPasswordForm;
 import ca.bendo.translation.translation.Translator;
 import ca.bendo.user.element.HashedPassword;
 import ca.bendo.utils.url.UrlFactory;
@@ -137,31 +137,39 @@ public class ForgetPasswordHandler
 	/**
 	 * @param request
 	 *            Request
+	 * 
+	 * @param form
+	 *            form
 	 * @return boolean if the new password reset was succesful
 	 */
-	public boolean handleNewPassword(final HttpServletRequest request)
+	public boolean handleNewPassword(final HttpServletRequest request, final ResetPasswordForm form)
 	{
-		ResetPasswordNew entity = new ResetPasswordNew();
-		entity.setup(request);
-
-		if (!entity.isValid())
-		{
-			entity.setupErrorsDisplay(request);
-			entity.setupForDisplay(request);
-			request.setAttribute("resetPasswordNew", entity);
-			return false;
-		}
-
-		UserResetPassword resetEntity = userResetPasswordDAO.isValid(Long.parseLong(entity.getId()), entity.getKey());
+		UserResetPassword resetEntity = userResetPasswordDAO.isValid(form.getId(), form.getKey());
 		if (resetEntity == null)
 		{
-			FormErrorHandler.getFormErrorHandler(request).addError(ResetPasswordNew.class,
-					"form_err_reset_password_invalid");
 			return false;
 		}
 
-		resetEntity.getUser().setPassword(new HashedPassword(entity.getPassword()));
+		resetEntity.getUser().setPassword(new HashedPassword(form.getPassword()));
 		userResetPasswordDAO.delete(resetEntity.getId());
+		return true;
+	}
+
+	/**
+	 * @param request
+	 *            Request
+	 * @param resetPasswordForm
+	 *            Form
+	 * @return false if there is an error
+	 */
+	public boolean setupNewPasswordPage(final HttpServletRequest request, final ResetPasswordForm resetPasswordForm)
+	{
+		UserResetPassword resetEntity = userResetPasswordDAO.isValid(resetPasswordForm.getId(),
+				resetPasswordForm.getKey());
+		if (resetEntity == null)
+		{
+			return false;
+		}
 		return true;
 	}
 }
