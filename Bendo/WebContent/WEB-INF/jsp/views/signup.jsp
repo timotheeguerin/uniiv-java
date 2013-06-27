@@ -76,7 +76,7 @@
 			
 			<div class="signup_spacer_big"></div>
 			<div class="signup_submit">
-				<input class="signup_button" name="submitbtn" type="submit" value="Sign Up" />
+				<input class="submit" name="submitbtn" type="submit" value="Sign Up" />
 			</div>
 		</jsp:body>
 	</f:form>

@@ -33,10 +33,7 @@
 			<div class="login_tac">
 				<b:translator value="login_registration" />
 				<span class="login_tac_link"><a href=""><b:translator value="terms_of_use" />.</a></span>
-			</div>
-			
-			<div class="login_spacer"></div>
-			
+			</div>			
 			<div class="login_tac">
 				<b:translator value="login_signup_text" />	 
 				<span class="login_login_link">
@@ -56,7 +53,7 @@
 			
 			<div class="login_spacer_big"></div>
 			<div class="login_submit">
-				<input class="login_button" name="submitbtn" type="submit" value="Log In" />
+				<input class="submit" name="submitbtn" type="submit" value="Log In" />
 			</div>
 		</jsp:body>
 	</f:form>
