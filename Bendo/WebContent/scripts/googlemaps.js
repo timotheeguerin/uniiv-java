@@ -4,12 +4,15 @@ var geocoder;
 var maps = {};
 
 $(document).ready(function() {
-	$(".googlemap").each(function() {
+	$("div.googlemap").each(function() {
 		initializeMap($(this));
 	});
-	
-	$(".googlemap.userMarker").each(function() {
+
+	$("div.googlemap.userMarker").each(function() {
 		initializeChooseLocationMap($(this));
+	});
+	$(document).on("click", "input.mapPlaceMarker", function() {
+		codeAddress($(this));
 	});
 });
 function getCenter(element) {
@@ -32,12 +35,12 @@ function initializeMap(element) {
 		zoom : 16,
 		mapTypeId : google.maps.MapTypeId.ROADMAP
 	});
-	
+
 	maps[element] = map;
 }
 function initializeChooseLocationMap(element) {
 	geocoder = new google.maps.Geocoder();
-	
+
 	google.maps.event.addListener(maps[element], 'click', function(event) {
 		placeMarker(maps[element], event.latLng);
 	});
@@ -55,17 +58,21 @@ function placeMarker(map, location) {
 	}
 }
 
-function codeAddress() {
-	var address = document.getElementById('address').value;
+function codeAddress(element) {
+	var error = $(element.attr("data-input-error"));
 
+	var address = $(element.attr("data-input")).val();
+	console.log(address + " " + $(element.attr("data-input")));
+	var map = maps[element];
 	geocoder.geocode({
 		'address' : address
 	}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
+			error.hide();
 			map.setCenter(results[0].geometry.location);
-			placeMarker(results[0].geometry.location);
-		} else {
-			alert('Geocode was not successful for the following reason: ' + status);
+			placeMarker(map, results[0].geometry.location);
+		} else if (status == google.maps.GeocoderStatus.OK) {
+			error.show();
 		}
 	});
 }
