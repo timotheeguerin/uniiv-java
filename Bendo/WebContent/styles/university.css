@@ -1077,7 +1077,7 @@ li.row_prof,.row_prof ul {
 	width: 30px;
 }
 
-.DiscoverContainer, .DiscussCont	ainer, .PostContainer, .NoResult, .NoReviewDisplay {
+.DiscoverContainer, .DiscussContainer, .PostContainer, .NoResult, .NoReviewDisplay {
 	background-color: #FFF;
 	border: solid 1px #E5E5E5;
 	padding: 20px;

@@ -1,5 +1,5 @@
 <div class="login_frame">
-	<div class="login_head_message">Log In</div>
+	<div class="login_head_message"><b:translator value="login_header" />	</div>
 	<f:form commandName="loginForm" method="POST">
 		<jsp:attribute name="action">
 			<b:url value="/login" />
@@ -32,15 +32,25 @@
 			
 			<div class="login_tac">
 				<b:translator value="login_registration" />
-				<span class="login_tac_link"><a href="#termsconditions_switch" rel="switch"><b:translator value="terms_of_use" />.</a></span>
+				<span class="login_tac_link"><a href=""><b:translator value="terms_of_use" />.</a></span>
 			</div>
 			
 			<div class="login_spacer"></div>
 			
 			<div class="login_tac">
-				Don't have an account, why not 
+				<b:translator value="login_signup_text" />	 
 				<span class="login_login_link">
-					<a href="#termsconditions_switch" rel="switch">sign up?</a>
+					<span class="login_tac_link">
+						<a href="signup"><b:translator value="signup" />?</a>
+					</span>
+				</span>
+			</div>
+			<div class="login_tac">
+				<b:translator value="login_forgotten_pw_text" />	
+				<span class="login_login_link">
+					<span class="login_tac_link">
+						<a href="resetpassword/sendemail"><b:translator value="password" />?</a>
+					</span>
 				</span>
 			</div>
 			

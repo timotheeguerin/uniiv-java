@@ -3,7 +3,7 @@
 
 <div class="signup_frame">
 	<div class="signup_head_message">
-		Sign Up
+		<b:translator value="signup" />	
 	</div>
 	<f:form commandName="signupForm" method="POST">
 		<jsp:attribute name="action">
@@ -17,7 +17,7 @@
 				<f:errors path="firstName" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">First Name</div>
+				<div class="signup_text_element"><b:translator value="first_name" /></div>
 				<f:input class="signup_form_element" path="firstName" placeholder="Please enter your first name." name="first_name" type="text" required="required" />
 			</div>
 	
@@ -26,7 +26,7 @@
 				<f:errors path="lastName" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">Last Name</div>
+				<div class="signup_text_element"><b:translator value="last_name" /></div>
 				<f:input class="signup_form_element" path="lastName" placeholder="Please enter your last name." name="last_name" type="text" required="required" />
 			</div>
 		
@@ -35,7 +35,7 @@
 				<f:errors path="email" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">Email</div>
+				<div class="signup_text_element"><b:translator value="email" /></div>
 				<f:input class="signup_form_element" placeholder="Please enter your email." path="email" name="email" type="text" required="required" />
 			</div>
 			
@@ -44,7 +44,7 @@
 				<f:errors path="password" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">Password</div>
+				<div class="signup_text_element"><b:translator value="password" /></div>
 				<f:password class="signup_form_element" placeholder="Please enter a password at least 8 characters long." path="password" />
 			</div>
 			
@@ -53,7 +53,7 @@
 				<f:errors path="passwordCheck" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element">Password</div>
+				<div class="signup_text_element"><b:translator value="password" /></div>
 				<f:password class="signup_form_element" placeholder="Please re-enter your password." path="passwordCheck" />
 			</div>
 			
@@ -62,15 +62,15 @@
 			
 			<div class="signup_tac">
 				<b:translator value="signup_registration" />
-				<span class="signup_tac_link"><a href="#termsconditions_switch" rel="switch"><b:translator value="terms_of_use" />.</a></span>
+				<span class="signup_tac_link"><a href="toc" rel="switch"><b:translator value="terms_of_use" />.</a></span>
 			</div>
 			
 			<div class="signup_spacer"></div>
 			
 			<div class="signup_tac">
-				If you already have an account, why not 
+				<b:translator value="signup_login_text" />
 				<span class="signup_login_link">
-					<a href="#termsconditions_switch" rel="switch">log in?</a>
+					<a href="login" rel="switch"><b:translator value="login" />?</a>
 				</span>
 			</div>
 			
