@@ -2204,32 +2204,6 @@ li.error {
 	text-align: center;
 }
 
-.login_form_element
-{
-	color: #4F4D4D;
-	position: relative;
-	display: inline-block;
-	width: 90%;
-	height: 100%;
-	
-	outline: none;
-	
-	border: solid 1px #DBDBDB;
-	border-radius: 3px;
-	
-	padding-top: 0px;
-	padding-bottom: 0px;
-	padding-left: 9px;
-	padding-right: 9px;
-}
-
-.login_form_element:focus
-{
-	outline: none;
-    box-shadow: 0 0 3px #9ecaed;
-    border-color: #204AA1;
-}
-
 .login_error_text
 {
 	color: #4F4D4D;
