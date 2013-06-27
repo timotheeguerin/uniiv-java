@@ -2337,3 +2337,117 @@ li.error {
 	width: 100%;
 	text-align: center;
 }
+/***************************************************************************************
+*				forgot password
+****************************************************************************************/
+.forgetful_frame
+{
+	color: #4F4D4D;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	border: 1px solid #E5E5E5;
+	border-radius: 5px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #FFFFFF;
+}
+
+.forgetful_element_container
+{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.forgetful_form_element
+{
+	color: #4F4D4D;
+	position: relative;
+	display: inline-block;
+	width: 90%;
+	height: 100%;
+	
+	outline: none;
+	
+	border: solid 1px #DBDBDB;
+	border-radius: 3px;
+	
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 9px;
+	padding-right: 9px;
+}
+
+.forgetful_form_element:focus
+{
+	outline: none;
+    box-shadow: 0 0 3px #9ecaed;
+    border-color: #204AA1;
+}
+
+.forgetful_error_text
+{
+	color: #4F4D4D;
+	position: relative;
+	display: inline-block;
+	width: 99%;
+	height: 20px;
+	text-align: center;
+	font-weight: lighter;
+}
+
+.forgetful_spacer
+{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 5px;
+}
+
+.forgetful_spacer_big
+{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 20px;
+}
+
+.forgetful_submit
+{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.forgetful_button
+{
+	padding:5px;
+	border: solid 1px #DBDBDB;
+	border-radius: 3px;
+}
+
+.forgetful_button:hover
+{
+	box-shadow: 0 0 3px #9ecaed;
+    border-color: #204AA1;
+}
+
+.forgetful_button:active
+{
+	box-shadow: 0 0 3px #9ecaed;
+    border-color: #E5E5E5;
+}
+
+.forgetful_head_message
+{
+	font-size: 30px;
+	width: 100%;
+	text-align: center;
+}
