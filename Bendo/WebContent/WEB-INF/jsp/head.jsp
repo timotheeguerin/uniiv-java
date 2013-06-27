@@ -14,6 +14,7 @@
 <c:choose>
 	<c:when test="${developmentMode}">
 		<!-- Styles -->
+
 		<c:set var="styles" value="${head.ressources.styles}" scope="page" />
 		<c:forEach items="${styles}" var="style">
 			<c:url value="${style}" var="url" />
@@ -21,6 +22,8 @@
 		</c:forEach>
 
 		<!-- Scripts -->
+
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization&dummy=.js"></script>
 		<c:set var="scripts" value="${head.ressources.scripts}" scope="page" />
 		<c:forEach items="${scripts}" var="style">
 			<c:url value="${style}" var="url" />
