@@ -28,6 +28,7 @@
 		<script>/scripts/filter.js</script>
 		<script>/scripts/jquery.radiobutton.js</script>
 		<script>/scripts/jquery.textarearesizer.js</script>
+		<script>/scripts/googlemaps.js</script>
 	</scripts>
 
 	<emails>
