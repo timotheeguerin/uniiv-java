@@ -3,9 +3,8 @@
  */
 package ca.bendo.form.entity.user;
 
-import ca.bendo.annotation.Input;
-import ca.bendo.form.entity.Entity;
-import ca.bendo.form.entity.EntityType;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author Timothée Guérin
@@ -17,12 +16,13 @@ import ca.bendo.form.entity.EntityType;
  * 
  * 
  */
-public class InputEmailEntity extends Entity
+public class InputEmailForm
 {
 	/**
 	 * 
 	 */
-	@Input(name = "email", type = EntityType.EMAIL)
+	@NotEmpty
+	@Email
 	private String email;
 
 	/**

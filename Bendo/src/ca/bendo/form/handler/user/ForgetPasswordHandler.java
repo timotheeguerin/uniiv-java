@@ -25,7 +25,7 @@ import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserResetPassword;
 import ca.bendo.form.FormErrorHandler;
-import ca.bendo.form.entity.user.InputEmailEntity;
+import ca.bendo.form.entity.user.InputEmailForm;
 import ca.bendo.form.entity.user.ResetPasswordForm;
 import ca.bendo.translation.translation.Translator;
 import ca.bendo.user.element.HashedPassword;
@@ -65,26 +65,18 @@ public class ForgetPasswordHandler
 	 * 
 	 * @param request
 	 *            Request
+	 * @param form
+	 *            Form
 	 * @return if the form was succesfuly handle
 	 */
-	public boolean handleSendEmail(final HttpServletRequest request)
+	public boolean handleSendEmail(final HttpServletRequest request, final InputEmailForm form)
 	{
-		InputEmailEntity entity = new InputEmailEntity();
-		entity.setup(request);
 
-		if (!entity.isValid())
-		{
-			entity.setupErrorsDisplay(request);
-			entity.setupForDisplay(request);
-			request.setAttribute("inputEmailEntity", entity);
-			return false;
-		}
-
-		User user = userDAO.getByEmail(entity.getEmail());
+		User user = userDAO.getByEmail(form.getEmail());
 		if (user == null)
 		{
-			FormErrorHandler.getFormErrorHandler(request).addError(InputEmailEntity.class,
-					"form_err_no_user_with_email");
+			FormErrorHandler.getFormErrorHandler(request)
+					.addError(InputEmailForm.class, "form_err_no_user_with_email");
 			return false;
 		}
 		UserResetPassword userResetPassword = new UserResetPassword();

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.db.entity.lang.Language;
-import ca.bendo.form.entity.GetInit;
+import ca.bendo.form.entity.user.InputEmailForm;
 import ca.bendo.form.entity.user.ResetPasswordForm;
 import ca.bendo.form.handler.user.ForgetPasswordHandler;
 import ca.bendo.translation.translation.Translator;
@@ -56,30 +56,32 @@ public class ForgetPasswordController
 	@RequestMapping(value = "/resetpassword/sendemail", method = RequestMethod.GET)
 	public String sendEmail(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		return sendMailPage(request, response);
+		return sendMailPage(request, new InputEmailForm());
 	}
 
 	/**
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Response
+	 * @param inputEmailForm
+	 *            Form
+	 * @param result
+	 *            contains form error
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/resetpassword/sendemail", method = RequestMethod.POST)
-	public String handleSendEmail(final HttpServletRequest request, final HttpServletResponse response)
+	public String handleSendEmail(final HttpServletRequest request, @Valid final InputEmailForm inputEmailForm,
+			final BindingResult result)
 	{
 		long languageId = Language.loadId(request);
-		Translator translator = Translator.getTranslator(request);
-		if (forgetPasswordHandler.handleSendEmail(request))
+		if (forgetPasswordHandler.handleSendEmail(request, inputEmailForm))
 		{
 			String url = "/";
 			String param = "?alertmsg=alert_info_reset_password_email_sent";
 			return "redirect:" + translator.translateUrl(url + param, languageId);
 		} else
 		{
-			return sendMailPage(request, response);
+			return sendMailPage(request, inputEmailForm);
 		}
 	}
 
@@ -87,12 +89,13 @@ public class ForgetPasswordController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param response
-	 *            Response
+	 * @param inputEmailForm
+	 *            Form
 	 * @return Jsp page
 	 */
-	public String sendMailPage(final HttpServletRequest request, final HttpServletResponse response)
+	public String sendMailPage(final HttpServletRequest request, final InputEmailForm inputEmailForm)
 	{
+		request.setAttribute("inputEmailForm", inputEmailForm);
 		return "views/user/resetpassword_sendmail";
 	}
 
@@ -168,7 +171,8 @@ public class ForgetPasswordController
 			result.addError(new FieldError("resetPasswordForm", "key", translator.translate("error.resetpassword",
 					languageId)));
 		}
-		
+		request.setAttribute("resetPasswordForm", resetPasswordForm);
+
 		return "views/user/resetpassword_new";
 	}
 
