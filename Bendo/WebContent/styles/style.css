@@ -6,14 +6,19 @@
 
 -------------------------------*/
 * {
-	margin: 0;
-	padding: 0; 
+	margin: 0; 
+	/* padding: 0;  */
 	font-weight: 200;
 	color: #4F4D4D;
-	list-style: none;
-	text-decoration: none;
+	/* list-style: none;  */
+	/* text-decoration: none; */
 	overflow: visible;
 	font-family: Helvetica;
+}
+
+a
+{
+	text-decoration: none;
 }
 
 html,body {
