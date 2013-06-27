@@ -1,7 +1,7 @@
-<a href="./list">back</a>
+<a href="./">back</a>
 <br>
 <br>
-<form action="editTranslation" method="get">
+<form action="edit" method="get">
 	<c:forEach var="language" items="${requestScope.languages}">
 		<li>
 				<c:out value="${language}"/><br>
