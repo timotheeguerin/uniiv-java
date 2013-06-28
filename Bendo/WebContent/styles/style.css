@@ -2119,3 +2119,27 @@ li.error {
     box-shadow: 0 0 3px #9ECAED;
     border-color: #204AA1;
 }
+/***************************************************************************************
+*				preferences for search system
+****************************************************************************************/
+.preferences_cycler
+{
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 2px;
+}
+.preferences_default
+{
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0.5);
+}
+.preferences_like
+{
+    background-color: rgba(0,0,255,0.5);
+    border: 1px solid rgba(0,0,255,0.5);
+}
+.preferences_dislike
+{
+    background-color: rgba(255,0,0,0.5);
+    border: 1px solid rgba(255,0,0,0.5);
+}

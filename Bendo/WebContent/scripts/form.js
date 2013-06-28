@@ -139,7 +139,30 @@ $(document).ready(function() {
 	 * STAR RATING
 	 **************************************************************************/
 
-
+	
+	/***************************************************************************
+	 * Preferences buttons
+	 */
+	$(".cycler").click(function() {
+	    if($(this).attr("value") == "0")
+	    {
+	         $(this).removeClass("default");
+	         $(this).addClass("like");
+	         $(this).attr("value","1");
+	    }
+	    else if($(this).attr("value") == "1")
+	    {
+	        $(this).removeClass("like");
+	        $(this).addClass("dislike");
+	        $(this).attr("value","2");
+	    }
+	    else if($(this).attr("value") == 2)
+	    {
+	        $(this).removeClass("dislike");
+	        $(this).addClass("default");
+	        $(this).attr("value","0");
+	    }
+	});
 });
 
 /*******************************************************************************

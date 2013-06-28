@@ -1,0 +1,1 @@
+page where user sees all universities they are following
