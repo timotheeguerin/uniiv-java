@@ -32,7 +32,7 @@
 					<span> <b:translator value="going_exchange_2014" /></span>
 				</p><br>
 				<p class="quote-student">
-					<span> <b:translator value="quote_valou" /></span>
+					<span> <b:translator value="#" /></span>
 				</p>
 			</div>
 	</div>

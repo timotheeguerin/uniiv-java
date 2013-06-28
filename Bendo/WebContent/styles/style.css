@@ -1842,6 +1842,12 @@ p.big-type span {
 	margin-top:20px;
 }
 
+.home_guide_content
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 /***************************************************************************************
 *				Signup
 ****************************************************************************************/
@@ -1872,6 +1878,7 @@ p.big-type span {
 
 .signup_text_element
 {
+	display:inline-block;
 	margin-top: 7px;
 	width: 20%;
 	font-weight: lighter;
@@ -1941,6 +1948,7 @@ p.big-type span {
 	text-align: center;
 	font-size: 12px;
 	font-weight: lighter;
+	margin-top:10px;
 }
 
 .signup_tac_link
@@ -2158,7 +2166,7 @@ p.big-type span {
 }
 
 /*FOR ALL INPUT BARS*/
-.input-element{
+.input-element {
 	color: #4F4D4D;
 	position: relative;
 	display: inline-block;
@@ -2167,7 +2175,15 @@ p.big-type span {
 	border: solid 1px #DBDBDB;
 	border-radius: 3px;
 	padding:0 9px 0 9px;
-	width: 90%;
+}
+
+.signup-input {
+	display:inline-block;
+	width:65%;
+}
+
+.login-input {
+	width:70%;
 }
 
 .input-element:focus {

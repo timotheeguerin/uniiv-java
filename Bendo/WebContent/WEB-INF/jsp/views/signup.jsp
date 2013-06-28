@@ -18,7 +18,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element"><b:translator value="first_name" /></div>
-				<f:input class="input-element" path="firstName" placeholder="Please enter your first name." name="first_name" type="text" required="required" />
+				<f:input class="input-element signup-input" path="firstName" placeholder="Please enter your first name." name="first_name" type="text" required="required" />
 			</div>
 	
 			<div class="signup_spacer"></div>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element"><b:translator value="last_name" /></div>
-				<f:input class="input-element" path="lastName" placeholder="Please enter your last name." name="last_name" type="text" required="required" />
+				<f:input class="input-element signup-input" path="lastName" placeholder="Please enter your last name." name="last_name" type="text" required="required" />
 			</div>
 		
 			<div class="signup_spacer"></div>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element"><b:translator value="email" /></div>
-				<f:input class="input-element" placeholder="Please enter your email." path="email" name="email" type="text" required="required" />
+				<f:input class="input-element signup-input" placeholder="Please enter your email." path="email" name="email" type="text" required="required" />
 			</div>
 			
 			<div class="signup_spacer"></div>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element"><b:translator value="password" /></div>
-				<f:password class="input-element" placeholder="Please enter a password at least 8 characters long." path="password" />
+				<f:password class="input-element signup-input" placeholder="Please enter a password at least 8 characters long." path="password" />
 			</div>
 			
 			<div class="signup_spacer"></div>
@@ -54,7 +54,7 @@
 			</div>
 			<div class="signup_element_container">
 				<div class="signup_text_element"><b:translator value="password" /></div>
-				<f:password class="input-element" placeholder="Please re-enter your password." path="passwordCheck" />
+				<f:password class="input-element signup-input" placeholder="Please re-enter your password." path="passwordCheck" />
 			</div>
 			
 			

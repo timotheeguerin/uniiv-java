@@ -14,7 +14,7 @@
 			</div>
 			<div class="login_element_container">
 				<b:translator var="enterEmail" value="enter_email" />	
-				<f:input class="input-element" path="email" placeholder="${enterEmail}" />
+				<f:input class="input-element login-input" path="email" placeholder="${enterEmail}" />
 			</div>
 			
 			<div class="login_spacer"></div>
@@ -24,7 +24,7 @@
 			</div>
 			<div class="login_element_container">
 				<b:translator var="enterPassword" value="enter_password" />
-				<f:password class="input-element" path="password" placeholder="${enterPassword}" />
+				<f:password class="input-element login-input" path="password" placeholder="${enterPassword}" />
 			</div>
 			
 			
