@@ -94,6 +94,20 @@ $(document).ready(function() {
 			maxFontPixels : fontsize
 		});
 	});
+
+	/***************************************************************************
+	 * STAR RATING
+	 **************************************************************************/
+	$("div.jrating").each(function() {
+		$(this).jRating({
+			length : 5, // nb of stars
+			rateMax : 10,
+			canRateAgain : true,
+			onSuccess : function() {
+			}
+		});
+	});
+
 });
 
 function changeTab(link, update) {

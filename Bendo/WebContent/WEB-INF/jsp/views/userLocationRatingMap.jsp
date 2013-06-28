@@ -11,6 +11,10 @@
 
 
 <div>
-	
+	BLBLa
+	<form id="testId">
+		<div class="jrating"></div>
 
+		<input type="submit" />
+	</form>
 </div>
