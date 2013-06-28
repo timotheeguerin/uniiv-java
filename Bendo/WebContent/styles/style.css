@@ -1901,6 +1901,7 @@ li.error {
 .quickfind_tool
 {
 	background: url("../images/icon/searchtool.png") no-repeat;
+	background-color:#FFF;
 	background-size: 100%;
 	color: transparent;
 	position: absolute;

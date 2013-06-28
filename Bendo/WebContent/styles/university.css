@@ -924,7 +924,7 @@ li.row_prof,.row_prof ul {
 *************************************/
 .HomeSearchDisplayDynamic {
 	background-color: #FFF;
-	border: solid 1px #E5E5E5;
+	border: solid 1px #DDD;
 	margin-top: 10%;
 	position: relative;
 	font-size: 18px;
@@ -939,16 +939,18 @@ li.row_prof,.row_prof ul {
 }
 
 .UniqueElementSearchHome {
+	list-style:none;
 	margin-left: 15px;
 }
 
 .HomeSearchDisplayDynamic li {
+	list-style:none;
 	margin-bottom: 15px;
 }
 
 .ImageUniversitySearchResult,.ImageProfessorSearchResult,.ImageCourseSearchResult
 	{
-	border-bottom: 1px dotted #4F4F4F;
+	border-bottom: 1px solid #DDD;
 	color: #204AA1;
 	font-size: 20px;
 	font-weight: bold;
@@ -1082,7 +1084,7 @@ li.row_prof,.row_prof ul {
 	border: solid 1px #E5E5E5;
 	padding: 20px;
 	margin: auto;
-	margin-top: 10%;
+	margin-top: 20px;
 	width: 700px;
 }
 
