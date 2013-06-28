@@ -3,7 +3,9 @@
  */
 package ca.bendo.form.entity;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import ca.bendo.form.FieldValidator;
 
 /**
  * @author Timothée Guérin
@@ -20,13 +22,34 @@ public class RatingEntity
 	/**
 	 * 
 	 */
-	@NotEmpty
-	private long value;
+	@NotNull
+	private int value;
+
+	/**
+	 * 
+	 */
+	public RatingEntity()
+	{
+
+	}
+
+	/**
+	 * @param string
+	 *            init the value
+	 */
+	public RatingEntity(final String string)
+	{
+		if (FieldValidator.isInt(string))
+		{
+			value = Integer.parseInt(string);
+		}
+
+	}
 
 	/**
 	 * @return the value
 	 */
-	public long getValue()
+	public int getValue()
 	{
 		return value;
 	}
@@ -35,9 +58,20 @@ public class RatingEntity
 	 * @param value
 	 *            the value to set
 	 */
-	public void setValue(final long value)
+	public void setValue(final int value)
 	{
 		this.value = value;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return String.valueOf(value);
 	}
 
 }

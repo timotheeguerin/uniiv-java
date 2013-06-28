@@ -72,22 +72,10 @@ public class UserHomeController
 	 *            Request
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/user/myquestions", method = RequestMethod.GET)
-	public String userAskedQuestions(final HttpServletRequest request)
+	@RequestMapping(value = "/user/questions", method = RequestMethod.GET)
+	public String watchedQs(final HttpServletRequest request)
 	{
-		return "views/user/questions/userAsked";
-	}
-	
-	/**
-	 * 
-	 * @param request
-	 *            Request
-	 * @return jsp page
-	 */
-	@RequestMapping(value = "/user/myanswers", method = RequestMethod.GET)
-	public String userAnsweredQuestions(final HttpServletRequest request)
-	{
-		return "views/user/questions/userAnswered";
+		return "views/user/watch/usersQuestions";
 	}
 
 }

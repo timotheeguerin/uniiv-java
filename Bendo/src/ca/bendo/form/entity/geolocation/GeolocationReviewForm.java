@@ -3,10 +3,11 @@
  */
 package ca.bendo.form.entity.geolocation;
 
-import java.util.ArrayList;
+import java.awt.Point;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -27,20 +28,23 @@ public class GeolocationReviewForm
 	/**
 	 * 
 	 */
-	@NotEmpty
-	private String location;
+	@NotNull
+	private GeoLocation location;
 
 	/**
 	 * 
 	 */
 	@Valid
 	@NotEmpty
-	private List<RatingEntity> ratings = new ArrayList<RatingEntity>();
+	private List<RatingEntity> ratings;
+
+	@Valid
+	private RatingEntity ratingTest;
 
 	/**
 	 * @return the location
 	 */
-	public String getLocation()
+	public GeoLocation getLocation()
 	{
 		return location;
 	}
@@ -49,7 +53,7 @@ public class GeolocationReviewForm
 	 * @param location
 	 *            the location to set
 	 */
-	public void setLocation(final String location)
+	public void setLocation(final GeoLocation location)
 	{
 		this.location = location;
 	}
@@ -69,6 +73,23 @@ public class GeolocationReviewForm
 	public void setRatings(final List<RatingEntity> ratings)
 	{
 		this.ratings = ratings;
+	}
+
+	/**
+	 * @return the ratingTest
+	 */
+	public RatingEntity getRatingTest()
+	{
+		return ratingTest;
+	}
+
+	/**
+	 * @param ratingTest
+	 *            the ratingTest to set
+	 */
+	public void setRatingTest(RatingEntity ratingTest)
+	{
+		this.ratingTest = ratingTest;
 	}
 
 }

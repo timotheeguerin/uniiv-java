@@ -40,7 +40,19 @@ function initializeMap(element) {
 }
 function initializeChooseLocationMap(element) {
 	geocoder = new google.maps.Geocoder();
+	var form = element.closest("form");
 
+	if (form != undefined) {
+		form.submit(function() {
+			if (marker != undefined) {
+				var input = $("<input>").attr("type", "hidden").attr("name", "location").val(marker.getPosition());
+				form.append($(input));
+			}
+		});
+	}
+	var markerLoc = element.attr("data-map-marker-position");
+
+	placeMarker(maps[element], markerLoc);
 	google.maps.event.addListener(maps[element], 'click', function(event) {
 		placeMarker(maps[element], event.latLng);
 	});

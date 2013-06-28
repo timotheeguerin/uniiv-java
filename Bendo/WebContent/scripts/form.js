@@ -143,23 +143,23 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * Preferences buttons
 	 */
-	$(".cycler").click(function() {
+	$(".preferences_cycler").click(function() {
 	    if($(this).attr("value") == "0")
 	    {
-	         $(this).removeClass("default");
-	         $(this).addClass("like");
+	         $(this).removeClass("preferences_default");
+	         $(this).addClass("preferences_like");
 	         $(this).attr("value","1");
 	    }
 	    else if($(this).attr("value") == "1")
 	    {
-	        $(this).removeClass("like");
-	        $(this).addClass("dislike");
+	        $(this).removeClass("preferences_like");
+	        $(this).addClass("preferences_dislike");
 	        $(this).attr("value","2");
 	    }
 	    else if($(this).attr("value") == 2)
 	    {
-	        $(this).removeClass("dislike");
-	        $(this).addClass("default");
+	        $(this).removeClass("preferences_dislike");
+	        $(this).addClass("preferences_default");
 	        $(this).attr("value","0");
 	    }
 	});
