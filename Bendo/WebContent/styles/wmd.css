@@ -6,6 +6,7 @@
 }
 
 .wmd-input {
+	outline:none;
 	background-color: #FFF;
 	border: solid 1px #DDD;
 	border-radius: 3px;
@@ -209,7 +210,7 @@
 	width: 100%;
 }
 
-#title:focus {
+#title:focus, .wmd-input:focus {
 	outline: none;
 	box-shadow: 0 0 3px #9ecaed;
 	border-color: #204AA1;
