@@ -12,13 +12,13 @@
 
 <div>
 	BLBLa
-	<form id="testId">
-		<input name="star1" type="radio" class="star" value="1"/>
-		<input name="star1" type="radio" class="star" value="2"/>
-		<input name="star1" type="radio" class="star" value="3"/>
-		<input name="star1" type="radio" class="star" value="4"/>
-		<input name="star1" type="radio" class="star" value="5"/>
+	<f:form commandName="newGeolocationReviewForm" id="testId">
+		<c:set var="count" value="0" scope="page" />
+		<c:forEach var="rating" items="${newGeolocationReviewForm.ratings}">
+			<f:radiobuttons path="ratings[${count}]" cssClass="star" items="${requestScope.ratingItems}" />
+			<c:set var="count" value="${count + 1}" scope="page" />
+		</c:forEach>
 		<input type="submit" />
 
-	</form>
+	</f:form>
 </div>

@@ -1,4 +1,3 @@
-
 ;
 if (window.jQuery)
 	(function($) {
@@ -39,9 +38,8 @@ if (window.jQuery)
 																			 * default
 																			 * options
 																			 */, options || {} /*
-																												 * just-in-time
-																												 * options
-																												 */
+								 * just-in-time options
+								 */
 			);
 
 			// Allow multiple controls with the same name by making each call
@@ -56,6 +54,11 @@ if (window.jQuery)
 						var control, input = $(this);
 						var eid = (this.name || 'unnamed-rating').replace(/\[|\]/g, '_').replace(/^\_+|\_+$/g, '');
 						var context = $(this.form || document.body);
+
+						var label = $('label[for="' + $(this).attr('id') + '"]');
+						if (label != undefined) {
+							label.hide();
+						}
 
 						// FIX:
 						// http://code.google.com/p/jquery-star-rating-plugin/issues/detail?id=23
@@ -87,9 +90,10 @@ if (window.jQuery)
 																					 * current
 																					 * call
 																					 * options
-																					 */, ($.metadata ? input.metadata() : ($.meta ? input
-									.data() : null))
-									|| {}, /* metadata options */
+																					 */, ($.metadata ? input.metadata() : ($.meta ? input.data() : null)) || {}, /*
+																											 * metadata
+																											 * options
+																											 */
 							{
 								count : 0,
 								stars : [],
@@ -227,7 +231,7 @@ if (window.jQuery)
 						star.data('rating', control);
 						context.data('rating', raters);
 						context.data('rating' + eid, rater); // required for
-																// ajax forms
+						// ajax forms
 					}); // each element
 
 			// Initialize ratings (first draw)
@@ -297,7 +301,7 @@ if (window.jQuery)
 			},// $.fn.rating.drain
 
 			draw : function() { // set value and stars to reflect current
-								// selection
+				// selection
 				var control = this.data('rating');
 				if (!control)
 					return this;
@@ -305,8 +309,8 @@ if (window.jQuery)
 				this.rating('drain');
 				// Set control value
 				var current = $(control.current);// ?
-													// control.current.data('rating.input')
-													// : null );
+				// control.current.data('rating.input')
+				// : null );
 				var starson = current.length ? current.prevAll().addBack().filter('.rater-' + control.serial) : null;
 				if (starson)
 					starson.addClass('star-rating-on');
@@ -368,14 +372,14 @@ if (window.jQuery)
 				// http://plugins.jquery.com/node/1655
 				if ((wantCallBack || wantCallBack == undefined) && control.callback)
 					control.callback.apply(current[0], [ current.val(), $('a', control.current)[0] ]);// callback
-																										// event
+				// event
 				// don't break the chain
 				return this;
 			},// $.fn.rating.select
 
 			readOnly : function(toggle, disable) { // make the control
-													// read-only (still submits
-													// value)
+				// read-only (still submits
+				// value)
 				var control = this.data('rating');
 				if (!control)
 					return this;
@@ -411,7 +415,7 @@ if (window.jQuery)
 		$.fn.rating.options = { // $.extend($.fn.rating, { options: {
 			cancel : 'Cancel Rating', // advisory title for the 'cancel' link
 			cancelValue : '', // value to submit when user click the 'cancel'
-								// link
+			// link
 			split : 0, // split the star into how many parts?
 
 			// Width of star image in case the plugin can't work it out. This
