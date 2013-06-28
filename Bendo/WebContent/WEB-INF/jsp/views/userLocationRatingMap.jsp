@@ -13,8 +13,12 @@
 <div>
 	BLBLa
 	<form id="testId">
-		<div class="jrating"></div>
-
+		<input name="star1" type="radio" class="star" value="1"/>
+		<input name="star1" type="radio" class="star" value="2"/>
+		<input name="star1" type="radio" class="star" value="3"/>
+		<input name="star1" type="radio" class="star" value="4"/>
+		<input name="star1" type="radio" class="star" value="5"/>
 		<input type="submit" />
+
 	</form>
 </div>

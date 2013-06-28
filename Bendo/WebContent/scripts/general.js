@@ -95,18 +95,7 @@ $(document).ready(function() {
 		});
 	});
 
-	/***************************************************************************
-	 * STAR RATING
-	 **************************************************************************/
-	$("div.jrating").each(function() {
-		$(this).jRating({
-			length : 5, // nb of stars
-			rateMax : 10,
-			canRateAgain : true,
-			onSuccess : function() {
-			}
-		});
-	});
+	
 
 });
 

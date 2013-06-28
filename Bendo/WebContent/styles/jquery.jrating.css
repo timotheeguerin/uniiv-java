@@ -1,50 +1,43 @@
-/*********************/
-/** jRating CSS **/
-/*********************/
+div.rating-cancel,div.star-rating {
+	float: left;
+	width: 17px;
+	height: 15px;
+	text-indent: -999em;
+	cursor: pointer;
+	display: block;
+	background: transparent;
+	overflow: hidden
+}
 
-/**Div containing the color of the stars */
-.jRatingAverage {
-	background-color: #f62929;
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 2;
+div.rating-cancel,div.rating-cancel a {
+	background: url(../images/jquery/rating/delete.gif) no-repeat 0 -16px
+}
+
+div.star-rating,div.star-rating a {
+	background: url(../images/jquery/rating/star.gif) no-repeat 0 0px
+}
+
+div.rating-cancel a,div.star-rating a {
+	display: block;
+	width: 16px;
 	height: 100%;
+	background-position: 0 0px;
+	border: 0
 }
 
-.jRatingColor {
-	background-color: #f4c239; /* bgcolor of the stars*/
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	height: 100%;
+div.star-rating-on a {
+	background-position: 0 -16px !important
 }
 
-/** Div containing the stars **/
-.jStar {
-	position: relative;
-	left: 0;
-	z-index: 3;
+div.star-rating-hover a {
+	background-position: 0 -32px
 }
-
-/** P containing the rate informations **/
-p.jRatingInfos {
-	position: absolute;
-	z-index: 9999;
-	border-radius: 3px;
-	background: black;
-	color: #FFF;
-	display: none;
-	width: 91px;
-	height: 29px;
-	font-size: 16px;
-	text-align: center;
-	padding-top: 5px;
-	background: black;
+/* Read Only CSS */
+div.star-rating-readonly a {
+	cursor: default !important
 }
-
-p.jRatingInfos span.maxRate {
-	color: #c9c9c9;
-	font-size: 14px;
+/* Partial Star CSS */
+div.star-rating {
+	background: transparent !important;
+	overflow: hidden !important
 }
