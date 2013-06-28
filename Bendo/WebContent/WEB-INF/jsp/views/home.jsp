@@ -3,4 +3,4 @@
 	<img class="home_splitter_bar" src='<c:url value="/images/background/home_splitter_bar.png"/>' />	
 	<img class="home_splitter_circle" src='<c:url value="/images/background/home_splitter_circle.png"/>' />
 </span>
-<img class="home_guide_content" src="images/background/home_guide.png"/>
+<img class="home_guide_content" src="<c:url value="images/background/home_guide.png"/>"/>
