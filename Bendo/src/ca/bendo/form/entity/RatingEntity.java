@@ -3,6 +3,8 @@
  */
 package ca.bendo.form.entity;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -20,7 +22,7 @@ public class RatingEntity
 	/**
 	 * 
 	 */
-	@NotEmpty
+	@NotNull
 	private long value;
 
 	/**

@@ -160,7 +160,7 @@ $(document).ready(function() {
 	    {
 	        $(this).removeClass("preferences_dislike");
 	        $(this).addClass("preferences_default");
-	        $(this).attr("value","0")
+	        $(this).attr("value","0");
 	    }
 	});
 });
