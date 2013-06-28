@@ -12,12 +12,30 @@
 	src='<c:url value="/images/background/home_splitter_circle.png"/>' />
 </span>
 <div class="mainInfoGuide">
-	<h1>
-		<b:translator value="main-info-start" />
-	</h1>
-	<p>
-		<b:translator value="content-info-start" />
-	</p>
+	<div>
+		<h1>
+			<b:translator value="main-info-start" />
+		</h1>
+		<p>
+			<span class="content-info-start"> <b:translator value="content-info-start" /></span>
+		</p>
+	</div>
+	<div class="student_example">
+		<div class="image-student">
+			<img src='<c:url value="/images/valou.jpg"/>' />
+		</div>
+			<div class="text-student">
+				<p class="big-type">
+					<span> <b:translator value="studying_mcgill_program" /></span>
+				</p><br>
+				<p class="small-type">
+					<span> <b:translator value="going_exchange_2014" /></span>
+				</p><br>
+				<p class="quote-student">
+					<span> <b:translator value="quote_valou" /></span>
+				</p>
+			</div>
+	</div>
 </div>
 <div class="main-graph">
 	<img class="home_guide_content"

@@ -73,8 +73,8 @@ b {
 }
 
 h1, h1 span {
-	font-size: 30px;
-	font-weight:100;
+	font-size: 20px;
+	font-weight:500;
 }
 
 /*General submit button style*/
@@ -1720,6 +1720,10 @@ li.error {
 	padding:40px 30px 10px 30px;
 }
 
+.mainInfoGuide div {
+	display:inline-block;
+}
+
 .mainInfoGuide h1 {
 	margin-bottom:10px;
 }
@@ -1730,7 +1734,59 @@ li.error {
 	margin-left: auto;
 	margin-right: auto;
 }
+/*********  HOME PAGE STUDENT EXAMPLE BOX  **********/
 
+.student_example {
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #DDDDDD;
+	background-color: #FFFFFF;
+	display:inline-block;
+	height: 150px;
+	margin-left:60%;
+	position: relative;
+	width: 500px;
+}
+
+.image-student {
+	display:inline-block;
+	height:150px;
+	width:150px;
+}
+
+.image-student img {
+	height:150px;
+	width:150px;
+}
+
+.text-student {
+	display:inline-block;
+	position:absolute;
+	right:20px;
+	top:20px;
+}
+
+.content-info-start {
+	display:inline-block;
+	word-wrap:break-word;
+	width:500px;
+}
+
+p.big-type span {
+	font-weight:normal;
+	font-size:16px;
+	font-family:Helvetica;
+	
+}
+
+.quote-student {
+	word-wrap:break-word;
+	width:300px;
+}
+
+.quote-student span {
+	font-size:14px;
+}
 .getStartedHome {
 	height:40px;
 	position:absolute;
