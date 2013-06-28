@@ -72,14 +72,50 @@ b {
 	font-weight: bold;
 }
 
-h1 {
+h1, h1 span {
 	font-size: 30px;
-	font-weight: bold;
+	font-weight:100;
 }
 
-h1 span {
-	font-size: 30px;
-	font-weight: bold;
+/*General submit button style*/
+.submit {
+	/* 	background-image: -webkit-linear-gradient(top, #8ADD6D, #60B044); GREEN*/
+	/* 	border: 1px solid #5CA941; GREEN*/
+	background: #3259ab; /* Old browsers */
+	background: -moz-linear-gradient( top, #3259ab 0%, #4e74c7 100%); /* FF3.6+ */
+	background: -webkit-gradient( linear, left top, left bottom, color-stop( 0%, #3259ab), color-stop( 100%, #4e74c7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient( top, #3259ab 0%, #4e74c7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient( top, #3259ab 0%, #4e74c7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient( top, #3259ab 0%, #4e74c7 100%); /* IE10+ */
+	background: linear-gradient( to bottom, #3259ab 0%, #4e74c7 100%); /* W3C */
+	filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr = '#3259ab', endColorstr = '#4e74c7', GradientType = 0); /* IE6-9 */
+	border: none;
+	border-radius: 3px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block; 
+	font-family:Helvetica; 
+	font-size: 12px; 
+	font-weight: lighter; 
+	height: 25px;
+	/* 	line-height: 20px; if it looks fucked uncomment me */
+	margin: 0;
+	position: relative;
+	text-align: center;
+	/* 	text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px; */
+	/* 	vertical-align: middle; */
+	width: auto;
+}
+
+.submit:hover {
+	/* 	background-image: -webkit-linear-gradient(top, #7FCC64, #579E3E); GREEN*/
+	background-image: -webkit-linear-gradient(top, #2C4E96, #4566B0);
+}
+
+.submit:active {
+	/* 	background-image: -webkit-linear-gradient(top, #72BA59, #4E8F38); GREEN*/
+	background-image: -webkit-linear-gradient(top, #274687, #4566B0);
 }
 
 /*-----------------------------
@@ -217,160 +253,6 @@ h1 span {
 	width: 5px;
 }
 
-/*--------------------------------
-
-	buttons SIGN UP LOGIN 
-
-------------------------------------*/
-.btn_sign_up {
-	background-color: transparent;
-	display: inline-block;
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
-
-.btn_sign_up_text {
-	background: #f081ad; /* Old browsers */
-	background: -moz-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f081ad),
-		color-stop(100%, #e91760) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(   
-		                                        startColorstr='#f081ad',
-		endColorstr='#e91760', GradientType=0 );
-	/* IE6-9 */
-	border-bottom-color: #AB3C68;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-left-color: #AB3C68;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #AB3C68;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #AB3C68;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Helvetica Neue", "Arial";
-	font-size: 18px;
-	font-style: normal;
-	font-weight: thin;
-	height: 30px;
-	line-height: 30px;
-	padding-left: 5px;
-	padding-right: 5px;
-	vertical-align: middle;
-	text-align: center;
-	text-decoration: none;
-	min-width: 70px;
-	word-spacing: 2px;
-}
-
-.btn_sign_up_text:hover {
-	background: #e91760; /* Old browsers */
-	background: -moz-linear-gradient(top, #e91760 0%, #f081ad 72%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e91760),
-		color-stop(72%, #f081ad) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #e91760 0%, #f081ad 72%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #e91760 0%, #f081ad 72%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #e91760 0%, #f081ad 72%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #e91760 0%, #f081ad 72%);
-	/* W3C */
-}
-
-.btn_sign_up_text:active {
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background: #f081ad; /* Old browsers */
-	background: -moz-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f081ad),
-		color-stop(100%, #e91760) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
-	/* W3C */
-}
-
-.btn_log_in {
-	display: inline-block;
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
-
-.btn_log_in_text {
-	background-color: #000000;
-	background: -moz-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
-		color-stop(100%, #e6e6e6) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
-	/* W3C */
-	/* IE6-9 */
-	background-origin: padding-box;
-	border-bottom-color: rgb(204, 204, 204);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-left-color: #CCCCCC;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #CCCCCC;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #CCCCCC;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	color: #444444;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Helvetica Neue", Arial;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: thin;
-	height: 30px;
-	line-height: 30px;
-	padding-left: 5px;
-	padding-right: 5px;
-	vertical-align: middle;
-	text-align: center;
-	text-decoration: none;
-	min-width: 70px;
-	word-spacing: 2px;
-}
 
 .nav_spacer {
 	display: inline-block;
@@ -542,173 +424,6 @@ h1 span {
 	display: none;
 }
 
-/*---------------------------------------
-
-	SIGN UP 
-
------------------------------------------*/
-.signup_container {
-	border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-}
-
-#signup {
-	width: 404px;
-	padding-bottom: 2px;
-	display: none;
-	background: #FFF;
-	border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
-	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
-	-moz-box-shadow: 0 0px 4px rgba(0, 0, 0, 0.7);
-}
-
-#signup_ct {
-	width: 404px;
-	padding-bottom: 2px;
-	border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-}
-
-#signup_header,#login_header {
-	background-color: #DBDBDB;
-	padding: 18px 18px 14px 18px;
-	border-bottom: 1px solid #CCC;
-	/*border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;*/
-}
-
-#signup_header  h2,#login_header  h2 {
-	color: #444;
-	font-size: 2em;
-	font-weight: 700;
-	margin-bottom: 3px;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-	background-color: #DBDBDB;
-}
-
-#signup_header  p,#login_header  p {
-	color: #444;
-	font-size: 1.3em;
-	margin: 0;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-	text-shadow: none;
-	background-color: #DBDBDB;
-}
-
-#signup .txt_fld {
-	position: relative;
-	width: 364px;
-	padding: 14px 20px;
-	border-bottom: 1px solid #EEE;
-	text-align: right;
-}
-
-#signup .btn_fld {
-	width: 400px;
-	padding: 12px 0 0 0;
-	display: inline-block;
-	border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-webkit-border-bottom-right-radius: 10px;
-}
-
-#signup .txt_fld label {
-	display: block;
-	float: left;
-	width: 90px;
-	padding-top: 8px;
-	color: #222;
-	font-size: 1.3em;
-	text-align: left;
-}
-
-ul.tabs {
-	width: 100%;
-	height: 40px;
-}
-
-ul.tabs>li {
-	display: inline-block;
-	height: 40px;
-	width: 200px;
-}
-
-ul.tabs>li>a {
-	display: block;
-	text-align: center;
-	line-height: 40px;
-	vertical-align: middle;
-	width: 100%;
-	height: 100%;
-}
-
-.tabs li {
-	background-color: #C9C9C9;
-	border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	line-height: 15px;
-	opacity: 0.7;
-	text-align: center;
-}
-
-.tabs li:hover {
-	background-color: #949494;
-	opacity: 0.9
-}
-
-.tabs li.currentTab {
-	background-color: #DBDBDB;
-	border-top-left-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	opacity: 1;
-}
 
 /*--------------------
 
@@ -843,38 +558,6 @@ div.btn_sign_up_form input {
 	background-color: #FFFFFF;
 }
 
-/*-------------------------------
-
-     Floating Nav University Search
-
-----------------------------------*/
-.container_float_nav {
-	background-color: #E0E0E0;
-	height: 40px;
-	position: absolute;
-	left: 0;
-	padding-top: 15px;
-	right: 0;
-	top: 50px;
-	width: 100%;
-	z-index: 1;
-}
-
-.container_float_nav ul,.container_float_nav li,.container_float_nav a {
-	background-color: #E0E0E0;
-}
-
-.container_float_nav li {
-	display: inline-block;
-}
-
-#university_search_bar {
-	background-color: #E0E0E0;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Helvetica Neue";
-	font-weight: thin;
-}
 
 /**********************************************************************
 							TO DO 
@@ -1901,7 +1584,7 @@ li.error {
 .quickfind_tool
 {
 	background: url("../images/icon/searchtool.png") no-repeat;
-	background-color:#FFF;
+	background-color:#FFFFFF;
 	background-size: 100%;
 	color: transparent;
 	position: absolute;
@@ -2005,6 +1688,7 @@ li.error {
 	top: -25px;
 	width: 100%;
 }
+
 .home_splitter_circle
 {
     position: relative;
@@ -2013,6 +1697,7 @@ li.error {
 	width: 100px;
 	margin-top: -100px;
 }
+
 .home_splitter_bar
 {
     position: relative;
@@ -2020,6 +1705,7 @@ li.error {
 	height: 100px;
 	width: 100%;
 }
+
 .home_splitter_container
 {
 	position: absolute;
@@ -2029,12 +1715,77 @@ li.error {
 	margin-bottom: 20px;
 	text-align: center;
 }
+
+.mainInfoGuide {
+	padding:40px 30px 10px 30px;
+}
+
+.mainInfoGuide h1 {
+	margin-bottom:10px;
+}
+
 .home_guide_content
 {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.getStartedHome {
+	height:40px;
+	position:absolute;
+	right:4%;
+	top:30%;
+}
+
+.get-started-bt {
+/* 	background-image: -webkit-linear-gradient(top, #8ADD6D, #60B044); */
+	background: #3259ab; 
+	background: -moz-linear-gradient( top, #3259ab 0%, #4e74c7 100%);
+	background: -webkit-gradient( linear, left top, left bottom, color-stop( 0%, #3259ab), color-stop( 100%, #4e74c7)); 
+	background: -webkit-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
+	background: -o-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
+	background: -ms-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
+	background: linear-gradient( to bottom, #3259ab 0%, #4e74c7 100%); 
+	filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr = '#3259ab', endColorstr = '#4e74c7', GradientType = 0); 
+	border: none;
+	border-radius: 4px;
+	box-sizing: border-box;
+	box-shadow:3px 3px 3px #4F4F4F;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block; 
+	font-family:Helvetica; 
+	font-size: 24px; 
+	font-weight: 100; 
+	height: 100%;
+	line-height:35px;
+	padding:5px 8px 5px 8px;
+	position: relative;
+	text-align: center;
+	width: auto;
+}
+
+.get-started-bt:hover {
+	/* 	background-image: -webkit-linear-gradient(top, #7FCC64, #579E3E); GREEN*/
+	background-image: -webkit-linear-gradient(top, #2C4E96, #4566B0);
+}
+
+.get-started-bt:active {
+	/* 	background-image: -webkit-linear-gradient(top, #72BA59, #4E8F38); GREEN*/
+	background-image: -webkit-linear-gradient(top, #274687, #4566B0);
+}
+.home-bt-ct {
+	border-top: 1px solid #DDD;
+	padding:10px 30px 0px 30px;
+}
+
+.main-graph {
+	background-color:#FFFFFF;
+	border-top: 1px solid #DDD;
+	margin-top:20px;
+}
+
 /***************************************************************************************
 *				Signup
 ****************************************************************************************/
