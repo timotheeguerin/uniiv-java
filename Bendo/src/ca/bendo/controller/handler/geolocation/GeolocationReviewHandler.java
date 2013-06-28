@@ -59,6 +59,6 @@ public class GeolocationReviewHandler
 		{
 			reviewForm.getRatings().add(new RatingEntity());
 		}
-		request.setAttribute("newGeolocationReviewForm", reviewForm);
+		request.setAttribute("geolocationReviewForm", reviewForm);
 	}
 }
