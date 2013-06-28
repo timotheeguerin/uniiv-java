@@ -7,6 +7,8 @@
 			placeholder="${wiki_add_title_placeholder}" required="required" />
 		<f:textarea path="content" cssClass="wmd wmd-input"
 			id="replyEntityContent" />
-		<input type="submit" name="submitbtn" value="Submit" />
+		<div class="submit-wiki">
+			<input type="submit" name="submitbtn" value="Submit" class="submit" />
+		</div>
 	</f:form>
 </div>
