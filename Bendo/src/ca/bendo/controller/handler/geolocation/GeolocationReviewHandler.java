@@ -50,8 +50,12 @@ public class GeolocationReviewHandler
 		List<GeolocationRatingCriteria> criterias = criteriaDAO.list();
 		request.setAttribute("geolocationReviewCriteria", criterias);
 
-		reviewForm.setRatings(new ArrayList<RatingEntity>());
-		for (int i = 0; i < criterias.size(); i++)
+		if (reviewForm.getRatings() == null)
+		{
+			reviewForm.setRatings(new ArrayList<RatingEntity>());
+		}
+
+		for (int i = reviewForm.getRatings().size(); i < criterias.size(); i++)
 		{
 			reviewForm.getRatings().add(new RatingEntity());
 		}

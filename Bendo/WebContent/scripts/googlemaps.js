@@ -41,6 +41,7 @@ function initializeMap(element) {
 function initializeChooseLocationMap(element) {
 	geocoder = new google.maps.Geocoder();
 	var form = element.closest("form");
+
 	if (form != undefined) {
 		form.submit(function() {
 			if (marker != undefined) {
@@ -49,6 +50,9 @@ function initializeChooseLocationMap(element) {
 			}
 		});
 	}
+	var markerLoc = element.attr("data-map-marker-position");
+
+	placeMarker(maps[element], markerLoc);
 	google.maps.event.addListener(maps[element], 'click', function(event) {
 		placeMarker(maps[element], event.latLng);
 	});

@@ -29,7 +29,7 @@ public class GeolocationReviewForm
 	 * 
 	 */
 	@NotNull
-	private Point location;
+	private GeoLocation location;
 
 	/**
 	 * 
@@ -38,10 +38,13 @@ public class GeolocationReviewForm
 	@NotEmpty
 	private List<RatingEntity> ratings;
 
+	@Valid
+	private RatingEntity ratingTest;
+
 	/**
 	 * @return the location
 	 */
-	public Point getLocation()
+	public GeoLocation getLocation()
 	{
 		return location;
 	}
@@ -50,7 +53,7 @@ public class GeolocationReviewForm
 	 * @param location
 	 *            the location to set
 	 */
-	public void setLocation(final Point location)
+	public void setLocation(final GeoLocation location)
 	{
 		this.location = location;
 	}
@@ -70,6 +73,23 @@ public class GeolocationReviewForm
 	public void setRatings(final List<RatingEntity> ratings)
 	{
 		this.ratings = ratings;
+	}
+
+	/**
+	 * @return the ratingTest
+	 */
+	public RatingEntity getRatingTest()
+	{
+		return ratingTest;
+	}
+
+	/**
+	 * @param ratingTest
+	 *            the ratingTest to set
+	 */
+	public void setRatingTest(RatingEntity ratingTest)
+	{
+		this.ratingTest = ratingTest;
 	}
 
 }
