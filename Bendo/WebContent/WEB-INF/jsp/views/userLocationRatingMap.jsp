@@ -11,6 +11,14 @@
 
 
 <div>
-	
+	BLBLa
+	<f:form commandName="newGeolocationReviewForm" id="testId">
+		<c:set var="count" value="0" scope="page" />
+		<c:forEach var="rating" items="${newGeolocationReviewForm.ratings}">
+			<f:radiobuttons path="ratings[${count}]" cssClass="star" items="${requestScope.ratingItems}" />
+			<c:set var="count" value="${count + 1}" scope="page" />
+		</c:forEach>
+		<input type="submit" />
 
+	</f:form>
 </div>

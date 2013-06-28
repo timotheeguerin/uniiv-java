@@ -94,6 +94,9 @@ $(document).ready(function() {
 			maxFontPixels : fontsize
 		});
 	});
+
+	
+
 });
 
 function changeTab(link, update) {

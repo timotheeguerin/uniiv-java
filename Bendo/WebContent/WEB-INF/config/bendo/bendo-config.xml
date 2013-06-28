@@ -10,6 +10,7 @@
 		<style>/styles/table.css</style>
 		<style>/styles/wmd.css</style>
 		<style>/styles/jquery.tag.css</style>
+		<style>/styles/jquery.jrating.css</style>
 	</styles>
 
 	<scripts>
@@ -20,6 +21,8 @@
 		<script>/scripts/jquery.wmd.js</script>
 		<script>/scripts/jquery.simplemodal-1.4.4.js</script>
 		<script>/scripts/jquery.fittext.js</script>
+		<script>/scripts/jquery.jrating.js</script>
+		
 		<script>/scripts/dropdown.js</script>
 		<script>/scripts/loading.js</script>
 		<script>/scripts/general.js</script>

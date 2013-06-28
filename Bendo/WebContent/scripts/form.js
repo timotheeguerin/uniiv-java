@@ -135,34 +135,10 @@ $(document).ready(function() {
 			$(this).parent().addClass("checked");
 		});
 	});
-	// $(window).scroll(function() {
-	//		
-	// //Get the sticky bar
-	// var sticky = $("#sticky");
-	// //Get the scroll height
-	// var scrollTop = $(window).scrollTop();
-	//		
-	// //Load the default height
-	// var defaultheight = 0;
-	// if (sticky.attr("defaultheight") != null) {
-	// defaultheight = sticky.attr("defaultheight");
-	// } else {
-	// defaultheight = sticky.css("top");
-	// sticky.attr("defaultheight", defaultheight);
-	// }
-	// defaultheight = parseInt(defaultheight);
-	//		
-	// if (scrollTop >= defaultheight) {
-	// sticky.css("position", "fixed");
-	// sticky.css("left", "0px");
-	// sticky.css("top", "0px");
-	// } else {
-	// sticky.css("position", "absolute");
-	// sticky.css("left", "0px");
-	// sticky.css("top", defaultheight);
-	//
-	// }
-	// });
+	/***************************************************************************
+	 * STAR RATING
+	 **************************************************************************/
+
 
 });
 
