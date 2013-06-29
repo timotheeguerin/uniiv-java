@@ -3,7 +3,6 @@
  */
 package ca.bendo.db.entity.geolocation;
 
-import java.awt.Point;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
+
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.Point;
 
 import ca.bendo.db.entity.user.User;
 
@@ -50,6 +54,7 @@ public class UserGeolocationReview
 	/**
 	 * 
 	 */
+	@Type(type = "org.hibernate.spatial.GeometryType")
 	@Column(name = "location")
 	private Point location;
 

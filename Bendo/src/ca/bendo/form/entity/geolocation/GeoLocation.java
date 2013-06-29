@@ -3,6 +3,10 @@
  */
 package ca.bendo.form.entity.geolocation;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -85,6 +89,18 @@ public class GeoLocation
 				e.printStackTrace();
 			}
 		}
+	}
+
+	/**
+	 * 
+	 * @return geometry
+	 */
+	public Geometry toGeometry()
+	{
+		GeometryFactory geometryFactory = new GeometryFactory();
+
+		return geometryFactory.createPoint(new Coordinate(longitude, latitude));
+
 	}
 
 	/**

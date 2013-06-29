@@ -73,7 +73,7 @@ public class GeoLocationReviewController
 			return newGeolocationReviewPage(request, reviewForm);
 		} else
 		{
-			System.out.println("Location: " + reviewForm.getLocation());
+			System.out.println("Location: " + reviewForm.getLocation().toGeometry());
 			// /newGeolocationReview.handleNewQuestion(request, questionForm);
 			return "redirect:";
 		}
