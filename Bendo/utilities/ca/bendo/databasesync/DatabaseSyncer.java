@@ -66,7 +66,7 @@ public class DatabaseSyncer
 		// autre: bendodev.no-ip.org
 		// local: 192.168.2.27
 		ConnectionData sourceData = new ConnectionData();
-		//int reply = JOptionPane.showConfirmDialog(null, "Tim palace?");
+		// int reply = JOptionPane.showConfirmDialog(null, "Tim palace?");
 		String sourceUrl = "jdbc:mysql://bendodev.no-ip.org:3306/bendo_dev";
 
 		sourceData.setUrl(sourceUrl);
@@ -308,6 +308,7 @@ public class DatabaseSyncer
 
 				String type = processType(md.getColumnTypeName(i), md.getPrecision(i), md.getScale(i));
 				result.append(type);
+				//System.out.println("TYPE: " + ((com.mysql.jdbc.ResultSetMetaData) md).getColumnType(i) + " " + type);
 				if (md.getColumnTypeName(i).equalsIgnoreCase("VARCHAR"))
 				{
 					String collation = ((com.mysql.jdbc.ResultSetMetaData) md).getColumnCharacterSet(i);
@@ -438,6 +439,11 @@ public class DatabaseSyncer
 		} else if (columnTypeName.equalsIgnoreCase("TIMESTAMP"))
 		{
 			result.append("TIMESTAMP ");
+
+		} else if (columnTypeName.equalsIgnoreCase("GEOMETRY"))
+		{
+			result.append("POINT ");
+
 		} else if (precision != 0 && precision < MAX_VARCHAR_LENGTH)
 		{
 			result.append(columnTypeName);
