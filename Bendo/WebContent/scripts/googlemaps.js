@@ -51,8 +51,10 @@ function initializeChooseLocationMap(element) {
 		});
 	}
 	var markerLoc = element.attr("data-map-marker-position");
+	if (markerLoc != undefined && markerLoc != '') {
+		placeMarker(maps[element], parseLatlng(markerLoc));
+	}
 
-	placeMarker(maps[element], markerLoc);
 	google.maps.event.addListener(maps[element], 'click', function(event) {
 		placeMarker(maps[element], event.latLng);
 	});
@@ -70,12 +72,27 @@ function placeMarker(map, location) {
 	}
 }
 
+function parseLatlng(string) {
+	var lat = 0;
+	var lng = 0;
+	if (string != '') {
+		var str = string.substring(1, string.length - 1);
+		var array = str.split(",");
+		lat = parseFloat(array[0]);
+		lng = parseFloat(array[1]);
+		
+	}
+	
+	return new google.maps.LatLng(lat, lng);
+}
+
 function codeAddress(element) {
 	var error = $(element.attr("data-input-error"));
 
 	var address = $(element.attr("data-input")).val();
-	console.log(address + " " + $(element.attr("data-input")));
-	var map = maps[element];
+	var mapElement = $(element.attr("data-map"));
+
+	var map = maps[mapElement];
 	geocoder.geocode({
 		'address' : address
 	}, function(results, status) {

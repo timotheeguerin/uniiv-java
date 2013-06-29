@@ -3,9 +3,6 @@
  */
 package ca.bendo.controller.geolocation;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.controller.handler.geolocation.GeolocationReviewHandler;
-import ca.bendo.form.entity.RatingEntity;
 import ca.bendo.form.entity.geolocation.GeolocationReviewForm;
 
 /**
@@ -68,6 +64,11 @@ public class GeoLocationReviewController
 	{
 		if (result.hasErrors())
 		{
+			for (ObjectError error : result.getAllErrors())
+			{
+				System.out.println("ERROR: " + error.getObjectName() + " | " + error.toString() + " | "
+						+ error.getDefaultMessage());
+			}
 			System.out.println("Location Fail : " + reviewForm.getLocation());
 			return newGeolocationReviewPage(request, reviewForm);
 		} else

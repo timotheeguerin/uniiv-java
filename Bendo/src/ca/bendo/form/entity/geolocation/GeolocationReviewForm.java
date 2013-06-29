@@ -3,7 +3,6 @@
  */
 package ca.bendo.form.entity.geolocation;
 
-import java.awt.Point;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -28,18 +27,15 @@ public class GeolocationReviewForm
 	/**
 	 * 
 	 */
-	@NotNull
+	@NotNull(message = "error.location")
 	private GeoLocation location;
 
 	/**
 	 * 
 	 */
 	@Valid
-	@NotEmpty
+	@NotEmpty(message = "error.empty")
 	private List<RatingEntity> ratings;
-
-	@Valid
-	private RatingEntity ratingTest;
 
 	/**
 	 * @return the location
@@ -74,22 +70,4 @@ public class GeolocationReviewForm
 	{
 		this.ratings = ratings;
 	}
-
-	/**
-	 * @return the ratingTest
-	 */
-	public RatingEntity getRatingTest()
-	{
-		return ratingTest;
-	}
-
-	/**
-	 * @param ratingTest
-	 *            the ratingTest to set
-	 */
-	public void setRatingTest(RatingEntity ratingTest)
-	{
-		this.ratingTest = ratingTest;
-	}
-
 }
