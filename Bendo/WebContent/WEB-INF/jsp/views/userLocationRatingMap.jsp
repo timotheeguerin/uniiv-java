@@ -75,7 +75,10 @@
 					:
 				</div>
 				<div class="user_location_rating">
-					<f:radiobuttons class="user_location_buttons" path="ratings[${criteria.name}]" cssClass="star" items="${requestScope.ratingItems}" />
+					<b:lbltranslator var="genRatingLabels" value="${criteria}" items="${ratingItems}" />
+					<f:radiobuttons class="user_location_buttons" path="ratings[${criteria.name}]" cssClass="star" items="${genRatingLabels}" itemValue="value"
+						itemLabel="label"
+					/>
 				</div>
 			</div>
 			<div class="user_location_rating_spacer"></div>

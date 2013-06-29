@@ -3,6 +3,7 @@
  */
 package ca.bendo.form.entity.geolocation;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -35,7 +36,7 @@ public class GeolocationReviewForm
 	 */
 	@Valid
 	@NotEmpty(message = "error.empty")
-	private Map<String, RatingEntity> ratings;
+	private Map<String, RatingEntity> ratings = new HashMap<String, RatingEntity>();
 
 	/**
 	 * add a new Rating entity map to the given key if the key doesnt exist

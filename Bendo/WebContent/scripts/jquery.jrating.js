@@ -439,11 +439,6 @@ if (window.jQuery)
 
 		/*--------------------------------------------------------*/
 
-		// auto-initialize plugin
-		$(function() {
-			$('input[type=radio].star').rating();
-		});
-
 		/* # AVOID COLLISIONS # */
 	})(jQuery);
 /* # AVOID COLLISIONS # */
