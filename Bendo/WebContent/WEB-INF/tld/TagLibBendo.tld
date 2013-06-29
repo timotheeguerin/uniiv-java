@@ -53,6 +53,28 @@
 	</tag>
 
 	<tag>
+		<name>lbltranslator</name>
+		<tagclass>ca.bendo.taglib.tag.form.TranslateLabelsTag</tagclass>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>var</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>items</name>
+			<type>java.lang.List</type>
+			<rtexprvalue>true</rtexprvalue>
+			<required>true</required>
+		</attribute>
+	</tag>
+
+	<tag>
 		<name>tlink</name>
 		<tagclass>ca.bendo.taglib.tag.TLinkTag</tagclass>
 		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->

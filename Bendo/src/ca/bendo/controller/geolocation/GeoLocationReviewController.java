@@ -92,8 +92,7 @@ public class GeoLocationReviewController
 	public String newGeolocationReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
 	{
 		handler.setupNewReviewPage(request, reviewForm);
-		Integer[] array = { 1, 2, 3, 4, 5 };
-		request.setAttribute("ratingItems", array);
+		
 		return "views/userLocationRatingMap";
 	}
 }

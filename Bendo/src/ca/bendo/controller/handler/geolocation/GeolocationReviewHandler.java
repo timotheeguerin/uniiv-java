@@ -4,7 +4,6 @@
 package ca.bendo.controller.handler.geolocation;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -22,10 +21,10 @@ import ca.bendo.db.entity.geolocation.UserGeolocationRating;
 import ca.bendo.db.entity.geolocation.UserGeolocationReview;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
+import ca.bendo.form.entity.FormItem;
 import ca.bendo.form.entity.RatingEntity;
 import ca.bendo.form.entity.geolocation.GeolocationReviewForm;
 import ca.bendo.session.UserSession;
-import ca.bendo.user.UserFactory;
 
 /**
  * @author Timothée Guérin
@@ -41,6 +40,10 @@ import ca.bendo.user.UserFactory;
 @Transactional
 public class GeolocationReviewHandler
 {
+	/**
+	 * 
+	 */
+	private static final int STAR_RATING_5 = 5;
 
 	/**
 	 * 
@@ -101,16 +104,17 @@ public class GeolocationReviewHandler
 		List<GeolocationRatingCriteria> criterias = criteriaDAO.list();
 		request.setAttribute("geolocationReviewCriteria", criterias);
 
-		if (reviewForm.getRatings() == null)
-		{
-			reviewForm.setRatings(new HashMap<String, RatingEntity>());
-		}
-
 		for (int i = reviewForm.getRatings().size(); i < criterias.size(); i++)
 		{
 			reviewForm.init(criterias.get(i).getName());
 		}
 		request.setAttribute("geolocationReviewForm", reviewForm);
-	}
 
+		List<FormItem> items = new ArrayList<FormItem>();
+		for (int i = 1; i <= STAR_RATING_5; i++)
+		{
+			items.add(new FormItem(String.valueOf(i), ""));
+		}
+		request.setAttribute("ratingItems", items);
+	}
 }

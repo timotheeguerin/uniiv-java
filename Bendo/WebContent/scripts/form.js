@@ -20,15 +20,6 @@ $(document).ready(function() {
 		}
 	});
 
-	// $(document).on("keyup", "input.check[type='password']",
-	// function() {
-	// checkPassword($(this));
-	// });
-	//
-	// $(document).on("keyup", "input.check[type='email']", function() {
-	// checkMail($(this));
-	// });
-
 	$(document).on("click", "div.fastmenu_access_button", function() {
 		var fastmenu = $("#fastmenu");
 		var fastmenu_ghost = $("#fastmenu_ghost");
@@ -115,6 +106,16 @@ $(document).ready(function() {
 		});
 	});
 
+	$('input[type=radio].star').each(function() {
+
+		// Update the title to be the label
+		var label = $('label[for="' + $(this).attr('id') + '"]');
+		if (label != undefined) {
+			$(this).attr("title", label.html());
+		}
+		$(this).rating();
+	});
+
 	$("textarea.wmd").wmd();
 	$('textarea.wmd:not(.processed)').TextAreaResizer();
 
@@ -139,29 +140,23 @@ $(document).ready(function() {
 	 * STAR RATING
 	 **************************************************************************/
 
-	
 	/***************************************************************************
 	 * Preferences buttons
 	 */
 	$(".preferences_cycler").click(function() {
-	    if($(this).attr("value") == "0")
-	    {
-	         $(this).removeClass("preferences_default");
-	         $(this).addClass("preferences_like");
-	         $(this).attr("value","1");
-	    }
-	    else if($(this).attr("value") == "1")
-	    {
-	        $(this).removeClass("preferences_like");
-	        $(this).addClass("preferences_dislike");
-	        $(this).attr("value","2");
-	    }
-	    else if($(this).attr("value") == 2)
-	    {
-	        $(this).removeClass("preferences_dislike");
-	        $(this).addClass("preferences_default");
-	        $(this).attr("value","0");
-	    }
+		if ($(this).attr("value") == "0") {
+			$(this).removeClass("preferences_default");
+			$(this).addClass("preferences_like");
+			$(this).attr("value", "1");
+		} else if ($(this).attr("value") == "1") {
+			$(this).removeClass("preferences_like");
+			$(this).addClass("preferences_dislike");
+			$(this).attr("value", "2");
+		} else if ($(this).attr("value") == 2) {
+			$(this).removeClass("preferences_dislike");
+			$(this).addClass("preferences_default");
+			$(this).attr("value", "0");
+		}
 	});
 });
 
