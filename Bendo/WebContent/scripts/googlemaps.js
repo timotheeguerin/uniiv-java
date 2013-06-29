@@ -92,8 +92,9 @@ function codeAddress(element) {
 	var error = $(element.attr("data-input-error"));
 
 	var address = $(element.attr("data-input")).val();
-	console.log(address + " " + $(element.attr("data-input")));
-	var map = maps[element];
+	var mapElement = $(element.attr("data-map"));
+
+	var map = maps[mapElement];
 	geocoder.geocode({
 		'address' : address
 	}, function(results, status) {

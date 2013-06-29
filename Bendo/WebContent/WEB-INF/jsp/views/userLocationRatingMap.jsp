@@ -53,12 +53,13 @@
 }
 </style>
 <div class="user_location_map_frame">
+	<input class="input-element" id="address" type="text" value="H3A 2B1">
+	<input class="submit mapPlaceMarker" type="button" value="Find" class="mapPlaceMarker" data-input="#address" data-map="#user_location_map-canvas">
 	<f:form commandName="geolocationReviewForm" id="testId">
 		<div class="errors">
 			<f:errors path="*" />
 		</div>
-		<input class="input-element" id="address" type="text" value="H3A 2B1">
-		<input class="submit" type="button" value="Find" class="mapPlaceMarker" data-input="#address">
+
 		<div class="user_location_rating_spacer"></div>
 		<div id="user_location_map-canvas" class="googlemap userMarker" data-map-position="45.504467,-73.577589"
 			data-map-marker-position="${newGeolocationReviewForm.location}"
