@@ -12,7 +12,7 @@
 	src='<c:url value="/images/background/home_splitter_circle.png"/>' />
 </span>
 <div class="mainInfoGuide">
-	<div>
+	<div class="info-left">
 		<h1>
 			<b:translator value="main-info-start" />
 		</h1>
