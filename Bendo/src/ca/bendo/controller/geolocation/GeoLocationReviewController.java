@@ -12,6 +12,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import ca.bendo.controller.handler.geolocation.GeolocationReviewHandler;
 import ca.bendo.form.entity.geolocation.GeolocationReviewForm;
@@ -36,6 +38,16 @@ public class GeoLocationReviewController
 	private GeolocationReviewHandler handler;
 
 	/**
+	 * @return 1 if the username is available and 0 if not
+	 */
+	@RequestMapping(value = "/location/load", method = RequestMethod.GET)
+	@ResponseBody
+	public String checkEmailAvailable()
+	{
+		return "[new google.maps.LatLng(37.782, -122.447), new google.maps.LatLng(37.782, -122.445)]";
+	}
+
+	/**
 	 * 
 	 * @param request
 	 *            Request
@@ -58,7 +70,7 @@ public class GeoLocationReviewController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	
+
 	@RequestMapping(value = "/location/review", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final GeolocationReviewForm reviewForm,
 			final BindingResult result)
@@ -92,7 +104,7 @@ public class GeoLocationReviewController
 	public String newGeolocationReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
 	{
 		handler.setupNewReviewPage(request, reviewForm);
-		
+
 		return "views/userLocationRatingMap";
 	}
 }

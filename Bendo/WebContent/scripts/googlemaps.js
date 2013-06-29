@@ -11,6 +11,20 @@ $(document).ready(function() {
 	$("div.googlemap.userMarker").each(function() {
 		initializeChooseLocationMap($(this));
 	});
+
+	$("div.googlemap.heatmap").each(function() {
+		$.get(baseUrl + "/location/load").success(function(data) {
+			console.log(data);
+			var heatmapData = eval(data);
+			var heatmap = new google.maps.visualization.HeatmapLayer({
+				data : heatmapData
+			});
+			heatmap.setMap(maps[$(this)]);
+
+		}).error(function(xhr, status, error) {
+			alert("err: " + error);
+		});
+	});
 	$(document).on("click", "input.mapPlaceMarker", function() {
 		codeAddress($(this));
 	});
@@ -80,9 +94,9 @@ function parseLatlng(string) {
 		var array = str.split(",");
 		lat = parseFloat(array[0]);
 		lng = parseFloat(array[1]);
-		
+
 	}
-	
+
 	return new google.maps.LatLng(lat, lng);
 }
 

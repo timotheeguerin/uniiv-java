@@ -6,6 +6,11 @@
 <meta name="author" content="Timothée Guérin, Uniiv" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
+<script type="text/javascript">
+	var baseUrl = <c:url value="/"/>;
+</script>
+<!--[if lte IE 6]></base><![endif]-->
+
 <c:set var="head" value="${requestScope.head}" scope="page" />
 <c:set var="translator" value="${requestScope.translator}" scope="page" />
 <c:set var="userSession" value="${requestScope.userSession}" scope="page" />

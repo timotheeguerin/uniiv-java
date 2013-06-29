@@ -61,7 +61,7 @@
 		</div>
 
 		<div class="user_location_rating_spacer"></div>
-		<div id="user_location_map-canvas" class="googlemap userMarker" data-map-position="45.504467,-73.577589"
+		<div id="user_location_map-canvas" class="googlemap userMarker heatmap" data-map-position="45.504467,-73.577589"
 			data-map-marker-position="${geolocationReviewForm.location}"
 		></div>
 		<div class="user_location_rating_spacer"></div>
