@@ -39,6 +39,14 @@
 		
 			<c:choose>
 				<c:when test="${requestScope.userSession.isLogin()}">
+					<div class="nav_logo_frame">
+						<a href='<c:url value="/user"/>'>
+							<img class="nav_user_home" src='<c:url value="/images/menu/user_home.png"/>'/>
+						</a>
+					</div>
+					
+					<span class="nav_spacer"></span>
+					
 					<a href='<c:url value="/logout"/>' class="btn_log_in">
 						<span class="nav_logout_text"><b:translator value="logout" /></span>
 					</a>

@@ -351,6 +351,13 @@ h1, h1 span {
 	font-weight: lighter;
 }
 
+.nav_user_home
+{
+	display: inline-block;
+	width: 25px;
+	height: 26px;
+}
+
 .btn_log_in_text:hover {
 	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
 	background-color: #000000;
