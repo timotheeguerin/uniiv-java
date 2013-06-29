@@ -53,7 +53,7 @@
 			
 			<div class="login_spacer_big"></div>
 			<div class="login_submit">
-				<input class="submit" name="submitbtn" type="submit" value="Log In" />
+				<input class="submit login-bt" name="submitbtn" type="submit" value="Log In" />
 			</div>
 		</jsp:body>
 	</f:form>
