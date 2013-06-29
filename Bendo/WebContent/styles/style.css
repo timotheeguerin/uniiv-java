@@ -1802,42 +1802,15 @@ p.big-type span {
 }
 
 .get-started-bt {
-/* 	background-image: -webkit-linear-gradient(top, #8ADD6D, #60B044); */
-	background: #3259ab; 
-	background: -moz-linear-gradient( top, #3259ab 0%, #4e74c7 100%);
-	background: -webkit-gradient( linear, left top, left bottom, color-stop( 0%, #3259ab), color-stop( 100%, #4e74c7)); 
-	background: -webkit-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
-	background: -o-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
-	background: -ms-linear-gradient( top, #3259ab 0%, #4e74c7 100%); 
-	background: linear-gradient( to bottom, #3259ab 0%, #4e74c7 100%); 
-	filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr = '#3259ab', endColorstr = '#4e74c7', GradientType = 0); 
-	border: none;
-	border-radius: 4px;
-	box-sizing: border-box;
-	box-shadow:3px 3px 3px #4F4F4F;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block; 
-	font-family:Helvetica; 
-	font-size: 24px; 
-	font-weight: 100; 
-	height: 100%;
-	line-height:35px;
-	padding:5px 8px 5px 8px;
-	position: relative;
-	text-align: center;
-	width: auto;
+	color: #204AA1;
 }
 
-.get-started-bt:hover {
-	/* 	background-image: -webkit-linear-gradient(top, #7FCC64, #579E3E); GREEN*/
-	background-image: -webkit-linear-gradient(top, #2C4E96, #4566B0);
+.get-started-bt:hover
+{
+	text-decoration: underline;
 }
 
-.get-started-bt:active {
-	/* 	background-image: -webkit-linear-gradient(top, #72BA59, #4E8F38); GREEN*/
-	background-image: -webkit-linear-gradient(top, #274687, #4566B0);
-}
+
 .home-bt-ct {
 	background-image: url("../images/pic-bt.jpg");
 	bottom:40px;
@@ -1898,7 +1871,7 @@ p.big-type span {
 	background-color:#FFFFFF;
 	border-top: 1px solid #DDD;
 	margin-top:20px;
-	padding-bottom:20px;
+	padding-bottom:30px;
 }
 
 .home_guide_content

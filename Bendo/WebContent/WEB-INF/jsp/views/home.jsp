@@ -52,9 +52,13 @@
 		<h2>
 			<b:translator value="bt_get_started_who" />
 		</h2>
-		<p>
+		<span>
 			<b:translator value="start_text_bt" />
-		</p>
+		</span>
+		<a class="get-started-bt" href="<b:url value="/discover"/>"> <b:translator
+ 			value="get_started" />
+ 	</a>
+		
 		<!-- 	<div class="start-h-c"> -->
 		<!-- 		<div class="start-bt"> -->
 		<!-- 			<p> -->
