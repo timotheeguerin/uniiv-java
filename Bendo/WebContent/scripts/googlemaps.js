@@ -52,8 +52,6 @@ function initializeChooseLocationMap(element) {
 	}
 	var markerLoc = element.attr("data-map-marker-position");
 	if (markerLoc != undefined && markerLoc != '') {
-
-		
 		placeMarker(maps[element], parseLatlng(markerLoc));
 	}
 

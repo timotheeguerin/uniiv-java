@@ -62,7 +62,7 @@
 
 		<div class="user_location_rating_spacer"></div>
 		<div id="user_location_map-canvas" class="googlemap userMarker" data-map-position="45.504467,-73.577589"
-			data-map-marker-position="${newGeolocationReviewForm.location}"
+			data-map-marker-position="${geolocationReviewForm.location}"
 		></div>
 		<div class="user_location_rating_spacer"></div>
 		<f:errors path="location" />
