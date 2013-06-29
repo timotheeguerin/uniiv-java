@@ -1,10 +1,10 @@
 <img class="home_image_bg"
 	src='<c:url value="/images/background/uniiv_MIT_background.jpg"/>' />
-<div class="getStartedHome">
-	<a class="get-started-bt" href="<b:url value="/discover"/>"> <b:translator
-			value="get_started" />
-	</a>
-</div>
+<!-- <div class="getStartedHome"> -->
+<%-- 	<a class="get-started-bt" href="<b:url value="/discover"/>"> <b:translator --%>
+<%-- 			value="get_started" /> --%>
+<!-- 	</a> -->
+<!-- </div> -->
 <span class="home_splitter_container"> <img
 	class="home_splitter_bar"
 	src='<c:url value="/images/background/home_splitter_bar.png"/>' /> <img
