@@ -3,7 +3,7 @@
  */
 package ca.bendo.form.entity.geolocation;
 
-import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -35,7 +35,23 @@ public class GeolocationReviewForm
 	 */
 	@Valid
 	@NotEmpty(message = "error.empty")
-	private List<RatingEntity> ratings;
+	private Map<String, RatingEntity> ratings;
+
+	/**
+	 * add a new Rating entity map to the given key if the key doesnt exist
+	 * already.
+	 * 
+	 * @param key
+	 *            Key
+	 * 
+	 */
+	public void init(final String key)
+	{
+		if (!ratings.containsKey(key))
+		{
+			ratings.put(key, new RatingEntity());
+		}
+	}
 
 	/**
 	 * @return the location
@@ -57,7 +73,7 @@ public class GeolocationReviewForm
 	/**
 	 * @return the ratings
 	 */
-	public List<RatingEntity> getRatings()
+	public Map<String, RatingEntity> getRatings()
 	{
 		return ratings;
 	}
@@ -66,7 +82,7 @@ public class GeolocationReviewForm
 	 * @param ratings
 	 *            the ratings to set
 	 */
-	public void setRatings(final List<RatingEntity> ratings)
+	public void setRatings(final Map<String, RatingEntity> ratings)
 	{
 		this.ratings = ratings;
 	}

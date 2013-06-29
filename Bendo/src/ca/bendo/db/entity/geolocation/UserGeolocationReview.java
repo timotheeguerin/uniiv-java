@@ -17,10 +17,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.Point;
-
 import ca.bendo.db.entity.user.User;
+
+import com.vividsolutions.jts.geom.Point;
 
 /**
  * @author Timothée Guérin

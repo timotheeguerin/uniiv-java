@@ -4,7 +4,9 @@
 package ca.bendo.controller.handler.geolocation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,9 +15,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.geolocation.GeolocationRatingCriteriaDAO;
+import ca.bendo.db.dao.geolocation.UserGeolocationRatingDAO;
+import ca.bendo.db.dao.geolocation.UserGeolocationReviewDAO;
 import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
+import ca.bendo.db.entity.geolocation.UserGeolocationRating;
+import ca.bendo.db.entity.geolocation.UserGeolocationReview;
+import ca.bendo.db.entity.user.User;
 import ca.bendo.form.entity.RatingEntity;
 import ca.bendo.form.entity.geolocation.GeolocationReviewForm;
+import ca.bendo.session.UserSession;
+import ca.bendo.user.UserFactory;
 
 /**
  * @author Timothée Guérin
@@ -40,6 +49,43 @@ public class GeolocationReviewHandler
 
 	/**
 	 * 
+	 */
+	@Autowired
+	private UserGeolocationRatingDAO ratingDAO;
+
+	/**
+	 * 
+	 */
+	@Autowired
+	private UserGeolocationReviewDAO reviewDAO;
+
+	/**
+	 * @param request
+	 *            Request
+	 * @param reviewForm
+	 *            Review Form
+	 */
+	public void handleNewReview(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
+	{
+		User user = UserSession.getSession(request).getUser();
+		if (user == null)
+		{
+			return;
+		}
+		UserGeolocationReview review = new UserGeolocationReview();
+		review.setLocation(reviewForm.getLocation().toPoint());
+		review.setUser(user);
+
+		reviewDAO.add(review);
+		for (Entry<String, RatingEntity> entry : reviewForm.getRatings().entrySet())
+		{
+			UserGeolocationRating rating = new UserGeolocationRating();
+			rating.setReview(review);
+		}
+	}
+
+	/**
+	 * 
 	 * @param request
 	 *            Request
 	 * @param reviewForm
@@ -52,13 +98,14 @@ public class GeolocationReviewHandler
 
 		if (reviewForm.getRatings() == null)
 		{
-			reviewForm.setRatings(new ArrayList<RatingEntity>());
+			reviewForm.setRatings(new HashMap<String, RatingEntity>());
 		}
 
 		for (int i = reviewForm.getRatings().size(); i < criterias.size(); i++)
 		{
-			reviewForm.getRatings().add(new RatingEntity());
+			reviewForm.init(criterias.get(i).getName());
 		}
 		request.setAttribute("geolocationReviewForm", reviewForm);
 	}
+
 }

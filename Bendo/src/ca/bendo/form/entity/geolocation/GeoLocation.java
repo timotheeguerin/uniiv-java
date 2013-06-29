@@ -6,6 +6,7 @@ package ca.bendo.form.entity.geolocation;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Point;
 
 /**
  * @author Timothée Guérin
@@ -95,11 +96,11 @@ public class GeoLocation
 	 * 
 	 * @return geometry
 	 */
-	public Geometry toGeometry()
+	public Point toPoint()
 	{
 		GeometryFactory geometryFactory = new GeometryFactory();
 
-		return geometryFactory.createPoint(new Coordinate(longitude, latitude));
+		return (Point) geometryFactory.createPoint(new Coordinate(longitude, latitude));
 
 	}
 
