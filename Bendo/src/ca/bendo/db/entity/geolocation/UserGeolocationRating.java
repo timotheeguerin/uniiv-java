@@ -45,7 +45,7 @@ public class UserGeolocationRating
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_geolocation_criteria")
+	@JoinColumn(name = "id_geolocation_rating_criteria")
 	private GeolocationRatingCriteria criteria;
 
 	/**

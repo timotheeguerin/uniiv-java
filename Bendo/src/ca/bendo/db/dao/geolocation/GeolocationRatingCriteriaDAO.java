@@ -3,6 +3,9 @@
  */
 package ca.bendo.db.dao.geolocation;
 
+import java.awt.image.RescaleOp;
+
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,5 +32,16 @@ public class GeolocationRatingCriteriaDAO extends HibernateDAO<GeolocationRating
 	public GeolocationRatingCriteriaDAO()
 	{
 		setType(GeolocationRatingCriteria.class);
+	}
+
+	/**
+	 * @param key
+	 *            name of the rating criteria
+	 * @return criteria with the given name
+	 */
+	public GeolocationRatingCriteria getByName(final String key)
+	{
+		return (GeolocationRatingCriteria) getSession().createCriteria(GeolocationRatingCriteria.class)
+				.add(Restrictions.eq("name", key)).uniqueResult();
 	}
 }

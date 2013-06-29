@@ -20,6 +20,7 @@ import ca.bendo.db.dao.geolocation.UserGeolocationReviewDAO;
 import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
 import ca.bendo.db.entity.geolocation.UserGeolocationRating;
 import ca.bendo.db.entity.geolocation.UserGeolocationReview;
+import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.form.entity.RatingEntity;
 import ca.bendo.form.entity.geolocation.GeolocationReviewForm;
@@ -67,6 +68,7 @@ public class GeolocationReviewHandler
 	 */
 	public void handleNewReview(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
 	{
+		long languageId = Language.loadId(request);
 		User user = UserSession.getSession(request).getUser();
 		if (user == null)
 		{
@@ -75,12 +77,15 @@ public class GeolocationReviewHandler
 		UserGeolocationReview review = new UserGeolocationReview();
 		review.setLocation(reviewForm.getLocation().toPoint());
 		review.setUser(user);
-
+		reviewDAO.enableTranslation(languageId);
 		reviewDAO.add(review);
 		for (Entry<String, RatingEntity> entry : reviewForm.getRatings().entrySet())
 		{
 			UserGeolocationRating rating = new UserGeolocationRating();
 			rating.setReview(review);
+			rating.setCriteria(criteriaDAO.getByName(entry.getKey()));
+			rating.setValue(entry.getValue().getValue());
+			ratingDAO.add(rating);
 		}
 	}
 

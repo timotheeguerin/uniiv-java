@@ -75,11 +75,11 @@
 					:
 				</div>
 				<div class="user_location_rating">
-					<f:radiobuttons class="user_location_buttons" path="ratings[${row.index}]" cssClass="star" items="${requestScope.ratingItems}" />
+					<f:radiobuttons class="user_location_buttons" path="ratings[${criteria.name}]" cssClass="star" items="${requestScope.ratingItems}" />
 				</div>
 			</div>
 			<div class="user_location_rating_spacer"></div>
-			<f:errors path="ratings[${row.index}]" />
+			<f:errors path="ratings[${criteria.name}]" />
 		</c:forEach>
 		<input class="submit" type="submit" />
 	</f:form>

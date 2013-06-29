@@ -54,7 +54,7 @@ public class UserGeolocationReview
 	 * 
 	 */
 	@Type(type = "org.hibernate.spatial.GeometryType")
-	@Column(name = "location")
+	@Column(name = "location", columnDefinition = "Geometry")
 	private Point location;
 
 	/**

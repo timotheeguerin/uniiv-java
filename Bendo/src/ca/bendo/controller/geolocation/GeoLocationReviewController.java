@@ -58,6 +58,7 @@ public class GeoLocationReviewController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
+	
 	@RequestMapping(value = "/location/review", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final GeolocationReviewForm reviewForm,
 			final BindingResult result)
