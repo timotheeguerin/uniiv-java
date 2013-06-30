@@ -71,6 +71,7 @@
 .user_home_show_hide_content
 {
     display: none;
+    padding-left: 30px;
 }
 </style>
 <div class="user_home_title_frame">
