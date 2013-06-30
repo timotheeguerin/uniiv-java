@@ -2,6 +2,7 @@ var marker;
 var geocoder;
 
 var maps = {};
+var heatmaps = {};
 
 $(document).ready(function() {
 	$("div.googlemap").each(function() {
