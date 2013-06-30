@@ -140,6 +140,28 @@ public class GeolocationReviewHandler
 			items.add(new FormItem(String.valueOf(i), ""));
 		}
 		request.setAttribute("ratingItems", items);
+		request.setAttribute("university", university);
 		return true;
+	}
+
+	/**
+	 * @param request
+	 *            Request
+	 * @param univeristyId
+	 *            universityid
+	 * @return if fails
+	 */
+	public boolean setupStatPage(final HttpServletRequest request, final long univeristyId)
+	{
+		University university = universityDAO.getById(univeristyId);
+		if (university == null)
+		{
+			return false;
+		}
+		request.setAttribute("university", university);
+		List<GeolocationRatingCriteria> criterias = criteriaDAO.list();
+		request.setAttribute("geolocationReviewCriteria", criterias);
+		return true;
+
 	}
 }

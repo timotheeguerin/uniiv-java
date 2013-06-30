@@ -14,22 +14,40 @@ $(document).ready(function() {
 	});
 
 	$("div.googlemap.heatmap").each(function() {
-		$.get(baseUrl + "/university/1/location/heatmap").success(function(data) {
-			console.log(data);
-			var heatmapData = eval(data);
-			var heatmap = new google.maps.visualization.HeatmapLayer({
-				data : heatmapData
-			});
-			heatmap.setMap(maps[$(this)]);
-
-		}).error(function(xhr, status, error) {
-			alert("err: " + error);
-		});
+		var heatmapUrl = $(this).attr("data-heatmap-url");
+		loadHeatmap($(this), heatmapUrl);
 	});
+
+	$(document).on("click", "div.appendheatmap", function() {
+		var map = $(this).attr("data-map");
+		var heatmapUrl = $(this).attr("data-heatmap-url");
+		loadHeatmap($(map), heatmapUrl);
+
+	});
+
 	$(document).on("click", "input.mapPlaceMarker", function() {
 		codeAddress($(this));
 	});
 });
+
+function loadHeatmap(element, url) {
+	var old = heatmaps[maps[element]];
+	if (old != undefined) {
+		old.setMap(null);
+	}
+	$.get(baseUrl + url).success(function(data) {
+
+		var heatmapData = eval(data);
+		var heatmap = new google.maps.visualization.HeatmapLayer({
+			data : heatmapData
+		});
+		heatmap.setMap(maps[element]);
+		heatmaps[maps[element]] = heatmap;
+
+	}).error(function(xhr, status, error) {
+		alert("err: " + error);
+	});
+}
 function getCenter(element) {
 	var x = 0;
 	var y = 0;

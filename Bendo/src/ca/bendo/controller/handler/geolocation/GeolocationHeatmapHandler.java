@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ca.bendo.db.dao.geolocation.GeolocationRatingCriteriaDAO;
 import ca.bendo.db.dao.geolocation.UserGeolocationReviewDAO;
+import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
 
 /**
  * @author Timothée Guérin
@@ -32,13 +34,30 @@ public class GeolocationHeatmapHandler
 	private UserGeolocationReviewDAO userGeolocationReviewDAO;
 
 	/**
+	 * 
+	 */
+	@Autowired
+	private GeolocationRatingCriteriaDAO geolocationRatingCriteriaDAO;
+
+	/**
 	 * @param universityId
 	 *            University Id
+	 * @param type
+	 *            type
 	 * @return heatmap data
 	 */
-	public String loadStudentLocationHeatMap(final long universityId)
+	public String loadStudentLocationHeatMap(final long universityId, final String type)
 	{
-		List<HeatmapPoint> points = userGeolocationReviewDAO.listLocationFromUniversity(universityId);
+		List<HeatmapPoint> points = null;
+		geolocationRatingCriteriaDAO.enableTranslation(1);
+		GeolocationRatingCriteria criteria = geolocationRatingCriteriaDAO.getByName(type);
+		if (criteria == null)
+		{
+			points = userGeolocationReviewDAO.listLocationFromUniversity(universityId);
+		} else
+		{
+			points = userGeolocationReviewDAO.listLocationFromUniversityWithWeight(universityId, criteria.getId());
+		}
 		return toHeatMapObject(points);
 	}
 

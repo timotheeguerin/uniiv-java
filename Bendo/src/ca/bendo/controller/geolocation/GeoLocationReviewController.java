@@ -46,6 +46,27 @@ public class GeoLocationReviewController
 	 *            UniversityId
 	 * @return jsp page
 	 */
+	@RequestMapping(value = "/university/{universityId}/location/stats", method = RequestMethod.GET)
+	public String displayUniversityLocationStats(final HttpServletRequest request, @PathVariable(
+			value = "universityId") final long univeristyId)
+	{
+		if (handler.setupStatPage(request, univeristyId))
+		{
+			return "views/university/location/displayLivingStats";
+		} else
+		{
+			return "views/errors/error404";
+		}
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @param univeristyId
+	 *            UniversityId
+	 * @return jsp page
+	 */
 	@RequestMapping(value = "/university/{universityId}/location/review", method = RequestMethod.GET)
 	public String newQuestion(final HttpServletRequest request,
 			@PathVariable(value = "universityId") final long univeristyId)

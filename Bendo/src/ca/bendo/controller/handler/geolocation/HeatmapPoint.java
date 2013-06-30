@@ -25,12 +25,37 @@ public class HeatmapPoint
 	private Point location;
 
 	/**
+	 * 
+	 */
+	private int weight;
+
+	/**
+	 * 
+	 */
+	public HeatmapPoint()
+	{
+	}
+
+	/**
 	 * @param review
 	 *            review
 	 */
 	public HeatmapPoint(final UserGeolocationReview review)
 	{
 		initWithReview(review);
+		weight = 0;
+	}
+
+	/**
+	 * @param review
+	 *            Review
+	 * @param weight
+	 *            Weigth
+	 */
+	public HeatmapPoint(final UserGeolocationReview review, final int weight)
+	{
+		this(review);
+		this.weight = weight;
 	}
 
 	/**
@@ -48,7 +73,8 @@ public class HeatmapPoint
 	 */
 	public String toLatlng()
 	{
-		return "new google.maps.LatLng(" + location.getX() + "," + location.getY() + ")";
+		return "{location: new google.maps.LatLng(" + location.getX() + "," + location.getY() + "), weight: " + weight
+				+ "}";
 	}
 
 	/**

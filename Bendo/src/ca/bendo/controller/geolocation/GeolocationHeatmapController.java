@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ca.bendo.controller.handler.geolocation.GeolocationHeatmapHandler;
@@ -35,13 +36,16 @@ public class GeolocationHeatmapController
 	/**
 	 * @param universityId
 	 *            {@link University}
-	 * 	
+	 * @param typeParam
+	 *            To display a wighted map
+	 * 
 	 * @return the heat map data
 	 */
 	@RequestMapping(value = "/university/{universityId}/location/heatmap/", method = RequestMethod.GET)
 	@ResponseBody
-	public String loadStudtentLocationHeatmap(@PathVariable("universityId") final long universityId)
+	public String loadStudtentLocationHeatmap(@PathVariable("universityId") final long universityId, @RequestParam(
+			value = "type", defaultValue = "") final String typeParam)
 	{
-		return handler.loadStudentLocationHeatMap(universityId);
+		return handler.loadStudentLocationHeatMap(universityId, typeParam);
 	}
 }
