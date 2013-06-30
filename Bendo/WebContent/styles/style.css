@@ -42,7 +42,7 @@ html,body {
 #content {
 	margin: auto;
 	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-bottom: 25px;
 	overflow-y: auto;
 }
 
@@ -217,7 +217,7 @@ h1, h1 span, h2, h2 span {
 .footer_frame {
 	border-top: 1px solid #DBDBDB;
 	text-align: center;
-	height: auto;
+	height: 25px;
 	left: 0;
 	min-width: 980px;
 	width: 100%;
@@ -1720,12 +1720,19 @@ li.error {
 }
 
 .mainInfoGuide {
-	padding:40px 30px 10px 30px;
+	padding:40px;
 }
 
 .info-left {
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #DDDDDD;
+	background-color: #FFFFFF;
 	display:inline-block;
-	height:150px;
+	height: 130px;
+	padding:20px;
+	position: relative;
+	width: 460px;
 }
 
 .mainInfoGuide h1 {
@@ -1737,8 +1744,6 @@ li.error {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height:711px;
-	width:800px;
 }
 /*********  HOME PAGE STUDENT EXAMPLE BOX  **********/
 
@@ -1749,8 +1754,6 @@ li.error {
 	background-color: #FFFFFF;
 	display:inline-block;
 	height: 150px;
-	position: relative;
-	margin-left:150px;
 	width: 500px;
 }
 
@@ -1774,9 +1777,10 @@ li.error {
 
 .content-info-start {
 	display:inline-block;
+	font-size:14px;
 	line-height:20px;
 	text-align:justify;
-	width:550px;
+	width:auto;
 }
 
 p.big-type span {
@@ -1812,10 +1816,12 @@ p.big-type span {
 
 
 .home-bt-ct {
-	background-image: url("../images/pic-bt.jpg");
-	bottom:40px;
+	background-image: url("../images/background/pic-bt.jpg");
+	bottom:20px;
 	margin:auto;
-	height:300px;
+	padding-bottom:75px;
+	padding-top:75px;
+	height:150px;
 	width:100%;
 }
 
@@ -1824,12 +1830,14 @@ p.big-type span {
 	border-top: 1px solid #DDDDDD;
 	opacity:0.8;
 	margin:auto;
+	padding-left:20px;
+	padding-right:20px;
 	height:150px;
 	width:700px;
 }
 
 .home-bt-ct h2 {
-	padding-bottom:10px;
+	padding:15px 0 10px 0;
 	width:auto;
 }
 
@@ -1870,8 +1878,7 @@ p.big-type span {
 .main-graph {
 	background-color:#FFFFFF;
 	border-top: 1px solid #DDD;
-	margin-top:20px;
-	padding-bottom:30px;
+	padding:30px;
 }
 
 .home_guide_content
@@ -1880,6 +1887,7 @@ p.big-type span {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 /***************************************************************************************
 *				Signup
 ****************************************************************************************/

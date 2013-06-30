@@ -21,24 +21,24 @@
 					value="content-info-start" /></span>
 		</p>
 	</div>
-	<div class="student_example">
-		<div class="image-student">
-			<img src='<c:url value="/images/valou.jpg"/>' />
-		</div>
-		<div class="text-student">
-			<p class="big-type">
-				<span> <b:translator value="studying_mcgill_program" /></span>
-			</p>
-			<br>
-			<p class="small-type">
-				<span> <b:translator value="going_exchange_2014" /></span>
-			</p>
-			<br>
-			<p class="quote-student">
-				<span> <b:translator value="#" /></span>
-			</p>
-		</div>
-	</div>
+<!-- 	<div class="student_example"> -->
+<!-- 		<div class="image-student"> -->
+<%-- 			<img src='<c:url value="/images/valou.jpg"/>' /> --%>
+<!-- 		</div> -->
+<!-- 		<div class="text-student"> -->
+<!-- 			<p class="big-type"> -->
+<%-- 				<span> <b:translator value="studying_mcgill_program" /></span> --%>
+<!-- 			</p> -->
+<!-- 			<br> -->
+<!-- 			<p class="small-type"> -->
+<%-- 				<span> <b:translator value="going_exchange_2014" /></span> --%>
+<!-- 			</p> -->
+<!-- 			<br> -->
+<!-- 			<p class="quote-student"> -->
+<%-- 				<span> <b:translator value="#" /></span> --%>
+<!-- 			</p> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 </div>
 <div class="main-graph">
 	<img class="home_guide_content"
