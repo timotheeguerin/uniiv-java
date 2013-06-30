@@ -100,7 +100,7 @@ public class GeoLocation
 	{
 		GeometryFactory geometryFactory = new GeometryFactory();
 
-		return (Point) geometryFactory.createPoint(new Coordinate(longitude, latitude));
+		return (Point) geometryFactory.createPoint(new Coordinate(latitude,longitude ));
 
 	}
 

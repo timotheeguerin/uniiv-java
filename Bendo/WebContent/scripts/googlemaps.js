@@ -14,7 +14,7 @@ $(document).ready(function() {
 	});
 
 	$("div.googlemap.heatmap").each(function() {
-		$.get(baseUrl + "/location/load").success(function(data) {
+		$.get(baseUrl + "/university/1/location/heatmap").success(function(data) {
 			console.log(data);
 			var heatmapData = eval(data);
 			var heatmap = new google.maps.visualization.HeatmapLayer({

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,25 +39,18 @@ public class GeoLocationReviewController
 	private GeolocationReviewHandler handler;
 
 	/**
-	 * @return 1 if the username is available and 0 if not
-	 */
-	@RequestMapping(value = "/location/load", method = RequestMethod.GET)
-	@ResponseBody
-	public String checkEmailAvailable()
-	{
-		return "[new google.maps.LatLng(37.782, -122.447), new google.maps.LatLng(37.782, -122.445)]";
-	}
-
-	/**
 	 * 
 	 * @param request
 	 *            Request
+	 * @param univeristyId
+	 *            UniversityId
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/location/review", method = RequestMethod.GET)
-	public String newQuestion(final HttpServletRequest request)
+	@RequestMapping(value = "/university/{universityId}/location/review", method = RequestMethod.GET)
+	public String newQuestion(final HttpServletRequest request,
+			@PathVariable(value = "universityId") final long univeristyId)
 	{
-		return newGeolocationReviewPage(request, new GeolocationReviewForm());
+		return newGeolocationReviewPage(request, new GeolocationReviewForm(), univeristyId);
 	}
 
 	/**
@@ -66,28 +60,24 @@ public class GeoLocationReviewController
 	 * 
 	 * @param reviewForm
 	 *            Question form entity
+	 * @param univeristyId
+	 *            UniversityId
 	 * @param result
 	 *            contain error of the form
 	 * @return jsp page
 	 */
 
-	@RequestMapping(value = "/location/review", method = RequestMethod.POST)
+	@RequestMapping(value = "/university/{universityId}/location/review", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final GeolocationReviewForm reviewForm,
-			final BindingResult result)
+			final BindingResult result, @PathVariable(value = "universityId") final long univeristyId)
 	{
 		if (result.hasErrors())
 		{
-			for (ObjectError error : result.getAllErrors())
-			{
-				System.out.println("ERROR: " + error.getObjectName() + " | " + error.toString() + " | "
-						+ error.getDefaultMessage());
-			}
-			System.out.println("Location Fail : " + reviewForm.getLocation());
-			return newGeolocationReviewPage(request, reviewForm);
+			return newGeolocationReviewPage(request, reviewForm, univeristyId);
 		} else
 		{
 			System.out.println("Location: " + reviewForm.getLocation().toPoint());
-			handler.handleNewReview(request, reviewForm);
+			handler.handleNewReview(request, reviewForm, univeristyId);
 			return "redirect:";
 		}
 	}
@@ -98,13 +88,19 @@ public class GeoLocationReviewController
 	 *            Request
 	 * @param reviewForm
 	 *            review Form
-	 * 
+	 * @param univeristyId
+	 *            UniversityId
 	 * @return jsp page
 	 */
-	public String newGeolocationReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
+	public String newGeolocationReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm,
+			final long univeristyId)
 	{
-		handler.setupNewReviewPage(request, reviewForm);
-
-		return "views/userLocationRatingMap";
+		if (handler.setupNewReviewPage(request, reviewForm, univeristyId))
+		{
+			return "views/userLocationRatingMap";
+		} else
+		{
+			return "views/errors/error404";
+		}
 	}
 }

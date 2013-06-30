@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ca.bendo.controller.handler.geolocation;
 
 import java.util.ArrayList;
@@ -16,10 +13,12 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.db.dao.geolocation.GeolocationRatingCriteriaDAO;
 import ca.bendo.db.dao.geolocation.UserGeolocationRatingDAO;
 import ca.bendo.db.dao.geolocation.UserGeolocationReviewDAO;
+import ca.bendo.db.dao.university.UniversityDAO;
 import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
 import ca.bendo.db.entity.geolocation.UserGeolocationRating;
 import ca.bendo.db.entity.geolocation.UserGeolocationReview;
 import ca.bendo.db.entity.lang.Language;
+import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.form.entity.FormItem;
 import ca.bendo.form.entity.RatingEntity;
@@ -64,12 +63,21 @@ public class GeolocationReviewHandler
 	private UserGeolocationReviewDAO reviewDAO;
 
 	/**
+	 * 
+	 */
+	@Autowired
+	private UniversityDAO universityDAO;
+
+	/**
 	 * @param request
 	 *            Request
 	 * @param reviewForm
 	 *            Review Form
+	 * @param universityId
+	 *            {@link University}
 	 */
-	public void handleNewReview(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
+	public void handleNewReview(final HttpServletRequest request, final GeolocationReviewForm reviewForm,
+			final long universityId)
 	{
 		long languageId = Language.loadId(request);
 		User user = UserSession.getSession(request).getUser();
@@ -77,11 +85,18 @@ public class GeolocationReviewHandler
 		{
 			return;
 		}
+		University university = universityDAO.getById(universityId);
+		if (university == null)
+		{
+			System.out.println("UNIVERSITY NULL");
+			return;
+		}
 		UserGeolocationReview review = new UserGeolocationReview();
 		review.setLocation(reviewForm.getLocation().toPoint());
 		review.setUser(user);
 		reviewDAO.enableTranslation(languageId);
 		reviewDAO.add(review);
+		review.setUniversityId(universityId);
 		for (Entry<String, RatingEntity> entry : reviewForm.getRatings().entrySet())
 		{
 			UserGeolocationRating rating = new UserGeolocationRating();
@@ -98,9 +113,18 @@ public class GeolocationReviewHandler
 	 *            Request
 	 * @param reviewForm
 	 *            Form
+	 * @param universityId
+	 *            universityId
+	 * @return if the request was successful
 	 */
-	public void setupNewReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm)
+	public boolean setupNewReviewPage(final HttpServletRequest request, final GeolocationReviewForm reviewForm,
+			final long universityId)
 	{
+		University university = universityDAO.getById(universityId);
+		if (university == null)
+		{
+			return false;
+		}
 		List<GeolocationRatingCriteria> criterias = criteriaDAO.list();
 		request.setAttribute("geolocationReviewCriteria", criterias);
 
@@ -116,5 +140,6 @@ public class GeolocationReviewHandler
 			items.add(new FormItem(String.valueOf(i), ""));
 		}
 		request.setAttribute("ratingItems", items);
+		return true;
 	}
 }

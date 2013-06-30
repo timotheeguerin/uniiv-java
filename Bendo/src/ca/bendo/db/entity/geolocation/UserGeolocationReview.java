@@ -53,6 +53,11 @@ public class UserGeolocationReview
 	/**
 	 * 
 	 */
+	@Column(name = "id_uni_university")
+	private long universityId;
+	/**
+	 * 
+	 */
 	@Type(type = "org.hibernate.spatial.GeometryType")
 	@Column(name = "location", columnDefinition = "Geometry")
 	private Point location;
@@ -130,5 +135,23 @@ public class UserGeolocationReview
 	{
 		this.ratings = ratings;
 	}
+
+	/**
+	 * @return the universityId
+	 */
+	public long getUniversityId()
+	{
+		return universityId;
+	}
+
+	/**
+	 * @param universityId the universityId to set
+	 */
+	public void setUniversityId(final long universityId)
+	{
+		this.universityId = universityId;
+	}
+	
+	
 
 }
