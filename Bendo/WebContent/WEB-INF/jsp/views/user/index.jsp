@@ -68,6 +68,10 @@
 	height: 20px;
 	float: right;
 }
+.user_home_show_hide_content
+{
+    display: none;
+}
 </style>
 <div class="user_home_title_frame">
 	<h1>Dashboard</h1>
@@ -77,11 +81,42 @@
 
 <div class="user_home_left">
 	<div class="user_home_main_frame">
-		<div><h1>Your Pages</h1></div>
-		<div><a href="user/wikis">Your Wikis</a></div>
-		<div><a href="user/unis">Your Universities</a></div>
-		<div><a href="user/myquestions">Your Questions</a></div>
-		<div><a href="user/myanswers">Your Answers</a></div>
+		<div>
+			<h1>Your Pages</h1>
+		</div>
+		
+		<div class="your_wikis_toggle">Your Wikis</div>
+		<div class="your_wikis_content user_home_show_hide_content">
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+		</div>
+		
+        <div class="your_unis_toggle">Your Universities</div>
+		<div class="your_unis_content user_home_show_hide_content">
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+		</div>
+		
+        <div class="your_questions_toggle">Your Questions</div>
+		<div class="your_questions_content user_home_show_hide_content">
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+		</div>
+		
+		<div class="your_answers_toggle">Your Answers</div>
+		<div class="your_answers_content user_home_show_hide_content">
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+			<div>elem</div>
+        </div>
+		
 	</div>
 </div>
 

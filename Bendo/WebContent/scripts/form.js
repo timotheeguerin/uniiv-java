@@ -142,7 +142,7 @@ $(document).ready(function() {
 
 	/***************************************************************************
 	 * Preferences buttons
-	 */
+	 **************************************************************************/
 	$(".preferences_cycler").click(function() {
 		if ($(this).attr("value") == "0") {
 			$(this).removeClass("preferences_default");
@@ -157,6 +157,53 @@ $(document).ready(function() {
 			$(this).addClass("preferences_default");
 			$(this).attr("value", "0");
 		}
+	});
+	/***************************************************************************
+	 * user home / dashboard section for open/close
+	 ***************************************************************************/
+	$(".your_wikis_toggle").click(function() {
+	    if($(".your_wikis_content").css("display") == "none")
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	        $(".your_wikis_content").slideDown();
+	    }
+	    else
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	    }
+	});
+	$(".your_unis_toggle").click(function() {
+	    if($(".your_unis_content").css("display") == "none")
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	        $(".your_unis_content").slideDown();
+	    }
+	    else
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	    }
+	});
+	$(".your_questions_toggle").click(function() {
+	    if($(".your_questions_content").css("display") == "none")
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	        $(".your_questions_content").slideDown();
+	    }
+	    else
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	    }
+	});
+	$(".your_answers_toggle").click(function() {
+	    if($(".your_answers_content").css("display") == "none")
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	        $(".your_answers_content").slideDown();
+	    }
+	    else
+	    {
+	        $(".user_home_show_hide_content").slideUp();
+	    }
 	});
 });
 
