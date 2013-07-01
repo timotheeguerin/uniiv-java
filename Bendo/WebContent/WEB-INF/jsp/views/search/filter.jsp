@@ -122,25 +122,6 @@
 </c:forEach>
 
 <div class="big_search_spacer"></div>
-
-<div class="big_search_frame">
-	<div class="big_search_head_message">
-		<b:translator value="big_search_campus" />
-	</div>
-	<div class="big_search_text_spacer"></div>
-	<div class="big_search_filter">rural</div>
-	<div class="big_search_filter">suburban</div>
-	<div class="big_search_filter">urban</div>
-	<div class="big_search_text_spacer"></div>
-	<hr />
-	<div class="big_search_text_spacer"></div>
-	<div class="big_search_filter">small</div>
-	<div class="big_search_filter">medium</div>
-	<div class="big_search_filter">large</div>
-</div>
-
-<div class="big_search_spacer"></div>
-
 <%-- 
 <div class="FilterSystem">
 	<div class="top_filter_heading">
