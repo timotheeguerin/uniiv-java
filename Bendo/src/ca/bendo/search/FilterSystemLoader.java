@@ -4,9 +4,7 @@
 package ca.bendo.search;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,6 +27,7 @@ import ca.bendo.db.entity.rating.UniversityRatingMethodElement;
 import ca.bendo.search.category.FeesCategoryContent;
 import ca.bendo.search.category.FilterButton;
 import ca.bendo.search.category.FilterSection;
+import ca.bendo.search.category.FilterSectionSubSection;
 import ca.bendo.search.category.FilterSectionTabs;
 import ca.bendo.search.category.SelectListFilterContent;
 import ca.bendo.search.softrating.SectionContentRadioButton;
@@ -96,6 +95,7 @@ public class FilterSystemLoader
 		translator = (Translator) request.getAttribute("translator");
 
 		sys.addCategory(loadTopSection(request));
+		sys.addCategory(loadCampus(request));
 		sys.addCategory(loadWeather(request));
 		sys.addCategory(loadSoftRatings(request));
 
@@ -224,6 +224,65 @@ public class FilterSystemLoader
 			programCategoryContent.addSubElement(facultyElement);
 		}
 		return programCategoryContent;
+
+	}
+
+	/**
+	 * Load all the soft filters.
+	 * 
+	 * @param request
+	 *            request
+	 * @return section
+	 */
+	private FilterSection loadCampus(final HttpServletRequest request)
+	{
+		Long languageId = Language.loadId(request);
+		FilterSection section = new FilterSection();
+		SectionContentRadioButton sizeContent = new SectionContentRadioButton();
+		SectionContentRadioButton envContent = new SectionContentRadioButton();
+		softRatingDAO.setLanguageId(languageId);
+
+		// Load all the ratings
+		List<UniversityRating> ratings = softRatingDAO.list();
+
+		List<FilterButton> sizeBoxes = new ArrayList<FilterButton>();
+		List<FilterButton> envBoxes = new ArrayList<FilterButton>();
+
+		for (UniversityRating rating : ratings)
+		{
+			if (rating.getType().getName().equalsIgnoreCase("size"))
+			{
+				for (UniversityRatingMethodElement element : rating.getType().getElements())
+				{
+					FilterButton box = new FilterButton();
+					box.setValue(element.getId());
+					box.setText(element.getTranslation());
+					box.setImage("");
+					sizeBoxes.add(box);
+				}
+			} else if (rating.getType().getName().equalsIgnoreCase("environment"))
+			{
+				for (UniversityRatingMethodElement element : rating.getType().getElements())
+				{
+					FilterButton box = new FilterButton();
+					box.setValue(element.getId());
+					box.setText(element.getTranslation());
+					box.setImage("");
+					envBoxes.add(box);
+				}
+			}
+		}
+
+		sizeContent.setBoxes(sizeBoxes);
+		envContent.setBoxes(envBoxes);
+		FilterSectionSubSection content = new FilterSectionSubSection();
+		content.getSections().add(sizeContent);
+		content.getSections().add(envContent);
+
+		section.setName(translator.translate("campus", languageId));
+
+		section.setContent(content);
+		return section;
 
 	}
 
