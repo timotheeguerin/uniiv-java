@@ -15,7 +15,7 @@ import javax.validation.constraints.Min;
  * 
  * 
  */
-public class CheckConfirmationEntity
+public class CheckConfirmationForm
 {
 	/**
 	 * 

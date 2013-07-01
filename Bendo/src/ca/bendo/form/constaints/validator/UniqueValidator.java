@@ -9,6 +9,7 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bendo.db.dao.user.UserDAO;
+import ca.bendo.db.dao.user.UserEmailDAO;
 import ca.bendo.form.constaints.Unique;
 
 /**
@@ -30,6 +31,12 @@ public class UniqueValidator implements ConstraintValidator<Unique, Object>
 	private UserDAO userDAO;
 
 	/**
+	 *
+	 */
+	@Autowired
+	private UserEmailDAO userEmailDAO;
+
+	/**
 	 * 
 	 */
 	private Unique annotation;
@@ -47,7 +54,7 @@ public class UniqueValidator implements ConstraintValidator<Unique, Object>
 		{
 		case USER_EMAIL:
 
-			return userDAO.isEmailAvailable((String) value);
+			return userDAO.isEmailAvailable((String) value) && userEmailDAO.isEmailAvailable((String) value);
 		default:
 			return false;
 		}

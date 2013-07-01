@@ -3,24 +3,18 @@
  */
 package ca.bendo.db.dao.user;
 
-import java.util.List;
-
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.university.University;
-import ca.bendo.db.entity.user.User;
-import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.user.UserEmail;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>UserDAO</b>
+ *          <b>UserEmailDAO</b>
  *          <p>
  *          </p>
  * 
@@ -28,14 +22,17 @@ import ca.bendo.db.entity.wiki.Wiki;
  */
 @Repository
 @Transactional
-public class UserDAO extends HibernateDAO<User>
+public class UserEmailDAO extends HibernateDAO<UserEmail>
 {
-	/**
+	/*
+	 * (non-Javadoc)
 	 * 
+	 * @see ca.bendo.db.dao.HibernateDAO#init()
 	 */
-	public UserDAO()
+	@Override
+	protected void init()
 	{
-		setType(User.class);
+		setType(UserEmail.class);
 	}
 
 	/**
@@ -46,7 +43,7 @@ public class UserDAO extends HibernateDAO<User>
 	 */
 	public boolean isEmailAvailable(final String email)
 	{
-		User user = getByEmail(email);
+		UserEmail user = getByEmail(email);
 		return user == null;
 	}
 
@@ -56,9 +53,10 @@ public class UserDAO extends HibernateDAO<User>
 	 *            Email of the user
 	 * @return user with the given email
 	 */
-	public User getByEmail(final String email)
+	public UserEmail getByEmail(final String email)
 	{
-		return (User) getSession().createCriteria(User.class).add(Restrictions.eq("email", email)).uniqueResult();
+		return (UserEmail) createCriteria().add(Restrictions.eq("email", email)).uniqueResult();
 	}
+
 
 }
