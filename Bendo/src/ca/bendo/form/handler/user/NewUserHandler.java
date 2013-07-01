@@ -91,7 +91,7 @@ public class NewUserHandler
 
 		UserPermission waitEmailPermission = permissionDAO.getByName("wait_email_confirmation");
 		user.addPermission(waitEmailPermission);
-
+		
 		userDAO.add(user);
 
 		UserConfirmation confirmation = confirmationHandler.createConfirmation(user, "signup_email");

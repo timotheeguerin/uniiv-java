@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.dao.user.UserSessionCookieDAO;
+import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserSessionCookie;
 import ca.bendo.form.entity.user.LoginForm;
@@ -61,6 +62,8 @@ public class LoginHandler
 			final HttpServletResponse response)
 	{
 
+		long languageId = Language.loadId(request);
+		userDAO.enableTranslation(languageId);
 		User user = userDAO.getByEmail(loginForm.getEmail());
 		if (user == null)
 		{
