@@ -220,6 +220,31 @@ $(document).ready(function() {
 	    }); 
 	});
 });
+/*****************************************************************
+ * uni big search helper on the side
+ ****************************************************************/
+window.setInterval(function(){
+    var helper = $(".big_search_helper");
+    if(!(isFullyVisible($(helper))) && !($(helper).is(":animated")))
+    {
+    	var Top = $(document).scrollTop() + 50;
+        /*var newTop = Math.max(0, (($(window).height() -$(helper).outerHeight()) / 2) + $(window).scrollTop()) + "px";*/
+        $(helper).animate({top:Top},500);
+    }
+}, 500);
+
+function isFullyVisible (elem) {
+	  var off = elem.offset();
+	  var et = off.top;
+	  var el = off.left;
+	  var eh = elem.height();
+	  var ew = elem.width();
+	  var wh = window.innerHeight;
+	  var ww = window.innerWidth;
+	  var wx = window.pageXOffset;
+	  var wy = window.pageYOffset;
+	  return (et >= wy && el >= wx && et + eh <= wh + wy && el + ew <= ww + wx);  
+}
 
 /*******************************************************************************
  * Check if the validity on the screen need to be updated
