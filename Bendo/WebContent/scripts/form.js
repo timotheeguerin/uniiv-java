@@ -225,12 +225,17 @@ $(document).ready(function() {
  ****************************************************************/
 window.setInterval(function(){
     var helper = $(".big_search_helper");
-    if(!(isFullyVisible($(helper))) && !($(helper).is(":animated")))
+    var Top = $(document).scrollTop() + 50;
+    if(helper.top != Top && !($(helper).is(":animated")))
+    {
+    	$(helper).animate({top:Top},500);
+    }
+    /*if(!(isFullyVisible($(helper))) && !($(helper).is(":animated")))
     {
     	var Top = $(document).scrollTop() + 50;
-        /*var newTop = Math.max(0, (($(window).height() -$(helper).outerHeight()) / 2) + $(window).scrollTop()) + "px";*/
+        var newTop = Math.max(0, (($(window).height() -$(helper).outerHeight()) / 2) + $(window).scrollTop()) + "px";
         $(helper).animate({top:Top},500);
-    }
+    }*/
 }, 500);
 
 function isFullyVisible (elem) {
