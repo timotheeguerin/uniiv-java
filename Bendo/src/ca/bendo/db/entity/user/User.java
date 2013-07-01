@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,14 +18,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
-import ca.bendo.db.entity.university.University;
-import ca.bendo.db.entity.wiki.Wiki;
 import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.user.element.HashedPassword;
 
@@ -97,18 +97,12 @@ public class User
 	@Column(name = "date_created")
 	private Date timeCreated;
 
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
-	@JoinTable(name = "user_bookmark_wiki", joinColumns = { @JoinColumn(name = "id_user") },
-	inverseJoinColumns = { @JoinColumn(name = "id_wiki") })
-	private List<Wiki> wikis = new ArrayList<Wiki>();
-	
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
-	@JoinTable(name = "user_bookmark_university", joinColumns = { @JoinColumn(name = "id_user") },
-	inverseJoinColumns = { @JoinColumn(name = "id_uni_university") })
-	private List<University> unis = new ArrayList<University>();
-	
+	/**
+	 * 
+	 */
+	@Embedded
+	private UserBookmark bookmark;
+
 	/**
 	 * 
 	 */
@@ -311,25 +305,22 @@ public class User
 	{
 		this.timeCreated = timeCreated;
 	}
-	
-	public List<Wiki> getWikis()
+
+	/**
+	 * @return the bookmark
+	 */
+	public UserBookmark getBookmark()
 	{
-		return wikis;
+		return bookmark;
 	}
-	
-	public List<University> getUnis()
+
+	/**
+	 * @param bookmark
+	 *            the bookmark to set
+	 */
+	public void setBookmark(final UserBookmark bookmark)
 	{
-		return unis;
-	}
-	
-	public void setWikis(List<Wiki> wikis)
-	{
-		this.wikis = wikis;
-	}
-	
-	public void setUnis(List<University> unis)
-	{
-		this.unis = unis;
+		this.bookmark = bookmark;
 	}
 
 }
