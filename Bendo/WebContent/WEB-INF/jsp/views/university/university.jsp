@@ -1,14 +1,40 @@
+<style>
+.university_favourite
+{
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0,0,255,0.5);
+    color: #ffffff;
+}
+.university_favourited
+{
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0,255,0,0.5);
+    color: #ffffff;
+}
+.university_favourited_float
+{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+</style>
 <div class="university_profile_top_box">
 	<div class="university_profile_image_box">
 		<img class="university_profile_image" src="<c:url value="/images/university/${university.key}/main.jpg"/>" />
 	</div>
 	<div class="university_profile_top_text_box">
 		<div class="university_profile_top_text_name"><c:out value="${university.name}" /></div>
+				
 		<div class="university_profile_top_lower_text">
 			<div class="university_profile_top_text_location"><c:out value="${university.location}"/></div>
 			<div class="university_profile_top_text_est">Established: [][][][]</div>
 		</div>
 	</div>
+	<button class="university_favourite university_favourited_float" id="university_favourite_button">
+    			<span id="university_favourite_button_text">Watch this Uni</span>
+	</button>
 </div>
 
 <div class="university_profile_box_spacer_top"></div>

@@ -5,6 +5,7 @@ package ca.bendo.db.dao.user.bookmark;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -44,6 +45,6 @@ public class UserUniversityBookmarkDAO extends HibernateDAO<UserUniversityBookma
 	public List<UserUniversityBookmark> getUserBookmarks(final long userId)
 	{
 		return (List<UserUniversityBookmark>) createCriteria().add(Restrictions.eq("userId", userId))
-				.createAlias("university", "university").addOrder(Order.asc("university.name")).list();
+				.createAlias("university", "university").addOrder(Order.asc("university.name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 }

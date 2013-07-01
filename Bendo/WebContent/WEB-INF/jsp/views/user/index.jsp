@@ -89,15 +89,15 @@
 		
 		<div class="your_wikis_toggle">Your Wikis</div>
 		<div class="your_wikis_content user_home_show_hide_content">
-			<c:forEach var="wiki" items="${requestScope.wikis}">
-				<div><c:out value="${wiki}" /></div>
+			<c:forEach var="wiki" items="${user.bookmark.wikiBookmarks}">
+				<div><c:out value="${wiki.wiki.title}" /></div>
 			</c:forEach>
 		</div>
 		
         <div class="your_unis_toggle">Your Universities</div>
 		<div class="your_unis_content user_home_show_hide_content">
-			<c:forEach var="uni" items="${requestScope.unis}">
-				<div><c:out value="${uni}" /></div>
+			<c:forEach var="uni" items="${user.bookmark.universityBookmarks}">
+				<div><c:out value="${uni.university.name}" /></div>
 			</c:forEach>
 		</div>
 		

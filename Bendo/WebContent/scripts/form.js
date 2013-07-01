@@ -205,6 +205,20 @@ $(document).ready(function() {
 	        $(".user_home_show_hide_content").slideUp();
 	    }
 	});
+	/*****************************************************************
+	 * uni favourite button
+	 ****************************************************************/
+	var uni_fav_list = [ "Watching this Uni", "Watch this Uni" ];
+	$("#university_favourite_button").click(function() {
+	    $(this).fadeOut().promise().done(function() {
+	        var text = uni_fav_list.shift();
+	        uni_fav_list.push(text);
+	        $("#university_favourite_button_text").text(text);
+	        $(this).toggleClass("university_favourite");
+	        $(this).toggleClass("university_favourited");
+	        $(this).fadeIn();
+	    }); 
+	});
 });
 
 /*******************************************************************************

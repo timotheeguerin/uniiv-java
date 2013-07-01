@@ -15,6 +15,7 @@ import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
 import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
+import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.session.UserSession;
 
@@ -62,6 +63,8 @@ public class UserHomeController
 	public String welcome(final HttpServletRequest request)
 	{
 		User user = UserSession.getSession(request).getUser();
+		long languageId = Language.loadId(request);
+		userDAO.enableTranslation(languageId);
 		user.getBookmark().setWikiBookmarks(wikiBookmarkDAO.getUserBookmarks(user.getId()));
 		user.getBookmark().setUniversityBookmarks(universityBookmarkDAO.getUserBookmarks(user.getId()));
 		request.setAttribute("user", user);
