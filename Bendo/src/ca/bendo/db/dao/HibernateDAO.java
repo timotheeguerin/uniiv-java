@@ -50,6 +50,15 @@ public class HibernateDAO<T>
 
 	/**
 	 * 
+	 * @return criteria
+	 */
+	public Criteria createCriteria()
+	{
+		return getSession().createCriteria(type);
+	}
+
+	/**
+	 * 
 	 * @param language
 	 *            languageId
 	 */

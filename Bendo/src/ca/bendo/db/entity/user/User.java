@@ -25,6 +25,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Type;
 
+import ca.bendo.db.entity.user.bookmark.UserBookmarkCenter;
 import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.user.element.HashedPassword;
 
@@ -101,7 +102,7 @@ public class User
 	 * 
 	 */
 	@Embedded
-	private UserBookmark bookmark;
+	private UserBookmarkCenter bookmark;
 
 	/**
 	 * 
@@ -309,7 +310,7 @@ public class User
 	/**
 	 * @return the bookmark
 	 */
-	public UserBookmark getBookmark()
+	public UserBookmarkCenter getBookmark()
 	{
 		return bookmark;
 	}
@@ -318,7 +319,7 @@ public class User
 	 * @param bookmark
 	 *            the bookmark to set
 	 */
-	public void setBookmark(final UserBookmark bookmark)
+	public void setBookmark(final UserBookmarkCenter bookmark)
 	{
 		this.bookmark = bookmark;
 	}

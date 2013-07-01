@@ -67,9 +67,5 @@ public class UserDAO extends HibernateDAO<User>
 		return getSession().createCriteria(User.class).createAlias("bookmark.wikis","wiki").addOrder(Order.asc("wiki.title")).setResultTransformer(Transformers.aliasToBean(Wiki.class)).list();
 	}
 	
-	@SuppressWarnings("unchecked")
-	public List<University> getUnis()
-	{
-		return getSession().createCriteria(User.class).createAlias("bookmark.unis","university").addOrder(Order.asc("university.name")).setResultTransformer(Transformers.aliasToBean(University.class)).list();
-	}
+	
 }
