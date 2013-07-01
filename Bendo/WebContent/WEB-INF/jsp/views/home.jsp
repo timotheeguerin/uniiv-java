@@ -21,7 +21,7 @@
 					value="content-info-start" /></span>
 		</p>
 	</div>
-<!-- 	<div class="student_example"> -->
+<!-- 	<div class="student_container"> -->
 <!-- 		<div class="image-student"> -->
 <%-- 			<img src='<c:url value="/images/valou.jpg"/>' /> --%>
 <!-- 		</div> -->
