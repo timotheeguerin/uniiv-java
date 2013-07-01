@@ -15,22 +15,18 @@ package ca.bendo.search.category;
  * 
  * 
  */
-public class FilterCategory
+public class FilterSection
 {
 
 	/**
 	 * 
 	 */
-	private FilterCategoryContent content;
+	private FilterSectionContent content;
+	
 	/**
 	 * 
 	 */
 	private String name;
-
-	/**
-	 * 
-	 */
-	private String image;
 
 	/**
 	 * @return the name
@@ -52,7 +48,7 @@ public class FilterCategory
 	/**
 	 * @return the content
 	 */
-	public FilterCategoryContent getContent()
+	public FilterSectionContent getContent()
 	{
 		return content;
 	}
@@ -61,26 +57,9 @@ public class FilterCategory
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(final FilterCategoryContent content)
+	public void setContent(final FilterSectionContent content)
 	{
 		this.content = content;
-	}
-
-	/**
-	 * @return the image
-	 */
-	public String getImage()
-	{
-		return image;
-	}
-
-	/**
-	 * @param image
-	 *            the image to set
-	 */
-	public void setImage(final String image)
-	{
-		this.image = image;
 	}
 
 }

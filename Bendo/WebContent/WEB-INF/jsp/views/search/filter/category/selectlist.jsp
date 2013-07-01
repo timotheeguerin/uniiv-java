@@ -1,7 +1,7 @@
-<c:set var="content" value="${requestScope.content.content}" scope="page" />
+
 
 <ul>
-	<c:forEach var="line" items="${content.subElements}">
+	<c:forEach var="line" items="${sectionContent.content.subElements}">
 		<div class="SelectListElementLine">
 			<c:forEach var="element" items="${line}">
 				<c:choose>

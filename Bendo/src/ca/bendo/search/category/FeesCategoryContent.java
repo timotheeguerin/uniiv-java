@@ -10,29 +10,33 @@ import ca.bendo.db.entity.fees.Currency;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>FeesCategory</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>FeesCategory</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
-public class FeesCategoryContent extends FilterCategoryContent
+public class FeesCategoryContent extends FilterSectionContent
 {
 
 	/**
 	 * 
 	 */
 	private List<Currency> currencies = new ArrayList<Currency>();
-	/**
+
+	/*
+	 * (non-Javadoc)
 	 * 
+	 * @see ca.bendo.search.category.FilterSectionContent#init()
 	 */
-	public FeesCategoryContent()
+	@Override
+	protected void init()
 	{
 		setFilename("views/search/filter/category/fees.jsp");
 	}
+
 	/**
 	 * @return the currencies
 	 */
@@ -40,8 +44,10 @@ public class FeesCategoryContent extends FilterCategoryContent
 	{
 		return currencies;
 	}
+
 	/**
-	 * @param currencies the currencies to set
+	 * @param currencies
+	 *            the currencies to set
 	 */
 	public void setCurrencies(final List<Currency> currencies)
 	{

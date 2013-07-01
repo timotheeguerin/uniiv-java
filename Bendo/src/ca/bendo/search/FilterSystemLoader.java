@@ -4,7 +4,9 @@
 package ca.bendo.search;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,9 +26,10 @@ import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.program.UniversityFaculty;
 import ca.bendo.db.entity.rating.UniversityRating;
 import ca.bendo.search.category.FeesCategoryContent;
-import ca.bendo.search.category.FilterCategory;
+import ca.bendo.search.category.FilterSection;
+import ca.bendo.search.category.FilterSectionTabs;
 import ca.bendo.search.category.SelectListFilterContent;
-import ca.bendo.search.softrating.SoftRatingCategoryContent;
+import ca.bendo.search.softrating.SectionContentSimpleCheckBox;
 import ca.bendo.translation.translation.Translator;
 
 /**
@@ -49,11 +52,6 @@ public class FilterSystemLoader
 	 */
 	@Autowired
 	private Translator translator;
-
-	/**
-	 * 
-	 */
-	private FilterSystem sys;
 
 	/**
 	 * 
@@ -91,15 +89,33 @@ public class FilterSystemLoader
 	 */
 	public void loadFilters(final HttpServletRequest request)
 	{
-		sys = new FilterSystem();
+		FilterSystem sys = new FilterSystem();
 		translator = (Translator) request.getAttribute("translator");
 
-		loadCountries(request);
-		loadFees(request);
-		loadPrograms(request);
+		sys.addCategory(loadTopSection(request));
+		sys.addCategory(loadSoftRatings(request));
 
 		loadSoftRatings(request);
 		request.setAttribute("filters", sys);
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @return bullshit
+	 */
+	public FilterSection loadTopSection(final HttpServletRequest request)
+	{
+		Long languageId = Language.loadId(request);
+		FilterSection filterSection = new FilterSection();
+		filterSection.setName(translator.translate("big_search_filter", languageId));
+		FilterSectionTabs content = new FilterSectionTabs();
+		content.getTabs().put("location", loadCountries(request));
+		content.getTabs().put("fees", loadFees(request));
+		content.getTabs().put("field_study", loadPrograms(request));
+		filterSection.setContent(content);
+		return filterSection;
 	}
 
 	/**
@@ -107,15 +123,13 @@ public class FilterSystemLoader
 	 * 
 	 * @param request
 	 *            Request
+	 * @return content
 	 */
-	private void loadCountries(final HttpServletRequest request)
+	private SelectListFilterContent loadCountries(final HttpServletRequest request)
 	{
 		Long languageId = Language.loadId(request);
-		FilterCategory countryCategory = new FilterCategory();
 
 		SelectListFilterContent countryCategoryContent = new SelectListFilterContent();
-
-		countryCategory.setContent(countryCategoryContent);
 
 		// Load all the countries
 		countryDAO.setLanguageId(languageId);
@@ -145,10 +159,8 @@ public class FilterSystemLoader
 			countryCategoryContent.addSubElement(countryElement);
 
 		}
-		countryCategory.setName(translator.translate("location", languageId));
-		countryCategory.setImage("/images/category/location.png");
 
-		sys.addCategory(countryCategory);
+		return countryCategoryContent;
 
 	}
 
@@ -157,18 +169,15 @@ public class FilterSystemLoader
 	 * 
 	 * @param request
 	 *            request
+	 * @return content
 	 */
-	private void loadFees(final HttpServletRequest request)
+	private FeesCategoryContent loadFees(final HttpServletRequest request)
 	{
 		Long languageId = Language.loadId(request);
-		FilterCategory feesCategory = new FilterCategory();
 		FeesCategoryContent feesContent = new FeesCategoryContent();
 		feesContent.setCurrencies(feesDAO.listCurrencies());
 
-		feesCategory.setName(translator.translate("fees", languageId));
-		feesCategory.setImage("/images/category/uniFees.png");
-		feesCategory.setContent(feesContent);
-		sys.addCategory(feesCategory);
+		return feesContent;
 	}
 
 	/**
@@ -176,11 +185,12 @@ public class FilterSystemLoader
 	 * 
 	 * @param request
 	 *            request
+	 * @return content
 	 */
-	private void loadPrograms(final HttpServletRequest request)
+	private SelectListFilterContent loadPrograms(final HttpServletRequest request)
 	{
 		Long languageId = Language.loadId(request);
-		FilterCategory programCategory = new FilterCategory();
+		FilterSection programCategory = new FilterSection();
 		SelectListFilterContent programCategoryContent = new SelectListFilterContent();
 		programCategory.setContent(programCategoryContent);
 		// Load all the programs
@@ -209,10 +219,7 @@ public class FilterSystemLoader
 
 			programCategoryContent.addSubElement(facultyElement);
 		}
-		programCategory.setName(translator.translate("programs", languageId));
-		programCategory.setImage("/images/category/programs.png");
-
-		sys.addCategory(programCategory);
+		return programCategoryContent;
 
 	}
 
@@ -221,37 +228,33 @@ public class FilterSystemLoader
 	 * 
 	 * @param request
 	 *            request
+	 * @return section
 	 */
-	private void loadSoftRatings(final HttpServletRequest request)
+	private FilterSection loadSoftRatings(final HttpServletRequest request)
 	{
 		Long languageId = Language.loadId(request);
-		FilterCategory softRatingFilterCategory = new FilterCategory();
-		SoftRatingCategoryContent content = new SoftRatingCategoryContent();
+		FilterSection softRatingFilterCategory = new FilterSection();
+		SectionContentSimpleCheckBox content = new SectionContentSimpleCheckBox();
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();
-		List<UniversityRating> stdRatings = new ArrayList<UniversityRating>();
-		List<UniversityRating> officialRatings = new ArrayList<UniversityRating>();
+		Map<Integer, String> boxes = new HashMap<Integer, String>();
 
 		for (UniversityRating rating : ratings)
 		{
 			if (rating.getType().getName().equalsIgnoreCase("standard"))
 			{
-				stdRatings.add(rating);
-			} else
-			{
-				officialRatings.add(rating);
+				boxes.put((int) rating.getId(), rating.getTranslation());
 			}
 		}
 
-		content.setStdRatings(stdRatings);
-		content.setOfficialRatings(officialRatings);
+		content.setBoxes(boxes);
 
 		softRatingFilterCategory.setName(translator.translate("softfilters", languageId));
 
 		softRatingFilterCategory.setContent(content);
-		sys.setSoftrating(softRatingFilterCategory);
+		return softRatingFilterCategory;
 
 	}
 

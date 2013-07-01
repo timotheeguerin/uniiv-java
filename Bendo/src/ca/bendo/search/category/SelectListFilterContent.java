@@ -16,20 +16,23 @@ import ca.bendo.search.FilterElement;
  * 
  * 
  */
-public class SelectListFilterContent extends FilterCategoryContent
+public class SelectListFilterContent extends FilterSectionContent
 {
 
 	/**
 	 * 
 	 */
 	private FilterElement content = new FilterElement();
-	/**
-	 * Constructor.
+	
+	/* (non-Javadoc)
+	 * @see ca.bendo.search.category.FilterSectionContent#init()
 	 */
-	public SelectListFilterContent()
+	@Override
+	protected void init()
 	{
 		setFilename("views/search/filter/category/selectlist.jsp");
 	}
+	
 	/**
 	 * @return the content
 	 */

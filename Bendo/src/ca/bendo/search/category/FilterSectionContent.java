@@ -5,21 +5,33 @@ package ca.bendo.search.category;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>IFilterCategoryContent</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>IFilterCategoryContent</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
-public class FilterCategoryContent
+public abstract class FilterSectionContent
 {
 	/**
 	 * Name of the jsp file displaying this category.
 	 */
 	private String filename;
+
+	/**
+	 * 
+	 */
+	public FilterSectionContent()
+	{
+		init();
+	}
+
+	/**
+	 * 
+	 */
+	protected abstract void init();
 
 	/**
 	 * @return the filename
@@ -30,7 +42,8 @@ public class FilterCategoryContent
 	}
 
 	/**
-	 * @param filename the filename to set
+	 * @param filename
+	 *            the filename to set
 	 */
 	public void setFilename(final String filename)
 	{

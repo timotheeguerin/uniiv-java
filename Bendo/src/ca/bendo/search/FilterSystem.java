@@ -6,7 +6,7 @@ package ca.bendo.search;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.bendo.search.category.FilterCategory;
+import ca.bendo.search.category.FilterSection;
 
 /**
  * @author Timothée Guérin
@@ -23,19 +23,19 @@ public class FilterSystem
 	/**
 	 * 
 	 */
-	private List<FilterCategory> categories = new ArrayList<FilterCategory>();
+	private List<FilterSection> categories = new ArrayList<FilterSection>();
 
 	
 	/**
 	 * 
 	 */
-	private FilterCategory softrating;
+	private FilterSection softrating;
 	
 	/**
 	 * 
 	 * @param category Category to add
 	 */
-	public void addCategory(final FilterCategory category)
+	public void addCategory(final FilterSection category)
 	{
 		categories.add(category);
 	}
@@ -43,7 +43,7 @@ public class FilterSystem
 	/**
 	 * @return the categories
 	 */
-	public List<FilterCategory> getCategories()
+	public List<FilterSection> getCategories()
 	{
 		return categories;
 	}
@@ -52,7 +52,7 @@ public class FilterSystem
 	 * @param categories
 	 *            the categories to set
 	 */
-	public void setCategories(final List<FilterCategory> categories)
+	public void setCategories(final List<FilterSection> categories)
 	{
 		this.categories = categories;
 	}
@@ -60,7 +60,7 @@ public class FilterSystem
 	/**
 	 * @return the softrating
 	 */
-	public FilterCategory getSoftrating()
+	public FilterSection getSoftrating()
 	{
 		return softrating;
 	}
@@ -68,7 +68,7 @@ public class FilterSystem
 	/**
 	 * @param softRatingFilterCategory the softrating to set
 	 */
-	public void setSoftrating(final FilterCategory softRatingFilterCategory)
+	public void setSoftrating(final FilterSection softRatingFilterCategory)
 	{
 		this.softrating = softRatingFilterCategory;
 	}
