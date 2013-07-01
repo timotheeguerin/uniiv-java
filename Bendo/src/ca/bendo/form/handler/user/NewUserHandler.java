@@ -17,13 +17,15 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.communication.mail.MailHelper;
 import ca.bendo.config.BendoConfig;
 import ca.bendo.db.dao.user.UserDAO;
+import ca.bendo.db.dao.user.UserEmailDAO;
 import ca.bendo.db.dao.user.UserPermissionDAO;
 import ca.bendo.db.dao.user.UserStateDAO;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
+import ca.bendo.db.entity.user.UserEmail;
+import ca.bendo.db.entity.user.UserEmailConfirmation;
 import ca.bendo.db.entity.user.UserPermission;
 import ca.bendo.db.entity.user.UserState;
-import ca.bendo.db.entity.user.confirmation.UserConfirmation;
 import ca.bendo.form.entity.user.SignupForm;
 import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;
@@ -72,6 +74,12 @@ public class NewUserHandler
 	 * 
 	 */
 	@Autowired
+	private UserEmailDAO userEmailDAO;
+
+	/**
+	 * 
+	 */
+	@Autowired
 	private Translator translator;
 
 	/**
@@ -91,10 +99,15 @@ public class NewUserHandler
 
 		UserPermission waitEmailPermission = permissionDAO.getByName("wait_email_confirmation");
 		user.addPermission(waitEmailPermission);
-		
 		userDAO.add(user);
 
-		UserConfirmation confirmation = confirmationHandler.createConfirmation(user, "signup_email");
+		UserEmail userEmail = new UserEmail();
+		userEmail.setUser(user);
+		userEmail.setValidated(false);
+		userEmail.setEmail(signupForm.getEmail());
+		userEmailDAO.add(userEmail);
+
+		UserEmailConfirmation confirmation = confirmationHandler.createEmailConfirmation(userEmail);
 		sendConfirmationEmail(request, confirmation);
 		UserSession.getSession(request).login(user);
 		return true;
@@ -108,7 +121,7 @@ public class NewUserHandler
 	 * @param confirmation
 	 *            Confirmation
 	 */
-	private void sendConfirmationEmail(final HttpServletRequest request, final UserConfirmation confirmation)
+	private void sendConfirmationEmail(final HttpServletRequest request, final UserEmailConfirmation confirmation)
 	{
 		Long languageId = Language.loadId(request);
 		/* next, get the Template */
@@ -118,7 +131,7 @@ public class NewUserHandler
 		VelocityContext context = new VelocityContext();
 		context.put("id", confirmation.getId());
 		context.put("key", confirmation.getKey());
-		context.put("user", confirmation.getUser());
+		context.put("user", confirmation.getUserEmail().getEmail());
 
 		String param = "?confirmationId=" + confirmation.getId() + "&key=" + confirmation.getKey();
 		String url = BendoConfig.getBaseUrl(request)
@@ -131,7 +144,7 @@ public class NewUserHandler
 
 		String subject = translator.translate("signup_email_subject", languageId);
 		MailHelper mail = new MailHelper();
-		mail.send(confirmation.getUser().getEmail(), subject, writer.toString());
+		mail.send(confirmation.getUserEmail().getEmail(), subject, writer.toString());
 
 	}
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.db.entity.lang.Language;
-import ca.bendo.form.entity.confirmation.CheckConfirmationEntity;
+import ca.bendo.form.entity.confirmation.CheckConfirmationForm;
 import ca.bendo.translation.translation.Translator;
 import ca.bendo.user.ConfirmationHandler;
 
@@ -57,7 +57,7 @@ public class ConfirmationController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String signupConfirmation(@Valid final CheckConfirmationEntity entity, final BindingResult result,
+	public String signupConfirmation(@Valid final CheckConfirmationForm entity, final BindingResult result,
 			final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");

@@ -46,6 +46,22 @@ public class HibernateDAO<T>
 	/**
 	 * 
 	 */
+	public HibernateDAO()
+	{
+		init();
+	}
+
+	/**
+	 * 
+	 */
+	protected void init()
+	{
+
+	}
+
+	/**
+	 * 
+	 */
 	private long languageId;
 
 	/**

@@ -18,7 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
@@ -103,6 +103,12 @@ public class User
 	 */
 	@Embedded
 	private UserBookmarkCenter bookmark;
+
+	/**
+	 * 
+	 */
+	@OneToMany(mappedBy = "user")
+	private List<UserEmail> emails;
 
 	/**
 	 * 
