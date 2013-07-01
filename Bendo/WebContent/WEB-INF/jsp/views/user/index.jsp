@@ -74,6 +74,7 @@
     padding-left: 30px;
 }
 </style>
+
 <div class="user_home_title_frame">
 	<h1>Dashboard</h1>
 </div>
@@ -88,18 +89,16 @@
 		
 		<div class="your_wikis_toggle">Your Wikis</div>
 		<div class="your_wikis_content user_home_show_hide_content">
-			<div>elem</div>
-			<div>elem</div>
-			<div>elem</div>
-			<div>elem</div>
+			<c:forEach var="wiki" items="${requestScope.wikis}">
+				<div><c:out value="${wiki}" /></div>
+			</c:forEach>
 		</div>
 		
         <div class="your_unis_toggle">Your Universities</div>
 		<div class="your_unis_content user_home_show_hide_content">
-			<div>elem</div>
-			<div>elem</div>
-			<div>elem</div>
-			<div>elem</div>
+			<c:forEach var="uni" items="${requestScope.unis}">
+				<div><c:out value="${uni}" /></div>
+			</c:forEach>
 		</div>
 		
         <div class="your_questions_toggle">Your Questions</div>

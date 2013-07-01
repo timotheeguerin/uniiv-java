@@ -3,6 +3,7 @@
  */
 package ca.bendo.controller.user;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.entity.university.University;
+import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.wiki.WikiAlphabeticalComparator;
+import ca.bendo.session.UserSession;
 
 /**
  * @author toby
@@ -45,6 +49,10 @@ public class UserHomeController
 	@RequestMapping(value = "/user/", method = RequestMethod.GET)
 	public String welcome(final HttpServletRequest request)
 	{
+		User user = UserSession.getSession(request).getUser();
+		user.getBookmark().setWikis(userDAO.getWikis());
+		user.getBookmark().setUnis(userDAO.getUnis());
+		request.setAttribute("user", user);
 		return "views/user/index";
 	}
 }

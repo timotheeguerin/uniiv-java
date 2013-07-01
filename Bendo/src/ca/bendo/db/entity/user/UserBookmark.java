@@ -36,8 +36,7 @@ public class UserBookmark
 	/**
 	 * 
 	 */
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
+	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "user_bookmark_wiki", joinColumns = { @JoinColumn(name = "id_user") },
 			inverseJoinColumns = { @JoinColumn(name = "id_wiki") })
 	private List<Wiki> wikis = new ArrayList<Wiki>();
@@ -45,8 +44,7 @@ public class UserBookmark
 	/**
 	 * 
 	 */
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@Fetch(FetchMode.SELECT)
+	@ManyToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "user_bookmark_university", joinColumns = { @JoinColumn(name = "id_user") },
 			inverseJoinColumns = { @JoinColumn(name = "id_uni_university") })
 	private List<University> unis = new ArrayList<University>();
