@@ -1,8 +1,14 @@
-
+<style>
+	.big_search_filters
+	{
+		display: inline-block;
+		width: 30%;
+	}
+</style>
 <div class="tab_buttons">
 	<c:forEach var="tab" items="${sectionContent.tabs}">
-		<div class="TabButton ToggleDisplayButton" data-toogleDisplay-category="data-category-name" data-category-name="${tab.key}">
-			<b:translator value="${tab.key}" />
+		<div class="big_search_filters TabButton ToggleDisplayButton" data-toogleDisplay-category="data-category-name" data-category-name="${tab.key}">
+			<button class="submit"><b:translator value="${tab.key}" /></button>
 		</div>
 	</c:forEach>
 </div>

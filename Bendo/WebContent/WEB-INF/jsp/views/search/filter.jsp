@@ -105,29 +105,21 @@
 
 <div class="big_search_spacer"></div>
 
-<div class="big_search_frame">
-	<div class="big_search_head_message">
-		<b:translator value="big_search_filters" />
-	</div>
-	<div class="big_search_text_spacer"></div>
-	<div class="big_search_filter">location</div>
-	<div class="big_search_filter">price</div>
-	<div class="big_search_filter">faculty</div>
-</div>
+<c:forEach var="section" items="${filters.categories}">
+	<div class="big_search_frame">
+		<div class="big_search_head_message">
+			<c:out value="${section.name}" />
+		</div>
+		<div class="big_search_text_spacer"></div>
+		<div class="big_search_preferences_container">
+			<c:set var="sectionContent" value="${section.content}" scope="request" />
 
-<div class="big_search_spacer"></div>
-
-<div class="big_search_frame">
-	<div class="big_search_head_message">
-		<b:translator value="big_search_weather" />
+			<c:import url="${section.content.filename}" />
+		</div>
 	</div>
-	<div class="big_search_text_spacer"></div>
-	<div class="big_search_weather">snowflake</div>
-	<div class="big_search_weather">2 clouds</div>
-	<div class="big_search_weather">cloud</div>
-	<div class="big_search_weather">sun cloud</div>
-	<div class="big_search_weather">sun</div>
-</div>
+	
+	<div class="big_search_spacer"></div>
+</c:forEach>
 
 <div class="big_search_spacer"></div>
 
@@ -148,45 +140,6 @@
 </div>
 
 <div class="big_search_spacer"></div>
-
-<div class="big_search_frame">
-	<div class="big_search_head_message">
-		<b:translator value="big_search_preferences" />
-	</div>
-	<div class="big_search_text_spacer"></div>
-	<div class="big_search_preferences_container">
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-		<button class="big_search_preferences_cycler big_search_preferences_default" value="0">Element</button>
-	</div>
-</div>
-
-
-<c:forEach var="section" items="${filters.categories}">
-	<div class="big_search_frame">
-		<div class="big_search_head_message">
-			<c:out value="${section.name}" />
-		</div>
-		<div class="big_search_text_spacer"></div>
-		<div class="big_search_preferences_container">
-			<c:set var="sectionContent" value="${section.content}" scope="request" />
-
-			<c:import url="${section.content.filename}" />
-		</div>
-	</div>
-</c:forEach>
 
 <%-- 
 <div class="FilterSystem">
