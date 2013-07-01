@@ -225,10 +225,10 @@ $(document).ready(function() {
  ****************************************************************/
 window.setInterval(function(){
     var helper = $(".big_search_helper");
-    var Top = $(document).scrollTop() + 50;
+    var Top = $(document).scrollTop() + 60;
     if(helper.top != Top && !($(helper).is(":animated")))
     {
-    	$(helper).animate({top:Top},500);
+    	$(helper).animate({top:Top},250);
     }
     /*if(!(isFullyVisible($(helper))) && !($(helper).is(":animated")))
     {
@@ -236,7 +236,7 @@ window.setInterval(function(){
         var newTop = Math.max(0, (($(window).height() -$(helper).outerHeight()) / 2) + $(window).scrollTop()) + "px";
         $(helper).animate({top:Top},500);
     }*/
-}, 500);
+}, 250);
 
 function isFullyVisible (elem) {
 	  var off = elem.offset();
