@@ -25,10 +25,13 @@ import ca.bendo.db.entity.location.State;
 import ca.bendo.db.entity.program.Program;
 import ca.bendo.db.entity.program.UniversityFaculty;
 import ca.bendo.db.entity.rating.UniversityRating;
+import ca.bendo.db.entity.rating.UniversityRatingMethodElement;
 import ca.bendo.search.category.FeesCategoryContent;
+import ca.bendo.search.category.FilterButton;
 import ca.bendo.search.category.FilterSection;
 import ca.bendo.search.category.FilterSectionTabs;
 import ca.bendo.search.category.SelectListFilterContent;
+import ca.bendo.search.softrating.SectionContentRadioButton;
 import ca.bendo.search.softrating.SectionContentSimpleCheckBox;
 import ca.bendo.translation.translation.Translator;
 
@@ -93,6 +96,7 @@ public class FilterSystemLoader
 		translator = (Translator) request.getAttribute("translator");
 
 		sys.addCategory(loadTopSection(request));
+		sys.addCategory(loadWeather(request));
 		sys.addCategory(loadSoftRatings(request));
 
 		loadSoftRatings(request);
@@ -230,6 +234,48 @@ public class FilterSystemLoader
 	 *            request
 	 * @return section
 	 */
+	private FilterSection loadWeather(final HttpServletRequest request)
+	{
+		Long languageId = Language.loadId(request);
+		FilterSection section = new FilterSection();
+		SectionContentRadioButton content = new SectionContentRadioButton();
+		softRatingDAO.setLanguageId(languageId);
+
+		// Load all the ratings
+		List<UniversityRating> ratings = softRatingDAO.list();
+		List<FilterButton> boxes = new ArrayList<FilterButton>();
+
+		for (UniversityRating rating : ratings)
+		{
+			if (rating.getType().getName().equalsIgnoreCase("weather"))
+			{
+				for (UniversityRatingMethodElement element : rating.getType().getElements())
+				{
+					FilterButton box = new FilterButton();
+					box.setValue(element.getId());
+					box.setText(element.getTranslation());
+					box.setImage("");
+					boxes.add(box);
+				}
+			}
+		}
+
+		content.setBoxes(boxes);
+
+		section.setName(translator.translate("weather", languageId));
+
+		section.setContent(content);
+		return section;
+
+	}
+
+	/**
+	 * Load all the soft filters.
+	 * 
+	 * @param request
+	 *            request
+	 * @return section
+	 */
 	private FilterSection loadSoftRatings(final HttpServletRequest request)
 	{
 		Long languageId = Language.loadId(request);
@@ -239,13 +285,17 @@ public class FilterSystemLoader
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();
-		Map<Integer, String> boxes = new HashMap<Integer, String>();
+		List<FilterButton> boxes = new ArrayList<FilterButton>();
 
 		for (UniversityRating rating : ratings)
 		{
 			if (rating.getType().getName().equalsIgnoreCase("standard"))
 			{
-				boxes.put((int) rating.getId(), rating.getTranslation());
+				FilterButton box = new FilterButton();
+				box.setValue(rating.getId());
+				box.setText(rating.getTranslation());
+				box.setImage("");
+				boxes.add(box);
 			}
 		}
 

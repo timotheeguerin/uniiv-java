@@ -13,13 +13,13 @@ import ca.bendo.search.category.FilterSectionContent;
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>SoftRatingCategoryContent</b>
+ *          <b>SectionContentRadioButton</b>
  *          <p>
  *          </p>
  * 
  * 
  */
-public class SectionContentSimpleCheckBox extends FilterSectionContent
+public class SectionContentRadioButton extends FilterSectionContent
 {
 	/**
 	 * 
@@ -34,7 +34,7 @@ public class SectionContentSimpleCheckBox extends FilterSectionContent
 	@Override
 	protected void init()
 	{
-		setFilename("views/search/filter/category/simpleCheckBox.jsp");
+		setFilename("views/search/filter/category/radioButton.jsp");
 	}
 
 	/**

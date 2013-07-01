@@ -23,6 +23,11 @@ public abstract class FilterSectionContent
 	/**
 	 * 
 	 */
+	private String name;
+
+	/**
+	 * 
+	 */
 	public FilterSectionContent()
 	{
 		init();
@@ -48,6 +53,23 @@ public abstract class FilterSectionContent
 	public void setFilename(final String filename)
 	{
 		this.filename = filename;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName()
+	{
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(final String name)
+	{
+		this.name = name;
 	}
 
 }
