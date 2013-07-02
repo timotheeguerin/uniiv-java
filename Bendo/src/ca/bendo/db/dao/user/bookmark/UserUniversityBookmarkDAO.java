@@ -45,6 +45,22 @@ public class UserUniversityBookmarkDAO extends HibernateDAO<UserUniversityBookma
 	public List<UserUniversityBookmark> getUserBookmarks(final long userId)
 	{
 		return (List<UserUniversityBookmark>) createCriteria().add(Restrictions.eq("userId", userId))
-				.createAlias("university", "university").addOrder(Order.asc("university.name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+				.createAlias("university", "university").addOrder(Order.asc("university.name"))
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+	}
+
+	/**
+	 * @param userId
+	 *            User Id
+	 * @param universityId
+	 *            universityId
+	 * @return bookmark
+	 */
+	public UserUniversityBookmark getUserBookmark(final long userId, final long universityId)
+	{
+
+		return (UserUniversityBookmark) createCriteria().add(Restrictions.eq("userId", userId))
+				.add(Restrictions.eq("university.id", universityId)).createAlias("university", "university")
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 }

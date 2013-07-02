@@ -181,6 +181,16 @@ public class HibernateDAO<T>
 	}
 
 	/**
+	 * @param entity
+	 *            to remove
+	 */
+
+	public void delete(final T entity)
+	{
+		getSession().delete(entity);
+	}
+
+	/**
 	 * 
 	 * @param entity
 	 *            New Entity.
