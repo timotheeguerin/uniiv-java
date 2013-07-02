@@ -143,20 +143,19 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * Preferences buttons
 	 **************************************************************************/
-	$(".preferences_cycler").click(function() {
-		if ($(this).attr("value") == "0") {
-			$(this).removeClass("preferences_default");
-			$(this).addClass("preferences_like");
-			$(this).attr("value", "1");
-		} else if ($(this).attr("value") == "1") {
-			$(this).removeClass("preferences_like");
-			$(this).addClass("preferences_dislike");
-			$(this).attr("value", "2");
-		} else if ($(this).attr("value") == 2) {
-			$(this).removeClass("preferences_dislike");
-			$(this).addClass("preferences_default");
-			$(this).attr("value", "0");
-		}
+	$(".big_search_preferences_cycler").click(function() {
+		$(this).toggleClass("big_search_preferences_default");
+		$(this).toggleClass("big_search_preferences_like");
+	});
+	/***************************************************************************
+	 * weather buttons
+	 **************************************************************************/
+	$(".big_search_preferences_weather").click(function() {
+		$(".big_search_preferences_weather").each(function() {
+			$(this).addClass("big_search_preferences_default");
+			$(this).removeClass("big_search_preferences_like");
+		});
+		$(this).addClass("big_search_preferences_like");
 	});
 	/***************************************************************************
 	 * user home / dashboard section for open/close

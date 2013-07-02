@@ -780,16 +780,6 @@ hr.official-standard-ratings-separation {
 	margin: 0 20px 0 20px;
 }
 
-.submitFilter {
-	background-color: #FFFFFF;
-	display: block;
-	margin-bottom: 50px;
-	position: relative;
-	width: 300px;
-	margin: auto;
-	margin-top: 100px;
-}
-
 .submitFilter_text {
 	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
 	background: #3259ab; /* Old browsers */

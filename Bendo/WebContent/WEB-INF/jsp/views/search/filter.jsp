@@ -65,18 +65,18 @@
 	height: 10px;
 }
 
-.big_search_preferences_cycler {
+.big_search_preferences_default {
 	border-radius: 3px;
 	border: 1px solid;
 	padding: 2px;
-}
-
-.big_search_preferences_default {
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .big_search_preferences_like {
+border-radius: 3px;
+	border: 1px solid;
+	padding: 2px;
 	background-color: rgba(0, 0, 255, 0.5);
 	border: 1px solid rgba(0, 0, 255, 0.5);
 }
@@ -96,7 +96,9 @@
 			<a class="big_search_helper_anchor_link" data="${section.name}">00</a>
 		</div>
 	</c:forEach>
-	<a class="submitFilter">Search ..</a>
+	<div>
+		<a class="big_search_helper_anchor_link" data="search">GO</a>
+	</div>
 </div>
 <div class="big_search_frame">
 	<div class="big_search_top_message">
@@ -122,3 +124,12 @@
 
 	<div class="big_search_spacer"></div>
 </c:forEach>
+
+<a name="search"></a>
+<div class="big_search_frame">
+		<div class="big_search_head_message">
+			<a class="submitFilter">Search</a>
+		</div>
+</div>
+
+<div class="big_search_spacer"></div>
