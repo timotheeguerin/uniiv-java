@@ -65,7 +65,7 @@
 	height: 10px;
 }
 
-.big_search_preferences_default {
+.big_search_button_default {
 	border-radius: 3px;
 	border: 1px solid;
 	padding: 2px;
@@ -73,7 +73,7 @@
 	border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.big_search_preferences_like {
+.big_search_button_default.selected {
 border-radius: 3px;
 	border: 1px solid;
 	padding: 2px;

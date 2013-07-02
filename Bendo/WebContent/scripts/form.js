@@ -139,24 +139,6 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * STAR RATING
 	 **************************************************************************/
-
-	/***************************************************************************
-	 * Preferences buttons
-	 **************************************************************************/
-	$(".big_search_preferences_cycler").click(function() {
-		$(this).toggleClass("big_search_preferences_default");
-		$(this).toggleClass("big_search_preferences_like");
-	});
-	/***************************************************************************
-	 * weather buttons
-	 **************************************************************************/
-	$(".big_search_preferences_weather").click(function() {
-		$(".big_search_preferences_weather").each(function() {
-			$(this).addClass("big_search_preferences_default");
-			$(this).removeClass("big_search_preferences_like");
-		});
-		$(this).addClass("big_search_preferences_like");
-	});
 	/***************************************************************************
 	 * user home / dashboard section for open/close
 	 ***************************************************************************/

@@ -235,7 +235,7 @@ function selectSubElement(elementObj, array) {
 	removeElement(elementObj, elementId);
 	addElement(elementObj, element);
 
-	var content = elementObj.closest("FilerContent");
+	var content = elementObj.closest("FilterContent");
 	toggleElement(content.find(".FilterElementButton[data-element-id=" + elementId + "]"), true);
 
 }
