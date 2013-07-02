@@ -232,7 +232,7 @@ $(document).ready(function() {
  ******************************************************************************/
 function scrollToAnchor(aid){
     var aTag = $("a[name='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top-40},'slow');
+    $('html,body').animate({scrollTop: aTag.offset().top-40},'ease-in');
 }
 
 /*******************************************************************************
