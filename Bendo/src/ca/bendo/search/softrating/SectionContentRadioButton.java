@@ -24,6 +24,10 @@ public class SectionContentRadioButton extends FilterSectionContent
 	/**
 	 * 
 	 */
+	private boolean useImage;
+	/**
+	 * 
+	 */
 	private List<FilterButton> boxes = new ArrayList<FilterButton>();
 
 	/*
@@ -35,6 +39,7 @@ public class SectionContentRadioButton extends FilterSectionContent
 	protected void init()
 	{
 		setFilename("views/search/filter/category/radioButton.jsp");
+		this.useImage = false;
 	}
 
 	/**
@@ -52,6 +57,23 @@ public class SectionContentRadioButton extends FilterSectionContent
 	public void setBoxes(final List<FilterButton> boxes)
 	{
 		this.boxes = boxes;
+	}
+
+	/**
+	 * @return the useImage
+	 */
+	public boolean isUseImage()
+	{
+		return useImage;
+	}
+
+	/**
+	 * @param useImage
+	 *            the useImage to set
+	 */
+	public void setUseImage(final boolean useImage)
+	{
+		this.useImage = useImage;
 	}
 
 }

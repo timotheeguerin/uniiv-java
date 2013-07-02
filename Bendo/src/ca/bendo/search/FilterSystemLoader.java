@@ -260,7 +260,7 @@ public class FilterSystemLoader
 					FilterButton box = new FilterButton();
 					box.setValue(element.getId());
 					box.setText(element.getTranslation());
-					box.setImage("");
+					box.setImage("/images/rating/size/" + element.getName() + ".png");
 					sizeBoxes.add(box);
 				}
 			} else if (rating.getType().getName().equalsIgnoreCase("environment"))
@@ -270,7 +270,7 @@ public class FilterSystemLoader
 					FilterButton box = new FilterButton();
 					box.setValue(element.getId());
 					box.setText(element.getTranslation());
-					box.setImage("");
+					box.setImage("/images/rating/environment/" + element.getName() + ".png");
 					envBoxes.add(box);
 				}
 			}
@@ -302,6 +302,7 @@ public class FilterSystemLoader
 		FilterSection section = new FilterSection();
 		SectionContentRadioButton content = new SectionContentRadioButton();
 		content.setName("weather");
+		content.setUseImage(true);
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
@@ -317,7 +318,7 @@ public class FilterSystemLoader
 					FilterButton box = new FilterButton();
 					box.setValue(element.getId());
 					box.setText(element.getTranslation());
-					box.setImage("");
+					box.setImage("/images/rating/weather/" + element.getName() + ".png");
 					boxes.add(box);
 				}
 			}
@@ -345,6 +346,7 @@ public class FilterSystemLoader
 		FilterSection softRatingFilterCategory = new FilterSection();
 		SectionContentSimpleCheckBox content = new SectionContentSimpleCheckBox();
 		content.setName("rating");
+		
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
