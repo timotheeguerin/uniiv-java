@@ -21,7 +21,7 @@
 	float: left;
 	position: absolute;
 	display: block;
-	margin-left: 120;
+	margin-left: 107;
 	margin-right: auto;
 	width: 35px;
 	border: 1px solid #E5E5E5;
@@ -91,12 +91,11 @@
 </style>
 
 <div class="big_search_helper">
-	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
-	<div>Go</div>
+	<c:forEach var="section" items="${filters.categories}">
+		<div>
+			<a class="big_search_helper_anchor_link" data="${section.name}">00</a>
+		</div>
+</c:forEach>
 </div>
 <div class="big_search_frame">
 	<div class="big_search_top_message">
@@ -107,6 +106,7 @@
 <div class="big_search_spacer"></div>
 
 <c:forEach var="section" items="${filters.categories}">
+	<a name="${section.name}"></a>
 	<div class="big_search_frame">
 		<div class="big_search_head_message">
 			<c:out value="${section.name}" />

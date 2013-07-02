@@ -219,6 +219,13 @@ $(document).ready(function() {
 	        $(this).fadeIn();
 	    }); 
 	});
+	/*****************************************************************
+	 * big search helper
+	 ****************************************************************/
+	$(".big_search_helper_anchor_link").click(function() {
+	    var anchor = $(this).attr("data");
+	    scrollToAnchor(anchor);
+	});
 });
 /*****************************************************************
  * uni big search helper on the side
@@ -249,6 +256,13 @@ function isFullyVisible (elem) {
 	  var wx = window.pageXOffset;
 	  var wy = window.pageYOffset;
 	  return (et >= wy && el >= wx && et + eh <= wh + wy && el + ew <= ww + wx);  
+}
+/*******************************************************************************
+ * scrolls the page to an anchor
+ ******************************************************************************/
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top-40},'slow');
 }
 
 /*******************************************************************************
