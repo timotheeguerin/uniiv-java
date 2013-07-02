@@ -2,7 +2,7 @@
 	<c:forEach var="box" items="${sectionContent.boxes}">
 		<c:choose>
 			<c:when test="${sectionContent.useImage}">
-				<div class="FilterElementButton">
+				<div class="big_search_button_image FilterElementButton">
 					<img src="<c:url value="${box.image}"/>" />
 				</div>
 			</c:when>

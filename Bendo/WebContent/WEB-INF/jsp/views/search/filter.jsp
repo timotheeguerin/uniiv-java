@@ -88,6 +88,22 @@ border-radius: 3px;
 	width: 80%;
 	line-height: 30px;
 }
+
+.big_search_button_image
+{
+	display: inline-block;
+	width: 20%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.big_search_button_image.selected
+{
+	background-color: #e91560;
+}
 </style>
 
 <div class="big_search_helper">
