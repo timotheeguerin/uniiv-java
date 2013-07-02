@@ -219,36 +219,21 @@ $(document).ready(function() {
 	        $(this).fadeIn();
 	    }); 
 	});
+	/*****************************************************************
+	 * big search helper
+	 ****************************************************************/
+	$(".big_search_helper_anchor_link").click(function() {
+	    var anchor = $(this).attr("data");
+	    scrollToAnchor(anchor);
+	});
 });
-/*****************************************************************
- * uni big search helper on the side
- ****************************************************************/
-window.setInterval(function(){
-    var helper = $(".big_search_helper");
-    var Top = $(document).scrollTop() + 60;
-    if(helper.top != Top && !($(helper).is(":animated")))
-    {
-    	$(helper).animate({top:Top},250);
-    }
-    /*if(!(isFullyVisible($(helper))) && !($(helper).is(":animated")))
-    {
-    	var Top = $(document).scrollTop() + 50;
-        var newTop = Math.max(0, (($(window).height() -$(helper).outerHeight()) / 2) + $(window).scrollTop()) + "px";
-        $(helper).animate({top:Top},500);
-    }*/
-}, 250);
 
-function isFullyVisible (elem) {
-	  var off = elem.offset();
-	  var et = off.top;
-	  var el = off.left;
-	  var eh = elem.height();
-	  var ew = elem.width();
-	  var wh = window.innerHeight;
-	  var ww = window.innerWidth;
-	  var wx = window.pageXOffset;
-	  var wy = window.pageYOffset;
-	  return (et >= wy && el >= wx && et + eh <= wh + wy && el + ew <= ww + wx);  
+/*******************************************************************************
+ * scrolls the page to an anchor
+ ******************************************************************************/
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top-40},'slow');
 }
 
 /*******************************************************************************
