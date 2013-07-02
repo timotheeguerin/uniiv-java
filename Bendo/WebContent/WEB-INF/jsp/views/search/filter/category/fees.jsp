@@ -1,5 +1,5 @@
 
-<div class="FilterContent" data-param-name="${sectionContent.name}">
+<div class="FilterContent" data-type="slider" data-param-name="${sectionContent.name}">
 	<div class="fees_content">
 		<label for="fees_amount_min"><b:translator value="fees_price" /> </label>
 		<input type="text" id="fees_amount_min" class="fees_input" />
@@ -15,6 +15,6 @@
 			</c:forEach>
 		</select>
 
-		<div id="general-fees-range"></div>
+		<div id="general-fees-range" class="noUiSlider fees"></div>
 	</div>
 </div>

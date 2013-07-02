@@ -22,6 +22,7 @@
 		<script>/scripts/jquery.simplemodal-1.4.4.js</script>
 		<script>/scripts/jquery.fittext.js</script>
 		<script>/scripts/jquery.jrating.js</script>
+		<script>/scripts/jquery.nouislider.js</script>
 		
 		<script>/scripts/dropdown.js</script>
 		<script>/scripts/loading.js</script>

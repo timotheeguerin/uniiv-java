@@ -43,6 +43,7 @@ $(document).ready(function() {
 		params[param] = obj;
 
 		if (type == "2-layer-checkbox") {
+			obj.selection = new Array();
 			$(this).on("click", ".FilterElementButton.Element", function() {
 				selectElement($(this), obj.selection);
 				console.log(obj.selection);
@@ -54,9 +55,33 @@ $(document).ready(function() {
 			});
 
 		} else if (type == "simple-checkbox") {
+			obj.selection = new Array();
 			$(this).on("click", ".FilterElementButton", function() {
 				toogleCheckbox($(this), obj.selection);
 				console.log(obj.selection);
+			});
+		} else if (type == "radiobutton") {
+			obj.selection = new Object();
+			$(this).on("click", ".FilterElementButton", function() {
+				selectRadioButton($(this), obj.selection);
+				console.log("SEL: " + obj.selection.value);
+			});
+		} else if (type == "slider") {
+			obj.selection = new Object();
+			$(".noUiSlider.fees").each(function() {
+				obj.selection.start = 0;
+				obj.selection.end = 10000;
+				$(this).noUiSlider({
+					range : [ obj.selection.start, obj.selection.end ],
+					start : [ obj.selection.start, obj.selection.end ],
+					step : 20,
+					slide : function() {
+						var values = $(this).val();
+						obj.selection.start = values[0];
+						obj.selection.end = values[1];
+
+					}
+				});
 			});
 		}
 
@@ -65,21 +90,6 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * FEES
 	 **************************************************************************/
-
-	$("#general-fees-range").slider({
-		range : true,
-		min : 0,
-		max : 70000,
-		values : [ 0, 70000 ],
-		step : 100,
-		slide : function(event, ui) {
-			updateInput(ui.values[0], ui.values[1]);
-		},
-		create : function(event, ui) {
-			var values = $(this).slider('values');
-			updateInput(values[0], values[1]);
-		}
-	});
 
 	$(document).on("change", "#fees_amount_min, #fees_amount_max", function() {
 
@@ -112,6 +122,9 @@ $(document).ready(function() {
 				computedParams.push(p);
 			} else if (obj.type == "simple-checkbox") {
 				var p = key + "=" + getSimpleCheckBoxParam(obj.selection);
+				computedParams.push(p);
+			} else if (obj.type == "radiobutton") {
+				var p = key + "=" + obj.selection.value;
 				computedParams.push(p);
 			}
 		}
@@ -298,6 +311,14 @@ function toogleCheckbox(element, array) {
 		array.splice(index, 1);
 		element.removeClass("selected");
 	}
+}
+
+function selectRadioButton(element, selection) {
+	var content = element.closest("FilterContent");
+	content.find(".FilterElementButton").removeClass("selected");
+	var value = element.attr("data-value");
+	selection.value = value;
+	element.addClass("selected");
 }
 
 function updateInput(min, max) {
