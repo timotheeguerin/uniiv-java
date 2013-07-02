@@ -235,7 +235,7 @@ function selectSubElement(elementObj, array) {
 	removeElement(elementObj, elementId);
 	addElement(elementObj, element);
 
-	var content = elementObj.closest("FilterContent");
+	var content = elementObj.closest(".FilterContent");
 	toggleElement(content.find(".FilterElementButton[data-element-id=" + elementId + "]"), true);
 
 }
@@ -314,7 +314,8 @@ function toogleCheckbox(element, array) {
 }
 
 function selectRadioButton(element, selection) {
-	var content = element.closest("FilterContent");
+	var content = element.closest(".FilterContent");
+
 	content.find(".FilterElementButton").removeClass("selected");
 	var value = element.attr("data-value");
 	selection.value = value;
