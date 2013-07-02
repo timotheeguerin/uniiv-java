@@ -134,7 +134,7 @@ public class FilterSystemLoader
 		Long languageId = Language.loadId(request);
 
 		SelectListFilterContent countryCategoryContent = new SelectListFilterContent();
-
+		countryCategoryContent.setName("location");
 		// Load all the countries
 		countryDAO.setLanguageId(languageId);
 		List<Country> countries = countryDAO.listCountries();
@@ -196,6 +196,7 @@ public class FilterSystemLoader
 		Long languageId = Language.loadId(request);
 		FilterSection programCategory = new FilterSection();
 		SelectListFilterContent programCategoryContent = new SelectListFilterContent();
+		programCategoryContent.setName("program");
 		programCategory.setContent(programCategoryContent);
 		// Load all the programs
 		facultyDAO.setLanguageId(languageId);
@@ -239,7 +240,9 @@ public class FilterSystemLoader
 		Long languageId = Language.loadId(request);
 		FilterSection section = new FilterSection();
 		SectionContentRadioButton sizeContent = new SectionContentRadioButton();
+		sizeContent.setName("campus_size");
 		SectionContentRadioButton envContent = new SectionContentRadioButton();
+		envContent.setName("campus_env");
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
@@ -298,6 +301,7 @@ public class FilterSystemLoader
 		Long languageId = Language.loadId(request);
 		FilterSection section = new FilterSection();
 		SectionContentRadioButton content = new SectionContentRadioButton();
+		content.setName("weather");
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
@@ -340,6 +344,7 @@ public class FilterSystemLoader
 		Long languageId = Language.loadId(request);
 		FilterSection softRatingFilterCategory = new FilterSection();
 		SectionContentSimpleCheckBox content = new SectionContentSimpleCheckBox();
+		content.setName("rating");
 		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings

@@ -3,8 +3,13 @@ var softratings = new Array();
 var locations = new Array();
 var programs = new Array();
 
+var params = new Array();
+
 $(document).ready(function() {
 
+	/**
+	 * Tabs
+	 */
 	$(document).on("click", ".ToggleDisplayButton", function() {
 
 		var attrname = $(this).attr("data-toogleDisplay-category");
@@ -25,42 +30,36 @@ $(document).ready(function() {
 	});
 
 	/***************************************************************************
-	 * Location //
+	 * 2 Layer Check Box
 	 **************************************************************************/
 
-	$(document).on("click", ".FilterElementButton.Element", function() {
-		selectElement($(this));
-	});
+	$(".FilterContent").each(function() {
+		var param = $(this).attr("data-param-name");
+		var type = $(this).attr("data-type");
+		console.log("param: " + param);
+		var obj = new Object();
+		obj.type = type;
+		obj.selection = new Array();
+		params[param] = obj;
 
-	$(document).on("click", ".FilterElementButton.SubElement", function() {
-		selectSubElement($(this));
-	});
+		if (type == "2-layer-checkbox") {
+			$(this).on("click", ".FilterElementButton.Element", function() {
+				selectElement($(this), obj.selection);
+				console.log(obj.selection);
+			});
 
-	// $(document).on("click", ".FilterElementButton.Program", function() {
-	// selectProgram($(this));
-	// });
+			$(this).on("click", ".FilterElementButton.SubElement", function() {
+				selectSubElement($(this), obj.selection);
+				console.log(obj.selection);
+			});
 
-	/***************************************************************************
-	 * Soft ratings
-	 **************************************************************************/
-	// Slide down softratings content and remove the soft rating button
-	$(document).on("click", ".DisplayReplaceButton", function() {
+		} else if (type == "simple-checkbox") {
+			$(this).on("click", ".FilterElementButton", function() {
+				toogleCheckbox($(this), obj.selection);
+				console.log(obj.selection);
+			});
+		}
 
-		var content = $(this).parent().children(".DisplayReplaceContent");
-		$(this).slideUp(300);
-		content.slideDown(300);
-	});
-
-	// Change the selection of a softrating option
-	$(document).on("click", ".SoftRatingOption", function() {
-
-		changeSelection($(this));
-	});
-
-	// Clear the selected option.
-	$(document).on("click", ".clearOption", function() {
-
-		clearSelection($(this));
 	});
 
 	/***************************************************************************
@@ -104,42 +103,38 @@ $(document).ready(function() {
 	 * Submit
 	 */
 	$(document).on("click", "a.submitFilter", function(e) {
-		var params = new Array();
-		params.push(getLocationParameter());
-		params.push(getProgramParameter());
-		params.push(getSoftRatingParameter());
+		var computedParams = new Array();
+
+		for ( var key in params) {
+			var obj = params[key];
+			if (obj.type == "2-layer-checkbox") {
+				var p = key + "=" + get2LayerCheckBoxParameter(obj.selection);
+				computedParams.push(p);
+			} else if (obj.type == "simple-checkbox") {
+				var p = key + "=" + getSimpleCheckBoxParam(obj.selection);
+				computedParams.push(p);
+			}
+		}
+
 		var paramStr = "?";
 		var needAnd = false;
-		for ( var i = 0; i < params.length; i++) {
-			if (params[i] != "") {
+		for ( var i = 0; i < computedParams.length; i++) {
+			if (computedParams[i] != "") {
 				if (needAnd) {
 					paramStr += "&";
 				}
-				paramStr += params[i];
+				paramStr += computedParams[i];
 				needAnd = true;
 			}
 		}
-		window.location = $(this).attr("href") + paramStr;
+		// window.location = $(this).attr("href") + paramStr;
+		console.log(paramStr);
 		e.preventDefault();
 	});
 
 });
 
-/**
- * Generate the parameter location
- */
-function getLocationParameter() {
-	var text = getElementParameter("Location");
-	return "location=" + text;
-}
-
-function getProgramParameter() {
-	var text = getElementParameter("Program");
-	return "program=" + text;
-}
-
-function getElementParameter(type) {
-	var array = getArrayFromType(type);
+function get2LayerCheckBoxParameter(array) {
 	if (array.length == 0) {
 		return "";
 	}
@@ -162,42 +157,41 @@ function getElementParameter(type) {
 	return text;
 }
 
-function getSoftRatingParameter() {
+function getSimpleCheckBoxParam(array) {
 
-	console.log("lengh: " + softratings.length);
-	if (softratings.length == 0) {
+	if (array.length == 0) {
 		return "";
 	}
 	var text = "";
-	for ( var i = 0; i < softratings.length; i++) {
-		text += softratings[i].softratingId + ":" + softratings[i].selectedOption;
+	for ( var i = 0; i < array.length; i++) {
+		text += array[i];
 		text += ",";
 	}
 	text = text.substring(0, text.length - 1);
-	return "ratings=" + text;
+	return text;
 }
 
-function selectElement(elementObj) {
+function selectElement(elementObj, array) {
 	var elementId = elementObj.attr("data-element-id");
 	var element = getElement(elementObj, elementId);
-	console.log("select element: " + elementId);
+
 	if (element == null) {
 		element = new Object();
 		element.elementId = elementId;
 	} else {
 		var subelements = element.subelements;
 		if (!(element.subelements != null && subelements.length > 0)) {
-			removeElement(elementObj, elementId);
+			removeElement(array, elementId);
 			toggleElement(elementObj, false);
 			return;
 		}
 	}
-	removeElement(elementObj, elementId);
-	addElement(elementObj, element);
+	removeElement(array, elementId);
+	addElement(array, element);
 	toggleElement(elementObj, true);
 }
 
-function selectSubElement(elementObj) {
+function selectSubElement(elementObj, array) {
 	var elementId = elementObj.attr("data-parent-element-id");
 	var subelementId = elementObj.attr("data-element-id");
 
@@ -228,11 +222,12 @@ function selectSubElement(elementObj) {
 	removeElement(elementObj, elementId);
 	addElement(elementObj, element);
 
-	toggleElement($(".FilterElementButton" + getClass(elementObj) + "[data-element-id=" + elementId + "]"), true);
+	var content = elementObj.closest("FilerContent");
+	toggleElement(content.find(".FilterElementButton[data-element-id=" + elementId + "]"), true);
+
 }
 
-function getElement(elementObj, id) {
-	var array = getArray(elementObj);
+function getElement(array, id) {
 
 	for ( var i = 0; i < array.length; i++) {
 		if (array[i].elementId == id) {
@@ -243,9 +238,7 @@ function getElement(elementObj, id) {
 	return null;
 }
 
-function removeElement(elementObj, id) {
-
-	var array = getArray(elementObj);
+function removeElement(array, id) {
 	for ( var i = 0; i < array.length; i++) {
 		if (array[i].elementId == id) {
 			array.splice(i, 1);
@@ -254,33 +247,10 @@ function removeElement(elementObj, id) {
 	}
 }
 
-function addElement(elementObj, element) {
-	var array = getArray(elementObj);
+function addElement(array, element) {
 	array.push(element);
 }
-function getArray(elementObj) {
-	if (elementObj.hasClass("Country") || elementObj.hasClass("State")) {
-		return locations;
-	} else if (elementObj.hasClass("Faculty") || elementObj.hasClass("Program")) {
-		return programs;
-	}
-}
 
-function getArrayFromType(type) {
-	if (type === "Country" || type === "State" || type === "Location") {
-		return locations;
-	} else if (type === "Faculty" || type === "Program") {
-		return programs;
-	}
-}
-
-function getClass(elementObj) {
-	if (elementObj.hasClass("Country") || elementObj.hasClass("State")) {
-		return ".Country";
-	} else if (elementObj.hasClass("Faculty") || elementObj.hasClass("Program")) {
-		return ".Faculty";
-	}
-}
 function getSubElement(subelements, subelementId) {
 	for ( var i = 0; i < subelements.length; i++) {
 		if (subelements[i].subelementId == subelementId) {
@@ -317,45 +287,16 @@ function toggleElement(element, val) {
 /*******************************************************************************
  * Softratings
  ******************************************************************************/
-// Change the selected option for a softrating
-function changeSelection(option) {
 
-	var optionId = option.attr("data-optionId");
-	var softRatingLi = option.parents("li.SoftRatingElement");
-	// Remove the selected class of the Unimportant/Clear option
-	softRatingLi.children(".SoftRatingDefaultOption").children(".clearOption").removeClass("optionSelected");
-
-	var softratingId = softRatingLi.attr("data-softratingId");
-
-	var newOp = new Object();
-	newOp.softratingId = softratingId;
-	newOp.selectedOption = optionId;
-
-	// Remove any previuously selected category
-	removeRating(softratingId);
-
-	// Add the new selected option
-	softratings.push(newOp);
-
-	option.parent().children(".optionSelected").removeClass("optionSelected");
-
-	option.addClass("optionSelected");
-}
-
-function clearSelection(clear) {
-	var parent = clear.parents("li.SoftRatingElement");
-	var softratingId = parent.attr("data-softratingId");
-	removeRating(softratingId);
-
-	parent.children(".SoftRatingOptions").find(".SoftRatingOption.optionSelected").removeClass("optionSelected");
-	clear.addClass("optionSelected");
-}
-function removeRating(id) {
-	for ( var i = 0; i < softratings.length; i++) {
-		if (softratings[i].softratingId == id) {
-			softratings.splice(i, 1);
-			break;
-		}
+function toogleCheckbox(element, array) {
+	var value = element.attr("data-value");
+	var index = array.indexOf(value);
+	if (index == -1) {
+		array.push(value);
+		element.addClass("selected");
+	} else {
+		arrat.splice(index, 1);
+		element.removeClass("selected");
 	}
 }
 

@@ -607,12 +607,6 @@ div.btn_sign_up_form input {
 	width: 130px;
 }
 
-.FilterElementButton {
-	height: 100%;
-	text-align: left;
-	width: 100%;
-}
-
 .FilterElementButton:hover>span {
 	cursor: pointer;
 	text-decoration: underline;

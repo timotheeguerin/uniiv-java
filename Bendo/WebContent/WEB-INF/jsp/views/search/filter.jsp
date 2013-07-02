@@ -96,7 +96,9 @@
 	<div>3</div>
 	<div>4</div>
 	<div>5</div>
-	<div>Go</div>
+	<div>
+		<a class="submitFilter">GO</a>
+	</div>
 </div>
 <div class="big_search_frame">
 	<div class="big_search_top_message">
@@ -118,7 +120,7 @@
 			<c:import url="${section.content.filename}" />
 		</div>
 	</div>
-	
+
 	<div class="big_search_spacer"></div>
 </c:forEach>
 
