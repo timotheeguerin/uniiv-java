@@ -91,11 +91,12 @@
 </style>
 
 <div class="big_search_helper">
-	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
+		<c:forEach var="section" items="${filters.categories}">
+		<div>
+			<a class="big_search_helper_anchor_link" data="${section.name}">00</a>
+		</div>
+</c:forEach>
+
 	<div>
 		<a class="submitFilter">GO</a>
 	</div>
