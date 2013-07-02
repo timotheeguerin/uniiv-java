@@ -295,7 +295,7 @@ function toogleCheckbox(element, array) {
 		array.push(value);
 		element.addClass("selected");
 	} else {
-		arrat.splice(index, 1);
+		array.splice(index, 1);
 		element.removeClass("selected");
 	}
 }
