@@ -19,7 +19,7 @@
 .big_search_helper {
 	color: #4F4D4D;
 	float: left;
-	position: absolute;
+	position: fixed;
 	display: block;
 	margin-left: 107;
 	margin-right: auto;
