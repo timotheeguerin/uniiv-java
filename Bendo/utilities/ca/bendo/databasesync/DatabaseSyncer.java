@@ -308,7 +308,9 @@ public class DatabaseSyncer
 
 				String type = processType(md.getColumnTypeName(i), md.getPrecision(i), md.getScale(i));
 				result.append(type);
-				//System.out.println("TYPE: " + ((com.mysql.jdbc.ResultSetMetaData) md).getColumnType(i) + " " + type);
+				// System.out.println("TYPE: " +
+				// ((com.mysql.jdbc.ResultSetMetaData) md).getColumnType(i) +
+				// " " + type);
 				if (md.getColumnTypeName(i).equalsIgnoreCase("VARCHAR"))
 				{
 					String collation = ((com.mysql.jdbc.ResultSetMetaData) md).getColumnCharacterSet(i);
@@ -443,6 +445,10 @@ public class DatabaseSyncer
 		} else if (columnTypeName.equalsIgnoreCase("GEOMETRY"))
 		{
 			result.append("POINT ");
+
+		} else if (columnTypeName.equalsIgnoreCase("TINYBLOB"))
+		{
+			result.append("TINYBLOB ");
 
 		} else if (precision != 0 && precision < MAX_VARCHAR_LENGTH)
 		{

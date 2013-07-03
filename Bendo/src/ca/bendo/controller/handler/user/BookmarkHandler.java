@@ -12,13 +12,12 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.db.dao.university.UniversityDAO;
 import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
 import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
-import ca.bendo.db.dao.wiki.WikiDAO;
+import ca.bendo.db.dao.wiki.WikiPageDAO;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.db.entity.user.bookmark.UserBookmarkCenter;
 import ca.bendo.db.entity.user.bookmark.UserUniversityBookmark;
 import ca.bendo.db.entity.user.bookmark.UserWikiBookmark;
-import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.wiki.WikiPage;
 
 /**
  * @author Timothée Guérin
@@ -57,7 +56,7 @@ public class BookmarkHandler
 	 * 
 	 */
 	@Autowired
-	private WikiDAO wikiDAO;
+	private WikiPageDAO wikiDAO;
 
 	/**
 	 * @param user
@@ -124,7 +123,7 @@ public class BookmarkHandler
 	 */
 	public boolean bookmarkWiki(final User user, final long wikiId)
 	{
-		Wiki wiki = wikiDAO.getById(wikiId);
+		WikiPage wiki = wikiDAO.getById(wikiId);
 		if (wiki == null)
 		{
 			return false;
@@ -154,7 +153,7 @@ public class BookmarkHandler
 	 */
 	public boolean unBookmarkWiki(final User user, final long wikiId)
 	{
-		Wiki wiki = wikiDAO.getById(wikiId);
+		WikiPage wiki = wikiDAO.getById(wikiId);
 		if (wiki == null)
 		{
 			return false;

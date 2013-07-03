@@ -144,9 +144,7 @@ public class ForumQuestionHandler
 		question.addAllTags(userTags);
 
 		// Setup content
-		FormattedContent content = new FormattedContent();
-		content.setContent(questionForm.getContent());
-		content.processContent();
+		FormattedContent content = new FormattedContent(questionForm.getContent());
 		contentDAO.add(content);
 
 		question.setContent(content);

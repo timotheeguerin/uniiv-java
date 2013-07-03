@@ -4,7 +4,7 @@
 package ca.bendo.db.dao.wiki;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.wiki.WikiPage;
 import ca.bendo.db.entity.wiki.WikiComment;
 
 /**
@@ -25,7 +25,7 @@ public class WikiCommentDAO extends HibernateDAO<WikiComment>
 		setType(WikiComment.class);
 	}
 	
-	public Wiki getParentWiki(WikiComment comment)
+	public WikiPage getParentWiki(WikiComment comment)
 	{
 		return comment.getWiki();
 	}

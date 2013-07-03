@@ -1,27 +1,26 @@
 /**
  * 
  */
-package ca.bendo.form.entity.forum;
+package ca.bendo.form.entity.wiki;
 
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
-import ca.bendo.db.entity.forum.ForumQuestion;
+import ca.bendo.db.entity.wiki.WikiPage;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>ForumQuestionEntity</b>
+ *          <b>WikiPageForm</b>
  *          <p>
  *          </p>
  * 
  * 
  */
-public class ForumQuestionForm
+public class WikiPageForm
 {
 	/**
 	 * 
@@ -37,6 +36,11 @@ public class ForumQuestionForm
 	 * 
 	 */
 	private static final int MIN_CONTENT_SIZE = 30;
+
+	/**
+	 * 
+	 */
+	private static final int MIN_COMMENT_SIZE = 10;
 
 	/**
 	 * 
@@ -59,24 +63,28 @@ public class ForumQuestionForm
 	private String tags;
 
 	/**
-	 * Initialise the the form with the databse object.
 	 * 
-	 * @param question
-	 *            Question object
 	 */
-	public ForumQuestionForm(final ForumQuestion question)
-	{
-		this.title = question.getTitle();
-		this.content = question.getContent().getContent();
-		this.tags = question.getTagsString();
-	}
+	@NotNull
+	@Length(min = MIN_COMMENT_SIZE)
+	private String comment;
 
 	/**
 	 * 
 	 */
-	public ForumQuestionForm()
+	public WikiPageForm()
 	{
+	}
 
+	/**
+	 * @param page
+	 *            page
+	 */
+	public WikiPageForm(final WikiPage page)
+	{
+		this.title = page.getTitle();
+		this.content = page.getLastRevision().getContent().getContent();
+		this.tags = page.getTagsString();
 	}
 
 	/**
@@ -129,4 +137,22 @@ public class ForumQuestionForm
 	{
 		this.tags = tags;
 	}
+
+	/**
+	 * @return the comment
+	 */
+	public String getComment()
+	{
+		return comment;
+	}
+
+	/**
+	 * @param comment
+	 *            the comment to set
+	 */
+	public void setComment(final String comment)
+	{
+		this.comment = comment;
+	}
+
 }
