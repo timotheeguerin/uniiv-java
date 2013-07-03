@@ -91,9 +91,7 @@ public class ForumReplyHandler
 		reply.setTimeCreated(new Date());
 		reply.setQuestion(question);
 
-		FormattedContent content = new FormattedContent();
-		content.setContent(replyEntity.getContent());
-		content.processContent();
+		FormattedContent content = new FormattedContent(replyEntity.getContent());
 		contentDAO.add(content);
 
 		reply.setContent(content);

@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ca.bendo.db.dao.HibernateDAO;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.wiki.WikiPage;
 
 /**
  * @author Timothée Guérin

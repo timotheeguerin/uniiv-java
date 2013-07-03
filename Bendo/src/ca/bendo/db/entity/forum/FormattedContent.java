@@ -3,12 +3,18 @@
  */
 package ca.bendo.db.entity.forum;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import ca.bendo.db.entity.wiki.ContentDifference;
+import ca.bendo.db.entity.wiki.WikiRevision;
 import ca.bendo.utils.MarkdownUtils;
 
 /**
@@ -44,6 +50,50 @@ public class FormattedContent
 	 */
 	@Column(name = "html")
 	private String html;
+
+	/**
+	 * @param content
+	 *            Content to set
+	 * 
+	 */
+	public FormattedContent(final String content)
+	{
+		setContent(content);
+	}
+
+	/**
+	 * 
+	 * @param oldContent
+	 *            OldREvision
+	 * @return differences
+	 */
+	public ContentDifference computeDifference(final FormattedContent oldContent)
+	{
+		List<String> oldLines = oldContent.listLine();
+		List<String> newLines = this.listLine();
+
+		List<String> addition = new ArrayList<String>(newLines);
+		addition.removeAll(oldLines);
+
+		List<String> deletion = new ArrayList<String>(oldLines);
+		deletion.removeAll(newLines);
+
+		ContentDifference difference = new ContentDifference();
+		difference.setAddition(addition.size());
+		difference.setDeletion(deletion.size());
+
+		return difference;
+
+	}
+
+	/**
+	 * 
+	 * @return number of line in the content
+	 */
+	public List<String> listLine()
+	{
+		return Arrays.asList(content.split("\r\n|\r|\n"));
+	}
 
 	/**
 	 * 

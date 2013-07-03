@@ -44,12 +44,12 @@ public class WikiComment
 
 	@ManyToOne
 	@JoinColumn(name = "id_wiki")
-	private Wiki wiki;
+	private WikiPage wiki;
 	
 	/**
 	 * @return the parent
 	 */
-	public Wiki getWiki()
+	public WikiPage getWiki()
 	{
 		return wiki;
 	}

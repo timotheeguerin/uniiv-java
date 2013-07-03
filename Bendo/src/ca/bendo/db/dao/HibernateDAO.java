@@ -12,6 +12,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Filter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,6 +94,38 @@ public class HibernateDAO<T>
 		Filter filter = getSession().enableFilter("languageId");
 		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(type).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+	}
+
+	/**
+	 * @param column
+	 *            Column name
+	 * @return list all the entity order by the column in asc
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> listOrderAsc(final String column)
+	{
+
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+
+		return getSession().createCriteria(type).addOrder(Order.asc(column))
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+	}
+
+	/**
+	 * @param column
+	 *            Column name
+	 * @return list all the entity order by the column in descending
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> listOrderDesc(final String column)
+	{
+
+		Filter filter = getSession().enableFilter("languageId");
+		filter.setParameter("param", getLanguageId());
+
+		return getSession().createCriteria(type).addOrder(Order.desc(column))
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 
 	/**

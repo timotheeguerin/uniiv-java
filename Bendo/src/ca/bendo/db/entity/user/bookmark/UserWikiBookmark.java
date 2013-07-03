@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import ca.bendo.db.entity.wiki.Wiki;
+import ca.bendo.db.entity.wiki.WikiPage;
 
 /**
  * @author Timothée Guérin
@@ -54,7 +54,7 @@ public class UserWikiBookmark
 	 */
 	@ManyToOne
 	@JoinColumn(name = "id_wiki")
-	private Wiki wiki;
+	private WikiPage wiki;
 
 	/**
 	 * @return the id
@@ -110,7 +110,7 @@ public class UserWikiBookmark
 	/**
 	 * @return the wiki
 	 */
-	public Wiki getWiki()
+	public WikiPage getWiki()
 	{
 		return wiki;
 	}
@@ -119,7 +119,7 @@ public class UserWikiBookmark
 	 * @param wiki
 	 *            the wiki to set
 	 */
-	public void setWiki(final Wiki wiki)
+	public void setWiki(final WikiPage wiki)
 	{
 		this.wiki = wiki;
 	}
