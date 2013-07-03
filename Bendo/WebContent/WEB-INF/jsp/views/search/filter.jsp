@@ -31,6 +31,7 @@
 	padding-left: 5x;
 	padding-right: 5px;
 	background-color: #FFFFFF;
+	text-align: center;
 }
 
 .big_search_top_message {
@@ -70,15 +71,25 @@
 	border: 1px solid;
 	padding: 2px;
 	background-color: rgba(0, 0, 0, 0);
-	border: 1px solid rgba(0, 0, 0, 0.5);
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+.big_search_button_default:hover
+{
+	border: 1px solid #204aa1;
 }
 
 .big_search_button_default.selected {
+	color: #fff;
 	border-radius: 3px;
 	border: 1px solid;
 	padding: 2px;
-	background-color: rgba(0, 0, 255, 0.5);
-	border: 1px solid rgba(0, 0, 255, 0.5);
+	background-color: #274D9B;
+	border: 1px solid rgba(0,0,0,0);
+}
+
+.big_search_button_default.selected:hover {
+	border: 1px solid #204aa1;
 }
 
 .big_search_preferences_container {
@@ -143,6 +154,10 @@
 .myButton.selected {
 	position: relative;
 	top: 1px;
+}
+.justify
+{
+	text-align: justify;
 }
 </style>
 
