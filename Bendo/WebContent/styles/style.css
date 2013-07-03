@@ -594,10 +594,6 @@ div.btn_sign_up_form input {
 	cursor: pointer;
 }
 
-.SelectListElementLine {
-	width: 100%;
-}
-
 .fees_content {
 	margin: 20px 20px 20px 20px;
 }
@@ -616,6 +612,7 @@ div.btn_sign_up_form input {
 	height: 12px;
 	margin: auto;
 	vertical-align: center;
+	text-align:left;
 	width: 130px;
 }
 
@@ -790,6 +787,7 @@ hr.official-standard-ratings-separation {
 
 .SelectListElementLine {
 	margin: 0 20px 0 20px;
+	width:100%;
 }
 
 .submitFilter_text {
