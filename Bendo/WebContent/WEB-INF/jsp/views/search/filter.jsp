@@ -74,7 +74,7 @@
 }
 
 .big_search_button_default.selected {
-border-radius: 3px;
+	border-radius: 3px;
 	border: 1px solid;
 	padding: 2px;
 	background-color: rgba(0, 0, 255, 0.5);
@@ -89,8 +89,7 @@ border-radius: 3px;
 	line-height: 30px;
 }
 
-.big_search_button_image
-{
+.big_search_button_image {
 	display: inline-block;
 	width: 20%;
 	height: auto;
@@ -100,9 +99,50 @@ border-radius: 3px;
 	border-radius: 5px;
 }
 
-.big_search_button_image.selected
-{
+.big_search_button_image.selected {
 	background-color: #e91560;
+}
+
+.myButton {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf', GradientType=0 );
+	background-color: #ededed;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	color: #777777;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+	padding: 10px;
+}
+
+.myButton:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed', GradientType=0 );
+	background-color: #dfdfdf;
+}
+
+.myButton.selected {
+	position: relative;
+	top: 1px;
 }
 </style>
 
@@ -143,9 +183,9 @@ border-radius: 3px;
 
 <a name="search"></a>
 <div class="big_search_frame">
-		<div class="big_search_head_message">
-			<a class="submitFilter">Search</a>
-		</div>
+	<div class="big_search_head_message">
+		<a class="submitFilter">Search</a>
+	</div>
 </div>
 
 <div class="big_search_spacer"></div>
