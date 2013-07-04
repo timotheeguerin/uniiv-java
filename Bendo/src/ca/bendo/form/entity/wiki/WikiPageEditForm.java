@@ -14,46 +14,20 @@ import ca.bendo.db.entity.wiki.WikiPage;
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>WikiPageForm</b>
+ *          <b>WikiPageEditForm</b>
  *          <p>
  *          </p>
  * 
  * 
  */
-public class WikiPageForm
+public class WikiPageEditForm
 {
-	/**
-	 * 
-	 */
-	static final int MIN_TITLE_SIZE = 10;
-
-	/**
-	 * 
-	 */
-	static final int MAX_TITLE_SIZE = 255;
-
-	/**
-	 * 
-	 */
-	static final int MIN_CONTENT_SIZE = 30;
-
-	/**
-	 * 
-	 */
-	static final int MIN_COMMENT_SIZE = 10;
 
 	/**
 	 * 
 	 */
 	@NotNull
-	@Length(min = MIN_TITLE_SIZE, max = MAX_TITLE_SIZE)
-	private String title;
-
-	/**
-	 * 
-	 */
-	@NotNull
-	@Length(min = MIN_CONTENT_SIZE)
+	@Length(min = WikiPageForm.MIN_CONTENT_SIZE)
 	private String content;
 
 	/**
@@ -66,33 +40,17 @@ public class WikiPageForm
 	 * 
 	 */
 	@NotNull
-	@Length(min = MIN_COMMENT_SIZE)
+	@Length(min = WikiPageForm.MIN_COMMENT_SIZE)
 	private String comment;
 
 	/**
-	 * 
+	 * @param page
+	 *            page
 	 */
-	public WikiPageForm()
+	public WikiPageEditForm(final WikiPage page)
 	{
-	}
-
-	
-
-	/**
-	 * @return the title
-	 */
-	public String getTitle()
-	{
-		return title;
-	}
-
-	/**
-	 * @param title
-	 *            the title to set
-	 */
-	public void setTitle(final String title)
-	{
-		this.title = title;
+		this.content = page.getLastRevision().getContent().getContent();
+		this.tags = page.getTagsString();
 	}
 
 	/**
