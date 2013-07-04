@@ -44,7 +44,7 @@ public class WikiRevision
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_wiki_page", nullable = false)
+	@JoinColumn(name = "id_wiki_page")
 	private WikiPage page;
 
 	/**

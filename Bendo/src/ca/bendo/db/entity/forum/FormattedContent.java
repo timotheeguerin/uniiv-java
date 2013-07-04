@@ -52,6 +52,14 @@ public class FormattedContent
 	private String html;
 
 	/**
+	 * 
+	 */
+	public FormattedContent()
+	{
+
+	}
+
+	/**
 	 * @param content
 	 *            Content to set
 	 * 

@@ -20,6 +20,7 @@ import ca.bendo.db.entity.forum.Tag;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.wiki.WikiPage;
 import ca.bendo.db.entity.wiki.WikiRevision;
+import ca.bendo.form.entity.wiki.WikiPageEditForm;
 import ca.bendo.form.entity.wiki.WikiPageForm;
 import ca.bendo.session.UserSession;
 
@@ -37,7 +38,7 @@ import ca.bendo.session.UserSession;
 @Transactional
 public class WikiHandler
 {
-	
+
 	/**
 	 * 
 	 */
@@ -70,6 +71,7 @@ public class WikiHandler
 	 *            Frq
 	 * @return if the creation is succesful
 	 */
+	@Transactional()
 	public WikiPage createNewWiki(final HttpServletRequest request, final WikiPageForm form)
 	{
 		User user = UserSession.getSession(request).getUser();
@@ -85,12 +87,14 @@ public class WikiHandler
 
 		wiki.setDateCreated(revision.getDateCreated());
 		wiki.setDateEdited(revision.getDateCreated());
-		wiki.setLastRevision(revision);
 
 		wiki.setValitated(false);
 
 		List<Tag> tags = tagDAO.getTags(form.getTags());
 		wiki.setTags(tags);
+		wiki.setLastRevision(revision);
+		wiki.setLastValidRevision(revision);
+		wiki.getRevisions().add(revision);
 		wikiDAO.add(wiki);
 		revisionDAO.add(revision);
 
@@ -106,7 +110,7 @@ public class WikiHandler
 	 *            Frq
 	 * @return if the creation is succesful
 	 */
-	public WikiPage editWiki(final HttpServletRequest request, final long wikiId, final WikiPageForm form)
+	public WikiPage editWiki(final HttpServletRequest request, final long wikiId, final WikiPageEditForm form)
 	{
 		User user = UserSession.getSession(request).getUser();
 
@@ -114,7 +118,6 @@ public class WikiHandler
 		contentDAO.add(content);
 
 		WikiPage wiki = new WikiPage();
-		wiki.setTitle(request.getParameter("title"));
 		wiki.setUser(user.getId());
 
 		wiki.createRevision(user, form.getComment(), content);
@@ -131,7 +134,7 @@ public class WikiHandler
 	 *            Wiki id
 	 * @return form setup with the given wiki
 	 */
-	public WikiPageForm loadWikiForm(final long wikiId)
+	public WikiPageEditForm loadWikiForm(final long wikiId)
 	{
 		WikiPage page = wikiDAO.getById(wikiId);
 		if (page == null)
@@ -139,8 +142,8 @@ public class WikiHandler
 			return null;
 		}
 
-		return new WikiPageForm(page);
-	}
+		return new WikiPageEditForm(page);
+	}	
 
 	/**
 	 * @param wikiId
