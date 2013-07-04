@@ -157,7 +157,7 @@
 }
 .justify
 {
-	text-align: justify;
+	text-align: justify;	
 }
 </style>
 
