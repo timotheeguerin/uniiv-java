@@ -63,13 +63,13 @@
 }
 
 .big_search_text_spacer {
-	height: 10px;
+	height: 20px;
 }
 
 .big_search_button_default {
 	border-radius: 3px;
-	border: 1px solid;
-	padding: 2px;
+	font-size:14px;
+	padding: 5px;
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid rgba(0,0,0,0.5);
 }
@@ -81,11 +81,7 @@
 
 .big_search_button_default.selected {
 	color: #fff;
-	border-radius: 3px;
-	border: 1px solid;
-	padding: 2px;
 	background-color: #274D9B;
-	border: 1px solid rgba(0,0,0,0);
 }
 
 .big_search_button_default.selected:hover {
