@@ -4,6 +4,6 @@
 	<b:translator value="error_404" />
 
 </h2>
-<a href="<b:tlink value="home"/>" title="<b:translator value="back_home"/>"> <img src="<c:url value="/images/errorImg/error404temp.png"/>"
+<a href="<b:tlink value="home"/>" title="<b:translator value="back_home"/>"> <img src="<c:url value="/images/errorImg/atchoum.gif"/>"
 	class="Error404Img"
 /></a>

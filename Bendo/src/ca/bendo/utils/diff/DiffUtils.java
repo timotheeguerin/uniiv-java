@@ -71,11 +71,11 @@ public class DiffUtils
 	 * Internal class for returning results from diff_linesToChars(). Other less
 	 * paranoid languages just use a three-element array.
 	 */
-	protected static class LinesToCharsResult
+	public static class LinesToCharsResult
 	{
-		protected String chars1;
-		protected String chars2;
-		protected List<String> lineArray;
+		public String chars1;
+		public String chars2;
+		public List<String> lineArray;
 
 		protected LinesToCharsResult(String chars1, String chars2, List<String> lineArray)
 		{
@@ -148,9 +148,9 @@ public class DiffUtils
 	 * Find the differences between two texts. Simplifies the problem by
 	 * stripping any common prefix or suffix off the texts before diffing.
 	 * 
-	 * @param text1
+	 * @param original
 	 *            Old string to be diffed.
-	 * @param text2
+	 * @param revision
 	 *            New string to be diffed.
 	 * @param checklines
 	 *            Speedup flag. If false, then don't run a line-level diff first
@@ -161,8 +161,11 @@ public class DiffUtils
 	 *            recursive calls. Users should set DiffTimeout instead.
 	 * @return Linked List of Diff objects.
 	 */
-	private LinkedList<Diff> diffMain(String text1, String text2, final boolean checklines, final long deadline)
+	private LinkedList<Diff> diffMain(final String original, final String revision, final boolean checklines,
+			final long deadline)
 	{
+		String text1 = original;
+		String text2 = revision;
 		// Check for null inputs.
 		if (text1 == null || text2 == null)
 		{
@@ -194,7 +197,7 @@ public class DiffUtils
 		text2 = text2.substring(0, text2.length() - commonlength);
 
 		// Compute the diff on the middle block.
-		diffs = diff_compute(text1, text2, checklines, deadline);
+		diffs = computeDifference(text1, text2, checklines, deadline);
 
 		// Restore the prefix and suffix.
 		if (commonprefix.length() != 0)
@@ -226,7 +229,8 @@ public class DiffUtils
 	 *            Time when the diff should be complete by.
 	 * @return Linked List of Diff objects.
 	 */
-	private LinkedList<Diff> diff_compute(String text1, String text2, boolean checklines, long deadline)
+	private LinkedList<Diff> computeDifference(final String text1, final String text2, final boolean checklines,
+			final long deadline)
 	{
 		LinkedList<Diff> diffs = new LinkedList<Diff>();
 
@@ -243,7 +247,7 @@ public class DiffUtils
 			diffs.add(new Diff(Operation.DELETE, text1));
 			return diffs;
 		}
-
+		
 		String longtext = text1.length() > text2.length() ? text1 : text2;
 		String shorttext = text1.length() > text2.length() ? text2 : text1;
 		int i = longtext.indexOf(shorttext);
@@ -256,12 +260,12 @@ public class DiffUtils
 			diffs.add(new Diff(op, longtext.substring(i + shorttext.length())));
 			return diffs;
 		}
-		
+
 		if (shorttext.length() == 1)
 		{
 			// Single character string.
 			// After the previous speedup, the character can't be an equality.
-			
+
 			diffs.add(new Diff(Operation.DELETE, text1));
 			diffs.add(new Diff(Operation.INSERT, text2));
 			return diffs;
@@ -318,7 +322,7 @@ public class DiffUtils
 		LinkedList<Diff> diffs = diffMain(text1, text2, false, deadline);
 
 		// Convert the diff back to original text.
-		diff_charsToLines(diffs, linearray);
+		charsToLines(diffs, linearray);
 		// Eliminate freak matches (e.g. blank lines)
 		diff_cleanupSemantic(diffs);
 
@@ -560,7 +564,7 @@ public class DiffUtils
 	 *         List of unique strings. The zeroth element of the List of unique
 	 *         strings is intentionally blank.
 	 */
-	protected LinesToCharsResult diff_linesToChars(String text1, String text2)
+	public LinesToCharsResult diff_linesToChars(String text1, String text2)
 	{
 		List<String> lineArray = new ArrayList<String>();
 		Map<String, Integer> lineHash = new HashMap<String, Integer>();
@@ -600,10 +604,6 @@ public class DiffUtils
 		while (lineEnd < text.length() - 1)
 		{
 			lineEnd = text.indexOf('\n', lineStart);
-			if (lineEnd == -1)
-			{
-				lineEnd = text.length() - 1;
-			}
 			line = text.substring(lineStart, lineEnd + 1);
 			lineStart = lineEnd + 1;
 
@@ -629,7 +629,7 @@ public class DiffUtils
 	 * @param lineArray
 	 *            List of unique strings.
 	 */
-	protected void diff_charsToLines(LinkedList<Diff> diffs, List<String> lineArray)
+	public void charsToLines(final LinkedList<Diff> diffs, final List<String> lineArray)
 	{
 		StringBuilder text;
 		for (Diff diff : diffs)
@@ -644,7 +644,84 @@ public class DiffUtils
 	}
 
 	/**
-	 * Determine the common prefix of two strings
+	 * Split two texts into a list of strings. Reduce the texts to a string of
+	 * hashes where each Unicode character represents one line.
+	 * 
+	 * @param text1
+	 *            First string.
+	 * @param text2
+	 *            Second string.
+	 * @return An object containing the encoded text1, the encoded text2 and the
+	 *         List of unique strings. The zeroth element of the List of unique
+	 *         strings is intentionally blank.
+	 */
+	public LinesToCharsResult wordsToChars(final String text1, final String text2)
+	{
+		List<String> lineArray = new ArrayList<String>();
+		Map<String, Integer> lineHash = new HashMap<String, Integer>();
+		// e.g. linearray[4] == "Hello\n"
+		// e.g. linehash.get("Hello\n") == 4
+
+		// "\x00" is a valid character, but various debuggers don't like it.
+		// So we'll insert a junk entry to avoid generating a null character.
+		lineArray.add("");
+
+		String chars1 = diff_linesToCharsMunge(text1, lineArray, lineHash);
+		String chars2 = diff_linesToCharsMunge(text2, lineArray, lineHash);
+		return new LinesToCharsResult(chars1, chars2, lineArray);
+	}
+
+	/**
+	 * Split a text into a list of strings. Reduce the texts to a string of
+	 * hashes where each Unicode character represents one line.
+	 * 
+	 * @param text
+	 *            String to encode.
+	 * @param lineArray
+	 *            List of unique strings.
+	 * @param lineHash
+	 *            Map of strings to indices.
+	 * @return Encoded string.
+	 */
+	private String wordsToCharsMunge(String text, List<String> lineArray, Map<String, Integer> lineHash)
+	{
+		int lineStart = 0;
+		int lineEnd = -1;
+		String line;
+		StringBuilder chars = new StringBuilder();
+		// Walk the text, pulling out a substring for each line.
+		// text.split('\n') would would temporarily double our memory footprint.
+		// Modifying text would create many large strings to garbage collect.
+		while (lineEnd < text.length() - 1)
+		{
+			int wordEnd = text.indexOf(' ', lineStart);
+			lineEnd = text.indexOf('\n', lineStart);
+			if (wordEnd < lineEnd)
+			{
+				lineEnd = wordEnd;
+			}
+			if (lineEnd == -1)
+			{
+				lineEnd = text.length() - 1;
+			}
+			line = text.substring(lineStart, lineEnd + 1);
+			lineStart = lineEnd + 1;
+
+			if (lineHash.containsKey(line))
+			{
+				chars.append(String.valueOf((char) (int) lineHash.get(line)));
+			} else
+			{
+				lineArray.add(line);
+				lineHash.put(line, lineArray.size() - 1);
+				chars.append(String.valueOf((char) (lineArray.size() - 1)));
+			}
+		}
+		return chars.toString();
+	}
+
+	/**
+	 * /** Determine the common prefix of two strings.
 	 * 
 	 * @param text1
 	 *            First string.
@@ -2609,7 +2686,7 @@ public class DiffUtils
 		String line;
 		while (!text.isEmpty())
 		{
-			
+
 			m = patchHeader.matcher(text.getFirst());
 			System.out.println("CHANGE: " + text.getFirst());
 			if (!m.matches())

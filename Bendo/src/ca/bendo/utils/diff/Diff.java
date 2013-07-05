@@ -120,4 +120,39 @@ public class Diff
 		}
 		return true;
 	}
+
+	/**
+	 * @return the operation
+	 */
+	public Operation getOperation()
+	{
+		return operation;
+	}
+
+	/**
+	 * @param operation
+	 *            the operation to set
+	 */
+	public void setOperation(final Operation operation)
+	{
+		this.operation = operation;
+	}
+
+	/**
+	 * @return the text
+	 */
+	public String getText()
+	{
+		return text;
+	}
+
+	/**
+	 * @param text
+	 *            the text to set
+	 */
+	public void setText(final String text)
+	{
+		this.text = text;
+	}
+
 }
