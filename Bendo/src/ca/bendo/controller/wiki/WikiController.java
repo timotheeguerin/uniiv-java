@@ -21,6 +21,7 @@ import ca.bendo.db.dao.forum.TagDAO;
 import ca.bendo.db.dao.wiki.WikiPageDAO;
 import ca.bendo.db.dao.wiki.WikiRevisionDAO;
 import ca.bendo.db.entity.wiki.WikiPage;
+import ca.bendo.form.entity.wiki.WikiPageEditForm;
 import ca.bendo.form.entity.wiki.WikiPageForm;
 
 /**
@@ -67,7 +68,7 @@ public class WikiController
 	 *            request Request
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/wiki/show/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/wiki/{id}", method = RequestMethod.GET)
 	public String show(@PathVariable(value = "id") final long id, final HttpServletRequest request)
 	{
 		request.setAttribute("wiki", wikiDAO.getById(id));
@@ -136,7 +137,7 @@ public class WikiController
 	 * @return jsp page
 	 */
 	// @Secured("wiki.edit")
-	@RequestMapping(value = "/wiki/edit/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/wiki/{id}/edit", method = RequestMethod.GET)
 	public String edit(@PathVariable(value = "id") final long wikiId, final HttpServletRequest request)
 	{
 		return setupEditWikiPage(request, handler.loadWikiForm(wikiId));
@@ -157,9 +158,9 @@ public class WikiController
 	 */
 	// TODO validate title
 	// @Secured("wiki.edit")
-	@RequestMapping(value = "/wiki/edit/{wikiId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/wiki/{wikiId}/edit", method = RequestMethod.POST)
 	public String handleEdit(@PathVariable(value = "wikiId") final long wikiId, final HttpServletRequest request,
-			@Valid final WikiPageForm form, final BindingResult result)
+			@Valid final WikiPageEditForm form, final BindingResult result)
 	{
 		if (result.hasErrors())
 		{
@@ -179,13 +180,13 @@ public class WikiController
 	 *            Form
 	 * @return page
 	 */
-	public String setupEditWikiPage(final HttpServletRequest request, final WikiPageForm form)
+	public String setupEditWikiPage(final HttpServletRequest request, final WikiPageEditForm form)
 	{
 		if (form == null)
 		{
 			return "views/errors/error404";
 		}
-		request.setAttribute("wikiPageForm", form);
+		request.setAttribute("wikiPageEditForm", form);
 		return "views/wiki/edit";
 	}
 

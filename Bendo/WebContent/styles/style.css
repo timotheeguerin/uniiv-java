@@ -610,13 +610,24 @@ div.btn_sign_up_form input {
 	margin-top: 10px;
 }
 
+.tab_buttons {
+	margin:auto;
+	width:330px;
+}
+
 .FilterElement {
 	display: inline-block;
 	font-size: 12px;
 	height: 12px;
 	margin: auto;
-	vertical-align: center;
+	vertical-align: middle;
+	text-align:left;
 	width: 130px;
+}
+
+.FilterElementButton {
+	vertical-align: left;
+	width:auto;
 }
 
 .FilterElementButton:hover>span {
@@ -885,6 +896,55 @@ hr.official-standard-ratings-separation {
 	filter: progid:DXImageTransform.Microsoft.gradient(    
 		                                        startColorstr='#3259ab', endColorstr='#4a68a8', GradientType=0 );
 	/* IE6-9 */
+}
+
+.submitFilter {
+	border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 255, 0.5);
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+    /* IE6-9 */
+    padding:8px;
+    color:#333131;
+    cursor:pointer;
+    font-size:14px;
+    display:inline-block;
+}
+
+.submitFilter:hover {
+	background: -moz-linear-gradient(top, #ffffff 0%, #CFCFCF 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #CFCFCF));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%, #CFCFCF 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%, #CFCFCF 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%, #CFCFCF 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #ffffff 0%, #CFCFCF 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#CFCFCF', GradientType=0);
+    /* IE6-9 */
+}
+
+.big_search_filters {
+	display:inline-block;
+	margin-left:10px;
 }
 /**************************************
 

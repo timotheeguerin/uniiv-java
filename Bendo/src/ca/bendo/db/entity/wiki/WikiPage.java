@@ -76,14 +76,14 @@ public class WikiPage
 	/**
 	 * 
 	 */
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "revision_latest", nullable = false)
 	private WikiRevision lastRevision;
 
 	/**
 	 * 
 	 */
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "revision_latest_valid", nullable = false)
 	private WikiRevision lastValidRevision;
 
@@ -97,13 +97,13 @@ public class WikiPage
 	 * 
 	 */
 	@OrderBy("dateCreated")
-	@OneToMany(mappedBy = "page", fetch = FetchType.LAZY)
-	private List<WikiRevision> revisions;
+	@OneToMany(mappedBy = "page", fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
+	private List<WikiRevision> revisions = new ArrayList<WikiRevision>();
 
 	/**
 	 * 
 	 */
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.ALL })
 	@JoinTable(name = "wiki_comment", joinColumns = { @JoinColumn(name = "id_wiki") },
 			inverseJoinColumns = { @JoinColumn(name = "id_wiki_comment") })
 	private List<WikiComment> comments = new ArrayList<WikiComment>();
