@@ -197,10 +197,11 @@
 	display: inline-block;
 	border: solid 1px #DBDBDB;
 	border-radius: 3px;
+	color:#000000;
 	font-size: 15px;
 	font-family: Helvetica;
-	font-weight: normal;
-	height: 35px;
+	font-weight: lighter;
+	height: 30px;
 	outline: none;
 	margin-bottom: 10px;
 	position: relative;
