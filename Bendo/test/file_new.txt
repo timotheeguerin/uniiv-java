@@ -44,3 +44,9 @@ Write a function `rev_tl` that does the same as the above but is tail-recursive.
 fun rev_tl ([], acc) = acc
   | rev_tl (h::t, acc) = rev_tl(t, h::acc)
 ```
+
+*   A unix session is the period after user authentication and before the user logs out in which the user is allowed to create processes and kill them inside the same session. It is essentially a group of process.
+*   A shell is an environment which allows the user to interact with the system. It is used to allow the user to run processes and use system resources. It is invoked upon the creation of a session.
+
+The internet is an array of layers which work together to help a message (packet/datagram) reach
+ 

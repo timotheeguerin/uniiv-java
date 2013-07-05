@@ -421,17 +421,18 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.postgis</groupId> -->
-<!-- 			<artifactId>postgis-jdbc</artifactId> -->
-<!-- 			<version>1.5.3</version> -->
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>postgresql</artifactId> -->
-<!-- 					<groupId>postgresql</groupId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
-<!-- 		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.postgis</groupId> -->
+		<!-- <artifactId>postgis-jdbc</artifactId> -->
+		<!-- <version>1.5.3</version> -->
+		<!-- <exclusions> -->
+		<!-- <exclusion> -->
+		<!-- <artifactId>postgresql</artifactId> -->
+		<!-- <groupId>postgresql</groupId> -->
+		<!-- </exclusion> -->
+		<!-- </exclusions> -->
+		<!-- </dependency> -->
 	</dependencies>
 
 	<pluginRepositories>
