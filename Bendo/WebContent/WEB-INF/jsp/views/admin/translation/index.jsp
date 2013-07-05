@@ -1,3 +1,3 @@
-<a href="list">list</a>
+<a href='<b:url value="/admin/translation/list"/>'>list</a>
 <br>
-<a href="add">add</a>
+<a href='<b:url value="/admin/translation/add"/>'>add</a>
