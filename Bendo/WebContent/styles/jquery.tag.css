@@ -1,26 +1,35 @@
 div.tagsinput {
-	border: 1px solid #CCC;
-	background: #FFF;
-	padding: 5px;
-	width: 300px;
-	height: 100px;
+	background-color: #FFFFFF;
+	padding: 3px;
 	overflow-y: auto;
+	border: solid 1px #DBDBDB;
+	border-radius: 3px;
+	font-size: 15px;
+	font-family: Helvetica;
+	font-weight: lighter;
+	margin-bottom:10px;
+	line-height:20px;
+	vertical-align: middle;
 }
 
 div.tagsinput span.tag {
 	border: 1px solid #a5d24a;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
+	border-radius:3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	display: block;
 	float: left;
 	padding: 5px;
 	text-decoration: none;
 	background: #cde69c;
 	color: #638421;
+	height:auto;
 	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-bottom:5px;
 	font-family: helvetica;
 	font-size: 13px;
+	line-height:21px;
+	vertical-align: middle;
 }
 
 div.tagsinput span.tag a {
@@ -41,7 +50,8 @@ div.tagsinput input {
 	color: #000;
 	outline: 0px;
 	margin-right: 5px;
-	margin-bottom: 5px;
+	line-height:21px;
+	vertical-align: middle;
 }
 
 div.tagsinput div {
@@ -58,4 +68,25 @@ div.tagsinput div {
 .not_valid {
 	background: #FBD8DB !important;
 	color: #90111A !important;
+}
+
+#tags_tag:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#comment {
+	background-color: #FFFFFF;
+	padding: 3px;
+	border: solid 1px #DBDBDB;
+	border-radius: 3px;
+	font-size: 14px;
+	font-family: Helvetica;
+	font-weight: lighter;
+	margin:auto;
+	padding:5px;
+	height:auto;
+	outline:0;
+	word-wrap:break-word;
+	width:100%;
 }
