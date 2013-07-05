@@ -19,13 +19,14 @@ div.tagsinput span.tag {
 	-webkit-border-radius: 3px;
 	display: block;
 	float: left;
-	padding: 5px;
+	padding-right: 5px;
+	padding-left:5px;
 	text-decoration: none;
 	background: #cde69c;
 	color: #638421;
 	height:auto;
-	margin-right: 5px;
-	margin-bottom:5px;
+	margin-right: 3px;
+	margin-bottom:3px;
 	font-family: helvetica;
 	font-size: 13px;
 	line-height:21px;
@@ -45,13 +46,12 @@ div.tagsinput input {
 	font-family: helvetica;
 	font-size: 13px;
 	border: 1px solid transparent;
-	padding: 5px;
+	padding-left:5px;
+	padding-right:2px;
 	background: transparent;
-	color: #000;
+	color: #000000;
 	outline: 0px;
 	margin-right: 5px;
-	line-height:21px;
-	vertical-align: middle;
 }
 
 div.tagsinput div {
