@@ -79,7 +79,7 @@ $(document).ready(function() {
 		var height = $(this).attr("data-height");
 		var width = $(this).attr("data-width");
 		$(this).tagsInput({
-			'height' : height,
+			'height' : "35px",
 			'width' : "100%",
 		});
 	});
