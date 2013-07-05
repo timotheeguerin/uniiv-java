@@ -80,7 +80,7 @@ $(document).ready(function() {
 		var width = $(this).attr("data-width");
 		$(this).tagsInput({
 			'height' : height,
-			'width' : width,
+			'width' : "100%",
 		});
 	});
 
