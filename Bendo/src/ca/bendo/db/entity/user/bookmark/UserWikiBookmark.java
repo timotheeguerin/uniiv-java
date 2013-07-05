@@ -53,7 +53,7 @@ public class UserWikiBookmark
 	 * 
 	 */
 	@ManyToOne
-	@JoinColumn(name = "id_wiki")
+	@JoinColumn(name = "id_wiki_page")
 	private WikiPage wiki;
 
 	/**

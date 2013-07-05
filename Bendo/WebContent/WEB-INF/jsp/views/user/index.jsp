@@ -92,6 +92,9 @@
 			<c:forEach var="wiki" items="${user.bookmark.wikiBookmarks}">
 				<div><c:out value="${wiki.wiki.title}" /></div>
 			</c:forEach>
+			<c:if test="${user.bookmark.wikiBookmarks.size() == 0}">
+				<div>You have no watched wikis.</div>
+			</c:if>
 		</div>
 		
         <div class="your_unis_toggle">Your Universities</div>
@@ -99,6 +102,9 @@
 			<c:forEach var="uni" items="${user.bookmark.universityBookmarks}">
 				<div><c:out value="${uni.university.name}" /></div>
 			</c:forEach>
+			<c:if test="${user.bookmark.universityBookmarks.size() == 0}">
+				<div>You have no watched universities.</div>
+			</c:if>
 		</div>
 		
         <div class="your_questions_toggle">Your Questions</div>
