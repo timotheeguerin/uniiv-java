@@ -71,7 +71,6 @@ public class WikiHandler
 	 *            Frq
 	 * @return if the creation is succesful
 	 */
-	@Transactional()
 	public WikiPage createNewWiki(final HttpServletRequest request, final WikiPageForm form)
 	{
 		User user = UserSession.getSession(request).getUser();
@@ -108,7 +107,7 @@ public class WikiHandler
 	 *            Request
 	 * @param form
 	 *            Frq
-	 * @return if the creation is succesful
+	 * @return if the creation is successful
 	 */
 	public WikiPage editWiki(final HttpServletRequest request, final long wikiId, final WikiPageEditForm form)
 	{

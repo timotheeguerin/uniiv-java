@@ -46,8 +46,27 @@ public class WikiRevisionController
 	@RequestMapping(value = "/wiki/{wikiId}/history", method = RequestMethod.GET)
 	public String listWikiRevisions(final HttpServletRequest request, @PathVariable("wikiId") final long wikiId)
 	{
-		List<WikiRevision> revisions = service.listRevisionByDate(wikiId);
+		List<WikiRevision> revisions = service.listRevision(wikiId);
 		request.setAttribute("revisions", revisions);
 		return "views/wiki/wiki_revisions";
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @param wikiId
+	 *            Wiki id
+	 * @param revisionId
+	 *            Revision Id
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/wiki/{wikiId}/history/{revisionId}")
+	public String viewRevision(final HttpServletRequest request, @PathVariable("wikiId") final long wikiId,
+			@PathVariable("revisionId") final long revisionId)
+	{
+		String difference = service.getDiffrence(wikiId, revisionId);
+		request.setAttribute("diff", difference);
+		return "views/wiki/wiki_diff";
 	}
 }

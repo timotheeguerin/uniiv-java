@@ -16,7 +16,6 @@ import javax.persistence.Table;
 
 import ca.bendo.db.entity.forum.FormattedContent;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.utils.DiffTest;
 
 /**
  * @author Timothée Guérin
