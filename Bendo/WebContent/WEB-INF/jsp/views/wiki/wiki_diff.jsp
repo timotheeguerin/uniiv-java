@@ -1,10 +1,10 @@
 <style>
 .old {
-	background-color: red;
+	background-color: #F07171;
 }
 
 .new {
-	background-color: green;
+	background-color: #9ECC97;
 }
 </style>
 
