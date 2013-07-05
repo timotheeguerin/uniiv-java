@@ -77,7 +77,8 @@ $(document).ready(function() {
 
 	$('input.tag-input').each(function() {
 		$(this).tagsInput({
-			'height' : "27px",
+			'min-height' : "27px",
+			'height' : "auto",
 			'width' : "950px",
 		});
 	});
