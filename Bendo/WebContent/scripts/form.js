@@ -76,11 +76,9 @@ $(document).ready(function() {
 	});
 
 	$('input.tag-input').each(function() {
-		var height = $(this).attr("data-height");
-		var width = $(this).attr("data-width");
 		$(this).tagsInput({
-			'height' : "35px",
-			'width' : "100%",
+			'height' : "27px",
+			'width' : "950px",
 		});
 	});
 
