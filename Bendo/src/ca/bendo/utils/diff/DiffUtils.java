@@ -247,7 +247,7 @@ public class DiffUtils
 			diffs.add(new Diff(Operation.DELETE, text1));
 			return diffs;
 		}
-		
+
 		String longtext = text1.length() > text2.length() ? text1 : text2;
 		String shorttext = text1.length() > text2.length() ? text2 : text1;
 		int i = longtext.indexOf(shorttext);
@@ -276,24 +276,24 @@ public class DiffUtils
 		if (hm != null)
 		{
 			// A half-match was found, sort out the return data.
-			String text1_a = hm[0];
-			String text1_b = hm[1];
-			String text2_a = hm[2];
-			String text2_b = hm[3];
-			String mid_common = hm[4];
+			String text1A = hm[0];
+			String text1B = hm[1];
+			String text2A = hm[2];
+			String text2B = hm[3];
+			String middleCommon = hm[4];
 			// Send both pairs off for separate processing.
-			LinkedList<Diff> diffs_a = diffMain(text1_a, text2_a, checklines, deadline);
-			LinkedList<Diff> diffs_b = diffMain(text1_b, text2_b, checklines, deadline);
+			LinkedList<Diff> diffsA = diffMain(text1A, text2A, checklines, deadline);
+			LinkedList<Diff> diffsB = diffMain(text1B, text2B, checklines, deadline);
 			// Merge the results.
-			diffs = diffs_a;
-			diffs.add(new Diff(Operation.EQUAL, mid_common));
-			diffs.addAll(diffs_b);
+			diffs = diffsA;
+			diffs.add(new Diff(Operation.EQUAL, middleCommon));
+			diffs.addAll(diffsB);
 			return diffs;
 		}
 
 		if (checklines && text1.length() > 100 && text2.length() > 100)
 		{
-			return diff_lineMode(text1, text2, deadline);
+			return diffLineMode(text1, text2, deadline);
 		}
 
 		return diff_bisect(text1, text2, deadline);
@@ -311,8 +311,10 @@ public class DiffUtils
 	 *            Time when the diff should be complete by.
 	 * @return Linked List of Diff objects.
 	 */
-	private LinkedList<Diff> diff_lineMode(String text1, String text2, long deadline)
+	private LinkedList<Diff> diffLineMode(final String original, final String revision, final long deadline)
 	{
+		String text1 = original;
+		String text2 = revision;
 		// Scan the text on a line-by-line basis first.
 		LinesToCharsResult b = diff_linesToChars(text1, text2);
 		text1 = b.chars1;
@@ -329,44 +331,46 @@ public class DiffUtils
 		// Rediff any replacement blocks, this time character-by-character.
 		// Add a dummy entry at the end.
 		diffs.add(new Diff(Operation.EQUAL, ""));
-		int count_delete = 0;
-		int count_insert = 0;
-		String text_delete = "";
-		String text_insert = "";
+		int deleteCount = 0;
+		int insertCount = 0;
+		String textDeleted = "";
+		String textInsert = "";
 		ListIterator<Diff> pointer = diffs.listIterator();
 		Diff thisDiff = pointer.next();
 		while (thisDiff != null)
 		{
-			switch (thisDiff.operation)
+			switch (thisDiff.getOperation())
 			{
 			case INSERT:
-				count_insert++;
-				text_insert += thisDiff.text;
+				insertCount++;
+				textInsert += thisDiff.getText();
 				break;
 			case DELETE:
-				count_delete++;
-				text_delete += thisDiff.text;
+				deleteCount++;
+				textDeleted += thisDiff.getText();
 				break;
 			case EQUAL:
 				// Upon reaching an equality, check for prior redundancies.
-				if (count_delete >= 1 && count_insert >= 1)
+				if (deleteCount >= 1 && insertCount >= 1)
 				{
 					// Delete the offending records and add the merged ones.
 					pointer.previous();
-					for (int j = 0; j < count_delete + count_insert; j++)
+					for (int j = 0; j < deleteCount + insertCount; j++)
 					{
 						pointer.previous();
 						pointer.remove();
 					}
-					for (Diff newDiff : diffMain(text_delete, text_insert, false, deadline))
+					for (Diff newDiff : diffMain(textDeleted, textInsert, false, deadline))
 					{
 						pointer.add(newDiff);
 					}
 				}
-				count_insert = 0;
-				count_delete = 0;
-				text_delete = "";
-				text_insert = "";
+				insertCount = 0;
+				deleteCount = 0;
+				textDeleted = "";
+				textInsert = "";
+				break;
+			default:
 				break;
 			}
 			thisDiff = pointer.hasNext() ? pointer.next() : null;
@@ -666,8 +670,8 @@ public class DiffUtils
 		// So we'll insert a junk entry to avoid generating a null character.
 		lineArray.add("");
 
-		String chars1 = diff_linesToCharsMunge(text1, lineArray, lineHash);
-		String chars2 = diff_linesToCharsMunge(text2, lineArray, lineHash);
+		String chars1 = wordsToCharsMunge(text1, lineArray, lineHash);
+		String chars2 = wordsToCharsMunge(text2, lineArray, lineHash);
 		return new LinesToCharsResult(chars1, chars2, lineArray);
 	}
 
@@ -1644,7 +1648,7 @@ public class DiffUtils
 	 *            LinkedList of Diff objects.
 	 * @return Source text.
 	 */
-	public String diff_text1(LinkedList<Diff> diffs)
+	public String diff_text1(final LinkedList<Diff> diffs)
 	{
 		StringBuilder text = new StringBuilder();
 		for (Diff aDiff : diffs)
@@ -2327,7 +2331,7 @@ public class DiffUtils
 	 * @return Two element Object array, containing the new text and an array of
 	 *         boolean values.
 	 */
-	public Object[] patch_apply(LinkedList<Patch> patches, String text)
+	public Object[] applyPatch(LinkedList<Patch> patches, String text)
 	{
 		if (patches.isEmpty())
 		{

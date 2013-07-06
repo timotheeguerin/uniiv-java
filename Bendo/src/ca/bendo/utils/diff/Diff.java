@@ -60,11 +60,38 @@ public class Diff
 	 * Replace \n with "<br>
 	 * ".
 	 * 
+	 * @param nextDiff
+	 *            next difference to be
 	 * @return html version of the text
 	 */
-	public String textToHtml()
+	public String textToHtml(final Diff nextDiff)
 	{
-		return this.text.replaceAll("\n", "<br/>");
+		if (nextDiff != null && operation == Operation.DELETE && nextDiff.operation == Operation.INSERT)
+		{
+			if (text.endsWith("\n") && nextDiff.text.endsWith("\n"))
+			{
+				text = text.substring(0, text.length() - 1);
+			}
+		}
+		StringBuilder result = new StringBuilder();
+		switch (operation)
+		{
+		case INSERT:
+			result.append("<span class='new'>");
+			break;
+		case DELETE:
+			result.append("<span class='old'>");
+			break;
+		case EQUAL:
+			result.append("<span>").append("");
+			break;
+		default:
+			break;
+		}
+		result.append(this.text.replaceAll("\n", "<br/>"));
+		result.append("</span>");
+		return result.toString();
+
 	}
 
 	/**
