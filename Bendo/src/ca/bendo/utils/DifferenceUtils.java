@@ -11,7 +11,7 @@ import ca.bendo.utils.diff.DiffUtils;
 import ca.bendo.utils.diff.DiffUtils.LinesToCharsResult;
 
 /**
- * @author Timothée Guérin
+ * @author Timothï¿½e Guï¿½rin
  * @version Bendo
  * 
  *          <b>DifferenceUtils</b>

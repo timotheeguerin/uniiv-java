@@ -6,6 +6,7 @@ package ca.bendo.controller.handler.wiki;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import org.hibernate.criterion.Order;
@@ -19,7 +20,7 @@ import ca.bendo.db.entity.wiki.WikiRevision;
 import ca.bendo.utils.DifferenceUtils;
 
 /**
- * @author Timothée Guérin
+ * @author Timothï¿½e Guï¿½rin
  * @version Bendo
  * 
  *          <b>WikiRevisionHandler</b>
@@ -79,8 +80,8 @@ public class WikiRevisionService
 		// original = revision.getParent().getContent().getContent();
 		// }
 
-		String original = fileToStr("D:/dev/test/file_old.txt");
-		String revision = fileToStr("D:/dev/test/file_new.txt");
+		String original = fileToStr("test/file_old.txt");
+		String revision = fileToStr("test/file_new.txt");
 
 		String diff = DifferenceUtils.difference(original, revision);
 		System.out.println(diff);
@@ -93,7 +94,9 @@ public class WikiRevisionService
 		String line = "";
 		try
 		{
-			BufferedReader in = new BufferedReader(new FileReader(filename));
+			BufferedReader in = new BufferedReader(new InputStreamReader(
+				    getClass().getClassLoader().getResourceAsStream(
+				            filename)));
 			while ((line = in.readLine()) != null)
 			{
 				result.append(line).append("\n");

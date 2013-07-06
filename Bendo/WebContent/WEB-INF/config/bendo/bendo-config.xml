@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <link>
 	<styles>
-		<style>/styles/jqueryui/jquery-ui-1.10.0.custom.min.css</style>
 		<style>/styles/style.css</style>
-		<style>/styles/dropdown.css</style>
 		<style>/styles/form.css</style>
 		<style>/styles/university.css</style>
 		<style>/styles/rating.css</style>
@@ -15,7 +13,6 @@
 
 	<scripts>
 		<script>/scripts/jquery.js</script>
-		<script>/scripts/jquery-ui-1.8.23.custom.min.js</script>
 		<script>/scripts/jquery.autocomplete.js</script>
 		<script>/scripts/jquery.tag.min.js</script>
 		<script>/scripts/jquery.wmd.js</script>
@@ -30,7 +27,6 @@
 		<script>/scripts/dynamicsearch.js</script>
 		<script>/scripts/form.js</script>
 		<script>/scripts/filter.js</script>
-		<script>/scripts/jquery.radiobutton.js</script>
 		<script>/scripts/jquery.textarearesizer.js</script>
 		<script>/scripts/googlemaps.js</script>
 	</scripts>

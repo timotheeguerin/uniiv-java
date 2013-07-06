@@ -6,7 +6,7 @@
 }
 
 .wmd-input {
-	outline:none;
+	outline: none;
 	background-color: #FFF;
 	border: solid 1px #DDD;
 	border-radius: 3px;
@@ -22,10 +22,11 @@
 }
 
 .wmd-preview {
-	border: 1px dotted #DDD;
+	border: 1px dotted #DBDBDB;
 	border-radius: 3px;
 	margin: 20px 0 20px 0;
 	padding: 10px;
+	background-color: #F5F5F5;
 }
 
 .wmd-output {
@@ -197,7 +198,7 @@
 	display: inline-block;
 	border: solid 1px #DBDBDB;
 	border-radius: 3px;
-	color:#000000;
+	color: #000000;
 	font-size: 15px;
 	font-family: Helvetica;
 	font-weight: lighter;
@@ -211,7 +212,7 @@
 	width: 100%;
 }
 
-#title:focus, .wmd-input:focus {
+#title:focus,.wmd-input:focus {
 	outline: none;
 	box-shadow: 0 0 3px #9ecaed;
 	border-color: #204AA1;
@@ -228,4 +229,14 @@
 .submit-wiki {
 	position: relative;
 	margin-left: 90%;
+}
+
+div.grippie {
+	background: #EEEEEE url(../images/wmd/grippie.png) no-repeat scroll center 2px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 0pt 1px 1px;
+	cursor: s-resize;
+	height: 9px;
+	overflow: hidden;
 }

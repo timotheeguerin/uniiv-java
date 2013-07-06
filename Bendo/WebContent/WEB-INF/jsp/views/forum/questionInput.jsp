@@ -1,11 +1,11 @@
 <f:form commandName="questionForm" action=''>
 	<div>
-		<label>title</label>
+		<label><b:translator value="title"/></label>
 		<f:errors path="title" />
 		<f:input path="title" />
 	</div>
 	<div>
-		<label>content</label>
+		<label><b:translator value="content"/></label>
 		<f:errors path="content" />
 		<f:textarea path="content" id="questionContentInput" cssClass="wmd wmd-input" />
 	</div>

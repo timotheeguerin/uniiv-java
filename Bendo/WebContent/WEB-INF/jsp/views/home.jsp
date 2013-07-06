@@ -1,11 +1,8 @@
-
 <img class="home_image_bg"
 	src='<c:url value="/images/background/uniiv_MIT_background.jpg"/>' />
-<!-- <div class="getStartedHome"> -->
-<%-- 	<a class="get-started-bt" href="<b:url value="/discover"/>"> <b:translator --%>
-<%-- 			value="get_started" /> --%>
-<!-- 	</a> -->
-<!-- </div> -->
+<img class="home-logo-lf moveup"
+	src='<c:url value="/images/logo/uniiv_logo.png"/>' />
+
 <span class="home_splitter_container"> <img
 	class="home_splitter_bar"
 	src='<c:url value="/images/background/home_splitter_bar.png"/>' /> <img
@@ -22,73 +19,41 @@
 					value="content-info-start" /></span>
 		</p>
 	</div>
-	<div class="student-container one">
-		<div class="image-student">
-			<img src='<c:url value="/images/valou.jpg"/>' />
-		</div>
-		<div class="text-student">
-			<p class="big-type">
-				<span> <b:translator value="studying_mcgill_program" /></span>
-			</p>
-			<br>
-			<p class="small-type">
-				<span> <b:translator value="going_exchange_2014" /></span>
-			</p>
-			<br>
-			<p class="quote-student">
-				<span> <b:translator value="#" /></span>
-			</p>
-		</div>
-	</div>
-	<div class="student-container two">
-		<div class="image-student">
-			<img src='<c:url value="/images/valou.jpg"/>' />
-		</div>
-		<div class="text-student">
-			<p class="big-type">
-				<span> <b:translator value="studying_mcgill_program" /></span>
-			</p>
-			<br>
-			<p class="small-type">
-				<span> <b:translator value="going_exchange_2014" /></span>
-			</p>
-			<br>
-			<p class="quote-student">
-				<span> <b:translator value="#" /></span>
-			</p>
-		</div>
-	</div>
-	<div class="student-container three">
-		<div class="image-student">
-			<img src='<c:url value="/images/valou.jpg"/>' />
-		</div>
-		<div class="text-student">
-			<p class="big-type">
-				<span> <b:translator value="studying_mcgill_program" /></span>
-			</p>
-			<br>
-			<p class="small-type">
-				<span> <b:translator value="going_exchange_2014" /></span>
-			</p>
-			<br>
-			<p class="quote-student">
-				<span> <b:translator value="#" /></span>
-			</p>
-		</div>
-	</div>
+	<!-- 	<div class="student-container one"> -->
+	<!-- 		<div class="image-student"> -->
+	<%-- 			<img src='<c:url value="/images/valou.jpg"/>' /> --%>
+	<!-- 		</div> -->
+	<!-- 		<div class="text-student"> -->
+	<!-- 			<p class="big-type"> -->
+	<%-- 				<span> <b:translator value="studying_mcgill_program" /></span> --%>
+	<!-- 			</p> -->
+	<!-- 			<br> -->
+	<!-- 			<p class="small-type"> -->
+	<%-- 				<span> <b:translator value="going_exchange_2014" /></span> --%>
+	<!-- 			</p> -->
+	<!-- 			<br> -->
+	<!-- 			<p class="quote-student"> -->
+	<%-- 				<span> <b:translator value="#" /></span> --%>
+	<!-- 			</p> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
 </div>
 <script>
-var list = [];
-$(".student-container").each(function () {
-    list.push($(this));
-});
-window.setInterval(function () {
-    var item = list.shift();
-    item.fadeOut().promise().done(function () {
-        list.push(item);
-        list[0].fadeIn();
-    });
-}, 6000);
+// 	$(document).ready(function() {
+// 		$(".home-logo-lf").mouseover(function() {
+// 			$(this).animate({
+// 				top : "25px"
+// 			}, 200);
+
+// 		});
+// 		$(".home-logo-lf").mouseleave(function() {
+// 			$(this).animate({
+// 				top : "30px"
+// 			});
+
+// 		});
+
+// 	});
 </script>
 <div class="main-graph">
 	<img class="home_guide_content"
