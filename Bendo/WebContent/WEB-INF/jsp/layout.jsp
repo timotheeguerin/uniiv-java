@@ -1,11 +1,11 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE>
 
-<c:set var="contentMargin" value="content_margin" scope="page"/>
+<c:set var="contentMargin" value="content_margin" scope="page" />
 <c:if test="${requestScope.contentMargin != null && requestScope.contentMargin == false}">
-	<c:set var="contentMargin" value="" scope="page"/>
-</c:if> 
+	<c:set var="contentMargin" value="" scope="page" />
+</c:if>
 
 <html>
 <tiles:insertAttribute name="head" />

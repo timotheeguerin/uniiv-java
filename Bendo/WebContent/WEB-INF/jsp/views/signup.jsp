@@ -3,7 +3,7 @@
 
 <div class="signup_frame">
 	<div class="signup_head_message">
-		<b:translator value="signup" />	
+		<b:translator value="signup" />
 	</div>
 	<f:form commandName="signupForm" method="POST">
 		<jsp:attribute name="action">
@@ -17,7 +17,9 @@
 				<f:errors path="firstName" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element"><b:translator value="first_name" /></div>
+				<div class="signup_text_element">
+					<b:translator value="first_name" />
+				</div>
 				<f:input class="input-element signup-input" path="firstName" placeholder="Please enter your first name." name="first_name" type="text" required="required" />
 			</div>
 	
@@ -26,7 +28,9 @@
 				<f:errors path="lastName" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element"><b:translator value="last_name" /></div>
+				<div class="signup_text_element">
+					<b:translator value="last_name" />
+				</div>
 				<f:input class="input-element signup-input" path="lastName" placeholder="Please enter your last name." name="last_name" type="text" required="required" />
 			</div>
 		
@@ -35,7 +39,9 @@
 				<f:errors path="email" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element"><b:translator value="email" /></div>
+				<div class="signup_text_element">
+					<b:translator value="email" />
+				</div>
 				<f:input class="input-element signup-input" placeholder="Please enter your email." path="email" name="email" type="text" required="required" />
 			</div>
 			
@@ -44,7 +50,9 @@
 				<f:errors path="password" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element"><b:translator value="password" /></div>
+				<div class="signup_text_element">
+					<b:translator value="password" />
+				</div>
 				<f:password class="input-element signup-input" placeholder="Please enter a password at least 8 characters long." path="password" />
 			</div>
 			
@@ -53,7 +61,9 @@
 				<f:errors path="passwordCheck" />
 			</div>
 			<div class="signup_element_container">
-				<div class="signup_text_element"><b:translator value="password" /></div>
+				<div class="signup_text_element">
+					<b:translator value="password" />
+				</div>
 				<f:password class="input-element signup-input" placeholder="Please re-enter your password." path="passwordCheck" />
 			</div>
 			
