@@ -42,7 +42,7 @@ public final class DifferenceUtils
 	{
 
 		DiffUtils util = new DiffUtils();
-		
+
 		LinesToCharsResult b = util.wordsToChars(original, revision);
 
 		String wordText1 = b.chars1;
@@ -52,27 +52,15 @@ public final class DifferenceUtils
 		util.charsToLines(diffs, wordarray);
 
 		StringBuilder result = new StringBuilder();
-		for (Diff diff : diffs)
+
+		for (int i = 0; i < diffs.size() - 1; i++)
 		{
-			System.out.println(diff);
+			Diff diff = diffs.get(i);
+			Diff nextDiff = diffs.get(i + 1);
 
-			switch (diff.operation)
-			{
-			case INSERT:
-				result.append("<span class='new'>");
-				break;
-			case DELETE:
-				result.append("<span class='old'>");
-				break;
-			case EQUAL:
-				result.append("<span>").append("");
-				break;
-			default:
-				break;
-			}
-
-			result.append(diff.textToHtml()).append("</span>");
+			result.append(diff.textToHtml(nextDiff));
 		}
+		result.append(diffs.getLast().textToHtml(null));
 
 		return result.toString();
 
