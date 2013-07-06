@@ -88,7 +88,7 @@ public class Diff
 		default:
 			break;
 		}
-		result.append(text);
+		result.append(this.text.replaceAll("\n", "<br/>"));
 		result.append("</span>");
 		return result.toString();
 

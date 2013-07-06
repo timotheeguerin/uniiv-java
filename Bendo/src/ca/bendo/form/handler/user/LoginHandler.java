@@ -92,12 +92,6 @@ public class LoginHandler
 		sessionCookie.setKey(new HashedPassword(key));
 
 		sessionCookieDAO.saveOrUpdate(sessionCookie);
-
-		Cookie userIdCookie = new Cookie("user.id", String.valueOf(user.getId()));
-		Cookie userKeyCookie = new Cookie("user.key", key);
-		userIdCookie.setPath("/");
-		userKeyCookie.setPath("/");
-
 		response.addCookie(new Cookie("user.id", String.valueOf(user.getId())));
 		response.addCookie(new Cookie("user.key", key));
 	}
