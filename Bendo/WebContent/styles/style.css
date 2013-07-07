@@ -1828,7 +1828,9 @@ p.big-type span {
 
 .container-bt {
 	background-color: #FFFFFF;
-	border-top: 1px solid #DDDDDD;
+	border-radius: 5px;
+	border: 1px solid;
+	border-color: #DDDDDD;
 	opacity: 0.9;
 	margin: auto;
 	padding-left: 20px;
