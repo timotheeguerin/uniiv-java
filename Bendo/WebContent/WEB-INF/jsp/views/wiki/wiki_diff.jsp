@@ -32,7 +32,7 @@ pre.diff {
 	display: block;
 	margin: 0 0 10px 0;
 	font-size: 12px;
-	height:50px;
+	height: 50px;
 	border: 1px solid #DBDBDB;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -40,7 +40,9 @@ pre.diff {
 }
 </style>
 <div class="wiki-diff-details">
-	<div class="w-edit-time"></div>
+	<div class="img-edit-user">
+		<a href=""> <img src="" alt="" /></a>
+	</div>
 	<div class="w-edit-stats"></div>
 	<div class="w-edit-msg"></div>
 </div>
