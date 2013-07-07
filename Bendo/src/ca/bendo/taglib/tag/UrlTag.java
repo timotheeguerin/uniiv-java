@@ -35,6 +35,11 @@ public class UrlTag extends TagSupport
 	 */
 	private String value;
 
+	/**
+	 * 
+	 */
+	private String var;
+
 	@Override
 	public int doStartTag() throws JspException
 	{
@@ -51,10 +56,16 @@ public class UrlTag extends TagSupport
 		}
 		try
 		{
-			out.print(result);
+			if (var != null && var != "")
+			{
+				pageContext.setAttribute(var, result);
+			} else
+			{
+				out.print(result);
+			}
 		} catch (IOException e)
 		{
-			
+
 			e.printStackTrace();
 		}
 		return SKIP_BODY;
@@ -75,6 +86,23 @@ public class UrlTag extends TagSupport
 	public void setValue(final String value)
 	{
 		this.value = value;
+	}
+
+	/**
+	 * @return the var
+	 */
+	public String getVar()
+	{
+		return var;
+	}
+
+	/**
+	 * @param var
+	 *            the var to set
+	 */
+	public void setVar(final String var)
+	{
+		this.var = var;
 	}
 
 	/**

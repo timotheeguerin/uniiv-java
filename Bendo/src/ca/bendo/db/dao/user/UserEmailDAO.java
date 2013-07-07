@@ -3,11 +3,14 @@
  */
 package ca.bendo.db.dao.user;
 
+import java.util.List;
+
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
+import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.user.UserEmail;
 
 /**
@@ -58,5 +61,15 @@ public class UserEmailDAO extends HibernateDAO<UserEmail>
 		return (UserEmail) createCriteria().add(Restrictions.eq("email", email)).uniqueResult();
 	}
 
+	/**
+	 * @param user
+	 *            User
+	 * @return list of emails of the given user
+	 */
+	@SuppressWarnings("unchecked")
+	public List<UserEmail> listUserEmails(final User user)
+	{
+		return (List<UserEmail>) createCriteria().add(Restrictions.eq("user.id", user.getId())).list();
+	}
 
 }

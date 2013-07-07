@@ -76,8 +76,7 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 			if (var != null && var != "")
 			{
 				pageContext.setAttribute(var, result);
-			}
-			else
+			} else
 			{
 				out.print(result);
 			}

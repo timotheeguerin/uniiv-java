@@ -142,80 +142,94 @@ $(document).ready(function() {
 	 **************************************************************************/
 	/***************************************************************************
 	 * user home / dashboard section for open/close
-	 ***************************************************************************/
+	 **************************************************************************/
 	$(".your_wikis_toggle").click(function() {
-	    if($(".your_wikis_content").css("display") == "none")
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	        $(".your_wikis_content").slideDown();
-	    }
-	    else
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	    }
+		if ($(".your_wikis_content").css("display") == "none") {
+			$(".user_home_show_hide_content").slideUp();
+			$(".your_wikis_content").slideDown();
+		} else {
+			$(".user_home_show_hide_content").slideUp();
+		}
 	});
 	$(".your_unis_toggle").click(function() {
-	    if($(".your_unis_content").css("display") == "none")
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	        $(".your_unis_content").slideDown();
-	    }
-	    else
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	    }
+		if ($(".your_unis_content").css("display") == "none") {
+			$(".user_home_show_hide_content").slideUp();
+			$(".your_unis_content").slideDown();
+		} else {
+			$(".user_home_show_hide_content").slideUp();
+		}
 	});
 	$(".your_questions_toggle").click(function() {
-	    if($(".your_questions_content").css("display") == "none")
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	        $(".your_questions_content").slideDown();
-	    }
-	    else
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	    }
+		if ($(".your_questions_content").css("display") == "none") {
+			$(".user_home_show_hide_content").slideUp();
+			$(".your_questions_content").slideDown();
+		} else {
+			$(".user_home_show_hide_content").slideUp();
+		}
 	});
 	$(".your_answers_toggle").click(function() {
-	    if($(".your_answers_content").css("display") == "none")
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	        $(".your_answers_content").slideDown();
-	    }
-	    else
-	    {
-	        $(".user_home_show_hide_content").slideUp();
-	    }
+		if ($(".your_answers_content").css("display") == "none") {
+			$(".user_home_show_hide_content").slideUp();
+			$(".your_answers_content").slideDown();
+		} else {
+			$(".user_home_show_hide_content").slideUp();
+		}
 	});
-	/*****************************************************************
+	/***************************************************************************
 	 * uni favourite button
-	 ****************************************************************/
+	 **************************************************************************/
 	var uni_fav_list = [ "Watching this Uni", "Watch this Uni" ];
 	$("#university_favourite_button").click(function() {
-	    $(this).fadeOut().promise().done(function() {
-	        var text = uni_fav_list.shift();
-	        uni_fav_list.push(text);
-	        $("#university_favourite_button_text").text(text);
-	        $(this).toggleClass("university_favourite");
-	        $(this).toggleClass("university_favourited");
-	        $(this).fadeIn();
-	    }); 
+		$(this).fadeOut().promise().done(function() {
+			var text = uni_fav_list.shift();
+			uni_fav_list.push(text);
+			$("#university_favourite_button_text").text(text);
+			$(this).toggleClass("university_favourite");
+			$(this).toggleClass("university_favourited");
+			$(this).fadeIn();
+		});
 	});
-	/*****************************************************************
+	/***************************************************************************
 	 * big search helper
-	 ****************************************************************/
+	 **************************************************************************/
 	$(".big_search_helper_anchor_link").click(function() {
-	    var anchor = $(this).attr("data");
-	    scrollToAnchor(anchor);
+		var anchor = $(this).attr("data");
+		scrollToAnchor(anchor);
+	});
+
+	$(document).on('submit', 'form.AjaxForm', function() {
+		var errorDiv = $($(this).attr("data-ajax-error"));
+		errorDiv.html("");
+		$.ajax({
+			url : $(this).attr('action'),
+			type : $(this).attr('method'),
+			dataType : 'json',
+			data : $(this).serialize(),
+			success : function(data) {
+				if (data.success) {
+
+				} else {
+					for ( var i = 0; i < data.errors.length; i++) {
+						errorDiv.append("<li>" + data.errors[i] + "</li>");
+					}
+				}
+			},
+			error : function(xhr, err) {
+				alert('Error: ' + err);
+			}
+		});
+		return false;
 	});
 });
 
 /*******************************************************************************
  * scrolls the page to an anchor
  ******************************************************************************/
-function scrollToAnchor(aid){
-    var aTag = $("a[name='"+ aid +"']");
-    $('html,body').animate({scrollTop: aTag.offset().top-40},'ease-in');
+function scrollToAnchor(aid) {
+	var aTag = $("a[name='" + aid + "']");
+	$('html,body').animate({
+		scrollTop : aTag.offset().top - 40
+	}, 'ease-in');
 }
 
 /*******************************************************************************
