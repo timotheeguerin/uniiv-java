@@ -68,6 +68,6 @@ public class UserHomeController
 		user.getBookmark().setWikiBookmarks(wikiBookmarkDAO.getUserBookmarks(user.getId()));
 		user.getBookmark().setUniversityBookmarks(universityBookmarkDAO.getUserBookmarks(user.getId()));
 		request.setAttribute("user", user);
-		return "views/user/index";
+		return "views/user/userHome";
 	}
 }
