@@ -74,14 +74,20 @@ $(document).ready(function() {
 				$(this).noUiSlider({
 					range : [ obj.selection.start, obj.selection.end ],
 					start : [ obj.selection.start, obj.selection.end ],
-					step : 20,
+					step : 500,
+					handles: 2,
 					slide : function() {
 						var values = $(this).val();
 						obj.selection.start = values[0];
 						obj.selection.end = values[1];
-
+				        $("#fees_amount_min").val(values[0]);
+				        $("#fees_amount_max").val(values[1]);
 					}
 				});
+			});
+			$(document).ready(function() {
+				$("#fees_amount_min").val(0);
+		        $("#fees_amount_max").val(10000);
 			});
 		}
 

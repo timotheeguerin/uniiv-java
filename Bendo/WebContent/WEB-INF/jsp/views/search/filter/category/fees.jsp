@@ -1,4 +1,3 @@
-
 <div class="FilterContent" data-type="slider" data-param-name="${sectionContent.name}">
 	<div class="fees_content">
 		<label for="fees_amount_min"><b:translator value="fees_price" /> </label>

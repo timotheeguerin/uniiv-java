@@ -616,7 +616,6 @@ div.btn_sign_up_form input {
 }
 
 .fees_content {
-	margin: 20px 20px 20px 20px;
 }
 
 .fees_input {
@@ -2297,4 +2296,63 @@ p.big-type span {
 	display: inline-block;
 	width: 100%;
 	height: 5px;
+}
+/*************************************
+* fees slider
+*************************************/
+.noUiSlider, .noUiSlider * {
+    display: block;	
+    cursor: default;
+    height:12px;
+    border-radius: 20px;
+    background:#204aa1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.noUiSlider {
+    height:12px;
+    background: #cdcdcd;
+    -webkit-touch-callout: none;
+    margin-top:40px;
+    position:relative;
+    left:0px;
+    width:100%;
+}
+.noUiSlider div {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: -3px;
+    left: -10px;
+    z-index: 5;
+    border-radius: 20px;
+    background:#fff;
+    cursor:pointer;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #dbdbdb;
+}
+.noUiSlider {
+    position: relative;
+}
+.noUiSlider a {
+    position: absolute;
+    z-index: 1;
+}
+.noUiSlider a:nth-child(2) {
+    background: inherit !important;
+}
+.noUiSlider.vertical a {
+    width: 100%;
+    bottom: 0;
+}
+.noUiSlider.horizontal a {
+    height: 100%;
+    right: 0;
 }
