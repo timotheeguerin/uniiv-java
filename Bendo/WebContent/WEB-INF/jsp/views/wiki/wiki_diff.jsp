@@ -1,49 +1,18 @@
-<style>
-.old {
-	background-color: #DB5151;
-	color: #FFFFFF;
-	padding: 2px;
-}
 
-.new {
-	background-color: #67B05B;
-	color: #FFFFFF;
-	padding: 2px;
-}
-
-pre.diff {
-	background-color: #F5F5F5;
-	display: block;
-	padding: 8.5px;
-	margin: 0 0 18px;
-	line-height: 18px;
-	font-size: 12px;
-	border: 1px solid #DBDBDB;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	white-space: pre;
-	white-space: pre-wrap;
-	word-wrap: break-word;
-}
-
-.wiki-diff-details {
-	background-color: #FFFFFF;
-	display: block;
-	margin: 0 0 10px 0;
-	font-size: 12px;
-	height: 50px;
-	border: 1px solid #DBDBDB;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-</style>
 <div class="wiki-diff-details">
 	<div class="img-edit-user">
-		<a href=""> <img src="" alt="" /></a>
+		<img class="user-pic-wiki" src="<c:url value="/images/#"/>" />
 	</div>
-	<div class="w-edit-stats"></div>
-	<div class="w-edit-msg"></div>
+	<div class="wiki-edit-box">
+		<span><a href="<b:url value="#"/>">username</a></span>
+		<ul>
+			<li><strong><b:translator value="timestamp" />:</strong>
+				blblblblblb</li>
+			<li><strong><b:translator value="statistics" />:</strong>
+				blbblllblbllbb</li>
+			<li><strong><b:translator value="edit_msg" />:</strong>
+				lblblblblbllb</li>
+		</ul>
+	</div>
 </div>
 <pre class="diff">${diff}</pre>

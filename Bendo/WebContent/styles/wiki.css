@@ -1,0 +1,78 @@
+/***************   WIKI DIFF PAGE  **********************/
+
+.old {
+	background-color: #DB5151;
+	color: #FFFFFF;
+	padding: 2px;
+}
+
+.new {
+	background-color: #67B05B;
+	color: #FFFFFF;
+	padding: 2px;
+}
+
+pre.diff {
+	background-color: #F5F5F5;
+	display: block;
+	padding: 8.5px;
+	margin: 0 0 18px;
+	line-height: 18px;
+	font-size: 12px;
+	border: 1px solid #DBDBDB;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.wiki-diff-details {
+	background-color: #FFFFFF;
+	border: 1px solid #DBDBDB;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	font-size: 12px;
+	padding: 8px;
+	height: auto;
+	margin: 0 0 10px 0;
+	height: auto;
+}
+
+.img-edit-user {
+	display: inline-block;
+	width: auto;
+}
+
+.user-pic-wiki {
+	height: 80px;
+	width: 80px;
+}
+
+.wiki-edit-box {
+	display: inline-block;
+	height: auto;
+}
+
+.wiki-edit-box ul {
+	margin-bottom: 20px;
+}
+
+.wiki-edit-box span {
+	display: block;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.wiki-edit-box span a:hover {
+	text-decoration: underline;
+}
+
+strong {
+	font-weight: bold;
+}
+
