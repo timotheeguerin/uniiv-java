@@ -198,7 +198,7 @@ h1,h1 span,h2,h2 span {
 }
 
 #navLfLinks a:hover {
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .navRightBtns {
@@ -649,12 +649,12 @@ div.btn_sign_up_form input {
 .FilterElementButton:hover>span {
 	cursor: pointer;
 	text-decoration: underline;
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .FilterElementButton.selected>span {
 	font-weight: 700;
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .FilterSubElementBox {
@@ -842,8 +842,8 @@ hr.official-standard-ratings-separation {
 		endColorstr='#4a68a8', GradientType=0 );
 	/* IE6-9 */
 	background-image: -moz-linear-gradient(0deg, #3259AB, #4A68A8 50%);
-	-moz-border-bottom-color: #204AA1;
-	border-bottom-color: #204AA1;
+	-moz-border-bottom-color: #274D9B;
+	border-bottom-color: #274D9B;
 	-moz-border-bottom-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	-moz-border-bottom-right-radius: 5px;
@@ -852,17 +852,17 @@ hr.official-standard-ratings-separation {
 	-moz-border-bottom-style: solid;
 	border-bottom-width: 1px;
 	-moz-border-bottom-width: 1px;
-	border-left-color: #204AA1;
-	-moz-border-left-color: #204AA1;
+	border-left-color: #274D9B;
+	-moz-border-left-color: #274D9B;
 	border-left-style: solid;
 	-moz-border-left-style: solid;
 	border-left-width: 1px;
 	-moz-border-left-width: 1px;
-	border-right-color: #204AA1;
-	-moz-border-right-color: #204AA1;
+	border-right-color: #274D9B;
+	-moz-border-right-color: #274D9B;
 	border-right-style: solid;
 	border-right-width: 1px;
-	border-top-color: #204AA1;
+	border-top-color: #274D9B;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	border-top-style: solid;
@@ -1244,18 +1244,18 @@ hr.official-standard-ratings-separation {
 }
 
 .uni_results {
-	border-bottom-color: #204AA1;
+	border-bottom-color: #274D9B;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	border-bottom-style: solid;
 	border-bottom-width: 4px;
-	border-left-color: #204AA1;
+	border-left-color: #274D9B;
 	border-left-style: solid;
 	border-left-width: 4px;
-	border-right-color: #204AA1;
+	border-right-color: #274D9B;
 	border-right-style: solid;
 	border-right-width: 4px;
-	border-top-color: #204AA1;
+	border-top-color: #274D9B;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-top-style: solid;
@@ -1329,18 +1329,18 @@ th.stat_info,td.stat_info {
 }
 
 .top_table_rating {
-	border-bottom-color: #204AA1;
+	border-bottom-color: #274D9B;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border-bottom-style: solid;
 	border-bottom-width: 4px;
-	border-left-color: #204AA1;
+	border-left-color: #274D9B;
 	border-left-style: solid;
 	border-left-width: 4px;
-	border-right-color: #204AA1;
+	border-right-color: #274D9B;
 	border-right-style: solid;
 	border-right-width: 4px;
-	border-top-color: #204AA1;
+	border-top-color: #274D9B;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	border-top-style: solid;
@@ -1616,7 +1616,7 @@ li.error {
 .quickfind_bar:focus {
 	outline: none;
 	box-shadow: 0 0 3px #9ecaed;
-	border-color: #204AA1;
+	border-color: #274D9B;
 }
 
 .quickfind_tool {
@@ -1680,7 +1680,7 @@ li.error {
 
 .autocomplete-suggestion strong,.autocomplete-suggestion strong:hover,.autocomplete-suggestion.autocomplete-selected strong
 	{
-	color: #204AA1;
+	color: #274D9B;
 	font-weight: bold;
 }
 
@@ -1968,7 +1968,7 @@ p.big-type span {
 .signup_form_element:focus {
 	outline: none;
 	box-shadow: 0 0 3px #9ecaed;
-	border-color: #204AA1;
+	border-color: #274D9B;
 }
 
 .signup_error_text {
@@ -2006,11 +2006,11 @@ p.big-type span {
 }
 
 .signup_tac_link {
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .signup_tac_link a {
-	color: #204AA1;
+	color: #274D9B;
 	text-transform: lowercase;
 }
 
@@ -2019,7 +2019,7 @@ p.big-type span {
 }
 
 .signup_login_link a {
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .signup_login_link:hover {
@@ -2098,11 +2098,11 @@ p.big-type span {
 }
 
 .login_tac_link {
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .login_tac_link a {
-	color: #204AA1;
+	color: #274D9B;
 	text-transform: lowercase;
 }
 
@@ -2111,7 +2111,7 @@ p.big-type span {
 }
 
 .login_login_link a {
-	color: #204AA1;
+	color: #274D9B;
 }
 
 .login_login_link:hover {
@@ -2216,7 +2216,7 @@ p.big-type span {
 .input-element:focus {
 	outline: none;
 	box-shadow: 0 0 3px #9ECAED;
-	border-color: #204AA1;
+	border-color: #274D9B;
 }
 /***************************************************************************************
 *				preferences for search system
@@ -2305,7 +2305,7 @@ p.big-type span {
     cursor: default;
     height:12px;
     border-radius: 20px;
-    background:#204aa1;
+    background:#274D9B;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
