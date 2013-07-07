@@ -221,6 +221,10 @@ h1,h1 span,h2,h2 span {
 	   PAGE FOOTER 
 
 ---------------------------------*/
+.global_spacer
+{
+	height: 15px;
+}
 .footer_frame {
 	border-top: 1px solid #DBDBDB;
 	text-align: center;
@@ -1814,12 +1818,15 @@ p.big-type span {
 
 .get-started-bt:hover {
 	text-decoration: underline;
-}
-
+}/* 
+seriously what the fuck are with these names, like jesus fuck
+what the fuck is bt ct, it is better to use longer names than short ones
+fuck */
 .home-bt-ct {
 	background-image: url("../images/background/pic-bt.jpg");
 	bottom: 20px;
 	margin: auto;
+	margin-bottom: -15px;
 	padding-bottom: 75px;
 	padding-top: 75px;
 	height: 150px;

@@ -18,6 +18,8 @@
 			<tiles:insertAttribute name="body" />
 		</div>
 
+		<div class="global_spacer"></div>
+
 		<footer>
 			<tiles:insertAttribute name="footer" />
 		</footer>
