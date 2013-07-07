@@ -897,10 +897,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #4a68a8 0%, #3259ab 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(     
-		                                        startColorstr='#4a68a8',
-		endColorstr='#3259ab', GradientType=0 );
-	/* IE6-9 */
+
 }
 
 .submitFilter_text:active {
@@ -917,10 +914,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #3259ab 0%, #4a68a8 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(     
-		                                        startColorstr='#3259ab',
-		endColorstr='#4a68a8', GradientType=0 );
-	/* IE6-9 */
+	
 }
 
 .submitFilter {
@@ -942,9 +936,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',
-		endColorstr='#e6e6e6', GradientType=0 );
-	/* IE6-9 */
+
 	padding: 8px;
 	color: #333131;
 	cursor: pointer;
@@ -966,9 +958,7 @@ hr.official-standard-ratings-separation {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #ffffff 0%, #CFCFCF 100%);
 	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',
-		endColorstr='#CFCFCF', GradientType=0 );
-	/* IE6-9 */
+	
 }
 
 .big_search_filters {
