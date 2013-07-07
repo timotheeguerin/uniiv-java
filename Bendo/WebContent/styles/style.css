@@ -1177,32 +1177,6 @@ hr.official-standard-ratings-separation {
 	font-weight: lighter;
 }
 /* ########################################## */
-/* RELEVANT WIKI SECTION */
-/* ########################################## */
-.university_profile_relevant_wiki_box {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	padding-bottom: 20px;
-	border-radius: 5px;
-	border: 1px solid;
-	border-color: #DBDBDB;
-	background-color: #ffffff;
-	text-align: left;
-}
-
-.university_profile_relevant_wiki_element {
-	display: inline-block;
-	position: relative;
-	top: 15px;
-	width: 45%;
-	padding-left: 10px;
-	text-align: left;
-	font-size: 12px;
-	font-weight: lighter;
-}
-/* ########################################## */
 /* CONTACT SECTION */
 /* ########################################## */
 .university_profile_contact_box {
