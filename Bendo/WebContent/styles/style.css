@@ -924,7 +924,7 @@ hr.official-standard-ratings-separation {
 }
 
 .submitFilter {
-	border: 1px solid #DDDDDD;
+	border: 1px solid #DBDBDB;
 	border-radius: 3px;
 	background-color: rgba(0, 0, 255, 0.5);
 	background: #ffffff;
@@ -1552,7 +1552,7 @@ li.error {
 }
 
 .arrow_box.top:before {
-	border-color: rgba(204, 204, 204, 0);
+	border-color: #DBDBDB;
 	border-bottom-color: #000000;
 	border-width: 11px;
 	left: 50%;
