@@ -22,6 +22,8 @@ a {
 
 html,body {
 	background-color: #EDF1F5;
+	background-image:url("../images/background/stripe.png");
+	background-repeat: repeat;
 	/* 	background-image:url("../images/background/bg.jpg"); */
 	margin: 0;
 	width: 100%;
