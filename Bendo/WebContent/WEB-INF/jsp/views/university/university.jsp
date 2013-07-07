@@ -99,18 +99,18 @@
 
 <div class="university_profile_box_spacer"></div>
 
-<div class="university_profile_relevant_wiki_box">
+<div class="university_profile_contact_box">
 	<div class="university_profile_box_title">Guides</div>
-	<span class="university_profile_relevant_wiki_element">
+	<span class="university_profile_wiki_element">
 		ELEMENT
 	</span>
-	<span class="university_profile_relevant_wiki_element">
+	<span class="university_profile_wiki_element">
 		ELEMENT
 	</span>
-	<span class="university_profile_relevant_wiki_element">
+	<span class="university_profile_wiki_element">
 		ELEMENT
 	</span>
-	<span class="university_profile_relevant_wiki_element">
+	<span class="university_profile_wiki_element">
 		ELEMENT
 	</span>
 </div>

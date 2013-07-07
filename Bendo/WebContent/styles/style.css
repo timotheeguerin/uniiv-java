@@ -1169,6 +1169,18 @@ hr.official-standard-ratings-separation {
 	font-weight: lighter;
 }
 /* ########################################## */
+/* University guides section, stop breaking shit you tool */
+/* ########################################## */
+.university_profile_wiki_element {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-left: 10px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: lighter;
+}
+/* ########################################## */
 /* CONTACT SECTION */
 /* ########################################## */
 .university_profile_contact_box {
