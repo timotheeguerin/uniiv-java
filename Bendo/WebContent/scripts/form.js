@@ -179,7 +179,7 @@ $(document).ready(function() {
 	 * uni favourite button
 	 **************************************************************************/
 	var uni_fav_list = [ "Watching this Uni", "Watch this Uni" ];
-	$("#university_favourite_button").click(function() {
+	/*$("#university_favourite_button").click(function() {
 		$(this).fadeOut().promise().done(function() {
 			var text = uni_fav_list.shift();
 			uni_fav_list.push(text);
@@ -188,6 +188,9 @@ $(document).ready(function() {
 			$(this).toggleClass("university_favourited");
 			$(this).fadeIn();
 		});
+	});*/
+	$("#university_favourite_button").click(function() {
+		$.get("./bookmark");
 	});
 	/***************************************************************************
 	 * big search helper

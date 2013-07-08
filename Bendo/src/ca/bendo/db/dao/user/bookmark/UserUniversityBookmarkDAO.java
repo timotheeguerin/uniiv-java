@@ -61,6 +61,6 @@ public class UserUniversityBookmarkDAO extends HibernateDAO<UserUniversityBookma
 
 		return (UserUniversityBookmark) createCriteria().add(Restrictions.eq("userId", userId))
 				.add(Restrictions.eq("university.id", universityId)).createAlias("university", "university")
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 	}
 }

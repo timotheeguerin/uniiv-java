@@ -14,10 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ca.bendo.controller.handler.user.BookmarkHandler;
 import ca.bendo.controller.interceptor.annotation.Secured;
+import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
+import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
+import ca.bendo.db.entity.user.User;
+import ca.bendo.db.entity.user.bookmark.UserUniversityBookmark;
+import ca.bendo.db.entity.user.bookmark.UserWikiBookmark;
 import ca.bendo.session.UserSession;
 
 /**
- * @author Timothée Guérin
+ * @author Timothée Guérin + toby
  * @version Bendo
  * 
  *          <b>BookmarkController</b>
@@ -35,6 +40,12 @@ public class BookmarkController
 	 */
 	@Autowired
 	private BookmarkHandler handler;
+	
+	@Autowired
+	private UserUniversityBookmarkDAO userUniversityBookmarkDAO;
+	
+	@Autowired
+	private UserWikiBookmarkDAO userWikiBookmarkDAO;
 
 	/**
 	 * @param request
@@ -46,41 +57,19 @@ public class BookmarkController
 	@Secured("user")
 	@RequestMapping(value = "/university/{universityId}/bookmark", method = RequestMethod.GET)
 	@ResponseBody
-	public String bookmarkUniversity(final HttpServletRequest request,
-			@PathVariable("universityId") final long uniersityId)
+	public String bookmarkUniversity(final HttpServletRequest request, @PathVariable("universityId") final long universityId)
 	{
-		UserSession userSession = UserSession.getSession(request);
-
-		if (handler.bookmarkUniversity(userSession.getUser(), uniersityId))
+		User user = UserSession.getSession(request).getUser();
+		UserUniversityBookmark bookmark = userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId);
+		if(bookmark == null)
 		{
-			return "1";
-		} else
-		{
+			handler.bookmarkUniversity(user, universityId);
 			return "0";
 		}
-	}
-
-	/**
-	 * @param request
-	 *            Request
-	 * @param uniersityId
-	 *            University Id
-	 * @return body
-	 */
-	@Secured("user")
-	@RequestMapping(value = "/university/{universityId}/unbookmark", method = RequestMethod.GET)
-	@ResponseBody
-	public String unBookmarkUniversity(final HttpServletRequest request,
-			@PathVariable("universityId") final long uniersityId)
-	{
-		UserSession userSession = UserSession.getSession(request);
-
-		if (handler.unBookmarkUniversity(userSession.getUser(), uniersityId))
+		else
 		{
+			handler.unBookmarkUniversity(user, universityId);
 			return "1";
-		} else
-		{
-			return "0";
 		}
 	}
 
@@ -94,40 +83,19 @@ public class BookmarkController
 	@Secured("user")
 	@RequestMapping(value = "/wiki/{wikiId}/bookmark", method = RequestMethod.GET)
 	@ResponseBody
-	public String bookmarkWiki(final HttpServletRequest request, @PathVariable("wikiId") final long uniersityId)
+	public String bookmarkWiki(final HttpServletRequest request, @PathVariable("wikiId") final long wikiId)
 	{
-		UserSession userSession = UserSession.getSession(request);
-
-		if (handler.bookmarkWiki(userSession.getUser(), uniersityId))
+		User user = UserSession.getSession(request).getUser();
+		UserWikiBookmark bookmark = userWikiBookmarkDAO.getUserBookmark(user.getId(), wikiId);
+		if(bookmark == null)
 		{
-			return "1";
-		} else
-		{
+			handler.bookmarkWiki(user, wikiId);
 			return "0";
 		}
-	}
-
-	/**
-	 * @param request
-	 *            Request
-	 * @param uniersityId
-	 *            Wiki Id
-	 * @return body
-	 */
-	@Secured("user")
-	@RequestMapping(value = "/wiki/{wikiId}/unbookmark", method = RequestMethod.GET)
-	@ResponseBody
-	public String unBookmarkWiki(final HttpServletRequest request, @PathVariable("wikiId") final long uniersityId)
-	{
-		UserSession userSession = UserSession.getSession(request);
-
-		if (handler.unBookmarkWiki(userSession.getUser(), uniersityId))
+		else
 		{
+			handler.unBookmarkWiki(user, wikiId);
 			return "1";
-		} else
-		{
-			return "0";
 		}
 	}
-
 }
