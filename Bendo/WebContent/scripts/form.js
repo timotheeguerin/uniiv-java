@@ -190,7 +190,7 @@ $(document).ready(function() {
 		});
 	});*/
 	$("#university_favourite_button").click(function() {
-		$.get("./bookmark");
+		$.get(baseUrl + "university/" + id +"/bookmark");
 	});
 	/***************************************************************************
 	 * big search helper
