@@ -1,12 +1,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE>
 
-<c:set var="contentMargin" value="content_margin" scope="page" />
-<c:if test="${requestScope.contentMargin != null && requestScope.contentMargin == false}">
-	<c:set var="contentMargin" value="" scope="page" />
-</c:if>
+<c:choose>
+	<c:when test="${insertContentOnly}">
+		<tiles:insertAttribute name="body" />
+	</c:when>
+	<c:otherwise>
+		<!DOCTYPE>
 
-<html>
+		<c:set var="contentMargin" value="content_margin" scope="page" />
+		<c:if test="${requestScope.contentMargin != null && requestScope.contentMargin == false}">
+			<c:set var="contentMargin" value="" scope="page" />
+		</c:if>
+
+		<html>
 <tiles:insertAttribute name="head" />
 <body>
 	<div id="container">
@@ -25,4 +31,6 @@
 		</footer>
 	</div>
 </body>
-</html>
+		</html>
+	</c:otherwise>
+</c:choose>

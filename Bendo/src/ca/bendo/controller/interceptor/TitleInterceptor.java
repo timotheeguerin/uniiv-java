@@ -77,6 +77,14 @@ public class TitleInterceptor extends HandlerInterceptorAdapter
 				HeadManager.load(request).getTitle().setTitle(title);
 
 			}
+			String importStr = request.getParameter("import");
+			if (importStr != null && importStr.equalsIgnoreCase("true"))
+			{
+				request.setAttribute("insertContentOnly", true);
+			} else
+			{
+				request.setAttribute("insertContentOnly", false);
+			}
 
 		}
 		super.postHandle(request, response, handler, modelAndView);

@@ -72,19 +72,19 @@ public class FilterDispatcher implements Filter
 	 * javax.servlet.ServletResponse, javax.servlet.FilterChain)
 	 */
 	@Override
-	public void doFilter(final ServletRequest request, final ServletResponse response,
-			final FilterChain filterChain) throws IOException, ServletException
+	public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain filterChain)
+			throws IOException, ServletException
 	{
 		HttpServletRequest hsRequest = (HttpServletRequest) request;
 		String url = hsRequest.getRequestURI().substring(hsRequest.getContextPath().length());
-		
-		//system.loadFilters((HttpServletRequest) request);
+
+		// system.loadFilters((HttpServletRequest) request);
 		url = multiLanguageFilter.doFilter(hsRequest, response, url);
 
 		url = sessionFilter.doFilter(hsRequest, response, url);
 		url = alertManagerFilter.doFilter(hsRequest, response, url);
 
-		log.info("Dispasch url: " + url);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
@@ -99,7 +99,5 @@ public class FilterDispatcher implements Filter
 	{
 
 	}
-
-	
 
 }

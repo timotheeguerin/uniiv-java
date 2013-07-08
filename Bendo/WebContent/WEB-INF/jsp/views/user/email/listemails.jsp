@@ -17,5 +17,5 @@
 </c:forEach>
 
 <div>
-	<c:import url="/email/add" />
+	<c:import url="/email/add?import=true" />
 </div>
