@@ -48,12 +48,12 @@
 }
 .user_home_left
 {
-	width: 621px;
+	width: 596px;
 	float: left;
 }
 .user_home_right
 {
-	width: 175px;
+	width: 200px;
 	float: right;
 }
 .user_home_box_spacer
@@ -89,7 +89,7 @@
 		<div class="your_wikis_toggle">Your Wikis</div>
 		<div class="your_wikis_content user_home_show_hide_content">
 			<c:forEach var="wiki" items="${user.bookmark.wikiBookmarks}">
-				<div><c:out value="${wiki.wiki.title}" /></div>
+				<div><a href="<c:url value="/wiki/${wiki.wiki.id}"/>"><c:out value="${wiki.wiki.title}" /></a></div>
 			</c:forEach>
 			<c:if test="${user.bookmark.wikiBookmarks.size() == 0}">
 				<div>You have no watched wikis.</div>
@@ -99,7 +99,7 @@
         <div class="your_unis_toggle">Your Universities</div>
 		<div class="your_unis_content user_home_show_hide_content">
 			<c:forEach var="uni" items="${user.bookmark.universityBookmarks}">
-				<div><c:out value="${uni.university.name}" /></div>
+				<div><a href="<c:url value="/university/${uni.university.id}"/>"><c:out value="${uni.university.name}" /></a></div>
 			</c:forEach>
 			<c:if test="${user.bookmark.universityBookmarks.size() == 0}">
 				<div>You have no watched universities.</div>
@@ -132,6 +132,11 @@
 		<div>X Downvotes</div>
 		<div>X Questions</div>
 		<div>X Answers</div>
+
+		<div class="user_home_right_spacer"></div>
+	
+		<div><h1>Your Apps</h1></div>
+		<div>Applications Dashboard</div>
 
 		<div class="user_home_right_spacer"></div>
 

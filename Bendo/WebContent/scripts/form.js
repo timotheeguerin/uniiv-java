@@ -178,10 +178,26 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * uni favourite button
 	 **************************************************************************/
+<<<<<<< HEAD
 
 	$("button.ajax-check-button").each(function() {
 
 		updateButtonState($(this));
+=======
+	var uni_fav_list = [ "Watching this Uni", "Watch this Uni" ];
+	/*$("#university_favourite_button").click(function() {
+		$(this).fadeOut().promise().done(function() {
+			var text = uni_fav_list.shift();
+			uni_fav_list.push(text);
+			$("#university_favourite_button_text").text(text);
+			$(this).toggleClass("university_favourite");
+			$(this).toggleClass("university_favourited");
+			$(this).fadeIn();
+		});
+	});*/
+	$("#university_favourite_button").click(function() {
+		$.get(baseUrl + "university/" + id +"/bookmark");
+>>>>>>> branch 'master' of https://github.com/timcolonel/uniiv.git
 	});
 	$(document).on("mouseenter", "button.ajax-check-button", function() {
 		$(this).attr("data-hover", ".hover");
