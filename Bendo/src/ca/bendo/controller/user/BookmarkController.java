@@ -12,13 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ca.bendo.controller.handler.user.BookmarkHandler;
+import ca.bendo.controller.handler.user.BookmarkService;
 import ca.bendo.controller.interceptor.annotation.Secured;
-import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
-import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.db.entity.user.bookmark.UserUniversityBookmark;
-import ca.bendo.db.entity.user.bookmark.UserWikiBookmark;
 import ca.bendo.session.UserSession;
 
 /**
@@ -39,44 +35,35 @@ public class BookmarkController
 	 * 
 	 */
 	@Autowired
-	private BookmarkHandler handler;
-	
-	@Autowired
-	private UserUniversityBookmarkDAO userUniversityBookmarkDAO;
-	
-	@Autowired
-	private UserWikiBookmarkDAO userWikiBookmarkDAO;
+	private BookmarkService service;
 
 	/**
 	 * @param request
 	 *            Request
-	 * @param uniersityId
+	 * @param universityId
 	 *            University Id
 	 * @return body
 	 */
 	@Secured("user")
 	@RequestMapping(value = "/university/{universityId}/bookmark", method = RequestMethod.GET)
 	@ResponseBody
-	public String bookmarkUniversity(final HttpServletRequest request, @PathVariable("universityId") final long universityId)
+	public String bookmarkUniversity(final HttpServletRequest request,
+			@PathVariable("universityId") final long universityId)
 	{
 		User user = UserSession.getSession(request).getUser();
-		UserUniversityBookmark bookmark = userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId);
-		if(bookmark == null)
+		if (service.toogleBookmarkUniversity(user, universityId))
 		{
-			handler.bookmarkUniversity(user, universityId);
-			return "0";
-		}
-		else
-		{
-			handler.unBookmarkUniversity(user, universityId);
 			return "1";
+		} else
+		{
+			return "0";
 		}
 	}
 
 	/**
 	 * @param request
 	 *            Request
-	 * @param uniersityId
+	 * @param wikiId
 	 *            Wiki Id
 	 * @return body
 	 */
@@ -86,16 +73,12 @@ public class BookmarkController
 	public String bookmarkWiki(final HttpServletRequest request, @PathVariable("wikiId") final long wikiId)
 	{
 		User user = UserSession.getSession(request).getUser();
-		UserWikiBookmark bookmark = userWikiBookmarkDAO.getUserBookmark(user.getId(), wikiId);
-		if(bookmark == null)
+		if (service.toogleBookmarkWikiPage(user, wikiId))
 		{
-			handler.bookmarkWiki(user, wikiId);
-			return "0";
-		}
-		else
-		{
-			handler.unBookmarkWiki(user, wikiId);
 			return "1";
+		} else
+		{
+			return "0";
 		}
 	}
 }

@@ -16,7 +16,6 @@
 	</div>
 </c:forEach>
 
-<b:url var="url" value="/email/add" />
 <div>
 	<c:import url="/email/add" />
 </div>

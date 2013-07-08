@@ -56,23 +56,4 @@ public class HomeController
 		return "views/home";
 	}
 
-	/**
-	 * Method handling main page.
-	 * 
-	 * @param request
-	 *            Request
-	 * @param response
-	 *            Response
-	 * @return JSP page
-	 */
-	@RequestMapping(value = "/test", method = RequestMethod.POST)
-	public String homePST(final HttpServletRequest request, final HttpServletResponse response)
-	{
-		System.out.println("HomeController: Passing through...");
-
-		log.debug("AUTH: " + request.getHeader("Authorization"));
-
-		return "views/home";
-	}
-
 }

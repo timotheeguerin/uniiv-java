@@ -31,7 +31,7 @@ import ca.bendo.db.entity.wiki.WikiPage;
  */
 @Service
 @Transactional
-public class BookmarkHandler
+public class BookmarkService
 {
 
 	/**
@@ -65,7 +65,7 @@ public class BookmarkHandler
 	 *            UniversityId
 	 * @return boolean
 	 */
-	public boolean bookmarkUniversity(final User user, final long universityId)
+	public boolean toogleBookmarkUniversity(final User user, final long universityId)
 	{
 		University university = universityDAO.getById(universityId);
 		if (university == null)
@@ -74,10 +74,25 @@ public class BookmarkHandler
 		}
 
 		UserUniversityBookmark existing = universityBookmarkDAO.getUserBookmark(user.getId(), universityId);
-		if (existing != null)
+		if (existing == null)
 		{
-			return true;
+			bookmarkUniversity(user, university);
+		} else
+		{
+			unBookmarkUniversity(existing);
 		}
+		return true;
+	}
+
+	/**
+	 * @param user
+	 *            user
+	 * @param university
+	 *            UniversityId
+	 * @return boolean
+	 */
+	public boolean bookmarkUniversity(final User user, final University university)
+	{
 
 		UserUniversityBookmark bookmark = new UserUniversityBookmark();
 		bookmark.setUniversity(university);
@@ -91,37 +106,36 @@ public class BookmarkHandler
 	/**
 	 * @param user
 	 *            user
-	 * @param universityId
+	 * @param university
 	 *            UniversityId
-	 * @return boolean
 	 */
-	public boolean unBookmarkUniversity(final User user, final long universityId)
+	public void unBookmarkUniversity(final User user, final University university)
 	{
-		University university = universityDAO.getById(universityId);
-		if (university == null)
-		{
-			return false;
-		}
 
-		UserUniversityBookmark bookmark = universityBookmarkDAO.getUserBookmark(user.getId(), universityId);
-		if (bookmark == null)
+		UserUniversityBookmark bookmark = universityBookmarkDAO.getUserBookmark(user.getId(), university.getId());
+		if (bookmark != null)
 		{
-			return true;
+			unBookmarkUniversity(bookmark);
 		}
+	}
 
+	/**
+	 * @param bookmark
+	 *            Markmark
+	 */
+	public void unBookmarkUniversity(final UserUniversityBookmark bookmark)
+	{
 		universityBookmarkDAO.delete(bookmark);
-
-		return true;
 	}
 
 	/**
 	 * @param user
 	 *            user
 	 * @param wikiId
-	 *            UniversityId
+	 *            wiki Id
 	 * @return boolean
 	 */
-	public boolean bookmarkWiki(final User user, final long wikiId)
+	public boolean toogleBookmarkWikiPage(final User user, final long wikiId)
 	{
 		WikiPage wiki = wikiDAO.getById(wikiId);
 		if (wiki == null)
@@ -130,10 +144,25 @@ public class BookmarkHandler
 		}
 
 		UserWikiBookmark existing = wikiBookmarkDAO.getUserBookmark(user.getId(), wikiId);
-		if (existing != null)
+		if (existing == null)
 		{
-			return true;
+			bookmarkWikiPage(user, wiki);
+		} else
+		{
+			unBookmarkWikiPage(existing);
 		}
+		return true;
+	}
+
+	/**
+	 * @param user
+	 *            user
+	 * @param wiki
+	 *            Wiki page
+	 * @return boolean
+	 */
+	public boolean bookmarkWikiPage(final User user, final WikiPage wiki)
+	{
 
 		UserWikiBookmark bookmark = new UserWikiBookmark();
 		bookmark.setWiki(wiki);
@@ -147,19 +176,13 @@ public class BookmarkHandler
 	/**
 	 * @param user
 	 *            user
-	 * @param wikiId
-	 *            UniversityId
+	 * @param wiki
+	 *            Wiki
 	 * @return boolean
 	 */
-	public boolean unBookmarkWiki(final User user, final long wikiId)
+	public boolean unBookmarkWikiPage(final User user, final WikiPage wiki)
 	{
-		WikiPage wiki = wikiDAO.getById(wikiId);
-		if (wiki == null)
-		{
-			return false;
-		}
-
-		UserWikiBookmark bookmark = wikiBookmarkDAO.getUserBookmark(user.getId(), wikiId);
+		UserWikiBookmark bookmark = wikiBookmarkDAO.getUserBookmark(user.getId(), wiki.getId());
 		if (bookmark == null)
 		{
 			return true;
@@ -169,4 +192,14 @@ public class BookmarkHandler
 
 		return true;
 	}
+
+	/**
+	 * @param bookmark
+	 *            Markmark
+	 */
+	public void unBookmarkWikiPage(final UserWikiBookmark bookmark)
+	{
+		wikiBookmarkDAO.delete(bookmark);
+	}
+
 }

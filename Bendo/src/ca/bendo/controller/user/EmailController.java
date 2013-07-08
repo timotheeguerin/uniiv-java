@@ -69,10 +69,10 @@ public class EmailController
 	 * @return jsp page
 	 */
 	@Secured("user")
-	@RequestMapping(value = "/email/add/", method = RequestMethod.GET)
+	@RequestMapping(value = "/email/add", method = RequestMethod.GET)
 	public String addEmail(final HttpServletRequest request)
 	{
-
+		System.out.println("EMAIL ADD");
 		request.setAttribute("emailForm", new EmailForm());
 		return "views/user/email/inputemail";
 	}
