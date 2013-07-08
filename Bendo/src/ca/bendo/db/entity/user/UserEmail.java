@@ -62,6 +62,12 @@ public class UserEmail
 	private University university;
 
 	/**
+	 * 
+	 */
+	@Column(name = "default")
+	private boolean defaultEmail;
+
+	/**
 	 * @return the id
 	 */
 	public long getId()
@@ -127,6 +133,40 @@ public class UserEmail
 	public void setValidated(final boolean validated)
 	{
 		this.validated = validated;
+	}
+
+	/**
+	 * @return the university
+	 */
+	public University getUniversity()
+	{
+		return university;
+	}
+
+	/**
+	 * @param university
+	 *            the university to set
+	 */
+	public void setUniversity(final University university)
+	{
+		this.university = university;
+	}
+
+	/**
+	 * @return the defaultEmail
+	 */
+	public boolean isDefaultEmail()
+	{
+		return defaultEmail;
+	}
+
+	/**
+	 * @param defaultEmail
+	 *            the defaultEmail to set
+	 */
+	public void setDefaultEmail(final boolean defaultEmail)
+	{
+		this.defaultEmail = defaultEmail;
 	}
 
 }

@@ -63,6 +63,7 @@ public class EmailService
 		email.setEmail(email.getEmail());
 		email.setUser(user);
 		email.setValidated(false);
+		email.setDefaultEmail(false);
 
 		emailDAO.add(email);
 

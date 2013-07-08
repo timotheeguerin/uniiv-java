@@ -6,10 +6,8 @@
 	<tlibversion>1.0</tlibversion>
 	<jspversion>1.1</jspversion>
 	<shortname>BendoTags</shortname>
-	<!-- <info>Tags for bendo website</info> -->
 	<uri></uri>
 
-	<!-- TAGS -->
 	<tag>
 		<name>dropdown_button</name>
 		<tagclass>ca.bendo.taglib.DropdownButtonTag</tagclass>
@@ -48,6 +46,28 @@
 			<type>java.lang.String</type>
 			<rtexprvalue>true</rtexprvalue>
 			<!-- <info>Translation key</info> -->
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+
+	<tag>
+		<name>ajaxbutton</name>
+		<tagclass>ca.bendo.taglib.tag.AjaxButtonTag</tagclass>
+		<!-- <info>Translate the value send and parse the dynamic variable if there are some</info> -->
+		<attribute>
+			<name>url</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>checked</name>
+			<type>java.lang.Boolean</type>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>

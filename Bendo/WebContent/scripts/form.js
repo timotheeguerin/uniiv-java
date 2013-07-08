@@ -178,20 +178,41 @@ $(document).ready(function() {
 	/***************************************************************************
 	 * uni favourite button
 	 **************************************************************************/
-	var uni_fav_list = [ "Watching this Uni", "Watch this Uni" ];
-	/*$("#university_favourite_button").click(function() {
-		$(this).fadeOut().promise().done(function() {
-			var text = uni_fav_list.shift();
-			uni_fav_list.push(text);
-			$("#university_favourite_button_text").text(text);
-			$(this).toggleClass("university_favourite");
-			$(this).toggleClass("university_favourited");
-			$(this).fadeIn();
-		});
-	});*/
-	$("#university_favourite_button").click(function() {
-		$.get("./bookmark");
+
+	$("button.ajax-check-button").each(function() {
+
+		updateButtonState($(this));
 	});
+	$(document).on("mouseenter", "button.ajax-check-button", function() {
+		$(this).attr("data-hover", ".hover");
+
+		updateButtonState($(this));
+	});
+	$(document).on("mouseleave", "button.ajax-check-button", function() {
+		$(this).attr("data-hover", ".regular");
+		updateButtonState($(this));
+	});
+	$(document).on("click", "button.ajax-check-button", function() {
+		var button = $(this);
+
+		var url = button.attr("data-href");
+		$.get(url).success(function(data) {
+			if (data == "1") {
+				var currentState = button.attr("data-state");
+				if (currentState == "default") {
+					button.attr("data-state", "checked");
+				} else {
+					button.attr("data-state", "default");
+				}
+				updateButtonState(button);
+			}
+
+		}).error(function(xhr, status, error) {
+			alert("An error occured!");
+		});
+
+	});
+
 	/***************************************************************************
 	 * big search helper
 	 **************************************************************************/
@@ -233,6 +254,18 @@ function scrollToAnchor(aid) {
 	$('html,body').animate({
 		scrollTop : aTag.offset().top - 40
 	}, 'ease-in');
+}
+
+function updateButtonState(button) {
+	var currentState = button.attr("data-state");
+	var hover = button.attr("data-hover");
+	if (currentState == "default") {
+		button.children().hide();
+		button.children(".default" + hover).show();
+	} else {
+		button.children().hide();
+		button.children(".checked" + hover).show();
+	}
 }
 
 /*******************************************************************************

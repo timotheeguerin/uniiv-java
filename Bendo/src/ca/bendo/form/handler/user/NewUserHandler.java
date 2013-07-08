@@ -105,6 +105,7 @@ public class NewUserHandler
 		userEmail.setUser(user);
 		userEmail.setValidated(false);
 		userEmail.setEmail(signupForm.getEmail());
+		userEmail.setDefaultEmail(true);
 		userEmailDAO.add(userEmail);
 
 		UserEmailConfirmation confirmation = confirmationHandler.createEmailConfirmation(userEmail);
