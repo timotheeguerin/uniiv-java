@@ -2,8 +2,12 @@
 <div><a href='<c:url value="new" />'>Add</a></div>
 <c:forEach var="wiki" items="${wikis}">
 	<div>
-		<a href='<c:url value="show/${wiki.getId()}" />'><c:out value="${wiki.getTitle()}"/></a> 
-		(<a href='<c:url value="edit/${wiki.getId()}" />'>edit</a>) 
-		(<a href='<c:url value="delete/${wiki.getId()}" />'>delete</a>)
+		<a href='<c:url value="${wiki.getId()}" />'><c:out value="${wiki.getTitle()}"/></a> 
+		<c:if test="${requestScope.userSession.isLogin()} && ${requestScope.userSession. }">
+			(<a href='<c:url value="${wiki.getId()}/edit" />'>edit</a>)
+		</c:if>
+		<c:if test="${requestScope.userSession.isLogin()} && ${requestScope.userSession. }">
+			(<a href='<c:url value="${wiki.getId()}/delete" />'>delete</a>)
+		</c:if>
 	</div>
 </c:forEach>

@@ -54,7 +54,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/wiki/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/wiki", method = RequestMethod.GET)
 	public String list(final HttpServletRequest request)
 	{
 		request.setAttribute("wikis", wikiDAO.listSort());
@@ -111,7 +111,7 @@ public class WikiController
 		} else
 		{
 			WikiPage page = handler.createNewWiki(request, form);
-			return "redirect:/wiki/show/" + page.getId();
+			return "redirect:/wiki/" + page.getId();
 		}
 
 	}
@@ -168,7 +168,7 @@ public class WikiController
 		} else
 		{
 			WikiPage page = handler.editWiki(request, wikiId, form);
-			return "redirect:/Wiki/show/" + page.getId();
+			return "redirect:/wiki/" + page.getId();
 		}
 
 	}
@@ -203,10 +203,10 @@ public class WikiController
 	{
 		if (handler.delete(wikiId))
 		{
-			return "redirect:/Wiki/list";
+			return "redirect:/wiki";
 		} else
 		{
-			return "redirect:/Wiki/list";
+			return "redirect:/wiki";
 		}
 	}
 }

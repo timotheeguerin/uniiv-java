@@ -43,7 +43,7 @@ public class WikiComment
 	private Date dateEdited;
 
 	@ManyToOne
-	@JoinColumn(name = "id_wiki")
+	@JoinColumn(name = "id_wiki_page")
 	private WikiPage wiki;
 	
 	/**
