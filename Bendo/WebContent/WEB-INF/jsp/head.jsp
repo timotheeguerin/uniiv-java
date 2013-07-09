@@ -23,7 +23,7 @@
 		<c:set var="styles" value="${head.ressources.styles}" scope="page" />
 		<c:forEach items="${styles}" var="style">
 			<c:url value="${style}" var="url" />
-			<link rel="stylesheet" type="text/css" href="${url}" />
+			<link rel="stylesheet" type="text/less" href="${url}" />
 		</c:forEach>
 
 		<!-- Scripts -->

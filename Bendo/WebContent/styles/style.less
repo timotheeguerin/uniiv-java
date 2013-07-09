@@ -1,5 +1,18 @@
 @charset "utf-8";
 
+/*********************************************************
+
+					LESS VARIABLES
+
+*********************************************************/
+@backgroundall:#EDF1F5;
+@headerclrck: #F8F8F8;
+@paddingbox:10px;
+@widthmin:980px;
+@fontfamily1:'Helvetica Neue';
+@fontfamily2:Helvetica;
+@fontfamily3:Arial;
+
 /*-----------------------------
 
 	For ALL types 
@@ -13,7 +26,7 @@
 	/* list-style: none;  */
 	/* text-decoration: none; */
 	overflow: visible;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 }
 
 a {
@@ -21,14 +34,14 @@ a {
 }
 
 html,body {
-	background-color: #EDF1F5;
+	background-color: @backgroundall;
 	background-image:url("../images/background/stripe.png");
 	background-repeat: repeat;
 	/* 	background-image:url("../images/background/bg.jpg"); */
 	margin: 0;
 	width: 100%;
 	height: 100%;
-	min-width: 980px;
+	min-width: @widthmin;
 }
 
 .hidden {
@@ -49,7 +62,7 @@ html,body {
 
 #content.content_margin {
 	overflow-x: hidden;
-	width: 980px;
+	width: @widthmin;
 }
 
 .front-image {
@@ -93,9 +106,6 @@ h1,h1 span,h2,h2 span {
 	background: -ms-linear-gradient(top, #3259ab 0%, #4e74c7 100%);
 	/* IE10+ */
 	background: linear-gradient(to bottom, #3259ab 0%, #4e74c7 100%);
-	/* W3C */
-	filter: progid:   DXImageTransform.Microsoft.gradient(     startColorstr=
-		  '#3259ab', endColorstr=   '#4e74c7', GradientType=   0 );
 	/* IE6-9 */
 	border: none;
 	border-radius: 3px;
@@ -103,7 +113,7 @@ h1,h1 span,h2,h2 span {
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-size: 12px;
 	font-weight: lighter;
 	height: 25px;
@@ -167,7 +177,7 @@ h1,h1 span,h2,h2 span {
 	right: 0;
 	top: 0;
 	width: 100%;
-	min-width: 980px;
+	min-width: @widthmin;
 	z-index: 1;
 }
 
@@ -230,7 +240,7 @@ h1,h1 span,h2,h2 span {
 	text-align: center;
 	height: 25px;
 	left: 0;
-	min-width: 980px;
+	min-width: @widthmin;
 	width: 100%;
 	background-color: #ffffff;
 	background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
@@ -243,7 +253,7 @@ h1,h1 span,h2,h2 span {
 	color: #4F4D4D;
 	font-size: 12px;
 	font-weight: normal;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 }
 
 .footer_frame a:hover {
@@ -317,14 +327,14 @@ h1,h1 span,h2,h2 span {
 	border-bottom: 1px solid;
 	border-color: #dbdbdb;
 	z-index: 999;
-	background-color: #ffffff;
-	background-image: -moz-linear-gradient(#f9f9f9, #ffffff);
-	background-image: -webkit-linear-gradient(#f9f9f9, #ffffff);
-	background-image: linear-gradient(#f9f9f9, #ffffff)
+	background-color: @headerclrck;
+/* 	background-image: -moz-linear-gradient(#f9f9f9, #ffffff); */
+/* 	background-image: -webkit-linear-gradient(#f9f9f9, #ffffff); */
+/* 	background-image: linear-gradient(#f9f9f9, #ffffff) */
 }
 
 .nav_in_margin_frame {
-	width: 980px;
+	width: @widthmin;
 	height: 35px;
 	box-sizing: border-box;
 	margin-left: auto;
@@ -488,7 +498,7 @@ div.btn_sign_up_form input {
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
-	font-family: "Helvetica Neue", Arial;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: thin;
@@ -710,7 +720,6 @@ h2.step {
 	{
 	cursor: pointer;
 	opacity: 0.7;
-	filter: alpha(opacity =           70);
 }
 
 .SoftRatingOption:active,.clearOption:active {
@@ -767,7 +776,6 @@ ul.userRatings .SoftRatingOption.optionSelected {
 	{
 	display: inline-block;
 	opacity: 1;
-	filter: alpha(opacity =                                 100);
 }
 
 .SoftRatingOptions {
@@ -876,7 +884,7 @@ hr.official-standard-ratings-separation {
 	color: #FFFFFF;
 	cursor: pointer;
 	display: inline-block;
-	font-family: "Helvetica Neue", Arial;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: thin;
@@ -1335,7 +1343,6 @@ th.heading_rating {
 	background-color: #CAD6E8;
 	font-weight: bold;
 	text-align: left;
-	width:
 }
 
 .uni_hard_rating_results td {
@@ -1589,7 +1596,7 @@ li.error {
 	padding-left: 9px;
 	padding-right: 9px;
 	font-size: 15px;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-weight: lighter;
 	background-color: #FFFFFF;
 	outline: none;
@@ -1627,7 +1634,7 @@ li.error {
 	padding-left: 9px;
 	padding-right: 9px;
 	margin-top: 20px;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-weight: lighter;
 	font-size: 20px;
 	maxlength: 150;
@@ -1639,7 +1646,7 @@ li.error {
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
 	border-radius: 3px;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-size: 15px;
 	font-weight: lighter;
 	height: auto;
@@ -1737,7 +1744,7 @@ li.error {
 	position: relative;
 	padding: 20px;
 	margin: auto;
-	width: 980px;
+	width: @widthmin;
 }
 
 .mainInfoGuide h1 {
@@ -1793,7 +1800,7 @@ li.error {
 p.big-type span {
 	font-weight: normal;
 	font-size: 16px;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 }
 
 .quote-student {
@@ -1884,7 +1891,7 @@ fuck */
 
 .get-started-student span {
 	color: #FFFFFF;
-	font-family: Helvetica;
+	font-family: @fontfamily1, @fontfamily2, @fontfamily3;
 	font-size: 20px;
 	font-weight: lighter;
 	line-height: 25px;

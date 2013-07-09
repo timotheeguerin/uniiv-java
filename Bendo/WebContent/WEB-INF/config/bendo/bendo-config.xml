@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <link>
 	<styles>
-		<style>/styles/style.css</style>
+		<style>/styles/style.less</style>
 		<style>/styles/form.css</style>
-		<style>/styles/university.css</style>
+<!-- 		<style>/styles/university.css</style> -->
 		<style>/styles/rating.css</style>
 		<style>/styles/table.css</style>
 		<style>/styles/wmd.css</style>
