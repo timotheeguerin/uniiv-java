@@ -36,6 +36,9 @@ $(document).ready(function() {
 		}
 	});
 
+	/**
+	 * Prevent submit form on Enter with autocomplete input
+	 */
 	$("input.autocomplete").on("keyup", function(e) {
 		var code = e.keyCode || e.which;
 		if (code == 13) {

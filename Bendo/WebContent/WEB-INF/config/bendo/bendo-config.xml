@@ -21,8 +21,9 @@
 		<script>/scripts/jquery.fittext.js</script>
 		<script>/scripts/jquery.jrating.js</script>
 		<script>/scripts/jquery.nouislider.js</script>
-		
+
 		<script>/scripts/dropdown.js</script>
+		<script>/scripts/wikiplugins.js</script>
 		<script>/scripts/loading.js</script>
 		<script>/scripts/general.js</script>
 		<script>/scripts/dynamicsearch.js</script>
