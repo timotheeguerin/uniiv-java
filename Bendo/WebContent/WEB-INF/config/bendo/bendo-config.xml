@@ -21,6 +21,7 @@
 		<script>/scripts/jquery.fittext.js</script>
 		<script>/scripts/jquery.jrating.js</script>
 		<script>/scripts/jquery.nouislider.js</script>
+		<script>/scripts/less-1.4.1.min.js</script>
 
 		<script>/scripts/dropdown.js</script>
 		<script>/scripts/wikiplugins.js</script>
