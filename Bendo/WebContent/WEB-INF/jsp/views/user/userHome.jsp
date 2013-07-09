@@ -136,7 +136,7 @@
 		<div class="user_home_right_spacer"></div>
 	
 		<div><h1>Your Apps</h1></div>
-		<div>Applications Dashboard</div>
+		<div><a href='<c:url value="/application"/>' />Applications Dashboard</a></div>
 
 		<div class="user_home_right_spacer"></div>
 
