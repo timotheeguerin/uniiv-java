@@ -8,15 +8,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.university.University;
+import ca.bendo.db.entity.user.User;
 import ca.bendo.json.AutoCompleteJson;
 import ca.bendo.page.handler.UniversityTDS;
+import ca.bendo.session.UserSession;
 
 /**
  * @author Timothée Guérin
@@ -31,6 +35,12 @@ import ca.bendo.page.handler.UniversityTDS;
 @Controller
 public class UniversityController
 {
+	
+	/**
+	 * 
+	 */
+	@Autowired
+	private UserUniversityBookmarkDAO userUniversityBookmarkDAO;
 	/**
 	 * 
 	 */
@@ -48,6 +58,7 @@ public class UniversityController
 	 *            Response
 	 * @return Jsp page
 	 */
+	@Transactional
 	@RequestMapping(value = "/university/{uniId}", method = RequestMethod.GET)
 	public String universityPage(@PathVariable(value = "uniId") final long universityId,
 			final HttpServletRequest request, final HttpServletResponse response)
@@ -60,6 +71,18 @@ public class UniversityController
 		{
 			return "views/errors/error404";
 		}
+		if(UserSession.getSession(request).isLogin())
+		{
+			User user = UserSession.getSession(request).getUser();
+			boolean bookmarked = false;
+			userUniversityBookmarkDAO.enableTranslation(languageId);
+			if(userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId) != null)
+			{
+				bookmarked = true;
+			}
+			request.setAttribute("watched", bookmarked);
+		}
+		
 		return "views/university/university";
 	}
 

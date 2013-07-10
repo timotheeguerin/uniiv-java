@@ -34,8 +34,15 @@
 			</div>
 			<div class="university_profile_top_text_est">Established: [][][][]</div>
 		</div>
-		<b:url var="url" value="/university/${university.id}/bookmark" />
-		<b:ajaxbutton url="${url}" checked="true" value="watch" />
+		<c:choose>
+			<c:when test="${requestScope.userSession.isLogin()}">
+				<b:url var="url" value="/university/${university.id}/bookmark" />
+				<b:ajaxbutton url="${url}" checked="${watched}" value="watch" />
+			</c:when>
+			<c:otherwise>
+				<a href='<b:url value="/login/?alertmsg=alert_info_login" />'><button>watch</button></a>
+			</c:otherwise>
+		</c:choose>
 	</div>
 
 </div>
