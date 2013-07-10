@@ -7,10 +7,13 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.log4j.Logger;
+import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import ca.bendo.config.BendoConfig;
+import ca.bendo.db.dao.HibernateInterceptor;
 
 /**
  * @author Timothée Guérin
@@ -55,13 +58,15 @@ public class BendoContextListener implements ServletContextListener
 	public void contextInitialized(final ServletContextEvent event)
 	{
 
-		WebApplicationContextUtils.getWebApplicationContext(event
-				.getServletContext());
+		WebApplicationContext v = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
 
 		log.info("BendoConfig loading ...");
 		BendoConfig.loadConfig(event.getServletContext());
 		log.info("BendoConfig loaded");
 
+		HibernateInterceptor interceptor = v.getBean(HibernateInterceptor.class);
+		SessionFactory factory = v.getBean(SessionFactory.class);
+		interceptor.setSessionFactory(factory);
 		// Set state
 		// UserStateDAO userStateDao = (UserStateDAO)
 		// springContext.getBean("userStateDAO");

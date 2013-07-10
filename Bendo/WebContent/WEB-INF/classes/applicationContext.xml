@@ -69,6 +69,9 @@
 				<prop key="hibernate.globally_quoted_identifiers">true</prop>
 			</props>
 		</property>
+		<property name="entityInterceptor">
+			<ref bean="myInterceptor" />
+		</property>
 	</bean>
 
 	<bean id="localeResolver" class="ca.bendo.filters.FilterLocaleResolver" />
@@ -93,11 +96,12 @@
 			<bean class="ca.bendo.form.TranslateMessageInterpolator" />
 		</property>
 	</bean>
-	
+
 	<mvc:interceptors>
-	 <bean class="ca.bendo.controller.interceptor.LoginInterceptor" />
-	 <bean class="ca.bendo.controller.interceptor.TitleInterceptor" />
+		<bean class="ca.bendo.controller.interceptor.LoginInterceptor" />
+		<bean class="ca.bendo.controller.interceptor.TitleInterceptor" />
 	</mvc:interceptors>
+
 
 	<context:component-scan base-package="ca.bendo" />
 
@@ -105,6 +109,8 @@
 
 	<!-- Enable Json conversion -->
 	<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+
+	<bean id="myInterceptor" class="ca.bendo.db.dao.HibernateInterceptor" />
 
 	<tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager" />
 </beans>

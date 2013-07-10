@@ -17,7 +17,6 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ca.bendo.db.entity.forum.ForumGroupType;
 import ca.bendo.db.entity.location.Country;
 
 /**
@@ -55,6 +54,7 @@ public class HibernateDAO<T>
 	/**
 	 * 
 	 */
+
 	protected void init()
 	{
 
@@ -288,12 +288,11 @@ public class HibernateDAO<T>
 	 * @return list of forum result
 	 */
 	@SuppressWarnings("unchecked")
-	public List<ForumGroupType> search(final String column, final String query, final int firstResult,
-			final int maxResults)
+	public List<T> search(final String column, final String query, final int firstResult, final int maxResults)
 	{
 		String value = "%" + query + "%";
-		return getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike(column, value))
-				.setFirstResult(firstResult).setMaxResults(maxResults).list();
+		return getSession().createCriteria(type).add(Restrictions.ilike(column, value)).setFirstResult(firstResult)
+				.setMaxResults(maxResults).list();
 	}
 
 	/**
@@ -306,7 +305,7 @@ public class HibernateDAO<T>
 	public long searchCount(final String column, final String query)
 	{
 		String value = "%" + query + "%";
-		return (long) getSession().createCriteria(ForumGroupType.class).add(Restrictions.ilike(column, value))
+		return (long) getSession().createCriteria(type).add(Restrictions.ilike(column, value))
 				.setProjection(Projections.rowCount()).uniqueResult();
 	}
 
@@ -345,7 +344,10 @@ public class HibernateDAO<T>
 	 */
 	protected Session getSession()
 	{
-		return getSessionFactory().getCurrentSession();
+		Session session = getSessionFactory().getCurrentSession();
+		Filter filter = session.enableFilter("languageId");
+		filter.setParameter("param", 1L);
+		return session;
 	}
 
 	/**

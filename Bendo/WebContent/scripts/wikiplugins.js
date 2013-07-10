@@ -2,7 +2,7 @@
  * Autocomplete
  */
 $(document).ready(function() {
-
+	
 	$('input.facebookSearch').each(function() {
 		var href = $(this).attr("data-href");
 		$(this).autocomplete({
