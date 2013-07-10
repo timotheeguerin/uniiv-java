@@ -16,6 +16,7 @@
 }
 
 @backgroundall: #EDF1F5 ;
+@backgroundw: #FFFFFF;
 @inlineblockdis: inline-block;
 @headerclrck: #F8F8F8 ;
 @margin0: 0;
@@ -45,13 +46,14 @@
 @fontfamily1: Helvetica;
 @fontfamily2: Verdana;
 @fontfamily3: Arial;
+@fontsizesmall: 12px;
 @fontsizetext: 14px;
 @fontsizeh1: 20px;
 @fontsizeh2: 16px;
 @fontlight: 200;
 @fontnormal: 500;
 @fontbold: 700;
-@pinkhover: #E3497C;
+@fontpink: #E3497C;
 
 /******** BORDER ********/
 
@@ -107,6 +109,15 @@
 @gradientcolor1: #FAFAFA;
 @gradientcolor2: #EAEAEA;
 @gradientcolor3: #DADADA;
+
+.gradientback (@startbk: #FFFFFF, @stopbk: #F9F9F9, @originbk: top) {
+    background-color: @startbk;
+    background-image: -webkit-linear-gradient(@originbk, @startbk, @stopbk);
+    background-image: -moz-linear-gradient(@originbk, @startbk, @stopbk);
+    background-image: -o-linear-gradient(@originbk, @startbk, @stopbk);
+    background-image: -ms-linear-gradient(@originbk, @startbk, @stopbk);
+    background-image: linear-gradient(@originbk, @startbk, @stopbk);
+}
 
 /*-----------------------------
 
@@ -175,7 +186,7 @@ h2,h2 span {
 
 /*General submit button style*/
 .submit {
-	.gradient1(top, @gradientcolor1, @gradientcolor2);
+	.gradient1(@gradientcolor1, @gradientcolor2);
 	.borderstandard;
 	.border-radius (3px);
     padding: 7px 15px;
@@ -195,7 +206,7 @@ h2,h2 span {
 }
 
 .submit:hover {
-	.gradient1(top, @gradientcolor2, @gradientcolor3);
+	.gradient1(@gradientcolor2, @gradientcolor3);
 }
 
 .submit:active {
@@ -227,74 +238,6 @@ h2,h2 span {
 	transform: translate(0px, -5px);
 }
 
-/*-------------------------------
-
-		Navigation
-		
----------------------------------*/
-.navLogo {
-	display: @inlineblockdis;
-	height: 25px;
-	width: 25px;
-}
-
-.headerNav {
-	background-color: #E8E8E8;
-	border-bottom: @borderwidth @borderstyle @bordercolor;
-	height: 25px;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	width: 100%;
-	min-width: @widthmin;
-	z-index: 1;
-}
-
-.headerNav ul li,.headerNav ul li a:link,.headerNav ul li a:visited {
-	display: inline;
-	text-decoration: none;
-}
-
-#navLfLinks {
-	display: @inlineblockdis;
-	height: 25px;
-	position: @positionr;
-	margin-left: 20px;
-	vertical-align: middle;
-	position: @positionr;
-}
-
-#navLogo {
-	display: @inlineblockdis;
-	line-height: 20px;
-	margin-left: 15px;
-	position: @positionr;
-	top: 4px;
-}
-
-#navLfLinks a {
-	color: #444444;
-	text-decoration: none;
-	width: 100%;
-}
-
-#navLfLinks a:hover {
-	color: #274D9B;
-}
-
-.navRightBtns {
-	display: @inlineblockdis;
-	position: @positionr;
-	margin-top: 0px;
-	height: 20px;
-	line-height: 20px;
-	padding-top: 0px;
-	padding-right: 10px;
-	vertical-align: middle;
-	float: right;
-	width: auto;
-}
 
 /*-------------------------------
 
@@ -312,17 +255,14 @@ h2,h2 span {
 	left: 0;
 	min-width: @widthmin;
 	width: 100%;
-	background-color: #ffffff;
-	background-image: -moz-linear-gradient(#ffffff, #f9f9f9);
-	background-image: -webkit-linear-gradient(#ffffff, #f9f9f9);
-	background-image: linear-gradient(#ffffff, #f9f9f9)
+	.gradientback (#FFFFFF, #F9F9F9, top);
 }
 
 .footer_frame a:link,.footer_content a:visited {
 	text-decoration: none;
-	color: #4F4D4D;
-	font-size: 12px;
-	font-weight: normal;
+	color: @fontcolor1;
+	font-size: @fontsizesmall;
+	font-weight: @fontnormal;
 	font-family: @fontfamily1;
 }
 
@@ -331,7 +271,7 @@ h2,h2 span {
 }
 
 .footer_content {
-	font-weight: lighter;
+	font-weight: @fontlight;
 }
 
 .footer_spacer {
@@ -351,7 +291,7 @@ h2,h2 span {
 }
 
 .nav_login_text:hover {
-	color: @pinkhover;
+	color: @fontpink;
 }
 
 .nav_logout_text {
@@ -367,7 +307,7 @@ h2,h2 span {
 }
 
 .nav_signup_text:hover {
-	color: @pinkhover;
+	color: @fontpink;
 }
 
 .nav_left_side {
@@ -397,9 +337,6 @@ h2,h2 span {
 	border-bottom: @borderwidth @borderstyle @bordercolor;
 	z-index: 999;
 	background-color: @headerclrck;
-	/* 	background-image: -moz-linear-gradient(#f9f9f9, #ffffff); */
-	/* 	background-image: -webkit-linear-gradient(#f9f9f9, #ffffff); */
-	/* 	background-image: linear-gradient(#f9f9f9, #ffffff) */
 }
 
 .nav_in_margin_frame {
@@ -430,11 +367,11 @@ h2,h2 span {
 	position: @positionr;
 	font-family:@fontfamily1;
 	font-size: @fontsizetext;
-	font-weight: lighter;
+	font-weight: @fontlight;
 }
 
 .nav_links:hover {
-	color: #EB659A;
+	color: @fontpink;
 }
 
 .nav_user_home {
@@ -1681,8 +1618,7 @@ fuck */
 .container-bt {
 	background-color: #FFFFFF;
 	.border-radius (3px);
-	border: 1px solid;
-	border-color: #DDDDDD;
+	.borderstandard (1px, solid, transparent);
 	.opacity (0.8);
 	margin: auto;
 	padding-left: 20px;
