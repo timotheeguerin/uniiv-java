@@ -7,12 +7,41 @@
 *********************************************************/
 
 /******** DOM ********/
+.animation (@name, @duration: 300ms, @delay: 0s, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation: @name @duration @delay @ease;
+	-ms-animation: @name @duration @delay @ease;
+	-o-animation: @name @duration @delay @ease;
+	animation: @name @duration @delay @ease;
+}
+
 @backgroundall: #EDF1F5 ;
+@inlineblockdis: inline-block;
 @headerclrck: #F8F8F8 ;
+@margin0: 0;
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: @opacity;
+	-moz-opacity: @opacity;
+	-o-opacity: @opacity;
+	-ms-opacity: @opacity;
+	opacity: @opacity;
+}
+
 @paddingbox: 10px;
+@positiona: absolute;
+@positionr: relative;
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
+}
+
 @widthmin: 980px;
 
 /******** FONTS ********/
+@fontcolor1: #4F4F4F;
 @fontfamily1: Helvetica;
 @fontfamily2: Verdana;
 @fontfamily3: Arial;
@@ -22,15 +51,30 @@
 @fontlight: 200;
 @fontnormal: 500;
 @fontbold: 700;
+@pinkhover: #E3497C;
 
 /******** BORDER ********/
-@borderadius: 3px;
+
+.border-radius (@borderadius: 3px) {
+	-webkit-border-radius: @borderadius;
+	-moz-border-radius: @borderadius;
+	-o-border-radius: @borderadius;
+	-ms-border-radius: @borderadius;
+	border-radius: @borderadius;
+}
+
 @borderwidth: 1px;
 @borderstyle: solid;
 @bordercolor: #DBDBDB;
 
+.borderstandard (@borderwidth: 1px, @borderstyle: solid, @bordercolor:#DBDBDB) {
+	border-width: @borderwidth;
+	border-style: @borderstyle;
+	border-color: @bordercolor;
+};
+
 /******** BUTTON BASIC WHITE ********/
-.gradient1 (@origin: top, @start: #FAFAFA, @stop: #EAEAEA) {
+.gradient1 (@start: #FAFAFA, @stop: #EAEAEA, @origin: top) {
     background-color: @start;
     background-image: -webkit-linear-gradient(@origin, @start, @stop);
     background-image: -moz-linear-gradient(@origin, @start, @stop);
@@ -42,16 +86,37 @@
 @gradientcolor1: #FAFAFA;
 @gradientcolor2: #EAEAEA;
 @gradientcolor3: #DADADA;
-@boxshadow1: inset 0 3px 5px rgba(0, 0, 0, 0.15);
-	/*-----------------------------
+.box-shadow (@stringbs:inset 0 3px 5px rgba(0, 0, 0, 0.15)) {
+	-webkit-box-shadow: @stringbs;
+	-moz-box-shadow:@stringbs;
+	-o-box-shadow:@stringbs;
+	-ms-box-shadow: @stringbs;
+	box-shadow: @stringbs;
+}
+
+/******** BUTTON WATCH UNI ********/
+.gradientwatch (@originwatch: top, @starwatch: #3A69C9, @stopwatch: #274D9B) {
+    background-color: @startwatch;
+    background-image: -webkit-linear-gradient(@originwatch, @startwatch, @stopwatch);
+    background-image: -moz-linear-gradient(@originwatch, @startwatch, @stopwatch);
+    background-image: -o-linear-gradient(@originwatch, @startwatch, @stopwatch);
+    background-image: -ms-linear-gradient(@originwatch, @startwatch, @stopwatch);
+    background-image: linear-gradient(@originwatch, @startwatch, @stopwatch);
+}
+
+@gradientcolor1: #FAFAFA;
+@gradientcolor2: #EAEAEA;
+@gradientcolor3: #DADADA;
+
+/*-----------------------------
 
 	For ALL types 
 
 -------------------------------*/ 
 * {
-	margin: 0;
-	font-weight: 200;
-	color: #4F4D4D;
+	margin: @margin0;
+	font-weight: @fontlight;
+	color: @fontcolor1;
 	overflow: visible;
 	font-family: @fontfamily1;
 }
@@ -64,7 +129,7 @@ html,body {
 	background-color: @backgroundall;
 	background-image: url("../images/background/stripe.png");
 	background-repeat: repeat;
-	margin: 0;
+	margin: @margin0;
 	width: 100%;
 	height: 100%;
 	min-width: @widthmin;
@@ -76,7 +141,7 @@ html,body {
 
 #container {
 	min-height: 100%;
-	position: relative;
+	position: @positionr;
 }
 
 #content {
@@ -92,10 +157,10 @@ html,body {
 }
 
 footer {
-	position: absolute;
+	position: @positiona;
 	width: 100%;
-	bottom: 0;
-	left: 0;
+	bottom: @margin0;
+	left: @margin0;
 }
 
 h1, h1 span {
@@ -111,13 +176,12 @@ h2,h2 span {
 /*General submit button style*/
 .submit {
 	.gradient1(top, @gradientcolor1, @gradientcolor2);
-	border: @borderwidth @borderstyle @bordercolor;
-	border-radius: @borderadius;
+	.borderstandard;
+	.border-radius (3px);
     padding: 7px 15px;
     font-size: @fontsizetext;
-    font-weight: bold;
+    font-weight: @fontbold;
     white-space: nowrap;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     vertical-align: middle;
     cursor: pointer;
     font-family: @fontfamily1;
@@ -135,7 +199,7 @@ h2,h2 span {
 }
 
 .submit:active {
-    box-shadow: boxshadow1;
+    .box-shadow (inset 0 3px 5px rgba(0, 0, 0, 0.15));
 }
 
 /*-----------------------------
@@ -144,7 +208,7 @@ h2,h2 span {
 
 -------------------------------*/
 .home-logo-lf {
-	position: absolute;
+	position: @positiona;
 	left: 20px;
 	top: 40px;
 	cursor: pointer;
@@ -169,7 +233,7 @@ h2,h2 span {
 		
 ---------------------------------*/
 .navLogo {
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 25px;
 	width: 25px;
 }
@@ -193,19 +257,19 @@ h2,h2 span {
 }
 
 #navLfLinks {
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 25px;
-	position: relative;
+	position: @positionr;
 	margin-left: 20px;
 	vertical-align: middle;
-	position: relative;
+	position: @positionr;
 }
 
 #navLogo {
-	display: inline-block;
+	display: @inlineblockdis;
 	line-height: 20px;
 	margin-left: 15px;
-	position: relative;
+	position: @positionr;
 	top: 4px;
 }
 
@@ -220,8 +284,8 @@ h2,h2 span {
 }
 
 .navRightBtns {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	margin-top: 0px;
 	height: 20px;
 	line-height: 20px;
@@ -271,55 +335,55 @@ h2,h2 span {
 }
 
 .footer_spacer {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 5px;
 }
 
 .nav_spacer {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 5px;
 }
 
 .nav_login_text {
-	position: relative;
-	font-size: 14;
-	font-weight: lighter;
+	position: @positionr;
+	font-size: @fontsizetext;
+	font-weight: @fontlight;
 }
 
 .nav_login_text:hover {
-	color: #EB659A;
+	color: @pinkhover;
 }
 
 .nav_logout_text {
-	position: relative;
-	font-size: 14;
-	font-weight: lighter;
+	position: @positionr;
+	font-size: @fontsizetext;
+	font-weight: @fontlight;
 }
 
 .nav_signup_text {
-	position: relative;
-	font-size: 14;
-	font-weight: lighter;
+	position: @positionr;
+	font-size: @fontsizetext;
+	font-weight: @fontlight;
 }
 
 .nav_signup_text:hover {
-	color: #EB659A;
+	color: @pinkhover;
 }
 
 .nav_left_side {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 }
 
 .nav_middle {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	top: -5px;
 }
 
 .nav_right_side {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	text-align: right;
 	float: right;
 }
@@ -341,29 +405,29 @@ h2,h2 span {
 .nav_in_margin_frame {
 	width: @widthmin;
 	height: 35px;
-	box-sizing: border-box;
+	.box-sizing (border-box);
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 6px;
 }
 
 .nav_logo {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	height: 25px;
 	width: 25px;
 }
 
 .nav_logo_frame {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	vertical-align: middle;
 	width: 25px;
 	top: -1px;
 }
 
 .nav_links {
-	position: relative;
+	position: @positionr;
 	font-family:@fontfamily1;
 	font-size: @fontsizetext;
 	font-weight: lighter;
@@ -374,30 +438,9 @@ h2,h2 span {
 }
 
 .nav_user_home {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 25px;
 	height: 26px;
-}
-
-.btn_log_in_text:hover {
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background-color: #000000;
-	background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6),
-		color-stop(100%, #ffffff) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #e6e6e6 0%, #ffffff 100%);
-	/* W3C */
-}
-
-.btn_log_in_text:active {
-	
 }
 
 /*-----------------------------
@@ -414,7 +457,7 @@ h2,h2 span {
 	margin: auto;
 	overflow: scroll;
 	padding: 10px 15px 10px 15px;
-	position: relative;
+	position: @positionr;
 	text-align: justify;
 	word-spacing: 0.3em;
 }
@@ -441,116 +484,6 @@ h2,h2 span {
 	display: none;
 }
 
-/*--------------------
-
-Button Sign UP Form
-
----------------------*/
-div.btn_sign_up_form {
-	width: 150px;
-	margin: auto;
-}
-
-div.btn_sign_up_form input {
-	display: inline-block;
-	position: relative;
-	top: 0px;
-	right: 10px;
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background: #f081ad; /* Old browsers */
-	background: -moz-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f081ad),
-		color-stop(100%, #e91760) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f081ad 0%, #e91760 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #f081ad 0%, #e91760 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(      
-		                                        startColorstr='#f081ad',
-		endColorstr='#e91760', GradientType=0 );
-	/* IE6-9 */
-	border-bottom-color: #B61149;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-left-color: #B61149;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #B61149;
-	border-right-style: solid;
-	border-right-width: 1px;
-	border-top-color: #B61149;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: @fontfamily1;
-	font-size: 20px;
-	font-style: normal;
-	font-weight: thin;
-	height: 40px;
-	line-height: 18px;
-	padding-bottom: 8px;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-top: 8px;
-	text-align: center;
-	text-decoration: none;
-	word-spacing: 2px;
-}
-
-.btn_sign_up_text_form:hover {
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background-color: rgba(0, 0, 0, 0);
-	background: #e91760; /* Old browsers */
-	background: -moz-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e91760),
-		color-stop(100%, #f081ad) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(      
-		                                        startColorstr='#e91760',
-		endColorstr='#f081ad', GradientType=0 );
-	/* IE6-9 */
-}
-
-.btn_sign_up_text_form:active {
-	-webkit-box-shadow: #DDDDDD 0px 0px 1px 0px;
-	background-color: rgba(0, 0, 0, 0);
-	background: #e91760; /* Old browsers */
-	background: -moz-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e91760),
-		color-stop(100%, #f081ad) ); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #e91760 0%, #f081ad 100%);
-	/* IE10+ */
-	background: linear-gradient(to bottom, #e91760 0%, #f081ad 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient(      
-		                                        startColorstr='#e91760',
-		endColorstr='#f081ad', GradientType=0 );
-	/* IE6-9 */
-}
 
 /*---------------------------
 
@@ -561,9 +494,9 @@ div.btn_sign_up_form input {
 	padding-left: 10px;
 	height: 50px;
 	width: 250px;
-	position: relative;
+	position: @positionr;
 	float: left;
-	display: inline-block;
+	display: @inlineblockdis;
 	border-bottom-left-radius: 10px;
 	-moz-border-radius-bottomleft: 10px;
 	-webkit-border-bottom-left-radius: 10px;
@@ -578,7 +511,7 @@ div.btn_sign_up_form input {
 							TO DO 
 **********************************************************************/
 .top_filter_heading {
-	position: relative;
+	position: @positionr;
 	margin-bottom: 40px;
 	width: 100%;
 }
@@ -607,14 +540,14 @@ div.btn_sign_up_form input {
 .FilterCategoryButton {
 	background-color: #EDF1F5;
 	border: none;
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 100px;
 	margin: 10px 30px 10px 30px;
 	width: auto;
 }
 
 .right_side_container {
-	display: inline-block;
+	display: @inlineblockdis;
 	float: right;
 }
 
@@ -644,7 +577,7 @@ div.btn_sign_up_form input {
 }
 
 .FilterElement {
-	display: inline-block;
+	display: @inlineblockdis;
 	font-size: 12px;
 	height: 12px;
 	margin: auto;
@@ -654,7 +587,7 @@ div.btn_sign_up_form input {
 }
 
 .FilterElementButton {
-	vertical-align: left;
+	vertical-align: middle;
 	width: auto;
 }
 
@@ -679,7 +612,7 @@ div.btn_sign_up_form input {
 	margin-bottom: 50px;
 	margin-top: 20px;
 	height: auto;
-	position: relative;
+	position: @positionr;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -715,11 +648,11 @@ h2.step {
 .SoftRatingOption:hover,.clearOption:hover,.FilterCategoryButtonImage:hover
 	{
 	cursor: pointer;
-	opacity: 0.7;
+	.opacity (0.7);
 }
 
 .SoftRatingOption:active,.clearOption:active {
-	opacity: 0.9
+	.opacity (0.7);
 }
 
 .clearOption,.SoftRatingOption {
@@ -728,8 +661,8 @@ h2.step {
 
 .SoftRatingName,.SoftRatingDefaultOption,.SoftRatingOptions,.SoftRatingOption
 	{
-	display: inline-block;
-	opacity: 1;
+	display: @inlineblockdis;
+	.opacity (1);
 }
 
 .SoftRatingOptions {
@@ -740,7 +673,7 @@ h2.step {
 }
 
 .SoftRatingOptions_container {
-	display: inline-block;
+	display: @inlineblockdis;
 	line-height: 46px;
 	vertical-align: middle;
 	width: auto;
@@ -837,7 +770,7 @@ hr.official-standard-ratings-separation {
 	border-top-width: 1px;
 	color: #FFFFFF;
 	cursor: pointer;
-	display: inline-block;
+	display: @inlineblockdis;
 	font-family: @fontfamily1;
 	font-size: 20px;
 	font-style: normal;
@@ -885,7 +818,7 @@ hr.official-standard-ratings-separation {
 
 .submitFilter {
 	border: 1px solid @bordercolor;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	background-color: rgba(0, 0, 255, 0.5);
 	background: #ffffff;
 	/* Old browsers */
@@ -906,7 +839,7 @@ hr.official-standard-ratings-separation {
 	color: #333131;
 	cursor: pointer;
 	font-size: 14px;
-	display: inline-block;
+	display: @inlineblockdis;
 }
 
 .submitFilter:hover {
@@ -926,7 +859,7 @@ hr.official-standard-ratings-separation {
 }
 
 .big_search_filters {
-	display: inline-block;
+	display: @inlineblockdis;
 	margin-left: 10px;
 }
 /**************************************
@@ -939,20 +872,20 @@ hr.official-standard-ratings-separation {
 /* TOP BOX SECTION */
 /* ########################################## */
 .university_profile_top_box {
-	position: relative;
+	position: @positionr;
 	top: 6px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 	height: 150px;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: @bordercolor;
 	background-color: #ffffff;
 }
 
 .university_profile_image_box {
-	position: absolute;
+	position: @positiona;
 	left: 0px;
 	height: 150px;
 	width: 300px;
@@ -966,7 +899,7 @@ hr.official-standard-ratings-separation {
 }
 
 .university_profile_top_text_box {
-	position: relative;
+	position: @positionr;
 	left: 310px; /* must be the same width as picture + 10 */
 	height: 100%;
 }
@@ -974,7 +907,7 @@ hr.official-standard-ratings-separation {
 .university_profile_top_text_name {
 	font-size: 35px;
 	font-weight: lighter;
-	position: relative;
+	position: @positionr;
 	top: 0px;
 }
 
@@ -985,7 +918,7 @@ hr.official-standard-ratings-separation {
 
 .university_profile_top_lower_text {
 	text-align: left;
-	position: absolute;
+	position: @positiona;
 	left: 0px;
 	bottom: 5px;
 }
@@ -1014,12 +947,12 @@ hr.official-standard-ratings-separation {
 /* RANK SECTION */
 /* ########################################## */
 .university_profile_rank_box {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 	padding-bottom: 20px;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: @bordercolor;
 	background-color: #ffffff;
@@ -1027,14 +960,14 @@ hr.official-standard-ratings-separation {
 }
 
 .university_profile_rank_element {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	top: 15px;
 	width: 100px;
 }
 
 .university_profile_rank_element_icon {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 75px;
@@ -1056,12 +989,12 @@ hr.official-standard-ratings-separation {
 /* STUDENT STATISTICS SECTION */
 /* ########################################## */
 .university_profile_student_stats_box {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 	padding-bottom: 20px;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: @bordercolor;
 	background-color: #ffffff;
@@ -1069,14 +1002,14 @@ hr.official-standard-ratings-separation {
 }
 
 .university_profile_student_stats_element {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	top: 15px;
 	width: 100px;
 }
 
 .university_profile_student_stats_element_icon {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 75px;
@@ -1098,12 +1031,12 @@ hr.official-standard-ratings-separation {
 /* REPUTATION SECTION */
 /* ########################################## */
 .university_profile_reputation_box {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 	padding-bottom: 20px;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: @bordercolor;
 	background-color: #ffffff;
@@ -1111,14 +1044,14 @@ hr.official-standard-ratings-separation {
 }
 
 .university_profile_reputation_element {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	top: 15px;
 	width: 100px;
 }
 
 .university_profile_reputation_element_icon {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 75px;
@@ -1134,8 +1067,8 @@ hr.official-standard-ratings-separation {
 /* University guides section, stop breaking shit you tool */
 /* ########################################## */
 .university_profile_wiki_element {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	width: 100%;
 	padding-left: 10px;
 	text-align: left;
@@ -1146,12 +1079,12 @@ hr.official-standard-ratings-separation {
 /* CONTACT SECTION */
 /* ########################################## */
 .university_profile_contact_box {
-	position: relative;
+	position: @positionr;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
 	padding-bottom: 20px;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: @bordercolor;
 	background-color: #ffffff;
@@ -1159,8 +1092,8 @@ hr.official-standard-ratings-separation {
 }
 
 .university_profile_contact_element {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	top: 15px;
 	width: 45%;
 	padding-left: 10px;
@@ -1179,7 +1112,7 @@ hr.official-standard-ratings-separation {
 
 .results_top_head {
 	margin-top: 30px;
-	position: relative;
+	position: @positionr;
 	width: auto;
 }
 
@@ -1200,7 +1133,7 @@ hr.official-standard-ratings-separation {
 	border-top-right-radius: 20px;
 	border-top-style: solid;
 	border-top-width: 4px;
-	position: relative;
+	position: @positionr;
 	margin-top: 100px;
 }
 
@@ -1209,7 +1142,7 @@ hr.official-standard-ratings-separation {
 	overflow: scroll;
 	padding: 20px 20px 20px 20px;
 	margin: auto;
-	position: relative;
+	position: @positionr;
 	width: 100%;
 }
 
@@ -1286,7 +1219,7 @@ th.stat_info,td.stat_info {
 	border-top-style: solid;
 	border-top-width: 4px;
 	float: right;
-	position: relative;
+	position: @positionr;
 }
 
 th.heading_rating {
@@ -1331,18 +1264,18 @@ th.heading_rating {
 .alertMsgBox.warning {
 	background-color: #EBCC9B;
 	border: 1px solid #E8792E;
-	border-radius:@borderadius;
+	.border-radius (3px);
 }
 
 .alertMsgBox.err {
 	background-color: #F5B0B0;
 	border: 1px solid #FA5050;
-	border-radius: @borderadius;
+	.border-radius (3px);
 }
 
 .alertMsgIcon {
-	display: inline-block;
-	position: relative;
+	display: @inlineblockdis;
+	position: @positionr;
 	margin: 0 10px 0 10px;
 	line-height: 40px;
 	vertical-align: middle;
@@ -1354,7 +1287,7 @@ th.heading_rating {
 }
 
 .alertMsgContent {
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 40px;
 	line-height: 40px;
 	vertical-align: middle;
@@ -1363,7 +1296,7 @@ th.heading_rating {
 .form_error {
 	background-color: #F5B0B0;
 	border: 1px solid #FA5050;
-	border-radius: @borderadius;
+	.border-radius (3px);
 	height: auto;
 	line-height: 20px;
 	margin-bottom: 15px;
@@ -1403,7 +1336,7 @@ li.error {
 }
 
 .tooltip_content {
-	position: absolute;
+	position: @positiona;
 	max-height: 400px;
 	z-index: 999;
 }
@@ -1419,10 +1352,10 @@ li.error {
 }
 
 .arrow_box {
-	position: relative;
+	position: @positionr;
 	background: #000000;
 	border: 3px solid #000000;
-	opacity: 0.9;
+	.opacity (0.9);
 	padding: 5px;
 }
 
@@ -1432,7 +1365,7 @@ li.error {
 	content: " ";
 	height: 0;
 	width: 0;
-	position: absolute;
+	position: @positiona;
 	pointer-events: none;
 }
 
@@ -1458,7 +1391,7 @@ li.error {
 	content: " ";
 	height: 0;
 	width: 0;
-	position: absolute;
+	position: @positiona;
 	pointer-events: none;
 }
 
@@ -1487,14 +1420,14 @@ li.error {
 *				Quickfind
 ****************************************************************************************/
 .quickfind_bar {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	vertical-align: middle;
 	height: 25px;
 	width: 300px;
 	top: 4px;
 	border: solid 1px @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-left: 9px;
@@ -1517,11 +1450,11 @@ li.error {
 	background-color: #FFFFFF;
 	background-size: 100%;
 	color: transparent;
-	position: absolute;
+	position: @positiona;
 	right: 5px;
 	top: 7px;
 	cursor: pointer;
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 18px;
 	width: 18px;
 	border: 0px;
@@ -1532,7 +1465,7 @@ li.error {
 }
 
 #query.autocomplete.universityautocomplete {
-	display: inline-block;
+	display: @inlineblockdis;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-left: 9px;
@@ -1549,7 +1482,7 @@ li.error {
 .autocomplete-suggestions {
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
-	border-radius: 3px;
+	.border-radius (3px);
 	font-family: @fontfamily1;
 	font-size: 15px;
 	font-weight: lighter;
@@ -1558,7 +1491,7 @@ li.error {
 	width: 300px;
 	background-color: #ffffff;
 	overflow-y: auto;
-	box-sizing: border-box;
+	.box-sizing (border-box);
 }
 
 .autocomplete-suggestion {
@@ -1578,7 +1511,7 @@ li.error {
 }
 
 .autocomplete-suggestion div {
-	display: inline-block;
+	display: @inlineblockdis;
 	vertical-align: middle;
 }
 
@@ -1605,29 +1538,29 @@ li.error {
 *				Homepage
 ****************************************************************************************/
 .home_image_bg {
-	position: relative;
+	position: @positionr;
 	display: block;
 	top: -25px;
 	width: 100%;
 }
 
 .home_splitter_circle {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	height: 100px;
 	width: 100px;
 	margin-top: -100px;
 }
 
 .home_splitter_bar {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	height: 100px;
 	width: 100%;
 }
 
 .home_splitter_container {
-	position: absolute;
+	position: @positiona;
 	height: 100px;
 	width: 100%;
 	margin-top: -70px;
@@ -1640,12 +1573,12 @@ li.error {
 }
 
 .info-left {
-	border-radius: 3px;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: #DDDDDD;
 	background-color: #FFFFFF;
 	height: 130px;
-	position: relative;
+	position: @positionr;
 	padding: 20px;
 	margin: auto;
 	width: @widthmin;
@@ -1662,13 +1595,13 @@ li.error {
 }
 /*********  HOME PAGE STUDENT EXAMPLE BOX  **********/
 .student-container {
-	border-radius: 3px;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: #DDDDDD;
 	background-color: #FFFFFF;
 	display: none;
 	padding: 20px;
-	position: absolute;
+	position: @positiona;
 	top: 350px;
 	right: 40px;
 	height: 130px;
@@ -1676,7 +1609,7 @@ li.error {
 }
 
 .image-student {
-	display: inline-block;
+	display: @inlineblockdis;
 	height: 150px;
 	width: 150px;
 }
@@ -1687,14 +1620,14 @@ li.error {
 }
 
 .text-student {
-	display: inline-block;
-	position: absolute;
+	display: @inlineblockdis;
+	position: @positiona;
 	right: 20px;
 	top: 20px;
 }
 
 .content-info-start {
-	display: inline-block;
+	display: @inlineblockdis;
 	font-size: 16px;
 	line-height: 22px;
 	text-align: justify;
@@ -1718,7 +1651,7 @@ p.big-type span {
 
 .getStartedHome {
 	height: 40px;
-	position: absolute;
+	position: @positiona;
 	right: 4%;
 	top: 30%;
 }
@@ -1747,10 +1680,10 @@ fuck */
 
 .container-bt {
 	background-color: #FFFFFF;
-	border-radius: 3px;
+	.border-radius (3px);
 	border: 1px solid;
 	border-color: #DDDDDD;
-	opacity: 0.9;
+	.opacity (0.8);
 	margin: auto;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -1759,7 +1692,7 @@ fuck */
 }
 
 .container-bt h2 {
-	opacity: 1;
+	.opacity (1);
 }
 
 .home-bt-ct h2 {
@@ -1773,7 +1706,7 @@ fuck */
 }
 
 .start-bt {
-	display: inline-block;
+	display: @inlineblockdis;
 	text-align: center;
 	width: auto;
 }
@@ -1819,13 +1752,13 @@ fuck */
 ****************************************************************************************/
 .signup_frame {
 	color: #4F4D4D;
-	position: relative;
+	position: @positionr;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 600px;
 	border: 1px solid @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 40px;
@@ -1834,14 +1767,14 @@ fuck */
 }
 
 .signup_element_container {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 30px;
 }
 
 .signup_text_element {
-	display: inline-block;
+	display: @inlineblockdis;
 	margin-top: 7px;
 	width: 20%;
 	font-weight: lighter;
@@ -1849,15 +1782,15 @@ fuck */
 
 .signup_form_element {
 	color: #4F4D4D;
-	position: absolute;
-	display: inline-block;
+	position: @positiona;
+	display: @inlineblockdis;
 	width: 65%;
 	top: 0px;
 	right: 5px;
 	height: 100%;
 	outline: none;
 	border: solid 1px @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-left: 9px;
@@ -1872,8 +1805,8 @@ fuck */
 
 .signup_error_text {
 	color: #4F4D4D;
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 99%;
 	height: 20px;
 	text-align: right;
@@ -1881,22 +1814,22 @@ fuck */
 }
 
 .signup_spacer {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 5px;
 }
 
 .signup_spacer_big {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 20px;
 }
 
 .signup_tac {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	text-align: center;
 	font-size: 12px;
@@ -1926,7 +1859,7 @@ fuck */
 }
 
 .signup_submit {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 100%;
 	text-align: center;
 }
@@ -1941,13 +1874,13 @@ fuck */
 ****************************************************************************************/
 .login_frame {
 	color: #4F4D4D;
-	position: relative;
+	position: @positionr;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
 	border: 1px solid @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 40px;
@@ -1956,8 +1889,8 @@ fuck */
 }
 
 .login_element_container {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 30px;
 	text-align: center;
@@ -1965,8 +1898,8 @@ fuck */
 
 .login_error_text {
 	color: #4F4D4D;
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 99%;
 	height: 20px;
 	text-align: center;
@@ -1974,22 +1907,22 @@ fuck */
 }
 
 .login_spacer {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 5px;
 }
 
 .login_spacer_big {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 20px;
 }
 
 .login_tac {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	text-align: center;
 	font-size: 12px;
@@ -2018,7 +1951,7 @@ fuck */
 }
 
 .login_submit {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 100%;
 	text-align: center;
 }
@@ -2033,13 +1966,13 @@ fuck */
 ****************************************************************************************/
 .forgetful_frame {
 	color: #4F4D4D;
-	position: relative;
+	position: @positionr;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
 	border: 1px solid @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 40px;
@@ -2048,8 +1981,8 @@ fuck */
 }
 
 .forgetful_element_container {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 30px;
 	text-align: center;
@@ -2057,8 +1990,8 @@ fuck */
 
 .forgetful_error_text {
 	color: #4F4D4D;
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 99%;
 	height: 20px;
 	text-align: center;
@@ -2066,21 +1999,21 @@ fuck */
 }
 
 .forgetful_spacer {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 5px;
 }
 
 .forgetful_spacer_big {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 20px;
 }
 
 .forgetful_submit {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 100%;
 	text-align: center;
 }
@@ -2094,17 +2027,17 @@ fuck */
 /*FOR ALL INPUT BARS*/
 .input-element {
 	color: #4F4D4D;
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	height: 30px;
 	outline: none;
 	border: solid 1px @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding: 0 9px 0 9px;
 }
 
 .signup-input {
-	display: inline-block;
+	display: @inlineblockdis;
 	width: 65%;
 }
 
@@ -2121,7 +2054,7 @@ fuck */
 *				preferences for search system
 ****************************************************************************************/
 .preferences_cycler {
-	border-radius: 3px;
+	.border-radius (3px);
 	border: 1px solid;
 	padding: 2px;
 }
@@ -2147,20 +2080,20 @@ fuck */
 #user_location_map-canvas {
 	height: 300px;
 	width: 95%;
-	display: inline-block;
+	display: @inlineblockdis;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .user_location_map_frame {
 	color: #4F4D4D;
-	position: relative;
+	position: @positionr;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 600% px;
 	border: 1px solid @bordercolor;
-	border-radius: 3px;
+	.border-radius (3px);
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 40px;
@@ -2170,7 +2103,7 @@ fuck */
 }
 
 .user_location_rating {
-	display: inline-block;
+	display: @inlineblockdis;
 	padding-top: 5px;
 	float: right;
 }
@@ -2184,15 +2117,15 @@ fuck */
 }
 
 .user_location_rating_text {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100px;
 	float: left;
 }
 
 .user_location_rating_spacer {
-	position: relative;
-	display: inline-block;
+	position: @positionr;
+	display: @inlineblockdis;
 	width: 100%;
 	height: 5px;
 }
@@ -2203,16 +2136,13 @@ fuck */
 	display: block;
 	cursor: default;
 	height: 12px;
-	border-radius: 20px;
+	.border-radius (3px);
 	background: #274D9B;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	.box-sizing (border-box);
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	-webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
-	box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+	.box-shadow (inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5));
 }
 
 .noUiSlider {
@@ -2220,19 +2150,19 @@ fuck */
 	background: #cdcdcd;
 	-webkit-touch-callout: none;
 	margin-top: 40px;
-	position: relative;
+	position: @positionr;
 	left: 0px;
 	width: 100%;
 }
 
 .noUiSlider div {
-	position: absolute;
+	position: @positiona;
 	height: 20px;
 	width: 20px;
 	top: -3px;
 	left: -10px;
 	z-index: 5;
-	border-radius: 20px;
+	.border-radius (3px);
 	background: #fff;
 	cursor: pointer;
 	-webkit-box-shadow: none;
@@ -2241,11 +2171,11 @@ fuck */
 }
 
 .noUiSlider {
-	position: relative;
+	position: @positionr;
 }
 
 .noUiSlider a {
-	position: absolute;
+	position: @positiona;
 	z-index: 1;
 }
 
