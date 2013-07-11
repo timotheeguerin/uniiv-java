@@ -16,9 +16,9 @@ package ca.bendo.search.handler.parser;
 public abstract class ParameterParser
 {
 
-
 	/**
-	 * @param parameter Stirng to parse
+	 * @param parameter
+	 *            Stirng to parse
 	 */
 	public abstract void parse(String parameter);
 
@@ -41,8 +41,5 @@ public abstract class ParameterParser
 
 		return true;
 	}
-	
-	
 
-	
 }

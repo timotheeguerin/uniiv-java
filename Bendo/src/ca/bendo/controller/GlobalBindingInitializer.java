@@ -28,7 +28,7 @@ public class GlobalBindingInitializer
 	 */
 	@Autowired
 	private Validator validator;
-	
+
 	/**
 	 * 
 	 * @param binder

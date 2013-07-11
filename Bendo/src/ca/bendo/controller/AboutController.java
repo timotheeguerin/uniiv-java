@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>AboutController</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>AboutController</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Controller
 public class AboutController

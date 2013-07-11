@@ -54,7 +54,5 @@ public class HandleGroupTypeController
 		request.setAttribute("tableUtils", new FilterForm(form.getPage(), pageNum, form.getQuery()));
 		return "views/admin/forum/groupTypeList";
 	}
-	
-
 
 }

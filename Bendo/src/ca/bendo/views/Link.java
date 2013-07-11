@@ -35,7 +35,7 @@ public class Link
 	 */
 	public Link()
 	{
-		// 
+		//
 	}
 
 	/**

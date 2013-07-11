@@ -25,7 +25,6 @@ import ca.bendo.db.entity.user.UserPermission;
 public class UserPermissionDAO extends HibernateDAO<UserPermission>
 {
 
-	
 	/**
 	 * Default contructor.
 	 */

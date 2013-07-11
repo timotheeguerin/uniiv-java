@@ -5,7 +5,6 @@ package ca.bendo.db.dao.professor;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +39,7 @@ public class ProfessorRatingTypeDAO extends HibernateDAO<ProfessorRatingType>
 	@SuppressWarnings("unchecked")
 	public List<ProfessorRatingType> listProfessorRatingType()
 	{
-		
+
 		return getSession().createCriteria(ProfessorRatingType.class).list();
 	}
 

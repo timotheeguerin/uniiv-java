@@ -3,8 +3,6 @@
  */
 package ca.bendo.db.dao.geolocation;
 
-import java.awt.image.RescaleOp;
-
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

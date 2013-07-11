@@ -136,7 +136,6 @@ public class UniversityRating
 		this.translation = translation;
 	}
 
-	
 	/**
 	 * @return the form
 	 */
@@ -146,7 +145,8 @@ public class UniversityRating
 	}
 
 	/**
-	 * @param form the form to set
+	 * @param form
+	 *            the form to set
 	 */
 	public void setForm(final UniversityRatingForm form)
 	{

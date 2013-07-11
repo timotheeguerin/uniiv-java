@@ -22,7 +22,7 @@ public class FilterSection
 	 * 
 	 */
 	private FilterSectionContent content;
-	
+
 	/**
 	 * 
 	 */

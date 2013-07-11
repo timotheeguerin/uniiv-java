@@ -3,7 +3,6 @@
  */
 package ca.bendo.db.dao.university;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -46,7 +45,7 @@ public class UniversityReviewRatingDAO extends HibernateDAO<UniversityReviewRati
 	 */
 	public double getUniversityRatingAverage(final long universityId, final long ratingId)
 	{
-		
+
 		Criterion restriction = Restrictions.and(Restrictions.eq("university.id", universityId),
 				Restrictions.eq("type.id", ratingId));
 		Double average = (Double) getSession().createCriteria(UniversityReviewRating.class)

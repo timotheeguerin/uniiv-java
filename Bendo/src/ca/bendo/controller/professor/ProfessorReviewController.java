@@ -49,8 +49,8 @@ public class ProfessorReviewController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/review/new", method = RequestMethod.GET)
-	public String professorReview(@PathVariable("profId") final long professorId,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public String professorReview(@PathVariable("profId") final long professorId, final HttpServletRequest request,
+			final HttpServletResponse response)
 	{
 		return newProfessorReviewPage(professorId, request, response);
 	}

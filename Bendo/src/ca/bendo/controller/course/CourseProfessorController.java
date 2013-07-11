@@ -84,8 +84,8 @@ public class CourseProfessorController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/courses/", method = RequestMethod.GET)
-	public String professorUniversity(@PathVariable("profId") final int professorId,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public String professorUniversity(@PathVariable("profId") final int professorId, final HttpServletRequest request,
+			final HttpServletResponse response)
 	{
 		// Translator translator = (Translator)
 		// request.getAttribute("translator");

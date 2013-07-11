@@ -8,8 +8,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
-import ca.bendo.db.entity.wiki.WikiPage;
-
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -75,8 +73,6 @@ public class WikiPageForm
 	public WikiPageForm()
 	{
 	}
-
-	
 
 	/**
 	 * @return the title

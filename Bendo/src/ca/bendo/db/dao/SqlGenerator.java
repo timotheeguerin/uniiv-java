@@ -3,7 +3,6 @@
  */
 package ca.bendo.db.dao;
 
-
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -22,7 +21,7 @@ public final class SqlGenerator
 	 */
 	private SqlGenerator()
 	{
-		// 
+		//
 	}
 
 	/**
@@ -51,15 +50,16 @@ public final class SqlGenerator
 		return "DELETE FROM " + escape(tableName) + "WHERE id_" + tableName + "= ?";
 	}
 
-	
 	/**
-	 * @param tableName Table containg element
+	 * @param tableName
+	 *            Table containg element
 	 * @return SQL statement select element with id given
 	 */
 	public static String selectFrom(final String tableName)
 	{
 		return "SELECT * FROM " + escape(tableName) + "WHERE id_" + tableName + "= ?";
 	}
+
 	/**
 	 * 
 	 * @param tableName
@@ -89,5 +89,4 @@ public final class SqlGenerator
 		}
 	}
 
-	
 }

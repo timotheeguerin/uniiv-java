@@ -116,7 +116,8 @@ public class UniversityOtherFees
 	}
 
 	/**
-	 * @param fees the fees to set
+	 * @param fees
+	 *            the fees to set
 	 */
 	public void setFees(final UniversityFees fees)
 	{

@@ -7,19 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Projection;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.vividsolutions.jts.geom.Point;
-
 import ca.bendo.controller.handler.geolocation.HeatmapPoint;
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
 import ca.bendo.db.entity.geolocation.UserGeolocationRating;
 import ca.bendo.db.entity.geolocation.UserGeolocationReview;
 

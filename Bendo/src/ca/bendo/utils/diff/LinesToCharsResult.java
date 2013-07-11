@@ -60,7 +60,8 @@ public class LinesToCharsResult
 	}
 
 	/**
-	 * @param chars1 the chars1 to set
+	 * @param chars1
+	 *            the chars1 to set
 	 */
 	public void setChars1(final String chars1)
 	{
@@ -76,7 +77,8 @@ public class LinesToCharsResult
 	}
 
 	/**
-	 * @param chars2 the chars2 to set
+	 * @param chars2
+	 *            the chars2 to set
 	 */
 	public void setChars2(final String chars2)
 	{
@@ -92,12 +94,12 @@ public class LinesToCharsResult
 	}
 
 	/**
-	 * @param lineArray the lineArray to set
+	 * @param lineArray
+	 *            the lineArray to set
 	 */
 	public void setLineArray(final List<String> lineArray)
 	{
 		this.lineArray = lineArray;
 	}
-	
-	
+
 }

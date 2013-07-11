@@ -5,7 +5,6 @@ package ca.bendo.db.dao.professor;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -45,7 +44,6 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorUniversity(final long professorId)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> unis = getSession().createCriteria(ProfessorUniversity.class)
@@ -62,7 +60,6 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorUniversity(final long professorId, final int maxResults)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> unis = getSession().createCriteria(ProfessorUniversity.class)
@@ -78,7 +75,6 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -95,7 +91,6 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId, final int maxResults)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -115,7 +110,6 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId, final int firstResult,
 			final int maxResults)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -133,7 +127,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public boolean professorIsAtUniversity(final long professorId, final long universityId)
 	{
-		
+
 		Criterion restrictions = Restrictions.and(Restrictions.eq("professor.id", professorId),
 				Restrictions.eq("university.id", universityId));
 
@@ -154,7 +148,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	public List<ProfessorUniversity> listProfessorInUniversityLikeMaxResults(final long universityId,
 			final String query, final int maxResults)
 	{
-		
+
 		String name = "%" + query + "%";
 		Criterion like = Restrictions.or(Restrictions.like("professor.firstName", name),
 				Restrictions.like("professor.lastName", name));

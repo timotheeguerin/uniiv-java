@@ -32,7 +32,7 @@ public final class FormErrorHandler
 	 */
 	private FormErrorHandler()
 	{
-		// 
+		//
 	}
 
 	/**

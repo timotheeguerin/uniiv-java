@@ -3,9 +3,6 @@
  */
 package ca.bendo.db.entity.geolocation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +12,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Formula;
 
 import ca.bendo.db.entity.lang.Translation;
-import ca.bendo.form.entity.FormItem;
 
 /**
  * @author Timothée Guérin
@@ -50,8 +46,6 @@ public class GeolocationRatingCriteria
 	 */
 	@Formula(Translation.FORMULA)
 	private String translation;
-
-	
 
 	/**
 	 * @return the id

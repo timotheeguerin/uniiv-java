@@ -115,7 +115,7 @@ public class Entity
 					e.printStackTrace();
 				} catch (SecurityException e)
 				{
-					
+
 					e.printStackTrace();
 				}
 
@@ -254,7 +254,7 @@ public class Entity
 
 				} catch (IllegalArgumentException e)
 				{
-					
+
 					e.printStackTrace();
 				} catch (IllegalAccessException e)
 				{

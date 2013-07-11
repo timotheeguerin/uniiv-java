@@ -4,7 +4,6 @@
 package ca.bendo.form.entity.geolocation;
 
 import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
 
@@ -100,7 +99,7 @@ public class GeoLocation
 	{
 		GeometryFactory geometryFactory = new GeometryFactory();
 
-		return (Point) geometryFactory.createPoint(new Coordinate(latitude,longitude ));
+		return (Point) geometryFactory.createPoint(new Coordinate(latitude, longitude));
 
 	}
 

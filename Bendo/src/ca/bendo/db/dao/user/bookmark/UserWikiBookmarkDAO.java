@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.user.bookmark.UserUniversityBookmark;
 import ca.bendo.db.entity.user.bookmark.UserWikiBookmark;
 
 /**

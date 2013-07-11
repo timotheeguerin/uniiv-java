@@ -60,7 +60,7 @@ public class CourseProfessorDAO extends HibernateDAO<CourseProfessor>
 		Criterion restriction = Restrictions.eq("course.id", courseId);
 		return (List<CourseProfessor>) getSession().createCriteria(CourseProfessor.class).add(restriction).list();
 	}
-	
+
 	/**
 	 * @param professorId
 	 *            professor id

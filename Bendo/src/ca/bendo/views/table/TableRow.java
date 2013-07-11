@@ -39,7 +39,7 @@ public class TableRow
 	 */
 	public TableRow()
 	{
-		// 
+		//
 	}
 
 	/**

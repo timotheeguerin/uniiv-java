@@ -1,7 +1,5 @@
 package ca.bendo.controller;
 
-import java.util.Properties;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -43,16 +41,9 @@ public class HomeController
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(final HttpServletRequest request, final HttpServletResponse response)
 	{
-		System.out.println("HomeController: Passing through...");
-
 		request.getAttribute("translator");
 		request.setAttribute("contentMargin", false);
 
-		Properties p = new Properties();
-		p.setProperty("test1", "test1value");
-		p.setProperty("test2", "test2value");
-
-		request.setAttribute("testp", p);
 		return "views/home";
 	}
 

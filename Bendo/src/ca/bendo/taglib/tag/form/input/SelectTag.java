@@ -15,14 +15,13 @@ import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>SelectTag</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>SelectTag</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 public class SelectTag extends TagSupport
 {
@@ -43,7 +42,7 @@ public class SelectTag extends TagSupport
 	 * 
 	 */
 	private Map<Object, String> options;
-	
+
 	@Override
 	public int doStartTag() throws JspException
 	{
@@ -67,7 +66,7 @@ public class SelectTag extends TagSupport
 		}
 		return SKIP_BODY;
 	}
-	
+
 	/**
 	 * @return the title
 	 */

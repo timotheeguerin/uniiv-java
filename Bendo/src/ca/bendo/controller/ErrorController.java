@@ -35,7 +35,7 @@ public class ErrorController
 	public String errorPage(@PathVariable final Integer errorId, final Model model)
 	{
 		model.addAttribute("errorId", errorId);
-		
+
 		return "views/errors/error" + errorId;
 	}
 }

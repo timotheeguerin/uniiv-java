@@ -3,18 +3,12 @@
  */
 package ca.bendo.db.dao.user;
 
-import java.util.List;
-
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.HibernateDAO;
-import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
-import ca.bendo.db.entity.wiki.WikiPage;
 
 /**
  * @author Timothée Guérin
