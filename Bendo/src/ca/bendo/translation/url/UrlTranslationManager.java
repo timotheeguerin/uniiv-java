@@ -136,15 +136,12 @@ public class UrlTranslationManager
 	 * 
 	 * @param url
 	 *            Url to translate
-	 * @param languageId
+	 * @param language
 	 *            language
 	 * @return Translated segment
 	 */
-	public String translateUrl(final String url, final long languageId)
+	public String translateUrl(final String url, final Language language)
 	{
-
-		Language language = languageDAO.getById(languageId);
-
 		StringBuilder uri = new StringBuilder();
 		String tmpUrl = url;
 		if (url.startsWith("/"))
@@ -161,7 +158,37 @@ public class UrlTranslationManager
 		}
 		uri.append("");
 
-		//System.out.println("Url sgement translate to : " + uri);
+		// System.out.println("Url sgement translate to : " + uri);
 		return uri.toString();
+	}
+
+	/**
+	 * Translate a segment.
+	 * 
+	 * @param url
+	 *            Url to translate
+	 * @param languageKey
+	 *            language
+	 * @return Translated segment
+	 */
+	public String translateUrl(final String url, final String languageKey)
+	{
+		Language language = languageDAO.getByKey(languageKey);
+		return translateUrl(url, language);
+	}
+
+	/**
+	 * Translate a segment.
+	 * 
+	 * @param url
+	 *            Url to translate
+	 * @param languageId
+	 *            language
+	 * @return Translated segment
+	 */
+	public String translateUrl(final String url, final long languageId)
+	{
+		Language language = languageDAO.getById(languageId);
+		return translateUrl(url, language);
 	}
 }

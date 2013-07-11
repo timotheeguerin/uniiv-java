@@ -139,6 +139,19 @@ public class Translator
 	}
 
 	/**
+	 * @param url
+	 *            Url to translate
+	 * @param languageId
+	 *            Language id
+	 * @return url translated
+	 */
+	public String translateUrl(final String url)
+	{
+		Locale locale = LocaleContextHolder.getLocale();
+		return urlTranslationManager.translateUrl(url, locale.getDisplayName());
+	}
+
+	/**
 	 * @param langId
 	 *            Id of the language
 	 * @return the language

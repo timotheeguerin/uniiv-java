@@ -97,7 +97,7 @@ public class EmailController
 		if (session.getUser() == null)
 		{
 			JsonQuery json = new JsonQuery();
-			json.getErrors().add(translator.translate("error.login", languageId));
+			json.getErrors().add(translator.translate("error.login"));
 			return json;
 		}
 
