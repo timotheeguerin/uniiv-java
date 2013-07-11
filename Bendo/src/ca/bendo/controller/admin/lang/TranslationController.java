@@ -39,7 +39,7 @@ public class TranslationController
 	 */
 	@Autowired
 	private TranslationsDAO translationDAO;
-	
+
 	/**
 	 * 
 	 */
@@ -58,17 +58,19 @@ public class TranslationController
 	{
 		TableForm form = new TableForm();
 		form.load(request);
-		
-		//List<Translation> translations = translationDAO.search(form.getQuery(), form.getFirstResult(), form.getResultPerPage());
+
+		// List<Translation> translations =
+		// translationDAO.search(form.getQuery(), form.getFirstResult(),
+		// form.getResultPerPage());
 		List<Translation> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
 		request.setAttribute("translations", translations);
 		int pageNum = (int) translationDAO.searchCount(form.getQuery()) / form.getResultPerPage() + 1;
-		
+
 		request.setAttribute("tableUtils", new FilterForm(form.getPage(), pageNum, form.getQuery()));
-		
+
 		return "views/admin/translation/list";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -80,25 +82,25 @@ public class TranslationController
 	{
 		TableForm form = new TableForm();
 		form.load(request);
-		
+
 		request.setAttribute("key", form.getQuery());
-		
+
 		Map<Long, Translation> translations = translationDAO.getTranslationsWithKey(form.getQuery());
 		request.setAttribute("translations", translations);
-		
+
 		List<Language> languages = languageDAO.listLanguages();
 		request.setAttribute("languages", languages);
-		
+
 		return "views/admin/translation/show";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
 	 *            Request
 	 * @return Jsp page
 	 */
-	//@Secured("admin")
+	// @Secured("admin")
 	@Transactional
 	@RequestMapping(value = "/admin/translation/edit", method = RequestMethod.GET)
 	public String edit(final HttpServletRequest request)
@@ -106,24 +108,24 @@ public class TranslationController
 		TableForm form = new TableForm();
 		form.load(request);
 
-		for(Language language: languageDAO.listLanguages())
+		for (Language language : languageDAO.listLanguages())
 		{
-			Translation t = translationDAO.getTranslation(request.getParameter("key"),language.getId());
-			if(t == null)
+			Translation t = translationDAO.getTranslation(request.getParameter("key"), language.getId());
+			if (t == null)
 			{
 				t = new Translation();
 				t.setKey(request.getParameter("key"));
 				t.setLanguage(language);
 			}
-			
+
 			t.setTranslation(request.getParameter(Long.toString(language.getId())));
-			
+
 			translationDAO.saveOrUpdate(t);
 		}
-		
+
 		return "views/admin/translation/edit";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -132,10 +134,10 @@ public class TranslationController
 	 */
 	@RequestMapping(value = "/admin/translation/", method = RequestMethod.GET)
 	public String index(final HttpServletRequest request)
-	{		
+	{
 		return "views/admin/translation/index";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -144,10 +146,10 @@ public class TranslationController
 	 */
 	@RequestMapping(value = "/admin/translation/add", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
-	{		
+	{
 		return "views/admin/translation/add";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -157,9 +159,9 @@ public class TranslationController
 	@Transactional
 	@RequestMapping(value = "/admin/translation/insert", method = RequestMethod.GET)
 	public String insert(final HttpServletRequest request)
-	{	
+	{
 		String key = request.getParameter("key");
-		for(Language l: languageDAO.listLanguages())
+		for (Language l : languageDAO.listLanguages())
 		{
 			Translation t = new Translation();
 			t.setKey(key);

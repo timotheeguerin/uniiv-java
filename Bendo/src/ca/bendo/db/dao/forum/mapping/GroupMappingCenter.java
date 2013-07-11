@@ -8,14 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>GroupMappingCenter</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>GroupMappingCenter</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Service
 @Transactional

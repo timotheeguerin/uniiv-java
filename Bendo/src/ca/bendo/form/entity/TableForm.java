@@ -88,7 +88,6 @@ public class TableForm
 	{
 		return page * resultPerPage;
 	}
-	
 
 	/**
 	 * @return the page

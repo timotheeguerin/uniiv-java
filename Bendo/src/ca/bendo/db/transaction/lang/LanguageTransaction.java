@@ -49,12 +49,12 @@ public class LanguageTransaction
 	}
 
 	/**
-	 * @param languageDAO the languageDAO to set
+	 * @param languageDAO
+	 *            the languageDAO to set
 	 */
 	public void setLanguageDAO(final LanguageDAO languageDAO)
 	{
 		this.languageDAO = languageDAO;
 	}
-	
-	
+
 }

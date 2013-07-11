@@ -15,37 +15,51 @@ import javax.persistence.Table;
 
 /**
  * @author toby
- * @version Bendo 
-
- * <b>Wiki</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>Wiki</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Entity
 @Table(name = "wiki_comment")
 public class WikiComment
 {
+	/**
+	 * 
+	 */
 	@Id
 	@GeneratedValue
 	@Column(name = "id_wiki_comment")
 	private long id;
-	
+
+	/**
+	 * 
+	 */
 	@Column(name = "comment")
 	private long content;
-	
+
+	/**
+	 * 
+	 */
 	@Column(name = "date_created")
 	private Date dateCreated;
-	
+
+	/**
+	 * 
+	 */
 	@Column(name = "last_edited")
 	private Date dateEdited;
 
+	/**
+	 * 
+	 */
 	@ManyToOne
 	@JoinColumn(name = "id_wiki_page")
 	private WikiPage wiki;
-	
+
 	/**
 	 * @return the parent
 	 */
@@ -57,56 +71,68 @@ public class WikiComment
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public long getId()
+	{
 		return id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
-	public void setId(long id) {
+	public void setId(final long id)
+	{
 		this.id = id;
 	}
 
 	/**
 	 * @return the content
 	 */
-	public long getContent() {
+	public long getContent()
+	{
 		return content;
 	}
 
 	/**
-	 * @param content the content to set
+	 * @param content
+	 *            the content to set
 	 */
-	public void setContent(long content) {
+	public void setContent(final long content)
+	{
 		this.content = content;
 	}
 
 	/**
 	 * @return the dateCreated
 	 */
-	public Date getDateCreated() {
+	public Date getDateCreated()
+	{
 		return dateCreated;
 	}
 
 	/**
-	 * @param dateCreated the dateCreated to set
+	 * @param dateCreated
+	 *            the dateCreated to set
 	 */
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(final Date dateCreated)
+	{
 		this.dateCreated = dateCreated;
 	}
 
 	/**
 	 * @return the dateEdited
 	 */
-	public Date getDateEdited() {
+	public Date getDateEdited()
+	{
 		return dateEdited;
 	}
 
 	/**
-	 * @param dateEdited the dateEdited to set
+	 * @param dateEdited
+	 *            the dateEdited to set
 	 */
-	public void setDateEdited(Date dateEdited) {
+	public void setDateEdited(final Date dateEdited)
+	{
 		this.dateEdited = dateEdited;
 	}
 }

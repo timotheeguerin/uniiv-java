@@ -4,7 +4,6 @@
 package ca.bendo.controller.handler.wiki;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -94,9 +93,8 @@ public class WikiRevisionService
 		String line = "";
 		try
 		{
-			BufferedReader in = new BufferedReader(new InputStreamReader(
-				    getClass().getClassLoader().getResourceAsStream(
-				            filename)));
+			BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getClassLoader()
+					.getResourceAsStream(filename)));
 			while ((line = in.readLine()) != null)
 			{
 				result.append(line).append("\n");

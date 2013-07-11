@@ -5,7 +5,6 @@ package ca.bendo.db.dao.university;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -43,7 +42,6 @@ public class UniversityReviewDAO extends HibernateDAO<UniversityReview>
 	 */
 	public List<UniversityReview> getUniversityReview(final long universityId)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<UniversityReview> profs = getSession().createCriteria(UniversityReview.class)
@@ -76,7 +74,6 @@ public class UniversityReviewDAO extends HibernateDAO<UniversityReview>
 	 */
 	public List<UniversityReview> listLastUniversityReview(final long universityId, final int start, final int amount)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<UniversityReview> profs = getSession().createCriteria(UniversityReview.class)

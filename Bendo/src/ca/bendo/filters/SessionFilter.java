@@ -87,7 +87,7 @@ public class SessionFilter extends IFilter
 	public String doFilter(final HttpServletRequest request, final ServletResponse response, final String currentUrl)
 			throws IOException, ServletException
 	{
-		
+
 		UserSession userSession = new UserSession();
 		userSession.loadSession(request);
 		sessionHandler.reloadUser(userSession);
@@ -105,7 +105,7 @@ public class SessionFilter extends IFilter
 	public void loginUserFromCookie(final HttpServletRequest request)
 	{
 		Cookie[] cookies = request.getCookies();
-		if(cookies == null)
+		if (cookies == null)
 		{
 			return;
 		}

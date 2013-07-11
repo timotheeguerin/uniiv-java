@@ -49,7 +49,7 @@ public class TLinkTag extends TagSupport
 			out.print(result);
 		} catch (IOException e)
 		{
-			
+
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

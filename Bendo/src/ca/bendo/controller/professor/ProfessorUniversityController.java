@@ -72,8 +72,8 @@ public class ProfessorUniversityController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/professor/{profId}/universities/", method = RequestMethod.GET)
-	public String professorUniversity(@PathVariable("profId") final int professorId,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public String professorUniversity(@PathVariable("profId") final int professorId, final HttpServletRequest request,
+			final HttpServletResponse response)
 	{
 		// Translator translator = (Translator)
 		// request.getAttribute("translator");
@@ -89,8 +89,6 @@ public class ProfessorUniversityController
 		}
 
 	}
-
-
 
 	/**
 	 * Get the request after filling inputs and submit of login.

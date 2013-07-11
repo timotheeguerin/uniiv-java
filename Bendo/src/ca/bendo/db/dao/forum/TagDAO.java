@@ -42,8 +42,7 @@ public class TagDAO extends HibernateDAO<Tag>
 	 */
 	public Tag getTag(final String tagName)
 	{
-		Tag tag = (Tag) getSession().createCriteria(Tag.class).add(Restrictions.eq("name", tagName))
-				.uniqueResult();
+		Tag tag = (Tag) getSession().createCriteria(Tag.class).add(Restrictions.eq("name", tagName)).uniqueResult();
 		if (tag == null)
 		{
 			tag = new Tag();

@@ -32,9 +32,6 @@ import ca.bendo.form.handler.forum.ForumReplyHandler;
 public class ForumReplyController
 {
 
-
-
-
 	/**
 	 * 
 	 */
@@ -71,9 +68,10 @@ public class ForumReplyController
 		System.out.println("E: " + replyEntity.getContent());
 		System.out.println("QUESTION REPLY");
 
-//		Set<ConstraintViolation<ForumReplyEntity>> constraintViolations = validator.validate(replyEntity);
-//
-//		System.out.println(constraintViolations.iterator().next().getMessage());
+		// Set<ConstraintViolation<ForumReplyEntity>> constraintViolations =
+		// validator.validate(replyEntity);
+		//
+		// System.out.println(constraintViolations.iterator().next().getMessage());
 
 		// If the form has error
 		if (result.hasErrors())

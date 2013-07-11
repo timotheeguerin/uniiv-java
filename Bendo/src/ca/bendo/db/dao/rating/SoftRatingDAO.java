@@ -6,7 +6,6 @@ package ca.bendo.db.dao.rating;
 import java.util.Collection;
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 

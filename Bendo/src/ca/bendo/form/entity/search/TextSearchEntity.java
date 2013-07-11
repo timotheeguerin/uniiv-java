@@ -34,11 +34,12 @@ public class TextSearchEntity extends Entity
 	}
 
 	/**
-	 * @param query the query to set
+	 * @param query
+	 *            the query to set
 	 */
 	public void setQuery(final String query)
 	{
 		this.query = query;
 	}
-	
+
 }

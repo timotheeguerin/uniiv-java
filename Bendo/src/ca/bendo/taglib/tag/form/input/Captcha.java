@@ -46,7 +46,7 @@ public class Captcha extends TagSupport
 
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
 		Long languageId = (Long) pageContext.getRequest().getAttribute("languageId");
-		
+
 		ReCaptcha captcha = ReCaptchaFactory.newReCaptcha(FieldValidator.CAPTCHA_PUBLIC,
 				FieldValidator.CAPTCHA_PRIVATE, false);
 
@@ -63,7 +63,7 @@ public class Captcha extends TagSupport
 			out.println(result);
 		} catch (IOException e)
 		{
-			// 
+			//
 			e.printStackTrace();
 		}
 		return SKIP_BODY;

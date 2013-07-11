@@ -34,7 +34,7 @@ public class AlertMessageFilter extends IFilter
 	 */
 	public AlertMessageFilter()
 	{
-		// 
+		//
 	}
 
 	/*
@@ -88,7 +88,7 @@ public class AlertMessageFilter extends IFilter
 	@Override
 	public void destroy()
 	{
-		// 
+		//
 
 	}
 

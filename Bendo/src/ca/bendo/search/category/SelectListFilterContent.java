@@ -3,7 +3,6 @@
  */
 package ca.bendo.search.category;
 
-
 import ca.bendo.search.FilterElement;
 
 /**
@@ -23,8 +22,10 @@ public class SelectListFilterContent extends FilterSectionContent
 	 * 
 	 */
 	private FilterElement content = new FilterElement();
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ca.bendo.search.category.FilterSectionContent#init()
 	 */
 	@Override
@@ -32,7 +33,7 @@ public class SelectListFilterContent extends FilterSectionContent
 	{
 		setFilename("views/search/filter/category/selectlist.jsp");
 	}
-	
+
 	/**
 	 * @return the content
 	 */
@@ -40,23 +41,24 @@ public class SelectListFilterContent extends FilterSectionContent
 	{
 		return content;
 	}
+
 	/**
-	 * @param content the content to set
+	 * @param content
+	 *            the content to set
 	 */
 	public void setContent(final FilterElement content)
 	{
 		this.content = content;
 	}
+
 	/**
-	 * @param e element to add
+	 * @param e
+	 *            element to add
 	 */
 	public void addSubElement(final FilterElement e)
 	{
 		content.addSubElement(e);
-		
+
 	}
-
-
-
 
 }

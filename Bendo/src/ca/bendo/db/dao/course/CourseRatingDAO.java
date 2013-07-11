@@ -5,7 +5,6 @@ package ca.bendo.db.dao.course;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
@@ -72,7 +71,7 @@ public class CourseRatingDAO extends HibernateDAO<CourseRating>
 	 */
 	public double getCourseAverage(final long courseId)
 	{
-		
+
 		double average = (Double) getSession().createCriteria(CourseRating.class).createAlias("review", "review")
 				.createAlias("type", "type").createAlias("review.course", "course")
 				.add(Restrictions.eq("course.id", courseId))

@@ -20,7 +20,7 @@ import ca.bendo.translation.translation.Translator;
  */
 public class PasswordInput extends InputElement
 {
-	
+
 	/**
 	 * @param translator
 	 *            Translator
@@ -30,6 +30,6 @@ public class PasswordInput extends InputElement
 	public PasswordInput(final Translator translator, final PageContext pageContext)
 	{
 		super(translator, pageContext);
-		
+
 	}
 }

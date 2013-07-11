@@ -145,13 +145,12 @@ public class UserGeolocationReview
 	}
 
 	/**
-	 * @param universityId the universityId to set
+	 * @param universityId
+	 *            the universityId to set
 	 */
 	public void setUniversityId(final long universityId)
 	{
 		this.universityId = universityId;
 	}
-	
-	
 
 }

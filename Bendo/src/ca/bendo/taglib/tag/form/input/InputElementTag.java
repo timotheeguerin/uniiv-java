@@ -14,14 +14,13 @@ import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>InputElementTag</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>InputElementTag</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 public class InputElementTag extends TagSupport
 {
@@ -44,7 +43,8 @@ public class InputElementTag extends TagSupport
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(final String name)
 	{
@@ -60,7 +60,8 @@ public class InputElementTag extends TagSupport
 	}
 
 	/**
-	 * @param type the type to set
+	 * @param type
+	 *            the type to set
 	 */
 	public void setType(final String type)
 	{
@@ -76,7 +77,8 @@ public class InputElementTag extends TagSupport
 	}
 
 	/**
-	 * @param value the value to set
+	 * @param value
+	 *            the value to set
 	 */
 	public void setValue(final String value)
 	{
@@ -92,7 +94,8 @@ public class InputElementTag extends TagSupport
 	}
 
 	/**
-	 * @param title the title to set
+	 * @param title
+	 *            the title to set
 	 */
 	public void setTitle(final String title)
 	{
@@ -108,7 +111,8 @@ public class InputElementTag extends TagSupport
 	}
 
 	/**
-	 * @param needValidation the needValidation to set
+	 * @param needValidation
+	 *            the needValidation to set
 	 */
 	public void setNeedValidation(final boolean needValidation)
 	{
@@ -133,7 +137,7 @@ public class InputElementTag extends TagSupport
 	 * 
 	 */
 	private boolean needValidation = false;
-	
+
 	@Override
 	public int doStartTag() throws JspException
 	{
@@ -154,7 +158,7 @@ public class InputElementTag extends TagSupport
 			e.setTitle(title);
 			e.setType(type);
 			e.setValue(value);
-			
+
 			out.println(e.render());
 
 		} catch (IOException e)
@@ -163,5 +167,5 @@ public class InputElementTag extends TagSupport
 		}
 		return SKIP_BODY;
 	}
-	
+
 }

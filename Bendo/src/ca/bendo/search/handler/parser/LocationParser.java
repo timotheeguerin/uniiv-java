@@ -61,11 +61,11 @@ public class LocationParser extends ParameterParser
 
 				} else
 				{
-					
+
 					// If there is only the country
 					if (FieldValidator.isInt(s))
 					{
-						
+
 						countries.add(Long.parseLong(s));
 					}
 				}

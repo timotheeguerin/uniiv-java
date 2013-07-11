@@ -5,7 +5,6 @@ package ca.bendo.db.dao.language;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,7 +41,7 @@ public class UniversityLanguageDAO extends HibernateDAO<UniversityLanguage>
 	@SuppressWarnings("unchecked")
 	public List<UniversityLanguage> listUniversityLanguage()
 	{
-		
+
 		return getSession().createCriteria(UniversityLanguage.class).addOrder(Order.asc("translation")).list();
 	}
 

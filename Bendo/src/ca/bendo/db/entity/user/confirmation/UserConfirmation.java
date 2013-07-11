@@ -140,13 +140,12 @@ public class UserConfirmation
 	}
 
 	/**
-	 * @param date the date to set
+	 * @param date
+	 *            the date to set
 	 */
 	public void setDate(final Date date)
 	{
 		this.date = date;
 	}
-	
-	
 
 }

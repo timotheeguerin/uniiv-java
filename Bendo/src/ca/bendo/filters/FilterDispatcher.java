@@ -84,7 +84,6 @@ public class FilterDispatcher implements Filter
 		url = sessionFilter.doFilter(hsRequest, response, url);
 		url = alertManagerFilter.doFilter(hsRequest, response, url);
 
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

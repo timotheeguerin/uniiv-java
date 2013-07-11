@@ -53,8 +53,6 @@ public class ProfessorRating
 	@Column(name = "value")
 	private double value;
 
-	
-
 	/**
 	 * @return the id
 	 */

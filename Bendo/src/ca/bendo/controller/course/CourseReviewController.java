@@ -79,7 +79,6 @@ public class CourseReviewController
 			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
-		Long languageId = Language.loadId(request);
 		if (UserSession.getSession(request).hasPermission("user"))
 		{
 
@@ -87,7 +86,7 @@ public class CourseReviewController
 			{
 				String url = "/university/" + universityId + "/course/" + courseId;
 				String param = "?alertmsg=alert_info_review_added";
-				return "redirect:" + translator.translateUrl(url + param, languageId);
+				return "redirect:" + translator.translateUrl(url + param);
 			} else
 			{
 				request.setAttribute("new_review_form_error", true);
@@ -110,8 +109,8 @@ public class CourseReviewController
 	 *            Response
 	 * @return Jsp page
 	 */
-	public String newCourseReviewPage(final long universityId, final long courseId,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public String newCourseReviewPage(final long universityId, final long courseId, final HttpServletRequest request,
+			final HttpServletResponse response)
 	{
 		UserWarning.needValidUser(request);
 		Translator translator = (Translator) request.getAttribute("translator");

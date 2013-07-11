@@ -151,7 +151,7 @@ public class CourseProfessorHandler
 
 		List<CourseProfessor> professors = courseProfessorDAO.listCourseProfessor(courseId);
 		List<ProfessorRatingType> types = professorRatingTypeDAO.listProfessorRatingType();
-		
+
 		// Setup Table
 		ProfessorTable table = new ProfessorTable(types);
 		TableTopCell periodHeaderCell = new TableTopCell("period", "views/university/course/semesterSentence.jsp");

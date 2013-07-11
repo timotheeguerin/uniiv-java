@@ -33,7 +33,8 @@ public class UserStateDAO extends HibernateDAO<UserState>
 
 	/**
 	 * 
-	 * @param string String
+	 * @param string
+	 *            String
 	 * @return the state with the state name given
 	 */
 	public UserState getByState(final String string)

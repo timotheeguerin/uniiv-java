@@ -6,7 +6,6 @@ package ca.bendo.db.dao.university;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Filter;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -45,7 +44,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	@SuppressWarnings("unchecked")
 	public List<University> listUniversities()
 	{
-		
+
 		return (List<University>) getSession().createCriteria(University.class).addOrder(Order.asc("name")).list();
 	}
 
@@ -57,7 +56,6 @@ public class UniversityDAO extends HibernateDAO<University>
 	@SuppressWarnings("unchecked")
 	public List<University> filter(final UniversityQuery query)
 	{
-		
 
 		Criteria criteria = getSession().createCriteria(University.class);
 		query.setupQuery(criteria);
@@ -65,9 +63,6 @@ public class UniversityDAO extends HibernateDAO<University>
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		return listByIds(ids);
 	}
-
-	
-
 
 	/**
 	 * @param universityName
@@ -78,7 +73,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	public List<University> listUniversityLike(final String universityName)
 	{
 		String like = "%" + universityName + "%";
-		
+
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
@@ -96,7 +91,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	public List<University> listUniversityLikeMaxResults(final String universityName, final int maxResults)
 	{
 		String like = "%" + universityName + "%";
-		
+
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
@@ -118,7 +113,7 @@ public class UniversityDAO extends HibernateDAO<University>
 			final int maxResults)
 	{
 		String like = "%" + universityName + "%";
-		
+
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setFirstResult(firstResult).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();

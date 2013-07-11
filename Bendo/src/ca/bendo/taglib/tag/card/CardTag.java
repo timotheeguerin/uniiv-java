@@ -56,7 +56,7 @@ public class CardTag extends TagSupport
 			pageContext.include(getFile());
 		} catch (ServletException e)
 		{
-			
+
 			e.printStackTrace();
 		} catch (IOException e)
 		{

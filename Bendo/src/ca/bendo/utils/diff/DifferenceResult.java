@@ -77,7 +77,6 @@ public class DifferenceResult
 		return text.toString();
 	}
 
-	
 	/**
 	 * @return the differences
 	 */

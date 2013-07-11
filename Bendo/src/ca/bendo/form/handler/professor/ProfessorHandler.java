@@ -173,7 +173,7 @@ public class ProfessorHandler
 		}
 		request.setAttribute("universities", universityList);
 
-		//Load the last 5 reviews
+		// Load the last 5 reviews
 		List<ProfessorReview> reviews = professorReviewDAO.listLastProfessorReview(professorId, PROF_PAGE_MAX_REVIEW);
 		request.setAttribute("reviews", reviews);
 		setupProfessorLinks(professorId, request);

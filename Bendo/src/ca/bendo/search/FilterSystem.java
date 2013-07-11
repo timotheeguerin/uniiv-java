@@ -25,15 +25,15 @@ public class FilterSystem
 	 */
 	private List<FilterSection> categories = new ArrayList<FilterSection>();
 
-	
 	/**
 	 * 
 	 */
 	private FilterSection softrating;
-	
+
 	/**
 	 * 
-	 * @param category Category to add
+	 * @param category
+	 *            Category to add
 	 */
 	public void addCategory(final FilterSection category)
 	{
@@ -66,7 +66,8 @@ public class FilterSystem
 	}
 
 	/**
-	 * @param softRatingFilterCategory the softrating to set
+	 * @param softRatingFilterCategory
+	 *            the softrating to set
 	 */
 	public void setSoftrating(final FilterSection softRatingFilterCategory)
 	{

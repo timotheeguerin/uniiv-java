@@ -30,7 +30,7 @@ public class HashedPassword
 	 */
 	public HashedPassword()
 	{
-		// 
+		//
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class HashedPassword
 	@Override
 	public int hashCode()
 	{
-		
+
 		return super.hashCode();
 	}
 }

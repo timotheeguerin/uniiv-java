@@ -16,12 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.controller.handler.wiki.WikiHandler;
 import ca.bendo.controller.interceptor.annotation.Title;
-import ca.bendo.db.dao.forum.FormattedContentDAO;
-import ca.bendo.db.dao.forum.TagDAO;
-import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
 import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
 import ca.bendo.db.dao.wiki.WikiPageDAO;
-import ca.bendo.db.dao.wiki.WikiRevisionDAO;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.wiki.WikiPage;
 import ca.bendo.form.entity.wiki.WikiPageEditForm;

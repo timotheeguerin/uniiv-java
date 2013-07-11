@@ -5,7 +5,6 @@ package ca.bendo.db.dao.location;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

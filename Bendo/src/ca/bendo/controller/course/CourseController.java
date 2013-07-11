@@ -104,8 +104,8 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "university/{uniId}/course/new", method = RequestMethod.POST)
-	public String submitNewProfessor(@PathVariable("uniId") final long universityId,
-			final HttpServletRequest request, final HttpServletResponse response)
+	public String submitNewProfessor(@PathVariable("uniId") final long universityId, final HttpServletRequest request,
+			final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
@@ -178,8 +178,7 @@ public class CourseController
 	 * @return Jsp page
 	 */
 	@RequestMapping(value = "/course/new", method = RequestMethod.POST)
-	public String handleNewCourseSelectUniversity(final HttpServletRequest request,
-			final HttpServletResponse response)
+	public String handleNewCourseSelectUniversity(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		Translator translator = (Translator) request.getAttribute("translator");
 		Long languageId = Language.loadId(request);

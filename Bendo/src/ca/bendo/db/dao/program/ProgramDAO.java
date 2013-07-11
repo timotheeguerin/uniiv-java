@@ -5,7 +5,6 @@ package ca.bendo.db.dao.program;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,9 +41,8 @@ public class ProgramDAO extends HibernateDAO<Program>
 	@SuppressWarnings("unchecked")
 	public List<Program> listPrograms()
 	{
-		
-		return (List<Program>) getSession().createCriteria(Program.class)
-				.addOrder(Order.asc("translation")).list();
+
+		return (List<Program>) getSession().createCriteria(Program.class).addOrder(Order.asc("translation")).list();
 	}
 
 }

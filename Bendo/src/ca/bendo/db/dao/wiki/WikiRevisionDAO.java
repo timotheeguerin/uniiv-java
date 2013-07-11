@@ -5,7 +5,6 @@ package ca.bendo.db.dao.wiki;
 
 import java.util.List;
 
-import org.eclipse.jdt.internal.compiler.flow.FinallyFlowContext;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;

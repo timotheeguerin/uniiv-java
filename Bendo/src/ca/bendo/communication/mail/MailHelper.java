@@ -221,8 +221,7 @@ public class MailHelper
 	 * @param filesnames
 	 *            names of the file to be joined
 	 */
-	public void send(final String recipients, final String subject, final String message,
-			final List<String> filesnames)
+	public void send(final String recipients, final String subject, final String message, final List<String> filesnames)
 	{
 		if (recipients == null || subject == null || message == null)
 		{

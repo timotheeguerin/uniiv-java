@@ -76,12 +76,11 @@ public class TextSearchController
 	 */
 	@RequestMapping(value = "/university/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public AutoCompleteJson universityListAjax(final HttpServletRequest request,
-			final HttpServletResponse response)
+	public AutoCompleteJson universityListAjax(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return searchHandler.setupUniversityAjaxList(request);
 	}
-	
+
 	/**
 	 * Get the request after filling inputs and submit of login.
 	 * 
@@ -93,8 +92,7 @@ public class TextSearchController
 	 */
 	@RequestMapping(value = "/all/ajaxlist", method = RequestMethod.GET)
 	@ResponseBody
-	public AutoCompleteJson allListAjax(final HttpServletRequest request,
-			final HttpServletResponse response)
+	public AutoCompleteJson allListAjax(final HttpServletRequest request, final HttpServletResponse response)
 	{
 		return searchHandler.setupAjaxList(request);
 	}

@@ -142,7 +142,7 @@ public class WikiHandler
 		}
 
 		return new WikiPageEditForm(page);
-	}	
+	}
 
 	/**
 	 * @param wikiId

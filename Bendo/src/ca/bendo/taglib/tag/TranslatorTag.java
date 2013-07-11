@@ -127,11 +127,12 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	}
 
 	/**
-	 * @param var the var to set
+	 * @param var
+	 *            the var to set
 	 */
 	public void setVar(final String var)
 	{
 		this.var = var;
 	}
-	
+
 }

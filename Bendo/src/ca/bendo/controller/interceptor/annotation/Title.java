@@ -10,14 +10,13 @@ import java.lang.annotation.Target;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>Title</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>Title</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

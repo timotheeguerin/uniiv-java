@@ -5,7 +5,6 @@ package ca.bendo.db.dao.course;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -36,6 +35,7 @@ public class CourseReviewDAO extends HibernateDAO<CourseReview>
 		setType(CourseReview.class);
 
 	}
+
 	/**
 	 * @param courseId
 	 *            Course Id
@@ -48,7 +48,7 @@ public class CourseReviewDAO extends HibernateDAO<CourseReview>
 				.add(Restrictions.eq("course.id", courseId)).list();
 		return profs;
 	}
-	
+
 	/**
 	 * @param amount
 	 *            return a list with a maximum of amount review

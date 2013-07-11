@@ -5,7 +5,6 @@ package ca.bendo.db.dao.course;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;

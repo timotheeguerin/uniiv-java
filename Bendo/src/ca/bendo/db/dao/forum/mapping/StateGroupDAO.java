@@ -8,14 +8,13 @@ import ca.bendo.db.entity.forum.mapping.StateGroup;
 
 /**
  * @author Timothée Guérin
- * @version Bendo 
-
- * <b>CityGroupDAO</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>CityGroupDAO</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 public class StateGroupDAO extends HibernateDAO<StateGroup>
 {

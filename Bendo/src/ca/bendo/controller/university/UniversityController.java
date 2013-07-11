@@ -35,7 +35,7 @@ import ca.bendo.session.UserSession;
 @Controller
 public class UniversityController
 {
-	
+
 	/**
 	 * 
 	 */
@@ -71,17 +71,17 @@ public class UniversityController
 		{
 			return "views/errors/error404";
 		}
-		if(UserSession.getSession(request).isLogin())
+		if (UserSession.getSession(request).isLogin())
 		{
 			User user = UserSession.getSession(request).getUser();
 			boolean bookmarked = false;
-			if(userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId) != null)
+			if (userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId) != null)
 			{
 				bookmarked = true;
 			}
 			request.setAttribute("watched", bookmarked);
 		}
-		
+
 		return "views/university/university";
 	}
 

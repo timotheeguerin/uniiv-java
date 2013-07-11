@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import ca.bendo.db.entity.wiki.ContentDifference;
-import ca.bendo.db.entity.wiki.WikiRevision;
 import ca.bendo.utils.MarkdownUtils;
 
 /**

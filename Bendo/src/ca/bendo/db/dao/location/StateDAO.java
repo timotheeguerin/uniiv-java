@@ -5,7 +5,6 @@ package ca.bendo.db.dao.location;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +40,7 @@ public class StateDAO extends HibernateDAO<State>
 	@SuppressWarnings("unchecked")
 	public List<State> listStates()
 	{
-		
+
 		return (List<State>) getSession().createCriteria(State.class).list();
 	}
 
@@ -52,7 +51,6 @@ public class StateDAO extends HibernateDAO<State>
 	 */
 	public List<State> getStateInCountry(final long idCanada)
 	{
-		
 
 		@SuppressWarnings("unchecked")
 		List<State> states = getSession().createCriteria(State.class).add(Restrictions.eq("country.id", idCanada))

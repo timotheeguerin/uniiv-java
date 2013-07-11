@@ -23,16 +23,17 @@ public class FilterSectionTabs extends FilterSectionContent
 	 */
 	private Map<String, FilterSectionContent> tabs = new HashMap<String, FilterSectionContent>();
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ca.bendo.search.category.FilterSectionContent#init()
 	 */
 	@Override
 	protected void init()
 	{
-		setFilename("views/search/filter/category/tabs.jsp");	
+		setFilename("views/search/filter/category/tabs.jsp");
 	}
 
-	
 	/**
 	 * @return the tabs
 	 */
@@ -50,5 +51,4 @@ public class FilterSectionTabs extends FilterSectionContent
 		this.tabs = tabs;
 	}
 
-	
 }

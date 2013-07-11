@@ -32,13 +32,12 @@ public class LoginFormValidator extends FormValidator
 	 * DAO to connect to the user table.
 	 */
 
-
 	/**
 	 * 
 	 */
 	public LoginFormValidator()
 	{
-		// 
+		//
 	}
 
 	/*
@@ -80,18 +79,17 @@ public class LoginFormValidator extends FormValidator
 	private boolean checkLogin(final String username, final String password)
 	{
 
-//		Member tmpUser = getUserDao().authentificate(username, password);
-//		if (tmpUser == null)
-//		{
-//			return false;
-//		} else
-//		{
-//			setUser(tmpUser);
-//			return true;
-//		}
-		
+		// Member tmpUser = getUserDao().authentificate(username, password);
+		// if (tmpUser == null)
+		// {
+		// return false;
+		// } else
+		// {
+		// setUser(tmpUser);
+		// return true;
+		// }
+
 		return false;
 	}
-
 
 }

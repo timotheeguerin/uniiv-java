@@ -5,7 +5,6 @@ package ca.bendo.db.dao.professor;
 
 import java.util.List;
 
-import org.hibernate.Filter;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
@@ -81,7 +80,6 @@ public class ProfessorRatingDAO extends HibernateDAO<ProfessorRating>
 	 */
 	public double getProfessorAverage(final long professorId)
 	{
-		
 
 		Double average = (Double) getSession().createCriteria(ProfessorRating.class).createAlias("review", "review")
 				.createAlias("type", "type").createAlias("review.professor", "professor")

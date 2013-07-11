@@ -76,8 +76,8 @@ public class MultiLanguageFilter extends IFilter
 	 * , javax.servlet.ServletResponse, java.lang.String)
 	 */
 	@Override
-	public String doFilter(final HttpServletRequest request, final ServletResponse response,
-			final String currentUrl) throws IOException, ServletException
+	public String doFilter(final HttpServletRequest request, final ServletResponse response, final String currentUrl)
+			throws IOException, ServletException
 	{
 
 		String url = currentUrl;
