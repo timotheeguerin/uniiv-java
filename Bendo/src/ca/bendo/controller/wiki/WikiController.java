@@ -18,11 +18,15 @@ import ca.bendo.controller.handler.wiki.WikiHandler;
 import ca.bendo.controller.interceptor.annotation.Title;
 import ca.bendo.db.dao.forum.FormattedContentDAO;
 import ca.bendo.db.dao.forum.TagDAO;
+import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
+import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
 import ca.bendo.db.dao.wiki.WikiPageDAO;
 import ca.bendo.db.dao.wiki.WikiRevisionDAO;
+import ca.bendo.db.entity.user.User;
 import ca.bendo.db.entity.wiki.WikiPage;
 import ca.bendo.form.entity.wiki.WikiPageEditForm;
 import ca.bendo.form.entity.wiki.WikiPageForm;
+import ca.bendo.session.UserSession;
 
 /**
  * @author toby
@@ -42,6 +46,13 @@ public class WikiController
 	 */
 	@Autowired
 	private WikiHandler handler;
+	
+	/**
+	 * 
+	 */
+	@Autowired
+	private UserWikiBookmarkDAO userWikiBookmarkDAO;
+	
 	/**
 	 * 
 	 */
@@ -68,10 +79,21 @@ public class WikiController
 	 *            request Request
 	 * @return jsp page
 	 */
+	@Transactional
 	@RequestMapping(value = "/wiki/{id}", method = RequestMethod.GET)
 	public String show(@PathVariable(value = "id") final long id, final HttpServletRequest request)
 	{
 		request.setAttribute("wiki", wikiDAO.getById(id));
+		if(UserSession.getSession(request).isLogin())
+		{
+			User user = UserSession.getSession(request).getUser();
+			boolean bookmarked = false;
+			if(userWikiBookmarkDAO.getUserBookmark(user.getId(), id) != null)
+			{
+				bookmarked = true;
+			}
+			request.setAttribute("watched", bookmarked);
+		}
 		return "views/wiki/show";
 	}
 

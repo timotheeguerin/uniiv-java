@@ -61,7 +61,7 @@ public class UserWikiBookmarkDAO extends HibernateDAO<UserWikiBookmark>
 	{
 
 		return (UserWikiBookmark) createCriteria().add(Restrictions.eq("userId", userId))
-				.add(Restrictions.eq("wiki.id", wikiID)).createAlias("university", "university")
+				.add(Restrictions.eq("wiki.id", wikiID)).createAlias("wiki", "wiki")
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).uniqueResult();
 	}
 }

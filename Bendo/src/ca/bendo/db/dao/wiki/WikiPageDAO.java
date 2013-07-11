@@ -5,6 +5,7 @@ package ca.bendo.db.dao.wiki;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,6 +42,6 @@ public class WikiPageDAO extends HibernateDAO<WikiPage>
 	@SuppressWarnings("unchecked")
 	public List<WikiPage> listSort()
 	{
-		return (List<WikiPage>) createCriteria().addOrder(Order.asc("title")).list();
+		return (List<WikiPage>) createCriteria().addOrder(Order.asc("title")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 }
