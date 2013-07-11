@@ -17,7 +17,6 @@ import ca.bendo.db.dao.university.UniversityDAO;
 import ca.bendo.db.entity.geolocation.GeolocationRatingCriteria;
 import ca.bendo.db.entity.geolocation.UserGeolocationRating;
 import ca.bendo.db.entity.geolocation.UserGeolocationReview;
-import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.form.entity.FormItem;
@@ -79,7 +78,6 @@ public class GeolocationReviewHandler
 	public void handleNewReview(final HttpServletRequest request, final GeolocationReviewForm reviewForm,
 			final long universityId)
 	{
-		long languageId = Language.loadId(request);
 		User user = UserSession.getSession(request).getUser();
 		if (user == null)
 		{

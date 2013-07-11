@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
-import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.session.UserSession;
 
@@ -53,7 +52,6 @@ public class ApplicationDashboardController
 	public String show(final HttpServletRequest request)
 	{
 		User user = UserSession.getSession(request).getUser();
-		long languageId = Language.loadId(request);
 		user.getBookmark().setUniversityBookmarks(universityBookmarkDAO.getUserBookmarks(user.getId()));
 		request.setAttribute("user", user);
 		return "views/application/applicationDashboard";

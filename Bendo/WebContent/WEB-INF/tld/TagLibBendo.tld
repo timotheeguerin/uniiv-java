@@ -71,6 +71,15 @@
 		</attribute>
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
+	<tag>
+		<name>secured</name>
+		<tagclass>ca.bendo.taglib.tag.PermissionTag</tagclass>
+		<attribute>
+			<name>permission</name>
+			<type>java.lang.String</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
 
 	<tag>
 		<name>lbltranslator</name>
