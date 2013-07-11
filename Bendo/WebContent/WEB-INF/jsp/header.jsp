@@ -11,8 +11,8 @@
 		
 			<span class="nav_spacer"></span>
 				
-			<a href="<b:url value="/discover"/>" title="<b:translator value="discover_things" />">
-				<span class="nav_links"><b:translator value="discover" /></span>
+			<a href="<b:url value="/search"/>" title="<b:translator value="search" />">
+				<span class="nav_links"><b:translator value="search" /></span>
 			</a>
 		
 			<span class="nav_spacer"></span>
@@ -23,8 +23,8 @@
 		
 			<span class="nav_spacer"></span>
 		
-			<a href="<b:url value="/post"/>" title="<b:translator value="post_comment_review" />">
-				<span class="nav_links"><b:translator value="post" /></span>
+			<a href="<b:url value="/wiki"/>" title="<b:translator value="wikis" />">
+				<span class="nav_links"><b:translator value="wikis" /></span>
 			</a>
 		</span>
 		
