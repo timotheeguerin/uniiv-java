@@ -10,6 +10,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate4.SessionFactoryUtils;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Timothée Guérin
@@ -21,6 +23,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
  * 
  * 
  */
+// @Transactional
 public class HibernateInterceptor extends EmptyInterceptor
 {
 
@@ -38,20 +41,8 @@ public class HibernateInterceptor extends EmptyInterceptor
 	@Override
 	public void afterTransactionBegin(final Transaction tx)
 	{
-		//enableTranslation(1L);
 		System.out.println("TRANSACTION BEGIN");
 		super.afterTransactionBegin(tx);
-	}
-
-	/**
-	 * 
-	 * @param language
-	 *            languageId
-	 */
-	public void enableTranslation(final long language)
-	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", language);
 	}
 
 	/**
@@ -68,6 +59,7 @@ public class HibernateInterceptor extends EmptyInterceptor
 	 */
 	public void setSessionFactory(final SessionFactory sessionFactory)
 	{
+		System.out.println("SET");
 		this.sessionFactory = sessionFactory;
 	}
 

@@ -47,7 +47,6 @@ public class TestSoftRatingDAO
 	@Test
 	public void testListSoftRating()
 	{
-		softRatingDAO.setLanguageId(1);
 		List<UniversityRating> ratings = softRatingDAO.list();
 		assertTrue(ratings != null && ratings.size() > 0);
 
@@ -67,7 +66,6 @@ public class TestSoftRatingDAO
 	public void testListSoftRatingWithIds()
 	{
 
-		softRatingDAO.setLanguageId(1);
 		List<UniversityRating> ratings = softRatingDAO.list();
 		assertTrue(ratings != null && ratings.size() > 0);
 

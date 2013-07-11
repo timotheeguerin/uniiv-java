@@ -63,7 +63,6 @@ public class UniversityTDS
 	 */
 	public University loadUniversity(final long universityId)
 	{
-		universityDAO.setLanguageId(languageId);
 
 		return universityDAO.getById(universityId);
 
@@ -79,7 +78,6 @@ public class UniversityTDS
 	 */
 	public University setupUniversityPage(final long universityId, final HttpServletRequest request)
 	{
-		universityDAO.setLanguageId(languageId);
 		List<UniversityReview> reviews = universityReviewDAO.listLastUniversityReview(universityId, MAX_UNI_REVIEW);
 		University university = universityDAO.getById(universityId);
 		request.setAttribute("university", university);
@@ -96,7 +94,6 @@ public class UniversityTDS
 	 */
 	public List<University> searchUniversity(final UniversityQuery query)
 	{
-		universityDAO.setLanguageId(languageId);
 
 		return universityDAO.filter(query);
 	}

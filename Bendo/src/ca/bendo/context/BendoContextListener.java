@@ -66,14 +66,8 @@ public class BendoContextListener implements ServletContextListener
 
 		HibernateInterceptor interceptor = v.getBean(HibernateInterceptor.class);
 		SessionFactory factory = v.getBean(SessionFactory.class);
+		log.info("fac loaded");
 		interceptor.setSessionFactory(factory);
-		// Set state
-		// UserStateDAO userStateDao = (UserStateDAO)
-		// springContext.getBean("userStateDAO");
-		// UserFactory.setStates(userStateDao.list());
-		// log.info("User state loaded");
-
-		// Set permission
 
 		log.info("User permisson loaded");
 

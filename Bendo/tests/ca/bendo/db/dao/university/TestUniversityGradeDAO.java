@@ -60,7 +60,6 @@ public class TestUniversityGradeDAO
 	@Test
 	public void testList()
 	{
-		universityGradeDAO.setLanguageId(1);
 		List<UniversityGrade> grades = universityGradeDAO.list();
 		assertTrue(grades != null && grades.size() > 0);
 
@@ -81,7 +80,6 @@ public class TestUniversityGradeDAO
 	@Test
 	public void testAdd()
 	{
-		universityGradeDAO.setLanguageId(1);
 		University university = universityDAO.getById(1L);
 		UniversityRating rating = ratingDAO.getById(1L);
 		UniversityGrade grade = new UniversityGrade();

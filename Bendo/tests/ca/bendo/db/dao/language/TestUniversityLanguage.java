@@ -44,7 +44,6 @@ public class TestUniversityLanguage
 	@Test
 	public void testListLanguage()
 	{
-		languageDAO.setLanguageId(1L);
 		List<UniversityLanguage> languages = languageDAO.list();
 
 		assertTrue(languages != null);

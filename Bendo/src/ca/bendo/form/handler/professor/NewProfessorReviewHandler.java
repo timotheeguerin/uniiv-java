@@ -157,7 +157,6 @@ public class NewProfessorReviewHandler
 				return false;
 			}
 		}
-		professorDAO.setLanguageId(1L);
 		Professor professor = professorDAO.getById(Long.parseLong(professorIdStr));
 		if (professor == null) // Check if the professor exist
 		{
@@ -203,12 +202,6 @@ public class NewProfessorReviewHandler
 	{
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
-		professorDAO.setLanguageId(languageId);
-		reviewDAO.setLanguageId(languageId);
-		ratingTypeDAO.setLanguageId(languageId);
-		ratingDAO.setLanguageId(languageId);
-		languageDAO.setLanguageId(languageId);
-
 		Professor professor = professorDAO.getById(professorId);
 		if (professor == null)
 		{

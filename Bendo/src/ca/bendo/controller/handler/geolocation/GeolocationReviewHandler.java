@@ -94,7 +94,6 @@ public class GeolocationReviewHandler
 		UserGeolocationReview review = new UserGeolocationReview();
 		review.setLocation(reviewForm.getLocation().toPoint());
 		review.setUser(user);
-		reviewDAO.enableTranslation(languageId);
 		reviewDAO.add(review);
 		review.setUniversityId(universityId);
 		for (Entry<String, RatingEntity> entry : reviewForm.getRatings().entrySet())

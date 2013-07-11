@@ -47,7 +47,6 @@ public class TestStateDAO
 	@Test
 	public void testListStates()
 	{
-		stateDao.setLanguageId(1);
 		List<State> l = stateDao.listStates();
 		assertTrue(l != null);
 		System.out.println("---------------------------------------------------");

@@ -192,7 +192,6 @@ public class UniversityReviewHandler
 
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
-		universityDAO.setLanguageId(languageId);
 		// reviewDAO.setLanguageId(languageId);
 		// ratingTypeDAO.setLanguageId(languageId);
 		// ratingDAO.setLanguageId(languageId);

@@ -43,8 +43,7 @@ public class ProfessorReviewDAO extends HibernateDAO<ProfessorReview>
 	 */
 	public List<ProfessorReview> getProfessorReview(final long professorId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorReview> profs = getSession().createCriteria(ProfessorReview.class)
@@ -77,8 +76,7 @@ public class ProfessorReviewDAO extends HibernateDAO<ProfessorReview>
 	 */
 	public List<ProfessorReview> listLastProfessorReview(final long professorId, final int start, final int amount)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorReview> profs = getSession().createCriteria(ProfessorReview.class)

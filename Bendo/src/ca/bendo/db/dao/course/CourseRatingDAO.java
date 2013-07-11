@@ -46,8 +46,6 @@ public class CourseRatingDAO extends HibernateDAO<CourseRating>
 	 */
 	public CourseRatingAverage getCourseRatingsMean(final long courseId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 
 		@SuppressWarnings("unchecked")
 		List<CourseRating> ratings = getSession()
@@ -74,9 +72,7 @@ public class CourseRatingDAO extends HibernateDAO<CourseRating>
 	 */
 	public double getCourseAverage(final long courseId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
+		
 		double average = (Double) getSession().createCriteria(CourseRating.class).createAlias("review", "review")
 				.createAlias("type", "type").createAlias("review.course", "course")
 				.add(Restrictions.eq("course.id", courseId))

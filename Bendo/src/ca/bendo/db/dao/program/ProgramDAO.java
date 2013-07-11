@@ -42,8 +42,7 @@ public class ProgramDAO extends HibernateDAO<Program>
 	@SuppressWarnings("unchecked")
 	public List<Program> listPrograms()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<Program>) getSession().createCriteria(Program.class)
 				.addOrder(Order.asc("translation")).list();
 	}

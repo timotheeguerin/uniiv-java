@@ -64,7 +64,6 @@ public class UserHomeController
 	{
 		User user = UserSession.getSession(request).getUser();
 		long languageId = Language.loadId(request);
-		userDAO.enableTranslation(languageId);
 		user.getBookmark().setWikiBookmarks(wikiBookmarkDAO.getUserBookmarks(user.getId()));
 		user.getBookmark().setUniversityBookmarks(universityBookmarkDAO.getUserBookmarks(user.getId()));
 		request.setAttribute("user", user);

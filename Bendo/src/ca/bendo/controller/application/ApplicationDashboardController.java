@@ -43,8 +43,6 @@ public class ApplicationDashboardController
 	private UserUniversityBookmarkDAO universityBookmarkDAO;
 
 	/**
-	 * @param id
-	 *            Id
 	 * @param request
 	 *            request Request
 	 * @return jsp page
@@ -55,7 +53,6 @@ public class ApplicationDashboardController
 	{
 		User user = UserSession.getSession(request).getUser();
 		long languageId = Language.loadId(request);
-		userDAO.enableTranslation(languageId);
 		user.getBookmark().setUniversityBookmarks(universityBookmarkDAO.getUserBookmarks(user.getId()));
 		request.setAttribute("user", user);
 		return "views/application/applicationDashboard";

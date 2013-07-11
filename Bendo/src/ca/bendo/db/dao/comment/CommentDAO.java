@@ -41,8 +41,6 @@ public class CommentDAO extends HibernateDAO<Comment>
 	@SuppressWarnings("unchecked")
 	public List<Comment> listComment()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(Comment.class).list();
 	}
 

@@ -45,9 +45,6 @@ public class CourseDAO extends HibernateDAO<Course>
 	public List<Course> listCourseInUniversity(final long universityId)
 	{
 
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
 		@SuppressWarnings("unchecked")
 		List<Course> courses = getSession().createCriteria(Course.class)
 				.add(Restrictions.eq("university.id", universityId)).list();
@@ -63,8 +60,6 @@ public class CourseDAO extends HibernateDAO<Course>
 	public List<Course> listCourseLike(final String name)
 	{
 		String like = "%" + name + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		Criterion restriction = Restrictions.or(Restrictions.like("name", like), Restrictions.like("code", like));
 		return (List<Course>) getSession().createCriteria(Course.class).add(restriction).addOrder(Order.asc("name"))
 				.list();
@@ -82,8 +77,6 @@ public class CourseDAO extends HibernateDAO<Course>
 	public List<Course> listCourseLikeMaxResults(final String name, final int maxResults)
 	{
 		String like = "%" + name + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		Criterion restriction = Restrictions.or(Restrictions.like("name", like), Restrictions.like("code", like));
 		return (List<Course>) getSession().createCriteria(Course.class).add(restriction).addOrder(Order.asc("name"))
 				.setMaxResults(maxResults).list();
@@ -102,8 +95,6 @@ public class CourseDAO extends HibernateDAO<Course>
 	public List<Course> listCourseLikeMaxResults(final String name, final int firstResult, final int maxResults)
 	{
 		String like = "%" + name + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		Criterion restriction = Restrictions.or(Restrictions.like("name", like), Restrictions.like("code", like));
 		return (List<Course>) getSession().createCriteria(Course.class).add(restriction).addOrder(Order.asc("name"))
 				.setFirstResult(firstResult).setMaxResults(maxResults).list();

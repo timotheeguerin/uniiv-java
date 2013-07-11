@@ -45,7 +45,6 @@ public class TestLocationDAO
 	@Test
 	public void testListLocation()
 	{
-		locationDAO.setLanguageId(1);
 		List<Location> locations = locationDAO.listLocations();
 		assertTrue(locations != null && locations.size() > 0);
 		System.out.println("--------------------------------");

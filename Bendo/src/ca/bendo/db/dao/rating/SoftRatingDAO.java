@@ -37,7 +37,6 @@ public class SoftRatingDAO extends HibernateDAO<UniversityRating>
 		setType(UniversityRating.class);
 	}
 
-	
 	/**
 	 * @param set
 	 *            ids of the ratings to get
@@ -46,8 +45,7 @@ public class SoftRatingDAO extends HibernateDAO<UniversityRating>
 	@SuppressWarnings("unchecked")
 	public List<UniversityRating> listSoftRatingsWithIds(final Collection<Integer> set)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+
 		return (List<UniversityRating>) getSession().createCriteria(UniversityRating.class)
 				.add(Restrictions.in("id", set)).list();
 	}
@@ -59,8 +57,7 @@ public class SoftRatingDAO extends HibernateDAO<UniversityRating>
 	@SuppressWarnings("unchecked")
 	public List<UniversityRatingMethod> listTypes()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+
 		return (List<UniversityRatingMethod>) getSession().createCriteria(UniversityRatingMethod.class).list();
 	}
 
@@ -71,8 +68,7 @@ public class SoftRatingDAO extends HibernateDAO<UniversityRating>
 	@SuppressWarnings("unchecked")
 	public List<UniversityRating> listForReview()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+
 		return (List<UniversityRating>) getSession().createCriteria(UniversityRating.class)
 				.createAlias("form", "form").add(Restrictions.eq("form.name", "university")).list();
 	}
@@ -84,8 +80,7 @@ public class SoftRatingDAO extends HibernateDAO<UniversityRating>
 	@SuppressWarnings("unchecked")
 	public List<UniversityRatingMethodElement> listAllElements()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+
 		return (List<UniversityRatingMethodElement>) getSession().createCriteria(UniversityRatingMethodElement.class)
 				.list();
 	}

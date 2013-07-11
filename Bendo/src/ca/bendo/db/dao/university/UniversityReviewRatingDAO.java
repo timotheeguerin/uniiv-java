@@ -46,8 +46,7 @@ public class UniversityReviewRatingDAO extends HibernateDAO<UniversityReviewRati
 	 */
 	public double getUniversityRatingAverage(final long universityId, final long ratingId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		Criterion restriction = Restrictions.and(Restrictions.eq("university.id", universityId),
 				Restrictions.eq("type.id", ratingId));
 		Double average = (Double) getSession().createCriteria(UniversityReviewRating.class)

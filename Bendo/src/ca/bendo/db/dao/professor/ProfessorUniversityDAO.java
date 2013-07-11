@@ -45,8 +45,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorUniversity(final long professorId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> unis = getSession().createCriteria(ProfessorUniversity.class)
@@ -63,8 +62,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorUniversity(final long professorId, final int maxResults)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> unis = getSession().createCriteria(ProfessorUniversity.class)
@@ -80,8 +78,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -98,8 +95,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId, final int maxResults)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -119,8 +115,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	public List<ProfessorUniversity> listProfessorAtUniversity(final long universityId, final int firstResult,
 			final int maxResults)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<ProfessorUniversity> profs = getSession().createCriteria(ProfessorUniversity.class)
@@ -138,8 +133,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	 */
 	public boolean professorIsAtUniversity(final long professorId, final long universityId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		Criterion restrictions = Restrictions.and(Restrictions.eq("professor.id", professorId),
 				Restrictions.eq("university.id", universityId));
 
@@ -160,8 +154,7 @@ public class ProfessorUniversityDAO extends HibernateDAO<ProfessorUniversity>
 	public List<ProfessorUniversity> listProfessorInUniversityLikeMaxResults(final long universityId,
 			final String query, final int maxResults)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		String name = "%" + query + "%";
 		Criterion like = Restrictions.or(Restrictions.like("professor.firstName", name),
 				Restrictions.like("professor.lastName", name));

@@ -44,8 +44,7 @@ public class UniversityGradeDAO extends HibernateDAO<UniversityGrade>
 	@SuppressWarnings("unchecked")
 	public List<UniversityGrade> listUniversityGrades(final long universityId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<UniversityGrade>) getSession().createCriteria(UniversityRating.class)
 				.add(Restrictions.eq("university.id", universityId)).list();
 	}

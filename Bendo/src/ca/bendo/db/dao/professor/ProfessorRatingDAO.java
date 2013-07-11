@@ -44,8 +44,6 @@ public class ProfessorRatingDAO extends HibernateDAO<ProfessorRating>
 	@SuppressWarnings("unchecked")
 	public List<ProfessorRating> listProfessorRating()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(ProfessorRating.class).list();
 	}
 
@@ -57,9 +55,6 @@ public class ProfessorRatingDAO extends HibernateDAO<ProfessorRating>
 	 */
 	public ProfessorRatingAverage getProfessorRatingsMean(final long professorId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
 		@SuppressWarnings("unchecked")
 		List<ProfessorRating> ratings = getSession()
 				.createCriteria(ProfessorRating.class)
@@ -86,8 +81,7 @@ public class ProfessorRatingDAO extends HibernateDAO<ProfessorRating>
 	 */
 	public double getProfessorAverage(final long professorId)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		Double average = (Double) getSession().createCriteria(ProfessorRating.class).createAlias("review", "review")
 				.createAlias("type", "type").createAlias("review.professor", "professor")

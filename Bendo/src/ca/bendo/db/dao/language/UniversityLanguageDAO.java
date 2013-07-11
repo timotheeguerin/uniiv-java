@@ -42,8 +42,7 @@ public class UniversityLanguageDAO extends HibernateDAO<UniversityLanguage>
 	@SuppressWarnings("unchecked")
 	public List<UniversityLanguage> listUniversityLanguage()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return getSession().createCriteria(UniversityLanguage.class).addOrder(Order.asc("translation")).list();
 	}
 

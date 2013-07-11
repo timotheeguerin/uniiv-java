@@ -41,8 +41,7 @@ public class StateDAO extends HibernateDAO<State>
 	@SuppressWarnings("unchecked")
 	public List<State> listStates()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<State>) getSession().createCriteria(State.class).list();
 	}
 
@@ -53,8 +52,7 @@ public class StateDAO extends HibernateDAO<State>
 	 */
 	public List<State> getStateInCountry(final long idCanada)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		@SuppressWarnings("unchecked")
 		List<State> states = getSession().createCriteria(State.class).add(Restrictions.eq("country.id", idCanada))

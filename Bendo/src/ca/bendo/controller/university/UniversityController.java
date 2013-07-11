@@ -75,7 +75,6 @@ public class UniversityController
 		{
 			User user = UserSession.getSession(request).getUser();
 			boolean bookmarked = false;
-			userUniversityBookmarkDAO.enableTranslation(languageId);
 			if(userUniversityBookmarkDAO.getUserBookmark(user.getId(), universityId) != null)
 			{
 				bookmarked = true;

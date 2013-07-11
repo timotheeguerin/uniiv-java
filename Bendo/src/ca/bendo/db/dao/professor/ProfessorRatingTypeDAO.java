@@ -40,8 +40,7 @@ public class ProfessorRatingTypeDAO extends HibernateDAO<ProfessorRatingType>
 	@SuppressWarnings("unchecked")
 	public List<ProfessorRatingType> listProfessorRatingType()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return getSession().createCriteria(ProfessorRatingType.class).list();
 	}
 

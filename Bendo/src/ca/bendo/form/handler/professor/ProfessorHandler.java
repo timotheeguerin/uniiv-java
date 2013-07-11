@@ -132,7 +132,6 @@ public class ProfessorHandler
 	{
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
-		programDAO.setLanguageId(languageId);
 		List<Program> programs = programDAO.listPrograms();
 		request.setAttribute("programs", programs);
 
@@ -150,7 +149,6 @@ public class ProfessorHandler
 
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
-		professorDAO.setLanguageId(languageId);
 		Professor professor = professorDAO.getById(professorId);
 
 		if (professor == null)
@@ -162,7 +160,6 @@ public class ProfessorHandler
 
 		request.setAttribute("professor", professor);
 		request.setAttribute("profRatings", profRating);
-		professorRatingTypeDAO.setLanguageId(languageId);
 		List<ProfessorRatingType> types = professorRatingTypeDAO.listProfessorRatingType();
 		request.setAttribute("types", types);
 

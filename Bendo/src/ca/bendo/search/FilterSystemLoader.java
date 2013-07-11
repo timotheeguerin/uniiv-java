@@ -136,7 +136,6 @@ public class FilterSystemLoader
 		SelectListFilterContent countryCategoryContent = new SelectListFilterContent();
 		countryCategoryContent.setName("location");
 		// Load all the countries
-		countryDAO.setLanguageId(languageId);
 		List<Country> countries = countryDAO.listCountries();
 		// Cycle through
 		for (Country country : countries)
@@ -199,7 +198,6 @@ public class FilterSystemLoader
 		programCategoryContent.setName("program");
 		programCategory.setContent(programCategoryContent);
 		// Load all the programs
-		facultyDAO.setLanguageId(languageId);
 		List<UniversityFaculty> faculties = facultyDAO.list();
 		// Cycle through
 		for (UniversityFaculty faculty : faculties)
@@ -243,7 +241,6 @@ public class FilterSystemLoader
 		sizeContent.setName("campus_size");
 		SectionContentRadioButton envContent = new SectionContentRadioButton();
 		envContent.setName("campus_env");
-		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();
@@ -303,7 +300,6 @@ public class FilterSystemLoader
 		SectionContentRadioButton content = new SectionContentRadioButton();
 		content.setName("weather");
 		content.setUseImage(true);
-		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();
@@ -347,7 +343,6 @@ public class FilterSystemLoader
 		SectionContentSimpleCheckBox content = new SectionContentSimpleCheckBox();
 		content.setName("rating");
 		
-		softRatingDAO.setLanguageId(languageId);
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();

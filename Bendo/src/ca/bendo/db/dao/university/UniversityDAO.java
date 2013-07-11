@@ -45,8 +45,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	@SuppressWarnings("unchecked")
 	public List<University> listUniversities()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<University>) getSession().createCriteria(University.class).addOrder(Order.asc("name")).list();
 	}
 
@@ -58,8 +57,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	@SuppressWarnings("unchecked")
 	public List<University> filter(final UniversityQuery query)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 
 		Criteria criteria = getSession().createCriteria(University.class);
 		query.setupQuery(criteria);
@@ -80,8 +78,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	public List<University> listUniversityLike(final String universityName)
 	{
 		String like = "%" + universityName + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
@@ -99,8 +96,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	public List<University> listUniversityLikeMaxResults(final String universityName, final int maxResults)
 	{
 		String like = "%" + universityName + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
@@ -122,8 +118,7 @@ public class UniversityDAO extends HibernateDAO<University>
 			final int maxResults)
 	{
 		String like = "%" + universityName + "%";
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
+		
 		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setFirstResult(firstResult).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();

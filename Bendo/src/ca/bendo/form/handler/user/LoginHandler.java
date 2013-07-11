@@ -63,7 +63,6 @@ public class LoginHandler
 	{
 
 		long languageId = Language.loadId(request);
-		userDAO.enableTranslation(languageId);
 		User user = userDAO.getByEmail(loginForm.getEmail());
 		if (user == null)
 		{

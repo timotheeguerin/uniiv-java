@@ -44,8 +44,6 @@ public class ProfessorDAO extends HibernateDAO<Professor>
 	@SuppressWarnings("unchecked")
 	public List<Professor> listProfessor()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(Professor.class).list();
 	}
 
@@ -57,10 +55,6 @@ public class ProfessorDAO extends HibernateDAO<Professor>
 	@SuppressWarnings("unchecked")
 	public List<Professor> listProfessorLike(final String name)
 	{
-
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
 		Criterion restriction = getProfLikeCriterion(name);
 		return (List<Professor>) getSession().createCriteria(Professor.class).add(restriction)
 				.addOrder(Order.asc("firstName")).addOrder(Order.asc("lastName"))
@@ -106,8 +100,6 @@ public class ProfessorDAO extends HibernateDAO<Professor>
 	@SuppressWarnings("unchecked")
 	public List<Professor> listProfessorLikeMaxResults(final String name, final int maxResults)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		Criterion restriction = getProfLikeCriterion(name);
 		return (List<Professor>) getSession().createCriteria(Professor.class).add(restriction)
 				.addOrder(Order.asc("firstName")).addOrder(Order.asc("lastName")).setMaxResults(maxResults)
@@ -128,9 +120,6 @@ public class ProfessorDAO extends HibernateDAO<Professor>
 	public List<Professor> listProfessorLikeFromMaxResults(final String name, final int firstResult,
 			final int maxResults)
 	{
-
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		Criterion restriction = getProfLikeCriterion(name);
 		return (List<Professor>) getSession().createCriteria(Professor.class).add(restriction)
 				.addOrder(Order.asc("firstName")).addOrder(Order.asc("lastName")).setFirstResult(firstResult)

@@ -5,6 +5,7 @@ package ca.bendo.db.dao;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
 import javax.persistence.Table;
 
@@ -16,6 +17,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 
 import ca.bendo.db.entity.location.Country;
 
@@ -62,11 +64,6 @@ public class HibernateDAO<T>
 
 	/**
 	 * 
-	 */
-	private long languageId;
-
-	/**
-	 * 
 	 * @return criteria
 	 */
 	public Criteria createCriteria()
@@ -75,24 +72,11 @@ public class HibernateDAO<T>
 	}
 
 	/**
-	 * 
-	 * @param language
-	 *            languageId
-	 */
-	public void enableTranslation(final long language)
-	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", language);
-	}
-
-	/**
 	 * @return list all the entity
 	 */
 	@SuppressWarnings("unchecked")
 	public List<T> list()
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(type).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 
@@ -104,9 +88,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public List<T> listOrderAsc(final String column)
 	{
-
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 
 		return getSession().createCriteria(type).addOrder(Order.asc(column))
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
@@ -120,10 +101,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public List<T> listOrderDesc(final String column)
 	{
-
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
 		return getSession().createCriteria(type).addOrder(Order.desc(column))
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
@@ -136,8 +113,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public List<T> listByIds(final Collection<Long> ids)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(type).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
 				.add(Restrictions.in("id", ids)).list();
 	}
@@ -150,8 +125,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public List<T> listN(final int number)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(type).setMaxResults(number).list();
 	}
 
@@ -165,8 +138,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public List<T> listNFrom(final int first, final int number)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return getSession().createCriteria(type).setFirstResult(first).setMaxResults(number).list();
 	}
 
@@ -179,9 +150,6 @@ public class HibernateDAO<T>
 	@SuppressWarnings("unchecked")
 	public T getById(final Long id)
 	{
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
-
 		Object result = getSession().createCriteria(type).add(Restrictions.idEq(id)).uniqueResult();
 
 		if (type.isInstance(result))
@@ -344,27 +312,12 @@ public class HibernateDAO<T>
 	 */
 	protected Session getSession()
 	{
+		Locale locale = LocaleContextHolder.getLocale();
+
 		Session session = getSessionFactory().getCurrentSession();
-		Filter filter = session.enableFilter("languageId");
-		filter.setParameter("param", 1L);
+		Filter filter = session.enableFilter("language");
+		filter.setParameter("param", locale.getDisplayName());
 		return session;
-	}
-
-	/**
-	 * @return the languageId
-	 */
-	public long getLanguageId()
-	{
-		return languageId;
-	}
-
-	/**
-	 * @param languageId
-	 *            the languageId to set
-	 */
-	public void setLanguageId(final long languageId)
-	{
-		this.languageId = languageId;
 	}
 
 	/**

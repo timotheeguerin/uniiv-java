@@ -40,9 +40,6 @@ public class CountryDAO extends HibernateDAO<Country>
 	@SuppressWarnings("unchecked")
 	public List<Country> listCountries()
 	{
-		System.out.println("fhieshfi: " + getLanguageId());
-		Filter filter = getSession().enableFilter("languageId");
-		filter.setParameter("param", getLanguageId());
 		return (List<Country>) getSession().createCriteria(Country.class).list();
 	}
 

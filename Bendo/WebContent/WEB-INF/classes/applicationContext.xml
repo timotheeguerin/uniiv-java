@@ -68,6 +68,7 @@
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
 				<prop key="hibernate.globally_quoted_identifiers">true</prop>
 			</props>
+			
 		</property>
 		<property name="entityInterceptor">
 			<ref bean="myInterceptor" />

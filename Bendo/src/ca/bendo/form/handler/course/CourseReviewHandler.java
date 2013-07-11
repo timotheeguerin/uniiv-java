@@ -163,7 +163,6 @@ public class CourseReviewHandler
 			}
 		}
 
-		courseDAO.setLanguageId(1L);
 		University university = universityDAO.getById(universityId);
 		if (university == null) // Check if the professor exist
 		{
@@ -215,7 +214,6 @@ public class CourseReviewHandler
 	{
 		request.getAttribute("translator");
 		Language.loadId(request);
-		courseDAO.enableTranslation(universityId);
 
 		Course course = courseDAO.getById(courseId);
 		if (course == null)

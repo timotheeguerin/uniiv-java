@@ -59,7 +59,6 @@ public class TestCountryDAO
 	@Test
 	public void testListCountries()
 	{
-		countryDAO.setLanguageId(1);
 		List<Country> l = countryDAO.listCountries();
 
 		assertTrue(l != null);
@@ -78,7 +77,6 @@ public class TestCountryDAO
 	@Test
 	public void testGetStatesInCountry()
 	{
-		countryDAO.setLanguageId(1);
 		// Canada
 		List<State> l = countryDAO.getById(ID_CANADA).getStates();
 

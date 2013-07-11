@@ -144,8 +144,6 @@ public class CourseHandler
 	{
 		request.getAttribute("translator");
 		Long languageId = Language.loadId(request);
-		programDAO.enableTranslation(languageId);
-		universityDAO.setLanguageId(languageId);
 		University university = universityDAO.getById(universityId);
 		if (university == null)
 		{

@@ -49,7 +49,6 @@ public class GeolocationHeatmapHandler
 	public String loadStudentLocationHeatMap(final long universityId, final String type)
 	{
 		List<HeatmapPoint> points = null;
-		geolocationRatingCriteriaDAO.enableTranslation(1);
 		GeolocationRatingCriteria criteria = geolocationRatingCriteriaDAO.getByName(type);
 		if (criteria == null)
 		{

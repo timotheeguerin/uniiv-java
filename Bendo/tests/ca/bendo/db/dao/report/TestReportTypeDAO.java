@@ -42,7 +42,6 @@ public class TestReportTypeDAO
 	@Test
 	public void testGetByClass()
 	{
-		reportTypeDAO.enableTranslation(1L);
 		ReportType type = reportTypeDAO.getByClass(Professor.class);
 		assertTrue(type != null);
 		System.out.printf("%-4d %s", type.getId(), type.getName());

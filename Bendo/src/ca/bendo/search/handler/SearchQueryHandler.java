@@ -86,7 +86,6 @@ public class SearchQueryHandler
 		// }
 		// query.setSoftRatings(ratingsMap);
 
-		universityDAO.setLanguageId(languageId);
 		List<University> universities = universityDAO.filter(query);
 		request.setAttribute("universities", universities);
 		System.out.println("UNI SIZE: " + universities.size());

@@ -25,7 +25,7 @@ import org.hibernate.annotations.ParamDef;
  */
 @Entity
 @Table(name = "lang_translation")
-@FilterDef(name = "languageId", parameters = @ParamDef(name = "param", type = "java.lang.Long"))
+@FilterDef(name = "language", parameters = @ParamDef(name = "param", type = "java.lang.String"))
 public class Translation
 {
 
