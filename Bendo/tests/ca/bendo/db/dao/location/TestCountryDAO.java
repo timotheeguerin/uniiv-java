@@ -66,7 +66,7 @@ public class TestCountryDAO
 		System.out.println("id - countrykey");
 		for (Country country : l)
 		{
-			System.out.println(country.getId() + " " + country.getCountry() + " " + country.toString());
+			System.out.println(country.getId() + " " + country.getName() + " " + country.toString());
 		}
 
 	}

@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Formula;
 
+import ca.bendo.db.entity.lang.Translation;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -51,8 +53,8 @@ public class Program implements Comparable<Program>
 	/**
 	 * 
 	 */
-	@Formula("(SELECT t.translation FROM lang_translation t "
-			+ "WHERE (t.key = name) AND t.id_lang_language = :languageId.param)")
+
+	@Formula(Translation.FORMULA)
 	private String translation;
 
 	/*

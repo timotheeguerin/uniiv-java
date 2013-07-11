@@ -15,6 +15,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Formula;
 
+import ca.bendo.db.entity.lang.Translation;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -40,8 +42,8 @@ public class Country
 	/**
 	 * 
 	 */
-	@Column(name = "country")
-	private String country;
+	@Column(name = "name")
+	private String name;
 
 	/**
 	 * 
@@ -52,8 +54,7 @@ public class Country
 	/**
 	 * 
 	 */
-	@Formula("(SELECT t.translation FROM lang_translation t "
-			+ "WHERE (t.key = country) AND t.id_lang_language = :languageId.param)")
+	@Formula(Translation.FORMULA)
 	private String translation;
 
 	/**
@@ -74,20 +75,20 @@ public class Country
 	}
 
 	/**
-	 * @return the country
+	 * @return the name
 	 */
-	public String getCountry()
+	public String getName()
 	{
-		return country;
+		return name;
 	}
 
 	/**
-	 * @param country
-	 *            the country to set
+	 * @param name
+	 *            the name to set
 	 */
-	public void setCountry(final String country)
+	public void setName(final String name)
 	{
-		this.country = country;
+		this.name = name;
 	}
 
 	/**
@@ -137,7 +138,7 @@ public class Country
 			return translation;
 		} else
 		{
-			return country;
+			return name;
 		}
 	}
 

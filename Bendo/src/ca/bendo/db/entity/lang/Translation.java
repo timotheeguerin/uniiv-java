@@ -28,7 +28,12 @@ import org.hibernate.annotations.ParamDef;
 @FilterDef(name = "language", parameters = @ParamDef(name = "param", type = "java.lang.String"))
 public class Translation
 {
-
+	/**
+	 * 
+	 */
+	public static final String FORMULA = "(SELECT t.translation FROM lang_translation t"
+			+ " left join lang_language l ON t.id_lang_language = l.id_lang_language"
+			+ " WHERE (t.key = name) AND l.key = :language.param)";
 	/**
 	 * Translation id.
 	 */

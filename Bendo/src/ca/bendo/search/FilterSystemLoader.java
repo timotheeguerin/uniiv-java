@@ -145,7 +145,7 @@ public class FilterSystemLoader
 			countryElement.setCustomClass("Country");
 			countryElement.setName(country.toString());
 			countryElement.setId(country.getId());
-			countryElement.setImage("/images/category/country/flag/" + country.getCountry() + ".png");
+			countryElement.setImage("/images/category/country/flag/" + country.getName() + ".png");
 
 			// Load the state of the country and cycle through
 			for (State state : country.getStates())
@@ -155,7 +155,7 @@ public class FilterSystemLoader
 				stateElement.setCustomClass("State");
 				stateElement.setName(state.toString());
 				stateElement.setId(state.getId());
-				stateElement.setImage("/images/category/country/flag/" + country.getCountry() + ".png");
+				stateElement.setImage("/images/category/country/flag/" + country.getName() + ".png");
 
 				countryElement.addSubElement(stateElement);
 			}
@@ -342,7 +342,6 @@ public class FilterSystemLoader
 		FilterSection softRatingFilterCategory = new FilterSection();
 		SectionContentSimpleCheckBox content = new SectionContentSimpleCheckBox();
 		content.setName("rating");
-		
 
 		// Load all the ratings
 		List<UniversityRating> ratings = softRatingDAO.list();

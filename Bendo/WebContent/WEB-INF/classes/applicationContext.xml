@@ -70,9 +70,6 @@
 			</props>
 			
 		</property>
-		<property name="entityInterceptor">
-			<ref bean="myInterceptor" />
-		</property>
 	</bean>
 
 	<bean id="localeResolver" class="ca.bendo.filters.FilterLocaleResolver" />
@@ -111,7 +108,6 @@
 	<!-- Enable Json conversion -->
 	<bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 
-	<bean id="myInterceptor" class="ca.bendo.db.dao.HibernateInterceptor" />
 
 	<tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager" />
 </beans>

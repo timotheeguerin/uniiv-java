@@ -213,7 +213,7 @@ public class ForumGroupCleaner
 		if (countryGroup.getGroup() == null)
 		{
 			ForumGroup group = new ForumGroup();
-			group.setName(country.getCountry());
+			group.setName(country.getName());
 			ForumGroup parent = groupDAO.getByName("location");
 		}
 
