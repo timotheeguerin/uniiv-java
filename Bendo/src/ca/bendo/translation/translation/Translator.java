@@ -2,6 +2,7 @@ package ca.bendo.translation.translation;
 
 import java.io.StringWriter;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
 import ca.bendo.db.dao.lang.LinkDAO;
@@ -33,13 +35,6 @@ import ca.bendo.translation.url.UrlTranslationManager;
 @Service
 public class Translator
 {
-
-	// /**
-	// *
-	// */
-	// @Autowired
-	// private LinkManager links;
-
 	/**
 	 * 
 	 */
@@ -102,6 +97,25 @@ public class Translator
 	public String translate(final String key, final long languageId)
 	{
 		Translation translation = translationsDAO.getTranslation(key, languageId);
+		if (translation == null)
+		{
+			return key;
+		} else
+		{
+			return translation.getTranslation();
+		}
+	}
+
+	/**
+	 * 
+	 * @param key
+	 *            key to translate
+	 * @return url translated
+	 */
+	public String translate(final String key)
+	{
+		Locale locale = LocaleContextHolder.getLocale();
+		Translation translation = translationsDAO.getTranslation(key, locale.getDisplayName());
 		if (translation == null)
 		{
 			return key;
