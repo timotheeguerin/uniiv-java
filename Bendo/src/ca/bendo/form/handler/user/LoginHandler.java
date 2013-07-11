@@ -91,7 +91,13 @@ public class LoginHandler
 		sessionCookie.setKey(new HashedPassword(key));
 
 		sessionCookieDAO.saveOrUpdate(sessionCookie);
-		response.addCookie(new Cookie("user.id", String.valueOf(user.getId())));
-		response.addCookie(new Cookie("user.key", key));
+
+		Cookie idCookie = new Cookie("user.id", String.valueOf(user.getId()));
+		Cookie keyCookie = new Cookie("user.key", key);
+
+		idCookie.setPath("/");
+		keyCookie.setPath("/");
+		response.addCookie(idCookie);
+		response.addCookie(keyCookie);
 	}
 }

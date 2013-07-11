@@ -40,7 +40,7 @@ public class State
 	/**
 	 * 
 	 */
-	@Column(name = "state")
+	@Column(name = "name")
 	private String name;
 
 	/**

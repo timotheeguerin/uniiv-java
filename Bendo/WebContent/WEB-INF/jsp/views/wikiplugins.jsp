@@ -4,5 +4,5 @@
 <input class="facebookSearch" data-href="https://graph.facebook.com/search" />
 
 <b:secured permission="user">
-	ur a user
+	<b:translator value="FR"></b:translator>
 </b:secured>
