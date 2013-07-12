@@ -3,6 +3,7 @@
 	<styles>
 		<style>/styles/style.less</style>
 		<style>/styles/form.css</style>
+		<style>/styles/user.less</style>
 <!-- 		<style>/styles/university.css</style> -->
 		<style>/styles/rating.css</style>
 		<style>/styles/table.css</style>

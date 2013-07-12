@@ -61,7 +61,6 @@
 </div>
 
 
-<%-- <img class="bt-pic" src="<c:url value="images/pic-bt.jpg"/>" /> --%>
 <div class="home-bt-ct">
 	<div class="container-bt">
 		<h2>
@@ -72,16 +71,5 @@
 				value="get_started" />
 		</a>
 
-		<!-- 	<div class="start-h-c"> -->
-		<!-- 		<div class="start-bt"> -->
-		<!-- 			<p> -->
-		<%-- 				<b:translator value="students" /> --%>
-		<!-- 			</p> -->
-		<!-- 			<a class="submit get-started-student" -->
-		<%-- 				href="<b:url value="/discover"/>"> <span><b:translator --%>
-		<%-- 						value="search_now" /></span> --%>
-		<!-- 			</a> -->
-		<!-- 		</div> -->
-		<!-- 	</div> -->
 	</div>
 </div>
