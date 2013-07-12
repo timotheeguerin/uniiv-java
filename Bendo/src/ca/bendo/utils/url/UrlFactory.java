@@ -100,4 +100,28 @@ public final class UrlFactory
 		}
 		return result.toString();
 	}
+
+	/**
+	 * Return the redirect string using the redirect param. Redirect to the url
+	 * given by the param.
+	 * 
+	 * @param request
+	 *            HttpServelet request
+	 * @return redirect string;
+	 */
+	public static String redirect(final HttpServletRequest request)
+	{
+		String redirect = "redirect:";
+		String param = request.getParameter("redirect");
+		System.out.println("Param: " + param);
+		System.out.println("p: " + request.getAttribute("redirect"));
+		if (param == null)
+		{
+			redirect += "/";
+		} else
+		{
+			redirect += param;
+		}
+		return redirect;
+	}
 }

@@ -93,7 +93,7 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 		}
 		return translationsMap;
 	}
-	
+
 	/**
 	 * @param key
 	 *            Translation key
@@ -110,7 +110,7 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 
 		for (Translation translation : translations)
 		{
-			if(translation.toString() != "")
+			if (translation.toString() != "")
 			{
 				translationsMap.put(translation.getLanguage().getId(), translation);
 			}
@@ -152,7 +152,8 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 		Criterion langugageRestriction = Restrictions.eq("language.key", languageKey);
 
 		Translation translation = (Translation) getSession().createCriteria(Translation.class)
-				.add(Restrictions.and(keyRestriction, langugageRestriction)).uniqueResult();
+				.createAlias("language", "language").add(Restrictions.and(keyRestriction, langugageRestriction))
+				.uniqueResult();
 		return translation;
 	}
 

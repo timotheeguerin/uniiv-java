@@ -50,7 +50,7 @@
 					</span>
 				</span>
 			</div>
-			
+			<input name="redirect" value="${redirect}" type="hidden"/>
 			<div class="login_spacer_big"></div>
 			<div class="login_submit">
 				<input class="submit login-bt" name="submitbtn" type="submit" value="Log In" />

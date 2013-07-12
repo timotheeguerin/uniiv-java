@@ -56,19 +56,19 @@ public class TranslatorTag extends TagSupport implements DynamicAttributes
 	{
 		JspWriter out = pageContext.getOut();
 		Translator trans = (Translator) pageContext.getRequest().getAttribute("translator");
-		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
+
 		String result = "";
 		if (tagAttributes.size() > 0)
 		{
 			if (trans != null)
 			{
-				result = trans.translate(getValue(), languageId, tagAttributes);
+				result = trans.translate(getValue(), tagAttributes);
 			}
 		} else
 		{
 			if (trans != null)
 			{
-				result = trans.translate(getValue(), languageId);
+				result = trans.translate(getValue());
 			}
 		}
 		try

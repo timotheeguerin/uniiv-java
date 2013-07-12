@@ -20,6 +20,7 @@ import ca.bendo.form.entity.user.LoginForm;
 import ca.bendo.form.handler.user.LoginHandler;
 import ca.bendo.session.UserSession;
 import ca.bendo.translation.translation.Translator;
+import ca.bendo.utils.url.UrlFactory;
 
 /**
  * @author Timothée Guérin
@@ -70,7 +71,7 @@ public class LoginController extends GlobalController
 			return "redirect:" + translator.getLink("home", languageId);
 		}
 
-		request.setAttribute("containserr", false);
+		request.setAttribute("redirect", request.getParameter("redirect"));
 		return loginPage(request, new LoginForm());
 	}
 
@@ -91,13 +92,11 @@ public class LoginController extends GlobalController
 	public String loginPost(final HttpServletRequest request, @Valid final LoginForm loginForm,
 			final BindingResult result, final HttpServletResponse response)
 	{
-		Long languageId = Language.loadId(request);
 		UserSession session = UserSession.getSession(request);
-
 		if (session.isLogin())
 		{
 
-			return "redirect:" + translator.getLink("home", languageId);
+			return "redirect:" + translator.translateUrl("/");
 		}
 		if (result.hasErrors())
 		{
@@ -105,10 +104,11 @@ public class LoginController extends GlobalController
 		}
 		if (loginHandler.handle(request, loginForm, response))
 		{
+
 			String referer = request.getHeader("Referer");
 			String url = referer;
 			String params = "?alertmsg=alert_info_login_success";
-			return "redirect:" + url + params;
+			return UrlFactory.redirect(request) + params;
 		} else
 		{
 			result.addError(new FieldError("loginForm", "password", translator.translate("error.login")));

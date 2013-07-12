@@ -89,6 +89,23 @@ public class Translator
 	/**
 	 * 
 	 * @param key
+	 *            Key of the translation
+	 * @param tagAttributes
+	 *            Attributes to put in the translation
+	 * @return Translated element
+	 */
+	public String translate(final String key, final Map<String, Object> tagAttributes)
+	{
+		VelocityContext context = new VelocityContext(tagAttributes);
+		StringWriter out = new StringWriter();
+		String translation = translate(key);
+		Velocity.evaluate(context, out, "mystring", translation);
+		return out.toString();
+	}
+
+	/**
+	 * 
+	 * @param key
 	 *            key to translate
 	 * @param languageId
 	 *            Language id
@@ -115,7 +132,7 @@ public class Translator
 	public String translate(final String key)
 	{
 		Locale locale = LocaleContextHolder.getLocale();
-		Translation translation = translationsDAO.getTranslation(key, locale.getDisplayName());
+		Translation translation = translationsDAO.getTranslation(key, locale.toString());
 		if (translation == null)
 		{
 			return key;
@@ -141,14 +158,12 @@ public class Translator
 	/**
 	 * @param url
 	 *            Url to translate
-	 * @param languageId
-	 *            Language id
 	 * @return url translated
 	 */
 	public String translateUrl(final String url)
 	{
 		Locale locale = LocaleContextHolder.getLocale();
-		return urlTranslationManager.translateUrl(url, locale.getDisplayName());
+		return urlTranslationManager.translateUrl(url, locale.toString());
 	}
 
 	/**

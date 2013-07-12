@@ -47,12 +47,11 @@ public class UrlTag extends TagSupport
 
 		Translator translator = Translator.getTranslator((HttpServletRequest) pageContext.getRequest());
 
-		Long languageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		String result = "";
 		if (translator != null)
 
 		{
-			result = url(translator.translateUrl(value, languageId));
+			result = url(translator.translateUrl(value));
 		}
 		try
 		{

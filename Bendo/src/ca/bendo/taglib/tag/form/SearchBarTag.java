@@ -121,24 +121,28 @@ public class SearchBarTag extends TagSupport
 	private String getFormUrl()
 	{
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
+		if (translator == null)
+		{
+			return "";
+		}
 		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-		Long languageId = Language.loadId(request);
+
 		String value = "";
 		if (type == null)
 		{
 			return "";
 		} else if (type.equalsIgnoreCase("all"))
 		{
-			value = translator.translateUrl("/search/all/", languageId);
+			value = translator.translateUrl("/search/all/");
 		} else if (type.equalsIgnoreCase("university"))
 		{
-			value = translator.translateUrl("/search/university/", languageId);
+			value = translator.translateUrl("/search/university/");
 		} else if (type.equalsIgnoreCase("professor"))
 		{
-			value = translator.translateUrl("/search/professor/", languageId);
+			value = translator.translateUrl("/search/professor/");
 		} else if (type.equalsIgnoreCase("course"))
 		{
-			value = translator.translateUrl("/search/course/", languageId);
+			value = translator.translateUrl("/search/course/");
 		}
 		String url = UrlFactory.getUrl(value, request);
 		return url;
