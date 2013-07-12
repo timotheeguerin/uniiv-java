@@ -3,8 +3,6 @@
  */
 package ca.bendo.form;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -19,8 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import ca.bendo.form.entity.forum.ForumReplyForm;
-import ca.bendo.form.entity.user.SignupForm;
+import ca.bendo.form.entity.plugin.NewFacebookPollForm;
 
 /**
  * @author Timothée Guérin
@@ -59,14 +56,11 @@ public class TestValidator
 	@Test
 	public void manufacturerIsNull()
 	{
-		SignupForm form = new SignupForm();
-		form.setFirstName("First");
-		form.setLastName("Last");
-		form.setEmail("timothee.guerin@outlook.com");
-		form.setPassword("password1");
-		form.setPasswordCheck("password2");
-		Set<ConstraintViolation<SignupForm>> constraintViolations = validator.validate(form);
-		ConstraintViolation<SignupForm> error = constraintViolations.iterator().next();
+		NewFacebookPollForm form = new NewFacebookPollForm();
+		form.setTitle("TITLE");
+		form.setType(2);
+		Set<ConstraintViolation<NewFacebookPollForm>> constraintViolations = validator.validate(form);
+		ConstraintViolation<NewFacebookPollForm> error = constraintViolations.iterator().next();
 		System.out.println(error.getPropertyPath() + " - " + error.getMessage());
 
 	}

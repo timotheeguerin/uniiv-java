@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ca.bendo.form.constaints;
+package ca.bendo.form.constaints.annotation;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -13,27 +13,23 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import ca.bendo.form.constaints.type.UniqueType;
-import ca.bendo.form.constaints.validator.UniqueValidator;
+import ca.bendo.form.constaints.validator.ExistValidator;
 
 /**
  * @author Timothée Guérin
  * @version Bendo
  * 
- *          <b>Unique</b>
+ *          <b>Exist</b>
  *          <p>
- * 
- *          Validation annotation that check if the field is used
  *          </p>
  * 
  * 
  */
-
 @Target(ElementType.FIELD)
 @Retention(RUNTIME)
-@Constraint(validatedBy = UniqueValidator.class)
+@Constraint(validatedBy = ExistValidator.class)
 @Documented
-public @interface Unique
+public @interface Exist
 {
 	/**
 	 * 
@@ -44,7 +40,7 @@ public @interface Unique
 	 * 
 	 * @return
 	 */
-	UniqueType type();
+	Class<?> dao();
 
 	/**
 	 * 

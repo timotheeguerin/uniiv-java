@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import ca.bendo.form.FieldValidator;
-import ca.bendo.form.constaints.FieldMatch;
+import ca.bendo.form.constaints.annotation.FieldMatch;
 
 /**
  * @author Timothée Guérin

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ca.bendo.form.constaints;
+package ca.bendo.form.constaints.annotation;
 
 /**
  * @author Timothée Guérin

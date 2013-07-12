@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 
-import ca.bendo.form.constaints.Unique;
+import ca.bendo.form.constaints.annotation.Unique;
 import ca.bendo.form.constaints.type.UniqueType;
 
 /**

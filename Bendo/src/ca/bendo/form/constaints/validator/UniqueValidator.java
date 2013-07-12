@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.bendo.db.dao.user.UserDAO;
 import ca.bendo.db.dao.user.UserEmailDAO;
-import ca.bendo.form.constaints.Unique;
+import ca.bendo.form.constaints.annotation.Unique;
 
 /**
  * @author Timothée Guérin

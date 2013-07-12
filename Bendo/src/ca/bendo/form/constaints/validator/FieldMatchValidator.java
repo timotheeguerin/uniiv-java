@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import ca.bendo.form.constaints.FieldMatch;
+import ca.bendo.form.constaints.annotation.FieldMatch;
 
 /**
  * @author Timothée Guérin
