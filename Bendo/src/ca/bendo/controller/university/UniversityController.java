@@ -3,6 +3,8 @@
  */
 package ca.bendo.controller.university;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ca.bendo.db.dao.university.UniversityQuery;
 import ca.bendo.db.dao.user.bookmark.UserUniversityBookmarkDAO;
 import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.university.University;
@@ -83,6 +86,12 @@ public class UniversityController
 		}
 
 		return "views/university/university";
+	}
+	
+	@RequestMapping(value="university/list", method=RequestMethod.GET)
+	public String universityList(final HttpServletRequest request)
+	{
+		return "views/university/list";
 	}
 
 	/**

@@ -85,6 +85,11 @@ public class UniversityTDS
 		return university;
 
 	}
+	
+	public List<University> listUniversity()
+	{
+		return universityDAO.list();
+	}
 
 	/**
 	 * 
