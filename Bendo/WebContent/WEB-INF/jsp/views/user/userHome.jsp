@@ -86,27 +86,27 @@
 			<h1>Your Pages</h1>
 		</div>
 		
-		<div class="your_wikis_toggle">Your Wikis</div>
+		<div class="your_wikis_toggle"><b:translator value="your_wikis"/> (${user.bookmark.wikiBookmarks.size()})</div>
 		<div class="your_wikis_content user_home_show_hide_content">
 			<c:forEach var="wiki" items="${user.bookmark.wikiBookmarks}">
 				<div><a href="<c:url value="/wiki/${wiki.wiki.id}"/>"><c:out value="${wiki.wiki.title}" /></a></div>
 			</c:forEach>
 			<c:if test="${user.bookmark.wikiBookmarks.size() == 0}">
-				<div>You have no watched wikis.</div>
+				<div><b:translator value="your_wikis_none"/></div>
 			</c:if>
 		</div>
 		
-        <div class="your_unis_toggle">Your Universities</div>
+        <div class="your_unis_toggle"><b:translator value="your_unis"/> (${user.bookmark.universityBookmarks.size()})</div>
 		<div class="your_unis_content user_home_show_hide_content">
 			<c:forEach var="uni" items="${user.bookmark.universityBookmarks}">
 				<div><a href="<c:url value="/university/${uni.university.id}"/>"><c:out value="${uni.university.name}" /></a></div>
 			</c:forEach>
 			<c:if test="${user.bookmark.universityBookmarks.size() == 0}">
-				<div>You have no watched universities.</div>
+				<div><b:translator value="your_unis_none"/></div>
 			</c:if>
 		</div>
 		
-        <div class="your_questions_toggle">Your Questions</div>
+        <div class="your_questions_toggle"><b:translator value="your_questions"/></div>
 		<div class="your_questions_content user_home_show_hide_content">
 			<div>elem</div>
 			<div>elem</div>
@@ -114,7 +114,7 @@
 			<div>elem</div>
 		</div>
 		
-		<div class="your_answers_toggle">Your Answers</div>
+		<div class="your_answers_toggle"><b:translator value="your_answers"/></div>
 		<div class="your_answers_content user_home_show_hide_content">
 			<div>elem</div>
 			<div>elem</div>
