@@ -3,6 +3,9 @@
  */
 package ca.bendo.controller.admin.lang;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -62,7 +65,18 @@ public class TranslationController
 		// List<Translation> translations =
 		// translationDAO.search(form.getQuery(), form.getFirstResult(),
 		// form.getResultPerPage());
-		List<Translation> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
+		List<String> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
+		List<Integer> transints = new ArrayList<Integer>();
+		Map<String, Integer> trans = new HashMap<String,Integer>();
+		for(String s: translations)
+		{
+			transints.add(translationDAO.getNonNullTranslationsWithKey(s).size());
+		}
+		for(int i = 0; i < translations.size(); i++)
+		{
+			trans.put(translations.get(i), transints.get(i));
+		}
+		request.setAttribute("transmap", trans);
 		request.setAttribute("translations", translations);
 		int pageNum = (int) translationDAO.searchCount(form.getQuery()) / form.getResultPerPage() + 1;
 

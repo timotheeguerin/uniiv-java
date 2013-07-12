@@ -93,6 +93,30 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 		}
 		return translationsMap;
 	}
+	
+	/**
+	 * @param key
+	 *            Translation key
+	 * @return a map of the translation for the key in all language
+	 */
+	public Map<Long, Translation> getNonNullTranslationsWithKey(final String key)
+	{
+
+		@SuppressWarnings("unchecked")
+		List<Translation> translations = getSession().createCriteria(Translation.class)
+				.add(Restrictions.eq("key", key)).list();
+
+		Map<Long, Translation> translationsMap = new HashMap<Long, Translation>();
+
+		for (Translation translation : translations)
+		{
+			if(translation.toString() != "")
+			{
+				translationsMap.put(translation.getLanguage().getId(), translation);
+			}
+		}
+		return translationsMap;
+	}
 
 	/**
 	 * Get the translation having the key and in the language given.
@@ -156,7 +180,7 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	 * @return list of forum result
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Translation> search(final String query, final int firstResult, final int maxResults)
+	public List<String> search(final String query, final int firstResult, final int maxResults)
 	{
 		String value = "%" + query + "%";
 		return getSession().createCriteria(Translation.class)
