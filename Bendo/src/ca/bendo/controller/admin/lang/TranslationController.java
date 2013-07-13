@@ -5,7 +5,6 @@ package ca.bendo.controller.admin.lang;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.db.dao.lang.LanguageDAO;
 import ca.bendo.db.dao.lang.TranslationsDAO;
 import ca.bendo.db.entity.lang.Language;
@@ -55,6 +55,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	@Secured("admin")
 	@RequestMapping(value = "/admin/translation/list", method = RequestMethod.GET)
 	@Transactional
 	public String list(final HttpServletRequest request)
@@ -91,6 +92,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	@Secured("admin")
 	@RequestMapping(value = "/admin/translation/view", method = RequestMethod.GET)
 	public String view(final HttpServletRequest request)
 	{
@@ -114,7 +116,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
-	// @Secured("admin")
+	@Secured("admin")
 	@Transactional
 	@RequestMapping(value = "/admin/translation/edit", method = RequestMethod.GET)
 	public String edit(final HttpServletRequest request)
@@ -146,6 +148,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	@Secured("admin")
 	@RequestMapping(value = "/admin/translation/", method = RequestMethod.GET)
 	public String index(final HttpServletRequest request)
 	{
@@ -158,6 +161,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	@Secured("admin")
 	@RequestMapping(value = "/admin/translation/add", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
@@ -170,6 +174,7 @@ public class TranslationController
 	 *            Request
 	 * @return Jsp page
 	 */
+	@Secured("admin")
 	@Transactional
 	@RequestMapping(value = "/admin/translation/insert", method = RequestMethod.GET)
 	public String insert(final HttpServletRequest request)
