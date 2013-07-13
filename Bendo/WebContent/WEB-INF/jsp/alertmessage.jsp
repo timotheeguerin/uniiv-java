@@ -35,37 +35,39 @@
     display: hidden;
 }
 </style>
-<script>
-$(document).ready(function() {
-    showPopup("test");
-});
-
-function showPopup()
-{
-    resizeMarginPopup();
-    $(".popup_overlay").fadeIn();
-    $(".popup").fadeIn();
-    $(document).click(function() {
-        hidePopup();
-    });
-}
-
-function hidePopup()
-{
-    $(".popup_overlay").fadeOut();
-    $(".popup").fadeOut();
-}
-
-function resizeMarginPopup()
-{
-    var width = $(".popup").width();
-    $(".popup").css("margin-left", ((-1)*width)/2);
-}
-</script>
-<c:forEach var="alert" items="${alertMessageManager.alertMessages}">
+<c:if test="${alertMessageManager.alertMessages.size()>0}" >
+	<script>
+		$(document).ready(function() {
+		    showPopup("test");
+		});
+		
+		function showPopup()
+		{
+		    resizeMarginPopup();
+		    $(".popup_overlay").fadeIn();
+		    $(".popup").fadeIn();
+		    $(document).click(function() {
+		        hidePopup();
+		    });
+		}
+		
+		function hidePopup()
+		{
+		    $(".popup_overlay").fadeOut();
+		    $(".popup").fadeOut();
+		}
+		
+		function resizeMarginPopup()
+		{
+		    var width = $(".popup").width();
+		    $(".popup").css("margin-left", ((-1)*width)/2);
+		}
+	</script>
 	<div class="popup_overlay"></div>
-		<div class="popup">
-		<img class='icon ${alert.type}' src='<c:url value="images/icon/${alert.type.toString()}.png"/>' /><br>
-		${alert.msg}
+	<div class="popup">
+		<c:forEach var="alert" items="${alertMessageManager.alertMessages}">
+				<img class='icon ${alert.type}' src='<c:url value="/images/icon/${alert.type.toString()}.png"/>' /><br>
+				${alert.msg}<br>
+		</c:forEach>
 	</div>
-</c:forEach>
+</c:if>
