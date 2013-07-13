@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import ca.bendo.db.entity.user.User;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -54,6 +56,13 @@ public class FacebookPollEntity
 	 */
 	@Column(name = "facebook_id", nullable = false)
 	private long facebookId;
+
+	/**
+	 * 
+	 */
+	@ManyToOne
+	@JoinColumn(name = "id_user")
+	private User user;
 
 	/**
 	 * 
@@ -144,6 +153,23 @@ public class FacebookPollEntity
 	public void setLikes(final Set<FacebookPollUserLike> likes)
 	{
 		this.likes = likes;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public User getUser()
+	{
+		return user;
+	}
+
+	/**
+	 * @param user
+	 *            the user to set
+	 */
+	public void setUser(final User user)
+	{
+		this.user = user;
 	}
 
 }
