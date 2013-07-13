@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import ca.bendo.db.entity.user.User;
 
@@ -49,6 +51,7 @@ public class UserSession
 	}
 
 	/**
+	 * Load the user session from the session.
 	 * 
 	 * @param req
 	 *            Request
@@ -59,7 +62,7 @@ public class UserSession
 		HttpSession session = getRequest().getSession();
 		// Load the user from the session
 		user = (User) session.getAttribute("user");
-
+		req.setAttribute("userSession", this);
 	}
 
 	/**
@@ -139,6 +142,15 @@ public class UserSession
 	public static UserSession getSession(final HttpServletRequest request)
 	{
 		return (UserSession) request.getAttribute("userSession");
+	}
+
+	/**
+	 * @return userSession loaded from request
+	 */
+	public static UserSession getSession()
+	{
+		return (UserSession) RequestContextHolder.currentRequestAttributes().getAttribute("userSession",
+				RequestAttributes.SCOPE_REQUEST);
 	}
 
 	/**

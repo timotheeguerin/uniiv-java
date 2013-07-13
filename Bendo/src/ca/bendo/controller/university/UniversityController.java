@@ -22,7 +22,7 @@ import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.university.University;
 import ca.bendo.db.entity.user.User;
 import ca.bendo.json.AutoCompleteJson;
-import ca.bendo.page.handler.UniversityTDS;
+import ca.bendo.page.handler.UniversityService;
 import ca.bendo.session.UserSession;
 
 /**
@@ -48,7 +48,7 @@ public class UniversityController
 	 * 
 	 */
 	@Autowired
-	private UniversityTDS universityHandler;
+	private UniversityService universityHandler;
 
 	/**
 	 * Get the request from the signup page.
@@ -115,7 +115,7 @@ public class UniversityController
 	/**
 	 * @return the universityHandler
 	 */
-	public UniversityTDS getUniversityHandler()
+	public UniversityService getUniversityHandler()
 	{
 		return universityHandler;
 	}
@@ -124,7 +124,7 @@ public class UniversityController
 	 * @param universityHandler
 	 *            the universityHandler to set
 	 */
-	public void setUniversityHandler(final UniversityTDS universityHandler)
+	public void setUniversityHandler(final UniversityService universityHandler)
 	{
 		this.universityHandler = universityHandler;
 	}

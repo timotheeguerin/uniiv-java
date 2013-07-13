@@ -31,7 +31,7 @@ import ca.bendo.json.Suggestion;
  */
 @Service
 @Transactional
-public class UniversityTDS
+public class UniversityService
 {
 	/**
 	 * 

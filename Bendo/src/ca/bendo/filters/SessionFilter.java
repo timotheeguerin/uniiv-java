@@ -91,7 +91,6 @@ public class SessionFilter extends IFilter
 		UserSession userSession = new UserSession();
 		userSession.loadSession(request);
 		sessionHandler.reloadUser(userSession);
-		request.setAttribute("userSession", userSession);
 		loginUserFromCookie(request);
 		return currentUrl;
 	}

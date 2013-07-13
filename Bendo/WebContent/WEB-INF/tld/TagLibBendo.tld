@@ -131,11 +131,6 @@
 	</tag>
 
 	<tag>
-		<name>alertmsg</name>
-		<tagclass>ca.bendo.taglib.tag.AlertMessageTag</tagclass>
-	</tag>
-
-	<tag>
 		<name>dropdown</name>
 		<tagclass>ca.bendo.taglib.tag.dropdown.DropdownTag</tagclass>
 	</tag>

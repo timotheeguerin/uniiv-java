@@ -34,7 +34,7 @@ public @interface Exist
 	/**
 	 * 
 	 */
-	String message() default "Alias name is already in use.";
+	String message() default "error.exist";
 
 	/**
 	 * 
