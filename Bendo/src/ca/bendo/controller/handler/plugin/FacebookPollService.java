@@ -22,6 +22,8 @@ import ca.bendo.form.entity.plugin.LikeFacebookPollEntityForm;
 import ca.bendo.form.entity.plugin.NewEntityFacebookPollForm;
 import ca.bendo.form.entity.plugin.NewFacebookPollForm;
 import ca.bendo.session.UserSession;
+import ca.bendo.utils.facebook.FacebookUtils;
+import ca.bendo.utils.facebook.Place;
 
 /**
  * @author Timothée Guérin
@@ -37,6 +39,12 @@ import ca.bendo.session.UserSession;
 @Transactional
 public class FacebookPollService
 {
+	/**
+	 * 
+	 */
+	@Autowired
+	private FacebookUtils facebook;
+
 	/**
 	 * 
 	 */
@@ -93,10 +101,13 @@ public class FacebookPollService
 		User user = UserSession.getSession().getUser();
 		FacebookPoll poll = pollDAO.getById(form.getPollId());
 
+		Place place = facebook.getPlace(form.getId());
+
 		FacebookPollEntity entity = new FacebookPollEntity();
 		entity.setFacebookId(form.getId());
 		entity.setPoll(poll);
-		entity.setName(form.getName());
+		entity.setName(place.getName());
+
 		entity.setUser(user);
 		pollEntityDAO.add(entity);
 
@@ -125,5 +136,18 @@ public class FacebookPollService
 			return 0;
 		}
 
+	}
+
+	/**
+	 * @param pollId
+	 *            poll Id
+	 * @return poll
+	 */
+	public FacebookPoll loadPoll(final long pollId)
+	{
+		FacebookPoll poll = pollDAO.getById(pollId);
+		// List<FacebookPollEntity> entities = pollEntityDAO.listFromPoll()
+		// poll.setEntities(entities);
+		return poll;
 	}
 }

@@ -6,11 +6,9 @@ package ca.bendo.controller.plugin;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.hibernate.criterion.LikeExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ca.bendo.controller.handler.plugin.FacebookPollService;
 import ca.bendo.controller.interceptor.annotation.Secured;
+import ca.bendo.db.entity.plugin.facebook.FacebookPoll;
 import ca.bendo.form.entity.plugin.LikeFacebookPollEntityForm;
 import ca.bendo.form.entity.plugin.NewEntityFacebookPollForm;
 import ca.bendo.form.entity.plugin.NewFacebookPollForm;
@@ -100,6 +99,21 @@ public class FacebookPollController
 	/**
 	 * 
 	 * @param request
+	 *            request
+	 * @param pollId
+	 *            PollId
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/plugin/facebook/poll/{pollId}/", method = RequestMethod.GET)
+	public String displayPoll(final HttpServletRequest request, @PathVariable("pollId") final long pollId)
+	{
+		FacebookPoll poll = service.loadPoll(pollId);
+		return "views/";
+	}
+
+	/**
+	 * 
+	 * @param request
 	 *            Request
 	 * @return jsp page
 	 */
@@ -149,5 +163,4 @@ public class FacebookPollController
 		request.setAttribute("types", service.listPollTypes());
 		return "views/plugins/facebook/newpoll";
 	}
-
 }

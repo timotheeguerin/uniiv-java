@@ -71,6 +71,12 @@ public class FacebookPollEntity
 	private Set<FacebookPollUserLike> likes;
 
 	/**
+	 * 
+	 */
+	@Column(name = "score")
+	private int score;
+
+	/**
 	 * @return the id
 	 */
 	public long getId()
@@ -170,6 +176,23 @@ public class FacebookPollEntity
 	public void setUser(final User user)
 	{
 		this.user = user;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public int getScore()
+	{
+		return score;
+	}
+
+	/**
+	 * @param score
+	 *            the score to set
+	 */
+	public void setScore(final int score)
+	{
+		this.score = score;
 	}
 
 }

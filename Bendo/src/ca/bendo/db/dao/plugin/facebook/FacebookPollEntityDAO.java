@@ -3,6 +3,9 @@
  */
 package ca.bendo.db.dao.plugin.facebook;
 
+import java.util.List;
+
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,5 +35,16 @@ public class FacebookPollEntityDAO extends HibernateDAO<FacebookPollEntity>
 	protected void init()
 	{
 		setType(FacebookPollEntity.class);
+	}
+
+	/**
+	 * @param pollId
+	 *            Poll id
+	 * @return list
+	 */
+	@SuppressWarnings("unchecked")
+	public List<FacebookPollEntity> listFromPoll(final long pollId)
+	{
+		return (List<FacebookPollEntity>) createCriteria().add(Restrictions.eq("poll.id", pollId)).list();
 	}
 }

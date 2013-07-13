@@ -5,8 +5,6 @@ package ca.bendo.form.entity.plugin;
 
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import ca.bendo.db.dao.plugin.facebook.FacebookPollDAO;
 import ca.bendo.form.constaints.annotation.Exist;
 
@@ -35,11 +33,7 @@ public class NewEntityFacebookPollForm
 	@NotNull
 	private long id;
 
-	/**
-	 * 
-	 */
-	@NotEmpty
-	private String name;
+
 
 	/**
 	 * @return the id
@@ -73,23 +67,6 @@ public class NewEntityFacebookPollForm
 	public void setPollId(final long pollId)
 	{
 		this.pollId = pollId;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName()
-	{
-		return name;
-	}
-
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(final String name)
-	{
-		this.name = name;
 	}
 
 }

@@ -56,5 +56,4 @@ public class TestCrypter
 		assertTrue(hashKey.equals(hashKey2));
 	}
 
-
 }

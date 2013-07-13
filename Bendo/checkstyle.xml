@@ -16,7 +16,10 @@
       <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocType"/>
-    <module name="JavadocVariable"/>
+    <module name="JavadocVariable">
+      <property name="severity" value="ignore"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
     <module name="JavadocStyle"/>
     <module name="ConstantName"/>
     <module name="LocalFinalVariableName"/>
