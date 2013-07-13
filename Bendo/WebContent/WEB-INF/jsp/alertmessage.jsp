@@ -38,7 +38,7 @@
 <c:if test="${alertMessageManager.alertMessages.size()>0}" >
 	<script>
 		$(document).ready(function() {
-		    showPopup("test");
+		    showPopup();
 		});
 		
 		function showPopup()

@@ -1,0 +1,1 @@
+<div><a href='<b:url value="/admin/users/list"/>'>List</a></div>
