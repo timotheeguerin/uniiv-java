@@ -82,10 +82,9 @@ public class SearchBarTag extends TagSupport
 	{
 
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
-		Long lanuageId = Language.loadId((HttpServletRequest) pageContext.getRequest());
 		StringBuilder result = new StringBuilder();
 
-		String placeholderStr = "placeholder='" + translator.translate(placeholder, lanuageId) + "'";
+		String placeholderStr = "placeholder='" + translator.translate(placeholder) + "'";
 		String ajaxUrl = "data-ajax-href='" + getFormUrl() + "/ajaxlist' ";
 		result.append("<input name='query' type='text' class='quickfind_bar searchAutcomplete'");
 		result.append(placeholderStr).append(" ");

@@ -5,6 +5,7 @@ package ca.bendo.taglib.template.alert;
 
 import javax.servlet.jsp.PageContext;
 
+import antlr.StringUtils;
 import ca.bendo.alert.message.AlertMessage;
 import ca.bendo.config.BendoConfig;
 import ca.bendo.taglib.template.TagTemplate;
@@ -52,7 +53,7 @@ public class AlertMessageBox extends TagTemplate
 		String msg = alertMsg.getMsg();
 		String type = alertMsg.getType().toString();
 		String img = url(BendoConfig.getProperty("img." + type));
-
+		
 		StringBuilder result = new StringBuilder();
 		result.append("<div class='alertMsgBox " + type + " " + key + "'>");
 		result.append("<div class='alertMsgIcon'>");

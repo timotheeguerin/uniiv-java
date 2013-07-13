@@ -20,7 +20,7 @@
 			<tiles:insertAttribute name="header" />
 		</header>
 		<div id="content" class="${contentMargin}">
-			<b:alertmsg />
+			<c:import url="alertmessage.jsp" />
 			<tiles:insertAttribute name="body" />
 		</div>
 
