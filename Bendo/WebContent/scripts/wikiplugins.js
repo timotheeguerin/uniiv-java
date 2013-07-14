@@ -2,15 +2,26 @@
  * Autocomplete
  */
 $(document).ready(function() {
-	
+	/**
+	 * Prevent submit form on Enter with autocomplete input
+	 */
+	$("input.facebookSearch").on("keydown", function(e) {
+		var code = e.keyCode || e.which;
+		if (code == 13) {
+			e.preventDefault();
+			return false;
+		}
+	});
+
 	$('input.facebookSearch').each(function() {
-		var href = $(this).attr("data-href");
+		var href = "https://graph.facebook.com/search";
 		$(this).autocomplete({
 			serviceUrl : href,
 			zIndex : 10001,
 			paramName : "q",
 			params : {
-				type : "page"
+				type : "page",
+				access_token : fbAccessToken
 			},
 			transformResult : function(response, originalQuery) {
 				var json = eval('(' + response + ')');
@@ -24,6 +35,11 @@ $(document).ready(function() {
 					})
 				};
 				return r;
+
+			},
+			onSelect : function(suggestion) {
+				var input = $($(this).attr("data-input"));
+				input.val(suggestion.data);
 			}
 
 		});

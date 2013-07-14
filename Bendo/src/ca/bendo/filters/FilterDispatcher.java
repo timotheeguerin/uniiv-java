@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import ca.bendo.utils.facebook.FacebookUtils;
+
 /**
  * @author Timothée Guérin
  * @version Bendo
@@ -53,6 +55,12 @@ public class FilterDispatcher implements Filter
 	@Autowired
 	private AlertMessageFilter alertManagerFilter;
 
+	/**
+	 * 
+	 */
+	@Autowired
+	private FacebookUtils facebook;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -87,6 +95,9 @@ public class FilterDispatcher implements Filter
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 
 		request.setAttribute("currentUrl", url);
+		String str = facebook.getAccessToken();
+		System.out.println("TOK: " + str);
+		request.setAttribute("fb_accessToken", str);
 		dispatcher.forward(request, response);
 	}
 

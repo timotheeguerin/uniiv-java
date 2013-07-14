@@ -146,8 +146,8 @@ public class FacebookPollService
 	public FacebookPoll loadPoll(final long pollId)
 	{
 		FacebookPoll poll = pollDAO.getById(pollId);
-		// List<FacebookPollEntity> entities = pollEntityDAO.listFromPoll()
-		// poll.setEntities(entities);
+		List<FacebookPollEntity> entities = pollEntityDAO.listFromPoll(pollId);
+		poll.setEntities(entities);
 		return poll;
 	}
 }

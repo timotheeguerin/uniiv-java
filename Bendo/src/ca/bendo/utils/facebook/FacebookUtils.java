@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
+import com.restfb.FacebookClient.AccessToken;
 
 /**
  * @author Timothée Guérin
@@ -21,10 +22,20 @@ import com.restfb.FacebookClient;
 @Service
 public class FacebookUtils
 {
+	private static final String CLIENT_ID = "193939527441772";
+	private static final String CLIENT_SECRET = "f7f393a52e1de95d58b2889b9589763c";
+
+	private FacebookClient facebook = new DefaultFacebookClient(CLIENT_ID + "|" + CLIENT_SECRET);
+
 	/**
 	 * 
+	 * @return the access token given by facebook
 	 */
-	private FacebookClient facebook = new DefaultFacebookClient("193939527441772|f7f393a52e1de95d58b2889b9589763c");
+	public String getAccessToken()
+	{
+		AccessToken token = facebook.obtainAppAccessToken(CLIENT_ID, CLIENT_SECRET);
+		return token.getAccessToken();
+	}
 
 	/**
 	 * 

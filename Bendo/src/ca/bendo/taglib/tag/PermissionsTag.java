@@ -16,14 +16,13 @@ import ca.bendo.session.UserSession;
 
 /**
  * @author toby
- * @version Bendo 
-
- * <b>PermissionsTag</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>PermissionsTag</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 public class PermissionsTag extends BodyTagSupport
 {
@@ -44,14 +43,14 @@ public class PermissionsTag extends BodyTagSupport
 		UserSession session = UserSession.getSession(request);
 		BodyContent body = getBodyContent();
 		boolean hasPermission = false;
-		for(String permission: permissions)
+		for (String permission : permissions)
 		{
-			if(permission != null && session.hasPermission(permission))
+			if (permission != null && session.hasPermission(permission))
 			{
 				hasPermission = true;
 			}
 		}
-		
+
 		if (hasPermission)
 		{
 			JspWriter out = body.getEnclosingWriter();

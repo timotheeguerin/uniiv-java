@@ -21,6 +21,7 @@
 		</header>
 		<div id="content" class="${contentMargin}">
 			<c:import url="alertmessage.jsp" />
+			<div id="fb-root"></div>
 			<tiles:insertAttribute name="body" />
 		</div>
 

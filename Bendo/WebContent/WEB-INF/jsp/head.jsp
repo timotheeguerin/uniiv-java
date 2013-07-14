@@ -8,6 +8,7 @@
 
 <script type="text/javascript">
 	var baseUrl = <c:url value="/"/>;
+	var fbAccessToken = "<c:out value="${fb_accessToken}" />";
 </script>
 <!--[if lte IE 6]></base><![endif]-->
 
@@ -29,6 +30,7 @@
 		<!-- Scripts -->
 
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization&dummy=.js"></script>
+		<script src="https://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
 		<c:set var="scripts" value="${head.ressources.scripts}" scope="page" />
 		<c:forEach items="${scripts}" var="style">
 			<c:url value="${style}" var="url" />

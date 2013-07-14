@@ -108,7 +108,9 @@ public class FacebookPollController
 	public String displayPoll(final HttpServletRequest request, @PathVariable("pollId") final long pollId)
 	{
 		FacebookPoll poll = service.loadPoll(pollId);
-		return "views/";
+		request.setAttribute("poll", poll);
+		request.setAttribute("newEntityFacebookPollForm", new NewEntityFacebookPollForm());
+		return "views/plugins/facebook/displayPoll";
 	}
 
 	/**
