@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,13 +45,13 @@ public class ForumQuestionController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "forum/question/{questionId}", method = RequestMethod.GET)
-	public String displayQuestion(final HttpServletRequest request,
+	@RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
+	public String show(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.setupDisplayQuestion(request, questionId))
 		{
-			return "views/forum/displayQuestion";
+			return "views/question/show";
 		} else
 		{
 			return "views/errors/erro404";
@@ -65,10 +66,10 @@ public class ForumQuestionController
 	 *            groupId
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/forum/group/{groupId}/question/new", method = RequestMethod.GET)
-	public String newQuestion(final HttpServletRequest request, @PathVariable(value = "groupId") final long groupId)
+	@RequestMapping(value = "/question/new", method = RequestMethod.GET)
+	public String add(final HttpServletRequest request)
 	{
-		return newQuestionPage(request, new ForumQuestionForm(), groupId);
+		return newQuestionPage(request, new ForumQuestionForm());
 	}
 
 	/**
@@ -83,13 +84,13 @@ public class ForumQuestionController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/forum/group/{groupId}/question/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/question/new", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final ForumQuestionForm questionForm,
-			final BindingResult result, @PathVariable(value = "groupId") final long groupId)
+			final BindingResult result)
 	{
 		if (result.hasErrors())
 		{
-			return newQuestionPage(request, questionForm, groupId);
+			return newQuestionPage(request, questionForm);
 		} else
 		{
 			questionHandler.handleNewQuestion(request, questionForm);
@@ -107,19 +108,11 @@ public class ForumQuestionController
 	 *            Group Id
 	 * @return jsp page
 	 */
-	public String newQuestionPage(final HttpServletRequest request, final ForumQuestionForm questionForm,
-			final long groupId)
+	public String newQuestionPage(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{
 		UserWarning.needValidUser(request);
-
-		if (questionHandler.setupNewQuestionPage(request, groupId))
-		{
-			request.setAttribute("newQuestionForm", questionForm);
-			return "views/forum/questionInput";
-		} else
-		{
-			return "views/errors/error404";
-		}
+		request.setAttribute("questionForm", questionForm);
+		return "views/question/input";
 	}
 
 	/**
@@ -134,14 +127,14 @@ public class ForumQuestionController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "forum/question/{questionId}/edit", method = RequestMethod.POST)
+	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.POST)
 	public String handleEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final BindingResult result, @PathVariable(value = "questionId") final long questionId)
 	{
 		if (result.hasErrors())
 		{
 			questionHandler.setupEditQuestion(request, questionForm);
-			return "views/forum/questionInput";
+			return "views/question/input";
 		} else
 		{
 			questionHandler.handleEditQuestion(request, questionId, questionForm);
@@ -157,17 +150,24 @@ public class ForumQuestionController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "forum/question/{questionId}/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.GET)
 	public String editQuestion(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.loadEditQuestion(request, questionId))
 		{
-			return "views/forum/questionInput";
+			return "views/question/input";
 		} else
 		{
 			return "views/errors/error404";
 		}
+	}
+	
+	@RequestMapping(value="question/list", method = RequestMethod.GET)
+	public String list(final HttpServletRequest request)
+	{
+		request.setAttribute("questions", questionHandler.list());
+		return "views/question/list";
 	}
 
 }

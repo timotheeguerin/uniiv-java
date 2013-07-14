@@ -154,25 +154,6 @@ public class ForumQuestionHandler
 	}
 
 	/**
-	 * 
-	 * @param request
-	 *            Request
-	 * @param groupId
-	 *            Group id
-	 * @return boolean if the question was successful asked
-	 */
-	public boolean setupNewQuestionPage(final HttpServletRequest request, final long groupId)
-	{
-		ForumGroup group = groupDAO.getById(groupId);
-		// if (group == null)
-		// {
-		// return false;
-		// }
-		request.setAttribute("group", group);
-		return true;
-	}
-
-	/**
 	 * @param request
 	 *            HttpRequest
 	 * @param questionId
@@ -260,6 +241,11 @@ public class ForumQuestionHandler
 		questionDAO.saveOrUpdate(question);
 
 		return true;
+	}
+	
+	public List<ForumQuestion> list()
+	{
+		return questionDAO.list();
 	}
 
 }
