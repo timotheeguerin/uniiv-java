@@ -8,15 +8,17 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.alert.UserWarning;
+import ca.bendo.controller.GlobalController;
+import ca.bendo.db.entity.forum.ForumQuestion;
 import ca.bendo.form.entity.forum.ForumQuestionForm;
 import ca.bendo.form.handler.forum.ForumQuestionHandler;
+import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -29,8 +31,13 @@ import ca.bendo.form.handler.forum.ForumQuestionHandler;
  * 
  */
 @Controller
-public class ForumQuestionController
+public class ForumQuestionController extends GlobalController
 {
+	/**
+	 * 
+	 */
+	@Autowired
+	private Translator translator;
 	/**
 	 * 
 	 */
@@ -46,8 +53,7 @@ public class ForumQuestionController
 	 * @return jsp page
 	 */
 	@RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
-	public String show(final HttpServletRequest request,
-			@PathVariable(value = "questionId") final long questionId)
+	public String show(final HttpServletRequest request, @PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.setupDisplayQuestion(request, questionId))
 		{
@@ -62,8 +68,6 @@ public class ForumQuestionController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param groupId
-	 *            groupId
 	 * @return jsp page
 	 */
 	@RequestMapping(value = "/question/new", method = RequestMethod.GET)
@@ -76,8 +80,6 @@ public class ForumQuestionController
 	 * 
 	 * @param request
 	 *            Request
-	 * @param groupId
-	 *            groupId
 	 * @param questionForm
 	 *            Question form entity
 	 * @param result
@@ -93,8 +95,8 @@ public class ForumQuestionController
 			return newQuestionPage(request, questionForm);
 		} else
 		{
-			questionHandler.handleNewQuestion(request, questionForm);
-			return "redirect:";
+			ForumQuestion question = questionHandler.handleNewQuestion(request, questionForm);
+			return "redirect:" + translator.translateUrl("/question/" + question.getId());
 		}
 	}
 
@@ -104,8 +106,6 @@ public class ForumQuestionController
 	 *            Request
 	 * @param questionForm
 	 *            question Form
-	 * @param groupId
-	 *            Group Id
 	 * @return jsp page
 	 */
 	public String newQuestionPage(final HttpServletRequest request, final ForumQuestionForm questionForm)
@@ -127,7 +127,7 @@ public class ForumQuestionController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.POST)
+	@RequestMapping(value = "/question/{questionId}/edit", method = RequestMethod.POST)
 	public String handleEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final BindingResult result, @PathVariable(value = "questionId") final long questionId)
 	{
@@ -150,7 +150,7 @@ public class ForumQuestionController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/question/{questionId}/edit", method = RequestMethod.GET)
 	public String editQuestion(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
@@ -162,8 +162,14 @@ public class ForumQuestionController
 			return "views/errors/error404";
 		}
 	}
-	
-	@RequestMapping(value="question/list", method = RequestMethod.GET)
+
+	/**
+	 * 
+	 * @param request
+	 *            HttpRequest
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/question/list", method = RequestMethod.GET)
 	public String list(final HttpServletRequest request)
 	{
 		request.setAttribute("questions", questionHandler.list());

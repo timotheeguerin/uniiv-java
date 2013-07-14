@@ -70,10 +70,11 @@ public class ForumQuestionHandler
 	 *            Request
 	 * @param questionForm
 	 *            Question form
+	 * @return
 	 */
-	public void handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
+	public ForumQuestion handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{
-		handleNewQuestion(request, questionForm, new ArrayList<Tag>());
+		return handleNewQuestion(request, questionForm, new ArrayList<Tag>());
 	}
 
 	/**
@@ -105,15 +106,11 @@ public class ForumQuestionHandler
 	 *            Tags list containg the hidden tags
 	 * @return boolean if the question was successful asked
 	 */
-	public boolean handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
+	public ForumQuestion handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final List<Tag> presetTags)
 	{
 		UserSession session = UserSession.getSession(request);
 		User user = session.getUser();
-		if (user == null)
-		{
-			return false;
-		}
 
 		return createQuestion(questionForm, presetTags, user);
 	}
@@ -126,9 +123,10 @@ public class ForumQuestionHandler
 	 *            List of hidden tags to add
 	 * @param user
 	 *            User who created the question
-	 * @return boolean if question created suceesfully
+	 * @return boolean if question created suceesfull
 	 */
-	public boolean createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags, final User user)
+	public ForumQuestion createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags,
+			final User user)
 	{
 
 		ForumQuestion question = new ForumQuestion();
@@ -150,7 +148,7 @@ public class ForumQuestionHandler
 		question.setContent(content);
 		questionDAO.saveOrUpdate(question);
 		System.out.println("Question added");
-		return true;
+		return question;
 	}
 
 	/**
@@ -242,7 +240,7 @@ public class ForumQuestionHandler
 
 		return true;
 	}
-	
+
 	public List<ForumQuestion> list()
 	{
 		return questionDAO.list();
