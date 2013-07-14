@@ -80,6 +80,15 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
+	<tag>
+		<name>securedList</name>
+		<tagclass>ca.bendo.taglib.tag.PermissionsTag</tagclass>
+		<attribute>
+			<name>permissions</name>
+			<type>java.lang.List</type>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
 
 	<tag>
 		<name>lbltranslator</name>
