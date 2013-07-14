@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.controller.handler.wiki.WikiHandler;
+import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.controller.interceptor.annotation.Title;
 import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
 import ca.bendo.db.dao.wiki.WikiPageDAO;
@@ -99,7 +100,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	// @Secured("wiki.create")
+	@Secured("wiki.create")
 	@RequestMapping(value = "/wiki/new", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
@@ -117,7 +118,7 @@ public class WikiController
 	 * @return jsp page
 	 */
 	// TODO validate title
-	// @Secured("wiki.create")
+	@Secured("wiki.create")
 	@Title("wiki_new_title")
 	@RequestMapping(value = "/wiki/new", method = RequestMethod.POST)
 	public String handleNewWiki(final HttpServletRequest request, @Valid final WikiPageForm form,
@@ -154,7 +155,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	// @Secured("wiki.edit")
+	@Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/{id}/edit", method = RequestMethod.GET)
 	public String edit(@PathVariable(value = "id") final long wikiId, final HttpServletRequest request)
 	{
@@ -175,7 +176,7 @@ public class WikiController
 	 * 
 	 */
 	// TODO validate title
-	// @Secured("wiki.edit")
+	@Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/{wikiId}/edit", method = RequestMethod.POST)
 	public String handleEdit(@PathVariable(value = "wikiId") final long wikiId, final HttpServletRequest request,
 			@Valid final WikiPageEditForm form, final BindingResult result)
@@ -215,7 +216,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	// @Secured("wiki.delete")
+	@Secured("wiki.delete")
 	@RequestMapping(value = "/wiki/{wikiId}/delete", method = RequestMethod.GET)
 	public String delete(@PathVariable(value = "wikiId") final long wikiId, final HttpServletRequest request)
 	{
