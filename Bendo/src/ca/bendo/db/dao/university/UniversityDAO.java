@@ -45,8 +45,7 @@ public class UniversityDAO extends HibernateDAO<University>
 	public List<University> listUniversities()
 	{
 
-		return (List<University>) getSession().createCriteria(University.class)
-				.addOrder(Order.asc("name")).list();
+		return (List<University>) getSession().createCriteria(University.class).addOrder(Order.asc("name")).list();
 	}
 
 	/**
@@ -60,8 +59,7 @@ public class UniversityDAO extends HibernateDAO<University>
 
 		Criteria criteria = getSession().createCriteria(University.class);
 		query.setupQuery(criteria);
-		List<Long> ids = (List<Long>) criteria
-				.setProjection(Projections.property("id"))
+		List<Long> ids = (List<Long>) criteria.setProjection(Projections.property("id"))
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 		return listByIds(ids);
 	}
@@ -76,10 +74,8 @@ public class UniversityDAO extends HibernateDAO<University>
 	{
 		String like = "%" + universityName + "%";
 
-		return (List<University>) getSession().createCriteria(University.class)
-				.add(Restrictions.like("name", like))
-				.addOrder(Order.asc("name"))
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
+				.addOrder(Order.asc("name")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 	}
 
@@ -92,13 +88,11 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return list of university satifying the request
 	 */
 	@SuppressWarnings("unchecked")
-	public List<University> listUniversityLikeMaxResults(
-			final String universityName, final int maxResults)
+	public List<University> listUniversityLikeMaxResults(final String universityName, final int maxResults)
 	{
 		String like = "%" + universityName + "%";
 
-		return (List<University>) getSession().createCriteria(University.class)
-				.add(Restrictions.like("name", like))
+		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
 				.addOrder(Order.asc("name")).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
@@ -115,26 +109,27 @@ public class UniversityDAO extends HibernateDAO<University>
 	 * @return list of university satifying the request
 	 */
 	@SuppressWarnings("unchecked")
-	public List<University> listUniversityLikeFromMaxResults(
-			final String universityName, final int firstResult,
+	public List<University> listUniversityLikeFromMaxResults(final String universityName, final int firstResult,
 			final int maxResults)
 	{
 		String like = "%" + universityName + "%";
 
-		return (List<University>) getSession().createCriteria(University.class)
-				.add(Restrictions.like("name", like))
-				.addOrder(Order.asc("name")).setFirstResult(firstResult)
-				.setMaxResults(maxResults)
+		return (List<University>) getSession().createCriteria(University.class).add(Restrictions.like("name", like))
+				.addOrder(Order.asc("name")).setFirstResult(firstResult).setMaxResults(maxResults)
 				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 
 	}
 
+	/**
+	 * 
+	 * @param countryId
+	 *            Id of the country
+	 * @return universities in the given country
+	 */
 	@SuppressWarnings("unchecked")
 	public List<University> listUniversityByCountry(final long countryId)
 	{
-		return (List<University>) createCriteria()
-				.createAlias("location", "location")
-				.createAlias("location.country", "country")
-				.add(Restrictions.eq("country.id", countryId)).list();
+		return (List<University>) createCriteria().createAlias("location", "location")
+				.createAlias("location.country", "country").add(Restrictions.eq("country.id", countryId)).list();
 	}
 }

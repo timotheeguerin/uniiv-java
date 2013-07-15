@@ -49,7 +49,7 @@ public class WikiRevisionDAO extends HibernateDAO<WikiRevision>
 	@SuppressWarnings("unchecked")
 	public List<WikiRevision> listWikiRevsions(final long wikiId, final Order order)
 	{
-		return (List<WikiRevision>) createCriteria().add(Restrictions.eq("page.id", wikiId)).addOrder(order);
+		return (List<WikiRevision>) createCriteria().add(Restrictions.eq("page.id", wikiId)).addOrder(order).list();
 
 	}
 }

@@ -700,7 +700,7 @@ public class DiffUtils
 		{
 			int wordEnd = text.indexOf(' ', lineStart);
 			lineEnd = text.indexOf('\n', lineStart);
-			if (wordEnd < lineEnd)
+			if (wordEnd < lineEnd && wordEnd != -1)
 			{
 				lineEnd = wordEnd;
 			}

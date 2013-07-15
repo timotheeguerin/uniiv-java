@@ -40,7 +40,8 @@ public final class MarkdownUtils
 	 */
 	public static String process(final String markdown)
 	{
-		String html = Processor.process(markdown);
+		String toProcess = markdown.replaceAll("\n", "\n\n");
+		String html = Processor.process(toProcess);
 		return generateTableOfContent(html);
 	}
 

@@ -24,7 +24,6 @@ import ca.bendo.config.BendoConfig;
  * 
  * 
  */
-@Transactional
 public class BendoContextListener implements ServletContextListener
 {
 

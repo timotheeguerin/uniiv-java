@@ -18,7 +18,6 @@ import ca.bendo.db.dao.professor.ProfessorRatingTypeDAO;
 import ca.bendo.db.dao.professor.ProfessorReviewDAO;
 import ca.bendo.db.dao.professor.ProfessorUniversityDAO;
 import ca.bendo.db.dao.program.ProgramDAO;
-import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.professor.Professor;
 import ca.bendo.db.entity.professor.ProfessorRatingAverage;
 import ca.bendo.db.entity.professor.ProfessorRatingType;
@@ -131,7 +130,6 @@ public class ProfessorHandler
 	public void setupNewProfessorPage(final HttpServletRequest request)
 	{
 		request.getAttribute("translator");
-		Long languageId = Language.loadId(request);
 		List<Program> programs = programDAO.listPrograms();
 		request.setAttribute("programs", programs);
 
@@ -148,7 +146,6 @@ public class ProfessorHandler
 	{
 
 		request.getAttribute("translator");
-		Long languageId = Language.loadId(request);
 		Professor professor = professorDAO.getById(professorId);
 
 		if (professor == null)

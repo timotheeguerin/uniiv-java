@@ -82,6 +82,10 @@ public class SearchBarTag extends TagSupport
 	{
 
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
+		if (translator == null)
+		{
+			return new StringBuilder();
+		}
 		StringBuilder result = new StringBuilder();
 
 		String placeholderStr = "placeholder='" + translator.translate(placeholder) + "'";
@@ -102,10 +106,12 @@ public class SearchBarTag extends TagSupport
 	{
 
 		Translator translator = (Translator) pageContext.getRequest().getAttribute("translator");
+		if (translator == null)
+		{
+			return new StringBuilder();
+		}
 		StringBuilder result = new StringBuilder();
-		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
-		Long languageId = Language.loadId(request);
-		String value = "value='" + translator.translate("search", languageId) + "'";
+		String value = "value='" + translator.translate("search") + "'";
 		result.append("<input name='submitbtn' class='quickfind_tool' type='submit' ");
 		result.append(value).append(" ");
 		result.append("/>");

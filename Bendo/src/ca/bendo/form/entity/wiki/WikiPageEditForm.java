@@ -44,6 +44,12 @@ public class WikiPageEditForm
 	private String comment;
 
 	/**
+	 * 
+	 */
+	public WikiPageEditForm()
+	{
+	}
+	/**
 	 * @param page
 	 *            page
 	 */

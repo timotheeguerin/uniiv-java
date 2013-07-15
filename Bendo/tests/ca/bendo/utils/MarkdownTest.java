@@ -23,8 +23,7 @@ public class MarkdownTest
 	@Test
 	public void testMarkdownCode()
 	{
-		String input = "[TOC]\n #Heading 1\n ##SubHeading1 \n ##SubHeading2 \n "
-				+ "#Heading 2\n #Heading 3\nioejoisjefoisejfojs \n ##SubHeading2";
+		String input = "Test\n\nnext\n\nline";
 		String html = MarkdownUtils.process(input);
 
 		System.out.println("=====================================");

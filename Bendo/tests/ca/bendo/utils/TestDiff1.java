@@ -46,8 +46,13 @@ public class TestDiff1
 	@Test
 	public void test()
 	{
-		String original = fileToStr("test/file_old.txt");
-		String revision = fileToStr("test/file_new.txt");
+		String original = "hello\n next";
+		String revision = "hello toby\n next";
+		
+		for (char c : original.toCharArray())
+		{
+			System.out.println(c + " " + (int) c);
+		}
 
 		System.out.println(DifferenceUtils.difference(original, revision));
 	}

@@ -127,6 +127,7 @@ public class WikiPage
 	 */
 	public void createRevision(final User revisionUser, final String comment, final FormattedContent content)
 	{
+		System.out.println("last: " + lastValidRevision);
 		WikiRevision revision = new WikiRevision(revisionUser, content, comment, this, lastRevision);
 		setLastRevision(revision);
 	}

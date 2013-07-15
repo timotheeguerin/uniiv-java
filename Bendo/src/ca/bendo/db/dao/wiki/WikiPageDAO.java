@@ -42,6 +42,7 @@ public class WikiPageDAO extends HibernateDAO<WikiPage>
 	@SuppressWarnings("unchecked")
 	public List<WikiPage> listSort()
 	{
-		return (List<WikiPage>) createCriteria().addOrder(Order.asc("title")).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		return (List<WikiPage>) createCriteria().addOrder(Order.asc("title"))
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 	}
 }

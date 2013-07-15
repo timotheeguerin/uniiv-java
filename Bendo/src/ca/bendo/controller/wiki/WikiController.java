@@ -43,13 +43,13 @@ public class WikiController
 	 */
 	@Autowired
 	private WikiHandler handler;
-	
+
 	/**
 	 * 
 	 */
 	@Autowired
 	private UserWikiBookmarkDAO userWikiBookmarkDAO;
-	
+
 	/**
 	 * 
 	 */
@@ -76,16 +76,15 @@ public class WikiController
 	 *            request Request
 	 * @return jsp page
 	 */
-	@Transactional
 	@RequestMapping(value = "/wiki/{id}", method = RequestMethod.GET)
 	public String show(@PathVariable(value = "id") final long id, final HttpServletRequest request)
 	{
-		request.setAttribute("wiki", wikiDAO.getById(id));
-		if(UserSession.getSession(request).isLogin())
+		request.setAttribute("wiki", handler.getWiki(id));
+		if (UserSession.getSession(request).isLogin())
 		{
 			User user = UserSession.getSession(request).getUser();
 			boolean bookmarked = false;
-			if(userWikiBookmarkDAO.getUserBookmark(user.getId(), id) != null)
+			if (handler.isWikiBookmarked(id, user.getId()))
 			{
 				bookmarked = true;
 			}
@@ -100,7 +99,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	@Secured("wiki.create")
+	// @Secured("wiki.create")
 	@RequestMapping(value = "/wiki/new", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
@@ -118,7 +117,7 @@ public class WikiController
 	 * @return jsp page
 	 */
 	// TODO validate title
-	@Secured("wiki.create")
+	// @Secured("wiki.create")
 	@Title("wiki_new_title")
 	@RequestMapping(value = "/wiki/new", method = RequestMethod.POST)
 	public String handleNewWiki(final HttpServletRequest request, @Valid final WikiPageForm form,
@@ -155,7 +154,7 @@ public class WikiController
 	 *            Request
 	 * @return jsp page
 	 */
-	@Secured("wiki.edit")
+	// @Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/{id}/edit", method = RequestMethod.GET)
 	public String edit(@PathVariable(value = "id") final long wikiId, final HttpServletRequest request)
 	{
@@ -176,7 +175,7 @@ public class WikiController
 	 * 
 	 */
 	// TODO validate title
-	@Secured("wiki.edit")
+	// @Secured("wiki.edit")
 	@RequestMapping(value = "/wiki/{wikiId}/edit", method = RequestMethod.POST)
 	public String handleEdit(@PathVariable(value = "wikiId") final long wikiId, final HttpServletRequest request,
 			@Valid final WikiPageEditForm form, final BindingResult result)

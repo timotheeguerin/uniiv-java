@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.wiki.WikiPageDAO;
 import ca.bendo.db.dao.wiki.WikiRevisionDAO;
+import ca.bendo.db.entity.wiki.WikiPage;
 import ca.bendo.db.entity.wiki.WikiRevision;
 import ca.bendo.utils.DifferenceUtils;
 
@@ -56,53 +57,37 @@ public class WikiRevisionService
 	}
 
 	/**
+	 * Calculate the difference between the given revision and its parent
+	 * revision.
 	 * 
-	 * @return
+	 * @param wikiId
+	 *            Id of the wiki
+	 * @param revisionId
+	 *            id of the revision
+	 * @return html format of the difference
 	 */
 	public String getDiffrence(final long wikiId, final long revisionId)
 	{
-		// WikiPage page = wikiDAO.getById(wikiId);
-		// if (page == null)
-		// {
-		// return "";
-		// }
-		//
-		// WikiRevision revision = revisionDAO.getById(revisionId);
-		// if (revision == null)
-		// {
-		// return "";
-		// }
-		//
-		// String original = "";
-		// if (revision.getParent() != null)
-		// {
-		// original = revision.getParent().getContent().getContent();
-		// }
-
-		String original = fileToStr("test/file_old.txt");
-		String revision = fileToStr("test/file_new.txt");
-
-		String diff = DifferenceUtils.difference(original, revision);
-		System.out.println(diff);
-		return diff;
-	}
-
-	private String fileToStr(final String filename)
-	{
-		StringBuilder result = new StringBuilder();
-		String line = "";
-		try
+		WikiPage page = wikiDAO.getById(wikiId);
+		if (page == null)
 		{
-			BufferedReader in = new BufferedReader(new InputStreamReader(getClass().getClassLoader()
-					.getResourceAsStream(filename)));
-			while ((line = in.readLine()) != null)
-			{
-				result.append(line).append("\n");
-			}
-		} catch (IOException e)
-		{
-			e.printStackTrace();
+			return "";
 		}
-		return result.toString();
+
+		WikiRevision revision = revisionDAO.getById(revisionId);
+		if (revision == null)
+		{
+			return "";
+		}
+
+		String original = "";
+		String change = revision.getContent().getContent();
+		if (revision.getParent() != null)
+		{
+			original = revision.getParent().getContent().getContent();
+		}
+
+		String diff = DifferenceUtils.difference(original, change);
+		return diff;
 	}
 }

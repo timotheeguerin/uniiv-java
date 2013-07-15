@@ -40,6 +40,10 @@ public final class DifferenceUtils
 	 */
 	public static String difference(final String original, final String revision)
 	{
+		for (char c : original.toCharArray())
+		{
+			System.out.println(c + " " + (int) c);
+		}
 
 		DiffUtils util = new DiffUtils();
 

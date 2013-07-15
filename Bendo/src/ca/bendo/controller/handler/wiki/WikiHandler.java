@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ca.bendo.db.dao.forum.FormattedContentDAO;
 import ca.bendo.db.dao.forum.TagDAO;
+import ca.bendo.db.dao.user.bookmark.UserWikiBookmarkDAO;
 import ca.bendo.db.dao.wiki.WikiPageDAO;
 import ca.bendo.db.dao.wiki.WikiRevisionDAO;
 import ca.bendo.db.entity.forum.FormattedContent;
@@ -65,6 +66,12 @@ public class WikiHandler
 
 	/**
 	 * 
+	 */
+	@Autowired
+	private UserWikiBookmarkDAO wikiBookmarkDAO;
+
+	/**
+	 * 
 	 * @param request
 	 *            Request
 	 * @param form
@@ -96,6 +103,16 @@ public class WikiHandler
 		wiki.getRevisions().add(revision);
 		wikiDAO.add(wiki);
 		revisionDAO.add(revision);
+		
+		String str = form.getContent();
+
+		char[] chars = str.toCharArray();
+
+		for (char c : chars)
+		{
+			System.out.println(c + " " + (int) c);
+		}
+
 
 		return wiki;
 	}
@@ -116,9 +133,7 @@ public class WikiHandler
 		FormattedContent content = new FormattedContent(form.getContent());
 		contentDAO.add(content);
 
-		WikiPage wiki = new WikiPage();
-		wiki.setUser(user.getId());
-
+		WikiPage wiki = wikiDAO.getById(wikiId);
 		wiki.createRevision(user, form.getComment(), content);
 
 		List<Tag> tags = tagDAO.getTags(form.getTags());
@@ -152,5 +167,27 @@ public class WikiHandler
 	public boolean delete(final long wikiId)
 	{
 		return wikiDAO.delete(wikiId);
+	}
+
+	/**
+	 * @param wikiId
+	 *            Wiki id
+	 * @return wiki
+	 */
+	public WikiPage getWiki(final long wikiId)
+	{
+		return wikiDAO.getById(wikiId);
+	}
+
+	/**
+	 * @param wikiId
+	 *            WIki id
+	 * @param userId
+	 *            User id
+	 * @return boolean if the wiki is bookmarked by the user
+	 */
+	public boolean isWikiBookmarked(final long wikiId, final long userId)
+	{
+		return wikiBookmarkDAO.getUserBookmark(userId, wikiId) != null;
 	}
 }

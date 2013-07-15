@@ -141,7 +141,8 @@ public class FormattedContent
 	 */
 	public void setContent(final String content)
 	{
-		this.content = content;
+
+		this.content = content.replaceAll("\r", "");
 		processContent();
 	}
 

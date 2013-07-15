@@ -54,6 +54,7 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 			return firstObj == null && secondObj == null || firstObj != null && firstObj.equals(secondObj);
 		} catch (final Exception ignore)
 		{
+			ignore.toString();
 		}
 		return true;
 	}

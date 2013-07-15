@@ -3,9 +3,6 @@
  */
 package ca.bendo.db.dao.user;
 
-import java.util.List;
-
-import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

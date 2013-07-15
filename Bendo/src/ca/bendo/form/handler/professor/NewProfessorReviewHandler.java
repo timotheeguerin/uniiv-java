@@ -21,7 +21,6 @@ import ca.bendo.db.dao.professor.ProfessorRatingDAO;
 import ca.bendo.db.dao.professor.ProfessorRatingTypeDAO;
 import ca.bendo.db.dao.professor.ProfessorReviewDAO;
 import ca.bendo.db.entity.comment.Comment;
-import ca.bendo.db.entity.lang.Language;
 import ca.bendo.db.entity.language.UniversityLanguage;
 import ca.bendo.db.entity.professor.Professor;
 import ca.bendo.db.entity.professor.ProfessorRating;
@@ -201,7 +200,6 @@ public class NewProfessorReviewHandler
 	public boolean setupNewReviewPage(final long professorId, final HttpServletRequest request)
 	{
 		request.getAttribute("translator");
-		Long languageId = Language.loadId(request);
 		Professor professor = professorDAO.getById(professorId);
 		if (professor == null)
 		{
