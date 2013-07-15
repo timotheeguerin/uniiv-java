@@ -107,10 +107,24 @@ public class FacebookPollService
 		entity.setFacebookId(form.getId());
 		entity.setPoll(poll);
 		entity.setName(place.getName());
+		entity.setScore(calculateScore(place.getLikes(), 0));
 
 		entity.setUser(user);
 		pollEntityDAO.add(entity);
 
+	}
+
+	/**
+	 * 
+	 * @param likes
+	 *            Number of facebook likes
+	 * @param votes
+	 *            Number of uniiv vote
+	 * @return score
+	 */
+	public int calculateScore(final long likes, final int votes)
+	{
+		return (int) (likes + votes * votes) / (votes + 1);
 	}
 
 	/**

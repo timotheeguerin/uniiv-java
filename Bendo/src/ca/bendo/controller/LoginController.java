@@ -104,9 +104,6 @@ public class LoginController extends GlobalController
 		}
 		if (loginHandler.handle(request, loginForm, response))
 		{
-
-			String referer = request.getHeader("Referer");
-			String url = referer;
 			String params = "?alertmsg=alert_info_login_success";
 			return UrlFactory.redirect(request) + params;
 		} else

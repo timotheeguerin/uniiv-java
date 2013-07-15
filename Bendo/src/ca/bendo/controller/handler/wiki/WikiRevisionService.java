@@ -3,9 +3,6 @@
  */
 package ca.bendo.controller.handler.wiki;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
 import org.hibernate.criterion.Order;
@@ -20,7 +17,7 @@ import ca.bendo.db.entity.wiki.WikiRevision;
 import ca.bendo.utils.DifferenceUtils;
 
 /**
- * @author Timoth�e Gu�rin
+ * @author Timothée Guérin
  * @version Bendo
  * 
  *          <b>WikiRevisionHandler</b>

@@ -3,10 +3,6 @@
  */
 package ca.bendo.utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 import org.junit.Test;
 
 /**
@@ -22,23 +18,6 @@ import org.junit.Test;
 public class TestDiff1
 {
 
-	private String fileToStr(final String filename)
-	{
-		StringBuilder result = new StringBuilder();
-		String line = "";
-		try
-		{
-			BufferedReader in = new BufferedReader(new FileReader(filename));
-			while ((line = in.readLine()) != null)
-			{
-				result.append(line).append("\n");
-			}
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		return result.toString();
-	}
 
 	/**
 	 * 
