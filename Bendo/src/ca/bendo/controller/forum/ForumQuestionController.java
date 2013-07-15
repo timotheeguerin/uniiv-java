@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ca.bendo.alert.UserWarning;
+import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.form.entity.forum.ForumQuestionForm;
 import ca.bendo.form.handler.forum.ForumQuestionHandler;
 
@@ -37,6 +38,12 @@ public class ForumQuestionController
 	@Autowired
 	private ForumQuestionHandler questionHandler;
 
+	@RequestMapping(value = "/questions", method = RequestMethod.GET)
+	public String index(final HttpServletRequest request)
+	{
+		return "views/questions/index";
+	}
+	
 	/**
 	 * 
 	 * @param request
@@ -45,13 +52,13 @@ public class ForumQuestionController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/{questionId}", method = RequestMethod.GET)
 	public String show(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.setupDisplayQuestion(request, questionId))
 		{
-			return "views/question/show";
+			return "views/questions/show";
 		} else
 		{
 			return "views/errors/erro404";
@@ -66,7 +73,7 @@ public class ForumQuestionController
 	 *            groupId
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/new", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/new", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
 		return newQuestionPage(request, new ForumQuestionForm());
@@ -84,7 +91,7 @@ public class ForumQuestionController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/questions/new", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final ForumQuestionForm questionForm,
 			final BindingResult result)
 	{
@@ -93,8 +100,8 @@ public class ForumQuestionController
 			return newQuestionPage(request, questionForm);
 		} else
 		{
-			questionHandler.handleNewQuestion(request, questionForm);
-			return "redirect:";
+			long id = questionHandler.handleNewQuestion(request, questionForm);
+			return "redirect:/questions/" + id;
 		}
 	}
 
@@ -112,7 +119,7 @@ public class ForumQuestionController
 	{
 		UserWarning.needValidUser(request);
 		request.setAttribute("questionForm", questionForm);
-		return "views/question/input";
+		return "views/questions/input";
 	}
 
 	/**
@@ -127,7 +134,7 @@ public class ForumQuestionController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.POST)
+	@RequestMapping(value = "questions/{questionId}/edit", method = RequestMethod.POST)
 	public String handleEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final BindingResult result, @PathVariable(value = "questionId") final long questionId)
 	{
@@ -137,8 +144,8 @@ public class ForumQuestionController
 			return "views/question/input";
 		} else
 		{
-			questionHandler.handleEditQuestion(request, questionId, questionForm);
-			return "redirect:";
+			long id = questionHandler.handleEditQuestion(request, questionId, questionForm);
+			return "redirect:/questions/" + id;
 		}
 	}
 
@@ -150,24 +157,39 @@ public class ForumQuestionController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "question/{questionId}/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "questions/{questionId}/edit", method = RequestMethod.GET)
 	public String editQuestion(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.loadEditQuestion(request, questionId))
 		{
-			return "views/question/input";
+			return "views/questions/input";
 		} else
 		{
 			return "views/errors/error404";
 		}
 	}
 	
-	@RequestMapping(value="question/list", method = RequestMethod.GET)
+	@RequestMapping(value="questions/list", method = RequestMethod.GET)
 	public String list(final HttpServletRequest request)
 	{
 		request.setAttribute("questions", questionHandler.list());
-		return "views/question/list";
+		return "views/questions/list";
+	}
+	
+	//@Secured("admin") //TODO owner
+	@RequestMapping(value = "questions/{questionId}/delete", method = RequestMethod.GET)
+	public String delete(final HttpServletRequest request,
+			@PathVariable(value = "questionId") final long questionId)
+	{
+		if(questionHandler.deleteQuestion(questionId))
+		{
+			return"redirect:/questions/list";
+		}
+		else
+		{
+			return "redirect:/questions/" + questionId;
+		}
 	}
 
 }

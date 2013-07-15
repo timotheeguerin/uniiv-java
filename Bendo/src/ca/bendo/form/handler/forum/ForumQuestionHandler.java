@@ -70,10 +70,11 @@ public class ForumQuestionHandler
 	 *            Request
 	 * @param questionForm
 	 *            Question form
+	 * @return 
 	 */
-	public void handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
+	public long handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{
-		handleNewQuestion(request, questionForm, new ArrayList<Tag>());
+		return handleNewQuestion(request, questionForm, new ArrayList<Tag>());
 	}
 
 	/**
@@ -105,14 +106,14 @@ public class ForumQuestionHandler
 	 *            Tags list containg the hidden tags
 	 * @return boolean if the question was successful asked
 	 */
-	public boolean handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
+	public long handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final List<Tag> presetTags)
 	{
 		UserSession session = UserSession.getSession(request);
 		User user = session.getUser();
 		if (user == null)
 		{
-			return false;
+			return -1;
 		}
 
 		return createQuestion(questionForm, presetTags, user);
@@ -128,7 +129,7 @@ public class ForumQuestionHandler
 	 *            User who created the question
 	 * @return boolean if question created suceesfully
 	 */
-	public boolean createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags, final User user)
+	public long createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags, final User user)
 	{
 
 		ForumQuestion question = new ForumQuestion();
@@ -150,7 +151,7 @@ public class ForumQuestionHandler
 		question.setContent(content);
 		questionDAO.saveOrUpdate(question);
 		System.out.println("Question added");
-		return true;
+		return question.getId();
 	}
 
 	/**
@@ -218,13 +219,13 @@ public class ForumQuestionHandler
 	 *            QuestionForm from the user
 	 * @return boolean if the question with the given id exist
 	 */
-	public boolean handleEditQuestion(final HttpServletRequest request, final long questionId,
+	public long handleEditQuestion(final HttpServletRequest request, final long questionId,
 			final ForumQuestionForm questionForm)
 	{
 		ForumQuestion question = questionDAO.getById(questionId);
 		if (question == null)
 		{
-			return false;
+			return -1;
 		}
 
 		UserSession session = UserSession.getSession(request);
@@ -240,12 +241,17 @@ public class ForumQuestionHandler
 		question.setTags(tags);
 		questionDAO.saveOrUpdate(question);
 
-		return true;
+		return question.getId();
 	}
 	
 	public List<ForumQuestion> list()
 	{
 		return questionDAO.list();
+	}
+	
+	public boolean deleteQuestion(final long id)
+	{
+		return questionDAO.delete(id);
 	}
 
 }
