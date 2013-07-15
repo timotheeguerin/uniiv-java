@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-
-
-	<display-name>Bendo</display-name>
-
-
-	<!--======================================================================================== -->
-	<!-- SERVLET -->
-	<!--======================================================================================== -->
+	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID"
+	version="3.0">
+	<display-name>Uniiv</display-name>
 	<servlet>
 		<servlet-name>spring</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-
-		<!-- Set the spring config file location -->
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/config/spring/servlet-context.xml</param-value>
@@ -25,12 +17,6 @@
 		<servlet-name>spring</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-	<!--======================================================================================== -->
-	<!-- FILTERS -->
-	<!--======================================================================================== -->
-
-
 	<filter>
 		<filter-name>HeadManagerFilter</filter-name>
 		<filter-class>ca.bendo.filters.HeadManagerFilter</filter-class>
@@ -39,7 +25,6 @@
 		<filter-name>HeadManagerFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 	<filter>
 		<filter-name>FilterDispatcher</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -48,57 +33,31 @@
 		<filter-name>FilterDispatcher</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-
-
-	<!--======================================================================================== -->
-	<!-- LOG4J CONFIGURATION -->
-	<!--======================================================================================== -->
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
 		<param-value>/WEB-INF/log4j.properties</param-value>
 	</context-param>
-
-	<!-- Enable log4j logger -->
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
-
-
-	<!--======================================================================================== -->
-	<!-- CONTEXT CONFIGURATION -->
-	<!--======================================================================================== -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-
 	<listener>
 		<listener-class>ca.bendo.context.BendoContextListener</listener-class>
 	</listener>
-
-
-	<!--======================================================================================== -->
-	<!-- JSP CONFIGURATION -->
-	<!--======================================================================================== -->
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
 			<include-prelude>/WEB-INF/jsp/taglibs.jspf</include-prelude>
 		</jsp-property-group>
 	</jsp-config>
-
-	<!--======================================================================================== -->
-	<!-- ERRORS -->
-	<!--======================================================================================== -->
-
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/404</location>
 	</error-page>
-
 </web-app>
