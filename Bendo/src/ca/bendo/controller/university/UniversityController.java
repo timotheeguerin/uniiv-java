@@ -94,6 +94,7 @@ public class UniversityController
 	@RequestMapping(value = "university/list", method = RequestMethod.GET)
 	public String universityList(final HttpServletRequest request)
 	{
+		request.setAttribute("unis", universityHandler.listUniversity());
 		return "views/university/list";
 	}
 
