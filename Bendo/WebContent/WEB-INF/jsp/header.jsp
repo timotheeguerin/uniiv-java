@@ -11,7 +11,7 @@
 		<span class="nav_left_side"> <span class="nav_spacer"></span> <a href="<b:url value="/search"/>" title="<b:translator value="search" />"> <span
 				class="nav_links"
 			><b:translator value="search" /></span>
-		</a> <span class="nav_spacer"></span> <a href="<b:url value="/discuss"/>" title="<b:translator value="interaction_students" />"> <span class="nav_links"><b:translator
+		</a> <span class="nav_spacer"></span> <a href="<b:url value="/questions"/>" title="<b:translator value="interaction_students" />"> <span class="nav_links"><b:translator
 						value="talk"
 					/></span>
 		</a> <span class="nav_spacer"></span> <a href="<b:url value="/wiki"/>" title="<b:translator value="wikis" />"> <span class="nav_links"><b:translator
