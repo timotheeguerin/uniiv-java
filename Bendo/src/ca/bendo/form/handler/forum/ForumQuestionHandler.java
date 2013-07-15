@@ -106,6 +106,7 @@ public class ForumQuestionHandler
 	 *            Tags list containg the hidden tags
 	 * @return boolean if the question was successful asked
 	 */
+
 	public ForumQuestion handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final List<Tag> presetTags)
 	{
@@ -125,6 +126,7 @@ public class ForumQuestionHandler
 	 *            User who created the question
 	 * @return boolean if question created suceesfull
 	 */
+
 	public ForumQuestion createQuestion(final ForumQuestionForm questionForm, final List<Tag> presetTags,
 			final User user)
 	{
@@ -148,6 +150,7 @@ public class ForumQuestionHandler
 		question.setContent(content);
 		questionDAO.saveOrUpdate(question);
 		System.out.println("Question added");
+
 		return question;
 	}
 
@@ -216,13 +219,13 @@ public class ForumQuestionHandler
 	 *            QuestionForm from the user
 	 * @return boolean if the question with the given id exist
 	 */
-	public boolean handleEditQuestion(final HttpServletRequest request, final long questionId,
+	public long handleEditQuestion(final HttpServletRequest request, final long questionId,
 			final ForumQuestionForm questionForm)
 	{
 		ForumQuestion question = questionDAO.getById(questionId);
 		if (question == null)
 		{
-			return false;
+			return -1;
 		}
 
 		UserSession session = UserSession.getSession(request);
@@ -238,12 +241,17 @@ public class ForumQuestionHandler
 		question.setTags(tags);
 		questionDAO.saveOrUpdate(question);
 
-		return true;
+		return question.getId();
 	}
 
 	public List<ForumQuestion> list()
 	{
 		return questionDAO.list();
+	}
+
+	public boolean deleteQuestion(final long id)
+	{
+		return questionDAO.delete(id);
 	}
 
 }

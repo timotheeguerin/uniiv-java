@@ -6,12 +6,14 @@ package ca.bendo.controller.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import ca.bendo.controller.interceptor.annotation.Secured;
 import ca.bendo.session.UserSession;
+import ca.bendo.translation.translation.Translator;
 
 /**
  * @author Timothée Guérin
@@ -25,6 +27,12 @@ import ca.bendo.session.UserSession;
  */
 public class LoginInterceptor extends HandlerInterceptorAdapter
 {
+	/**
+	 * 
+	 */
+	@Autowired
+	private Translator translator;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -49,8 +57,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 				return super.preHandle(request, response, handler);
 			} else
 			{
-				request.getRequestDispatcher("/").forward(request, response);
-
+				String defaultRedirectUrl = translator.translateUrl("/login") + "redirect?=" + request.getRequestURL();
+				request.getRequestDispatcher(defaultRedirectUrl).forward(request, response);
 				return false;
 			}
 
@@ -73,7 +81,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter
 	public void postHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler,
 			final ModelAndView modelAndView) throws Exception
 	{
-		System.out.println("Post handle: " + request.getRequestURL());
 		super.postHandle(request, response, handler, modelAndView);
 	}
 }

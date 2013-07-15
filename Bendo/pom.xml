@@ -67,25 +67,26 @@
 									<inputDir>${project.build.directory}/${project.build.finalName}/js/</inputDir>
 
 									<includes>
-										<include>form-min.js</include>
-										<include>general-min.js</include>
-										<include>filter-min.js</include>
-										<include>dropdown-min.js</include>
-										<script>loading-min.js</script>
+										<include>*.js</include>
+
 									</includes>
+									<excludes>
+										<exclude>jquery*.js
+										</exclude>
+									</excludes>
 								</aggregation>
 								<aggregation>
 									<output>${project.build.directory}/${project.build.finalName}/ressources/scripts/external.min.js</output>
 									<inputDir>${project.build.directory}/${project.build.finalName}/js/</inputDir>
 
 									<includes>
-										<include>jquery-min.js</include>
-										<include>jquery-ui-1.8.23.custom.min-min.js</include>
-										<include>jquery.autocomplete-min.js</include>
-										<include>jquery.simplemodal-1.4.4-min.js</include>
-										<include>jquery.fittext-min.js</include>
-										<include>jquery.radiobutton-min.js</include>
-										<include>jquery.fittext-min.js</include>
+										<include>jquery*.js</include>
+										<!-- <include>jquery-ui-1.8.23.custom.min-min.js</include> -->
+										<!-- <include>jquery.autocomplete-min.js</include> -->
+										<!-- <include>jquery.simplemodal-1.4.4-min.js</include> -->
+										<!-- <include>jquery.fittext-min.js</include> -->
+										<!-- <include>jquery.radiobutton-min.js</include> -->
+										<!-- <include>jquery.fittext-min.js</include> -->
 									</includes>
 								</aggregation>
 
@@ -101,7 +102,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${project.build.directory}/${project.build.finalName}/css/</outputDirectory>
-							<sourceDirectory>WebContent/styles</sourceDirectory>
+							<sourceDirectory>${project.build.directory}/${project.build.finalName}/less/</sourceDirectory>
 							<excludes>
 								<exclude>style.min.css</exclude>
 							</excludes>
@@ -124,6 +125,27 @@
 
 				</executions>
 
+			</plugin>
+
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>1.3.3</version>
+				<configuration>
+					<sourceDirectory>${project.basedir}/WebContent/styles</sourceDirectory>
+					<outputDirectory>${project.build.directory}/${project.build.finalName}/less</outputDirectory>
+					<compress>true</compress>
+					<includes>
+						<include>*.less</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 

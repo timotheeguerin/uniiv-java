@@ -47,6 +47,18 @@ public class ForumQuestionController extends GlobalController
 	/**
 	 * 
 	 * @param request
+	 *            Request
+	 * @return jsp page
+	 */
+	@RequestMapping(value = "/questions", method = RequestMethod.GET)
+	public String index(final HttpServletRequest request)
+	{
+		return "views/questions/index";
+	}
+
+	/**
+	 * 
+	 * @param request
 	 *            HttpRequest
 	 * @param questionId
 	 *            Id of the question to display
@@ -54,10 +66,11 @@ public class ForumQuestionController extends GlobalController
 	 */
 	@RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
 	public String show(final HttpServletRequest request, @PathVariable(value = "questionId") final long questionId)
+
 	{
 		if (questionHandler.setupDisplayQuestion(request, questionId))
 		{
-			return "views/question/show";
+			return "views/questions/show";
 		} else
 		{
 			return "views/errors/erro404";
@@ -70,7 +83,7 @@ public class ForumQuestionController extends GlobalController
 	 *            Request
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/new", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/new", method = RequestMethod.GET)
 	public String add(final HttpServletRequest request)
 	{
 		return newQuestionPage(request, new ForumQuestionForm());
@@ -86,7 +99,7 @@ public class ForumQuestionController extends GlobalController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/questions/new", method = RequestMethod.POST)
 	public String handleNewQuestion(final HttpServletRequest request, @Valid final ForumQuestionForm questionForm,
 			final BindingResult result)
 	{
@@ -95,6 +108,7 @@ public class ForumQuestionController extends GlobalController
 			return newQuestionPage(request, questionForm);
 		} else
 		{
+
 			ForumQuestion question = questionHandler.handleNewQuestion(request, questionForm);
 			return "redirect:" + translator.translateUrl("/question/" + question.getId());
 		}
@@ -112,7 +126,7 @@ public class ForumQuestionController extends GlobalController
 	{
 		UserWarning.needValidUser(request);
 		request.setAttribute("questionForm", questionForm);
-		return "views/question/input";
+		return "views/questions/input";
 	}
 
 	/**
@@ -137,8 +151,8 @@ public class ForumQuestionController extends GlobalController
 			return "views/question/input";
 		} else
 		{
-			questionHandler.handleEditQuestion(request, questionId, questionForm);
-			return "redirect:";
+			long id = questionHandler.handleEditQuestion(request, questionId, questionForm);
+			return "redirect:/questions/" + id;
 		}
 	}
 
@@ -150,13 +164,14 @@ public class ForumQuestionController extends GlobalController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
+
 	@RequestMapping(value = "/question/{questionId}/edit", method = RequestMethod.GET)
 	public String editQuestion(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
 		if (questionHandler.loadEditQuestion(request, questionId))
 		{
-			return "views/question/input";
+			return "views/questions/input";
 		} else
 		{
 			return "views/errors/error404";
@@ -173,7 +188,28 @@ public class ForumQuestionController extends GlobalController
 	public String list(final HttpServletRequest request)
 	{
 		request.setAttribute("questions", questionHandler.list());
-		return "views/question/list";
+		return "views/questions/list";
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @param questionId
+	 *            Question id
+	 * @return jsp page
+	 */
+	// @Secured("admin") //TODO owner
+	@RequestMapping(value = "questions/{questionId}/delete", method = RequestMethod.GET)
+	public String delete(final HttpServletRequest request, @PathVariable(value = "questionId") final long questionId)
+	{
+		if (questionHandler.deleteQuestion(questionId))
+		{
+			return "redirect:/questions/list";
+		} else
+		{
+			return "redirect:/questions/" + questionId;
+		}
 	}
 
 }
