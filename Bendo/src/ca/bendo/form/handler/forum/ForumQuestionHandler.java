@@ -70,7 +70,7 @@ public class ForumQuestionHandler
 	 *            Request
 	 * @param questionForm
 	 *            Question form
-	 * @return
+	 * @return question
 	 */
 	public ForumQuestion handleNewQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm)
 	{

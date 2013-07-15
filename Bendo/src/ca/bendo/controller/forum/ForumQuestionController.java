@@ -64,9 +64,8 @@ public class ForumQuestionController extends GlobalController
 	 *            Id of the question to display
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/{questionId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/{questionId}", method = RequestMethod.GET)
 	public String show(final HttpServletRequest request, @PathVariable(value = "questionId") final long questionId)
-
 	{
 		if (questionHandler.setupDisplayQuestion(request, questionId))
 		{
@@ -141,7 +140,7 @@ public class ForumQuestionController extends GlobalController
 	 *            contain error of the form
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/{questionId}/edit", method = RequestMethod.POST)
+	@RequestMapping(value = "/questions/{questionId}/edit", method = RequestMethod.POST)
 	public String handleEditQuestion(final HttpServletRequest request, final ForumQuestionForm questionForm,
 			final BindingResult result, @PathVariable(value = "questionId") final long questionId)
 	{
@@ -165,7 +164,7 @@ public class ForumQuestionController extends GlobalController
 	 * @return jsp page
 	 */
 
-	@RequestMapping(value = "/question/{questionId}/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/{questionId}/edit", method = RequestMethod.GET)
 	public String editQuestion(final HttpServletRequest request,
 			@PathVariable(value = "questionId") final long questionId)
 	{
@@ -184,7 +183,7 @@ public class ForumQuestionController extends GlobalController
 	 *            HttpRequest
 	 * @return jsp page
 	 */
-	@RequestMapping(value = "/question/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/questions/list", method = RequestMethod.GET)
 	public String list(final HttpServletRequest request)
 	{
 		request.setAttribute("questions", questionHandler.list());
