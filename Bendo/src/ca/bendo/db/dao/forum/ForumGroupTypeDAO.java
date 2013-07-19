@@ -58,7 +58,7 @@ public class ForumGroupTypeDAO extends HibernateDAO<ForumGroupType>
 	 * @return list of forum result
 	 */
 	@SuppressWarnings("unchecked")
-	public List<ForumGroupType> search(final String query, final int firstResult, final int maxResults)
+	public List<ForumGroupType> searchTranslation(final String query, final int firstResult, final int maxResults)
 	{
 		return search("name", query, firstResult, maxResults);
 	}

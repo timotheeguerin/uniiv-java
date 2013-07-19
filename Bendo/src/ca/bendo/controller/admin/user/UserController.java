@@ -24,14 +24,13 @@ import ca.bendo.form.entity.admin.users.PermissionsForm;
 
 /**
  * @author toby
- * @version Bendo 
-
- * <b>UserController</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>UserController</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Controller
 public class UserController
@@ -41,13 +40,13 @@ public class UserController
 	 */
 	@Autowired
 	private UserDAO userDAO;
-	
+
 	/**
 	 * 
 	 */
 	@Autowired
 	private UserPermissionDAO userPermissionDAO;
-	
+
 	/**
 	 * 
 	 * @param request
@@ -60,7 +59,7 @@ public class UserController
 	{
 		return "views/admin/users/index";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -75,7 +74,7 @@ public class UserController
 		request.setAttribute("users", userDAO.list());
 		return "views/admin/users/list";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -88,9 +87,12 @@ public class UserController
 	public String show(@PathVariable(value = "userId") final long id, final HttpServletRequest request)
 	{
 		User user = userDAO.getById(id);
-		if(user == null) return "redirect:/404";
+		if (user == null)
+		{
+			return "redirect:/404";
+		}
 		PermissionsForm form = new PermissionsForm();
-		for(UserPermission perm: user.getPermissions())
+		for (UserPermission perm : user.getPermissions())
 		{
 			form.getPermissions().add(perm.getId());
 		}
@@ -99,7 +101,7 @@ public class UserController
 		request.setAttribute("user", user);
 		return "views/admin/users/show";
 	}
-	
+
 	/**
 	 * 
 	 * @param request
@@ -109,19 +111,20 @@ public class UserController
 	@Secured("admin")
 	@RequestMapping(value = "/admin/users/show/{userId}", method = RequestMethod.POST)
 	@Transactional
-	public String update(@PathVariable(value = "userId") final long id, final HttpServletRequest request, final PermissionsForm form)
+	public String update(@PathVariable(value = "userId") final long id, final HttpServletRequest request,
+			final PermissionsForm form)
 	{
 		User user = userDAO.getById(id);
 		List<UserPermission> newperms = new ArrayList<UserPermission>();
-		for(long permlong: form.getPermissions())
+		for (long permlong : form.getPermissions())
 		{
 			UserPermission tperm = userPermissionDAO.getById(permlong);
-			if(tperm == null) continue;
+			if (tperm == null)
+				continue;
 			newperms.add(tperm);
 		}
 		user.setPermissions(newperms);
 		return "redirect:../list";
 	}
-	
-	
+
 }

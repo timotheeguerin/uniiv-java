@@ -45,6 +45,8 @@ public class HibernateDAO<T>
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	private String mainField;
+
 	/**
 	 * 
 	 */
@@ -59,7 +61,7 @@ public class HibernateDAO<T>
 
 	protected void init()
 	{
-
+		setMainField("name");
 	}
 
 	/**
@@ -278,6 +280,33 @@ public class HibernateDAO<T>
 	}
 
 	/**
+	 * @param query
+	 *            Query Max result
+	 * @return list of forum result
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> search(final String query)
+	{
+		String value = "%" + query + "%";
+		return getSession().createCriteria(type).add(Restrictions.ilike(mainField, value)).list();
+	}
+
+	/**
+	 * @param query
+	 *            Query Max result
+	 * @param maxResults
+	 *            Max result
+	 * @return list of forum result
+	 */
+	@SuppressWarnings("unchecked")
+	public List<T> search(final String query, final int maxResults)
+	{
+		String value = "%" + query + "%";
+		return getSession().createCriteria(type).add(Restrictions.ilike(mainField, value)).setMaxResults(maxResults)
+				.list();
+	}
+
+	/**
 	 * @return the sessionFactory
 	 */
 	public SessionFactory getSessionFactory()
@@ -323,7 +352,7 @@ public class HibernateDAO<T>
 	/**
 	 * @return the type
 	 */
-	protected Class<T> getType()
+	public Class<T> getType()
 	{
 		return type;
 	}
@@ -336,4 +365,22 @@ public class HibernateDAO<T>
 	{
 		this.type = type;
 	}
+
+	/**
+	 * @return the mainField
+	 */
+	public String getMainField()
+	{
+		return mainField;
+	}
+
+	/**
+	 * @param mainField
+	 *            the mainField to set
+	 */
+	public void setMainField(final String mainField)
+	{
+		this.mainField = mainField;
+	}
+
 }

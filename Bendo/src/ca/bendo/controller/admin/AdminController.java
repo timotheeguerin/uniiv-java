@@ -13,14 +13,13 @@ import ca.bendo.controller.interceptor.annotation.Secured;
 
 /**
  * @author toby
- * @version Bendo 
-
- * <b>Admin</b>
- * <p></p>
- *
+ * @version Bendo
  * 
-
-
+ *          <b>Admin</b>
+ *          <p>
+ *          </p>
+ * 
+ * 
  */
 @Controller
 public class AdminController
@@ -34,6 +33,18 @@ public class AdminController
 	@Secured("admin")
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String index(final HttpServletRequest request)
+	{
+		return "views/admin/index";
+	}
+
+	/**
+	 * 
+	 * @param request
+	 *            Request
+	 * @return Jsp page
+	 */
+	
+	public String test(final HttpServletRequest request)
 	{
 		return "views/admin/index";
 	}

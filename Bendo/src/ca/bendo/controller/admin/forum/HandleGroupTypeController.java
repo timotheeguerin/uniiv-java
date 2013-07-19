@@ -47,7 +47,7 @@ public class HandleGroupTypeController
 	{
 		TableForm form = new TableForm();
 		form.load(request);
-		List<ForumGroupType> forumGroupTypes = groupTypeDAO.search(form.getQuery(), form.getFirstResult(),
+		List<ForumGroupType> forumGroupTypes = groupTypeDAO.searchTranslation(form.getQuery(), form.getFirstResult(),
 				form.getResultPerPage());
 		request.setAttribute("forumGroupTypes", forumGroupTypes);
 		int pageNum = (int) groupTypeDAO.searchCount(form.getQuery()) / form.getResultPerPage() + 1;

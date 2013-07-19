@@ -66,7 +66,7 @@ public class TranslationController
 		// List<Translation> translations =
 		// translationDAO.search(form.getQuery(), form.getFirstResult(),
 		// form.getResultPerPage());
-		List<String> translations = translationDAO.search(form.getQuery(), 0, Integer.MAX_VALUE);
+		List<String> translations = translationDAO.searchTranslation(form.getQuery(), 0, Integer.MAX_VALUE);
 		List<Integer> transints = new ArrayList<Integer>();
 		Map<String, Integer> trans = new HashMap<String, Integer>();
 		for (String s : translations)

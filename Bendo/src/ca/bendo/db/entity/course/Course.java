@@ -4,6 +4,7 @@
 package ca.bendo.db.entity.course;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -61,6 +62,12 @@ public class Course
 	@ManyToOne
 	@JoinColumn(name = "id_uni_program")
 	private Program program;
+
+	/**
+	 * 
+	 */
+	@Embedded
+	private CourseRequirements requirements;
 
 	/**
 	 * @return the id
@@ -145,6 +152,23 @@ public class Course
 	public void setProgram(final Program program)
 	{
 		this.program = program;
+	}
+
+	/**
+	 * @return the requirements
+	 */
+	public CourseRequirements getRequirements()
+	{
+		return requirements;
+	}
+
+	/**
+	 * @param requirements
+	 *            the requirements to set
+	 */
+	public void setRequirements(final CourseRequirements requirements)
+	{
+		this.requirements = requirements;
 	}
 
 	/*

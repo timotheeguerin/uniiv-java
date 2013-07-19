@@ -181,10 +181,10 @@ public class TranslationsDAO extends HibernateDAO<Translation>
 	 * @return list of forum result
 	 */
 	@SuppressWarnings("unchecked")
-	public List<String> search(final String query, final int firstResult, final int maxResults)
+	public List<String> searchTranslation(final String query, final int firstResult, final int maxResults)
 	{
 		String value = "%" + query + "%";
-		return getSession().createCriteria(Translation.class)
+		return createCriteria()
 				.setProjection(Projections.distinct(Projections.distinct(Projections.property("key"))))
 				.add(Restrictions.ilike("key", value)).setFirstResult(firstResult).setMaxResults(maxResults).list();
 	}
